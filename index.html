@@ -29,9 +29,31 @@
 <div class="container-wrapper">
         <div class="container">
         <h1 id="example-site">Example Site</h1>
-<p>This is an example project showing off the capabilities of <a href="https://github.com/obsidian-html/obsidian-html" class="external-link">Obsidian-html</a>.   </p>
-<p>You can find the generated markdown here: <a href="/not_created.html" class="nonexistent-link">To be created</a>.   </p>
-<p><code>[[Simple Obsidian-type Link]]</code> <a href="/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a></p>
+<p>This is an example project showing off the capabilities of <a href="https://github.com/obsidian-html/obsidian-html" class="external-link" class="external-link">Obsidian-html</a>.   </p>
+<p>In short, this code converts Obsidian notes to proper markdown, and then spits out a site like this. You can find the generated markdown here: <a href="/not_created.html" class="nonexistent-link">To be created</a>.   </p>
+<blockquote>
+<p>All credit to this site's design goes to Andy Matuschak. I basically <a href="https://notes.andymatuschak.org/Evergreen_notes" class="external-link">stole his design</a> because I think it is perfect.   </p>
+</blockquote>
+<h1 id="basics">Basics</h1>
+<div class="codehilite"><pre><span></span><code>One enter
+translates to
+a new line, just like in Obsidian!
+</code></pre></div>
+
+<p>One enter <br />
+translates to <br />
+a new line, just like in Obsidian!   </p>
+<h1 id="links">Links</h1>
+<p><code>[[Simple Obsidian-type Link]]</code> translates too: <br />
+<a href="/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a>   </p>
+<p>As does using a <code>[Proper markdown link](proper%20%markdown)</code>: <br />
+<a href="proper%20markdown" class="external-link">Proper markdown link</a>   </p>
+<p>Aliasing also works, <code>[[Simple Obsidian-type Link|Same link as before]]</code>: <br />
+<a href="/Simple Obsidian-type Link.html">Same link as before</a>   </p>
+<p>And external links show up the little icon to show it: <br />
+<a href="https://github.com/obsidian-html/obsidian-html" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html</a>   </p>
+<p>When linking to new notes, and not creating them, the link will be replaced with "not_created.html", and the link will be color coded by adding <code>class="nonexistent-link"</code> to the a href: <br />
+<a href="/not_created.html" class="nonexistent-link">In the end I never created this note</a></p>
         <!-- end content -->
         </div>
 </div>
