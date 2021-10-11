@@ -28,8 +28,23 @@ As does using a `[Proper markdown link](proper%20%markdown)`:
 Aliasing also works, `[[Simple Obsidian-type Link|Same link as before]]`:   
 [Same link as before](Simple%20Obsidian-type%20Link.md)   
    
+As does linking to chapters `[[Long long page#Chapter of interest]]`   
+[Long long page#Chapter of interest](/not_created.md)   
+   
 And external links show up the little icon to show it:   
 [https://github.com/obsidian-html/obsidian-html](https://github.com/obsidian-html/obsidian-html)   
    
 When linking to new notes, and not creating them, the link will be replaced with "not_created.html", and the link will be color coded by adding `class="nonexistent-link"` to the a href:   
-[In the end I never created this note](/not_created.md)
+[In the end I never created this note](/not_created.md)   
+   
+   
+   
+# Html tweaks   
+## Try out the click-backs to see what they do   
+They are in the top right corner of every note:   
+![](Pasted%20image%2020211012013603.png)   
+   
+You can also just use the scroll bar or the arrow keys if you want   
+   
+## Notice the url   
+There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh.
