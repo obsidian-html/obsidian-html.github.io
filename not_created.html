@@ -9,7 +9,7 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
 
                 <!-- Set title -->
-                <title>Example Site</title>
+                <title>{title}</title>
 
                 <!-- Includes -->
                 <link rel="stylesheet" href="/main.css" />
@@ -24,14 +24,14 @@
 
 <body onload="SetLinks(0);">
 <div id="header" class="header">
-        <a href="/" id="homelink">Example Site</a>
+        <a href="/" id="homelink">{title}</a>
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="example-site">Example Site</h1>
-<p>This is an example project showing off the capabilities of <a href="https://github.com/obsidian-html/obsidian-html" class="external-link">Obsidian-html</a>.   </p>
-<p>You can find the generated markdown here: <a href="/not_created.html" class="nonexistent-link">To be created</a>.   </p>
-<p><code>[[Simple Obsidian-type Link]]</code> <a href="/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a></p>
+        <p>This note was linked, but never created (or removed)</p>
+<a href="javascript:history.back()">Go Back</a> or <a href="/" id="homelink">Go to Home</a>.
+
+
         <!-- end content -->
         </div>
 </div>
