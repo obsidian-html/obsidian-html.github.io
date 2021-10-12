@@ -23,7 +23,7 @@ a new line, just like in Obsidian!
 [Simple Obsidian-type Link](Simple%20Obsidian-type%20Link.md)   
    
 As does using a `[Proper markdown link](proper%20%markdown)`:   
-[Proper markdown link](proper%20markdown)   
+[Proper markdown link](proper markdown.md)   
    
 Aliasing also works, `[[Simple Obsidian-type Link|Same link as before]]`:   
 [Same link as before](Simple%20Obsidian-type%20Link.md)   
