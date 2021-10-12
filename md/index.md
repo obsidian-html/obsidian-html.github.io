@@ -2,7 +2,7 @@
    
 This is an example project showing off the capabilities of [Obsidian-html](https://github.com/obsidian-html/obsidian-html).   
    
-In short, this code converts Obsidian notes to proper markdown, and then spits out a site like this. You can find the generated markdown here: [To be created](/not_created.md).   
+In short, this code converts Obsidian notes to proper markdown, and then spits out a site like this. [You can find the generated markdown here](https://github.com/obsidian-html/obsidian-html.github.io/tree/main/md).   
    
 > All credit to this site's design goes to Andy Matuschak. I basically [stole his design](https://notes.andymatuschak.org/Evergreen_notes) because I think it is perfect.   
    
