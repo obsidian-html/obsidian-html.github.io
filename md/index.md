@@ -37,7 +37,8 @@ And external links show up the little icon to show it:
 When linking to new notes, and not creating them, the link will be replaced with "not_created.html", and the link will be color coded by adding `class="nonexistent-link"` to the a href:   
 [In the end I never created this note](/not_created.md)   
    
-   
+# CSS   
+[Code block examples](Code%20block%20examples.md)   
    
 # Html tweaks   
 ## Try out the click-backs to see what they do   
