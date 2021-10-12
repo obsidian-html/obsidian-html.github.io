@@ -58,6 +58,12 @@ If you want to link to files that are not markdown, use proper markdown links:
 ```
    
    
+## Images   
+`![](Resources/img/obsidian-html-logo.png)`   
+![](Resources/img/obsidian-html-logo.png)   
+   
+`![[Resources/img/obsidian-html-logo-sq.png]]`   
+![](Resources/img/obsidian-html-logo-sq.png)   
    
 # Code blocks   
 This is built into python-markdown, and enabled by default.   
