@@ -44,30 +44,48 @@ a new line, just like in Obsidian!
 translates to <br />
 a new line, just like in Obsidian!   </p>
 <h1 id="links">Links</h1>
+<h2 id="obsidian-type-links">Obsidian type links</h2>
 <p><code>[[Simple Obsidian-type Link]]</code> translates too: <br />
 <a href="/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a>   </p>
-<p>As does using a <code>[Proper markdown link](proper%20%markdown)</code>: <br />
-<a href="/proper markdown.html">Proper markdown link</a>   </p>
 <p>Aliasing also works, <code>[[Simple Obsidian-type Link|Same link as before]]</code>: <br />
 <a href="/Simple Obsidian-type Link.html">Same link as before</a>   </p>
 <p>As does linking to chapters <code>[[Long long page#Chapter of interest]]</code> <br />
 <a href="/Long long page.html#chapter-of-interest">Long long page#Chapter of interest</a>   </p>
-<p>And external links show up the little icon to show it: <br />
+<h2 id="proper-markdown-links">Proper markdown links</h2>
+<p>There is a setting that forces Obsidian to use proper markdown notation. So this is also supported:   </p>
+<p><code>[Proper markdown link](proper%20markdown)</code> <br />
+<a href="/proper markdown.html">Proper markdown link</a>   </p>
+<p>Note that spaces must be encoded in proper markdown links.   </p>
+<h2 id="link-awareness">Link awareness</h2>
+<p>A external links show up the little icon to show it: <br />
 <a href="https://github.com/obsidian-html/obsidian-html" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html</a>   </p>
-<p>When linking to new notes, and not creating them, the link will be replaced with "not_created.html", and the link will be color coded by adding <code>class="nonexistent-link"</code> to the a href: <br />
-<a href="/not_created.html" class="nonexistent-link">In the end I never created this note</a>   </p>
+<p>When linking to new notes, and not creating them, the link will be replaced with "not_created.html", and the link will be color coded by adding <code>class="nonexistent-link"</code> to the a href:   </p>
+<p><a href="/not_created.html" class="nonexistent-link">In the end I never created this note</a>   </p>
+<h2 id="link-to-non-markdown-files">Link to non-markdown files</h2>
 <p>Image files and other non-markdown files local to the given root folder get copied over to the output. Take for example: <a href="textfile.txt" class="external-link">test textfile</a>.   </p>
-<h1 id="css">CSS</h1>
-<p><a href="/Code block examples.html">Code block examples</a>   </p>
+<p>Note that Obsidian type links will always be appended with .md if this is missing.    </p>
+<p>This is the default behavior of Obsidian. You can work around this, but when you do, it is impossible to determine with 100% certainty which file is linked to.    </p>
+<p>If you want to link to files that are not markdown, use proper markdown links:   </p>
+<div class="codehilite"><pre><span></span><code><span class="p">[[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">]]</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
+<span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="code-blocks">Code blocks</h1>
+<p>This is built into python-markdown, and enabled by default. <br />
+Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created. <br />
+<a href="/Code block examples.html">Code block examples</a>   </p>
 <h1 id="html-tweaks">Html tweaks</h1>
-<h2 id="try-out-the-click-backs-to-see-what-they-do">Try out the click-backs to see what they do</h2>
-<p>They are in the top right corner of every note: <br />
+<p>Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change <code>src/template.html</code> out for something more basic - or more fancy.   </p>
+<h2 id="click-backs">Click-backs</h2>
+<p>When you open a whole chain of notes, you'll be scrolled rightward to keep up.  <br />
+Clicking on a click-back corner will align that note with the left of the screen. This allows you to move back/forward one note at a time.    </p>
+<p>Of course, the scrollbar and arrow keys are available too as methods of navigation.   </p>
+<p>The clickbacks are in the top right corner of every note: <br />
 <img alt="" src="Pasted%20image%2020211012013603.png" />   </p>
-<p>You can also just use the scroll bar or the arrow keys if you want   </p>
-<h2 id="notice-the-url">Notice the url</h2>
-<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.    </p>
 <h2 id="closing-tabs">Closing tabs</h2>
-<p>When you click on a new link in an earlier tab, all the open tabs after it will be closed.</p>
+<p>When you click on a new link in an earlier tab, all the open tabs after it will be closed.   </p>
+<h2 id="notice-the-url">Notice the url</h2>
+<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.</p>
         <!-- end content -->
         </div>
 </div>
