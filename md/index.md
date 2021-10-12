@@ -48,4 +48,7 @@ They are in the top right corner of every note:
 You can also just use the scroll bar or the arrow keys if you want   
    
 ## Notice the url   
-There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh.
+There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh.    
+   
+## Closing tabs   
+When you click on a new link in an earlier tab, all the open tabs after it will be closed.
