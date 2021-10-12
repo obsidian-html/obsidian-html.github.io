@@ -1,6 +1,4 @@
 # Code block examples   
-I use this note to test the stylesheet that I'm formatting for this website I use this note to test the stylesheet that I'm formatting for this website   
-   
 ## Python   
 ``` python
 import sys 					# commandline arguments
