@@ -1,0 +1,9 @@
+---
+tags:
+- type/undefined
+- status/inbox
+---
+
+# textfile.txt
+
+test
