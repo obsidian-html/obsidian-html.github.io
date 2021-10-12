@@ -29,7 +29,7 @@ Aliasing also works, `[[Simple Obsidian-type Link|Same link as before]]`:
 [Same link as before](Simple%20Obsidian-type%20Link.md)   
    
 As does linking to chapters `[[Long long page#Chapter of interest]]`   
-[Long long page#Chapter of interest](/not_created.md)   
+[Long long page#Chapter of interest](Long%20long%20page.md#chapter-of-interest)   
    
 And external links show up the little icon to show it:   
 [https://github.com/obsidian-html/obsidian-html](https://github.com/obsidian-html/obsidian-html)   
