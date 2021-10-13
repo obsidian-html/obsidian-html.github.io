@@ -39,7 +39,7 @@ There is a setting that forces Obsidian to use proper markdown notation. So this
  Note that spaces must be encoded in proper markdown links.   
    
 ## Link awareness   
-A external links show up the little icon to show it:   
+An external links show up the little icon to show it:   
 [https://github.com/obsidian-html/obsidian-html](https://github.com/obsidian-html/obsidian-html)   
    
 When linking to new notes, and not creating them, the link will be replaced with "not_created.html", and the link will be color coded by adding `class="nonexistent-link"` to the a href:   
@@ -60,12 +60,15 @@ If you want to link to files that are not markdown, use proper markdown links:
 ```
    
    
-## Images   
+# Images   
+## Obsidian type image links    
+`![[Resources/img/obsidian-html-logo-sq.png]]`   
+![](Resources/img/obsidian-html-logo-sq.png)   
+   
+## Proper markdown image links   
 `![](Resources/img/obsidian-html-logo.png)`   
 ![](Resources/img/obsidian-html-logo.png)   
    
-`![[Resources/img/obsidian-html-logo-sq.png]]`   
-![](Resources/img/obsidian-html-logo-sq.png)   
    
 # Code blocks   
 This is built into python-markdown, and enabled by default.   
@@ -88,4 +91,20 @@ The clickbacks are in the top right corner of every note:
 When you click on a new link in an earlier tab, all the open tabs after it will be closed.   
    
 ## Notice the url   
-There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh.
+There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh.    
+   
+# Not supported   
+## Code inclusion   
+Code inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    
+   
+It uses the same link syntax as images:   
+```
+![[my note]]
+![[my note#only this chapter]]
+```
+   
+   
+At the moment, there is a check if the file that is linked to ends in a suffix that is a known image suffix, and then it is parsed as an image. If not, you'll get the output below.   
+   
+   
+> **obsidian-html error:** Obsidian type page inclusion((my note)) (not implemented yet)   
