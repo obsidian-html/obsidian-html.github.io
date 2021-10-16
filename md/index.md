@@ -1,3 +1,4 @@
+   
 # Example Site   
    
 This is an example project showing off the capabilities of [Obsidian-html](https://github.com/obsidian-html/obsidian-html).   
@@ -74,6 +75,28 @@ If you want to link to files that are not markdown, use proper markdown links:
 This is built into python-markdown, and enabled by default.   
 Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created.   
 [Code block examples](Code%20block%20examples.md)   
+   
+# Lists   
+No newline is needed in between paragraphs and lists. This is standard in Obsidian. The fix is implemented by adding in the newline for the generated markdown.   
+   
+``` md
+Textblock
+- List item
+```
+   
+   
+Is converted to:   
+``` md
+Textblock
+
+-List item
+```
+   
+   
+_Example_:    
+Textblock   
+   
+- List item   
    
 # Html tweaks   
 Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change `src/template.html` out for something more basic - or more fancy.   

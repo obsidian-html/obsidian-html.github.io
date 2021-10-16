@@ -82,6 +82,23 @@ a new line, just like in Obsidian!   </p>
 <p>This is built into python-markdown, and enabled by default. <br />
 Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created. <br />
 <a href="/Code block examples.html">Code block examples</a>   </p>
+<h1 id="lists">Lists</h1>
+<p>No newline is needed in between paragraphs and lists. This is standard in Obsidian. The fix is implemented by adding in the newline for the generated markdown.   </p>
+<div class="codehilite"><pre><span></span><code>Textblock
+<span class="k">-</span> List item
+</code></pre></div>
+
+<p>Is converted to:   </p>
+<div class="codehilite"><pre><span></span><code>Textblock
+
+-List item
+</code></pre></div>
+
+<p><em>Example</em>:  <br />
+Textblock   </p>
+<ul>
+<li>List item   </li>
+</ul>
 <h1 id="html-tweaks">Html tweaks</h1>
 <p>Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change <code>src/template.html</code> out for something more basic - or more fancy.   </p>
 <h2 id="click-backs">Click-backs</h2>
