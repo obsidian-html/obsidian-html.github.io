@@ -117,7 +117,7 @@ When you click on a new link in an earlier tab, all the open tabs after it will 
 There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh.    
    
 # Not supported   
-## Code inclusion   
+## Partial code inclusion   
 Code inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    
    
 It uses the same link syntax as images:   
@@ -127,7 +127,10 @@ It uses the same link syntax as images:
 ```
    
    
-At the moment, there is a check if the file that is linked to ends in a suffix that is a known image suffix, and then it is parsed as an image. If not, you'll get the output below.   
+At the moment, full page inclusions are working, but when pointing to a chapter in a note, the entire note is included.   
+   
+The rest of the content of this section is included from [Test Inclusion](Test%20Inclusion.md).    
    
    
-> **obsidian-html error:** Obsidian type page inclusion((my note)) (not implemented yet)   
+## Test Inclusion   
+> Content
