@@ -101,6 +101,9 @@ Textblock
 # Html tweaks   
 Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change `src/template.html` out for something more basic - or more fancy.   
    
+## Header links   
+Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.   
+   
 ## Click-backs   
 When you open a whole chain of notes, you'll be scrolled rightward to keep up.    
 Clicking on a click-back corner will align that note with the left of the screen. This allows you to move back/forward one note at a time.    
