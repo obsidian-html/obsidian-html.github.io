@@ -70,7 +70,6 @@ If you want to link to files that are not markdown, use proper markdown links:
 `![](Resources/img/obsidian-html-logo.png)`   
 ![](Resources/img/obsidian-html-logo.png)   
    
-   
 # Code blocks   
 This is built into python-markdown, and enabled by default.   
 Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created.   
@@ -98,6 +97,56 @@ Textblock
    
 - List item   
    
+# Code inclusions   
+Code inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    
+   
+It uses the same link syntax as images:   
+```
+![[my note]]
+![[my note#only this chapter]]
+```
+   
+   
+In Obsidian, included content is denoted with a differently colored background. But since we first convert Obsidian notes to markdown, and markdown does not have this capability, we can only include the content inline, so it is not visible that the content comes from another page.   
+   
+## Full page inclusion   
+First take a look at what content is in this page: [Test Inclusion](Test%20Inclusion.md).    
+   
+This will be included below by writing    
+`![[Test Inclusion]]`. To make it clear where the included content begins and ends, we will write:   
+``` md
+**---begin inclusion---**
+![[Test Inclusion]]
+**---end inclusion---**
+```
+   
+   
+**---begin inclusion---**   
+   
+## Test Inclusion   
+> Content
+   
+**---end inclusion---**   
+   
+## Partial code inclusion   
+First take a look at what content is in this page: [Long long page](Long%20long%20page.md). It should be clear that we only want to include `# Chapter of interest`.    
+   
+This will be included below by writing    
+`![[Long long page#Chapter of interest]]`. To make it clear where the included content begins and ends, we will write:   
+``` md
+**---begin inclusion---**
+![[Long long page#Chapter of interest]]
+**---end inclusion---**
+---
+```
+   
+   
+**---begin inclusion---**   
+# Chapter of interest   
+Hi
+   
+**---end inclusion---**   
+   
 # Html tweaks   
 Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change `src/template.html` out for something more basic - or more fancy.   
    
@@ -117,23 +166,4 @@ The clickbacks are in the top right corner of every note:
 When you click on a new link in an earlier tab, all the open tabs after it will be closed.   
    
 ## Notice the url   
-There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh.    
-   
-# Not supported   
-## Partial code inclusion   
-Code inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    
-   
-It uses the same link syntax as images:   
-```
-![[my note]]
-![[my note#only this chapter]]
-```
-   
-   
-At the moment, full page inclusions are working, but when pointing to a chapter in a note, the entire note is included.   
-   
-The rest of the content of this section is included from [Test Inclusion](Test%20Inclusion.md).    
-   
-   
-## Test Inclusion   
-> Content
+There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh.

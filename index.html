@@ -99,6 +99,43 @@ Textblock   </p>
 <ul>
 <li>List item   </li>
 </ul>
+<h1 id="code-inclusions">Code inclusions</h1>
+<p>Code inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    </p>
+<p>It uses the same link syntax as images:   </p>
+<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
+<span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="err">#</span><span class="n">only</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">chapter</span><span class="p">]]</span><span class="w"></span>
+</code></pre></div>
+
+<p>In Obsidian, included content is denoted with a differently colored background. But since we first convert Obsidian notes to markdown, and markdown does not have this capability, we can only include the content inline, so it is not visible that the content comes from another page.   </p>
+<h2 id="full-page-inclusion">Full page inclusion</h2>
+<p>First take a look at what content is in this page: <a href="/Test Inclusion.html">Test Inclusion</a>.    </p>
+<p>This will be included below by writing  <br />
+<code>![[Test Inclusion]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+![[Test Inclusion]]
+<span class="gs">**---end inclusion---**</span>
+</code></pre></div>
+
+<p><strong>---begin inclusion---</strong>   </p>
+<h2 id="test-inclusion">Test Inclusion</h2>
+<blockquote>
+<p>Content</p>
+</blockquote>
+<p><strong>---end inclusion---</strong>   </p>
+<h2 id="partial-code-inclusion">Partial code inclusion</h2>
+<p>First take a look at what content is in this page: <a href="/Long long page.html">Long long page</a>. It should be clear that we only want to include <code># Chapter of interest</code>.    </p>
+<p>This will be included below by writing  <br />
+<code>![[Long long page#Chapter of interest]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+![[Long long page#Chapter of interest]]
+<span class="gs">**---end inclusion---**</span>
+---
+</code></pre></div>
+
+<p><strong>---begin inclusion---</strong>   </p>
+<h1 id="chapter-of-interest">Chapter of interest</h1>
+<p>Hi</p>
+<p><strong>---end inclusion---</strong>   </p>
 <h1 id="html-tweaks">Html tweaks</h1>
 <p>Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change <code>src/template.html</code> out for something more basic - or more fancy.   </p>
 <h2 id="header-links">Header links</h2>
@@ -112,21 +149,7 @@ Clicking on a click-back corner will align that note with the left of the screen
 <h2 id="closing-tabs">Closing tabs</h2>
 <p>When you click on a new link in an earlier tab, all the open tabs after it will be closed.   </p>
 <h2 id="notice-the-url">Notice the url</h2>
-<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.    </p>
-<h1 id="not-supported">Not supported</h1>
-<h2 id="partial-code-inclusion">Partial code inclusion</h2>
-<p>Code inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    </p>
-<p>It uses the same link syntax as images:   </p>
-<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
-<span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="err">#</span><span class="n">only</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">chapter</span><span class="p">]]</span><span class="w"></span>
-</code></pre></div>
-
-<p>At the moment, full page inclusions are working, but when pointing to a chapter in a note, the entire note is included.   </p>
-<p>The rest of the content of this section is included from <a href="/Test Inclusion.html">Test Inclusion</a>.    </p>
-<h2 id="test-inclusion">Test Inclusion</h2>
-<blockquote>
-<p>Content</p>
-</blockquote>
+<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.</p>
         <!-- end content -->
         </div>
 </div>
