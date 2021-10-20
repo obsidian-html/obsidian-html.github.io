@@ -64,7 +64,7 @@ If you want to link to files that are not markdown, use proper markdown links:
 # Images   
 ## Obsidian type image links    
 `![[Resources/img/obsidian-html-logo-sq.png]]`   
-![](Resources/img/obsidian-html-logo-sq.png)   
+![](Resources/img/obsidian-html-logo.png)   
    
 ## Proper markdown image links   
 `![](Resources/img/obsidian-html-logo.png)`   
