@@ -129,21 +129,28 @@ This will be included below by writing
 **---end inclusion---**   
    
 ## Partial code inclusion   
-First take a look at what content is in this page: [Long long page](Long%20long%20page.md). It should be clear that we only want to include `# Chapter of interest`.    
+With partial code inclusion, we can reference a header, and then only that header and the content of that header is included. The content is read until the first header of the same level (h1 --> h1, h2 --> h2, etc), or lower level, is found. So, including a h1 header that has h2 header under it, will include those headers and their content too.   
    
-This will be included below by writing    
-`![[Long long page#Chapter of interest]]`. To make it clear where the included content begins and ends, we will write:   
+First take a look at what content is in this page: [Test inclusion 2](Test%20inclusion%202.md).   
+   
+Let's say that we only want the second (h2) chapter included.    
+This can be done by writing    
+`![[Test inclusion 2#Second chapter]]`. To make it clear where the included content begins and ends, we will write:   
 ``` md
 **---begin inclusion---**
-![[Long long page#Chapter of interest]]
+![[Test inclusion 2#Second chapter]]
 **---end inclusion---**
 ---
 ```
    
    
 **---begin inclusion---**   
-# Chapter of interest   
-Hi
+## Second chapter   
+Content second chapter   
+   
+### An h3   
+This is still a child of `Second chapter`   
+   
    
 **---end inclusion---**   
    
