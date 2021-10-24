@@ -1,3 +1,8 @@
+---
+tags:
+- type/undefined
+- status/inbox
+---
    
 # Code block examples   
 ## Python   

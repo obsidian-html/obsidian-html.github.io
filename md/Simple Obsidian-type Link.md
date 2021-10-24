@@ -1,3 +1,8 @@
+---
+tags:
+- type/undefined
+- status/inbox
+---
    
 # Simple Obsidian-type Link   
 Obsidian-type link aliasing    

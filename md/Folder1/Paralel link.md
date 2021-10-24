@@ -1,3 +1,8 @@
+---
+tags:
+- type/undefined
+- status/inbox
+---
    
 # Paralel link   
    
