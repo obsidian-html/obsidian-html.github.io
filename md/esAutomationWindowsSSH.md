@@ -12,13 +12,8 @@ This is a nice method if your webserver is reachable over SSH from your workstat
 Function Publish-Obsidian {
 
 	param(
-		$Entrypoint = "C:\Users\Installer\OneDrive\Obsidian\Notes\Devfruits Notes.md",
-		$RootFolder = "C:\Users\Installer\OneDrive\Obsidian\Notes\",
-		$OutputMdFolder = "C:\Users\Installer\Documents\git\obsidian-html\output\md",
-		$OutputHtmlFolder = "C:\Users\Installer\Documents\git\obsidian-html\output\html\",
-		$SiteName = 'Devfruits/Notes',
-		$HtmlUrlPrefix = '',
 		$PrivateKeyPath = $script:PrivateKeyPath
+		$ConfigFilePath = "C:\Users\Installer\Documents\ObsidianServer\configs\devfruits.yml"
 	)
 	
 
@@ -26,7 +21,7 @@ Function Publish-Obsidian {
 	
 	# Convert Obsidian to HTML
 	cd "C:\Users\Installer\Documents\git\obsidian-html"
-	python -m obsidianhtml -i "C:\Users\Installer\Documents\ObsidianServer\configs\devfruits.yml"
+	python -m obsidianhtml -i $ConfigFilePath
 	
 	if (-not $?){
 		Write-Error "Python script failed. Exited."

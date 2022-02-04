@@ -37,13 +37,8 @@
 <div class="codehilite"><pre><span></span><code><span class="k">Function</span> <span class="nb">Publish-Obsidian</span> <span class="p">{</span>
 
     <span class="k">param</span><span class="p">(</span>
-        <span class="nv">$Entrypoint</span> <span class="p">=</span> <span class="s2">&quot;C:\Users\Installer\OneDrive\Obsidian\Notes\Devfruits Notes.md&quot;</span><span class="p">,</span>
-        <span class="nv">$RootFolder</span> <span class="p">=</span> <span class="s2">&quot;C:\Users\Installer\OneDrive\Obsidian\Notes\&quot;</span><span class="p">,</span>
-        <span class="nv">$OutputMdFolder</span> <span class="p">=</span> <span class="s2">&quot;C:\Users\Installer\Documents\git\obsidian-html\output\md&quot;</span><span class="p">,</span>
-        <span class="nv">$OutputHtmlFolder</span> <span class="p">=</span> <span class="s2">&quot;C:\Users\Installer\Documents\git\obsidian-html\output\html\&quot;</span><span class="p">,</span>
-        <span class="nv">$SiteName</span> <span class="p">=</span> <span class="s1">&#39;Devfruits/Notes&#39;</span><span class="p">,</span>
-        <span class="nv">$HtmlUrlPrefix</span> <span class="p">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="nv">$PrivateKeyPath</span> <span class="p">=</span> <span class="nv">$script:PrivateKeyPath</span>
+        <span class="nv">$ConfigFilePath</span> <span class="p">=</span> <span class="s2">&quot;C:\Users\Installer\Documents\ObsidianServer\configs\devfruits.yml&quot;</span>
     <span class="p">)</span>
 
 
@@ -51,7 +46,7 @@
 
     <span class="c"># Convert Obsidian to HTML</span>
     <span class="nb">cd </span><span class="s2">&quot;C:\Users\Installer\Documents\git\obsidian-html&quot;</span>
-    <span class="n">python</span> <span class="n">-m</span> <span class="n">obsidianhtml</span> <span class="n">-i</span> <span class="s2">&quot;C:\Users\Installer\Documents\ObsidianServer\configs\devfruits.yml&quot;</span>
+    <span class="n">python</span> <span class="n">-m</span> <span class="n">obsidianhtml</span> <span class="n">-i</span> <span class="nv">$ConfigFilePath</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">$?){</span>
         <span class="nb">Write-Error</span> <span class="s2">&quot;Python script failed. Exited.&quot;</span>
