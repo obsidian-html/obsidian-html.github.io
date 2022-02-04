@@ -29,25 +29,37 @@
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="automate-website-deployment">Automate website deployment</h1>
-<p>If you have a website hosted based on an obsidian project like I do, it can be useful to create some scripting to automate pushing to your webserver.   </p>
-<blockquote>
-<p>Note that these scripts are a starting point, and may not comply to the most up to date security considerations or other best practices!   </p>
-</blockquote>
-<h2 id="using-a-git-repo-as-an-intermediate">Using a git repo as an intermediate</h2>
-<p>The scripts below empty an <em>existing</em> git repo folder, skipping the <code>README.md</code> file and <code>.git</code> directory. The script will then generate the html code an put it in your repo, commit and push.    </p>
-<p>This will update your git repo with the updated code for your website. This is all the script does.    </p>
-<p>As a next step, configure a process on your webserver that periodically pulls the git repo, or configure a pipeline to start running on a git push to get this git code deployed on your server.    </p>
-<ul>
-<li><a href="/esAutomationLinuxGit.html">Auto push using git (Linux)</a>   </li>
-<li><a href="/esAutomationWindows.html">Auto push using git (Windows)</a>   </li>
-</ul>
-<h2 id="pushing-directly-to-a-local-webserver">Pushing directly to a local webserver</h2>
-<p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the Git method or something along those lines.   </p>
-<ul>
-<li><a href="/esAutomationLinuxSSH.html">Auto push to local webserver (Linux)</a>   </li>
-<li><a href="/esAutomationWindowsSSH.html">Auto push to local webserver (Windows)</a></li>
-</ul>
+        <h1 id="auto-push-site-to-a-local-webserver-on-linux">Auto push site to a local webserver on Linux</h1>
+<p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using th <a href="/Resources/Example site/esAutomationLinuxGit.html">Git method</a> or something along those lines.   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Config</span>
+<span class="nv">obsidian_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html&quot;</span>
+<span class="nv">output_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html/local_output&quot;</span>
+
+<span class="nv">config_file</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html/local_configs/devfruits.yml&quot;</span>
+
+<span class="nv">target</span><span class="o">=</span><span class="s2">&quot;user@webserver&quot;</span>
+<span class="nv">web_folder</span><span class="o">=</span><span class="s2">&quot;/home/web/www/devfruits&quot;</span>
+
+<span class="c1"># Convert Obsidian to HTML</span>
+<span class="nb">cd</span> <span class="nv">$obsidian_folder</span>
+python -m obsidianhtml -i <span class="nv">$config_file</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Python script failed. Exited.&quot;</span>
+    <span class="nb">cd</span> <span class="nv">$origin</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Successfully created html code&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Remove previous files</span>
+ssh <span class="nv">$target</span> rm -rf <span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/*&quot;</span>
+
+<span class="c1"># Upload new files</span>
+scp -r <span class="s2">&quot;</span><span class="nv">$output_folder</span><span class="s2">/html/*&quot;</span> <span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/&quot;</span>
+</code></pre></div>
+
+<p><a href="/Resources/Example site/esAutomation.html">Other ways of pushing websites</a></p>
         <!-- end content -->
         </div>
 </div>

@@ -24,8 +24,8 @@ See also this site, which uses purely this code: [devfruits.com](https://www.dev
 - [Note inclusions](Resources/Example%20site/esInclusions.md)   
 - [Mermaid Diagrams](Resources/Example%20site/esMermaid.md)   
 - [HTML Tweaks](Resources/Example%20site/esHTML.md)   
-- [Tags](esTags.md)   
+- [Tags](Resources/Example%20site/esTags.md)   
    
 # Tips and tricks   
    
-- [Automate website deployment](esAutomation.md)
+- [Automate website deployment](Resources/Example%20site/esAutomation.md)

@@ -4,7 +4,7 @@ tags:
 ---
    
 # Auto push site to a local webserver on Windows   
-This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the [Git method](esAutomationWindows.md) or something along those lines.   
+This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the [Git method](../../Resources/Example%20site/esAutomationWindows.md) or something along those lines.   
    
 > I did not feel like rewriting this script. This is just here as a reference. Be sure to update all the hardcode values for something that makes sense for your environment.   
    
@@ -41,4 +41,4 @@ Function Publish-Obsidian {
 ```
    
    
-[Other ways of pushing websites](esAutomation.md)
+[Other ways of pushing websites](../../Resources/Example%20site/esAutomation.md)

@@ -5,7 +5,7 @@ tags:
 ---
    
 # Auto push site to a local webserver on Linux   
-This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using th [Git method](esAutomationLinuxGit.md) or something along those lines.   
+This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using th [Git method](../../Resources/Example%20site/esAutomationLinuxGit.md) or something along those lines.   
    
 ``` bash
 # Config
@@ -37,4 +37,4 @@ scp -r "$output_folder/html/*" "$web_folder/"
 ```
    
    
-[Other ways of pushing websites](esAutomation.md)
+[Other ways of pushing websites](../../Resources/Example%20site/esAutomation.md)

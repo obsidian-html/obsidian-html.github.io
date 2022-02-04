@@ -17,12 +17,12 @@ This will update your git repo with the updated code for your website. This is a
 As a next step, configure a process on your webserver that periodically pulls the git repo, or configure a pipeline to start running on a git push to get this git code deployed on your server.    
    
    
-- [Auto push using git (Linux)](esAutomationLinuxGit.md)   
-- [Auto push using git (Windows)](esAutomationWindows.md)   
+- [Auto push using git (Linux)](../../Resources/Example%20site/esAutomationLinuxGit.md)   
+- [Auto push using git (Windows)](../../Resources/Example%20site/esAutomationWindows.md)   
    
 ## Pushing directly to a local webserver   
 This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the Git method or something along those lines.   
    
    
-- [Auto push to local webserver (Linux)](esAutomationLinuxSSH.md)   
-- [Auto push to local webserver (Windows)](esAutomationWindowsSSH.md)
+- [Auto push to local webserver (Linux)](../../Resources/Example%20site/esAutomationLinuxSSH.md)   
+- [Auto push to local webserver (Windows)](../../Resources/Example%20site/esAutomationWindowsSSH.md)

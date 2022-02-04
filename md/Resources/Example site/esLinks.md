@@ -6,7 +6,7 @@ tags:
    
 # Links   
 ## Obsidian type links   
-`[[Simple Obsidian-type Link]]` translates too:   
+`[[Simple Obsidian-type Link]]` translates to:   
 [Simple Obsidian-type Link](../../Resources/Example%20site/Simple%20Obsidian-type%20Link.md)   
    
 Aliasing also works, `[[Simple Obsidian-type Link|Same link as before]]`:   
