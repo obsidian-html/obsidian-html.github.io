@@ -28,19 +28,19 @@ a new line, just like in Obsidian!
 # Links   
 ## Obsidian type links   
 `[[Simple Obsidian-type Link]]` translates too:   
-[Simple Obsidian-type Link](Simple%20Obsidian-type%20Link.md)   
+[Simple Obsidian-type Link](Resources/Example%20site/Simple%20Obsidian-type%20Link.md)   
    
 Aliasing also works, `[[Simple Obsidian-type Link|Same link as before]]`:   
-[Same link as before](Simple%20Obsidian-type%20Link.md)   
+[Same link as before](Resources/Example%20site/Simple%20Obsidian-type%20Link.md)   
    
 As does linking to chapters `[[Long long page#Chapter of interest]]`   
-[Long long page#Chapter of interest](Long%20long%20page.md#chapter-of-interest)   
+[Long long page#Chapter of interest](Resources/Example%20site/Long%20long%20page.md#chapter-of-interest)   
    
 ## Proper markdown links   
 There is a setting that forces Obsidian to use proper markdown notation. So this is also supported:   
    
 `[Proper markdown link](proper%20markdown)`   
-[Proper markdown link](proper markdown.md)   
+[Proper markdown link](Resources/Example site/proper markdown.md)   
     
  Note that spaces must be encoded in proper markdown links.   
    
@@ -78,7 +78,7 @@ If you want to link to files that are not markdown, use proper markdown links:
 # Code blocks   
 This is built into python-markdown, and enabled by default.   
 Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created.   
-[Code block examples](Code%20block%20examples.md)   
+[Code block examples](Resources/Example%20site/Code%20block%20examples.md)   
    
 # Lists   
 No newline is needed in between paragraphs and lists. This is standard in Obsidian. The fix is implemented by adding in the newline for the generated markdown.   
@@ -115,7 +115,7 @@ It uses the same link syntax as images:
 In Obsidian, included content is denoted with a differently colored background. But since we first convert Obsidian notes to markdown, and markdown does not have this capability, we can only include the content inline, so it is not visible that the content comes from another page.   
    
 ## Full page inclusion   
-First take a look at what content is in this page: [Test Inclusion](Test%20Inclusion.md).    
+First take a look at what content is in this page: [Test Inclusion](Resources/Example%20site/Test%20Inclusion.md).    
    
 This will be included below by writing    
 `![[Test Inclusion]]`. To make it clear where the included content begins and ends, we will write:   
@@ -136,7 +136,7 @@ This will be included below by writing
 ## Partial code inclusion   
 With partial code inclusion, we can reference a header, and then only that header and the content of that header is included. The content is read until the first header of the same level (h1 --> h1, h2 --> h2, etc), or lower level, is found. So, including a h1 header that has h2 header under it, will include those headers and their content too.   
    
-First take a look at what content is in this page: [Test inclusion 2](Test%20inclusion%202.md).   
+First take a look at what content is in this page: [Test inclusion 2](Resources/Example%20site/Test%20inclusion%202.md).   
    
 Let's say that we only want the second (h2) chapter included.    
 This can be done by writing    
@@ -159,6 +159,13 @@ This is still a child of `Second chapter`
    
 **---end inclusion---**   
    
+# Mermaid   
+```mermaid  
+flowchart LR  
+ Start --> Stop 
+```
+   
+   
 # Html tweaks   
 Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change `src/template.html` out for something more basic - or more fancy.   
    
@@ -172,7 +179,7 @@ Clicking on a click-back corner will align that note with the left of the screen
 Of course, the scrollbar and arrow keys are available too as methods of navigation.   
    
 The clickbacks are in the top right corner of every note:   
-![](Pasted%20image%2020211012013603.png)   
+![](Resources/img/Pasted%20image%2020211012013603.png)   
    
 ## Closing tabs   
 When you click on a new link in an earlier tab, all the open tabs after it will be closed.   

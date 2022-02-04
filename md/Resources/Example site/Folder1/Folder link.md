@@ -8,4 +8,4 @@ tags:
    
 We are in folder1   
    
-[Paralel link](../Folder1/Paralel%20link.md)
+[Paralel link](../../../Resources/Example%20site/Folder1/Paralel%20link.md)
