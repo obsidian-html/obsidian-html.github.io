@@ -33,6 +33,8 @@ body {
     padding: 2rem;
     height: calc(100vh - 5rem);
     overflow: scroll;  
+    overflow-y: scroll;
+    scrollbar-color: #7c7f8c #f0f0f0;
 }
 .container-wrapper {
     max-width: calc(45rem + 3rem);
@@ -49,7 +51,7 @@ body {
     width: 2.0rem;
     height: 1.1rem;
     top: 0px;
-    right: 1rem;
+    right: 0.78rem;
     border-radius: 0 0 0 1rem;
     cursor: pointer;
 }
