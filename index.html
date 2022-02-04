@@ -30,138 +30,23 @@
 <div class="container-wrapper">
         <div class="container">
         <h1 id="example-site">Example Site</h1>
-<p>This is an example project showing off the capabilities of <a href="https://github.com/obsidian-html/obsidian-html" class="external-link" class="external-link">Obsidian-html</a>.   </p>
+<p>This is an example project showing off the capabilities of <a href="https://github.com/obsidian-html/obsidian-html" class="external-link">Obsidian-html</a>.   </p>
 <p>In short, this code converts Obsidian notes to proper markdown, and then spits out a site like this. <a href="https://github.com/obsidian-html/obsidian-html.github.io/tree/main/md" class="external-link">You can find the generated markdown here</a>.   </p>
 <p>See also this site, which uses purely this code: <a href="https://www.devfruits.com" class="external-link">devfruits.com</a>.   </p>
 <blockquote>
 <p>All credit to this site's design goes to Andy Matuschak. I basically <a href="https://notes.andymatuschak.org/Evergreen_notes" class="external-link">stole his design</a> because I think it is perfect.   </p>
 </blockquote>
-<h1 id="basics">Basics</h1>
-<div class="codehilite"><pre><span></span><code>One enter
-translates to
-a new line, just like in Obsidian!
-</code></pre></div>
-
-<p>One enter <br />
-translates to <br />
-a new line, just like in Obsidian!   </p>
-<h1 id="links">Links</h1>
-<h2 id="obsidian-type-links">Obsidian type links</h2>
-<p><code>[[Simple Obsidian-type Link]]</code> translates too: <br />
-<a href="/Resources/Example site/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a>   </p>
-<p>Aliasing also works, <code>[[Simple Obsidian-type Link|Same link as before]]</code>: <br />
-<a href="/Resources/Example site/Simple Obsidian-type Link.html">Same link as before</a>   </p>
-<p>As does linking to chapters <code>[[Long long page#Chapter of interest]]</code> <br />
-<a href="/Resources/Example site/Long long page.html#chapter-of-interest">Long long page#Chapter of interest</a>   </p>
-<h2 id="proper-markdown-links">Proper markdown links</h2>
-<p>There is a setting that forces Obsidian to use proper markdown notation. So this is also supported:   </p>
-<p><code>[Proper markdown link](proper%20markdown)</code> <br />
-<a href="/Resources/Example site/proper markdown.html">Proper markdown link</a>   </p>
-<p>Note that spaces must be encoded in proper markdown links.   </p>
-<h2 id="link-awareness">Link awareness</h2>
-<p>An external links show up the little icon to show it: <br />
-<a href="https://github.com/obsidian-html/obsidian-html" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html</a>   </p>
-<p>When linking to new notes, and not creating them, the link will be replaced with "not_created.html", and the link will be color coded by adding <code>class="nonexistent-link"</code> to the a href:   </p>
-<p><a href="/not_created.html" class="nonexistent-link">In the end I never created this note</a>   </p>
-<h2 id="link-to-non-markdown-files">Link to non-markdown files</h2>
-<p>Image files and other non-markdown files local to the given root folder get copied over to the output. Take for example: <a href="textfile.txt" class="external-link">test textfile</a>.   </p>
-<p>Note that Obsidian type links will always be appended with .md if this is missing.    </p>
-<p>This is the default behavior of Obsidian. You can work around this, but when you do, it is impossible to determine with 100% certainty which file is linked to.    </p>
-<p>If you want to link to files that are not markdown, use proper markdown links:   </p>
-<div class="codehilite"><pre><span></span><code><span class="p">[[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">]]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">.</span><span class="n">md</span><span class="p">)</span><span class="w"></span>
-<span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-
-<h1 id="images">Images</h1>
-<h2 id="obsidian-type-image-links">Obsidian type image links</h2>
-<p><code>![[Resources/img/obsidian-html-logo-sq.png]]</code> <br />
-<img alt="" src="Resources/img/obsidian-html-logo.png" />   </p>
-<h2 id="proper-markdown-image-links">Proper markdown image links</h2>
-<p><code>![](Resources/img/obsidian-html-logo.png)</code> <br />
-<img alt="" src="Resources/img/obsidian-html-logo.png" />   </p>
-<h1 id="code-blocks">Code blocks</h1>
-<p>This is built into python-markdown, and enabled by default. <br />
-Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created. <br />
-<a href="/Resources/Example site/Code block examples.html">Code block examples</a>   </p>
-<h1 id="lists">Lists</h1>
-<p>No newline is needed in between paragraphs and lists. This is standard in Obsidian. The fix is implemented by adding in the newline for the generated markdown.   </p>
-<div class="codehilite"><pre><span></span><code>Textblock
-<span class="k">-</span> List item
-</code></pre></div>
-
-<p>Is converted to:   </p>
-<div class="codehilite"><pre><span></span><code>Textblock
-
-<span class="k">-</span> List item
-</code></pre></div>
-
-<p><em>Example</em>:  <br />
-Textblock   </p>
+<h1 id="features">Features</h1>
 <ul>
-<li>List item   </li>
+<li><a href="/Resources/Example site/esBasics.html">Basics</a>   </li>
+<li><a href="/Resources/Example site/esLinks.html">Links</a>   </li>
+<li><a href="/Resources/Example site/esImages.html">Images</a>   </li>
+<li><a href="/Resources/Example site/esCodeBlocks.html">Code blocks</a>   </li>
+<li><a href="/Resources/Example site/esLists.html">Lists</a>   </li>
+<li><a href="/Resources/Example site/esInclusions.html">Note inclusions</a>   </li>
+<li><a href="/Resources/Example site/esMermaid.html">Mermaid Diagrams</a>   </li>
+<li><a href="/Resources/Example site/esHTML.html">HTML Tweaks</a></li>
 </ul>
-<h1 id="code-inclusions">Code inclusions</h1>
-<p>Code inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    </p>
-<p>It uses the same link syntax as images:   </p>
-<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
-<span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="err">#</span><span class="n">only</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">chapter</span><span class="p">]]</span><span class="w"></span>
-</code></pre></div>
-
-<p>In Obsidian, included content is denoted with a differently colored background. But since we first convert Obsidian notes to markdown, and markdown does not have this capability, we can only include the content inline, so it is not visible that the content comes from another page.   </p>
-<h2 id="full-page-inclusion">Full page inclusion</h2>
-<p>First take a look at what content is in this page: <a href="/Resources/Example site/Test Inclusion.html">Test Inclusion</a>.    </p>
-<p>This will be included below by writing  <br />
-<code>![[Test Inclusion]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
-<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
-![[Test Inclusion]]
-<span class="gs">**---end inclusion---**</span>
-</code></pre></div>
-
-<p><strong>---begin inclusion---</strong>   </p>
-<h2 id="test-inclusion">Test Inclusion</h2>
-<blockquote>
-<p>Content</p>
-</blockquote>
-<p><strong>---end inclusion---</strong>   </p>
-<h2 id="partial-code-inclusion">Partial code inclusion</h2>
-<p>With partial code inclusion, we can reference a header, and then only that header and the content of that header is included. The content is read until the first header of the same level (h1 --&gt; h1, h2 --&gt; h2, etc), or lower level, is found. So, including a h1 header that has h2 header under it, will include those headers and their content too.   </p>
-<p>First take a look at what content is in this page: <a href="/Resources/Example site/Test inclusion 2.html">Test inclusion 2</a>.   </p>
-<p>Let's say that we only want the second (h2) chapter included.  <br />
-This can be done by writing  <br />
-<code>![[Test inclusion 2#Second chapter]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
-<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
-![[Test inclusion 2#Second chapter]]
-<span class="gs">**---end inclusion---**</span>
----
-</code></pre></div>
-
-<p><strong>---begin inclusion---</strong>   </p>
-<h2 id="second-chapter">Second chapter</h2>
-<p>Content second chapter   </p>
-<h3 id="an-h3">An h3</h3>
-<p>This is still a child of <code>Second chapter</code>   </p>
-<p><strong>---end inclusion---</strong>   </p>
-<h1 id="mermaid">Mermaid</h1>
-<div class="mermaid">
-flowchart LR
-Start --> Stop
-</div>
-
-<h1 id="html-tweaks">Html tweaks</h1>
-<p>Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change <code>src/template.html</code> out for something more basic - or more fancy.   </p>
-<h2 id="header-links">Header links</h2>
-<p>Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.   </p>
-<h2 id="click-backs">Click-backs</h2>
-<p>When you open a whole chain of notes, you'll be scrolled rightward to keep up.  <br />
-Clicking on a click-back corner will align that note with the left of the screen. This allows you to move back/forward one note at a time.    </p>
-<p>Of course, the scrollbar and arrow keys are available too as methods of navigation.   </p>
-<p>The clickbacks are in the top right corner of every note: <br />
-<img alt="" src="Resources/img/Pasted%20image%2020211012013603.png" />   </p>
-<h2 id="closing-tabs">Closing tabs</h2>
-<p>When you click on a new link in an earlier tab, all the open tabs after it will be closed.   </p>
-<h2 id="notice-the-url">Notice the url</h2>
-<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.</p>
-<script>mermaid.initialize({startOnLoad:true});</script>
         <!-- end content -->
         </div>
 </div>
@@ -266,6 +151,9 @@ Clicking on a click-back corner will align that note with the left of the screen
 
                 // Set click to get header link
                 SetHeaders(container);
+
+                // Load mermaid code
+                mermaid.init()
         }
 
         function SetHeaders(container){

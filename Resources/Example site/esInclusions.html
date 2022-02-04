@@ -29,16 +29,47 @@
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="test-inclusion-2">Test Inclusion 2</h1>
-<p>First chapter   </p>
+        <h1 id="code-inclusions">Code inclusions</h1>
+<p>Code inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    </p>
+<p>It uses the same link syntax as images:   </p>
+<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
+<span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="err">#</span><span class="n">only</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">chapter</span><span class="p">]]</span><span class="w"></span>
+</code></pre></div>
+
+<p>In Obsidian, included content is denoted with a differently colored background. But since we first convert Obsidian notes to markdown, and markdown does not have this capability, we can only include the content inline, so it is not visible that the content comes from another page.   </p>
+<h2 id="full-page-inclusion">Full page inclusion</h2>
+<p>First take a look at what content is in this page: <a href="/Resources/Example site/Test Inclusion.html">Test Inclusion</a>.    </p>
+<p>This will be included below by writing  <br />
+<code>![[Test Inclusion]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+![[Test Inclusion]]
+<span class="gs">**---end inclusion---**</span>
+</code></pre></div>
+
+<p><strong>---begin inclusion---</strong>   </p>
+<h2 id="test-inclusion">Test Inclusion</h2>
+<blockquote>
+<p>Content</p>
+</blockquote>
+<p><strong>---end inclusion---</strong>   </p>
+<h2 id="partial-code-inclusion">Partial code inclusion</h2>
+<p>With partial code inclusion, we can reference a header, and then only that header and the content of that header is included. The content is read until the first header of the same level (h1 --&gt; h1, h2 --&gt; h2, etc), or lower level, is found. So, including a h1 header that has h2 header under it, will include those headers and their content too.   </p>
+<p>First take a look at what content is in this page: <a href="/Resources/Example site/Test inclusion 2.html">Test inclusion 2</a>.   </p>
+<p>Let's say that we only want the second (h2) chapter included.  <br />
+This can be done by writing  <br />
+<code>![[Test inclusion 2#Second chapter]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+![[Test inclusion 2#Second chapter]]
+<span class="gs">**---end inclusion---**</span>
+---
+</code></pre></div>
+
+<p><strong>---begin inclusion---</strong>   </p>
 <h2 id="second-chapter">Second chapter</h2>
 <p>Content second chapter   </p>
 <h3 id="an-h3">An h3</h3>
 <p>This is still a child of <code>Second chapter</code>   </p>
-<h2 id="another-h2">Another h2</h2>
-<p>This is a sibling of <code>Second chapter</code>, and thus not included when you include <code>Second chapter</code>.   </p>
-<h1 id="new-h1-header">New h1 header</h1>
-<p>content second h1</p>
+<p><strong>---end inclusion---</strong></p>
         <!-- end content -->
         </div>
 </div>
