@@ -1,6 +1,6 @@
 ---
 tags:
-- type/undefined
+- type/test_page
 - status/inbox
 ---
    

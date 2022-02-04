@@ -1,6 +1,6 @@
 ---
 tags:
-- type/undefined
+- type/moc
 - status/inbox
 ---
    
@@ -23,4 +23,5 @@ See also this site, which uses purely this code: [devfruits.com](https://www.dev
 - [Lists](Resources/Example%20site/esLists.md)   
 - [Note inclusions](Resources/Example%20site/esInclusions.md)   
 - [Mermaid Diagrams](Resources/Example%20site/esMermaid.md)   
-- [HTML Tweaks](Resources/Example%20site/esHTML.md)
+- [HTML Tweaks](Resources/Example%20site/esHTML.md)   
+- [Tags](esTags.md)

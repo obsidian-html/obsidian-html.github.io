@@ -1,5 +1,7 @@
 ---
 tags:
+- type/html_tweaks
+- type/styling
 - date/2022-02-04
 ---
    

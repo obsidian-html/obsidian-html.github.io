@@ -1,6 +1,6 @@
 ---
 tags:
-- type/undefined
+- type/parsing_markdown
 - status/inbox
 ---
    
