@@ -37,8 +37,8 @@
         <h1 id="folder-link">Folder link</h1>
 <p>We are in folder1   </p>
 <p><a href="/Resources/Example site/Folder1/Paralel link.html">Paralel link</a></p>
-<svg id="A520b97f2e3624cef86570ebf00aeb777" width="680" height="400"></svg>
-<button class="graph_button" id="B520b97f2e3624cef86570ebf00aeb777" onclick="run('520b97f2e3624cef86570ebf00aeb777', 'Folder link');">Show Graph</button>
+<svg class="graph_svg" id="Ac2e3be14e572444893680b7c032eb159{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Bc2e3be14e572444893680b7c032eb159{level}" level="{level}" onclick="run('c2e3be14e572444893680b7c032eb159'+this.level, 'Folder link');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -58,7 +58,11 @@ function run(uid, pinnedNode){
         _svg.style.display = "block";
 
         cont = _svg.parentElement;
-        window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        
+        if (cont.getBoundingClientRect().right > window.visualViewport.width){
+                window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        }
+        
     }
 
     // run d3 graph
@@ -229,6 +233,7 @@ function run(uid, pinnedNode){
         // Init starting container
         FirstContainer = document.getElementsByClassName('container')[0];
         FirstContainer.id = 'level-0';
+        FirstContainer.level = '0';
         SetContainer(FirstContainer);    
         
         // Open the path on loading the page
@@ -312,6 +317,18 @@ function run(uid, pinnedNode){
 
                 // Load mermaid code
                 mermaid.init()
+
+                // set graph svg and button to have unique id across tabs
+                svgs = container.querySelectorAll(".graph_svg");
+                if (svgs.length == 1){
+                        svgs[0].id = svgs[0].id.replace('{level}', container.level)
+                }
+                
+                let buttons = container.querySelectorAll(".graph_button");
+                if (buttons.length == 1){
+                        buttons[0].level = container.level;
+                        buttons[0].id = buttons[0].id.replace('{level}', container.level)
+                }
         }
 
         function SetHeaders(container){
@@ -367,7 +384,6 @@ function run(uid, pinnedNode){
         
         function httpGetAsync(theUrl, callback, level, callbackpath)
         {
-                console.log("htt", level);
                 var xmlHttp = new XMLHttpRequest();
                 xmlHttp.onreadystatechange = function() { 
                         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -408,6 +424,7 @@ function run(uid, pinnedNode){
                         levelcont = document.createElement('div');
                         levelcont.className = 'container';
                         levelcont.id = 'level-'+level;
+                        levelcont.level = level;
                 }
 
                 // Update content of div

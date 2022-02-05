@@ -60,8 +60,8 @@
 <div class="codehilite"><pre><span></span><code><span class="p">[[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">]]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">.</span><span class="n">md</span><span class="p">)</span><span class="w"></span>
 <span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
-<svg id="Abad89bbcea6b4b858f2ca7ff80edbc5a" width="680" height="400"></svg>
-<button class="graph_button" id="Bbad89bbcea6b4b858f2ca7ff80edbc5a" onclick="run('bad89bbcea6b4b858f2ca7ff80edbc5a', 'Links');">Show Graph</button>
+<svg class="graph_svg" id="A69e2ad67601243e6b5fc08a601cf522e{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B69e2ad67601243e6b5fc08a601cf522e{level}" level="{level}" onclick="run('69e2ad67601243e6b5fc08a601cf522e'+this.level, 'Links');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -81,7 +81,11 @@ function run(uid, pinnedNode){
         _svg.style.display = "block";
 
         cont = _svg.parentElement;
-        window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        
+        if (cont.getBoundingClientRect().right > window.visualViewport.width){
+                window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        }
+        
     }
 
     // run d3 graph
@@ -252,6 +256,7 @@ function run(uid, pinnedNode){
         // Init starting container
         FirstContainer = document.getElementsByClassName('container')[0];
         FirstContainer.id = 'level-0';
+        FirstContainer.level = '0';
         SetContainer(FirstContainer);    
         
         // Open the path on loading the page
@@ -335,6 +340,18 @@ function run(uid, pinnedNode){
 
                 // Load mermaid code
                 mermaid.init()
+
+                // set graph svg and button to have unique id across tabs
+                svgs = container.querySelectorAll(".graph_svg");
+                if (svgs.length == 1){
+                        svgs[0].id = svgs[0].id.replace('{level}', container.level)
+                }
+                
+                let buttons = container.querySelectorAll(".graph_button");
+                if (buttons.length == 1){
+                        buttons[0].level = container.level;
+                        buttons[0].id = buttons[0].id.replace('{level}', container.level)
+                }
         }
 
         function SetHeaders(container){
@@ -390,7 +407,6 @@ function run(uid, pinnedNode){
         
         function httpGetAsync(theUrl, callback, level, callbackpath)
         {
-                console.log("htt", level);
                 var xmlHttp = new XMLHttpRequest();
                 xmlHttp.onreadystatechange = function() { 
                         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -431,6 +447,7 @@ function run(uid, pinnedNode){
                         levelcont = document.createElement('div');
                         levelcont.className = 'container';
                         levelcont.id = 'level-'+level;
+                        levelcont.level = level;
                 }
 
                 // Update content of div

@@ -15,7 +15,7 @@
                 <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
                 <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
                 <script src="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
-                {dynamic_includes}
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/taglist.css" />
 
                 <!-- Onload tweaks -->
                 <script>
@@ -68,6 +68,7 @@
         // Init starting container
         FirstContainer = document.getElementsByClassName('container')[0];
         FirstContainer.id = 'level-0';
+        FirstContainer.level = '0';
         SetContainer(FirstContainer);    
         
         // Open the path on loading the page
@@ -151,6 +152,18 @@
 
                 // Load mermaid code
                 mermaid.init()
+
+                // set graph svg and button to have unique id across tabs
+                svgs = container.querySelectorAll(".graph_svg");
+                if (svgs.length == 1){
+                        svgs[0].id = svgs[0].id.replace('{level}', container.level)
+                }
+                
+                let buttons = container.querySelectorAll(".graph_button");
+                if (buttons.length == 1){
+                        buttons[0].level = container.level;
+                        buttons[0].id = buttons[0].id.replace('{level}', container.level)
+                }
         }
 
         function SetHeaders(container){
@@ -206,7 +219,6 @@
         
         function httpGetAsync(theUrl, callback, level, callbackpath)
         {
-                console.log("htt", level);
                 var xmlHttp = new XMLHttpRequest();
                 xmlHttp.onreadystatechange = function() { 
                         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -247,6 +259,7 @@
                         levelcont = document.createElement('div');
                         levelcont.className = 'container';
                         levelcont.id = 'level-'+level;
+                        levelcont.level = level;
                 }
 
                 // Update content of div

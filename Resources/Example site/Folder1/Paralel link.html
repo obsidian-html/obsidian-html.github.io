@@ -37,8 +37,8 @@
         <h1 id="paralel-link">Paralel link</h1>
 <p><a href="/Resources/Example site/Folder1/Folder link.html">Folder link</a> <br />
 <a href="/Resources/Example site/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a></p>
-<svg id="A95a0d21347c54420b65d53beebab958e" width="680" height="400"></svg>
-<button class="graph_button" id="B95a0d21347c54420b65d53beebab958e" onclick="run('95a0d21347c54420b65d53beebab958e', 'Paralel link');">Show Graph</button>
+<svg class="graph_svg" id="Ae86e902240ea489bb03afaf9dec11411{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Be86e902240ea489bb03afaf9dec11411{level}" level="{level}" onclick="run('e86e902240ea489bb03afaf9dec11411'+this.level, 'Paralel link');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -58,7 +58,11 @@ function run(uid, pinnedNode){
         _svg.style.display = "block";
 
         cont = _svg.parentElement;
-        window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        
+        if (cont.getBoundingClientRect().right > window.visualViewport.width){
+                window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        }
+        
     }
 
     // run d3 graph
@@ -229,6 +233,7 @@ function run(uid, pinnedNode){
         // Init starting container
         FirstContainer = document.getElementsByClassName('container')[0];
         FirstContainer.id = 'level-0';
+        FirstContainer.level = '0';
         SetContainer(FirstContainer);    
         
         // Open the path on loading the page
@@ -312,6 +317,18 @@ function run(uid, pinnedNode){
 
                 // Load mermaid code
                 mermaid.init()
+
+                // set graph svg and button to have unique id across tabs
+                svgs = container.querySelectorAll(".graph_svg");
+                if (svgs.length == 1){
+                        svgs[0].id = svgs[0].id.replace('{level}', container.level)
+                }
+                
+                let buttons = container.querySelectorAll(".graph_button");
+                if (buttons.length == 1){
+                        buttons[0].level = container.level;
+                        buttons[0].id = buttons[0].id.replace('{level}', container.level)
+                }
         }
 
         function SetHeaders(container){
@@ -367,7 +384,6 @@ function run(uid, pinnedNode){
         
         function httpGetAsync(theUrl, callback, level, callbackpath)
         {
-                console.log("htt", level);
                 var xmlHttp = new XMLHttpRequest();
                 xmlHttp.onreadystatechange = function() { 
                         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -408,6 +424,7 @@ function run(uid, pinnedNode){
                         levelcont = document.createElement('div');
                         levelcont.className = 'container';
                         levelcont.id = 'level-'+level;
+                        levelcont.level = level;
                 }
 
                 // Update content of div

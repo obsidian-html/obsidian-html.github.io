@@ -65,8 +65,8 @@ scp -r <span class="s2">&quot;</span><span class="nv">$output_folder</span><span
 </code></pre></div>
 
 <p><a href="/Resources/Example site/esAutomation.html">Other ways of pushing websites</a></p>
-<svg id="Af8c732a650304909a21e254f4ddaaeba" width="680" height="400"></svg>
-<button class="graph_button" id="Bf8c732a650304909a21e254f4ddaaeba" onclick="run('f8c732a650304909a21e254f4ddaaeba', 'esAutomationLinuxSSH');">Show Graph</button>
+<svg class="graph_svg" id="Acc225d8a4aff4c19b5174871d2bbbf52{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Bcc225d8a4aff4c19b5174871d2bbbf52{level}" level="{level}" onclick="run('cc225d8a4aff4c19b5174871d2bbbf52'+this.level, 'esAutomationLinuxSSH');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -86,7 +86,11 @@ function run(uid, pinnedNode){
         _svg.style.display = "block";
 
         cont = _svg.parentElement;
-        window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        
+        if (cont.getBoundingClientRect().right > window.visualViewport.width){
+                window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        }
+        
     }
 
     // run d3 graph
@@ -257,6 +261,7 @@ function run(uid, pinnedNode){
         // Init starting container
         FirstContainer = document.getElementsByClassName('container')[0];
         FirstContainer.id = 'level-0';
+        FirstContainer.level = '0';
         SetContainer(FirstContainer);    
         
         // Open the path on loading the page
@@ -340,6 +345,18 @@ function run(uid, pinnedNode){
 
                 // Load mermaid code
                 mermaid.init()
+
+                // set graph svg and button to have unique id across tabs
+                svgs = container.querySelectorAll(".graph_svg");
+                if (svgs.length == 1){
+                        svgs[0].id = svgs[0].id.replace('{level}', container.level)
+                }
+                
+                let buttons = container.querySelectorAll(".graph_button");
+                if (buttons.length == 1){
+                        buttons[0].level = container.level;
+                        buttons[0].id = buttons[0].id.replace('{level}', container.level)
+                }
         }
 
         function SetHeaders(container){
@@ -395,7 +412,6 @@ function run(uid, pinnedNode){
         
         function httpGetAsync(theUrl, callback, level, callbackpath)
         {
-                console.log("htt", level);
                 var xmlHttp = new XMLHttpRequest();
                 xmlHttp.onreadystatechange = function() { 
                         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -436,6 +452,7 @@ function run(uid, pinnedNode){
                         levelcont = document.createElement('div');
                         levelcont.className = 'container';
                         levelcont.id = 'level-'+level;
+                        levelcont.level = level;
                 }
 
                 // Update content of div
