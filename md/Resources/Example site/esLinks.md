@@ -1,4 +1,5 @@
 ---
+graph_name: Links
 tags:
 - type/parsing_markdown
 - date/2022-02-04
