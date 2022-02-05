@@ -25,7 +25,8 @@ See also this site, which uses purely this code: [devfruits.com](https://www.dev
 - [Mermaid Diagrams](Resources/Example%20site/esMermaid.md)   
 - [HTML Tweaks](Resources/Example%20site/esHTML.md)   
 - [Tags](Resources/Example%20site/esTags.md)   
-- [Graph view](es%20Graph%20view.md)   
+- [Graph view](testexclude/es%20Graph%20view.md)   
+- [Exclude subfolders](esExclude%20subfolders.md)   
    
 # Tips and tricks   
    
