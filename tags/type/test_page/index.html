@@ -32,13 +32,16 @@
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="notes">Notes</h1>
+        <h1 id="subtags">Subtags</h1>
+<ul>
+<li><a href="/tags/type/test_page/test_tag/index.html">test_tag</a></li>
+</ul>
+<h1 id="notes">Notes</h1>
 <ul>
 <li><a href="/Resources/Example site/Test Inclusion.html">Resources/Example site/Test Inclusion</a></li>
 <li><a href="/Resources/Example site/Test inclusion 2.html">Resources/Example site/Test inclusion 2</a></li>
 <li><a href="/Resources/Example site/Folder1/Folder link.html">Resources/Example site/Folder1/Folder link</a></li>
 <li><a href="/Resources/Example site/Folder1/Paralel link.html">Resources/Example site/Folder1/Paralel link</a></li>
-<li><a href="/Resources/Example site/Long long page.html">Resources/Example site/Long long page</a></li>
 <li><a href="/Resources/Example site/proper markdown.html">Resources/Example site/proper markdown</a></li>
 </ul>
         <!-- end content -->
@@ -240,7 +243,7 @@
                 text =  text.split('<!-- end content -->')[0];
 
                 // Close all containers with level below given
-                CloseUpperContainers(level);                                
+                CloseUpperContainers(level);
 
                 // Test if container for this level already exists
                 // otherwise create
