@@ -50,14 +50,18 @@
 <p>To be added in the future:   </p>
 <ul>
 <li><strong>Pruning</strong>: Do not show notes that are not connected directly nor indirectly to the current note. Only show all notes in a site-wide view.   </li>
-<li><strong>Zooming/resizing</strong>: If you have a lot of nodes, this view will be kind of useless, even with pruning.   </li>
+<li><strong>Site wide view</strong>: Basically a full page view of the graph   </li>
 <li>Using the text in the first H1 as a graph_name.   </li>
 </ul>
-<p>Turn on/off graph view:   </p>
-<ul>
-<li>In your config file set <code>toggles/features/build_graph</code> to <code>True</code> (this is the default).   </li>
-</ul>
-<p>Overwrite the name of a note in the graph view:   </p>
+<h2 id="configure-graph-view">Configure graph view</h2>
+<p>The following key can be found in the <a href="https://github.com/dwrolvink/obsidian-html/blob/master/example_config.yml" class="external-link">example config yaml</a>:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">graph_view</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">          </span><span class="c1"># Include code to build the graph view per page (default: True)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">coalesce_force</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;-200&#39;</span><span class="w"> </span><span class="c1"># How close the nodes will be to eachother.</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="overwrite-the-name-of-a-note-in-the-graph-view">Overwrite the name of a note in the graph view:</h3>
 <ul>
 <li>In your frontmatter, set <code>graph_name: My new note name</code>   </li>
 </ul>
@@ -73,8 +77,8 @@
 <blockquote>
 <p>Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.</p>
 </blockquote>
-<svg class="graph_svg" id="A2db5bfe8aa5e46efb91323b803bd664e{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B2db5bfe8aa5e46efb91323b803bd664e{level}" level="{level}" onclick="run('2db5bfe8aa5e46efb91323b803bd664e'+this.level, 'Graph View');">Show Graph</button>
+<svg class="graph_svg" id="A052b942fd1f34b738c6da17753c82fda{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B052b942fd1f34b738c6da17753c82fda{level}" level="{level}" onclick="run('052b942fd1f34b738c6da17753c82fda'+this.level, 'Graph View');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -118,14 +122,19 @@ function run(uid, pinnedNode){
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
                 if (error) throw error;
 
-                var link = svg.append("g")
+
+                //add encompassing group for the zoom 
+                var g = svg.append("g")
+                .attr("class", "everything");
+
+                var link = g.append("g")
                 .attr("class", "links")
                 .selectAll("line")
                 .data(graph.links)
                 .enter().append("line")
                 .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
-                var node = svg.append("g")
+                var node = g.append("g")
                 .attr("class", "nodes")
                 .selectAll("g")
                 .data(graph.nodes)
@@ -182,7 +191,7 @@ function run(uid, pinnedNode){
                                                 d.fx = (width / 2)
                                                 d.fy = (height / 2)  
                                         }                          
-                                        return "translate(" + bindx(d.x) + "," + bindy(d.y) + ")";
+                                        return "translate(" + d.x + "," + d.y + ")";
                                 })
 
                         // //constrains the nodes to be within a box
@@ -190,56 +199,48 @@ function run(uid, pinnedNode){
                         //         .attr("cx", function(d) { return let dx = Math.max(d.radius, Math.min(width - d.radius, d.x)); })
                         //         .attr("cy", function(d) { return d.y = Math.max(d.radius, Math.min(height - d.radius, d.y)); }); 
                         link
-                                .attr("x1", function(d) { return bindx(d.source.x); })
-                                .attr("y1", function(d) { return bindy(d.source.y); })
-                                .attr("x2", function(d) { return bindx(d.target.x); })
-                                .attr("y2", function(d) { return bindy(d.target.y); });
+                                .attr("x1", function(d) { return d.source.x; })
+                                .attr("y1", function(d) { return d.source.y; })
+                                .attr("x2", function(d) { return d.target.x; })
+                                .attr("y2", function(d) { return d.target.y; });
+                }
+
+        //add zoom capabilities 
+        var zoom_handler = d3.zoom()
+            .on("zoom", zoom_actions);
+
+        zoom_handler(svg); 
+                //Zoom functions 
+                function zoom_actions(){
+                        g.attr("transform", d3.event.transform)
                 }
         });
 
-        function bindx(x){
-                if (x > width){
-                        return (width - 10);
-                } 
-                if (x < 0) {
-                        return (10);
-                }     
-                return (x);           
-        }
-        function bindy(y){
-                if (y > height){
-                        return (height - 10);
-                } 
-                if (y < 0) {
-                        return (10);
-                }     
-                return (y);           
-        }        
 
         function dragstarted(d) {
-                if (d.id == pinnedNode){
-                        return
-                }
-        if (!d3.event.active) simulation.alphaTarget(0.3).restart();         
-        d.fx = d.x;
-        d.fy = d.y;
+                // if (d.id == pinnedNode){
+                //         return
+                // }
+                if (!d3.event.active) simulation.alphaTarget(0.3).restart();         
+                d.fx = d.x;
+                d.fy = d.y;
         }
 
         function dragged(d) {
-                if (d.id == pinnedNode){
-                        return
-                }                
-        d.fx = bindx(d3.event.x);
-        d.fy = bindy(d3.event.y);
+                // if (d.id == pinnedNode){
+                //         return
+                // }                
+                d.fx = d3.event.x;
+                d.fy = d3.event.y;
         }
 
         function dragended(d) {
-                if (d.id == pinnedNode){
-                        return
-                }
-        if (!d3.event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
+                // if (d.id == pinnedNode){
+                //         return
+                // }
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
         }
     }
 }

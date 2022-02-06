@@ -12,14 +12,21 @@ Click on the button at the bottom of a note to view the graph for the current no
 To be added in the future:   
    
 - **Pruning**: Do not show notes that are not connected directly nor indirectly to the current note. Only show all notes in a site-wide view.   
-- **Zooming/resizing**: If you have a lot of nodes, this view will be kind of useless, even with pruning.   
+- **Site wide view**: Basically a full page view of the graph   
 - Using the text in the first H1 as a graph_name.   
    
-Turn on/off graph view:   
+## Configure graph view   
+The following key can be found in the [example config yaml](https://github.com/dwrolvink/obsidian-html/blob/master/example_config.yml):   
    
-- In your config file set `toggles/features/build_graph` to `True` (this is the default).   
+``` yaml
+features:
+  graph_view:
+    enabled: True          # Include code to build the graph view per page (default: True)
+    coalesce_force: '-200' # How close the nodes will be to eachother.
+```
    
-Overwrite the name of a note in the graph view:   
+   
+### Overwrite the name of a note in the graph view:   
    
 - In your frontmatter, set `graph_name: My new note name`   
    

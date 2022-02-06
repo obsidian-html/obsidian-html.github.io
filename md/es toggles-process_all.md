@@ -1,6 +1,7 @@
 ---
 graph_name: Crawling versus converting all nodes
 tags:
+- type/configuration_options
 - date/2022-02-06
 ---
    
