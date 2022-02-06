@@ -49,9 +49,12 @@
 <p>This package was written with the idea that you give one note that will serve as the homepage. Then all the notes that are linked directly or indirectly by that first note are processed, ignoring what else might still be in your vault.   </p>
 <p>Now there is a new mode, which will indeed convert all notes. This has become more useful because of the new graph view and tag view features. These can make those notes reachable now.    </p>
 <p>The default is still to only process what can be reached from the first note. To get all notes converted, add a key under <code>toggles</code> in your config yaml, named <code>process_all</code> and set it to the value of <code>True</code>.    </p>
-<p><a href="https://github.com/obsidian-html/obsidian-html/blob/ff371c665a78d10a6658dbd8f04b759e0882a858/example_config.yml#L55" class="external-link">See the example config for reference</a></p>
-<svg class="graph_svg" id="Aaac39a4561dd481196a105138019165a{level}" width="680" height="400"></svg>
-<button class="graph_button" id="Baac39a4561dd481196a105138019165a{level}" level="{level}" onclick="run('aac39a4561dd481196a105138019165a'+this.level, 'Crawling versus converting all nodes');">Show Graph</button>
+<p><a href="https://github.com/obsidian-html/obsidian-html/blob/ff371c665a78d10a6658dbd8f04b759e0882a858/example_config.yml#L55" class="external-link">See the example config for reference</a>   </p>
+<blockquote>
+<p>Note that this (kind of) breaks the graph view: not all links will be present in the graph that should be present. See <a href="https://github.com/obsidian-html/obsidian-html/issues/22" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/22</a></p>
+</blockquote>
+<svg class="graph_svg" id="A949edd833fa243fcb73482567cd63256{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B949edd833fa243fcb73482567cd63256{level}" level="{level}" onclick="run('949edd833fa243fcb73482567cd63256'+this.level, 'Crawling versus converting all nodes');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements

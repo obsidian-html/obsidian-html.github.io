@@ -11,4 +11,6 @@ Now there is a new mode, which will indeed convert all notes. This has become mo
    
 The default is still to only process what can be reached from the first note. To get all notes converted, add a key under `toggles` in your config yaml, named `process_all` and set it to the value of `True`.    
    
-[See the example config for reference](https://github.com/obsidian-html/obsidian-html/blob/ff371c665a78d10a6658dbd8f04b759e0882a858/example_config.yml#L55)
+[See the example config for reference](https://github.com/obsidian-html/obsidian-html/blob/ff371c665a78d10a6658dbd8f04b759e0882a858/example_config.yml#L55)   
+   
+> Note that this (kind of) breaks the graph view: not all links will be present in the graph that should be present. See [https://github.com/obsidian-html/obsidian-html/issues/22](https://github.com/obsidian-html/obsidian-html/issues/22)
