@@ -30,10 +30,10 @@
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="/" id="homelink">Example Site</a>
+        <a href="/" id="homelink" title="Clear screen and go to homepage">Example Site</a>
 
         <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
-                <a href="/tags">
+                <a href="/tags" title="Open tag view">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                 <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
                                 <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
@@ -89,8 +89,8 @@ git add . --all
 git commit -m <span class="s2">&quot;autopush&quot;</span>
 git push
 </code></pre></div>
-<svg class="graph_svg" id="Ad768ad8eacb84c07a38ede32c49235d9{level}" width="680" height="400"></svg>
-<button class="graph_button" id="Bd768ad8eacb84c07a38ede32c49235d9{level}" level="{level}" onclick="run('d768ad8eacb84c07a38ede32c49235d9'+this.level, 'Auto push site using Git on Linux');">Show Graph</button>
+<svg class="graph_svg" id="A343b8efd9e5d4818907aeb05eb34b0f3{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B343b8efd9e5d4818907aeb05eb34b0f3{level}" level="{level}" onclick="run('343b8efd9e5d4818907aeb05eb34b0f3'+this.level, 'Auto push site using Git on Linux');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -128,7 +128,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-200))
+            .force("charge", d3.forceManyBody().strength(-100))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

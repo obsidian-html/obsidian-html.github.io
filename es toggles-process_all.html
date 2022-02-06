@@ -45,34 +45,13 @@
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="links">Links</h1>
-<h2 id="obsidian-type-links">Obsidian type links</h2>
-<p><code>[[Simple Obsidian-type Link]]</code> translates to: <br />
-<a href="/Resources/Example site/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a>   </p>
-<p>Aliasing also works, <code>[[Simple Obsidian-type Link|Same link as before]]</code>: <br />
-<a href="/Resources/Example site/Simple Obsidian-type Link.html">Same link as before</a>   </p>
-<p>As does linking to chapters <code>[[Long long page#Chapter of interest]]</code> <br />
-<a href="/Resources/Example site/Long long page.html#chapter-of-interest">Long long page#Chapter of interest</a>   </p>
-<h2 id="proper-markdown-links">Proper markdown links</h2>
-<p>There is a setting that forces Obsidian to use proper markdown notation. So this is also supported:   </p>
-<p><code>[Proper markdown link](proper%20markdown)</code> <br />
-<a href="/Resources/Example site/proper markdown.html">Proper markdown link</a>   </p>
-<p>Note that spaces must be encoded in proper markdown links.   </p>
-<h2 id="link-awareness">Link awareness</h2>
-<p>An external links show up the little icon to show it: <br />
-<a href="https://github.com/obsidian-html/obsidian-html" class="external-link">https://github.com/obsidian-html/obsidian-html</a>   </p>
-<p>When linking to new notes, and not creating them, the link will be replaced with "not_created.html", and the link will be color coded by adding <code>class="nonexistent-link"</code> to the a href:   </p>
-<p><a href="/not_created.html" class="nonexistent-link">In the end I never created this note</a>   </p>
-<h2 id="link-to-non-markdown-files">Link to non-markdown files</h2>
-<p>Image files and other non-markdown files local to the given root folder get copied over to the output. Take for example: <a href="../../textfile.txt" class="external-link">test textfile</a>.   </p>
-<p>Note that Obsidian type links will always be appended with .md if this is missing.    </p>
-<p>This is the default behavior of Obsidian. You can work around this, but when you do, it is impossible to determine with 100% certainty which file is linked to.    </p>
-<p>If you want to link to files that are not markdown, use proper markdown links:   </p>
-<div class="codehilite"><pre><span></span><code><span class="p">[[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">]]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">.</span><span class="n">md</span><span class="p">)</span><span class="w"></span>
-<span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-<svg class="graph_svg" id="A7a370e4a87114c3a9a5c87e3a92593c1{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B7a370e4a87114c3a9a5c87e3a92593c1{level}" level="{level}" onclick="run('7a370e4a87114c3a9a5c87e3a92593c1'+this.level, 'Links');">Show Graph</button>
+        <h1 id="crawling-versus-converting-all-nodes">Crawling versus converting all nodes</h1>
+<p>This package was written with the idea that you give one note that will serve as the homepage. Then all the notes that are linked directly or indirectly by that first note are processed, ignoring what else might still be in your vault.   </p>
+<p>Now there is a new mode, which will indeed convert all notes. This has become more useful because of the new graph view and tag view features. These can make those notes reachable now.    </p>
+<p>The default is still to only process what can be reached from the first note. To get all notes converted, add a key under <code>toggles</code> in your config yaml, named <code>process_all</code> and set it to the value of <code>True</code>.    </p>
+<p><a href="https://github.com/obsidian-html/obsidian-html/blob/ff371c665a78d10a6658dbd8f04b759e0882a858/example_config.yml#L55" class="external-link">See the example config for reference</a></p>
+<svg class="graph_svg" id="Aaac39a4561dd481196a105138019165a{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Baac39a4561dd481196a105138019165a{level}" level="{level}" onclick="run('aac39a4561dd481196a105138019165a'+this.level, 'Crawling versus converting all nodes');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements

@@ -30,10 +30,10 @@
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="/" id="homelink">Example Site</a>
+        <a href="/" id="homelink" title="Clear screen and go to homepage">Example Site</a>
 
         <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
-                <a href="/tags">
+                <a href="/tags" title="Open tag view">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                 <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
                                 <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
@@ -55,8 +55,8 @@
 <p>This is a sibling of <code>Second chapter</code>, and thus not included when you include <code>Second chapter</code>.   </p>
 <h1 id="new-h1-header">New h1 header</h1>
 <p>content second h1</p>
-<svg class="graph_svg" id="A71775fe8b9f547cd8f7d05f3d2f08fe3{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B71775fe8b9f547cd8f7d05f3d2f08fe3{level}" level="{level}" onclick="run('71775fe8b9f547cd8f7d05f3d2f08fe3'+this.level, 'Test inclusion 2');">Show Graph</button>
+<svg class="graph_svg" id="A9d144c92f0da40669b949886da8c9ea7{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B9d144c92f0da40669b949886da8c9ea7{level}" level="{level}" onclick="run('9d144c92f0da40669b949886da8c9ea7'+this.level, 'Test inclusion 2');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -94,7 +94,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-200))
+            .force("charge", d3.forceManyBody().strength(-100))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

@@ -28,6 +28,9 @@ See also this site, which uses purely this code: [devfruits.com](https://www.dev
 - [Graph view](Resources/Example%20site/es%20Graph%20view.md)   
 - [Exclude subfolders](Resources/Example%20site/esExclude%20subfolders.md)   
    
+# Configurations   
+   
+- [Crawling versus converting all nodes](es%20toggles-process_all.md)   
 # Tips and tricks   
    
 - [Automate website deployment](Resources/Example%20site/esAutomation.md)

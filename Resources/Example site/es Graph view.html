@@ -30,10 +30,10 @@
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="/" id="homelink">Example Site</a>
+        <a href="/" id="homelink" title="Clear screen and go to homepage">Example Site</a>
 
         <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
-                <a href="/tags">
+                <a href="/tags" title="Open tag view">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                 <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
                                 <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
@@ -73,8 +73,8 @@
 <blockquote>
 <p>Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.</p>
 </blockquote>
-<svg class="graph_svg" id="A8d23b4df5f394569ab248e6bf0af6f35{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B8d23b4df5f394569ab248e6bf0af6f35{level}" level="{level}" onclick="run('8d23b4df5f394569ab248e6bf0af6f35'+this.level, 'Graph View');">Show Graph</button>
+<svg class="graph_svg" id="A0d5bbd3fb2024c1ea75b1a216719612d{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B0d5bbd3fb2024c1ea75b1a216719612d{level}" level="{level}" onclick="run('0d5bbd3fb2024c1ea75b1a216719612d'+this.level, 'Graph View');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -112,7 +112,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-200))
+            .force("charge", d3.forceManyBody().strength(-100))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

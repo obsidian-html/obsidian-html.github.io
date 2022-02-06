@@ -30,10 +30,10 @@
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="/" id="homelink">Example Site</a>
+        <a href="/" id="homelink" title="Clear screen and go to homepage">Example Site</a>
 
         <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
-                <a href="/tags">
+                <a href="/tags" title="Open tag view">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                 <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
                                 <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
@@ -59,9 +59,11 @@ Clicking on a click-back corner will align that note with the left of the screen
 <h2 id="closing-tabs">Closing tabs</h2>
 <p>When you click on a new link in an earlier tab, all the open tabs after it will be closed.   </p>
 <h2 id="notice-the-url">Notice the url</h2>
-<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.</p>
-<svg class="graph_svg" id="A542c3a6933ed44b696dacfbd76711648{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B542c3a6933ed44b696dacfbd76711648{level}" level="{level}" onclick="run('542c3a6933ed44b696dacfbd76711648'+this.level, 'HTML tweaks');">Show Graph</button>
+<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.    </p>
+<h2 id="graph-view">Graph view</h2>
+<p>Read more <a href="/Resources/Example site/es Graph view.html">Graph View</a>.</p>
+<svg class="graph_svg" id="Aa4d81a5ea4694207888e28bf21fc83a0{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Ba4d81a5ea4694207888e28bf21fc83a0{level}" level="{level}" onclick="run('a4d81a5ea4694207888e28bf21fc83a0'+this.level, 'HTML tweaks');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -99,7 +101,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-200))
+            .force("charge", d3.forceManyBody().strength(-100))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
