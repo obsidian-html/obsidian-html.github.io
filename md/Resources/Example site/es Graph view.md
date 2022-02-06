@@ -1,6 +1,9 @@
 ---
+graph_name: Graph View
 tags:
 - date/2022-02-05
+- type/configuration_options
+- type/features
 ---
    
 # Graph view   

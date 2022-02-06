@@ -1,4 +1,5 @@
 ---
+graph_name: HTML tweaks
 tags:
 - type/html_tweaks
 - type/styling

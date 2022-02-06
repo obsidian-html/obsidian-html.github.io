@@ -1,6 +1,8 @@
 ---
+graph_name: Exclude subfolders
 tags:
 - date/2022-02-05
+- type/configuration_options
 ---
    
 # Exclude subfolders   

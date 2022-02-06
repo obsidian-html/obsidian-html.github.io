@@ -1,4 +1,5 @@
 ---
+graph_name: Mermaid Diagrams
 tags:
 - type/diagrams
 - date/2022-02-04
