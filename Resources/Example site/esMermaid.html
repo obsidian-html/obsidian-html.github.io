@@ -52,8 +52,8 @@ Start --> Stop
 </div>
 
 <script>mermaid.initialize({startOnLoad:true});</script>
-<svg class="graph_svg" id="A037a4c5e11b1462d82f3a63abca1264a{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B037a4c5e11b1462d82f3a63abca1264a{level}" level="{level}" onclick="run('037a4c5e11b1462d82f3a63abca1264a'+this.level, 'Mermaid Diagrams');">Show Graph</button>
+<svg class="graph_svg" id="A83dc4cdee615484bb7598ebc1d771b9e{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B83dc4cdee615484bb7598ebc1d771b9e{level}" level="{level}" onclick="run('83dc4cdee615484bb7598ebc1d771b9e'+this.level, 'Mermaid Diagrams');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -91,7 +91,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

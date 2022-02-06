@@ -49,8 +49,8 @@
 <blockquote>
 <p>Content</p>
 </blockquote>
-<svg class="graph_svg" id="A80cd005299e845c59a99c7fac9f63ba2{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B80cd005299e845c59a99c7fac9f63ba2{level}" level="{level}" onclick="run('80cd005299e845c59a99c7fac9f63ba2'+this.level, 'Test Inclusion');">Show Graph</button>
+<svg class="graph_svg" id="A2d5955ce498d4eb5b6e7d4ead0f6833d{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B2d5955ce498d4eb5b6e7d4ead0f6833d{level}" level="{level}" onclick="run('2d5955ce498d4eb5b6e7d4ead0f6833d'+this.level, 'Test Inclusion');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -88,7 +88,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

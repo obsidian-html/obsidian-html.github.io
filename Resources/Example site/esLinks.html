@@ -71,8 +71,8 @@
 <div class="codehilite"><pre><span></span><code><span class="p">[[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">]]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">.</span><span class="n">md</span><span class="p">)</span><span class="w"></span>
 <span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
-<svg class="graph_svg" id="A1dac659301e2419986fab6e03cc694d6{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B1dac659301e2419986fab6e03cc694d6{level}" level="{level}" onclick="run('1dac659301e2419986fab6e03cc694d6'+this.level, 'Links');">Show Graph</button>
+<svg class="graph_svg" id="A9106e116e75b49b498208bf2ee3fa391{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B9106e116e75b49b498208bf2ee3fa391{level}" level="{level}" onclick="run('9106e116e75b49b498208bf2ee3fa391'+this.level, 'Links');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -110,7 +110,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

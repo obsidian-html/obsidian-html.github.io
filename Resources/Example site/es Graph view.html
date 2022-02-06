@@ -73,8 +73,8 @@
 <blockquote>
 <p>Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.</p>
 </blockquote>
-<svg class="graph_svg" id="Ab6836391a24f47458bfca3491a080730{level}" width="680" height="400"></svg>
-<button class="graph_button" id="Bb6836391a24f47458bfca3491a080730{level}" level="{level}" onclick="run('b6836391a24f47458bfca3491a080730'+this.level, 'Graph View');">Show Graph</button>
+<svg class="graph_svg" id="A2db5bfe8aa5e46efb91323b803bd664e{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B2db5bfe8aa5e46efb91323b803bd664e{level}" level="{level}" onclick="run('2db5bfe8aa5e46efb91323b803bd664e'+this.level, 'Graph View');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -112,7 +112,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

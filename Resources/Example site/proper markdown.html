@@ -47,8 +47,8 @@
         <div class="container">
         <h1 id="proper-markdown">Proper markdown</h1>
 <p>Of course, it is good to be able to use proper markdown in Obsidian, as there is a built-in mode for using proper markdown links instead of the Obsidian style links.</p>
-<svg class="graph_svg" id="A5d8a16e5611e4c90b84014738d19ae52{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B5d8a16e5611e4c90b84014738d19ae52{level}" level="{level}" onclick="run('5d8a16e5611e4c90b84014738d19ae52'+this.level, 'proper markdown');">Show Graph</button>
+<svg class="graph_svg" id="Ab03c270754d04751acad3d5716653bb8{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Bb03c270754d04751acad3d5716653bb8{level}" level="{level}" onclick="run('b03c270754d04751acad3d5716653bb8'+this.level, 'proper markdown');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -86,7 +86,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

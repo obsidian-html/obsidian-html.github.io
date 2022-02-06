@@ -50,8 +50,8 @@
 <p>This method can be useful for folders that are not a part of your intended output and that have duplicate file names.   </p>
 <p>See the <a href="https://github.com/obsidian-html/obsidian-html/blob/master/example_config.yml#L43" class="external-link">example config yaml</a>. A common folder is the <code>.obsidian</code> folder.   </p>
 <p>This folder is by default in the yaml, but not in the code, so if you have an older yaml, you should add the <code>exclude_subfolders</code> key to it, and add at least the <code>.obsidian</code> folder as a list item.</p>
-<svg class="graph_svg" id="Af0e726a4f8bf4ad9aa38ea98442ca836{level}" width="680" height="400"></svg>
-<button class="graph_button" id="Bf0e726a4f8bf4ad9aa38ea98442ca836{level}" level="{level}" onclick="run('f0e726a4f8bf4ad9aa38ea98442ca836'+this.level, 'Exclude subfolders');">Show Graph</button>
+<svg class="graph_svg" id="A1d02566cb1344471b74eedb02cceaf98{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B1d02566cb1344471b74eedb02cceaf98{level}" level="{level}" onclick="run('1d02566cb1344471b74eedb02cceaf98'+this.level, 'Exclude subfolders');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -89,7 +89,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

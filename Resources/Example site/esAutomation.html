@@ -64,8 +64,8 @@
 <li><a href="/Resources/Example site/esAutomationLinuxSSH.html">Auto push to local webserver (Linux)</a>   </li>
 <li><a href="/Resources/Example site/esAutomationWindowsSSH.html">Auto push to local webserver (Windows)</a></li>
 </ul>
-<svg class="graph_svg" id="A4c43e2c318c44103b41e806bb2866e1a{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B4c43e2c318c44103b41e806bb2866e1a{level}" level="{level}" onclick="run('4c43e2c318c44103b41e806bb2866e1a'+this.level, 'Automate website deployment');">Show Graph</button>
+<svg class="graph_svg" id="A19b5765e646140cda2da199a884db438{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B19b5765e646140cda2da199a884db438{level}" level="{level}" onclick="run('19b5765e646140cda2da199a884db438'+this.level, 'Automate website deployment');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -103,7 +103,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

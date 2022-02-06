@@ -57,8 +57,8 @@ E.g. adding the following frontyaml at the top of this note:   </p>
 </code></pre></div>
 
 <p>Will result in a page <a href="https://obsidian-html.github.io/tags/type" class="external-link">https://obsidian-html.github.io/tags/type</a> which will contain (among others) a link to  <code>parsing_markdown</code>, which will link to this note.</p>
-<svg class="graph_svg" id="A53d2145e9b4c4684b342e017f0d86165{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B53d2145e9b4c4684b342e017f0d86165{level}" level="{level}" onclick="run('53d2145e9b4c4684b342e017f0d86165'+this.level, 'Tags');">Show Graph</button>
+<svg class="graph_svg" id="Af5ecae195219432a8589e5b5ced991c8{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Bf5ecae195219432a8589e5b5ced991c8{level}" level="{level}" onclick="run('f5ecae195219432a8589e5b5ced991c8'+this.level, 'Tags');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -96,7 +96,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

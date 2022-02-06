@@ -178,8 +178,8 @@ Any codeblock or codeline is excempt from modification because they get cut out 
         sudo <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> &gt; /etc/nginx/sites-available/default
     <span class="k">fi</span>    
 </code></pre></div>
-<svg class="graph_svg" id="A59f372fc9ccd43c18661bc0bdc276149{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B59f372fc9ccd43c18661bc0bdc276149{level}" level="{level}" onclick="run('59f372fc9ccd43c18661bc0bdc276149'+this.level, 'Code blocks');">Show Graph</button>
+<svg class="graph_svg" id="Abfda567c34f84a10b5cab7fde5f969b9{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Bbfda567c34f84a10b5cab7fde5f969b9{level}" level="{level}" onclick="run('bfda567c34f84a10b5cab7fde5f969b9'+this.level, 'Code blocks');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -217,7 +217,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

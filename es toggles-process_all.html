@@ -53,8 +53,8 @@
 <blockquote>
 <p>Note that this (kind of) breaks the graph view: not all links will be present in the graph that should be present. See <a href="https://github.com/obsidian-html/obsidian-html/issues/22" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/22</a></p>
 </blockquote>
-<svg class="graph_svg" id="A949edd833fa243fcb73482567cd63256{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B949edd833fa243fcb73482567cd63256{level}" level="{level}" onclick="run('949edd833fa243fcb73482567cd63256'+this.level, 'Crawling versus converting all nodes');">Show Graph</button>
+<svg class="graph_svg" id="Ae2a6d4f230a4423fa75592a09a49e598{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Be2a6d4f230a4423fa75592a09a49e598{level}" level="{level}" onclick="run('e2a6d4f230a4423fa75592a09a49e598'+this.level, 'Crawling versus converting all nodes');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -92,7 +92,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

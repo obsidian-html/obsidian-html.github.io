@@ -48,8 +48,8 @@
         <h1 id="paralel-link">Paralel link</h1>
 <p><a href="/Resources/Example site/Folder1/Folder link.html">Folder link</a> <br />
 <a href="/Resources/Example site/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a></p>
-<svg class="graph_svg" id="A2431b089cf004257bdc7779b77b413b7{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B2431b089cf004257bdc7779b77b413b7{level}" level="{level}" onclick="run('2431b089cf004257bdc7779b77b413b7'+this.level, 'Paralel link');">Show Graph</button>
+<svg class="graph_svg" id="Ac05e9a9015524c488efb1c0cc1fcb78a{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Bc05e9a9015524c488efb1c0cc1fcb78a{level}" level="{level}" onclick="run('c05e9a9015524c488efb1c0cc1fcb78a'+this.level, 'Paralel link');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -87,7 +87,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {

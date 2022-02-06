@@ -76,8 +76,8 @@ scp -r <span class="s2">&quot;</span><span class="nv">$output_folder</span><span
 </code></pre></div>
 
 <p><a href="/Resources/Example site/esAutomation.html">Other ways of pushing websites</a></p>
-<svg class="graph_svg" id="Acbd7c654d51e46bf998f51c8e0e0376e{level}" width="680" height="400"></svg>
-<button class="graph_button" id="Bcbd7c654d51e46bf998f51c8e0e0376e{level}" level="{level}" onclick="run('cbd7c654d51e46bf998f51c8e0e0376e'+this.level, 'Auto push site using SSH on Linux');">Show Graph</button>
+<svg class="graph_svg" id="A07e0ef77cf0e45869985f54dba78793c{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B07e0ef77cf0e45869985f54dba78793c{level}" level="{level}" onclick="run('07e0ef77cf0e45869985f54dba78793c'+this.level, 'Auto push site using SSH on Linux');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -115,7 +115,7 @@ function run(uid, pinnedNode){
 
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
         d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
