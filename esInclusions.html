@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>Example Site</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
+                <script src="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                window.location.hash = '!' + window.location.hash.substr(1);
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/" id="homelink" title="Clear screen and go to homepage">Example Site</a>
+
+        <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
+                <a href="/tags" title="Open tag view">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
+                                <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
+                                        v49.548h41.29v41.29h49.548v-41.29h49.548v41.29h49.548v-41.29h41.29v-49.548h-41.29v-49.548H371.613z M280.774,280.774h-49.548
+                                        v-49.548h49.548V280.774z" fill="#c2c9ce"></path>
+                        </svg>
+                </a>
+        </div>
+</div>
+<div class="container-wrapper">
+        <div class="container">
+        <h1 id="code-inclusions">Code inclusions</h1>
+<p>Code inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    </p>
+<p>It uses the same link syntax as images:   </p>
+<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
+<span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="err">#</span><span class="n">only</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">chapter</span><span class="p">]]</span><span class="w"></span>
+</code></pre></div>
+
+<p>In Obsidian, included content is denoted with a differently colored background. But since we first convert Obsidian notes to markdown, and markdown does not have this capability, we can only include the content inline, so it is not visible that the content comes from another page.   </p>
+<h2 id="full-page-inclusion">Full page inclusion</h2>
+<p>First take a look at what content is in this page: <a href="/Test Inclusion.html">Test Inclusion</a>.    </p>
+<p>This will be included below by writing  <br />
+<code>![[Test Inclusion]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+![[Test Inclusion]]
+<span class="gs">**---end inclusion---**</span>
+</code></pre></div>
+
+<p><strong>---begin inclusion---</strong>   </p>
+<h2 id="test-inclusion">Test Inclusion</h2>
+<blockquote>
+<p>Content</p>
+</blockquote>
+<p><strong>---end inclusion---</strong>   </p>
+<h2 id="partial-code-inclusion">Partial code inclusion</h2>
+<p>With partial code inclusion, we can reference a header, and then only that header and the content of that header is included. The content is read until the first header of the same level (h1 --&gt; h1, h2 --&gt; h2, etc), or lower level, is found. So, including a h1 header that has h2 header under it, will include those headers and their content too.   </p>
+<p>First take a look at what content is in this page: <a href="/Test inclusion 2.html">Test inclusion 2</a>.   </p>
+<p>Let's say that we only want the second (h2) chapter included.  <br />
+This can be done by writing  <br />
+<code>![[Test inclusion 2#Second chapter]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+![[Test inclusion 2#Second chapter]]
+<span class="gs">**---end inclusion---**</span>
+---
+</code></pre></div>
+
+<p><strong>---begin inclusion---</strong>   </p>
+<h2 id="second-chapter">Second chapter</h2>
+<p>Content second chapter   </p>
+<h3 id="an-h3">An h3</h3>
+<p>This is still a child of <code>Second chapter</code>   </p>
+<p><strong>---end inclusion---</strong></p>
+<svg class="graph_svg" id="A0923ff9efb86472ea1aaec7332dda46e{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B0923ff9efb86472ea1aaec7332dda46e{level}" level="{level}" onclick="run('0923ff9efb86472ea1aaec7332dda46e'+this.level, 'Inclusions');">Show Graph</button>
+<script>
+function run(uid, pinnedNode){
+    // Get elements
+    var _button = document.getElementById('B' + uid);
+    var _svg = document.getElementById('A' + uid);
+    
+    // toggle graph on or off
+    var turn_on = true;
+    if (_button.innerHTML == 'Hide Graph'){
+        _button.innerHTML = 'Show Graph';
+        turn_on = false;
+        _svg.style.display = "None";
+        d3.selectAll("#A" + uid + " > *").remove();
+    }
+    else {
+        _button.innerHTML = "Hide Graph";
+        _svg.style.display = "block";
+
+        cont = _svg.parentElement;
+        
+        if (cont.getBoundingClientRect().right > window.visualViewport.width){
+                window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        }
+        
+    }
+
+    // run d3 graph
+
+    if (turn_on){
+        var svg = d3.select("#A" + uid),
+            width = +svg.attr("width"),
+            height = +svg.attr("height");
+
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+        var simulation = d3.forceSimulation()
+            .force("link", d3.forceLink().id(function(d) { return d.id; }))
+            .force("charge", d3.forceManyBody().strength(-200))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+
+        d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
+                if (error) throw error;
+
+
+                //add encompassing group for the zoom 
+                var g = svg.append("g")
+                .attr("class", "everything");
+
+                var link = g.append("g")
+                .attr("class", "links")
+                .selectAll("line")
+                .data(graph.links)
+                .enter().append("line")
+                .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+                var node = g.append("g")
+                .attr("class", "nodes")
+                .selectAll("g")
+                .data(graph.nodes)
+                .enter().append("g")            
+
+                var circles = node.append("circle")
+                .attr("r", 5)
+                .attr("fill", function(d) { 
+                        if (d.id == pinnedNode){
+                                return 'red'
+                        }
+                        return color(d.group); 
+                });
+
+                // Create a drag handler and append it to the node object instead
+                var drag_handler = d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended);
+
+                drag_handler(node);
+                
+                var lables = node.append("text")
+                .text(function(d) {
+                        return d.id;
+                })
+                .attr('x', 6)
+                .attr('y', 3)
+                .on("click", function(d) {
+                    let svg_el = document.getElementById('A' + uid);
+                    console.log('A' + uid)
+                    let level = parseInt(svg_el.parentElement.id.split('-')[1]);
+                    console.log(svg_el.parentElement);
+                    console.log(level, level+1);
+                    httpGetAsync(encodeURI(d.url), ReceiveCall, level+1, false); 
+                    return false; 
+                        //window.open(d.url);
+                });
+
+                node.append("title")
+                .text(function(d) { return d.id; });
+
+                simulation
+                .nodes(graph.nodes)
+                .on("tick", ticked);
+
+                simulation.force("link")
+                .links(graph.links);
+
+                function ticked() {
+                        node
+                                .attr("transform", function(d) { 
+                                        if (d.id == pinnedNode){  
+                                                d.fx = (width / 2)
+                                                d.fy = (height / 2)  
+                                        }                          
+                                        return "translate(" + d.x + "," + d.y + ")";
+                                })
+
+                        // //constrains the nodes to be within a box
+                        // node
+                        //         .attr("cx", function(d) { return let dx = Math.max(d.radius, Math.min(width - d.radius, d.x)); })
+                        //         .attr("cy", function(d) { return d.y = Math.max(d.radius, Math.min(height - d.radius, d.y)); }); 
+                        link
+                                .attr("x1", function(d) { return d.source.x; })
+                                .attr("y1", function(d) { return d.source.y; })
+                                .attr("x2", function(d) { return d.target.x; })
+                                .attr("y2", function(d) { return d.target.y; });
+                }
+
+        //add zoom capabilities 
+        var zoom_handler = d3.zoom()
+            .on("zoom", zoom_actions);
+
+        zoom_handler(svg); 
+                //Zoom functions 
+                function zoom_actions(){
+                        g.attr("transform", d3.event.transform)
+                }
+        });
+
+
+        function dragstarted(d) {
+                if (d.id == pinnedNode){
+                        return
+                }
+                if (!d3.event.active) simulation.alphaTarget(0.3).restart();         
+                d.fx = d.x;
+                d.fy = d.y;
+        }
+
+        function dragged(d) {
+                if (d.id == pinnedNode){
+                        return
+                }                
+                d.fx = d3.event.x;
+                d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+                if (d.id == pinnedNode){
+                        return
+                }
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+        }
+    }
+}
+</script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script>
+        // Init
+        // ----------------------------------------------------------------------------
+        function LoadPage(){
+                console.log('threshold', (1.2 * 40 * getComputedStyle(document.documentElement).fontSize.split("px")[0]));
+                SetLinks(0);
+        
+                // Scroll container to #header link
+                if (window.location.hash != ''){
+                        let el = document.getElementById(window.location.hash.substr(2));
+                        if (el){
+                                el.parentElement.scrollTop = el.offsetTop - 20;
+                        }
+                }
+        }
+        
+        // Init starting container
+        FirstContainer = document.getElementsByClassName('container')[0];
+        FirstContainer.id = 'level-0';
+        FirstContainer.level = '0';
+        SetContainer(FirstContainer);    
+        
+        // Open the path on loading the page
+        // This is everything after ?path=
+        var href = window.location.href;
+        var path_to_open = [];
+        if (href.includes('?path=')){
+                path_to_open = href.split('?path=')[1].split('/');
+                for (let i = 0; i < path_to_open.length; i++){
+                        path_to_open[i] = decodeURIComponent(path_to_open[i]);
+                }
+        }        
+        OpenPath(1);
+
+
+        // FUNCTIONS 
+        // ----------------------------------------------------------------------------
+
+        function OpenPath(level){
+                if (path_to_open.length > 0){
+                        let path = path_to_open.shift();
+                        if (path != ''){
+                                httpGetAsync(path, ReceiveCall, level, true);
+                        }
+                        
+                }       
+        }
+        
+        // Change link operation
+        function SetLinks(level){
+                size_of_rem = getComputedStyle(document.documentElement).fontSize.split("px")[0];
+                if (window.visualViewport.width > (1.2 * 40 * size_of_rem))
+                {
+                        var links = document.getElementsByTagName('a');
+                        for (let i=0; i < links.length; i++){
+                                let l = links[i];
+                                if (l.className == 'anchor'){
+                                        continue;
+                                }
+                                if (l.id == 'homelink'){
+                                        continue;
+                                }
+                                if (l.classList.contains('external-link')){
+                                        continue;
+                                }
+                                if (l.onclick != null){
+                                        continue;
+                                }
+                                l.onclick = function () { 
+                                        httpGetAsync(encodeURI(this.attributes.href.nodeValue), ReceiveCall, level+1, false); 
+                                        return false; 
+                                };
+                        }
+                }
+        }  
+        
+        function SetContainer(container)
+        {
+                // This function is called on every (newly created) container. 
+                // One container holds one tab
+
+                // Create clickback element
+                cb = document.createElement('div');
+                cb.className = 'container-clickback';
+                cb.id = 'cb' + container.id;
+                container.parentElement.appendChild(cb);
+                
+                cb.onclick = function () { 
+                        cont = document.getElementById(this.id.slice(2))
+                        window.scrollTo(Math.max(window.visualViewport.pageLeft - (70 - cont.getBoundingClientRect().left), 0), 0)
+                };
+
+                // Set url
+                // This will be set already if this is not the first tab
+                if (typeof container.url === 'undefined'){
+                        container.url = window.location.pathname;
+                }
+
+                // Set click to get header link
+                SetHeaders(container);
+
+                // Load mermaid code
+                mermaid.init()
+
+                // set graph svg and button to have unique id across tabs
+                svgs = container.querySelectorAll(".graph_svg");
+                if (svgs.length == 1){
+                        svgs[0].id = svgs[0].id.replace('{level}', container.level)
+                }
+                
+                let buttons = container.querySelectorAll(".graph_button");
+                if (buttons.length == 1){
+                        buttons[0].level = container.level;
+                        buttons[0].id = buttons[0].id.replace('{level}', container.level)
+                }
+        }
+
+        function SetHeaders(container){
+                let els = container.childNodes;
+                for (let i  = 0; i < els.length; i++){
+                        if (typeof els[i].tagName === 'undefined' || els[i].tagName[0] != 'H'){
+                                continue;
+                        }
+
+                        // iterate
+                        let n = 1;
+
+                        // Test if page is open already in another tab
+                        anchor_id = els[i].id + '-anchor';
+                        if (document.getElementById(anchor_id)){
+                                let loop = true;
+                                while (loop){
+                                        if (document.getElementById(anchor_id + '_' + n)){
+                                                n++;
+                                        }
+                                        else {
+                                                break;
+                                        }
+                                }
+                                anchor_id += '_' + n;
+                        }
+
+                        els[i].anchor_id = anchor_id;
+                        
+                        // Add link icon + a href to the header
+                        let href = window.location.origin + container.url + '#!' + els[i].id;
+                        els[i].innerHTML = '<a id="' + anchor_id + '" class="anchor" href="'+href+'"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>\n' + els[i].innerHTML
+                        
+                        // body onload is not called when staying within the page
+                        // we need to call the LoadPage() function manually
+                        let href_el = document.getElementById(anchor_id);
+                        href_el.onclick = function(){
+                                window.location.replace(this.href);
+                                LoadPage(0);
+                        }
+
+                        // Show/hide link icon
+                        els[i].onmouseover = function(){
+                                document.getElementById(this.anchor_id).style.visibility = 'visible';
+                        };
+                        els[i].onmouseleave = function(){
+                                document.getElementById(this.anchor_id).style.visibility = 'hidden';
+                        };     
+                }
+        }                   
+
+           
+        
+        function httpGetAsync(theUrl, callback, level, callbackpath)
+        {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function() { 
+                        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                        callback(xmlHttp, level, theUrl, callbackpath);
+                }
+                xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+                xmlHttp.send(null);
+        }
+
+        function ReceiveCall(xmlHttp, level, theUrl, callbackpath){
+                respUrl = xmlHttp.responseURL;
+                responseText = xmlHttp.responseText;
+
+                // Restore header if it has been hidden because of an anchor link
+                document.getElementById('header').style.display = 'block';
+
+                // Set body width to level * 40 rem
+                document.body.style.width = (level * 40 + 200) + 'rem';  
+
+                // Get html
+                let text = responseText.split('<div class="container">')[1];
+                text =  text.split('<!-- end content -->')[0];
+
+                // Close all containers with level below given
+                CloseUpperContainers(level);
+
+                // Test if container for this level already exists
+                // otherwise create
+                let levelcont = document.getElementById('level-'+level);
+                let isNew = false
+                if (levelcont == null) {
+                        isNew = true;
+                        wrappercont = document.createElement('div');
+                        wrappercont.className = 'container-wrapper';
+                        wrappercont.id = 'wrapperlevel-'+level;
+                        document.body.appendChild(wrappercont);
+
+                        levelcont = document.createElement('div');
+                        levelcont.className = 'container';
+                        levelcont.id = 'level-'+level;
+                        levelcont.level = level;
+                }
+
+                // Update content of div
+                levelcont.innerHTML = text;
+
+                if (isNew){
+                        document.getElementById('wrapperlevel-'+level).appendChild(levelcont);
+                }
+
+                // Get the leventcont again from the DOM
+                levelcont = document.getElementById('level-'+level);
+
+                // Scroll into view
+                levelcont = document.getElementById('level-'+level);
+                levelcont.scrollIntoView(true);
+                window.scrollTo(window.visualViewport.pageLeft, 0);
+
+                // Scroll container to #header link
+                theUrl = decodeURI(theUrl);
+                if (theUrl.split('#').length > 1){
+                        var el = document.getElementById(theUrl.split('#')[1]);
+                        if (el){
+                                el.parentElement.scrollTop = el.offsetTop - 20;
+                        }
+                }
+
+                // Set url property
+                levelcont.url = theUrl.split('#')[0];
+                
+                // Arm new links
+                SetLinks(level);
+                SetContainer(levelcont);
+
+                // Continue path opening (if started with path opening)
+                if (callbackpath){
+                        OpenPath(level + 1);
+                }
+                else {
+                        // Start to build new href like https://localhost:8000/?path=
+                        let new_href = window.location.pathname + '?path=';
+
+                        // Remove https://localhost:8000/ from link name
+                        let new_tab = theUrl.replace(window.location.origin+'/', '');
+
+                        // Add in existing path until the tab where was clicked
+                        let tab_links = window.location.href.split('?path=');
+                        if (tab_links.length > 1){
+                                path_to_open = tab_links[1].split('/');
+                                for (let i = 0; i < (level - 1); i++){
+                                        new_href += path_to_open[i] + '/'
+                                }
+                        }
+                        
+                        // Add in new tab
+                        new_href += encodeURIComponent(encodeURI(new_tab)) + '/';
+
+                        // Set
+                        window.history.replaceState({}, "", new_href);
+                }
+        }
+
+        function CloseUpperContainers(level){
+                // Close all containers that are higher in level than the level
+                // of the container in which a link was clicked
+                let cns = document.getElementsByClassName("container-wrapper");
+                for (let i=0; i<cns.length; i++){
+                        if (cns[i].id){
+                                if (cns[i].id.split('-')[1] > level){
+                                        cns[i].remove();
+                                        CloseUpperContainers(level);
+                                        return;
+                                }
+                        }
+                }
+        }
+</script>           
+</body>
+</html>

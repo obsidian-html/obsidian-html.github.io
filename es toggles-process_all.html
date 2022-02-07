@@ -53,8 +53,8 @@
 <blockquote>
 <p>Note that this (kind of) breaks the graph view: not all links will be present in the graph that should be present. See <a href="https://github.com/obsidian-html/obsidian-html/issues/22" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/22</a></p>
 </blockquote>
-<svg class="graph_svg" id="A49213ac95af644f78feafa4673dc151d{level}" width="680" height="400"></svg>
-<button class="graph_button" id="B49213ac95af644f78feafa4673dc151d{level}" level="{level}" onclick="run('49213ac95af644f78feafa4673dc151d'+this.level, 'Crawling versus converting all nodes');">Show Graph</button>
+<svg class="graph_svg" id="Ae0cc783107214b55aadaf45191d434e4{level}" width="680" height="400"></svg>
+<button class="graph_button" id="Be0cc783107214b55aadaf45191d434e4{level}" level="{level}" onclick="run('e0cc783107214b55aadaf45191d434e4'+this.level, 'Crawling versus converting all nodes');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -194,26 +194,26 @@ function run(uid, pinnedNode){
 
 
         function dragstarted(d) {
-                // if (d.id == pinnedNode){
-                //         return
-                // }
+                if (d.id == pinnedNode){
+                        return
+                }
                 if (!d3.event.active) simulation.alphaTarget(0.3).restart();         
                 d.fx = d.x;
                 d.fy = d.y;
         }
 
         function dragged(d) {
-                // if (d.id == pinnedNode){
-                //         return
-                // }                
+                if (d.id == pinnedNode){
+                        return
+                }                
                 d.fx = d3.event.x;
                 d.fy = d3.event.y;
         }
 
         function dragended(d) {
-                // if (d.id == pinnedNode){
-                //         return
-                // }
+                if (d.id == pinnedNode){
+                        return
+                }
                 if (!d3.event.active) simulation.alphaTarget(0);
                 d.fx = null;
                 d.fy = null;

@@ -54,17 +54,17 @@
 </blockquote>
 <h1 id="features">Features</h1>
 <ul>
-<li><a href="/Resources/Example site/esBasics.html">Basics</a>   </li>
-<li><a href="/Resources/Example site/esLinks.html">Links</a>   </li>
-<li><a href="/Resources/Example site/esImages.html">Images</a>   </li>
-<li><a href="/Resources/Example site/esCodeBlocks.html">Code blocks</a>   </li>
-<li><a href="/Resources/Example site/esLists.html">Lists</a>   </li>
-<li><a href="/Resources/Example site/esInclusions.html">Note inclusions</a>   </li>
-<li><a href="/Resources/Example site/esMermaid.html">Mermaid Diagrams</a>   </li>
-<li><a href="/Resources/Example site/esHTML.html">HTML Tweaks</a>   </li>
-<li><a href="/Resources/Example site/esTags.html">Tags</a>   </li>
-<li><a href="/Resources/Example site/es Graph view.html">Graph view</a>   </li>
-<li><a href="/Resources/Example site/esExclude subfolders.html">Exclude subfolders</a>   </li>
+<li><a href="/esBasics.html">Basics</a>   </li>
+<li><a href="/esLinks.html">Links</a>   </li>
+<li><a href="/esImages.html">Images</a>   </li>
+<li><a href="/esCodeBlocks.html">Code blocks</a>   </li>
+<li><a href="/esLists.html">Lists</a>   </li>
+<li><a href="/esInclusions.html">Note inclusions</a>   </li>
+<li><a href="/esMermaid.html">Mermaid Diagrams</a>   </li>
+<li><a href="/esHTML.html">HTML Tweaks</a>   </li>
+<li><a href="/esTags.html">Tags</a>   </li>
+<li><a href="/es Graph view.html">Graph view</a>   </li>
+<li><a href="/esExclude subfolders.html">Exclude subfolders</a>   </li>
 </ul>
 <h1 id="configurations">Configurations</h1>
 <ul>
@@ -72,10 +72,10 @@
 </ul>
 <h1 id="tips-and-tricks">Tips and tricks</h1>
 <ul>
-<li><a href="/Resources/Example site/esAutomation.html">Automate website deployment</a></li>
+<li><a href="/esAutomation.html">Automate website deployment</a></li>
 </ul>
-<svg class="graph_svg" id="Aed25caeff7624caba1458cf9a8ccd5d1{level}" width="680" height="400"></svg>
-<button class="graph_button" id="Bed25caeff7624caba1458cf9a8ccd5d1{level}" level="{level}" onclick="run('ed25caeff7624caba1458cf9a8ccd5d1'+this.level, 'index');">Show Graph</button>
+<svg class="graph_svg" id="A21780e5e3c554e63bd24d57bf90145cf{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B21780e5e3c554e63bd24d57bf90145cf{level}" level="{level}" onclick="run('21780e5e3c554e63bd24d57bf90145cf'+this.level, 'index');">Show Graph</button>
 <script>
 function run(uid, pinnedNode){
     // Get elements
@@ -215,26 +215,26 @@ function run(uid, pinnedNode){
 
 
         function dragstarted(d) {
-                // if (d.id == pinnedNode){
-                //         return
-                // }
+                if (d.id == pinnedNode){
+                        return
+                }
                 if (!d3.event.active) simulation.alphaTarget(0.3).restart();         
                 d.fx = d.x;
                 d.fy = d.y;
         }
 
         function dragged(d) {
-                // if (d.id == pinnedNode){
-                //         return
-                // }                
+                if (d.id == pinnedNode){
+                        return
+                }                
                 d.fx = d3.event.x;
                 d.fy = d3.event.y;
         }
 
         function dragended(d) {
-                // if (d.id == pinnedNode){
-                //         return
-                // }
+                if (d.id == pinnedNode){
+                        return
+                }
                 if (!d3.event.active) simulation.alphaTarget(0);
                 d.fx = null;
                 d.fy = null;

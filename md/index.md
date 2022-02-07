@@ -16,21 +16,21 @@ See also this site, which uses purely this code: [devfruits.com](https://www.dev
    
 # Features   
    
-- [Basics](Resources/Example%20site/esBasics.md)   
-- [Links](Resources/Example%20site/esLinks.md)   
-- [Images](Resources/Example%20site/esImages.md)   
-- [Code blocks](Resources/Example%20site/esCodeBlocks.md)   
-- [Lists](Resources/Example%20site/esLists.md)   
-- [Note inclusions](Resources/Example%20site/esInclusions.md)   
-- [Mermaid Diagrams](Resources/Example%20site/esMermaid.md)   
-- [HTML Tweaks](Resources/Example%20site/esHTML.md)   
-- [Tags](Resources/Example%20site/esTags.md)   
-- [Graph view](Resources/Example%20site/es%20Graph%20view.md)   
-- [Exclude subfolders](Resources/Example%20site/esExclude%20subfolders.md)   
+- [Basics](esBasics.md)   
+- [Links](esLinks.md)   
+- [Images](esImages.md)   
+- [Code blocks](esCodeBlocks.md)   
+- [Lists](esLists.md)   
+- [Note inclusions](esInclusions.md)   
+- [Mermaid Diagrams](esMermaid.md)   
+- [HTML Tweaks](esHTML.md)   
+- [Tags](esTags.md)   
+- [Graph view](es%20Graph%20view.md)   
+- [Exclude subfolders](esExclude%20subfolders.md)   
    
 # Configurations   
    
 - [Crawling versus converting all nodes](es%20toggles-process_all.md)   
 # Tips and tricks   
    
-- [Automate website deployment](Resources/Example%20site/esAutomation.md)
+- [Automate website deployment](esAutomation.md)

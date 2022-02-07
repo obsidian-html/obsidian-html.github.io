@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>Example Site</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
+                <script src="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                window.location.hash = '!' + window.location.hash.substr(1);
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/" id="homelink" title="Clear screen and go to homepage">Example Site</a>
+
+        <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
+                <a href="/tags" title="Open tag view">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
+                                <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
+                                        v49.548h41.29v41.29h49.548v-41.29h49.548v41.29h49.548v-41.29h41.29v-49.548h-41.29v-49.548H371.613z M280.774,280.774h-49.548
+                                        v-49.548h49.548V280.774z" fill="#c2c9ce"></path>
+                        </svg>
+                </a>
+        </div>
+</div>
+<div class="container-wrapper">
+        <div class="container">
+        <h1 id="code-blocks">Code blocks</h1>
+<p>This is built into python-markdown, and enabled by default. <br />
+Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created.   </p>
+<h2 id="python">Python</h2>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>                  <span class="c1">#commandlinearguments</span>
+<span class="kn">import</span> <span class="nn">shutil</span>               <span class="c1">#usedtoremoveanon-emptydirectory,copyfiles</span>
+<span class="kn">import</span> <span class="nn">re</span>                   <span class="c1">#regexstringfinding/replacing</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>    <span class="c1"># </span>
+<span class="kn">import</span> <span class="nn">frontmatter</span>          <span class="c1">#removeyamlfrontmatterfrommdfiles</span>
+<span class="kn">import</span> <span class="nn">markdown</span>             <span class="c1">#convertmarkdowntohtml</span>
+<span class="kn">import</span> <span class="nn">urllib.parse</span>         <span class="c1">#convertlinkcharacterslike%</span>
+
+<span class="c1">#pythonrun.py&#39;C:\Users\Installer\OneDrive\Obsidian\Notes&#39;&#39;C:\Users\Installer\OneDrive\Obsidian\Notes\Work.md&#39;</span>
+
+<span class="c1">#Input</span>
+<span class="c1">#------------------------------------------</span>
+<span class="n">root_folder</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>     <span class="c1">#firstfolderthatcontainsallmarkdownfiles</span>
+<span class="n">entrypoint</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1">#Thenotethatwillbeusedastheindex.html</span>
+
+<span class="k">if</span> <span class="n">root_folder</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">:</span>
+ <span class="n">root_folder</span><span class="o">=</span><span class="n">root_folder</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># -- CLIENT SETUP --------------------------------------------------------------------</span>
+<span class="c1"># ====================================================================================</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">TOKEN</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;DISCORD_TOKEN&#39;</span><span class="p">)</span>
+
+<span class="n">intents</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Intents</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
+<span class="n">intents</span><span class="o">.</span><span class="n">members</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">intents</span><span class="o">=</span><span class="n">intents</span><span class="p">)</span>   
+
+<span class="c1"># -- MESSAGE EVENT -------------------------------------------------------------------</span>
+<span class="c1"># ====================================================================================</span>
+<span class="nd">@client</span><span class="o">.</span><span class="n">event</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="c1"># Init</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="c1"># current date and time</span>
+    <span class="n">date_time</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y, %H:%M:%S&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Don&#39;t respond to self to avoid endless loops</span>
+    <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">author</span> <span class="o">==</span> <span class="n">client</span><span class="o">.</span><span class="n">user</span><span class="p">:</span>
+        <span class="k">return</span>
+</code></pre></div>
+
+<h2 id="powershell">Powershell</h2>
+<div class="codehilite"><pre><span></span><code><span class="k">Function</span> <span class="nb">Add-Link</span> <span class="p">{</span>
+    <span class="k">param</span><span class="p">(</span>
+        <span class="nv">$Link</span><span class="p">,</span> 
+        <span class="nv">$Title</span><span class="p">,</span>
+        <span class="nv">$Description</span><span class="p">,</span>
+        <span class="nv">$Category</span> <span class="p">=</span> <span class="s1">&#39;misc&#39;</span><span class="p">,</span>
+        <span class="nv">$PrivateKeyPath</span> <span class="p">=</span> <span class="nv">$script:PrivateKeyPath</span>        
+    <span class="p">)</span>
+
+    <span class="c"># Compile script to be run on the linux host</span>
+    <span class="nv">$script</span> <span class="p">=</span> <span class="s2">&quot;cd /home/user/www/devfruits/links</span><span class="se">`n</span><span class="s2">&quot;</span>
+    <span class="nv">$script</span> <span class="p">+=</span> <span class="s2">&quot;python3 add.py &#39;$Category&#39; &#39;$Link&#39; &#39;$Title&#39; &#39;$Description&#39;</span><span class="se">`n</span><span class="s2">&quot;</span>
+    <span class="nv">$script</span> <span class="p">+=</span> <span class="s2">&quot;python3 publish.py&quot;</span>
+    <span class="no">[System.IO.File]</span><span class="p">::</span><span class="n">WriteAllLines</span><span class="p">(</span><span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:TEMP</span><span class="p">)</span><span class="s2">\_addlink.sh&quot;</span><span class="p">,</span> <span class="nv">$script</span><span class="p">)</span>
+
+    <span class="c"># Run script</span>
+    <span class="n">plink</span> <span class="n">-batch</span> <span class="n">-i</span> <span class="nv">$PrivateKeyPath</span> <span class="n">user</span><span class="nv">@web002</span> <span class="n">-m</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:TEMP</span><span class="p">)</span><span class="s2">\_addlink.sh&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="yaml">YAML</h2>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="c1"># This is a basic workflow to help you get started with Actions</span><span class="w"></span>
+
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span><span class="w"></span>
+
+<span class="c1"># Controls when the action will run. </span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Triggers the workflow on push or pull request events but only for the main branch</span><span class="w"></span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># Allows you to run this workflow manually from the Actions tab</span><span class="w"></span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w"></span>
+
+<span class="c1"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This workflow contains a single job called &quot;build&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The type of runner that the job will run on</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">self-hosted</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
+
+<span class="w">      </span><span class="c1"># Runs a single command using the runners shell</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run a one-line script</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo Hello, world!</span><span class="w"></span>
+
+<span class="w">      </span><span class="c1"># Runs a set of commands using the runners shell</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run a multi-line script</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">          </span><span class="no">echo &quot;$HOSTNAME&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="no">touch /home/github/testttttt</span><span class="w"></span>
+<span class="w">          </span><span class="no">pwd</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="bash">Bash</h2>
+<div class="codehilite"><pre><span></span><code>    <span class="c1"># Set rights</span>
+    <span class="c1"># ---------------------------</span>
+    <span class="c1"># Create www-data group, and add main user to it</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$setWWWData</span> -eq <span class="m">1</span> <span class="o">]]</span><span class="p">;</span>
+    <span class="k">then</span>
+        sudo groupadd www-data
+        sudo usermod <span class="nv">$mainUser</span> -a -G www-data
+
+        <span class="c1"># Give www-data rights to everything in /var/www/</span>
+        sudo chown -R :www-data /var/www/
+    <span class="k">fi</span>
+
+    <span class="c1"># Empty default site block</span>
+    <span class="c1"># ---------------------------</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$distro</span> -eq <span class="nv">$MANJARO</span> <span class="o">]]</span><span class="p">;</span>
+    <span class="k">then</span>
+        sudo touch /etc/nginx/sites-available/default
+
+    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$distro</span> -eq <span class="nv">$UBUNTU</span> <span class="o">]]</span><span class="p">;</span>
+    <span class="k">then</span>
+        sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/_default_factory
+        sudo <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> &gt; /etc/nginx/sites-available/default
+    <span class="k">fi</span>    
+</code></pre></div>
+<svg class="graph_svg" id="A2b7521b170de4fa6b6e1ecd898b13724{level}" width="680" height="400"></svg>
+<button class="graph_button" id="B2b7521b170de4fa6b6e1ecd898b13724{level}" level="{level}" onclick="run('2b7521b170de4fa6b6e1ecd898b13724'+this.level, 'Code blocks');">Show Graph</button>
+<script>
+function run(uid, pinnedNode){
+    // Get elements
+    var _button = document.getElementById('B' + uid);
+    var _svg = document.getElementById('A' + uid);
+    
+    // toggle graph on or off
+    var turn_on = true;
+    if (_button.innerHTML == 'Hide Graph'){
+        _button.innerHTML = 'Show Graph';
+        turn_on = false;
+        _svg.style.display = "None";
+        d3.selectAll("#A" + uid + " > *").remove();
+    }
+    else {
+        _button.innerHTML = "Hide Graph";
+        _svg.style.display = "block";
+
+        cont = _svg.parentElement;
+        
+        if (cont.getBoundingClientRect().right > window.visualViewport.width){
+                window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        }
+        
+    }
+
+    // run d3 graph
+
+    if (turn_on){
+        var svg = d3.select("#A" + uid),
+            width = +svg.attr("width"),
+            height = +svg.attr("height");
+
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+        var simulation = d3.forceSimulation()
+            .force("link", d3.forceLink().id(function(d) { return d.id; }))
+            .force("charge", d3.forceManyBody().strength(-200))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+
+        d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
+                if (error) throw error;
+
+
+                //add encompassing group for the zoom 
+                var g = svg.append("g")
+                .attr("class", "everything");
+
+                var link = g.append("g")
+                .attr("class", "links")
+                .selectAll("line")
+                .data(graph.links)
+                .enter().append("line")
+                .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+                var node = g.append("g")
+                .attr("class", "nodes")
+                .selectAll("g")
+                .data(graph.nodes)
+                .enter().append("g")            
+
+                var circles = node.append("circle")
+                .attr("r", 5)
+                .attr("fill", function(d) { 
+                        if (d.id == pinnedNode){
+                                return 'red'
+                        }
+                        return color(d.group); 
+                });
+
+                // Create a drag handler and append it to the node object instead
+                var drag_handler = d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended);
+
+                drag_handler(node);
+                
+                var lables = node.append("text")
+                .text(function(d) {
+                        return d.id;
+                })
+                .attr('x', 6)
+                .attr('y', 3)
+                .on("click", function(d) {
+                    let svg_el = document.getElementById('A' + uid);
+                    console.log('A' + uid)
+                    let level = parseInt(svg_el.parentElement.id.split('-')[1]);
+                    console.log(svg_el.parentElement);
+                    console.log(level, level+1);
+                    httpGetAsync(encodeURI(d.url), ReceiveCall, level+1, false); 
+                    return false; 
+                        //window.open(d.url);
+                });
+
+                node.append("title")
+                .text(function(d) { return d.id; });
+
+                simulation
+                .nodes(graph.nodes)
+                .on("tick", ticked);
+
+                simulation.force("link")
+                .links(graph.links);
+
+                function ticked() {
+                        node
+                                .attr("transform", function(d) { 
+                                        if (d.id == pinnedNode){  
+                                                d.fx = (width / 2)
+                                                d.fy = (height / 2)  
+                                        }                          
+                                        return "translate(" + d.x + "," + d.y + ")";
+                                })
+
+                        // //constrains the nodes to be within a box
+                        // node
+                        //         .attr("cx", function(d) { return let dx = Math.max(d.radius, Math.min(width - d.radius, d.x)); })
+                        //         .attr("cy", function(d) { return d.y = Math.max(d.radius, Math.min(height - d.radius, d.y)); }); 
+                        link
+                                .attr("x1", function(d) { return d.source.x; })
+                                .attr("y1", function(d) { return d.source.y; })
+                                .attr("x2", function(d) { return d.target.x; })
+                                .attr("y2", function(d) { return d.target.y; });
+                }
+
+        //add zoom capabilities 
+        var zoom_handler = d3.zoom()
+            .on("zoom", zoom_actions);
+
+        zoom_handler(svg); 
+                //Zoom functions 
+                function zoom_actions(){
+                        g.attr("transform", d3.event.transform)
+                }
+        });
+
+
+        function dragstarted(d) {
+                if (d.id == pinnedNode){
+                        return
+                }
+                if (!d3.event.active) simulation.alphaTarget(0.3).restart();         
+                d.fx = d.x;
+                d.fy = d.y;
+        }
+
+        function dragged(d) {
+                if (d.id == pinnedNode){
+                        return
+                }                
+                d.fx = d3.event.x;
+                d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+                if (d.id == pinnedNode){
+                        return
+                }
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+        }
+    }
+}
+</script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script>
+        // Init
+        // ----------------------------------------------------------------------------
+        function LoadPage(){
+                console.log('threshold', (1.2 * 40 * getComputedStyle(document.documentElement).fontSize.split("px")[0]));
+                SetLinks(0);
+        
+                // Scroll container to #header link
+                if (window.location.hash != ''){
+                        let el = document.getElementById(window.location.hash.substr(2));
+                        if (el){
+                                el.parentElement.scrollTop = el.offsetTop - 20;
+                        }
+                }
+        }
+        
+        // Init starting container
+        FirstContainer = document.getElementsByClassName('container')[0];
+        FirstContainer.id = 'level-0';
+        FirstContainer.level = '0';
+        SetContainer(FirstContainer);    
+        
+        // Open the path on loading the page
+        // This is everything after ?path=
+        var href = window.location.href;
+        var path_to_open = [];
+        if (href.includes('?path=')){
+                path_to_open = href.split('?path=')[1].split('/');
+                for (let i = 0; i < path_to_open.length; i++){
+                        path_to_open[i] = decodeURIComponent(path_to_open[i]);
+                }
+        }        
+        OpenPath(1);
+
+
+        // FUNCTIONS 
+        // ----------------------------------------------------------------------------
+
+        function OpenPath(level){
+                if (path_to_open.length > 0){
+                        let path = path_to_open.shift();
+                        if (path != ''){
+                                httpGetAsync(path, ReceiveCall, level, true);
+                        }
+                        
+                }       
+        }
+        
+        // Change link operation
+        function SetLinks(level){
+                size_of_rem = getComputedStyle(document.documentElement).fontSize.split("px")[0];
+                if (window.visualViewport.width > (1.2 * 40 * size_of_rem))
+                {
+                        var links = document.getElementsByTagName('a');
+                        for (let i=0; i < links.length; i++){
+                                let l = links[i];
+                                if (l.className == 'anchor'){
+                                        continue;
+                                }
+                                if (l.id == 'homelink'){
+                                        continue;
+                                }
+                                if (l.classList.contains('external-link')){
+                                        continue;
+                                }
+                                if (l.onclick != null){
+                                        continue;
+                                }
+                                l.onclick = function () { 
+                                        httpGetAsync(encodeURI(this.attributes.href.nodeValue), ReceiveCall, level+1, false); 
+                                        return false; 
+                                };
+                        }
+                }
+        }  
+        
+        function SetContainer(container)
+        {
+                // This function is called on every (newly created) container. 
+                // One container holds one tab
+
+                // Create clickback element
+                cb = document.createElement('div');
+                cb.className = 'container-clickback';
+                cb.id = 'cb' + container.id;
+                container.parentElement.appendChild(cb);
+                
+                cb.onclick = function () { 
+                        cont = document.getElementById(this.id.slice(2))
+                        window.scrollTo(Math.max(window.visualViewport.pageLeft - (70 - cont.getBoundingClientRect().left), 0), 0)
+                };
+
+                // Set url
+                // This will be set already if this is not the first tab
+                if (typeof container.url === 'undefined'){
+                        container.url = window.location.pathname;
+                }
+
+                // Set click to get header link
+                SetHeaders(container);
+
+                // Load mermaid code
+                mermaid.init()
+
+                // set graph svg and button to have unique id across tabs
+                svgs = container.querySelectorAll(".graph_svg");
+                if (svgs.length == 1){
+                        svgs[0].id = svgs[0].id.replace('{level}', container.level)
+                }
+                
+                let buttons = container.querySelectorAll(".graph_button");
+                if (buttons.length == 1){
+                        buttons[0].level = container.level;
+                        buttons[0].id = buttons[0].id.replace('{level}', container.level)
+                }
+        }
+
+        function SetHeaders(container){
+                let els = container.childNodes;
+                for (let i  = 0; i < els.length; i++){
+                        if (typeof els[i].tagName === 'undefined' || els[i].tagName[0] != 'H'){
+                                continue;
+                        }
+
+                        // iterate
+                        let n = 1;
+
+                        // Test if page is open already in another tab
+                        anchor_id = els[i].id + '-anchor';
+                        if (document.getElementById(anchor_id)){
+                                let loop = true;
+                                while (loop){
+                                        if (document.getElementById(anchor_id + '_' + n)){
+                                                n++;
+                                        }
+                                        else {
+                                                break;
+                                        }
+                                }
+                                anchor_id += '_' + n;
+                        }
+
+                        els[i].anchor_id = anchor_id;
+                        
+                        // Add link icon + a href to the header
+                        let href = window.location.origin + container.url + '#!' + els[i].id;
+                        els[i].innerHTML = '<a id="' + anchor_id + '" class="anchor" href="'+href+'"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>\n' + els[i].innerHTML
+                        
+                        // body onload is not called when staying within the page
+                        // we need to call the LoadPage() function manually
+                        let href_el = document.getElementById(anchor_id);
+                        href_el.onclick = function(){
+                                window.location.replace(this.href);
+                                LoadPage(0);
+                        }
+
+                        // Show/hide link icon
+                        els[i].onmouseover = function(){
+                                document.getElementById(this.anchor_id).style.visibility = 'visible';
+                        };
+                        els[i].onmouseleave = function(){
+                                document.getElementById(this.anchor_id).style.visibility = 'hidden';
+                        };     
+                }
+        }                   
+
+           
+        
+        function httpGetAsync(theUrl, callback, level, callbackpath)
+        {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function() { 
+                        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                        callback(xmlHttp, level, theUrl, callbackpath);
+                }
+                xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+                xmlHttp.send(null);
+        }
+
+        function ReceiveCall(xmlHttp, level, theUrl, callbackpath){
+                respUrl = xmlHttp.responseURL;
+                responseText = xmlHttp.responseText;
+
+                // Restore header if it has been hidden because of an anchor link
+                document.getElementById('header').style.display = 'block';
+
+                // Set body width to level * 40 rem
+                document.body.style.width = (level * 40 + 200) + 'rem';  
+
+                // Get html
+                let text = responseText.split('<div class="container">')[1];
+                text =  text.split('<!-- end content -->')[0];
+
+                // Close all containers with level below given
+                CloseUpperContainers(level);
+
+                // Test if container for this level already exists
+                // otherwise create
+                let levelcont = document.getElementById('level-'+level);
+                let isNew = false
+                if (levelcont == null) {
+                        isNew = true;
+                        wrappercont = document.createElement('div');
+                        wrappercont.className = 'container-wrapper';
+                        wrappercont.id = 'wrapperlevel-'+level;
+                        document.body.appendChild(wrappercont);
+
+                        levelcont = document.createElement('div');
+                        levelcont.className = 'container';
+                        levelcont.id = 'level-'+level;
+                        levelcont.level = level;
+                }
+
+                // Update content of div
+                levelcont.innerHTML = text;
+
+                if (isNew){
+                        document.getElementById('wrapperlevel-'+level).appendChild(levelcont);
+                }
+
+                // Get the leventcont again from the DOM
+                levelcont = document.getElementById('level-'+level);
+
+                // Scroll into view
+                levelcont = document.getElementById('level-'+level);
+                levelcont.scrollIntoView(true);
+                window.scrollTo(window.visualViewport.pageLeft, 0);
+
+                // Scroll container to #header link
+                theUrl = decodeURI(theUrl);
+                if (theUrl.split('#').length > 1){
+                        var el = document.getElementById(theUrl.split('#')[1]);
+                        if (el){
+                                el.parentElement.scrollTop = el.offsetTop - 20;
+                        }
+                }
+
+                // Set url property
+                levelcont.url = theUrl.split('#')[0];
+                
+                // Arm new links
+                SetLinks(level);
+                SetContainer(levelcont);
+
+                // Continue path opening (if started with path opening)
+                if (callbackpath){
+                        OpenPath(level + 1);
+                }
+                else {
+                        // Start to build new href like https://localhost:8000/?path=
+                        let new_href = window.location.pathname + '?path=';
+
+                        // Remove https://localhost:8000/ from link name
+                        let new_tab = theUrl.replace(window.location.origin+'/', '');
+
+                        // Add in existing path until the tab where was clicked
+                        let tab_links = window.location.href.split('?path=');
+                        if (tab_links.length > 1){
+                                path_to_open = tab_links[1].split('/');
+                                for (let i = 0; i < (level - 1); i++){
+                                        new_href += path_to_open[i] + '/'
+                                }
+                        }
+                        
+                        // Add in new tab
+                        new_href += encodeURIComponent(encodeURI(new_tab)) + '/';
+
+                        // Set
+                        window.history.replaceState({}, "", new_href);
+                }
+        }
+
+        function CloseUpperContainers(level){
+                // Close all containers that are higher in level than the level
+                // of the container in which a link was clicked
+                let cns = document.getElementsByClassName("container-wrapper");
+                for (let i=0; i<cns.length; i++){
+                        if (cns[i].id){
+                                if (cns[i].id.split('-')[1] > level){
+                                        cns[i].remove();
+                                        CloseUpperContainers(level);
+                                        return;
+                                }
+                        }
+                }
+        }
+</script>           
+</body>
+</html>
