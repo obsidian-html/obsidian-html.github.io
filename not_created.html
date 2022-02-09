@@ -9,13 +9,15 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
 
                 <!-- Set title -->
-                <title>{title}</title>
+                <title>Example Site</title>
 
                 <!-- Includes -->
-                <link rel="stylesheet" href="{html_url_prefix}/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
-                <link rel="stylesheet" href="{html_url_prefix}/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
-                <script src="{html_url_prefix}/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
-                
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
+                <script src="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
 
                 <!-- Onload tweaks -->
                 <script>
@@ -28,10 +30,10 @@
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="{html_url_prefix}/" id="homelink" title="Clear screen and go to homepage">{title}</a>
+        <a href="/" id="homelink" title="Clear screen and go to homepage">Example Site</a>
 
         <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
-                <a href="{html_url_prefix}/tags" title="Open tag view">
+                <a href="/tags" title="Open tag view">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                 <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
                                 <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
