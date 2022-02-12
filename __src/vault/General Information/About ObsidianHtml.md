@@ -8,7 +8,7 @@ tags:
 ## Description
 ObsidianHtml is an application that can be used to export Obsidian notes to standard markdown and an html based website. 
 
-In fact, this website that you are currently on is directly compiled out of a [vault](). The compiled markdown can be [found here]().
+In fact, this website that you are currently on is directly compiled out of a [vault](https://github.com/obsidian-html/obsidian-html.github.io/tree/main/__src/vault). The compiled markdown can be [found here](https://github.com/obsidian-html/obsidian-html.github.io/blob/main/md/index.md).
 
 > **Important note:** 
 >
