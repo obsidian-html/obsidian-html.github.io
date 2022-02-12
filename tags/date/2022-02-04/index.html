@@ -9,15 +9,16 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
 
                 <!-- Set title -->
-                <title>Example Site</title>
+                <title>ObsidianHtml/Documentation</title>
 
                 <!-- Includes -->
                 <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
                 <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
                 <script src="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
-                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
+                
+<link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
 <script src="https://d3js.org/d3.v4.min.js"></script>
-
+<link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/taglist.css" />
 
                 <!-- Onload tweaks -->
                 <script>
@@ -30,7 +31,7 @@
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="/" id="homelink" title="Clear screen and go to homepage">Example Site</a>
+        <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
 
         <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
                 <a href="/tags" title="Open tag view">
@@ -47,20 +48,19 @@
         <div class="container">
         <h1 id="notes">Notes</h1>
 <ul>
-<li><a href="/Resources/Example site/esBasics.html">Resources/Example site/esBasics</a></li>
-<li><a href="/Resources/Example site/esLinks.html">Resources/Example site/esLinks</a></li>
-<li><a href="/Resources/Example site/esImages.html">Resources/Example site/esImages</a></li>
-<li><a href="/Resources/Example site/esCodeBlocks.html">Resources/Example site/esCodeBlocks</a></li>
-<li><a href="/Resources/Example site/esLists.html">Resources/Example site/esLists</a></li>
-<li><a href="/Resources/Example site/esInclusions.html">Resources/Example site/esInclusions</a></li>
-<li><a href="/Resources/Example site/esMermaid.html">Resources/Example site/esMermaid</a></li>
-<li><a href="/Resources/Example site/esHTML.html">Resources/Example site/esHTML</a></li>
-<li><a href="/Resources/Example site/esTags.html">Resources/Example site/esTags</a></li>
-<li><a href="/Resources/Example site/esAutomation.html">Resources/Example site/esAutomation</a></li>
-<li><a href="/Resources/Example site/esAutomationLinuxGit.html">Resources/Example site/esAutomationLinuxGit</a></li>
-<li><a href="/Resources/Example site/esAutomationWindows.html">Resources/Example site/esAutomationWindows</a></li>
-<li><a href="/Resources/Example site/esAutomationLinuxSSH.html">Resources/Example site/esAutomationLinuxSSH</a></li>
-<li><a href="/Resources/Example site/esAutomationWindowsSSH.html">Resources/Example site/esAutomationWindowsSSH</a></li>
+<li><a href="/Demonstrations/Getting the basics right.html">Demonstrations/Getting the basics right</a></li>
+<li><a href="/Demonstrations/Making lists work the same.html">Demonstrations/Making lists work the same</a></li>
+<li><a href="/Demonstrations/Implementing links &amp; link awareness.html">Demonstrations/Implementing links &amp; link awareness</a></li>
+<li><a href="/Demonstrations/Parsing Images.html">Demonstrations/Parsing Images</a></li>
+<li><a href="/Demonstrations/Making Code blocks look pretty.html">Demonstrations/Making Code blocks look pretty</a></li>
+<li><a href="/Demonstrations/Implementing Note Inclusions.html">Demonstrations/Implementing Note Inclusions</a></li>
+<li><a href="/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Demonstrations/Implementing Mermaid diagrams in HTML output</a></li>
+<li><a href="/General Information/HTML tweaks.html">General Information/HTML tweaks</a></li>
+<li><a href="/Automation/Automate website deployment.html">Automation/Automate website deployment</a></li>
+<li><a href="/Automation/AutomationLinuxGit.html">Automation/AutomationLinuxGit</a></li>
+<li><a href="/Automation/AutomationWindows.html">Automation/AutomationWindows</a></li>
+<li><a href="/Automation/AutomationLinuxSSH.html">Automation/AutomationLinuxSSH</a></li>
+<li><a href="/Automation/AutomationWindowsSSH.html">Automation/AutomationWindowsSSH</a></li>
 </ul>
         <!-- end content -->
         </div>
@@ -100,6 +100,17 @@
                 }
         }        
         OpenPath(1);
+
+        // Keybindings
+        // ----------------------------------------------------------------------------
+        document.addEventListener('keypress', logKey);
+
+        function logKey(e) {
+                // Move to the beginning if 1 or enter is pressed
+                if (e.key == '1'){
+                        window.scrollTo(0,0);
+                }
+        }
 
 
         // FUNCTIONS 

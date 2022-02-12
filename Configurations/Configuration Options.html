@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/Documentation</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
+                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
+                <script src="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                window.location.hash = '!' + window.location.hash.substr(1);
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+
+        <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
+                <a href="/tags" title="Open tag view">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
+                                <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
+                                        v49.548h41.29v41.29h49.548v-41.29h49.548v41.29h49.548v-41.29h41.29v-49.548h-41.29v-49.548H371.613z M280.774,280.774h-49.548
+                                        v-49.548h49.548V280.774z" fill="#c2c9ce"></path>
+                        </svg>
+                </a>
+        </div>
+</div>
+<div class="container-wrapper">
+        <div class="container">
+        <h1 id="configuration-options">Configuration Options</h1>
+<p>This page goes through all the configuration options and will refer to features. For a toplevel view of these features, see <a href="/Configurations/Features.html">Features</a>.   </p>
+<h2 id="get-all-the-default-settings">Get all the default settings</h2>
+<p>Run:   </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml -gc
+</code></pre></div>
+
+<p>To view the defaults_config.yaml that is used by ObsidianHtml. </p>
+<blockquote>
+<p>Tip: run <code>obsidianhtml -gc &gt; config.yaml</code> on Linux to get a config file with all possible inputs. </p>
+</blockquote>
+<p>Note that the inputs that need to be filled in always are marked with <code>'&lt;REQUIRED_INPUT&gt;'</code>.</p>
+<p>We will now go through all the settings in more-or-less the same order as the output of that command.</p>
+<h2 id="paths">Paths</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
+<span class="c1">#                               PATHS                                    #</span><span class="w"></span>
+<span class="c1">##########################################################################</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="obsidian_folder_path_str">obsidian_folder_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
+<span class="c1"># Can be absent when toggles/compile_md == False</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">obsidian_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;REQUIRED_INPUT&gt;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>If you want to only compile markdown to html (<a href="/Configurations/Configuration Options.html#compile-md">Configuration Options#Compile Md</a>), and not use an obsidian vault as input, you can change value to anything other than <code>&lt;REQUIRED_INPUT&gt;</code>.   </p>
+<h3 id="obsidian_entrypoint_path_str">obsidian_entrypoint_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The note that will be used as the index.html </span><span class="w"></span>
+<span class="c1"># should be in obsidian_folder_path_str</span><span class="w"></span>
+<span class="c1"># Can be absent when toggles/compile_md == False</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;REQUIRED_INPUT&gt;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>If you want to only compile markdown to html (<a href="/Configurations/Configuration Options.html#compile-md">Configuration Options#Compile Md</a>), and not use an obsidian vault as input, you can change value to anything other than <code>&lt;REQUIRED_INPUT&gt;</code>.   </p>
+<h3 id="md_folder_path_str">md_folder_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;output/md&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="md_entrypoint_path_str">md_entrypoint_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Markdown entrypoint path</span><span class="w"></span>
+<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;output/md/index.md&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="html_output_folder_path_str">html_output_folder_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Output path of HTML files</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;output/html&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="operations">Operations</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
+<span class="c1">#                              OPERATIONS                                #</span><span class="w"></span>
+<span class="c1">##########################################################################</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="exclude-subfolders">Exclude Subfolders</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Exclude subfolders</span><span class="w"></span>
+<span class="c1"># These are relative to obsidian_folder_path_str</span><span class="w"></span>
+<span class="c1"># To exclude a folder two levels deep, use level1/level2</span><span class="w"></span>
+<span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.obsidian&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.trash&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.DS_Store&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>ObsidianHtml will go through the entire vault and build a file tree. To have this work, we can't have duplicate file names. Of course, this is normally not an issue because this is also not allowed in Obsidian. However, there are some hidden folders in every vault that can share filenames with your notes. Aside from that, we don't need to parse those folders anyways.   </p>
+<p>This setting will make the file tree builder ignore those folders. If you have personal notes in certain folders that you don't want to have end up on a website, you can add those here too.   </p>
+<h3 id="copy-vault-to-tempdir">Copy Vault to Tempdir</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect the vault data. </span><span class="w"></span>
+<span class="c1"># Should be fine to turn off if copying the vault takes too long / disk space is too limited.</span><span class="w"></span>
+<span class="c1"># The tempdir is automatically removed on exit of the program.</span><span class="w"></span>
+<span class="nt">copy_vault_to_tempdir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>We try to not have bugs, but sometimes we just can't help ourselves. I think everyone would agree that the only thing that we should guarantee is that we don't touch your vault files. To help assure that, ObsidianHtml will make a copy of your entire vault to a temporary directory and work from out of that folder.    </p>
+<p>This is an optional setting, and if you have severe file storage problems, or an enormous vault that takes very long to copy, then you can turn this setting off. Though we advise you to make a backup yourself the first couple of times that you use ObsidianHtml, or when you update ObsidianHtml to a new version.    </p>
+<blockquote>
+<p>This setting should be enabled for the option <a href="/Configurations/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
+</blockquote>
+<p>The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please <a href="/General Information/Report Issues &amp; Request features.html">report it as an issue</a>.   </p>
+<h3 id="html-output">HTML Output</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
+<span class="c1">#                             HTML OUTPUT                                #</span><span class="w"></span>
+<span class="c1">##########################################################################</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="site-name">Site name</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Will be inputted into the Html template as page title</span><span class="w"></span>
+<span class="c1"># Not used anywhere else atm.</span><span class="w"></span>
+<span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Obsidian-Html/Notes&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="html-url-prefix">Html Url Prefix</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span><span class="w"></span>
+<span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span><span class="w"></span>
+<span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>The comments in the yaml above explain this feature pretty well.    </p>
+<p>Extra note though: when setting this value, make sure to also edit the <code>html_output_folder_path_str</code> setting, to end with the same prefix, if you want to be able test locally.   </p>
+<h3 id="html-template-path-str">Html Template Path Str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span><span class="w"></span>
+<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span><span class="w"></span>
+<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>If you just want to build your pages yourself entirely, then you can pass in the path to your own template file. Note that you need to have at least <code>{content}</code> somewhere in the page.    </p>
+<p>To fetch the default template, you can run    </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml -eht path/to/output/file.html
+</code></pre></div>
+
+<p>To export it, so you can make incremental changes. Use that same output path as the value for html_template_path_str to use it in your runs.   </p>
+<h3 id="html-custom-inclusions">Html Custom Inclusions</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span><span class="w"></span>
+<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Every note gets turned into its own contained html page. If you want to provide an extra css file, or javascript file, then you can add, e.g., the following into the setting, to avoid having to edit every single page after compilation:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>N.b.</strong> you'll have to place the mentioned files into the output yourself. (Unless they are located in your vault and process_all: True)   </p>
+</blockquote>
+<h2 id="toggles">Toggles</h2>
+<p>These are the first second level settings. If you have multiple settings, make sure to combine them. So not like this:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># wrong</span><span class="w"></span>
+<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+
+<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>But like this:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># good</span><span class="w"></span>
+<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>When in doubt, look at the default config yaml: <a href="/Configurations/Configuration Options.html#get-all-the-default-settings">Configuration Options#Get all the default settings</a>.   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
+<span class="c1">#                    OPTIONAL BEHAVIOR / FEATURES                        #</span><span class="w"></span>
+<span class="c1">##########################################################################</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="compile-md">Compile Md</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Opt-in/-out of Obsidian-&gt;Md conversion, set to False when using proper markdown as input</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>If this setting is turned off, the steps of converting obsidian notes to markdown will be skipped, and the markdown to html conversion will start immediately from <code>md_folder_path_str</code> and <code>md_entrypoint_path_str</code>.    </p>
+<blockquote>
+<p>This method is not tested often, nor tested well, expect issues when you use this option. If you do, please let us know: <a href="/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a>   </p>
+</blockquote>
+<p>Note that even though the obsidian paths are not used, they are still required inputs, so fill them in with a tempdir or another kind of placeholder. See also <a href="/Configurations/Configuration Options.html#paths">Configuration Options#Paths</a>.   </p>
+<h3 id="compile-html">Compile Html</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Opt-in/-out of Md-&gt;Html conversion, set to False when only wanting to get proper markdown from Obsidian</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>Turn on or off the markdown to html conversion.   </p>
+<h3 id="process-all">Process all</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># If this is false only the entrypoint and all its links (recursively) are processed</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># if true all the notes will be processed</span><span class="w"></span>
+<span class="w">  </span><span class="nt">process_all</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>The normal behavior of ObsidianHtml is to take an entrypoint note, convert it, and then do the same for all the links on the page, and so on and so forth.   </p>
+<p>To include all notes in your vault in the output, set this value to true. The notes that can not be reached through the index.html can be found via the <a href="/Configurations/Graph view.html">Graph view</a> or the <a href="/Configurations/Tags Page.html">Tags Page</a>.   </p>
+<p>See also <a href="/Configurations/Process All.html">Process All</a>.   </p>
+<h3 id="verbose_printout">verbose_printout</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Can be overwritten ad-hoc by using &quot;obsidianhtml -i config.yml -v&quot; (the -v option)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">verbose_printout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="allow-duplicate-filenames-in-root">Allow Duplicate Filenames in Root</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This option should be False for Obsidian-&gt;Md, but can be True when compile_md == False</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Setting it to True will cause an error when two files with the same file name are found anywhere in the input folder</span><span class="w"></span>
+<span class="w">  </span><span class="nt">allow_duplicate_filenames_in_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>If you are converting markdown to html directly, then all the links should have already been figured out. So then it should be fine to have duplicate names in your root. You can set this setting to True then.   </p>
+<h3 id="warn-on-skipped-image">Warn on Skipped Image</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Sometimes linked images that should be local (based on the path) cannot be found.</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Toggle this to False to disable warnings if that happens.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">warn_on_skipped_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>This setting is enabled by default because it can be tricky to notice a random image missing on a random page.    </p>
+<p>The thing is that this will also warn you for external images, so there is no harm in turning off this setting if there are no issues with your images being included.    </p>
+<h3 id="no_clean">no_clean</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This will skip emptying output folders, if you want to implement this yourself</span><span class="w"></span>
+<span class="w">  </span><span class="nt">no_clean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>This refers to the markdown and html output folders. If you want to output html directly into a git repo, then by default it will remove the <code>.git</code> directory. To avoid this, you can write your own cleanup script to remove the previous output before running.    </p>
+<h3 id="relat">relat</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Whether the markdown interpreter assumes relative path when no / at the beginning of a link</span><span class="w"></span>
+<span class="w">  </span><span class="nt">relative_path_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Whether external http anchor links should have a target of &quot;_blank&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">external_blank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">  </span>
+</code></pre></div>
+
+<h2 id="features">Features</h2>
+<h3 id="graph">Graph</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Include code to build the graph view per page </span><span class="w"></span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page</span><span class="w"></span>
+<span class="w">      </span><span class="nt">coalesce_force</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;-100&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/Configurations/Graph view.html">Graph view</a>   </p>
+<h3 id="create-index-from-tags">Create Index From Tags</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Create an index.md with links to notes that have one of the given tags.</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># This index.md will serve as the entrypoint.</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># !! Enabling this feature will overwrite obsidian_entrypoint_path_str </span><span class="w"></span>
+<span class="w">    </span><span class="c1"># and md_entrypoint_path_str</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_tags</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">      </span><span class="nt">add_links_in_graph_tree</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">sort</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;none&#39;</span><span class="w">          </span><span class="c1"># &lt;key_value, creation_time, modified_time, none&gt;</span><span class="w"></span>
+<span class="w">                                </span><span class="c1"># ! created_time not available on Linux!</span><span class="w"></span>
+<span class="w">        </span><span class="nt">key_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">            </span><span class="c1"># empty for top level, use &#39;:&#39; to go down </span><span class="w"></span>
+<span class="w">                                </span><span class="c1"># multiple levels</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">        </span><span class="c1"># in case of multiple values under key_path, </span><span class="w"></span>
+<span class="w">                                </span><span class="c1"># match on this prefix, and then remove prefix</span><span class="w"></span>
+<span class="w">        </span><span class="nt">reverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">          </span><span class="c1"># false/true reverses output</span><span class="w"></span>
+<span class="w">        </span><span class="nt">none_on_bottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">    </span><span class="c1"># will put notes at the bottom that do not have </span><span class="w"></span>
+<span class="w">                                </span><span class="c1"># the sort key, otherwise at the top</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/Configurations/Create index from tags.html">Create index from tags</a>   </p>
+<h3 id="backlinks">Backlinks</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Show backlinks at the bottom of each note</span><span class="w"></span>
+<span class="w">    </span><span class="nt">backlinks</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>Notice on each page of this site, each note ends with a backlinks section. This does not come from the vault notes, but is computed and added in by ObsidianHtml. You can turn this off if you don't like this behavior.</p><h2>Backlinks</h2>
+<ul>
+	<li><a href="/Configurations/Process All.html">Process All</a></li>
+	<li><a href="/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
+	<li><a href="/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+	<li><a href="/Configurations/Features.html">Features</a></li>
+	<li><a href="/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a href="/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
+	<li><a href="/General Information/HTML tweaks.html">HTML tweaks</a></li>
+	<li><a href="/Instructions/Usage.html">Usage</a></li>
+	<li><a href="/index.html">index</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A209928168628176964884572870331058033488{level}"></svg>
+    <button class="graph_button" id="B209928168628176964884572870331058033488{level}" level="{level}" onclick="run('209928168628176964884572870331058033488'+this.level, 'Configuration Options');">Show Graph</button>
+</div>
+<script>
+function run(uid, pinnedNode){
+    // Get elements
+    var _button = document.getElementById('B' + uid);
+    var _svg = document.getElementById('A' + uid);
+    
+    // toggle graph on or off
+    var turn_on = true;
+    if (_button.innerHTML == 'Hide Graph'){
+        _button.innerHTML = 'Show Graph';
+        turn_on = false;
+        _svg.style.display = "None";
+        d3.selectAll("#A" + uid + " > *").remove();
+    }
+    else {
+        _button.innerHTML = "Hide Graph";
+        _svg.style.display = "block";
+
+        cont = _svg.parentElement;
+        
+        if (cont.getBoundingClientRect().right > window.visualViewport.width){
+                window.scrollBy(cont.getBoundingClientRect().right - window.visualViewport.width,0)
+        }
+        
+    }
+    // run d3 graph
+
+    if (turn_on){
+        let positionInfo = _svg.getBoundingClientRect();
+        var svg = d3.select("#A" + uid),
+            width = +positionInfo.width,
+            height = +positionInfo.height;
+        console.log ('width: '+width);
+        console.log ('height: '+height);
+
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+        var simulation = d3.forceSimulation()
+            .force("link", d3.forceLink().id(function(d) { return d.id; }))
+            .force("charge", d3.forceManyBody().strength(-200))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+
+        d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
+                if (error) throw error;
+
+
+                //add encompassing group for the zoom 
+                var g = svg.append("g")
+                .attr("class", "everything");
+
+                var link = g.append("g")
+                .attr("class", "links")
+                .selectAll("line")
+                .data(graph.links)
+                .enter().append("line")
+                .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+                var node = g.append("g")
+                .attr("class", "nodes")
+                .selectAll("g")
+                .data(graph.nodes)
+                .enter().append("g")            
+
+                var circles = node.append("circle")
+                .attr("r", 5)
+                .attr("fill", function(d) { 
+                        if (d.id == pinnedNode){
+                                return 'red'
+                        }
+                        return color(d.group); 
+                });
+
+                // Create a drag handler and append it to the node object instead
+                var drag_handler = d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended);
+
+                drag_handler(node);
+                
+                var lables = node.append("text")
+                .text(function(d) {
+                        return d.id;
+                })
+                .attr('x', 6)
+                .attr('y', 3)
+                .on("click", function(d) {
+                    let svg_el = document.getElementById('A' + uid);
+                    console.log('A' + uid)
+                    let level = parseInt(svg_el.parentElement.id.split('-')[1]);
+                    console.log(svg_el.parentElement);
+                    console.log(level, level+1);
+                    httpGetAsync(encodeURI(d.url), ReceiveCall, level+1, false); 
+                    return false; 
+                        //window.open(d.url);
+                });
+
+                node.append("title")
+                .text(function(d) { return d.id; });
+
+                simulation
+                .nodes(graph.nodes)
+                .on("tick", ticked);
+
+                simulation.force("link")
+                .links(graph.links);
+
+                function ticked() {
+                        node
+                                .attr("transform", function(d) { 
+                                        if (d.id == pinnedNode){  
+                                                d.fx = (width / 2)
+                                                d.fy = (height / 2)  
+                                        }                          
+                                        return "translate(" + d.x + "," + d.y + ")";
+                                })
+
+                        // //constrains the nodes to be within a box
+                        // node
+                        //         .attr("cx", function(d) { return let dx = Math.max(d.radius, Math.min(width - d.radius, d.x)); })
+                        //         .attr("cy", function(d) { return d.y = Math.max(d.radius, Math.min(height - d.radius, d.y)); }); 
+                        link
+                                .attr("x1", function(d) { return d.source.x; })
+                                .attr("y1", function(d) { return d.source.y; })
+                                .attr("x2", function(d) { return d.target.x; })
+                                .attr("y2", function(d) { return d.target.y; });
+                }
+
+        //add zoom capabilities 
+        var zoom_handler = d3.zoom()
+            .on("zoom", zoom_actions);
+
+        zoom_handler(svg); 
+                //Zoom functions 
+                function zoom_actions(){
+                        g.attr("transform", d3.event.transform)
+                }
+        });
+
+
+        function dragstarted(d) {
+                if (d.id == pinnedNode){
+                        return
+                }
+                if (!d3.event.active) simulation.alphaTarget(0.3).restart();         
+                d.fx = d.x;
+                d.fy = d.y;
+        }
+
+        function dragged(d) {
+                if (d.id == pinnedNode){
+                        return
+                }                
+                d.fx = d3.event.x;
+                d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+                if (d.id == pinnedNode){
+                        return
+                }
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+        }
+    }
+}
+</script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script>
+        // Init
+        // ----------------------------------------------------------------------------
+        function LoadPage(){
+                console.log('threshold', (1.2 * 40 * getComputedStyle(document.documentElement).fontSize.split("px")[0]));
+                SetLinks(0);
+        
+                // Scroll container to #header link
+                if (window.location.hash != ''){
+                        let el = document.getElementById(window.location.hash.substr(2));
+                        if (el){
+                                el.parentElement.scrollTop = el.offsetTop - 20;
+                        }
+                }
+        }
+        
+        // Init starting container
+        FirstContainer = document.getElementsByClassName('container')[0];
+        FirstContainer.id = 'level-0';
+        FirstContainer.level = '0';
+        SetContainer(FirstContainer);    
+        
+        // Open the path on loading the page
+        // This is everything after ?path=
+        var href = window.location.href;
+        var path_to_open = [];
+        if (href.includes('?path=')){
+                path_to_open = href.split('?path=')[1].split('/');
+                for (let i = 0; i < path_to_open.length; i++){
+                        path_to_open[i] = decodeURIComponent(path_to_open[i]);
+                }
+        }        
+        OpenPath(1);
+
+        // Keybindings
+        // ----------------------------------------------------------------------------
+        document.addEventListener('keypress', logKey);
+
+        function logKey(e) {
+                // Move to the beginning if 1 or enter is pressed
+                if (e.key == '1'){
+                        window.scrollTo(0,0);
+                }
+        }
+
+
+        // FUNCTIONS 
+        // ----------------------------------------------------------------------------
+
+        function OpenPath(level){
+                if (path_to_open.length > 0){
+                        let path = path_to_open.shift();
+                        if (path != ''){
+                                httpGetAsync(path, ReceiveCall, level, true);
+                        }
+                        
+                }       
+        }
+        
+        // Change link operation
+        function SetLinks(level){
+                size_of_rem = getComputedStyle(document.documentElement).fontSize.split("px")[0];
+                if (window.visualViewport.width > (1.2 * 40 * size_of_rem))
+                {
+                        var links = document.getElementsByTagName('a');
+                        for (let i=0; i < links.length; i++){
+                                let l = links[i];
+                                if (l.className == 'anchor'){
+                                        continue;
+                                }
+                                if (l.id == 'homelink'){
+                                        continue;
+                                }
+                                if (l.classList.contains('external-link')){
+                                        continue;
+                                }
+                                if (l.onclick != null){
+                                        continue;
+                                }
+                                l.onclick = function () { 
+                                        httpGetAsync(encodeURI(this.attributes.href.nodeValue), ReceiveCall, level+1, false); 
+                                        return false; 
+                                };
+                        }
+                }
+        }  
+        
+        function SetContainer(container)
+        {
+                // This function is called on every (newly created) container. 
+                // One container holds one tab
+
+                // Create clickback element
+                cb = document.createElement('div');
+                cb.className = 'container-clickback';
+                cb.id = 'cb' + container.id;
+                container.parentElement.appendChild(cb);
+                
+                cb.onclick = function () { 
+                        cont = document.getElementById(this.id.slice(2))
+                        window.scrollTo(Math.max(window.visualViewport.pageLeft - (70 - cont.getBoundingClientRect().left), 0), 0)
+                };
+
+                // Set url
+                // This will be set already if this is not the first tab
+                if (typeof container.url === 'undefined'){
+                        container.url = window.location.pathname;
+                }
+
+                // Set click to get header link
+                SetHeaders(container);
+
+                // Load mermaid code
+                mermaid.init()
+
+                // set graph svg and button to have unique id across tabs
+                svgs = container.querySelectorAll(".graph_svg");
+                if (svgs.length == 1){
+                        svgs[0].id = svgs[0].id.replace('{level}', container.level)
+                }
+                
+                let buttons = container.querySelectorAll(".graph_button");
+                if (buttons.length == 1){
+                        buttons[0].level = container.level;
+                        buttons[0].id = buttons[0].id.replace('{level}', container.level)
+                }
+        }
+
+        function SetHeaders(container){
+                let els = container.childNodes;
+                for (let i  = 0; i < els.length; i++){
+                        if (typeof els[i].tagName === 'undefined' || els[i].tagName[0] != 'H'){
+                                continue;
+                        }
+
+                        // iterate
+                        let n = 1;
+
+                        // Test if page is open already in another tab
+                        anchor_id = els[i].id + '-anchor';
+                        if (document.getElementById(anchor_id)){
+                                let loop = true;
+                                while (loop){
+                                        if (document.getElementById(anchor_id + '_' + n)){
+                                                n++;
+                                        }
+                                        else {
+                                                break;
+                                        }
+                                }
+                                anchor_id += '_' + n;
+                        }
+
+                        els[i].anchor_id = anchor_id;
+                        
+                        // Add link icon + a href to the header
+                        let href = window.location.origin + container.url + '#!' + els[i].id;
+                        els[i].innerHTML = '<a id="' + anchor_id + '" class="anchor" href="'+href+'"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>\n' + els[i].innerHTML
+                        
+                        // body onload is not called when staying within the page
+                        // we need to call the LoadPage() function manually
+                        let href_el = document.getElementById(anchor_id);
+                        href_el.onclick = function(){
+                                window.location.replace(this.href);
+                                LoadPage(0);
+                        }
+
+                        // Show/hide link icon
+                        els[i].onmouseover = function(){
+                                document.getElementById(this.anchor_id).style.visibility = 'visible';
+                        };
+                        els[i].onmouseleave = function(){
+                                document.getElementById(this.anchor_id).style.visibility = 'hidden';
+                        };     
+                }
+        }                   
+
+           
+        
+        function httpGetAsync(theUrl, callback, level, callbackpath)
+        {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function() { 
+                        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                        callback(xmlHttp, level, theUrl, callbackpath);
+                }
+                xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+                xmlHttp.send(null);
+        }
+
+        function ReceiveCall(xmlHttp, level, theUrl, callbackpath){
+                respUrl = xmlHttp.responseURL;
+                responseText = xmlHttp.responseText;
+
+                // Restore header if it has been hidden because of an anchor link
+                document.getElementById('header').style.display = 'block';
+
+                // Set body width to level * 40 rem
+                document.body.style.width = (level * 40 + 200) + 'rem';  
+
+                // Get html
+                let text = responseText.split('<div class="container">')[1];
+                text =  text.split('<!-- end content -->')[0];
+
+                // Close all containers with level below given
+                CloseUpperContainers(level);
+
+                // Test if container for this level already exists
+                // otherwise create
+                let levelcont = document.getElementById('level-'+level);
+                let isNew = false
+                if (levelcont == null) {
+                        isNew = true;
+                        wrappercont = document.createElement('div');
+                        wrappercont.className = 'container-wrapper';
+                        wrappercont.id = 'wrapperlevel-'+level;
+                        document.body.appendChild(wrappercont);
+
+                        levelcont = document.createElement('div');
+                        levelcont.className = 'container';
+                        levelcont.id = 'level-'+level;
+                        levelcont.level = level;
+                }
+
+                // Update content of div
+                levelcont.innerHTML = text;
+
+                if (isNew){
+                        document.getElementById('wrapperlevel-'+level).appendChild(levelcont);
+                }
+
+                // Get the leventcont again from the DOM
+                levelcont = document.getElementById('level-'+level);
+
+                // Scroll into view
+                levelcont = document.getElementById('level-'+level);
+                levelcont.scrollIntoView(true);
+                window.scrollTo(window.visualViewport.pageLeft, 0);
+
+                // Scroll container to #header link
+                theUrl = decodeURI(theUrl);
+                if (theUrl.split('#').length > 1){
+                        var el = document.getElementById(theUrl.split('#')[1]);
+                        if (el){
+                                el.parentElement.scrollTop = el.offsetTop - 20;
+                        }
+                }
+
+                // Set url property
+                levelcont.url = theUrl.split('#')[0];
+                
+                // Arm new links
+                SetLinks(level);
+                SetContainer(levelcont);
+
+                // Continue path opening (if started with path opening)
+                if (callbackpath){
+                        OpenPath(level + 1);
+                }
+                else {
+                        // Start to build new href like https://localhost:8000/?path=
+                        let new_href = window.location.pathname + '?path=';
+
+                        // Remove https://localhost:8000/ from link name
+                        let new_tab = theUrl.replace(window.location.origin+'/', '');
+
+                        // Add in existing path until the tab where was clicked
+                        let tab_links = window.location.href.split('?path=');
+                        if (tab_links.length > 1){
+                                path_to_open = tab_links[1].split('/');
+                                for (let i = 0; i < (level - 1); i++){
+                                        new_href += path_to_open[i] + '/'
+                                }
+                        }
+                        
+                        // Add in new tab
+                        new_href += encodeURIComponent(encodeURI(new_tab)) + '/';
+
+                        // Set
+                        window.history.replaceState({}, "", new_href);
+                }
+        }
+
+        function CloseUpperContainers(level){
+                // Close all containers that are higher in level than the level
+                // of the container in which a link was clicked
+                let cns = document.getElementsByClassName("container-wrapper");
+                for (let i=0; i<cns.length; i++){
+                        if (cns[i].id){
+                                if (cns[i].id.split('-')[1] > level){
+                                        cns[i].remove();
+                                        CloseUpperContainers(level);
+                                        return;
+                                }
+                        }
+                }
+        }
+</script>           
+</body>
+</html>
