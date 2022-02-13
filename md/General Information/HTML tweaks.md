@@ -14,16 +14,20 @@ If you use the pypi package, this becomes more difficult, so the option to defin
 ## Header links   
 Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.   
    
-## Click-backs   
-When you open a whole chain of notes, you'll be scrolled rightward to keep up.    
-Clicking on a click-back corner will align that note with the left of the screen. This allows you to move back/forward one note at a time.    
+## Scrolling notes   
+When you open a whole chain of notes, you'll be scrolled rightward to keep up.   
+   
+- To move back to the beginning, keeping all notes open, press `1`   
+- To move back to the beginnning, closing all notes, click on the link in the top left (ObsidianHtml/Documentation)   
+- To move left/right by one note, press `,` or `.`   
    
 Of course, the scrollbar and arrow keys are available too as methods of navigation.   
    
+## Click-backs   
+Clicking on a click-back corner will align that note with the left of the screen. This is a different way to move back/forward one note at a time.    
+   
 The clickbacks are in the top right corner of every note:   
 ![](../Resources/img/Pasted%20image%2020211012013603.png)   
-   
-Alternatively, press the '1' key to move back to the beginning, leaving open the tabs.   
    
 ## Closing tabs   
 When you click on a new link in an earlier tab, all the open tabs after it will be closed.   

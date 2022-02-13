@@ -8,7 +8,7 @@ tags:
 ## High level   
    
 - [Parsing Obsidian notes to proper markdown](../General%20Information/Parsing%20Obsidian%20notes%20to%20proper%20markdown.md)   
-- [Creating a static html website from markdown files](../Creating%20a%20static%20html%20website%20from%20markdown%20files.md)   
+- [Creating a static html website from markdown files](../General%20Information/Creating%20a%20static%20html%20website%20from%20markdown%20files.md)   
    
 ## Note selection features   
    
@@ -23,6 +23,7 @@ tags:
 - [Tags Page](../Configurations/Tags%20Page.md)   
 - [Use custom HTML template](../Configurations/Configuration%20Options.md#html-template-path-str)   
 - [Custom stylesheet/javascript inclusions](../Configurations/Configuration%20Options.md#html-custom-inclusions)   
+- [Mermaid diagrams](../Demonstrations/Implementing%20Mermaid%20diagrams%20in%20HTML%20output.md)   
    
 ## Other   
 See [Configuration Options](../Configurations/Configuration%20Options.md) for a detailed look at all the configuration options available.

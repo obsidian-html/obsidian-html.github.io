@@ -20,6 +20,7 @@ tags:
 - [[Tags Page]]
 - [[Configuration Options#Html Template Path Str|Use custom HTML template]]
 - [[Configuration Options#Html Custom Inclusions|Custom stylesheet/javascript inclusions]]
+- [[Implementing Mermaid diagrams in HTML output|Mermaid diagrams]]
 
 ## Other
 See [[Configuration Options]] for a detailed look at all the configuration options available.

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "General Information/About ObsidianHtml.md",
+            "file": "Demonstrations/Implementing Mermaid diagrams in HTML output.md",
             "mode": "source",
             "source": false
           }
@@ -49,8 +49,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "General Information/About ObsidianHtml.md",
+                "file": "Demonstrations/Implementing Mermaid diagrams in HTML output.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,15 +89,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "General Information/About ObsidianHtml.md",
+    "Demonstrations/Implementing Mermaid diagrams in HTML output.md",
     "Configurations/Features.md",
-    "Creating a static html website from markdown files.md",
-    "ObsidianHtml.md",
     "General Information/HTML tweaks.md",
+    "General Information/Creating a static html website from markdown files.md",
+    "ObsidianHtml.md",
+    "General Information/About ObsidianHtml.md",
     "Demonstrations/Implementing links & link awareness.md",
     "Demonstrations/Demonstration of Obisidian integration.md",
     "Demonstrations/Test pages/Test page.md",
-    "Demonstrations/Making lists work the same.md",
-    "textfile.txt.md"
+    "Demonstrations/Making lists work the same.md"
   ]
 }

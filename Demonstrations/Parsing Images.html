@@ -275,18 +275,72 @@ function run(uid, pinnedNode){
 
         // Keybindings
         // ----------------------------------------------------------------------------
-        document.addEventListener('keypress', logKey);
-
-        function logKey(e) {
-                // Move to the beginning if 1 or enter is pressed
-                if (e.key == '1'){
-                        window.scrollTo(0,0);
+        document.addEventListener('keypress', HandleKeyPress);
+        function HandleKeyPress(e) {
+                // Center the note of which the number was pressed
+                var key = e.keyCode || e.charCode;
+                if (key >= 49 && key <= 57) {
+                        let num = key - 48;
+                        console.log('You pressed ' + num);
+                        CenterNote(num - 1);
+                }
+                // move left or right
+                else {
+                        if (key == 44){                         // , (<)
+                                ScrollNotes('left');
+                        }
+                        else if (key == 46){                    // . (>)
+                                ScrollNotes('right');
+                        }
                 }
         }
 
-
         // FUNCTIONS 
         // ----------------------------------------------------------------------------
+        function CenterNote(level){
+                let cont = document.getElementById('level-'+level);
+                let margin_left = (window.visualViewport.width - cont.getBoundingClientRect().width) / 2
+                let note_left = cont.getBoundingClientRect().left
+                window.scrollTo(window.visualViewport.pageLeft - (margin_left - note_left), 0)
+        }
+
+        function ScrollNotes(direction){
+                // find note that is currently in the middle
+                page_center = window.visualViewport.width / 2
+                max_level = FindNoteMaxLevelRecurse(0);
+
+                let cont; let found_note = false; let level = null;
+                for (let l = 0; l <= max_level; l++){
+                        cont = document.getElementById('level-'+l);
+                        rect = cont.getBoundingClientRect();
+                        if (rect.left < page_center && rect.right > page_center){
+                                found_note = true;
+                                level = l;
+                                break
+                        }
+                }
+                // scroll to the next note
+                if (direction == 'left'){
+                        // check to see if there is a note lower than it
+                        if (level == 0){
+                                return
+                        }
+                        CenterNote(level-1)
+                } else if (direction == 'right'){
+                        // check to see if there is a note higher than it
+                        if (level == max_level){ return }
+                        CenterNote(level+1);
+                }
+                else { console.log('direction not known') }
+        }
+
+        function FindNoteMaxLevelRecurse(level){
+                let cont = document.getElementById('level-'+level);
+                if (cont === null){
+                        return (level - 1)
+                }
+                return FindNoteMaxLevelRecurse(level+1)
+        }
 
         function OpenPath(level){
                 if (path_to_open.length > 0){
@@ -294,8 +348,7 @@ function run(uid, pinnedNode){
                         if (path != ''){
                                 httpGetAsync(path, ReceiveCall, level, true);
                         }
-                        
-                }       
+                }
         }
         
         // Change link operation
@@ -414,10 +467,8 @@ function run(uid, pinnedNode){
                                 document.getElementById(this.anchor_id).style.visibility = 'hidden';
                         };     
                 }
-        }                   
+        }
 
-           
-        
         function httpGetAsync(theUrl, callback, level, callbackpath)
         {
                 var xmlHttp = new XMLHttpRequest();
@@ -536,6 +587,6 @@ function run(uid, pinnedNode){
                         }
                 }
         }
-</script>           
+</script>
 </body>
 </html>
