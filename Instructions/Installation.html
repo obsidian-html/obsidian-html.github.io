@@ -171,7 +171,8 @@ function run(uid, pinnedNode){
                 .on("click", function(d) {
                     let svg_el = document.getElementById('A' + uid);
                     console.log('A' + uid)
-                    let level = parseInt(svg_el.parentElement.id.split('-')[1]);
+                    console.log(svg_el, svg_el.parentElement)
+                    let level = parseInt(svg_el.parentElement.parentElement.level);
                     console.log(svg_el.parentElement);
                     console.log(level, level+1);
                     httpGetAsync(encodeURI(d.url), ReceiveCall, level+1, false); 
@@ -389,6 +390,7 @@ function run(uid, pinnedNode){
                                         continue;
                                 }
                                 l.onclick = function () { 
+                                        console.log('src:', level, 'dst:', level+1, 'link:', this.attributes.href.nodeValue)
                                         httpGetAsync(encodeURI(this.attributes.href.nodeValue), ReceiveCall, level+1, false); 
                                         return false; 
                                 };
