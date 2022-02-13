@@ -1,7 +1,6 @@
 ---
 tags:
 - type/test_page/test_tag
-- status/inbox
 ---
 
 # Long long page

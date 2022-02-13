@@ -1,7 +1,7 @@
 ---
 graph_name: HTML tweaks
 tags:
-- type/html_tweaks
+- feature/html_output
 - type/styling
 - date/2022-02-04
 ---
@@ -10,6 +10,9 @@ tags:
 Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change `src/template.html` out for something more basic - or more fancy.
 
 If you use the pypi package, this becomes more difficult, so the option to define your own template has been added to the configuration file: [[Configuration Options#Html Template Path Str]].
+
+## Finding notes
+Use the [[Graph view]], [[Backlinks]], or [[Tags Page]] to find other notes, or just follow the links on the note that you're on.
 
 ## Header links
 Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.

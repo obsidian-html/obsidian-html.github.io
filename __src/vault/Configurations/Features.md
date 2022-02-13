@@ -16,7 +16,7 @@ tags:
 
 ## HTML features
 - [[Graph view]]
-- [[Configuration Options#Backlinks|Backlinks]]
+- [[Backlinks]]
 - [[Tags Page]]
 - [[Configuration Options#Html Template Path Str|Use custom HTML template]]
 - [[Configuration Options#Html Custom Inclusions|Custom stylesheet/javascript inclusions]]

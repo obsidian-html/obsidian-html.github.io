@@ -132,7 +132,7 @@
 <p>We try to not have bugs, but sometimes we just can't help ourselves. I think everyone would agree that the only thing that we should guarantee is that we don't touch your vault files. To help assure that, ObsidianHtml will make a copy of your entire vault to a temporary directory and work from out of that folder.    </p>
 <p>This is an optional setting, and if you have severe file storage problems, or an enormous vault that takes very long to copy, then you can turn this setting off. Though we advise you to make a backup yourself the first couple of times that you use ObsidianHtml, or when you update ObsidianHtml to a new version.    </p>
 <blockquote>
-<p>This setting should be enabled for the option <a href="/Configurations/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
+<p>This setting should be enabled for the option <a href="/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
 </blockquote>
 <p>The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please <a href="/General Information/Report Issues &amp; Request features.html">report it as an issue</a>.   </p>
 <h3 id="html-output">HTML Output</h3>
@@ -262,12 +262,13 @@
 </code></pre></div>
 
 <p>This refers to the markdown and html output folders. If you want to output html directly into a git repo, then by default it will remove the <code>.git</code> directory. To avoid this, you can write your own cleanup script to remove the previous output before running.    </p>
-<h3 id="relat">relat</h3>
+<h3 id="relative_path_md">relative_path_md</h3>
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># Whether the markdown interpreter assumes relative path when no / at the beginning of a link</span><span class="w"></span>
 <span class="w">  </span><span class="nt">relative_path_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
 
+<h2 id="external_blank">external_blank</h2>
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># Whether external http anchor links should have a target of &quot;_blank&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">external_blank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">  </span>
@@ -307,7 +308,7 @@
 <span class="w">                                </span><span class="c1"># the sort key, otherwise at the top</span><span class="w"></span>
 </code></pre></div>
 
-<p>Read more: <a href="/Configurations/Create index from tags.html">Create index from tags</a>   </p>
+<p>Read more: <a href="/Create index from tags.html">Create index from tags</a>   </p>
 <h3 id="backlinks">Backlinks</h3>
 <div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
@@ -316,12 +317,14 @@
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
 
-<p>Notice on each page of this site, each note ends with a backlinks section. This does not come from the vault notes, but is computed and added in by ObsidianHtml. You can turn this off if you don't like this behavior.</p><h2>Backlinks</h2>
+<p>Read more: <a href="/Backlinks.html">Backlinks</a></p><h2>Backlinks</h2>
 <ul>
 	<li><a href="/Configurations/Process All.html">Process All</a></li>
 	<li><a href="/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 	<li><a href="/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+	<li><a href="/Create index from tags.html">Create index from tags</a></li>
 	<li><a href="/Configurations/Features.html">Features</a></li>
+	<li><a href="/Backlinks.html">Backlinks</a></li>
 	<li><a href="/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a href="/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
 	<li><a href="/General Information/HTML tweaks.html">HTML tweaks</a></li>
@@ -329,8 +332,8 @@
 	<li><a href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A209928168628176964884572870331058033488{level}"></svg>
-    <button class="graph_button" id="B209928168628176964884572870331058033488{level}" level="{level}" onclick="run('209928168628176964884572870331058033488'+this.level, 'Configuration Options');">Show Graph</button>
+    <svg class="graph_svg" id="A54183880829677116766560286858532779336{level}"></svg>
+    <button class="graph_button" id="B54183880829677116766560286858532779336{level}" level="{level}" onclick="run('54183880829677116766560286858532779336'+this.level, 'Configuration Options');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -795,7 +798,9 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = document.getElementById(theUrl.split('#')[1]);
+                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
+                        //var el = document.getElementById(theUrl.split('#')[1]);
+                        console.log(theUrl.split('#')[1], el)
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

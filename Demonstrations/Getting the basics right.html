@@ -525,7 +525,9 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = document.getElementById(theUrl.split('#')[1]);
+                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
+                        //var el = document.getElementById(theUrl.split('#')[1]);
+                        console.log(theUrl.split('#')[1], el)
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

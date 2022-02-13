@@ -1,7 +1,6 @@
 ---
 tags:
-- type/parsing_markdown
-- status/inbox
+- type/test_page
 ---
 
 # Simple Obsidian-type Link

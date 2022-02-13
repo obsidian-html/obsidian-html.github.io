@@ -1,6 +1,6 @@
 ---
 tags:
-- type/undefined
+- type/template
 - date/{{date}}
 ---
 

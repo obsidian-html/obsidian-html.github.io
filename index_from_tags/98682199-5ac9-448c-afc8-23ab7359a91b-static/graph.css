@@ -1,0 +1,31 @@
+.links line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+  
+.nodes circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+    cursor:grab;
+}
+  
+ text {
+    font-family: sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+  
+.graph_svg {
+    border:1px solid black;
+    margin-bottom: 0rem;
+    display: none;
+    margin-top: 1rem;
+}
+
+.graph_button {
+    width: 100%;
+border: none;
+color: #464b64;
+margin-top: 1rem;
+margin-bottom: 2rem;
+}

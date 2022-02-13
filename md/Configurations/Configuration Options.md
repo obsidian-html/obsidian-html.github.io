@@ -119,7 +119,7 @@ We try to not have bugs, but sometimes we just can't help ourselves. I think eve
    
 This is an optional setting, and if you have severe file storage problems, or an enormous vault that takes very long to copy, then you can turn this setting off. Though we advise you to make a backup yourself the first couple of times that you use ObsidianHtml, or when you update ObsidianHtml to a new version.    
    
-> This setting should be enabled for the option [Create index from tags](../Configurations/Create%20index%20from%20tags.md) to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    
+> This setting should be enabled for the option [Create index from tags](../Create%20index%20from%20tags.md) to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    
    
 The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please [report it as an issue](../General%20Information/Report%20Issues%20%26%20Request%20features.md).   
    
@@ -298,8 +298,7 @@ toggles:
    
 This refers to the markdown and html output folders. If you want to output html directly into a git repo, then by default it will remove the `.git` directory. To avoid this, you can write your own cleanup script to remove the previous output before running.    
    
-### relat   
-   
+### relative_path_md   
 ``` yaml
 toggles:
   # Whether the markdown interpreter assumes relative path when no / at the beginning of a link
@@ -307,6 +306,7 @@ toggles:
 ```
    
    
+## external_blank   
 ``` yaml
 toggles:
   # Whether external http anchor links should have a target of "_blank"
@@ -353,7 +353,7 @@ toggles
 ```
    
    
-Read more: [Create index from tags](../Configurations/Create%20index%20from%20tags.md)   
+Read more: [Create index from tags](../Create%20index%20from%20tags.md)   
    
 ### Backlinks   
 ``` yaml
@@ -365,4 +365,4 @@ toggles
 ```
    
    
-Notice on each page of this site, each note ends with a backlinks section. This does not come from the vault notes, but is computed and added in by ObsidianHtml. You can turn this off if you don't like this behavior.
+Read more: [Backlinks](../Backlinks.md)

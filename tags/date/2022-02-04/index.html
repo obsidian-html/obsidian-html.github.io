@@ -55,6 +55,7 @@
 <li><a href="/Demonstrations/Making Code blocks look pretty.html">Demonstrations/Making Code blocks look pretty</a></li>
 <li><a href="/Demonstrations/Implementing Note Inclusions.html">Demonstrations/Implementing Note Inclusions</a></li>
 <li><a href="/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Demonstrations/Implementing Mermaid diagrams in HTML output</a></li>
+<li><a href="/Configurations/Tags Page.html">Configurations/Tags Page</a></li>
 <li><a href="/General Information/HTML tweaks.html">General Information/HTML tweaks</a></li>
 <li><a href="/Automation/Automate website deployment.html">Automation/Automate website deployment</a></li>
 <li><a href="/Automation/AutomationLinuxGit.html">Automation/AutomationLinuxGit</a></li>
@@ -360,7 +361,9 @@
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = document.getElementById(theUrl.split('#')[1]);
+                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
+                        //var el = document.getElementById(theUrl.split('#')[1]);
+                        console.log(theUrl.split('#')[1], el)
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

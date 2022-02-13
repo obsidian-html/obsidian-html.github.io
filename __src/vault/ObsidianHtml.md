@@ -1,6 +1,6 @@
 ---
 tags:
-- type/moc
+- type/entrypoint
 ---
 
 # ObsidianHtml
@@ -21,9 +21,10 @@ tags:
 - [[Features]]
 - [[Configuration Options]]
 
-
 ### Tips and tricks
 - [[Automate website deployment|Automate website deployment]] 
 
+## Alternatives to ObsidianHtml
+- [[Quartz 3]]
 
 

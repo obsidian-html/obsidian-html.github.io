@@ -48,18 +48,14 @@
         <div class="container">
         <h1 id="subtags">Subtags</h1>
 <ul>
-<li><a href="/tags/type/moc/index.html">moc</a></li>
+<li><a href="/tags/type/entrypoint/index.html">entrypoint</a></li>
 <li><a href="/tags/type/general_information/index.html">general_information</a></li>
-<li><a href="/tags/type/configuration_options/index.html">configuration_options</a></li>
 <li><a href="/tags/type/configuration/index.html">configuration</a></li>
-<li><a href="/tags/type/undefined/index.html">undefined</a></li>
-<li><a href="/tags/type/parsing_markdown/index.html">parsing_markdown</a></li>
 <li><a href="/tags/type/test_page/index.html">test_page</a></li>
 <li><a href="/tags/type/styling/index.html">styling</a></li>
-<li><a href="/tags/type/diagrams/index.html">diagrams</a></li>
-<li><a href="/tags/type/features/index.html">features</a></li>
-<li><a href="/tags/type/html_tweaks/index.html">html_tweaks</a></li>
+<li><a href="/tags/type/instruction/index.html">instruction</a></li>
 <li><a href="/tags/type/automation/index.html">automation</a></li>
+<li><a href="/tags/type/alternatives/index.html">alternatives</a></li>
 </ul>
         <!-- end content -->
         </div>
@@ -359,7 +355,9 @@
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = document.getElementById(theUrl.split('#')[1]);
+                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
+                        //var el = document.getElementById(theUrl.split('#')[1]);
+                        console.log(theUrl.split('#')[1], el)
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

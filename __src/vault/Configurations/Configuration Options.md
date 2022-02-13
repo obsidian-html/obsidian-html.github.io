@@ -272,14 +272,14 @@ toggles:
 
 This refers to the markdown and html output folders. If you want to output html directly into a git repo, then by default it will remove the `.git` directory. To avoid this, you can write your own cleanup script to remove the previous output before running. 
 
-### relat
-
+### relative_path_md
 ``` yaml
 toggles:
   # Whether the markdown interpreter assumes relative path when no / at the beginning of a link
   relative_path_md: True
 ```
 
+## external_blank
 ``` yaml
 toggles:
   # Whether external http anchor links should have a target of "_blank"
@@ -334,4 +334,4 @@ toggles
       enabled: True
 ```
 
-Notice on each page of this site, each note ends with a backlinks section. This does not come from the vault notes, but is computed and added in by ObsidianHtml. You can turn this off if you don't like this behavior.
+Read more: [[Backlinks]]

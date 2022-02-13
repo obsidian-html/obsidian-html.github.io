@@ -55,13 +55,13 @@
 <h2 id="note-selection-features">Note selection features</h2>
 <ul>
 <li><a href="/Configurations/Process All.html">Process All</a>   </li>
-<li><a href="/Configurations/Create index from tags.html">Create index from tags</a>   </li>
+<li><a href="/Create index from tags.html">Create index from tags</a>   </li>
 <li><a href="/Configurations/Configuration Options.html#exclude-subfolders">Excluding vault subfolders</a>   </li>
 </ul>
 <h2 id="html-features">HTML features</h2>
 <ul>
 <li><a href="/Configurations/Graph view.html">Graph view</a>   </li>
-<li><a href="/Configurations/Configuration Options.html#backlinks">Backlinks</a>   </li>
+<li><a href="/Backlinks.html">Backlinks</a>   </li>
 <li><a href="/Configurations/Tags Page.html">Tags Page</a>   </li>
 <li><a href="/Configurations/Configuration Options.html#html-template-path-str">Use custom HTML template</a>   </li>
 <li><a href="/Configurations/Configuration Options.html#html-custom-inclusions">Custom stylesheet/javascript inclusions</a>   </li>
@@ -77,8 +77,8 @@
 	<li><a href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A37216821104722728336640213031909776581{level}"></svg>
-    <button class="graph_button" id="B37216821104722728336640213031909776581{level}" level="{level}" onclick="run('37216821104722728336640213031909776581'+this.level, 'Features');">Show Graph</button>
+    <svg class="graph_svg" id="A207596586745715424145776961593491815378{level}"></svg>
+    <button class="graph_button" id="B207596586745715424145776961593491815378{level}" level="{level}" onclick="run('207596586745715424145776961593491815378'+this.level, 'Features');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -543,7 +543,9 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = document.getElementById(theUrl.split('#')[1]);
+                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
+                        //var el = document.getElementById(theUrl.split('#')[1]);
+                        console.log(theUrl.split('#')[1], el)
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

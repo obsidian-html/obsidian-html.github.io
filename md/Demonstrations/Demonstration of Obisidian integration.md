@@ -1,6 +1,6 @@
 ---
 tags:
-- type/undefined
+- type/test_page
 - date/2022-02-12
 ---
    

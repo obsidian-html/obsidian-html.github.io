@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ObsidianHtml.md",
+            "file": "Create index from tags.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "The compiled markdown can be",
+                "query": "tag:#type/configuration",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ObsidianHtml.md",
+                "file": "Create index from tags.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -79,25 +79,36 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "5536ebcb22ec1593",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "ObsidianHtml.md",
-    "Demonstrations/Implementing Mermaid diagrams in HTML output.md",
+    "Create index from tags.md",
+    "Configurations/Configuration Options.md",
     "Configurations/Features.md",
+    "ObsidianHtml.md",
+    "Backlinks.md",
     "General Information/HTML tweaks.md",
-    "General Information/Creating a static html website from markdown files.md",
-    "General Information/About ObsidianHtml.md",
-    "Demonstrations/Implementing links & link awareness.md",
-    "Demonstrations/Demonstration of Obisidian integration.md",
     "Demonstrations/Test pages/Test page.md",
-    "Demonstrations/Making lists work the same.md"
+    "Demonstrations/Test pages/Test inclusion 2.md",
+    "Demonstrations/Test pages/Test Inclusion.md",
+    "Demonstrations/Test pages/Simple Obsidian-type Link.md"
   ]
 }

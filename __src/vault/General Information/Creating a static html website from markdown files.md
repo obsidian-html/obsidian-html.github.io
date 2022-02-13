@@ -1,6 +1,6 @@
 ---
 tags:
-- type/undefined
+- type/general_information
 - date/2022-02-12
 ---
 

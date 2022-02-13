@@ -49,6 +49,8 @@
         <h1 id="html-tweaks">Html tweaks</h1>
 <p>Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change <code>src/template.html</code> out for something more basic - or more fancy.   </p>
 <p>If you use the pypi package, this becomes more difficult, so the option to define your own template has been added to the configuration file: <a href="/Configurations/Configuration Options.html#html-template-path-str">Configuration Options#Html Template Path Str</a>.   </p>
+<h2 id="finding-notes">Finding notes</h2>
+<p>Use the <a href="/Configurations/Graph view.html">Graph view</a>, <a href="/Backlinks.html">Backlinks</a>, or <a href="/Configurations/Tags Page.html">Tags Page</a> to find other notes, or just follow the links on the note that you're on.   </p>
 <h2 id="header-links">Header links</h2>
 <p>Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.   </p>
 <h2 id="scrolling-notes">Scrolling notes</h2>
@@ -73,8 +75,8 @@
 	<li><a href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A256009098117624123798272191534971673187{level}"></svg>
-    <button class="graph_button" id="B256009098117624123798272191534971673187{level}" level="{level}" onclick="run('256009098117624123798272191534971673187'+this.level, 'HTML tweaks');">Show Graph</button>
+    <svg class="graph_svg" id="A60067433560633239239703610126592913892{level}"></svg>
+    <button class="graph_button" id="B60067433560633239239703610126592913892{level}" level="{level}" onclick="run('60067433560633239239703610126592913892'+this.level, 'HTML tweaks');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -539,7 +541,9 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = document.getElementById(theUrl.split('#')[1]);
+                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
+                        //var el = document.getElementById(theUrl.split('#')[1]);
+                        console.log(theUrl.split('#')[1], el)
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

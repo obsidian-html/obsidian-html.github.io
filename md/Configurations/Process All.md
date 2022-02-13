@@ -1,6 +1,6 @@
 ---
 tags:
-- type/configuration_options
+- type/configuration
 - date/2022-02-06
 ---
    

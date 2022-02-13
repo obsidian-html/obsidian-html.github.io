@@ -48,8 +48,10 @@
         <div class="container">
         <h1 id="notes">Notes</h1>
 <ul>
+<li><a href="/Configurations/Process All.html">Configurations/Process All</a></li>
 <li><a href="/Configurations/Configuration Options.html">Configurations/Configuration Options</a></li>
 <li><a href="/Configurations/Features.html">Configurations/Features</a></li>
+<li><a href="/Configurations/Graph view.html">Configurations/Graph view</a></li>
 </ul>
         <!-- end content -->
         </div>
@@ -349,7 +351,9 @@
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = document.getElementById(theUrl.split('#')[1]);
+                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
+                        //var el = document.getElementById(theUrl.split('#')[1]);
+                        console.log(theUrl.split('#')[1], el)
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

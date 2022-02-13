@@ -1,7 +1,7 @@
 ---
 graph_name: Images
 tags:
-- type/parsing_markdown
+- feature/parsing_markdown
 - date/2022-02-04
 ---
 

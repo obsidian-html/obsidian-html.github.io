@@ -1,29 +1,22 @@
 ---
-tags:
-- type/moc
+{}
 ---
    
-# ObsidianHtml   
-| Status | Version|   
-| :------ | :---|    
-| Last published version | [obsidianhtml-0.0.9](https://pypi.org/project/obsidianhtml/) |   
-| Currently working on | [obsidianhtml-1.0.0](https://github.com/obsidian-html/obsidian-html)  [![TestSuite](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml/badge.svg)](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml)|   
+# ObsidianHtml/index_from_tags   
+## type/automation   
    
-## Table of Contents   
-### General information   
+- [AutomationLinuxSSH](Automation/AutomationLinuxSSH.md)   
+- [AutomationLinuxGit](Automation/AutomationLinuxGit.md)   
+- [AutomationWindowsSSH](Automation/AutomationWindowsSSH.md)   
+- [AutomationWindows](Automation/AutomationWindows.md)   
+- [Automate website deployment](Automation/Automate website deployment.md)   
    
-- [About ObsidianHtml](General%20Information/About%20ObsidianHtml.md)   
-- [Report Issues & Request features](General%20Information/Report%20Issues%20%26%20Request%20features.md)   
-- [How to navigate this site](General%20Information/HTML%20tweaks.md)   
+## feature/parsing_markdown   
    
-### Usage & Capabilities   
-   
-- [Installation](Instructions/Installation.md)   
-- [Usage](Instructions/Usage.md)   
-- [Features](Configurations/Features.md)   
-- [Configuration Options](Configurations/Configuration%20Options.md)   
-   
-   
-### Tips and tricks   
-   
-- [Automate website deployment](Automation/Automate%20website%20deployment.md)
+- [Implementing links & link awareness](Demonstrations/Implementing links & link awareness.md)   
+- [Parsing Images](Demonstrations/Parsing Images.md)   
+- [Implementing Note Inclusions](Demonstrations/Implementing Note Inclusions.md)   
+- [Getting the basics right](Demonstrations/Getting the basics right.md)   
+- [Making lists work the same](Demonstrations/Making lists work the same.md)   
+- [Parsing Obsidian notes to proper markdown](General Information/Parsing Obsidian notes to proper markdown.md)   
+- [Tags Page](Configurations/Tags Page.md)

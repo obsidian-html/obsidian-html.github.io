@@ -49,6 +49,9 @@
         <h1 id="notes">Notes</h1>
 <ul>
 <li><a href="/General Information/About ObsidianHtml.html">General Information/About ObsidianHtml</a></li>
+<li><a href="/General Information/Parsing Obsidian notes to proper markdown.html">General Information/Parsing Obsidian notes to proper markdown</a></li>
+<li><a href="/General Information/Creating a static html website from markdown files.html">General Information/Creating a static html website from markdown files</a></li>
+<li><a href="/General Information/Report Issues &amp; Request features.html">General Information/Report Issues &amp; Request features</a></li>
 </ul>
         <!-- end content -->
         </div>
@@ -348,7 +351,9 @@
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = document.getElementById(theUrl.split('#')[1]);
+                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
+                        //var el = document.getElementById(theUrl.split('#')[1]);
+                        console.log(theUrl.split('#')[1], el)
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

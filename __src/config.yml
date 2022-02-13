@@ -46,7 +46,7 @@ exclude_subfolders:
 
 # Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect
 # the vault data. Should be fine to turn off if copying the vault takes too long / disk space is too limited.
-copy_vault_to_tempdir: False
+copy_vault_to_tempdir: True
 
 toggles:
   # Opt-in/-out of Obsidian->Md conversion, set to False when using proper markdown as input

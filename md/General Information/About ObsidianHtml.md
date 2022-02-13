@@ -24,7 +24,7 @@ To convert your notes, you need to point to your notes folder, and to one note t
    
 By default only notes that are found by following links recursively starting with the entrypoint will be converted. To include all notes in your folder, see the [Process All](../Configurations/Process%20All.md).   
    
-It is also possible to [create an entrypoint note by matching certain tags](../Configurations/Create%20index%20from%20tags.md). If you enable that setting, only the notes that match the tags will be included in the output. (Unless, again, process all is enabled).   
+It is also possible to [create an entrypoint note by matching certain tags](../Create%20index%20from%20tags.md). If you enable that setting, only the notes that match the tags will be included in the output. (Unless, again, process all is enabled).   
    
 ## Compatibility   
    
