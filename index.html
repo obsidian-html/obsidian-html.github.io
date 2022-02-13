@@ -86,9 +86,6 @@
 <h2 id="alternatives-to-obsidianhtml">Alternatives to ObsidianHtml</h2>
 <ul>
 <li><a href="/Alternatives/Quartz 3.html">Quartz 3</a></li>
-</ul><h2>Backlinks</h2>
-<ul>
-	<li><a href="/Demonstrations/Test pages/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a></li>
 </ul>
 <div class="graph">
     <svg class="graph_svg" id="A156753251390344804025526753335510623012{level}"></svg>
@@ -557,9 +554,8 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

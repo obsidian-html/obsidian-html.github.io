@@ -49,9 +49,9 @@
         <h1 id="subtags">Subtags</h1>
 <ul>
 <li><a href="/index_from_tags/tags/date/2022-02-04/index.html">2022-02-04</a></li>
+<li><a href="/index_from_tags/tags/date/2022-02-13/index.html">2022-02-13</a></li>
 <li><a href="/index_from_tags/tags/date/2022-02-12/index.html">2022-02-12</a></li>
 <li><a href="/index_from_tags/tags/date/2022-02-06/index.html">2022-02-06</a></li>
-<li><a href="/index_from_tags/tags/date/2022-02-13/index.html">2022-02-13</a></li>
 <li><a href="/index_from_tags/tags/date/2022-02-05/index.html">2022-02-05</a></li>
 </ul>
         <!-- end content -->
@@ -352,9 +352,8 @@
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

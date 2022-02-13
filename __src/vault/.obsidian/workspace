@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Create index from tags.md",
+            "file": "Simple Obsidian-type Link.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Create index from tags.md",
+                "file": "Simple Obsidian-type Link.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,15 +100,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
+    "Simple Obsidian-type Link.md",
+    "Demonstrations/Implementing links & link awareness.md",
+    "Demonstrations/Test pages/Simple Obsidian-type Link.md",
     "Create index from tags.md",
     "Configurations/Configuration Options.md",
     "Configurations/Features.md",
     "ObsidianHtml.md",
     "Backlinks.md",
     "General Information/HTML tweaks.md",
-    "Demonstrations/Test pages/Test page.md",
-    "Demonstrations/Test pages/Test inclusion 2.md",
-    "Demonstrations/Test pages/Test Inclusion.md",
-    "Demonstrations/Test pages/Simple Obsidian-type Link.md"
+    "Demonstrations/Test pages/Test page.md"
   ]
 }

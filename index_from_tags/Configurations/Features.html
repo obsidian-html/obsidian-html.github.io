@@ -72,9 +72,6 @@
 <ul>
 	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
-	<li><a href="/index_from_tags/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
-	<li><a href="/index_from_tags/Instructions/Usage.html">Usage</a></li>
-	<li><a href="/index_from_tags/ObsidianHtml.html">ObsidianHtml</a></li>
 </ul>
 <div class="graph">
     <svg class="graph_svg" id="A276205672623777220719017534878908331442{level}"></svg>
@@ -543,9 +540,8 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

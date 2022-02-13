@@ -52,11 +52,10 @@
 </ul>
 <h1 id="notes">Notes</h1>
 <ul>
-<li><a href="/index_from_tags/Demonstrations/Test pages/Simple Obsidian-type Link.html">Demonstrations/Test pages/Simple Obsidian-type Link</a></li>
-<li><a href="/index_from_tags/Demonstrations/Demonstration of Obisidian integration.html">Demonstrations/Demonstration of Obisidian integration</a></li>
+<li><a href="/index_from_tags/Demonstrations/Test pages/proper markdown.html">Demonstrations/Test pages/proper markdown</a></li>
 <li><a href="/index_from_tags/Demonstrations/Test pages/Test Inclusion.html">Demonstrations/Test pages/Test Inclusion</a></li>
 <li><a href="/index_from_tags/Demonstrations/Test pages/Test inclusion 2.html">Demonstrations/Test pages/Test inclusion 2</a></li>
-<li><a href="/index_from_tags/Demonstrations/Test pages/proper markdown.html">Demonstrations/Test pages/proper markdown</a></li>
+<li><a href="/index_from_tags/Demonstrations/Demonstration of Obisidian integration.html">Demonstrations/Demonstration of Obisidian integration</a></li>
 </ul>
         <!-- end content -->
         </div>
@@ -356,9 +355,8 @@
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

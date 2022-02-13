@@ -69,7 +69,6 @@
 	<li><a href="/index_from_tags/index.html">index</a></li>
 	<li><a href="/index_from_tags/Automation/AutomationLinuxSSH.html">Auto push site using SSH on Linux</a></li>
 	<li><a href="/index_from_tags/Automation/AutomationWindowsSSH.html">Auto push site using Git on Windows</a></li>
-	<li><a href="/index_from_tags/ObsidianHtml.html">ObsidianHtml</a></li>
 </ul>
 <div class="graph">
     <svg class="graph_svg" id="A165052131493091887331460880968584964919{level}"></svg>
@@ -538,9 +537,8 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

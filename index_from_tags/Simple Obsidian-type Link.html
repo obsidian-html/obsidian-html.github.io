@@ -46,37 +46,14 @@
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="html-tweaks">Html tweaks</h1>
-<p>Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change <code>src/template.html</code> out for something more basic - or more fancy.   </p>
-<p>If you use the pypi package, this becomes more difficult, so the option to define your own template has been added to the configuration file: <a href="/index_from_tags/Configurations/Configuration Options.html#html-template-path-str">Configuration Options#Html Template Path Str</a>.   </p>
-<h2 id="finding-notes">Finding notes</h2>
-<p>Use the <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a>, <a href="/index_from_tags/Backlinks.html">Backlinks</a>, or <a href="/index_from_tags/Configurations/Tags Page.html">Tags Page</a> to find other notes, or just follow the links on the note that you're on.   </p>
-<h2 id="header-links">Header links</h2>
-<p>Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.   </p>
-<h2 id="scrolling-notes">Scrolling notes</h2>
-<p>When you open a whole chain of notes, you'll be scrolled rightward to keep up.   </p>
+        <h1 id="simple-obsidian-type-link">Simple Obsidian-type Link</h1>
+<p>This note was linked to using an obsidian type link.</p><h2>Backlinks</h2>
 <ul>
-<li>To move back to the beginning, keeping all notes open, press <code>1</code>   </li>
-<li>To move back to the beginnning, closing all notes, click on the link in the top left (ObsidianHtml/Documentation)   </li>
-<li>To move left/right by one note, press <code>,</code> or <code>.</code>   </li>
-</ul>
-<p>Of course, the scrollbar and arrow keys are available too as methods of navigation.   </p>
-<h2 id="click-backs">Click-backs</h2>
-<p>Clicking on a click-back corner will align that note with the left of the screen. This is a different way to move back/forward one note at a time.    </p>
-<p>The clickbacks are in the top right corner of every note: <br />
-<img alt="" src="/index_from_tags/Resources/img/Pasted%20image%2020211012013603.png" />   </p>
-<h2 id="closing-tabs">Closing tabs</h2>
-<p>When you click on a new link in an earlier tab, all the open tabs after it will be closed.   </p>
-<h2 id="notice-the-url">Notice the url</h2>
-<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.    </p>
-<h2 id="graph-view">Graph view</h2>
-<p>Read more <a href="/index_from_tags/Configurations/Graph view.html">Graph View</a>.</p><h2>Backlinks</h2>
-<ul>
-	<li><a href="/index_from_tags/ObsidianHtml.html">ObsidianHtml</a></li>
+	<li><a href="/index_from_tags/Demonstrations/Implementing links & link awareness.html">Links</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A216124455732583634337599309063764460228{level}"></svg>
-    <button class="graph_button" id="B216124455732583634337599309063764460228{level}" level="{level}" onclick="run('216124455732583634337599309063764460228'+this.level, 'HTML tweaks');">Show Graph</button>
+    <svg class="graph_svg" id="A328774226282594295041457895700253708428{level}"></svg>
+    <button class="graph_button" id="B328774226282594295041457895700253708428{level}" level="{level}" onclick="run('328774226282594295041457895700253708428'+this.level, 'Simple Obsidian-type Link');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -541,9 +518,8 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

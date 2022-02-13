@@ -47,16 +47,13 @@
 <div class="container-wrapper">
         <div class="container">
         <h1 id="simple-obsidian-type-link">Simple Obsidian-type Link</h1>
-<p>Obsidian-type link aliasing  <br />
-<code>[[Example Site|Go back]]</code> <a href="/index.html">Go back</a>   </p>
-<h2 id="test">Test</h2>
-<p><a href="/not_created.html" class="nonexistent-link">Folder link</a></p><h2>Backlinks</h2>
+<p>This note was linked to using an obsidian type link.</p><h2>Backlinks</h2>
 <ul>
 	<li><a href="/Demonstrations/Making lists work the same.html">Links</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A36354803387563217524365922224352498685{level}"></svg>
-    <button class="graph_button" id="B36354803387563217524365922224352498685{level}" level="{level}" onclick="run('36354803387563217524365922224352498685'+this.level, 'Simple Obsidian-type Link');">Show Graph</button>
+    <svg class="graph_svg" id="A328774226282594295041457895700253708428{level}"></svg>
+    <button class="graph_button" id="B328774226282594295041457895700253708428{level}" level="{level}" onclick="run('328774226282594295041457895700253708428'+this.level, 'Simple Obsidian-type Link');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -521,9 +518,8 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

@@ -49,9 +49,9 @@
         <h1 id="links">Links</h1>
 <h2 id="obsidian-type-links">Obsidian type links</h2>
 <p><code>[[Simple Obsidian-type Link]]</code> translates to: <br />
-<a href="/Demonstrations/Test pages/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a>   </p>
+<a href="/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a>   </p>
 <p>Aliasing also works, <code>[[Simple Obsidian-type Link|Same link as before]]</code>: <br />
-<a href="/Demonstrations/Test pages/Simple Obsidian-type Link.html">Same link as before</a>   </p>
+<a href="/Simple Obsidian-type Link.html">Same link as before</a>   </p>
 <p>As does linking to chapters <code>[[Long long page#Chapter of interest]]</code> <br />
 <a href="/Demonstrations/Test pages/Long long page.html#chapter-of-interest">Long long page#Chapter of interest</a>   </p>
 <h2 id="proper-markdown-links">Proper markdown links</h2>
@@ -76,8 +76,8 @@
 	<li><a href="/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A9497546210164480904583808137759823037{level}"></svg>
-    <button class="graph_button" id="B9497546210164480904583808137759823037{level}" level="{level}" onclick="run('9497546210164480904583808137759823037'+this.level, 'Links');">Show Graph</button>
+    <svg class="graph_svg" id="A108667249952773139021900178339790392493{level}"></svg>
+    <button class="graph_button" id="B108667249952773139021900178339790392493{level}" level="{level}" onclick="run('108667249952773139021900178339790392493'+this.level, 'Links');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -542,9 +542,8 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

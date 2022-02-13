@@ -52,6 +52,7 @@
 <li><a href="/tags/type/general_information/index.html">general_information</a></li>
 <li><a href="/tags/type/configuration/index.html">configuration</a></li>
 <li><a href="/tags/type/test_page/index.html">test_page</a></li>
+<li><a href="/tags/type/template/index.html">template</a></li>
 <li><a href="/tags/type/styling/index.html">styling</a></li>
 <li><a href="/tags/type/instruction/index.html">instruction</a></li>
 <li><a href="/tags/type/automation/index.html">automation</a></li>
@@ -355,9 +356,8 @@
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

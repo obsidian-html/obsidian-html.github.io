@@ -56,7 +56,6 @@
 <p>Note that this (kind of) breaks the graph view: not all links will be present in the graph that should be present. See <a href="https://github.com/obsidian-html/obsidian-html/issues/22" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/22</a></p>
 </blockquote><h2>Backlinks</h2>
 <ul>
-	<li><a href="/index_from_tags/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
 	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
 	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
@@ -527,9 +526,8 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

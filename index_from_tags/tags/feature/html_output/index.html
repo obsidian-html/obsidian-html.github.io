@@ -48,11 +48,10 @@
         <div class="container">
         <h1 id="notes">Notes</h1>
 <ul>
-<li><a href="/index_from_tags/Demonstrations/Making Code blocks look pretty.html">Demonstrations/Making Code blocks look pretty</a></li>
-<li><a href="/index_from_tags/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Demonstrations/Implementing Mermaid diagrams in HTML output</a></li>
 <li><a href="/index_from_tags/Configurations/Graph view.html">Configurations/Graph view</a></li>
 <li><a href="/index_from_tags/Backlinks.html">Backlinks</a></li>
-<li><a href="/index_from_tags/General Information/HTML tweaks.html">General Information/HTML tweaks</a></li>
+<li><a href="/index_from_tags/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Demonstrations/Implementing Mermaid diagrams in HTML output</a></li>
+<li><a href="/index_from_tags/Demonstrations/Making Code blocks look pretty.html">Demonstrations/Making Code blocks look pretty</a></li>
 </ul>
         <!-- end content -->
         </div>
@@ -352,9 +351,8 @@
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }

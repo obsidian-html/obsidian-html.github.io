@@ -51,8 +51,8 @@
 <p>See <a href="/index_from_tags/Configurations/Features.html">Features</a> for all the ways in which you can influence this step.    </p>
 <p>You can for example <a href="/index_from_tags/Configurations/Configuration Options.html#html-custom-inclusions">add in your own stylesheets/script files</a>, and <a href="/index_from_tags/Configurations/Configuration Options.html#html-template-path-str">edit the html template</a> (or just provide your own template entirely), among other things.</p><h2>Backlinks</h2>
 <ul>
-	<li><a href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
+	<li><a href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 </ul>
 <div class="graph">
     <svg class="graph_svg" id="A324450416492229851851523861301298366015{level}"></svg>
@@ -521,9 +521,8 @@ function run(uid, pinnedNode){
                 // Scroll container to #header link
                 theUrl = decodeURI(theUrl);
                 if (theUrl.split('#').length > 1){
-                        var el = levelcont.querySelectorAll("#"+theUrl.split('#')[1])[0];
-                        //var el = document.getElementById(theUrl.split('#')[1]);
-                        console.log(theUrl.split('#')[1], el)
+                        var header_id = theUrl.split('#')[1]
+                        var el = levelcont.querySelectorAll("#"+header_id)[0];
                         if (el){
                                 el.parentElement.scrollTop = el.offsetTop - 20;
                         }
