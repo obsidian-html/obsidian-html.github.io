@@ -57,11 +57,11 @@
 <tbody>
 <tr>
 <td align="left">Last published version</td>
-<td align="left"><a href="https://pypi.org/project/obsidianhtml/" class="external-link">obsidianhtml-0.0.8</a></td>
+<td align="left"><a href="https://pypi.org/project/obsidianhtml/" class="external-link">obsidianhtml-0.0.9</a></td>
 </tr>
 <tr>
 <td align="left">Currently working on</td>
-<td align="left"><a href="https://github.com/obsidian-html/obsidian-html" class="external-link">obsidianhtml-0.0.9</a>  <a href="https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml" class="external-link"><img alt="TestSuite" src="https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml/badge.svg" /></a></td>
+<td align="left"><a href="https://github.com/obsidian-html/obsidian-html" class="external-link">obsidianhtml-1.0.0</a>  <a href="https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml" class="external-link"><img alt="TestSuite" src="https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml/badge.svg" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -87,8 +87,8 @@
 	<li><a href="/Demonstrations/Test pages/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A157099232981375143284557122407162882318{level}"></svg>
-    <button class="graph_button" id="B157099232981375143284557122407162882318{level}" level="{level}" onclick="run('157099232981375143284557122407162882318'+this.level, 'index');">Show Graph</button>
+    <svg class="graph_svg" id="A209662758588420460740480118312469467795{level}"></svg>
+    <button class="graph_button" id="B209662758588420460740480118312469467795{level}" level="{level}" onclick="run('209662758588420460740480118312469467795'+this.level, 'index');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -178,14 +178,9 @@ function run(uid, pinnedNode){
                 .attr('y', 3)
                 .on("click", function(d) {
                     let svg_el = document.getElementById('A' + uid);
-                    console.log('A' + uid)
-                    console.log(svg_el, svg_el.parentElement)
                     let level = parseInt(svg_el.parentElement.parentElement.level);
-                    console.log(svg_el.parentElement);
-                    console.log(level, level+1);
                     httpGetAsync(encodeURI(d.url), ReceiveCall, level+1, false); 
-                    return false; 
-                        //window.open(d.url);
+                    return false;
                 });
 
                 node.append("title")
@@ -398,7 +393,6 @@ function run(uid, pinnedNode){
                                         continue;
                                 }
                                 l.onclick = function () { 
-                                        console.log('src:', level, 'dst:', level+1, 'link:', this.attributes.href.nodeValue)
                                         httpGetAsync(encodeURI(this.attributes.href.nodeValue), ReceiveCall, level+1, false); 
                                         return false; 
                                 };

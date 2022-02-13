@@ -6,8 +6,8 @@ tags:
 # ObsidianHtml
 | Status | Version|
 | :------ | :---| 
-| Last published version | [obsidianhtml-0.0.8](https://pypi.org/project/obsidianhtml/) |
-| Currently working on | [obsidianhtml-0.0.9](https://github.com/obsidian-html/obsidian-html)  [![TestSuite](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml/badge.svg)](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml)|
+| Last published version | [obsidianhtml-0.0.9](https://pypi.org/project/obsidianhtml/) |
+| Currently working on | [obsidianhtml-1.0.0](https://github.com/obsidian-html/obsidian-html)  [![TestSuite](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml/badge.svg)](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml)|
 
 ## Table of Contents
 ### General information

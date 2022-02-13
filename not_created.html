@@ -188,7 +188,6 @@
                                         continue;
                                 }
                                 l.onclick = function () { 
-                                        console.log('src:', level, 'dst:', level+1, 'link:', this.attributes.href.nodeValue)
                                         httpGetAsync(encodeURI(this.attributes.href.nodeValue), ReceiveCall, level+1, false); 
                                         return false; 
                                 };
