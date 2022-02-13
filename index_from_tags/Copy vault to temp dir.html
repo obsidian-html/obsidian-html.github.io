@@ -9,14 +9,14 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
 
                 <!-- Set title -->
-                <title>ObsidianHtml/Documentation</title>
+                <title>ObsidianHtml/index_from_tags</title>
 
                 <!-- Includes -->
-                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
-                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
-                <script src="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
+                <link rel="stylesheet" href="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
+                <link rel="stylesheet" href="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
+                <script src="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
                 
-<link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
+<link rel="stylesheet" href="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 
@@ -31,10 +31,10 @@
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+        <a href="/index_from_tags/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
 
         <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
-                <a href="/tags" title="Open tag view">
+                <a href="/index_from_tags/tags" title="Open tag view">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                 <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
                                 <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
@@ -46,43 +46,21 @@
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="features">Features</h1>
-<h2 id="high-level">High level</h2>
+        <h1 id="copy-vault-to-temp-dir">Copy vault to temp dir</h1>
+<p>We try to not have bugs, but sometimes we just can't help ourselves. I think everyone would agree that the only thing that we should guarantee is that we don't touch your vault files. To help assure that, ObsidianHtml will make a copy of your entire vault to a temporary directory and work from out of that folder.    </p>
+<p>This is an optional setting, and if you have severe file storage problems, or an enormous vault that takes very long to copy, then you can turn this setting off. Though we advise you to make a backup yourself the first couple of times that you use ObsidianHtml, or when you update ObsidianHtml to a new version.    </p>
+<blockquote>
+<p>This setting should be enabled for the option <a href="/index_from_tags/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
+</blockquote>
+<p>The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please <a href="/index_from_tags/General Information/Report Issues &amp; Request features.html">report it as an issue</a>.   </p>
+<p>See config options: <a href="/index_from_tags/Configurations/Configuration Options.html#copy-vault-to-tempdir">Configuration Options#Copy Vault to Tempdir</a></p><h2>Backlinks</h2>
 <ul>
-<li><a href="/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a>   </li>
-<li><a href="/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a>   </li>
-</ul>
-<h2 id="note-selection-features">Note selection features</h2>
-<ul>
-<li><a href="/Configurations/Process All.html">Process All</a>   </li>
-<li><a href="/Create index from tags.html">Create index from tags</a>   </li>
-<li><a href="/Configurations/Configuration Options.html#exclude-subfolders">Excluding vault subfolders</a>   </li>
-</ul>
-<h2 id="html-features">HTML features</h2>
-<ul>
-<li><a href="/Configurations/Graph view.html">Graph view</a>   </li>
-<li><a href="/Backlinks.html">Backlinks</a>   </li>
-<li><a href="/Configurations/Tags Page.html">Tags Page</a>   </li>
-<li><a href="/Configurations/Configuration Options.html#html-template-path-str">Use custom HTML template</a>   </li>
-<li><a href="/Configurations/Configuration Options.html#html-custom-inclusions">Custom stylesheet/javascript inclusions</a>   </li>
-<li><a href="/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Mermaid diagrams</a>   </li>
-</ul>
-<h2 id="safety">Safety</h2>
-<ul>
-<li><a href="/Copy vault to temp dir.html">Copy vault to temp dir</a>   </li>
-</ul>
-<h2 id="other">Other</h2>
-<p>See <a href="/Configurations/Configuration Options.html">Configuration Options</a> for a detailed look at all the configuration options available.</p><h2>Backlinks</h2>
-<ul>
-	<li><a href="/Configurations/Configuration Options.html">Configuration Options</a></li>
-	<li><a href="/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
-	<li><a href="/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
-	<li><a href="/Instructions/Usage.html">Usage</a></li>
-	<li><a href="/index.html">index</a></li>
+	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
+	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A128858584311788562385133215586372239210{level}"></svg>
-    <button class="graph_button" id="B128858584311788562385133215586372239210{level}" level="{level}" onclick="run('128858584311788562385133215586372239210'+this.level, 'Features');">Show Graph</button>
+    <svg class="graph_svg" id="A156749717074185511262696260901693923895{level}"></svg>
+    <button class="graph_button" id="B156749717074185511262696260901693923895{level}" level="{level}" onclick="run('156749717074185511262696260901693923895'+this.level, 'Copy vault to temp dir');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -126,7 +104,7 @@ function run(uid, pinnedNode){
             .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
-        d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
+        d3.json("/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
                 if (error) throw error;
 
 

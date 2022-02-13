@@ -22,5 +22,8 @@ tags:
 - [[Configuration Options#Html Custom Inclusions|Custom stylesheet/javascript inclusions]]
 - [[Implementing Mermaid diagrams in HTML output|Mermaid diagrams]]
 
+## Safety
+- [[Copy vault to temp dir]]
+
 ## Other
 See [[Configuration Options]] for a detailed look at all the configuration options available.
