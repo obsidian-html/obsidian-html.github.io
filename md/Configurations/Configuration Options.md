@@ -12,17 +12,53 @@ Run:
    
 ``` bash
 obsidianhtml -gc
-``` 
-
-To view the defaults_config.yaml that is used by ObsidianHtml. 
-
-> Tip: run `obsidianhtml -gc > config.yaml` on Linux to get a config file with all possible inputs. 
-
-Note that the inputs that need to be filled in always are marked with `'<REQUIRED_INPUT>'`.
-
-We will now go through all the settings in more-or-less the same order as the output of that command.
-
-## Paths
+```
+    
+   
+To view the defaults_config.yaml that is used by ObsidianHtml.    
+   
+> Tip: run `obsidianhtml -gc > config.yaml` on Linux to get a config file with all possible inputs.    
+   
+Note that the inputs that need to be filled in always are marked with `'<REQUIRED_INPUT>'`.   
+   
+We will now go through all the settings in more-or-less the same order as the output of that command.   
+   
+[obsidian_folder_path_str](#obsidian_folder_path_str)   
+   
+## Configurations   
+| config | Short description |   
+| :------ | :--------------- |   
+| **Paths**   |                  |    
+| [obsidian_folder_path_str](#obsidian_folder_path_str) | The location of your vault directory |   
+| [obsidian_entrypoint_path_str](#obsidian_entrypoint_path_str) | The location of your entrypoint note |   
+| [md_folder_path_str](#md_folder_path_str) | The (output/input) location of your markdown files |   
+| [md_entrypoint_path_str](#md_entrypoint_path_str) | The (output/input) location of your markdown entrypoint file |   
+| [html_output_folder_path_str](#html_output_folder_path_str) | The output location of your html files |   
+| **Operational settings** | |    
+| [Exclude Subfolders](#exclude-subfolders) | Subfolders from your vault directory to ignore |   
+| [Copy Vault to Tempdir](#copy-vault-to-tempdir) | (On/Off) Copy vault into temp dir prior to parsing |   
+| ** HTML settings** | |   
+| [Site name](#site-name) | Name of your website, to be used in the `<title>` and such |   
+| [Html Url Prefix](#html-url-prefix) | Used to deploy your website to `http://domain.name/[html_url_prefix]/` |   
+| [Html Template Path Str](#html-template-path-str) | Used to pass in your own custom template |   
+| [Html Custom Inclusions](#html-custom-inclusions) | Used to pass in your own css/js files |   
+| **Toggles** | |   
+| [Compile Md](#compile-md) | Used to skip the obsidian --> markdown compilation step |   
+| [Compile Html](#compile-html) | Used to skip the markdown --> html compilation step |   
+| [Process all](#process-all) | Include all notes. Read more: [Process All](../Configurations/Process%20All.md) |   
+| [verbose_printout](#verbose_printout) | Used for debugging, show in detail what is going on during processing. |   
+| [Allow Duplicate Filenames in Root](#allow-duplicate-filenames-in-root) | By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off. |   
+| [Warn on Skipped Image](#warn-on-skipped-image) | By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off. |   
+| [no_clean](#no_clean) | Use if you want to clean the output directories yourself, e.g. to preserve the .git folder. |   
+| [relative_path_md](#relative_path_md) | Compile markdown links relatively or with absolute paths |   
+| [external_blank](#external_blank) | Control whether external links will open in a new tab or not |   
+| **Feature settings** | |   
+| [Graph](#graph) | Configure the graph view. Read more [Graph view](../Configurations/Graph%20view.md) |   
+| [Create Index From Tags](#create-index-from-tags) | Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.|   
+| [Backlinks](#backlinks) | Turn backlinks on or off. |   
+   
+   
+## Paths   
 ``` yaml
 ##########################################################################
 #                               PATHS                                    #
@@ -123,7 +159,7 @@ This is an optional setting, and if you have severe file storage problems, or an
    
 The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please [report it as an issue](../General%20Information/Report%20Issues%20%26%20Request%20features.md).   
    
-### HTML Output   
+## HTML Output   
 ``` yaml
 ##########################################################################
 #                             HTML OUTPUT                                #

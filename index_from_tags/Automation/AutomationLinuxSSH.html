@@ -384,6 +384,17 @@ function run(uid, pinnedNode){
                                 if (l.classList.contains('external-link')){
                                         continue;
                                 }
+                                if (l.classList.contains('anchor-link')){
+                                        l.onclick = function () { 
+                                                levelcont = this.closest('div')
+                                                var el = levelcont.querySelectorAll(this.getAttribute("href"))[0];
+                                                if (el){
+                                                        el.parentElement.scrollTop = el.offsetTop - 20;
+                                                }
+                                                return false; 
+                                        };
+                                        continue
+                                }
                                 if (l.onclick != null){
                                         continue;
                                 }

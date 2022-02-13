@@ -22,6 +22,41 @@ Note that the inputs that need to be filled in always are marked with `'<REQUIRE
 
 We will now go through all the settings in more-or-less the same order as the output of that command.
 
+[[#obsidian_folder_path_str]]
+
+## Configurations
+| config | Short description |
+| :------ | :--------------- |
+| **Paths**   |                  | 
+| [[#obsidian_folder_path_str]] | The location of your vault directory |
+| [[#obsidian_entrypoint_path_str]] | The location of your entrypoint note |
+| [[#md_folder_path_str]] | The (output/input) location of your markdown files |
+| [[#md_entrypoint_path_str]] | The (output/input) location of your markdown entrypoint file |
+| [[#html_output_folder_path_str]] | The output location of your html files |
+| **Operational settings** | | 
+| [[#Exclude Subfolders]] | Subfolders from your vault directory to ignore |
+| [[#Copy Vault to Tempdir]] | (On/Off) Copy vault into temp dir prior to parsing |
+| ** HTML settings** | |
+| [[#Site name]] | Name of your website, to be used in the `<title>` and such |
+| [[#Html Url Prefix]] | Used to deploy your website to `http://domain.name/[html_url_prefix]/` |
+| [[#Html Template Path Str]] | Used to pass in your own custom template |
+| [[#Html Custom Inclusions]] | Used to pass in your own css/js files |
+| **Toggles** | |
+| [[#Compile Md]] | Used to skip the obsidian --> markdown compilation step |
+| [[#Compile Html]] | Used to skip the markdown --> html compilation step |
+| [[#Process all]] | Include all notes. Read more: [[Process All]] |
+| [[#verbose_printout]] | Used for debugging, show in detail what is going on during processing. |
+| [[#Allow Duplicate Filenames in Root]] | By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off. |
+| [[#Warn on Skipped Image]] | By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off. |
+| [[#no_clean]] | Use if you want to clean the output directories yourself, e.g. to preserve the .git folder. |
+| [[#relative_path_md]] | Compile markdown links relatively or with absolute paths |
+| [[#external_blank]] | Control whether external links will open in a new tab or not |
+| **Feature settings** | |
+| [[#Graph]] | Configure the graph view. Read more [[Graph view]] |
+| [[#Create Index From Tags]] | Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.|
+| [[#Backlinks]] | Turn backlinks on or off. |
+
+
 ## Paths
 ``` yaml
 ##########################################################################
@@ -114,7 +149,7 @@ This is an optional setting, and if you have severe file storage problems, or an
 
 The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please [[Report Issues & Request features|report it as an issue]].
 
-### HTML Output
+## HTML Output
 ``` yaml
 ##########################################################################
 #                             HTML OUTPUT                                #

@@ -53,12 +53,136 @@
 <div class="codehilite"><pre><span></span><code>obsidianhtml -gc
 </code></pre></div>
 
-<p>To view the defaults_config.yaml that is used by ObsidianHtml. </p>
+<p>To view the defaults_config.yaml that is used by ObsidianHtml.    </p>
 <blockquote>
-<p>Tip: run <code>obsidianhtml -gc &gt; config.yaml</code> on Linux to get a config file with all possible inputs. </p>
+<p>Tip: run <code>obsidianhtml -gc &gt; config.yaml</code> on Linux to get a config file with all possible inputs.    </p>
 </blockquote>
-<p>Note that the inputs that need to be filled in always are marked with <code>'&lt;REQUIRED_INPUT&gt;'</code>.</p>
-<p>We will now go through all the settings in more-or-less the same order as the output of that command.</p>
+<p>Note that the inputs that need to be filled in always are marked with <code>'&lt;REQUIRED_INPUT&gt;'</code>.   </p>
+<p>We will now go through all the settings in more-or-less the same order as the output of that command.   </p>
+<p><a href="#obsidian_folder_path_str" class="anchor-link" class="anchor-link">obsidian_folder_path_str</a>   </p>
+<h2 id="configurations">Configurations</h2>
+<table>
+<thead>
+<tr>
+<th align="left">config</th>
+<th align="left">Short description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Paths</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#obsidian_folder_path_str" class="anchor-link" class="anchor-link">obsidian_folder_path_str</a></td>
+<td align="left">The location of your vault directory</td>
+</tr>
+<tr>
+<td align="left"><a href="#obsidian_entrypoint_path_str" class="anchor-link">obsidian_entrypoint_path_str</a></td>
+<td align="left">The location of your entrypoint note</td>
+</tr>
+<tr>
+<td align="left"><a href="#md_folder_path_str" class="anchor-link">md_folder_path_str</a></td>
+<td align="left">The (output/input) location of your markdown files</td>
+</tr>
+<tr>
+<td align="left"><a href="#md_entrypoint_path_str" class="anchor-link">md_entrypoint_path_str</a></td>
+<td align="left">The (output/input) location of your markdown entrypoint file</td>
+</tr>
+<tr>
+<td align="left"><a href="#html_output_folder_path_str" class="anchor-link">html_output_folder_path_str</a></td>
+<td align="left">The output location of your html files</td>
+</tr>
+<tr>
+<td align="left"><strong>Operational settings</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#exclude-subfolders" class="anchor-link">Exclude Subfolders</a></td>
+<td align="left">Subfolders from your vault directory to ignore</td>
+</tr>
+<tr>
+<td align="left"><a href="#copy-vault-to-tempdir" class="anchor-link">Copy Vault to Tempdir</a></td>
+<td align="left">(On/Off) Copy vault into temp dir prior to parsing</td>
+</tr>
+<tr>
+<td align="left"><strong> HTML settings</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#site-name" class="anchor-link">Site name</a></td>
+<td align="left">Name of your website, to be used in the <code>&lt;title&gt;</code> and such</td>
+</tr>
+<tr>
+<td align="left"><a href="#html-url-prefix" class="anchor-link">Html Url Prefix</a></td>
+<td align="left">Used to deploy your website to <code>http://domain.name/[html_url_prefix]/</code></td>
+</tr>
+<tr>
+<td align="left"><a href="#html-template-path-str" class="anchor-link">Html Template Path Str</a></td>
+<td align="left">Used to pass in your own custom template</td>
+</tr>
+<tr>
+<td align="left"><a href="#html-custom-inclusions" class="anchor-link">Html Custom Inclusions</a></td>
+<td align="left">Used to pass in your own css/js files</td>
+</tr>
+<tr>
+<td align="left"><strong>Toggles</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#compile-md" class="anchor-link">Compile Md</a></td>
+<td align="left">Used to skip the obsidian --&gt; markdown compilation step</td>
+</tr>
+<tr>
+<td align="left"><a href="#compile-html" class="anchor-link">Compile Html</a></td>
+<td align="left">Used to skip the markdown --&gt; html compilation step</td>
+</tr>
+<tr>
+<td align="left"><a href="#process-all" class="anchor-link">Process all</a></td>
+<td align="left">Include all notes. Read more: <a href="/Configurations/Process All.html">Process All</a></td>
+</tr>
+<tr>
+<td align="left"><a href="#verbose_printout" class="anchor-link">verbose_printout</a></td>
+<td align="left">Used for debugging, show in detail what is going on during processing.</td>
+</tr>
+<tr>
+<td align="left"><a href="#allow-duplicate-filenames-in-root" class="anchor-link">Allow Duplicate Filenames in Root</a></td>
+<td align="left">By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off.</td>
+</tr>
+<tr>
+<td align="left"><a href="#warn-on-skipped-image" class="anchor-link">Warn on Skipped Image</a></td>
+<td align="left">By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off.</td>
+</tr>
+<tr>
+<td align="left"><a href="#no_clean" class="anchor-link">no_clean</a></td>
+<td align="left">Use if you want to clean the output directories yourself, e.g. to preserve the .git folder.</td>
+</tr>
+<tr>
+<td align="left"><a href="#relative_path_md" class="anchor-link">relative_path_md</a></td>
+<td align="left">Compile markdown links relatively or with absolute paths</td>
+</tr>
+<tr>
+<td align="left"><a href="#external_blank" class="anchor-link">external_blank</a></td>
+<td align="left">Control whether external links will open in a new tab or not</td>
+</tr>
+<tr>
+<td align="left"><strong>Feature settings</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="#graph" class="anchor-link">Graph</a></td>
+<td align="left">Configure the graph view. Read more <a href="/Configurations/Graph view.html">Graph view</a></td>
+</tr>
+<tr>
+<td align="left"><a href="#create-index-from-tags" class="anchor-link">Create Index From Tags</a></td>
+<td align="left">Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.</td>
+</tr>
+<tr>
+<td align="left"><a href="#backlinks" class="anchor-link">Backlinks</a></td>
+<td align="left">Turn backlinks on or off.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="paths">Paths</h2>
 <div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
 <span class="c1">#                               PATHS                                    #</span><span class="w"></span>
@@ -135,7 +259,7 @@
 <p>This setting should be enabled for the option <a href="/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
 </blockquote>
 <p>The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please <a href="/General Information/Report Issues &amp; Request features.html">report it as an issue</a>.   </p>
-<h3 id="html-output">HTML Output</h3>
+<h2 id="html-output">HTML Output</h2>
 <div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
 <span class="c1">#                             HTML OUTPUT                                #</span><span class="w"></span>
 <span class="c1">##########################################################################</span><span class="w"></span>
@@ -332,8 +456,8 @@
 	<li><a href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A54183880829677116766560286858532779336{level}"></svg>
-    <button class="graph_button" id="B54183880829677116766560286858532779336{level}" level="{level}" onclick="run('54183880829677116766560286858532779336'+this.level, 'Configuration Options');">Show Graph</button>
+    <svg class="graph_svg" id="A305621955874767094867153260235471910150{level}"></svg>
+    <button class="graph_button" id="B305621955874767094867153260235471910150{level}" level="{level}" onclick="run('305621955874767094867153260235471910150'+this.level, 'Configuration Options');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -633,6 +757,17 @@ function run(uid, pinnedNode){
                                 }
                                 if (l.classList.contains('external-link')){
                                         continue;
+                                }
+                                if (l.classList.contains('anchor-link')){
+                                        l.onclick = function () { 
+                                                levelcont = this.closest('div')
+                                                var el = levelcont.querySelectorAll(this.getAttribute("href"))[0];
+                                                if (el){
+                                                        el.parentElement.scrollTop = el.offsetTop - 20;
+                                                }
+                                                return false; 
+                                        };
+                                        continue
                                 }
                                 if (l.onclick != null){
                                         continue;
