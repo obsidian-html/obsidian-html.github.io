@@ -5,7 +5,7 @@ tags:
 ---
 
 # Tags
-Inline tags are stripped, but frontmatter tags are parsed and added to a site-wide list which can be found under `<sitename>/tags`, see for example: [/tags](/tags).
+Inline tags are stripped, but frontmatter tags are parsed and added to a site-wide list which can be found under `<sitename>/obs.html/tags`, see for example: [/obs.html/tags](/obs.html/tags).
 
 If you use slashes in your tags, these will be split into different pages (like a tree view).
 E.g. adding the following frontyaml at the top of this note:
