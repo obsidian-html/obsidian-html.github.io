@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Demonstrations/Implementing links & link awareness.md",
+            "file": "General Information/About ObsidianHtml.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Demonstrations/Implementing links & link awareness.md",
+                "file": "General Information/About ObsidianHtml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,15 +100,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "Demonstrations/Implementing links & link awareness.md",
     "General Information/About ObsidianHtml.md",
     "ObsidianHtml.md",
+    "Configurations/Tags Page.md",
+    "Demonstrations/Implementing links & link awareness.md",
     "Configurations/Process All.md",
     "Configurations/Modes.md",
     "General Information/Creating a static html website from markdown files.md",
     "Configurations/Features.md",
     "Configurations/Configuration Options.md",
-    "General Information/Parsing Obsidian notes to proper markdown.md",
-    "Configurations/Create index from tags.md"
+    "General Information/Parsing Obsidian notes to proper markdown.md"
   ]
 }

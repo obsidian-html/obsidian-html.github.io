@@ -19,4 +19,4 @@ tags:
 ```
    
    
-Will result in a page [/tags/feature/](/tags/feature/) which will contain (among others) a link to  `parsing_markdown`, which will link to this note.
+Will result in a page [/obs.html/tags/feature/](/obs.html/tags/feature/) which will contain (among others) a link to  `parsing_markdown`, which will link to this note.

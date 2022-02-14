@@ -30,6 +30,8 @@ By default only notes that are found by following links recursively starting wit
 - Python version 3.9 or higher is required   
 - Make sure that the `python` command points to `python3`, and not a python2 version.   
    
+> ObsidianHtml will write a folder to your html output named `obs.html`, if you have a directory in the root of your vault with the same name, there might be issues with the html output.   
+   
 ## Words of thanks   
 All credit to this site's design goes to Andy Matuschak. I basically [stole his design](https://notes.andymatuschak.org/Evergreen_notes) because I think it is perfect.   
    
