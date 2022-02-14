@@ -18,6 +18,7 @@ tags:
 ### Usage & Capabilities
 - [[Installation]]
 - [[Usage]]
+- [[Modes]]
 - [[Features]]
 - [[Configuration Options]]
 

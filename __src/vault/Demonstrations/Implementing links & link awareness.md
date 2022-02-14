@@ -13,8 +13,11 @@ tags:
 Aliasing also works, `[[Simple Obsidian-type Link|Same link as before]]`:
 [[Simple Obsidian-type Link|Same link as before]]
 
-As does linking to chapters `[[Long long page#Chapter of interest]]`
+Linking to specific chapters `[[Long long page#Chapter of interest]]`
 [[Long long page#Chapter of interest]]
+
+Linking to another header on the same page: `[[#Proper markdown links]]`
+[[#Proper markdown links]]
 
 ## Proper markdown links
 There is a setting that forces Obsidian to use proper markdown notation. So this is also supported:

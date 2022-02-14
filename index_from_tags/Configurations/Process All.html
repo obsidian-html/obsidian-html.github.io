@@ -48,20 +48,18 @@
         <div class="container">
         <h1 id="process-all">Process all</h1>
 <h2 id="crawling-versus-converting-all-nodes">Crawling versus converting all nodes</h2>
-<p>This package was written with the idea that you give one note that will serve as the homepage. Then all the notes that are linked directly or indirectly by that first note are processed, ignoring what else might still be in your vault.   </p>
-<p>Now there is a new mode, which will indeed convert all notes. This has become more useful because of the new graph view and tag view features. These can make those notes reachable now.    </p>
-<p>The default is still to only process what can be reached from the first note. To get all notes converted, add a key under <code>toggles</code> in your config yaml, named <code>process_all</code> and set it to the value of <code>True</code>.  See also <a href="/index_from_tags/Configurations/Configuration Options.html#process-all">Configuration Options#Process all</a>   </p>
-<p><a href="https://github.com/obsidian-html/obsidian-html/blob/ff371c665a78d10a6658dbd8f04b759e0882a858/example_config.yml#L55" class="external-link">See the example config for reference</a>   </p>
-<blockquote>
-<p>Note that this (kind of) breaks the graph view: not all links will be present in the graph that should be present. See <a href="https://github.com/obsidian-html/obsidian-html/issues/22" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/22</a></p>
-</blockquote><h2>Backlinks</h2>
+<p>This package was written with the idea that <a href="/index_from_tags/Configurations/Modes.html#entrypoint-mode">you give one note that will serve as the homepage</a>. Then all the notes that are linked directly or indirectly by that first note are processed, ignoring what else might still be in your vault.   </p>
+<p>Process all is a <a href="/index_from_tags/Configurations/Modes.html">mode</a>, which will tell ObsidianHtml to convert and include all notes in the output.    </p>
+<p>This has become more useful because of the new <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a> and <a href="/index_from_tags/Configurations/Tags Page.html">Tags Page</a> features. These can make those notes reachable now.    </p>
+<p>See <a href="/index_from_tags/Configurations/Configuration Options.html#process-all">Configuration Options#Process all</a> for how to enable this setting.</p><h2>Backlinks</h2>
 <ul>
 	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
 	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a href="/index_from_tags/Configurations/Modes.html">Modes</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A230908858988711105642395552360829268922{level}"></svg>
-    <button class="graph_button" id="B230908858988711105642395552360829268922{level}" level="{level}" onclick="run('230908858988711105642395552360829268922'+this.level, 'Process All');">Show Graph</button>
+    <svg class="graph_svg" id="A235229827012472176690257556954084785645{level}"></svg>
+    <button class="graph_button" id="B235229827012472176690257556954084785645{level}" level="{level}" onclick="run('235229827012472176690257556954084785645'+this.level, 'Process All');">Show Graph</button>
 </div>
 <script src="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.js" type="text/javascript"></script>
 

@@ -22,9 +22,7 @@ It is also possible to input existing standard markdown to just use the markdown
 
 To convert your notes, you need to point to your notes folder, and to one note that will serve as the index.html page.
 
-By default only notes that are found by following links recursively starting with the entrypoint will be converted. To include all notes in your folder, see the [[Process All]].
-
-It is also possible to [[Create index from tags|create an entrypoint note by matching certain tags]]. If you enable that setting, only the notes that match the tags will be included in the output. (Unless, again, process all is enabled).
+By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, [[Modes|there are other modes available]].
 
 ## Compatibility
 - This application is extensively tested on Linux/OSX, and occasionally tested on Windows.

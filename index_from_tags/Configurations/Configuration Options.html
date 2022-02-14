@@ -48,6 +48,7 @@
         <div class="container">
         <h1 id="configuration-options">Configuration Options</h1>
 <p>This page goes through all the configuration options and will refer to features. For a toplevel view of these features, see <a href="/index_from_tags/Configurations/Features.html">Features</a>.   </p>
+<p>Certain settings change the flow of how notes are selected and presented on the homepage. You can find a glossary on those in <a href="/index_from_tags/Configurations/Modes.html">Modes</a>.   </p>
 <h2 id="get-all-the-default-settings">Get all the default settings</h2>
 <p>Run:   </p>
 <div class="codehilite"><pre><span></span><code>obsidianhtml -gc
@@ -60,6 +61,7 @@
 <p>Note that the inputs that need to be filled in always are marked with <code>'&lt;REQUIRED_INPUT&gt;'</code>.   </p>
 <p>We will now go through all the settings in more-or-less the same order as the output of that command.   </p>
 <h2 id="configurations">Configurations</h2>
+<h3 id="paths">Paths</h3>
 <table>
 <thead>
 <tr>
@@ -69,125 +71,144 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><strong>Paths</strong></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a href="#obsidian_folder_path_str" class="anchor-link">obsidian_folder_path_str</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#obsidian_folder_path_str">obsidian_folder_path_str</a></td>
 <td align="left">The location of your vault directory</td>
 </tr>
 <tr>
-<td align="left"><a href="#obsidian_entrypoint_path_str" class="anchor-link">obsidian_entrypoint_path_str</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#obsidian_entrypoint_path_str">obsidian_entrypoint_path_str</a></td>
 <td align="left">The location of your entrypoint note</td>
 </tr>
 <tr>
-<td align="left"><a href="#md_folder_path_str" class="anchor-link">md_folder_path_str</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#md_folder_path_str">md_folder_path_str</a></td>
 <td align="left">The (output/input) location of your markdown files</td>
 </tr>
 <tr>
-<td align="left"><a href="#md_entrypoint_path_str" class="anchor-link">md_entrypoint_path_str</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#md_entrypoint_path_str">md_entrypoint_path_str</a></td>
 <td align="left">The (output/input) location of your markdown entrypoint file</td>
 </tr>
 <tr>
-<td align="left"><a href="#html_output_folder_path_str" class="anchor-link">html_output_folder_path_str</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#html_output_folder_path_str">html_output_folder_path_str</a></td>
 <td align="left">The output location of your html files</td>
 </tr>
+</tbody>
+</table>
+<h3 id="operational-settings">Operational settings</h3>
+<table>
+<thead>
 <tr>
-<td align="left"><strong>Operational settings</strong></td>
-<td align="left"></td>
+<th align="left">config</th>
+<th align="left">Short description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td align="left"><a href="#exclude-subfolders" class="anchor-link">Exclude Subfolders</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#exclude-subfolders">Exclude Subfolders</a></td>
 <td align="left">Subfolders from your vault directory to ignore</td>
 </tr>
 <tr>
-<td align="left"><a href="#copy-vault-to-tempdir" class="anchor-link">Copy Vault to Tempdir</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#copy-vault-to-tempdir">Copy Vault to Tempdir</a></td>
 <td align="left">(On/Off) Copy vault into temp dir prior to parsing</td>
 </tr>
+</tbody>
+</table>
+<h3 id="html-settings">HTML settings</h3>
+<table>
+<thead>
 <tr>
-<td align="left"><strong> HTML settings</strong></td>
-<td align="left"></td>
+<th align="left">config</th>
+<th align="left">Short description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td align="left"><a href="#site-name" class="anchor-link">Site name</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#site-name">Site name</a></td>
 <td align="left">Name of your website, to be used in the <code>&lt;title&gt;</code> and such</td>
 </tr>
 <tr>
-<td align="left"><a href="#html-url-prefix" class="anchor-link">Html Url Prefix</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#html-url-prefix">Html Url Prefix</a></td>
 <td align="left">Used to deploy your website to <code>http://domain.name/[html_url_prefix]/</code></td>
 </tr>
 <tr>
-<td align="left"><a href="#html-template-path-str" class="anchor-link">Html Template Path Str</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#html-template-path-str">Html Template Path Str</a></td>
 <td align="left">Used to pass in your own custom template</td>
 </tr>
 <tr>
-<td align="left"><a href="#html-custom-inclusions" class="anchor-link">Html Custom Inclusions</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#html-custom-inclusions">Html Custom Inclusions</a></td>
 <td align="left">Used to pass in your own css/js files</td>
 </tr>
+</tbody>
+</table>
+<h3 id="toggles">Toggles</h3>
+<table>
+<thead>
 <tr>
-<td align="left"><strong>Toggles</strong></td>
-<td align="left"></td>
+<th align="left">config</th>
+<th align="left">Short description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td align="left"><a href="#compile-md" class="anchor-link">Compile Md</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#compile-md">Compile Md</a></td>
 <td align="left">Used to skip the obsidian --&gt; markdown compilation step</td>
 </tr>
 <tr>
-<td align="left"><a href="#compile-html" class="anchor-link">Compile Html</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#compile-html">Compile Html</a></td>
 <td align="left">Used to skip the markdown --&gt; html compilation step</td>
 </tr>
 <tr>
-<td align="left"><a href="#process-all" class="anchor-link">Process all</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#process-all">Process all</a></td>
 <td align="left">Include all notes. Read more: <a href="/index_from_tags/Configurations/Process All.html">Process All</a></td>
 </tr>
 <tr>
-<td align="left"><a href="#verbose_printout" class="anchor-link">verbose_printout</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#verbose_printout">verbose_printout</a></td>
 <td align="left">Used for debugging, show in detail what is going on during processing.</td>
 </tr>
 <tr>
-<td align="left"><a href="#allow-duplicate-filenames-in-root" class="anchor-link">Allow Duplicate Filenames in Root</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#allow-duplicate-filenames-in-root">Allow Duplicate Filenames in Root</a></td>
 <td align="left">By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off.</td>
 </tr>
 <tr>
-<td align="left"><a href="#warn-on-skipped-image" class="anchor-link">Warn on Skipped Image</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#warn-on-skipped-image">Warn on Skipped Image</a></td>
 <td align="left">By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off.</td>
 </tr>
 <tr>
-<td align="left"><a href="#no_clean" class="anchor-link">no_clean</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#no_clean">no_clean</a></td>
 <td align="left">Use if you want to clean the output directories yourself, e.g. to preserve the .git folder.</td>
 </tr>
 <tr>
-<td align="left"><a href="#relative_path_md" class="anchor-link">relative_path_md</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#relative_path_md">relative_path_md</a></td>
 <td align="left">Compile markdown links relatively or with absolute paths</td>
 </tr>
 <tr>
-<td align="left"><a href="#external_blank" class="anchor-link">external_blank</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#external_blank">external_blank</a></td>
 <td align="left">Control whether external links will open in a new tab or not</td>
 </tr>
+</tbody>
+</table>
+<h3 id="feature-settings">Feature settings</h3>
+<table>
+<thead>
 <tr>
-<td align="left"><strong>Feature settings</strong></td>
-<td align="left"></td>
+<th align="left">config</th>
+<th align="left">Short description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td align="left"><a href="#graph" class="anchor-link">Graph</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#graph">Graph</a></td>
 <td align="left">Configure the graph view. Read more <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a></td>
 </tr>
 <tr>
-<td align="left"><a href="#create-index-from-tags" class="anchor-link">Create Index From Tags</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#create-index-from-tags">Create Index From Tags</a></td>
 <td align="left">Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.</td>
 </tr>
 <tr>
-<td align="left"><a href="#backlinks" class="anchor-link">Backlinks</a></td>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#backlinks">Backlinks</a></td>
 <td align="left">Turn backlinks on or off.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="paths">Paths</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
-<span class="c1">#                               PATHS                                    #</span><span class="w"></span>
-<span class="c1">##########################################################################</span><span class="w"></span>
-</code></pre></div>
-
+<h2 id="paths_1">Paths</h2>
 <h3 id="obsidian_folder_path_str">obsidian_folder_path_str</h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
 <span class="c1"># Can be absent when toggles/compile_md == False</span><span class="w"></span>
@@ -228,11 +249,6 @@
 </code></pre></div>
 
 <h2 id="operations">Operations</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
-<span class="c1">#                              OPERATIONS                                #</span><span class="w"></span>
-<span class="c1">##########################################################################</span><span class="w"></span>
-</code></pre></div>
-
 <h3 id="exclude-subfolders">Exclude Subfolders</h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Exclude subfolders</span><span class="w"></span>
 <span class="c1"># These are relative to obsidian_folder_path_str</span><span class="w"></span>
@@ -257,11 +273,6 @@
 <p>This setting should be enabled for the option <a href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
 </blockquote>
 <h2 id="html-output">HTML Output</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
-<span class="c1">#                             HTML OUTPUT                                #</span><span class="w"></span>
-<span class="c1">##########################################################################</span><span class="w"></span>
-</code></pre></div>
-
 <h3 id="site-name">Site name</h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Will be inputted into the Html template as page title</span><span class="w"></span>
 <span class="c1"># Not used anywhere else atm.</span><span class="w"></span>
@@ -302,7 +313,7 @@
 <blockquote>
 <p><strong>N.b.</strong> you'll have to place the mentioned files into the output yourself. (Unless they are located in your vault and process_all: True)   </p>
 </blockquote>
-<h2 id="toggles">Toggles</h2>
+<h2 id="toggles_1">Toggles</h2>
 <p>These are the first second level settings. If you have multiple settings, make sure to combine them. So not like this:   </p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># wrong</span><span class="w"></span>
 <span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
@@ -320,11 +331,6 @@
 </code></pre></div>
 
 <p>When in doubt, look at the default config yaml: <a href="/index_from_tags/Configurations/Configuration Options.html#get-all-the-default-settings">Configuration Options#Get all the default settings</a>.   </p>
-<div class="codehilite"><pre><span></span><code><span class="c1">##########################################################################</span><span class="w"></span>
-<span class="c1">#                    OPTIONAL BEHAVIOR / FEATURES                        #</span><span class="w"></span>
-<span class="c1">##########################################################################</span><span class="w"></span>
-</code></pre></div>
-
 <h3 id="compile-md">Compile Md</h3>
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># Opt-in/-out of Obsidian-&gt;Md conversion, set to False when using proper markdown as input</span><span class="w"></span>
@@ -440,18 +446,19 @@
 
 <p>Read more: <a href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a></p><h2>Backlinks</h2>
 <ul>
-	<li><a href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
-	<li><a href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
-	<li><a href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
-	<li><a href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a></li>
-	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
-	<li><a href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a></li>
-	<li><a href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
+	<li><a href="/index_from_tags/Configurations/Modes.html">Modes</a></li>
 	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a></li>
+	<li><a href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
+	<li><a href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a></li>
+	<li><a href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
+	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
+	<li><a href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+	<li><a href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A13308099155233982087407731576558337125{level}"></svg>
-    <button class="graph_button" id="B13308099155233982087407731576558337125{level}" level="{level}" onclick="run('13308099155233982087407731576558337125'+this.level, 'Configuration Options');">Show Graph</button>
+    <svg class="graph_svg" id="A80288764058093122982829127926754992983{level}"></svg>
+    <button class="graph_button" id="B80288764058093122982829127926754992983{level}" level="{level}" onclick="run('80288764058093122982829127926754992983'+this.level, 'Configuration Options');">Show Graph</button>
 </div>
 <script src="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.js" type="text/javascript"></script>
 
