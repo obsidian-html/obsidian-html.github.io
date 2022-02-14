@@ -7,7 +7,7 @@ tags:
 # Create index from tags   
 If you want to build an index note on the fly, based on selected tags, you can use this feature.   
    
-The configuration options can be found here: [Configuration Options#Create Index From Tags](Configurations/Configuration%20Options.md#create-index-from-tags)   
+The configuration options can be found here: [Configuration Options#Create Index From Tags](../Configurations/Configuration%20Options.md#create-index-from-tags)   
    
 The basic outline is this:   
    
@@ -17,7 +17,7 @@ The basic outline is this:
    
 You can view an index that is created in this way under [/index_from_tags](/index_from_tags).    
    
-> Note that we co-published this version of the website using the [Configuration Options#Html Url Prefix](Configurations/Configuration%20Options.md#html-url-prefix) setting!   
+> Note that we co-published this version of the website using the [Configuration Options#Html Url Prefix](../Configurations/Configuration%20Options.md#html-url-prefix) setting!   
    
 Don't be intimidated by the configuration settings for this feature, in it's minimal form, this would be enough to enable it:   
    

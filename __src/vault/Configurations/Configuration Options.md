@@ -22,8 +22,6 @@ Note that the inputs that need to be filled in always are marked with `'<REQUIRE
 
 We will now go through all the settings in more-or-less the same order as the output of that command.
 
-[[#obsidian_folder_path_str]]
-
 ## Configurations
 | config | Short description |
 | :------ | :--------------- |

@@ -13,13 +13,13 @@ tags:
 ## Note selection features   
    
 - [Process All](../Configurations/Process%20All.md)   
-- [Create index from tags](../Create%20index%20from%20tags.md)   
+- [Create index from tags](../Configurations/Create%20index%20from%20tags.md)   
 - [Excluding vault subfolders](../Configurations/Configuration%20Options.md#exclude-subfolders)   
    
 ## HTML features   
    
 - [Graph view](../Configurations/Graph%20view.md)   
-- [Backlinks](../Backlinks.md)   
+- [Backlinks](../Configurations/Backlinks.md)   
 - [Tags Page](../Configurations/Tags%20Page.md)   
 - [Use custom HTML template](../Configurations/Configuration%20Options.md#html-template-path-str)   
 - [Custom stylesheet/javascript inclusions](../Configurations/Configuration%20Options.md#html-custom-inclusions)   
@@ -27,7 +27,7 @@ tags:
    
 ## Safety   
    
-- [Copy vault to temp dir](../Copy%20vault%20to%20temp%20dir.md)   
+- [Copy vault to temp dir](../Configurations/Copy%20vault%20to%20temp%20dir.md)   
    
 ## Other   
 See [Configuration Options](../Configurations/Configuration%20Options.md) for a detailed look at all the configuration options available.

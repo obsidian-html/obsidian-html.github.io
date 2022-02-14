@@ -9,14 +9,14 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
 
                 <!-- Set title -->
-                <title>ObsidianHtml/Documentation</title>
+                <title>ObsidianHtml/index_from_tags</title>
 
                 <!-- Includes -->
-                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
-                <link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
-                <script src="/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
+                <link rel="stylesheet" href="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.css" />
+                <link rel="stylesheet" href="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/main.css" />
+                <script src="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/mermaid.min.js"></script> 
                 
-<link rel="stylesheet" href="/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
+<link rel="stylesheet" href="/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.css" />
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 
@@ -31,10 +31,10 @@
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+        <a href="/index_from_tags/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
 
         <div style="width:1.6rem; height:1.6rem; position:fixed; left:calc(100vw - 2rem);top: 0.9rem;">
-                <a href="/tags" title="Open tag view">
+                <a href="/index_from_tags/tags" title="Open tag view">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                 <path d="M0,0v512h512V0H0z M462.452,462.452H49.548V49.548h412.903V462.452z" fill="#f0f0f0"></path>
                                 <path d="M371.613,231.226v-49.548h-41.29v-41.29h-49.548v41.29h-49.548v-41.29h-49.548v41.29h-41.29v49.548h41.29v49.548h-41.29
@@ -48,7 +48,7 @@
         <div class="container">
         <h1 id="create-index-from-tags">Create index from tags</h1>
 <p>If you want to build an index note on the fly, based on selected tags, you can use this feature.   </p>
-<p>The configuration options can be found here: <a href="/Configurations/Configuration Options.html#create-index-from-tags">Configuration Options#Create Index From Tags</a>   </p>
+<p>The configuration options can be found here: <a href="/index_from_tags/Configurations/Configuration Options.html#create-index-from-tags">Configuration Options#Create Index From Tags</a>   </p>
 <p>The basic outline is this:   </p>
 <ul>
 <li>Select the tags on which you want to match notes, each tag will get its own header   </li>
@@ -57,7 +57,7 @@
 </ul>
 <p>You can view an index that is created in this way under <a href="/index_from_tags">/index_from_tags</a>.    </p>
 <blockquote>
-<p>Note that we co-published this version of the website using the <a href="/Configurations/Configuration Options.html#html-url-prefix">Configuration Options#Html Url Prefix</a> setting!   </p>
+<p>Note that we co-published this version of the website using the <a href="/index_from_tags/Configurations/Configuration Options.html#html-url-prefix">Configuration Options#Html Url Prefix</a> setting!   </p>
 </blockquote>
 <p>Don't be intimidated by the configuration settings for this feature, in it's minimal form, this would be enough to enable it:   </p>
 <div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
@@ -67,14 +67,13 @@
 <span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_tag</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">my_other_tag</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div><h2>Backlinks</h2>
 <ul>
-	<li><a href="/Configurations/Features.html">Features</a></li>
-	<li><a href="/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
-	<li><a href="/Configurations/Configuration Options.html">Configuration Options</a></li>
-	<li><a href="/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
+	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
+	<li><a href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
+	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A232699201163182454770812417080776233801{level}"></svg>
-    <button class="graph_button" id="B232699201163182454770812417080776233801{level}" level="{level}" onclick="run('232699201163182454770812417080776233801'+this.level, 'Create index from tags');">Show Graph</button>
+    <svg class="graph_svg" id="A20019161647650632781605519411260528009{level}"></svg>
+    <button class="graph_button" id="B20019161647650632781605519411260528009{level}" level="{level}" onclick="run('20019161647650632781605519411260528009'+this.level, 'Create index from tags');">Show Graph</button>
 </div>
 <script>
 function run(uid, pinnedNode){
@@ -118,7 +117,7 @@ function run(uid, pinnedNode){
             .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
 
-        d3.json("/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
+        d3.json("/index_from_tags/98682199-5ac9-448c-afc8-23ab7359a91b-static/graph.json", function(error, graph) {
                 if (error) throw error;
 
 

@@ -23,8 +23,6 @@ Note that the inputs that need to be filled in always are marked with `'<REQUIRE
    
 We will now go through all the settings in more-or-less the same order as the output of that command.   
    
-[obsidian_folder_path_str](#obsidian_folder_path_str)   
-   
 ## Configurations   
 | config | Short description |   
 | :------ | :--------------- |   
@@ -151,9 +149,9 @@ copy_vault_to_tempdir: True
 ```
    
    
-Read more: [Copy vault to temp dir](../Copy%20vault%20to%20temp%20dir.md)   
+Read more: [Copy vault to temp dir](../Configurations/Copy%20vault%20to%20temp%20dir.md)   
    
-> This setting should be enabled for the option [Create index from tags](../Create%20index%20from%20tags.md) to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    
+> This setting should be enabled for the option [Create index from tags](../Configurations/Create%20index%20from%20tags.md) to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    
    
 ## HTML Output   
 ``` yaml
@@ -385,7 +383,7 @@ toggles
 ```
    
    
-Read more: [Create index from tags](../Create%20index%20from%20tags.md)   
+Read more: [Create index from tags](../Configurations/Create%20index%20from%20tags.md)   
    
 ### Backlinks   
 ``` yaml
@@ -397,4 +395,4 @@ toggles
 ```
    
    
-Read more: [Backlinks](../Backlinks.md)
+Read more: [Backlinks](../Configurations/Backlinks.md)

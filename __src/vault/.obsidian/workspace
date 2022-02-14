@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Configurations/Features.md",
+            "file": "Configurations/Configuration Options.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Configurations/Features.md",
+                "file": "Configurations/Configuration Options.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,15 +100,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "Configurations/Features.md",
     "Configurations/Configuration Options.md",
-    "Copy vault to temp dir.md",
-    "Simple Obsidian-type Link.md",
+    "ObsidianHtml.md",
+    "Configurations/Features.md",
+    "Configurations/Copy vault to temp dir.md",
+    "Demonstrations/Test pages/Simple Obsidian-type Link.md",
     "Demonstrations/Implementing links & link awareness.md",
     "Demonstrations/Test pages/Simple Obsidian-type Link.md",
-    "Create index from tags.md",
-    "ObsidianHtml.md",
-    "Backlinks.md",
+    "Configurations/Create index from tags.md",
+    "Configurations/Backlinks.md",
     "General Information/HTML tweaks.md"
   ]
 }
