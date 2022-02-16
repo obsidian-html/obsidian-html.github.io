@@ -153,6 +153,19 @@ Read more: [Copy vault to temp dir](../Configurations/Copy%20vault%20to%20temp%2
    
 > This setting should be enabled for the option [Create index from tags](../Configurations/Create%20index%20from%20tags.md) to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    
    
+### included_file_suffixes   
+> Added in [v1.0.0](../Changelog/v1.0.0.md)   
+   
+``` yaml
+included_file_suffixes: ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'pdf']
+```
+   
+   
+ObsidianHtml needs to be able to discern between included notes and included files, because included files need to be treated differently to included notes in the processing steps.   
+   
+This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   
+   
+   
 ## HTML Output   
 ### Site name   
 ``` yaml

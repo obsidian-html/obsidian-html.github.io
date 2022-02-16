@@ -281,6 +281,15 @@
 <blockquote>
 <p>This setting should be enabled for the option <a href="/Configurations/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
 </blockquote>
+<h3 id="included_file_suffixes">included_file_suffixes</h3>
+<blockquote>
+<p>Added in <a href="/Changelog/v1.0.0.html">v1.0.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">included_file_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;jpg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;jpeg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;gif&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;png&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;bmp&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;pdf&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>ObsidianHtml needs to be able to discern between included notes and included files, because included files need to be treated differently to included notes in the processing steps.   </p>
+<p>This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   </p>
 <h2 id="html-output">HTML Output</h2>
 <h3 id="site-name">Site name</h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Will be inputted into the Html template as page title</span><span class="w"></span>
@@ -470,8 +479,8 @@
 	<li><a href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A232765363505093573444013567219881038903{level}"></svg>
-    <button class="graph_button" id="B232765363505093573444013567219881038903{level}" level="{level}" onclick="run('232765363505093573444013567219881038903'+this.level, 'Configuration Options');">Show Graph</button>
+    <svg class="graph_svg" id="A162429868765809931656335961869361813694{level}"></svg>
+    <button class="graph_button" id="B162429868765809931656335961869361813694{level}" level="{level}" onclick="run('162429868765809931656335961869361813694'+this.level, 'Configuration Options');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
