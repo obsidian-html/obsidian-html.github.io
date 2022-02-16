@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Log/News.md",
+            "file": "ObsidianHtml.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Log/News.md",
+                "file": "ObsidianHtml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,15 +100,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "Log/News.md",
     "ObsidianHtml.md",
+    "Instructions/Run custom code.md",
+    "Changelog/v1.0.0.md",
+    "Changelog/Change Log.md",
+    "Instructions/Installation.md",
+    "Configurations/Configuration Options.md",
+    "Log/News.md",
     "Log/Published ObsidianHtml version 0.0.9!.md",
     "Log/Working on an RSS feed for ObsidianHtml.md",
-    "Configurations/Tags Page.md",
-    "General Information/About ObsidianHtml.md",
-    "Demonstrations/Implementing links & link awareness.md",
-    "Configurations/Process All.md",
-    "Configurations/Modes.md",
-    "General Information/Creating a static html website from markdown files.md"
+    "Configurations/Tags Page.md"
   ]
 }

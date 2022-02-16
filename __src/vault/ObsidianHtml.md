@@ -15,6 +15,7 @@ tags:
 - [[Report Issues & Request features]]
 - [[HTML tweaks|How to navigate this site]]
 - [[News]]
+- [[Change Log]]
 
 ### Usage & Capabilities
 - [[Installation]]
