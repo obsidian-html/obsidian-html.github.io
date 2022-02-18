@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="RSS Feed">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/Documentation</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/obs.html/static/main.css" />
+                <script src="/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                window.location.hash = '!' + window.location.hash.substr(1);
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+
+        <div style="width:4rem; height:1.6rem; position:fixed; left:calc(100vw - 4rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/obs.html/tags/" title="Open tag view">
+                                <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        </div>
+
+</div>
+<div class="container-wrapper">
+        <div class="container">
+        <h1 id="rss-feed">RSS Feed</h1>
+<blockquote>
+<p>New in <a href="/Changelog/v1.0.0.html">v1.0.0</a>   </p>
+</blockquote>
+<p>The RSS feed feature creates an RSS feed out of (a selection of ) your notes.   </p>
+<p>The default configuration is shown below.   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">rss</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">  </span><span class="nt">host_root</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://localhost:8000/&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">  </span><span class="nt">channel</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Notes&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">website_link</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;https://your</span><span class="nv"> </span><span class="s">website.com&gt;&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;your</span><span class="nv"> </span><span class="s">description&gt;&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">language_code</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;en-us&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">managing_editor</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;n/a&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">web_master</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;n/a&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">items</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;type/news&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">include_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_folders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;.git&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;obs.html&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;not_created.html&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-paragraphs&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;html_element&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;h1&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">publish_date</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;date/&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">iso_formatted</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">format_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Note that:   </p>
+<ul>
+<li>The feature is disabled by default   </li>
+<li>There are a couple of values that you have to fill in yourself if you want to use this feature. You can't just use the default   </li>
+</ul>
+<h2 id="top-level">Top level</h2>
+<h3 id="enabled">Enabled</h3>
+<p><em>Allowed values: True, False</em> <br />
+This setting turns on/off the feature entirely   </p>
+<h3 id="host-root">Host Root</h3>
+<p><em>Allowed values: any string</em> <br />
+This is used to build the links to your notes. Should be your website address + possible <a href="/Configurations/Configuration Options.html#html-url-prefix">subfolder</a>. In our case: <a href="https://obsidian-html.github.io/" class="external-link" class="external-link">https://obsidian-html.github.io/</a>   </p>
+<blockquote>
+<p>Note: we've compiled our site twice, once to <a href="https://obsidian-html.github.io/" class="external-link" class="external-link">https://obsidian-html.github.io/</a>index_from_tags/ in that case, that url is the <strong>host_root</strong>.   </p>
+</blockquote>
+<h2 id="styling">Styling</h2>
+<h3 id="show_icon">show_icon</h3>
+<p><em>Allowed values: True, False</em> <br />
+You might want to enable the RSS feed, but not show the RSS icon in the topright of the page, you can turn it off here.    </p>
+<h2 id="channel">Channel</h2>
+<p>This section fills in the channel section of the RSS feed. You can find all the settings that are possible here: <a href="https://validator.w3.org/feed/docs/rss2.html#requiredChannelElements" class="external-link">https://validator.w3.org/feed/docs/rss2.html#requiredChannelElements</a>    </p>
+<p>Note that we only implement the values that you can find in this section, more might be added in the future.   </p>
+<h2 id="items">Items</h2>
+<p>This section is mostly selection settings: where to find the notes that you want to include, what to include/exclude them on, and how to determine the title, description, and publish date.   </p>
+<h3 id="selector">Selector</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;type/news&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<span class="nt">exclude_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<span class="nt">include_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;.git&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;obs.html&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="nt">exclude_files</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;not_created.html&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<h4 id="match-key">Match key</h4>
+<ul>
+<li>This is a list of lists. Each element in the main list is a selector. The first value in the selector list is the function name.    </li>
+<li>At the moment only the <a href="#yaml" class="anchor-link">yaml</a> function is implemented for this setting.   </li>
+<li>If any of the given functions return true, then the item is selected   </li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># will select any notes that have &quot;news: &quot; in the frontmatter</span><span class="w"></span>
+<span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;news&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+
+<span class="c1"># will select any notes that have any tag that starts with &#39;news/&#39;</span><span class="w"></span>
+<span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;news/&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+</code></pre></div>
+
+<h4 id="exclude_keys">exclude_keys</h4>
+<ul>
+<li>Same as <a href="#match-key" class="anchor-link">Match key</a>, but will exclude notes   </li>
+<li>If a note matches on both match_key and exclude_key, the note will not be included.   </li>
+</ul>
+<h4 id="include_subfolders">include_subfolders</h4>
+<ul>
+<li>If this value is an empty list, all the folders will be searched for notes   </li>
+<li>If not an empty list, only the subfolders will be searched for notes   </li>
+<li>The path should be given relative to the root of the html output folder   </li>
+</ul>
+<h4 id="exclude_subfolders">exclude_subfolders</h4>
+<ul>
+<li>Same as <a href="#include_subfolders" class="anchor-link">include_subfolders</a> but in reverse   </li>
+<li>If the same folder is in both include_subfolders and exclude_subfolders, then it won't be parsed.   </li>
+</ul>
+<h4 id="exclude_files">exclude_files</h4>
+<ul>
+<li>Same as <a href="#exclude_subfolders" class="anchor-link">exclude_subfolders</a>, but for filenames   </li>
+<li><strong>Note</strong>: this should be filenames, not file paths!   </li>
+</ul>
+<h3 id="description">Description</h3>
+<h4 id="selector_1">selector</h4>
+<ul>
+<li>At the moment only the <a href="#first-paragraphs" class="anchor-link">first-paragraphs</a> function is implemented for this setting.   </li>
+</ul>
+<h1 id="selector-functions">Selector functions</h1>
+<p>Some configuration items can be set using a selector. A selector is always a list where the first item is the name of the selector function. The rest of the values are argument to the selector function and are thus different for each selector function.   </p>
+<p>Any configuration item that can be set by a selector function can <em>only</em> be set by a selector function, and will always only accept a <em>list</em> of selector functions. I.e.:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># passing one selector </span><span class="w"></span>
+<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+
+<span class="c1"># passing two selectors</span><span class="w"></span>
+<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;selector2&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg2&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+
+<span class="c1"># passing no selectors (where applicable)</span><span class="w"></span>
+<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+</code></pre></div>
+
+<p>The fact that we always pass in a list allows us to define fallbacks, e.g.:   </p>
+<ul>
+<li>"I want the title to be based on the yaml key rss:title, but take the value of the first h1 if that key is not set"   </li>
+</ul>
+<h2 id="yaml">yaml</h2>
+<p>This selector allows us to match items on the presence of either a key, or a list value under a key. It also allows us to set a string value for e.g. the description or title, based on the value of a key (or a list item under a key).   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># select notes that have the rss_desc key in the yaml frontmatter</span><span class="w"></span>
+<span class="c1"># return the value of the key</span><span class="w"></span>
+<span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;rss_desc&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+
+<span class="c1"># select notes that have a list element in the list under the key tags</span><span class="w"></span>
+<span class="c1"># that starts with &#39;type/news&#39;, return the list element</span><span class="w"></span>
+<span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;type/news&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Some pointers:   </p>
+<ul>
+<li>If used to select notes (boolean), any returned value will result in a selection <em>(or deselection, in case of exclude configurations).</em>    </li>
+<li>If used to select a value, like in the selector for a title, then that title will become that returned value.   </li>
+<li>If the second argument is given (the prefix value), the value under the key is assumed to be a list. If this is not the case, then an empty string is returned.   </li>
+<li>If the second argument is not given, the value at the key location is returned as a string, regardless of data type.    </li>
+<li>If the given key is not found, then an empty string is returned.   </li>
+</ul>
+<h3 id="tree-navigation">Tree navigation</h3>
+<p>It's possible to select a key several levels down by using <code>:</code> as a delimiter.    </p>
+<p>Let's say you have this frontmatter:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">rss</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;My</span><span class="nv"> </span><span class="s">custom</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">note&#39;</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+</code></pre></div>
+
+<p>then the yaml selector for this looks like this:   </p>
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;rss:title&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="yaml_strip">yaml_strip</h3>
+<p>If you want to get the string value of a list item, for example the tag <code>date/&lt;date&gt;</code>, given:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-01-24</span><span class="w"></span>
+</code></pre></div>
+
+<p>Then you'd want to strip the given prefix, to only get back the "2022-01-24".    </p>
+<p>This can be done by renaming the selector function from <code>yaml</code> to <code>yaml_strip</code>. The function will work the same as described in this section, the only change is that it will strip the prefix off of matched list values.   </p>
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">[</span><span class="s">&#39;yaml_strip&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;date/&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="first-paragraphs">first-paragraphs</h2>
+<p>Parses the html, finds all paragraph elements, and then returns a string that is the innerHtml of the first paragraph, plus how many extra are selected.   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># return the innerHtml of the first and the second paragraph on the page,</span><span class="w"></span>
+<span class="c1"># as a string, separated by two line breaks</span><span class="w"></span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-paragraphs&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;&lt;br/&gt;&lt;br/&gt;&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>If no paragraphs are present then an empty string is returned, if less paragraphs are present than configured, it will combine all the paragraphs up until that point and return that.   </p>
+<h2 id="first-header">first-header</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Get the first H1 header, and return the inner html</span><span class="w"></span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-header&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div><h2>Backlinks</h2>
+<ul>
+	<li><a href="/Configurations/Configuration Options.html">Configuration Options</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A181336843823127723386409295232250743722{level}"></svg>
+    <button class="graph_button" id="B181336843823127723386409295232250743722{level}" level="{level}" onclick="run('181336843823127723386409295232250743722'+this.level, 'RSS Feed');">Show Graph</button>
+</div>
+<script src="/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+
+<script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,6 +1,8 @@
 ---
+rss:
+  description: "An index page of all releases of ObsidianHtml since v1.0.0."
 tags:
-- type/template
+- type/moc
 - date/2022-02-16
 ---
 

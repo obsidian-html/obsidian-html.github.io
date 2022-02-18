@@ -67,6 +67,7 @@ We will now go through all the settings in more-or-less the same order as the ou
 | [[Configuration Options#Graph|Graph]] | Configure the graph view. Read more [[Graph view]] |
 | [[Configuration Options#Create Index From Tags|Create Index From Tags]] | Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.|
 | [[Configuration Options#Backlinks|Backlinks]] | Turn backlinks on or off. |
+| [[RSS Feed]] | Compile (a selection of) your notes into an RSS Feed. |
 
 
 ## Paths
