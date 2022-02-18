@@ -7,45 +7,83 @@ tags:
 # RSS Feed
 > New in [[v1.0.0]]
 
-The RSS feed feature creates an RSS feed out of (a selection of ) your notes.
+## Introduction
+The RSS feed feature creates [an RSS feed](https://meganesulli.com/blog/how-rss-works/) out of (a selection of) your notes. You can find our RSS feed by clicking the feed button in the topright of the screen.
 
+This feed can be added to an RSS reader. One that I like, and use to test this feature is [Smart-RSS](https://github.com/SmartRSS/Smart-RSS).
+
+## Configuration
+### Introduction
 The default configuration is shown below.
 
 ```yaml 
-rss:
-  enabled: False
-  host_root: 'https://localhost:8000/'
-  styling: 
-	show_icon: True
-  channel: 
-	title: 'Notes'
-	website_link: '<https://your website.com>'
-	description: '<your description>'
-	language_code: 'en-us'
-	managing_editor: 'n/a'
-	web_master: 'n/a'
-  items:
-	selector: 
-	  match_keys: [['yaml','tags','type/news']]
-	  exclude_keys: []
-	  include_subfolders: []
-	  exclude_folders: ['.git', 'obs.html']
-	  exclude_files: ['not_created.html', 'index.html']
-	description:
-	  selector: ['first-paragraphs', 2]
-	title: 
-	  selector: [['html_element','h1']]
-	publish_date: 
-	  selector: ['yaml','tags','date/']
-	  iso_formatted: True
-	  format_string: ''
+    rss:
+      enabled: False
+      host_root: 'https://localhost:8000/'
+      styling: 
+        show_icon: True
+      channel: 
+        title: 'Notes'
+        website_link: '<https://your website.com>'
+        description: '<your description>'
+        language_code: 'en-us'
+        managing_editor: 'n/a'
+        web_master: 'n/a'
+      items:
+        selector: 
+          match_keys: []
+          exclude_keys: []
+          include_subfolders: []
+          exclude_subfolders: ['.git','obs.html']
+          exclude_files: ['not_created.html', 'index.html']
+        description:
+          selectors:
+            - ['yaml','rss:description']
+            - ['first-paragraphs', 2, '<br/><br/>']
+            - ['first-header', 1]
+        title: 
+          selectors: 
+            - ['yaml','rss:title']
+            - ['first-header', 1]
+            - ['path', ['parent',1], '/ ', ['stem']]
+        publish_date: 
+          selectors: 
+            - ['yaml','rss:publish_date']
+            - ['yaml_strip','tags',['date/']]
+          iso_formatted: True
+          format_string: ''
 ```
+
+You can find the RSS config used by this website here (search on rss):  https://github.com/obsidian-html/obsidian-html.github.io/blob/main/__src/config.yml
 
 Note that:
 - The feature is disabled by default
-- There are a couple of values that you have to fill in yourself if you want to use this feature. You can't just use the default
 
-## Top level
+There are a couple of values that you *have* to fill in yourself if you want to enable this feature, i.e.:
+- rss/channel/website_link
+- rss/channel/description
+
+The following values are optional, but recommended:
+- rss/channel/managing_editor 
+- rss/channel/web_master
+
+You might also want to look into [[#Match keys]] and [[#include_subfolders]] for your first configuration settings.
+
+Also make sure that the notes that you include have a publish date set in the frontmatter yaml. E.g.:
+
+``` yaml
+---
+# Will be matched first
+rss:
+  publish_date: 2022-03-04
+  
+# Matched second, if first is absent
+# I have this one in my template, so it exists everywhere
+tags:
+ - date/2022-03-04
+```
+
+## Top level configuration
 ### Enabled 
 _Allowed values: True, False_
 This setting turns on/off the feature entirely
@@ -54,45 +92,51 @@ This setting turns on/off the feature entirely
 _Allowed values: any string_
 This is used to build the links to your notes. Should be your website address + possible [[Configuration Options#Html Url Prefix|subfolder]]. In our case: https://obsidian-html.github.io/
 
-> Note: we've compiled our site twice, once to https://obsidian-html.github.io/index_from_tags/ in that case, that url is the **host_root**.
+> Note: we've compiled our site twice, once to [https://obsidian-html.github.io/index_from_tags/](https://obsidian-html.github.io/index_from_tags/) in that case, that url is the **host_root**.
 
-## Styling
+## Styling configuration
 ### show_icon
 _Allowed values: True, False_
 You might want to enable the RSS feed, but not show the RSS icon in the topright of the page, you can turn it off here. 
 
-## Channel
+## Channel configuration
 This section fills in the channel section of the RSS feed. You can find all the settings that are possible here: https://validator.w3.org/feed/docs/rss2.html#requiredChannelElements 
 
-Note that we only implement the values that you can find in this section, more might be added in the future.
+Note that we only implement the values that you can find in this section, more might be added in the future. Reach out via [[Report Issues & Request features]] if you miss any values that you'd like to include in your RSS feed.
 
-## Items
+## Items configuration
 This section is mostly selection settings: where to find the notes that you want to include, what to include/exclude them on, and how to determine the title, description, and publish date.
 
 ### Selector
 ```yaml 
-match_keys: [['yaml','tags','type/news']]
+match_keys: [['yaml','tags',['type/news']]]
 exclude_keys: []
 include_subfolders: []
 exclude_subfolders: ['.git', 'obs.html']
 exclude_files: ['not_created.html', 'index.html']
 ```
 
-#### Match key
+#### Match keys
+> This value accepts lists of [[#Selector functions]]
+
+This setting allows you to only include notes that have a certain key in the frontmatter yaml.
+
 - This is a list of lists. Each element in the main list is a selector. The first value in the selector list is the function name. 
 - At the moment only the [[#yaml]] function is implemented for this setting.
-- If any of the given functions return true, then the item is selected
+- If any of the given functions return true, then the item is selected.
 
 ```yaml 
 # will select any notes that have "news: " in the frontmatter
-match_keys: [['yaml','news','']]
+match_keys: [['yaml','news',['']]]
 
 # will select any notes that have any tag that starts with 'news/'
-match_keys: [['yaml','tags','news/']]
+match_keys: [['yaml','tags',['news/']]]
 ```
 
 #### exclude_keys
-- Same as [[#Match key]], but will exclude notes
+> This value accepts lists of [[#Selector functions]]
+
+- Same as [[#Match keys]], but will exclude notes
 - If a note matches on both match_key and exclude_key, the note will not be included.
 
 #### include_subfolders
@@ -108,14 +152,41 @@ match_keys: [['yaml','tags','news/']]
 - Same as [[#exclude_subfolders]], but for filenames
 - **Note**: this should be filenames, not file paths!
 
-### Description
-#### selector
-- At the moment only the [[#first-paragraphs]] function is implemented for this setting.
+### Description/Title
+#### selectors
+- List of any number of [[#Selector functions]]
+
+### Publish_date
+#### Selectors
+- List of any number of [[#Selector functions]]
+
+#### iso_formatted
+Whether the string that is selected is iso formatted. This information is used to parse the date into a dateobject, in order to get to the correct RSS date string.
+
+- If true, the format_string setting will be ignored. 
+
+#### format_string
+Format string to be used to parse publish date string into date object if `iso_formatted: False`. 
+
+You can find how to build a datestring that matches your date here: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+
+Example using datestring for iso formatted date (normally you'd just use iso_formatted: true for this):
+```yaml
+publish_date: 
+  selectors: 
+	- ['yaml','rss:publish_date']
+	- ['yaml_strip','tags',['date/']]
+  iso_formatted: False
+  format_string: '%Y-%m-%d'
+```
+
 
 # Selector functions
-Some configuration items can be set using a selector. A selector is always a list where the first item is the name of the selector function. The rest of the values are argument to the selector function and are thus different for each selector function.
+Some configuration items can be set using a selector. 
 
-Any configuration item that can be set by a selector function can *only* be set by a selector function, and will always only accept a *list* of selector functions. I.e.:
+- A selector is always a list where the first item is the name of the selector function. 
+- The rest of the values are argument to the selector function and are thus different for each selector function.
+- Any configuration item that can be set by a selector function can *only* be set by a selector function, and will always only accept a *list* of selector functions. I.e.:
 
 ```yaml
 # passing one selector 
@@ -124,12 +195,21 @@ selectors: [['selector1', 'arg1']]
 # passing two selectors
 selectors: [['selector1', 'arg1'], ['selector2', 'arg2']]
 
+# same as above, but using expanded notation
+selectors:
+  - ['selector1', 'arg1']
+  - ['selector2', 'arg2']
+
 # passing no selectors (where applicable)
 selectors: []
+
+# wrong, passing selector without surrounding list
+# will cause an error
+selectors: ['selector1', 'arg1']
 ```
 
 The fact that we always pass in a list allows us to define fallbacks, e.g.:
-- "I want the title to be based on the yaml key rss:title, but take the value of the first h1 if that key is not set"
+- "I want the title to be based on the yaml key rss:title, but take the value of the first h1 if that key is not found"
 
 ## yaml
 This selector allows us to match items on the presence of either a key, or a list value under a key. It also allows us to set a string value for e.g. the description or title, based on the value of a key (or a list item under a key).

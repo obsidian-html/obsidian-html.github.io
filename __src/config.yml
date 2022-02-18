@@ -117,7 +117,7 @@ toggles:
         selector: 
           match_keys: ['yaml','tags', ['']]
           exclude_keys: ['yaml','tags', ['type/moc']]
-          include_subfolders: ['Log', 'Changelog']        # empty list for whole root
+          include_subfolders: ['Log', 'Changelog']
           exclude_subfolders: ['.git', 'md', 'index_from_tags', 'obs.html','__src']
           exclude_files: ['not_created.html', 'index.html']
         description:
@@ -135,4 +135,4 @@ toggles:
             - ['yaml','rss:publish_date']
             - ['yaml_strip','tags',['date/']]
           iso_formatted: True
-          format_string: ''
+          format_string: '' #'%Y-%m-%d'

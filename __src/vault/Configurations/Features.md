@@ -21,6 +21,7 @@ tags:
 - [[Configuration Options#Html Template Path Str|Use custom HTML template]]
 - [[Configuration Options#Html Custom Inclusions|Custom stylesheet/javascript inclusions]]
 - [[Implementing Mermaid diagrams in HTML output|Mermaid diagrams]]
+- [[RSS Feed]]
 
 ## Safety
 - [[Copy vault to temp dir]]

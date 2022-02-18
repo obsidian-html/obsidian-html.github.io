@@ -101,14 +101,14 @@
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
     "Configurations/RSS Feed.md",
+    "Configurations/Features.md",
+    "Resources/Examples/RSS Feed Example Config.md",
     "Changelog/Change Log.md",
     "Log/News.md",
     "Changelog/v1.0.0.md",
     "Configurations/Configuration Options.md",
-    "Configurations/Features.md",
     "ObsidianHtml.md",
     "Instructions/Run custom code.md",
-    "Instructions/Installation.md",
-    "Log/Published ObsidianHtml version 0.0.9!.md"
+    "Instructions/Installation.md"
   ]
 }
