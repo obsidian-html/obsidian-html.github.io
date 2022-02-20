@@ -53,6 +53,7 @@
         <h1 id="notes">Notes</h1>
 <ul>
 <li><a href="/Demonstrations/Test pages/Simple Obsidian-type Link.html">Demonstrations/Test pages/Simple Obsidian-type Link</a></li>
+<li><a href="/Configurations/Create Index from Directory Structure.html">Configurations/Create Index from Directory Structure</a></li>
 </ul>
         <!-- end content -->
         </div>
@@ -61,5 +62,19 @@
 
 
 <script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
+<script>
+        function toggle_dir(dir_button_id){
+                console.log(dir_button_id);
+                id = dir_button_id.split('-')[1]
+                cont = document.getElementById('folder-container-'+id)
+
+                if (cont.style.display == "block") {
+                        cont.style.display = "none";
+                }
+                else {
+                        cont.style.display = "block";
+                }
+        }
+</script>
 </body>
 </html>

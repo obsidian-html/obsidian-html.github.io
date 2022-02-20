@@ -20,4 +20,7 @@ This is not so much its own mode, but a modifier for other modes. It enables you
 Read more [Process All](../Configurations/Process%20All.md).   
    
 ## Create index from tags   
-If you want to dynamically create an index that contains links to notes with certain tags, you can use this mode. Read more: [Create index from tags](../Configurations/Create%20index%20from%20tags.md).
+If you want to dynamically create an index that contains links to notes with certain tags, you can use this mode. Read more: [Create index from tags](../Configurations/Create%20index%20from%20tags.md).   
+   
+## Create index from directory structure   
+If you want to dynamically create an index that contains a folder/filetree based on your html output folder. Read more: [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md).

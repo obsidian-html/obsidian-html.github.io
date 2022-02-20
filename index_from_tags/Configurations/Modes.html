@@ -56,14 +56,16 @@
 <p>This is not so much its own mode, but a modifier for other modes. It enables you to include all files in your vault (sans the <a href="/index_from_tags/Configurations/Configuration Options.html#exclude-subfolders">excluded subfolders</a>).    </p>
 <p>Read more <a href="/index_from_tags/Configurations/Process All.html">Process All</a>.   </p>
 <h2 id="create-index-from-tags">Create index from tags</h2>
-<p>If you want to dynamically create an index that contains links to notes with certain tags, you can use this mode. Read more: <a href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a>.</p><h2>Backlinks</h2>
+<p>If you want to dynamically create an index that contains links to notes with certain tags, you can use this mode. Read more: <a href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a>.   </p>
+<h2 id="create-index-from-directory-structure">Create index from directory structure</h2>
+<p>If you want to dynamically create an index that contains a folder/filetree based on your html output folder. Read more: <a href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a>.</p><h2>Backlinks</h2>
 <ul>
 	<li><a href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
 	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A84297147211923373048562675577195557583{level}"></svg>
-    <button class="graph_button" id="B84297147211923373048562675577195557583{level}" level="{level}" onclick="run('84297147211923373048562675577195557583'+this.level, 'Modes');">Show Graph</button>
+    <svg class="graph_svg" id="A186143265177014832200460649464762818267{level}"></svg>
+    <button class="graph_button" id="B186143265177014832200460649464762818267{level}" level="{level}" onclick="run('186143265177014832200460649464762818267'+this.level, 'Modes');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -74,5 +76,19 @@
 
 
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+<script>
+        function toggle_dir(dir_button_id){
+                console.log(dir_button_id);
+                id = dir_button_id.split('-')[1]
+                cont = document.getElementById('folder-container-'+id)
+
+                if (cont.style.display == "block") {
+                        cont.style.display = "none";
+                }
+                else {
+                        cont.style.display = "block";
+                }
+        }
+</script>
 </body>
 </html>

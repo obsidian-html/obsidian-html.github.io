@@ -48,7 +48,6 @@
         <div class="container">
         <h1 id="create-index-from-tags">Create index from tags</h1>
 <p>If you want to build an index note on the fly, based on selected tags, you can use this feature.   </p>
-<p>The configuration options can be found here: <a href="/index_from_tags/Configurations/Configuration Options.html#create-index-from-tags">Configuration Options#Create Index From Tags</a>   </p>
 <p>The basic outline is this:   </p>
 <ul>
 <li>Select the tags on which you want to match notes, each tag will get its own header   </li>
@@ -72,12 +71,13 @@
 <ul>
 	<li><a href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
 	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
 	<li><a href="/index_from_tags/Configurations/Modes.html">Modes</a></li>
 	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A34040645770700966309894997665346861641{level}"></svg>
-    <button class="graph_button" id="B34040645770700966309894997665346861641{level}" level="{level}" onclick="run('34040645770700966309894997665346861641'+this.level, 'Create index from tags');">Show Graph</button>
+    <svg class="graph_svg" id="A139758239343277456721540361453216701644{level}"></svg>
+    <button class="graph_button" id="B139758239343277456721540361453216701644{level}" level="{level}" onclick="run('139758239343277456721540361453216701644'+this.level, 'Create index from tags');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -88,5 +88,19 @@
 
 
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+<script>
+        function toggle_dir(dir_button_id){
+                console.log(dir_button_id);
+                id = dir_button_id.split('-')[1]
+                cont = document.getElementById('folder-container-'+id)
+
+                if (cont.style.display == "block") {
+                        cont.style.display = "none";
+                }
+                else {
+                        cont.style.display = "block";
+                }
+        }
+</script>
 </body>
 </html>

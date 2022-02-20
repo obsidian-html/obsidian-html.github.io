@@ -61,6 +61,7 @@ E.g. adding the following frontyaml at the top of this note:   </p>
 <ul>
 	<li><a href="/index_from_tags/index.html">index</a></li>
 	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
 	<li><a href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
 	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
 </ul>
@@ -77,5 +78,19 @@ E.g. adding the following frontyaml at the top of this note:   </p>
 
 
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+<script>
+        function toggle_dir(dir_button_id){
+                console.log(dir_button_id);
+                id = dir_button_id.split('-')[1]
+                cont = document.getElementById('folder-container-'+id)
+
+                if (cont.style.display == "block") {
+                        cont.style.display = "none";
+                }
+                else {
+                        cont.style.display = "block";
+                }
+        }
+</script>
 </body>
 </html>

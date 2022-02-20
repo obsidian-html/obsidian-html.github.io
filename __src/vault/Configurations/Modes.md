@@ -22,4 +22,6 @@ Read more [[Process All]].
 ## Create index from tags
 If you want to dynamically create an index that contains links to notes with certain tags, you can use this mode. Read more: [[Create index from tags]].
 
+## Create index from directory structure
+If you want to dynamically create an index that contains a folder/filetree based on your html output folder. Read more: [[Create Index from Directory Structure]].
 

@@ -207,6 +207,10 @@
 <td align="left">Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.</td>
 </tr>
 <tr>
+<td align="left"><a href="/Configurations/Configuration Options.html#create-index-from-directory-structure">Create Index From Directory Structure</a></td>
+<td align="left">Overwrite the index.html file with an index that lists all the folders and files in a tree structure.</td>
+</tr>
+<tr>
 <td align="left"><a href="/Configurations/Configuration Options.html#backlinks">Backlinks</a></td>
 <td align="left">Turn backlinks on or off.</td>
 </tr>
@@ -453,6 +457,23 @@
 </code></pre></div>
 
 <p>Read more: <a href="/Configurations/Create index from tags.html">Create index from tags</a>   </p>
+<h3 id="create-index-from-directory-structure">Create Index From Directory Structure</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;md&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;obs.html&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;index.html&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;favicon.ico&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a>   </p>
 <h3 id="backlinks">Backlinks</h3>
 <div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
@@ -468,10 +489,11 @@
 	<li><a href="/Configurations/Backlinks.html">Backlinks</a></li>
 	<li><a href="/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 	<li><a href="/Configurations/Process All.html">Process All</a></li>
-	<li><a href="/Configurations/Create index from tags.html">Create index from tags</a></li>
 	<li><a href="/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
+	<li><a href="/Configurations/Create index from tags.html">Create index from tags</a></li>
 	<li><a href="/Configurations/Features.html">Features</a></li>
 	<li><a href="/Configurations/RSS Feed.html">RSS Feed</a></li>
+	<li><a href="/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
 	<li><a href="/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a href="/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
 	<li><a href="/General Information/HTML tweaks.html">HTML tweaks</a></li>
@@ -479,8 +501,8 @@
 	<li><a href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A110749739416607839416186199199544441097{level}"></svg>
-    <button class="graph_button" id="B110749739416607839416186199199544441097{level}" level="{level}" onclick="run('110749739416607839416186199199544441097'+this.level, 'Configuration Options');">Show Graph</button>
+    <svg class="graph_svg" id="A242549770760688231912025998892398596552{level}"></svg>
+    <button class="graph_button" id="B242549770760688231912025998892398596552{level}" level="{level}" onclick="run('242549770760688231912025998892398596552'+this.level, 'Configuration Options');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -491,5 +513,19 @@
 
 
 <script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
+<script>
+        function toggle_dir(dir_button_id){
+                console.log(dir_button_id);
+                id = dir_button_id.split('-')[1]
+                cont = document.getElementById('folder-container-'+id)
+
+                if (cont.style.display == "block") {
+                        cont.style.display = "none";
+                }
+                else {
+                        cont.style.display = "block";
+                }
+        }
+</script>
 </body>
 </html>

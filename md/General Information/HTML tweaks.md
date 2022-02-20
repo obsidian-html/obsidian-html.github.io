@@ -14,6 +14,8 @@ If you use the pypi package, this becomes more difficult, so the option to defin
 ## Finding notes   
 Use the [Graph view](../Configurations/Graph%20view.md), [Backlinks](../Configurations/Backlinks.md), or [Tags Page](../Configurations/Tags%20Page.md) to find other notes, or just follow the links on the note that you're on.   
    
+If your notes are very neatly organised in a folder structure, we also reccommend looking into the [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md) feature.   
+   
 ## Header links   
 Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.   
    

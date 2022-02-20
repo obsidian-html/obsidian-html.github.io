@@ -67,6 +67,7 @@ We will now go through all the settings in more-or-less the same order as the ou
 | :------ | :--------------- |   
 | [Graph](../Configurations/Configuration%20Options.md#graph) | Configure the graph view. Read more [Graph view](../Configurations/Graph%20view.md) |   
 | [Create Index From Tags](../Configurations/Configuration%20Options.md#create-index-from-tags) | Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.|   
+| [Create Index From Directory Structure](../Configurations/Configuration%20Options.md#create-index-from-directory-structure) | Overwrite the index.html file with an index that lists all the folders and files in a tree structure. |   
 | [Backlinks](../Configurations/Configuration%20Options.md#backlinks) | Turn backlinks on or off. |   
 | [RSS Feed](../Configurations/RSS%20Feed.md) | Compile (a selection of) your notes into an RSS Feed. |   
    
@@ -384,6 +385,27 @@ toggles
    
    
 Read more: [Create index from tags](../Configurations/Create%20index%20from%20tags.md)   
+   
+### Create Index From Directory Structure   
+``` yaml
+toggles
+  features:
+    create_index_from_dir_structure:
+      enabled: False
+      exclude_subfolders:
+        - ".git"
+        - "__src"
+        - "md"
+        - "obs.html"
+      exclude_files:
+        - "index.html"
+        - "favicon.ico"
+        - "not_created.html"
+```
+   
+   
+Read more: [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md)   
+   
    
 ### Backlinks   
 ``` yaml

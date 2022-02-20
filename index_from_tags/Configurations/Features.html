@@ -67,6 +67,7 @@
 <li><a href="/index_from_tags/Configurations/Configuration Options.html#html-custom-inclusions">Custom stylesheet/javascript inclusions</a>   </li>
 <li><a href="/index_from_tags/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Mermaid diagrams</a>   </li>
 <li><a href="/index_from_tags/Configurations/RSS Feed.html">RSS Feed</a>   </li>
+<li><a href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a>   </li>
 </ul>
 <h2 id="safety">Safety</h2>
 <ul>
@@ -79,8 +80,8 @@
 	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A118949766675198025161189141163259906064{level}"></svg>
-    <button class="graph_button" id="B118949766675198025161189141163259906064{level}" level="{level}" onclick="run('118949766675198025161189141163259906064'+this.level, 'Features');">Show Graph</button>
+    <svg class="graph_svg" id="A436466476749327638823915096010706936{level}"></svg>
+    <button class="graph_button" id="B436466476749327638823915096010706936{level}" level="{level}" onclick="run('436466476749327638823915096010706936'+this.level, 'Features');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -91,5 +92,19 @@
 
 
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+<script>
+        function toggle_dir(dir_button_id){
+                console.log(dir_button_id);
+                id = dir_button_id.split('-')[1]
+                cont = document.getElementById('folder-container-'+id)
+
+                if (cont.style.display == "block") {
+                        cont.style.display = "none";
+                }
+                else {
+                        cont.style.display = "block";
+                }
+        }
+</script>
 </body>
 </html>

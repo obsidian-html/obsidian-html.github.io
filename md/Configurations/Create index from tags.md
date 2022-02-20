@@ -7,8 +7,6 @@ tags:
 # Create index from tags   
 If you want to build an index note on the fly, based on selected tags, you can use this feature.   
    
-The configuration options can be found here: [Configuration Options#Create Index From Tags](../Configurations/Configuration%20Options.md#create-index-from-tags)   
-   
 The basic outline is this:   
    
 - Select the tags on which you want to match notes, each tag will get its own header   

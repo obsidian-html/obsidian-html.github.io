@@ -60,6 +60,7 @@
 <li><a href="/obs.html/tags/date/2022-02-06/index.html">2022-02-06</a></li>
 <li><a href="/obs.html/tags/date/2022-02-17/index.html">2022-02-17</a></li>
 <li><a href="/obs.html/tags/date/2022-02-16/index.html">2022-02-16</a></li>
+<li><a href="/obs.html/tags/date/2022-02-20/index.html">2022-02-20</a></li>
 <li><a href="/obs.html/tags/date/2022-02-15/index.html">2022-02-15</a></li>
 </ul>
         <!-- end content -->
@@ -69,5 +70,19 @@
 
 
 <script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
+<script>
+        function toggle_dir(dir_button_id){
+                console.log(dir_button_id);
+                id = dir_button_id.split('-')[1]
+                cont = document.getElementById('folder-container-'+id)
+
+                if (cont.style.display == "block") {
+                        cont.style.display = "none";
+                }
+                else {
+                        cont.style.display = "block";
+                }
+        }
+</script>
 </body>
 </html>

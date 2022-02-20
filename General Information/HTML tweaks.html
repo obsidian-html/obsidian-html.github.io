@@ -55,6 +55,7 @@
 <p>If you use the pypi package, this becomes more difficult, so the option to define your own template has been added to the configuration file: <a href="/Configurations/Configuration Options.html#html-template-path-str">Configuration Options#Html Template Path Str</a>.   </p>
 <h2 id="finding-notes">Finding notes</h2>
 <p>Use the <a href="/Configurations/Graph view.html">Graph view</a>, <a href="/Configurations/Backlinks.html">Backlinks</a>, or <a href="/Configurations/Tags Page.html">Tags Page</a> to find other notes, or just follow the links on the note that you're on.   </p>
+<p>If your notes are very neatly organised in a folder structure, we also reccommend looking into the <a href="/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a> feature.   </p>
 <h2 id="header-links">Header links</h2>
 <p>Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.   </p>
 <h2 id="scrolling-notes">Scrolling notes</h2>
@@ -79,8 +80,8 @@
 	<li><a href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A110379275649589391613101643951684907384{level}"></svg>
-    <button class="graph_button" id="B110379275649589391613101643951684907384{level}" level="{level}" onclick="run('110379275649589391613101643951684907384'+this.level, 'HTML tweaks');">Show Graph</button>
+    <svg class="graph_svg" id="A150821485287092125995406637111611540121{level}"></svg>
+    <button class="graph_button" id="B150821485287092125995406637111611540121{level}" level="{level}" onclick="run('150821485287092125995406637111611540121'+this.level, 'HTML tweaks');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -91,5 +92,19 @@
 
 
 <script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
+<script>
+        function toggle_dir(dir_button_id){
+                console.log(dir_button_id);
+                id = dir_button_id.split('-')[1]
+                cont = document.getElementById('folder-container-'+id)
+
+                if (cont.style.display == "block") {
+                        cont.style.display = "none";
+                }
+                else {
+                        cont.style.display = "block";
+                }
+        }
+</script>
 </body>
 </html>

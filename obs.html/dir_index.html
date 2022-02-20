@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="none">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/Documentation</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/obs.html/static/main.css" />
+                <script src="/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                window.location.hash = '!' + window.location.hash.substr(1);
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+
+        <div style="width:4rem; height:1.6rem; position:fixed; left:calc(100vw - 4rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/obs.html/tags/" title="Open tag view">
+                                <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        </div>
+
+</div>
+<div class="container-wrapper">
+        <div class="container">
+        <button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Alternatives</button>
+<div id="folder-container-1" class="dir-container">
+	<ul class="dir-list">
+		<li><a href="/Alternatives/Quartz 3.html">Quartz 3</a></li>
+	</ul>
+</div>
+<button id="folder-2" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
+<div id="folder-container-2" class="dir-container">
+	<ul class="dir-list">
+		<li><a href="/Automation/Automate website deployment.html">Automate website deployment</a></li>
+		<li><a href="/Automation/AutomationLinuxGit.html">AutomationLinuxGit</a></li>
+		<li><a href="/Automation/AutomationLinuxSSH.html">AutomationLinuxSSH</a></li>
+		<li><a href="/Automation/AutomationWindows.html">AutomationWindows</a></li>
+		<li><a href="/Automation/AutomationWindowsSSH.html">AutomationWindowsSSH</a></li>
+	</ul>
+</div>
+<button id="folder-3" class="dir-button" onclick="toggle_dir(this.id)">Changelog</button>
+<div id="folder-container-3" class="dir-container">
+	<ul class="dir-list">
+		<li><a href="/Changelog/Change Log.html">Change Log</a></li>
+		<li><a href="/Changelog/v1.0.0.html">v1.0.0</a></li>
+	</ul>
+</div>
+<button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
+<div id="folder-container-4" class="dir-container">
+	<ul class="dir-list">
+		<li><a href="/Configurations/Backlinks.html">Backlinks</a></li>
+		<li><a href="/Configurations/Configuration Options.html">Configuration Options</a></li>
+		<li><a href="/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
+		<li><a href="/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
+		<li><a href="/Configurations/Create index from tags.html">Create index from tags</a></li>
+		<li><a href="/Configurations/Features.html">Features</a></li>
+		<li><a href="/Configurations/Graph view.html">Graph view</a></li>
+		<li><a href="/Configurations/Modes.html">Modes</a></li>
+		<li><a href="/Configurations/Process All.html">Process All</a></li>
+		<li><a href="/Configurations/RSS Feed.html">RSS Feed</a></li>
+		<li><a href="/Configurations/Tags Page.html">Tags Page</a></li>
+	</ul>
+</div>
+<button id="folder-5" class="dir-button" onclick="toggle_dir(this.id)">Demonstrations</button>
+<div id="folder-container-5" class="dir-container">
+	<button id="folder-6" class="dir-button" onclick="toggle_dir(this.id)">Test pages</button>
+	<div id="folder-container-6" class="dir-container">
+		<ul class="dir-list">
+			<li><a href="/Demonstrations/Test pages/Long long page.html">Long long page</a></li>
+			<li><a href="/Demonstrations/Test pages/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a></li>
+			<li><a href="/Demonstrations/Test pages/Test Inclusion.html">Test Inclusion</a></li>
+			<li><a href="/Demonstrations/Test pages/Test inclusion 2.html">Test inclusion 2</a></li>
+			<li><a href="/Demonstrations/Test pages/proper markdown.html">proper markdown</a></li>
+			<li><a href="/Demonstrations/Test pages/textfile.txt">textfile</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a href="/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
+		<li><a href="/Demonstrations/Getting the basics right.html">Getting the basics right</a></li>
+		<li><a href="/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Implementing Mermaid diagrams in HTML output</a></li>
+		<li><a href="/Demonstrations/Implementing Note Inclusions.html">Implementing Note Inclusions</a></li>
+		<li><a href="/Demonstrations/Implementing links & link awareness.html">Implementing links & link awareness</a></li>
+		<li><a href="/Demonstrations/Making Code blocks look pretty.html">Making Code blocks look pretty</a></li>
+		<li><a href="/Demonstrations/Making lists work the same.html">Making lists work the same</a></li>
+		<li><a href="/Demonstrations/Parsing Images.html">Parsing Images</a></li>
+	</ul>
+</div>
+<button id="folder-7" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
+<div id="folder-container-7" class="dir-container">
+	<ul class="dir-list">
+		<li><a href="/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
+		<li><a href="/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+		<li><a href="/General Information/HTML tweaks.html">HTML tweaks</a></li>
+		<li><a href="/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
+		<li><a href="/General Information/Report Issues & Request features.html">Report Issues & Request features</a></li>
+	</ul>
+</div>
+<button id="folder-8" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
+<div id="folder-container-8" class="dir-container">
+	<ul class="dir-list">
+		<li><a href="/Instructions/Installation.html">Installation</a></li>
+		<li><a href="/Instructions/Run custom code.html">Run custom code</a></li>
+		<li><a href="/Instructions/Usage.html">Usage</a></li>
+	</ul>
+</div>
+<button id="folder-9" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-9" class="dir-container">
+	<ul class="dir-list">
+		<li><a href="/Log/News.html">News</a></li>
+		<li><a href="/Log/Published ObsidianHtml version 0.0.9!.html">Published ObsidianHtml version 0.0.9!</a></li>
+		<li><a href="/Log/Working on an RSS feed for ObsidianHtml.html">Working on an RSS feed for ObsidianHtml</a></li>
+	</ul>
+</div>
+<ul class="dir-list">
+	<li><a href="/index.html">index</a></li>
+</ul>
+</div>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+
+<script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
+<script>
+        function toggle_dir(dir_button_id){
+                console.log(dir_button_id);
+                id = dir_button_id.split('-')[1]
+                cont = document.getElementById('folder-container-'+id)
+
+                if (cont.style.display == "block") {
+                        cont.style.display = "none";
+                }
+                else {
+                        cont.style.display = "block";
+                }
+        }
+</script>
+</body>
+</html>

@@ -22,6 +22,7 @@ tags:
 - [[Configuration Options#Html Custom Inclusions|Custom stylesheet/javascript inclusions]]
 - [[Implementing Mermaid diagrams in HTML output|Mermaid diagrams]]
 - [[RSS Feed]]
+- [[Create Index from Directory Structure]]
 
 ## Safety
 - [[Copy vault to temp dir]]
