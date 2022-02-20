@@ -19,6 +19,7 @@
                 
 <link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
 
 
                 <!-- Onload tweaks -->
@@ -41,7 +42,11 @@
                                 <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
                         </a>
                 </div>
-
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
         </div>
 
 </div>
@@ -52,23 +57,36 @@
 <p>New in <a href="/index_from_tags/Changelog/v1.0.0.html">v1.0.0</a>   </p>
 </blockquote>
 <p>If you want to build an index note on the fly, where it just shows the directory structure of the html output, then you can enable this feature.   </p>
+<p>By default this feature is turned on, but it will only create a new page at location <a href="/obs.html/dir_index.html">/obs.html/dir_index.html</a>, which is accessible via the dirtree icon in the top left.   </p>
 <blockquote>
 <p>Note: As opposed to <a href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a>, this is not a note selection feature. This is an HTML-only addon that creates a new html page to the HTML output folder, like the <a href="/index_from_tags/Configurations/Tags Page.html">Tags Page</a> feature. <a href="/index_from_tags/Configurations/Create Index from Directory Structure.html#set-output-path">Overwriting the homepage</a> is optional, and not the default setting.   </p>
 </blockquote>
 <h2 id="example">Example</h2>
-<p>You can view an index that is created in this way under <a href="/obs.html/dir_index.html">/obs.html/dir_index.html</a>. This is the default location if you choose to enable this feature.   </p>
-<h2 id="minimal-configuration">Minimal configuration</h2>
-<p>The minimal configuration of this feature is extremely easy:   </p>
-<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<p>You can view an index that is created in this way under <a href="/obs.html/dir_index.html">/obs.html/dir_index.html</a>. This is the default location.    </p>
+<h2 id="disable-the-feature">Disable the feature</h2>
+<p>This feature can take some time to process, especially on older machines. To disable it, simply add this to your config:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="disable-the-icon">Disable the icon</h2>
+<p>If you like having the dirtree index, but you don't like the icon, then you can disable it by adding this to your config:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="exclude-foldersfiles">Exclude folders/files</h2>
-<p>But there is a good chance that you will want to exclude folders and/or files from being shown on the index page. This is our configuration, for reference:   </p>
+<p>There is a good chance that you will want to exclude folders and/or files from being shown on the dirtree index page. This is our configuration, for reference:   </p>
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
@@ -82,13 +100,12 @@
 
 <p>The defaults for these settings can be found via <a href="/index_from_tags/Configurations/Configuration Options.html#get-all-the-default-settings">Configuration Options#Get all the default settings</a>. At the time of writing these are:   </p>
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
 <span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;md&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;obs.html&quot;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"></span>
@@ -96,7 +113,7 @@
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span><span class="w"></span>
 </code></pre></div>
 
-<h2 id="set-output-path">Set output path</h2>
+<h3 id="overwrite-the-homepage">Overwrite the homepage</h3>
 <p>If you want to use the index generated by this feature as your homepage, then a configuration like this might work for you:   </p>
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -114,7 +131,7 @@
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;index.html&quot;</span><span class="w"></span>
 </code></pre></div>
 
-<p>Note the <code>rel_output_path</code> setting.</p><h2>Backlinks</h2>
+<p>Note the <code>rel_output_path</code> setting. This can also be set to any subpath of the <a href="/index_from_tags/Configurations/Configuration Options.html#html_output_folder_path_str">html_output_folder</a> that you wish. The parent folders are automatically created when necessary.</p><h2>Backlinks</h2>
 <ul>
 	<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
@@ -122,8 +139,8 @@
 	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A167311346348798181736377189417178334605{level}"></svg>
-    <button class="graph_button" id="B167311346348798181736377189417178334605{level}" level="{level}" onclick="run('167311346348798181736377189417178334605'+this.level, 'Create Index from Directory Structure');">Show Graph</button>
+    <svg class="graph_svg" id="A80889974830160674568155140460214362636{level}"></svg>
+    <button class="graph_button" id="B80889974830160674568155140460214362636{level}" level="{level}" onclick="run('80889974830160674568155140460214362636'+this.level, 'Create Index from Directory Structure');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
