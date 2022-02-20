@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "General Information/HTML tweaks.md",
+            "file": "Configurations/Create Index from Directory Structure.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "General Information/HTML tweaks.md",
+                "file": "Configurations/Create Index from Directory Structure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,9 +99,9 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
+    "Configurations/Create Index from Directory Structure.md",
     "General Information/HTML tweaks.md",
     "ObsidianHtml.md",
-    "Configurations/Create Index from Directory Structure.md",
     "Configurations/Features.md",
     "Configurations/Modes.md",
     "Configurations/Configuration Options.md",

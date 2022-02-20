@@ -34,13 +34,14 @@
 <div id="header" class="header">
         <a href="/index_from_tags/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
 
-        <div style="width:4rem; height:1.6rem; position:fixed; left:calc(100vw - 4rem);top: 0.9rem; ">
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
 
                 <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
                         <a href="/index_from_tags/obs.html/tags/" title="Open tag view">
                                 <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
                         </a>
                 </div>
+
         </div>
 
 </div>
@@ -80,6 +81,8 @@
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
@@ -95,6 +98,8 @@
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
@@ -114,8 +119,8 @@
 	<li><a href="/index_from_tags/Configurations/Features.html">Features</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A240365145186619606272876231314690590139{level}"></svg>
-    <button class="graph_button" id="B240365145186619606272876231314690590139{level}" level="{level}" onclick="run('240365145186619606272876231314690590139'+this.level, 'Create Index from Directory Structure');">Show Graph</button>
+    <svg class="graph_svg" id="A46058815692397525779607798452698436996{level}"></svg>
+    <button class="graph_button" id="B46058815692397525779607798452698436996{level}" level="{level}" onclick="run('46058815692397525779607798452698436996'+this.level, 'Create Index from Directory Structure');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -124,21 +129,6 @@
 </div>
 
 
-
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
-<script>
-        function toggle_dir(dir_button_id){
-                console.log(dir_button_id);
-                id = dir_button_id.split('-')[1]
-                cont = document.getElementById('folder-container-'+id)
-
-                if (cont.style.display == "block") {
-                        cont.style.display = "none";
-                }
-                else {
-                        cont.style.display = "block";
-                }
-        }
-</script>
 </body>
 </html>

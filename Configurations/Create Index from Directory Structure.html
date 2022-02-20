@@ -19,6 +19,7 @@
                 
 <link rel="stylesheet" href="/obs.html/static/graph.css" />
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/obs.html/static/dirtree.js" /></script>
 
 
                 <!-- Onload tweaks -->
@@ -34,7 +35,7 @@
 <div id="header" class="header">
         <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
 
-        <div style="width:4rem; height:1.6rem; position:fixed; left:calc(100vw - 4rem);top: 0.9rem; ">
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
         <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="rss_link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
                     <img src = "/obs.html/static/rss.svg" alt="RSS Feed link"/>
@@ -45,6 +46,11 @@
                                 <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
                         </a>
                 </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" href="/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
         </div>
 
 </div>
@@ -84,6 +90,8 @@
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
@@ -99,6 +107,8 @@
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
@@ -119,8 +129,8 @@
 	<li><a href="/General Information/HTML tweaks.html">HTML tweaks</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A334424563564754679769971544967410602251{level}"></svg>
-    <button class="graph_button" id="B334424563564754679769971544967410602251{level}" level="{level}" onclick="run('334424563564754679769971544967410602251'+this.level, 'Create Index from Directory Structure');">Show Graph</button>
+    <svg class="graph_svg" id="A155088509535593014496176717523001828884{level}"></svg>
+    <button class="graph_button" id="B155088509535593014496176717523001828884{level}" level="{level}" onclick="run('155088509535593014496176717523001828884'+this.level, 'Create Index from Directory Structure');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -129,21 +139,6 @@
 </div>
 
 
-
 <script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
-<script>
-        function toggle_dir(dir_button_id){
-                console.log(dir_button_id);
-                id = dir_button_id.split('-')[1]
-                cont = document.getElementById('folder-container-'+id)
-
-                if (cont.style.display == "block") {
-                        cont.style.display = "none";
-                }
-                else {
-                        cont.style.display = "block";
-                }
-        }
-</script>
 </body>
 </html>
