@@ -72,6 +72,6 @@ Then open [http://localhost:8000](http://localhost:8000) to view the html site t
 ## Next steps   
    
 - [Configuration Options](../Configurations/Configuration%20Options.md)   
-- [Features](../Configurations/Features.md)   
+- [Features](../MOCs/Features.md)   
 - [How to resolve common issues](/not_created.md)   
 - [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md)

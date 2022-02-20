@@ -38,4 +38,4 @@ scp -r "$output_folder/html/*" "$web_folder/"
 ```
    
    
-[Other ways of pushing websites](../Automation/Automate%20website%20deployment.md)
+[Other ways of pushing websites](../MOCs/Automate%20website%20deployment.md)

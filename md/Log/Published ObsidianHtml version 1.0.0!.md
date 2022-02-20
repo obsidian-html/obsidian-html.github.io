@@ -11,6 +11,8 @@ The reason to jump over to version 1 is that most of the features that were real
    
 We've also focussed on removing any irritating techical debt that had accumulated after the flurry of new features, better documentation, and a consistent effort in regression testing for each new feature. With all of this we hope to guarantee more stability when adding more features/bugfixes in the future.   
    
+> From now on, normal semantic versioning will be followed. This means a new patch version on every bug fixed, and a new minor version when a new feature is added. For breaking changes, we'll go up a major version.   
+   
 ## New in this version   
 [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md) has been added and gives us the directory tree icon in the topright of the page, which gives a clickable file tree of the html output, for those of us who have very organised folders and like to navigate this way.   
    

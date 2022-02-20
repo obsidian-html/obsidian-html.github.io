@@ -36,4 +36,4 @@ By default only notes that are found by following links recursively starting wit
 All credit to this site's design goes to Andy Matuschak. I basically [stole his design](https://notes.andymatuschak.org/Evergreen_notes) because I think it is perfect.   
    
 ## Next up   
-Take a look at all the [high level features](../Configurations/Features.md) that can be enabled/disabled, or read about all the [configuration options](../Configurations/Configuration%20Options.md). Or maybe jump directly to [Installation](../Instructions/Installation.md).
+Take a look at all the [high level features](../MOCs/Features.md) that can be enabled/disabled, or read about all the [configuration options](../Configurations/Configuration%20Options.md). Or maybe jump directly to [Installation](../Instructions/Installation.md).

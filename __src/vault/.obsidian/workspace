@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Log/Published ObsidianHtml version 1.0.0!.md",
+            "file": "MOCs/Automate website deployment.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Log/Published ObsidianHtml version 1.0.0!.md",
+                "file": "MOCs/Automate website deployment.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,15 +99,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "Log/Published ObsidianHtml version 1.0.0!.md",
-    "Changelog/v1.0.0.md",
-    "Changelog/Change Log.md",
-    "Configurations/RSS Feed.md",
-    "Log/Published ObsidianHtml version 0.0.9!.md",
-    "Configurations/Create Index from Directory Structure.md",
-    "Configurations/Configuration Options.md",
-    "Log/News.md",
-    "ObsidianHtml.md",
-    "test.md"
+    "MOCs/Automate website deployment.md",
+    "Configurations/Modes.md",
+    "Demonstrations/Getting the basics right.md",
+    "Demonstrations/Implementing links & link awareness.md",
+    "Demonstrations/Implementing Mermaid diagrams in HTML output.md",
+    "Demonstrations/Implementing Note Inclusions.md",
+    "Demonstrations/Making Code blocks look pretty.md",
+    "Demonstrations/Making lists work the same.md",
+    "Demonstrations/Parsing Images.md",
+    "MOCs/News.md"
   ]
 }

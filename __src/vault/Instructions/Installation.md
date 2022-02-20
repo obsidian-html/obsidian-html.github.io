@@ -27,8 +27,7 @@ pip install obsidianhtml
 
 ### Most recent build
 ``` bash
-# (Note that the master branch is work in progress, so we take a release branch)
-pip install git+https://github.com/obsidian-html/obsidian-html@releases/0.0.9
+pip install git+https://github.com/obsidian-html/obsidian-html
 ```
 
 ### For developers
