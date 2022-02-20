@@ -9,7 +9,7 @@ tags:
 
 If you want to build an index note on the fly, where it just shows the directory structure of the html output, then you can enable this feature.
 
-By default this feature is turned on, but it will only create a new page at location [/obs.html/dir_index.html](/obs.html/dir_index.html), which is accessible via the dirtree icon in the top left.
+By default this feature is turned on, but it will only create a new page at location [/obs.html/dir_index.html](/obs.html/dir_index.html), which is accessible via the dirtree icon in the top right of the page.
 
 > Note: As opposed to [[Create index from tags]], this is not a note selection feature. This is an HTML-only addon that creates a new html page to the HTML output folder, like the [[Tags Page]] feature. [[Create Index from Directory Structure#Set output path|Overwriting the homepage]] is optional, and not the default setting.
 
