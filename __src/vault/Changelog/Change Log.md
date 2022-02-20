@@ -7,4 +7,4 @@ tags:
 ---
 
 # Change Log
-- [[v1.0.0]] (in development)
+- [[v1.0.0]]
