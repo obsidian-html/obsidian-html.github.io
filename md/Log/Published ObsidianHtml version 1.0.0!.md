@@ -19,5 +19,7 @@ We've also focussed on removing any irritating techical debt that had accumulate
 Minor notable changes:   
    
 - [included_file_suffixes](../Configurations/Configuration%20Options.md#included_file_suffixes) now configurable   
+- graph.json now contains metadata of the notes. This is nice for those who like [making their own templates](../Configurations/Configuration%20Options.md#html-template-path-str) as now more information is available. Check out [our graph.json](/obs.html/data/graph.json)   
+- All the static files we produce are now bundled in [/obs.html](/obs.html), instead of different folders. Way more future proof!   
    
 For the bugfixes, and other minor changes, see here: [https://github.com/obsidian-html/obsidian-html/issues/137](https://github.com/obsidian-html/obsidian-html/issues/137)
