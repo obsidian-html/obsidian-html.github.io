@@ -4,8 +4,8 @@
         <link>https://obsidian-html.github.io</link>
         <description>The documentation site of ObsidianHtml, a package used to convert Obsidian notes to proper markdown and static HTML websites.</description>
         <language>en-usen-us</language>
-        <pubDate>Sun, 20 Feb 2022 20:49:14 CET</pubDate>
-        <lastBuildDate>Wed, 16 Feb 2022 00:00:00 CET</lastBuildDate>
+        <pubDate>Sun, 20 Feb 2022 21:06:37 CET</pubDate>
+        <lastBuildDate>Sun, 20 Feb 2022 00:00:00 CET</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>ObsidianHtml</generator>
         <managingEditor>collector@dwrolvink.com</managingEditor>
@@ -19,6 +19,14 @@
             
         </item>
         <item>
+            <title>Published ObsidianHtml version 1.0.0!</title>
+            <link>https://obsidian-html.github.io/Log/Published%20ObsidianHtml%20version%201.0.0!.html</link>
+            <description>The first major version of ObsidianHtml! 🎉   &lt;br/&gt;&lt;br/&gt;The reason to jump over to version 1 is that most of the features that were really itching to be added have been added by now.    &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Sun, 20 Feb 2022 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Log/Published ObsidianHtml version 1.0.0!.html</guid>
+            
+        </item>
+        <item>
             <title>Published ObsidianHtml version 0.0.9!</title>
             <link>https://obsidian-html.github.io/Log/Published%20ObsidianHtml%20version%200.0.9!.html</link>
             <description>Lots of new features, like: graph view, backlinks, index from tags, image scaling, temporary vault copy.    &lt;br/&gt;&lt;br/&gt;We made these features configurable: folder exclusion, external link behavior, css/js inclusions. And of course we added a lot of bugfixes.   &lt;br/&gt;&lt;br/&gt;</description>
@@ -29,7 +37,7 @@
         <item>
             <title>v1.0.0</title>
             <link>https://obsidian-html.github.io/Changelog/v1.0.0.html</link>
-            <description>We are currently working on version 1.0.0.    &lt;br/&gt;&lt;br/&gt;You can follow the progress here.   &lt;br/&gt;&lt;br/&gt;</description>
+            <description>Version 1.0.0 has been released.   &lt;br/&gt;&lt;br/&gt;The changes related to the prior version can be found here: https://github.com/obsidian-html/obsidian-html/issues/137   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Wed, 16 Feb 2022 00:00:00 CET</pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v1.0.0.html</guid>
             

@@ -1,0 +1,22 @@
+---
+tags:
+- type/news
+- date/2022-02-20
+---
+
+# Published ObsidianHtml version 1.0.0!
+The first major version of ObsidianHtml! 🎉
+
+The reason to jump over to version 1 is that most of the features that were really itching to be added have been added by now. 
+
+We've also focussed on removing any irritating techical debt that had accumulated after the flurry of new features, better documentation, and a consistent effort in regression testing for each new feature. With all of this we hope to guarantee more stability when adding more features/bugfixes in the future.
+
+## New in this version
+[[Create Index from Directory Structure]] has been added and gives us the directory tree icon in the topright of the page, which gives a clickable file tree of the html output, for those of us who have very organised folders and like to navigate this way.
+
+[[RSS Feed]] has been added. This page is on our own feed that we publish this way. Read more about RSS here: https://meganesulli.com/blog/how-rss-works/ and add our feed to your reader by clicking on the RSS icon in the top right of the page!
+
+Minor notable changes:
+- [[Configuration Options#included_file_suffixes|included_file_suffixes]] now configurable
+
+For the bugfixes, and other minor changes, see here: https://github.com/obsidian-html/obsidian-html/issues/137
