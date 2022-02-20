@@ -5,6 +5,8 @@ tags:
 ---
 
 # Create Index from Directory Structure
+> New in [[v1.0.0]]
+
 If you want to build an index note on the fly, where it just shows the directory structure of the html output, then you can enable this feature.
 
 > Note: As opposed to [[Create index from tags]], this is not a note selection feature. This is an HTML-only addon that creates a new html page to the HTML output folder, like the [[Tags Page]] feature. [[Create Index from Directory Structure#Set output path|Overwriting the homepage]] is optional, and not the default setting.

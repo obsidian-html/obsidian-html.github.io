@@ -7,12 +7,8 @@
         "id": "88525a7a638025a1",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Configurations/Create Index from Directory Structure.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -69,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Configurations/Create Index from Directory Structure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,15 +94,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
+    "test.md",
     "Configurations/Create Index from Directory Structure.md",
+    "Configurations/RSS Feed.md",
+    "Configurations/Create index from tags.md",
     "General Information/HTML tweaks.md",
     "ObsidianHtml.md",
     "Configurations/Features.md",
     "Configurations/Modes.md",
     "Configurations/Configuration Options.md",
-    "Configurations/Create index from tags.md",
-    "Configurations/RSS Feed.md",
-    "Resources/Examples/RSS Feed Example Config.md",
-    "Changelog/Change Log.md"
+    "Resources/Examples/RSS Feed Example Config.md"
   ]
 }
