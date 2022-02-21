@@ -18,6 +18,7 @@ tags:
 - [[Change Log]]
 
 ### Usage & Capabilities
+- **[[Quickstart]]**
 - [[Installation]]
 - [[Usage]]
 - [[Modes]]

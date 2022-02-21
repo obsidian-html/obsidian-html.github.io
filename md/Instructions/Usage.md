@@ -53,7 +53,7 @@ obsidianhtml -i config.yaml
    
 You might get a lot of warnings if you use external images, or have a lot of notes linked but not created. This is expected, and such warnings can be turned off, if desired, see [Configuration Options](../Configurations/Configuration%20Options.md).    
    
-If the script output ends with *"Successfully created html code"* then the process should be successful though.   
+> Tip: run `obsidianhtml -i config.yaml -v` to run in verbose mode to get more detail on what is going on in which note / step of the process.   
    
 The output will be located in your current directory under `output/md` and `output/html`.    
    
@@ -68,6 +68,9 @@ python -m http.server --dir output/html
    
    
 Then open [http://localhost:8000](http://localhost:8000) to view the html site that was created.   
+   
+Can't this to work? Please let us know via [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md).   
+   
    
 ## Next steps   
    

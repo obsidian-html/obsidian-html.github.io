@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Quickstart">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/Documentation</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/obs.html/static/main.css" />
+                <script src="/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                window.location.hash = '!' + window.location.hash.substr(1);
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/obs.html/tags/" title="Open tag view">
+                                <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+        </div>
+
+</div>
+<div class="container-wrapper">
+        <div class="container">
+        <h1 id="quickstart">Quickstart</h1>
+<p>This page is a very short summary of installation, usage, and configuration options.   </p>
+<h2 id="installation">Installation</h2>
+<p>First we need to <a href="https://wiki.python.org/moin/BeginnersGuide/Download" class="external-link">Install python 3</a>. If you already have it installed, check the version:   </p>
+<div class="codehilite"><pre><span></span><code>python --version
+</code></pre></div>
+
+<p>If you are running a version below 3.9 then you need to upgrade.   </p>
+<p>After a clean install of Python, you need to upgrade pip (the python package manager that we use to install ObsidianHtml):   </p>
+<div class="codehilite"><pre><span></span><code>pip install --upgrade pip
+</code></pre></div>
+
+<p>Now we can install ObsidianHtml:   </p>
+<div class="codehilite"><pre><span></span><code>pip install obsidianhtml
+</code></pre></div>
+
+<h2 id="configuration">Configuration</h2>
+<p>Pick a folder where you don't mind a folder being created. Then create a file in this folder named <code>config.yaml</code>, and fill it with this content (and fill in the values):   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">obsidian_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault&#39;</span><span class="w"> </span>
+
+<span class="c1"># The note that will be used as the index.html </span><span class="w"></span>
+<span class="c1"># should be in obsidian_folder_path_str</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault/entrypoint.md&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="run">Run</h2>
+<p>Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:   </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml -i config.yaml
+</code></pre></div>
+
+<p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.   </p>
+<h2 id="test-website">Test website</h2>
+<div class="codehilite"><pre><span></span><code>python -m http.server --dir output/html
+</code></pre></div>
+
+<p>Then open <a href="http://localhost:8000" class="external-link">http://localhost:8000</a> to view the html site that was created.   </p>
+<h1 id="next-steps">Next steps</h1>
+<ul>
+<li>Read the full notes on <a href="/Instructions/Installation.html">Installation</a> and <a href="/Instructions/Usage.html">Usage</a> if you want to know more about these steps.   </li>
+<li>If the conversion works, but you want to change the behavior, check out <a href="/MOCs/Features.html">Features</a>, <a href="/Configurations/Modes.html">Modes</a>, and finally <a href="/Configurations/Configuration Options.html">Configuration Options</a></li>
+</ul><h2>Backlinks</h2>
+<ul>
+	<li><a href="/index.html">index</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A187555283549608318656005457352241287877{level}"></svg>
+    <button class="graph_button" id="B187555283549608318656005457352241287877{level}" level="{level}" onclick="run('187555283549608318656005457352241287877'+this.level, 'Quickstart');">Show Graph</button>
+</div>
+<script src="/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "MOCs/Automate website deployment.md",
+            "file": "Instructions/Quickstart.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MOCs/Automate website deployment.md",
+                "file": "Instructions/Quickstart.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,15 +99,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "MOCs/Automate website deployment.md",
-    "Configurations/Modes.md",
-    "Demonstrations/Getting the basics right.md",
-    "Demonstrations/Implementing links & link awareness.md",
-    "Demonstrations/Implementing Mermaid diagrams in HTML output.md",
-    "Demonstrations/Implementing Note Inclusions.md",
-    "Demonstrations/Making Code blocks look pretty.md",
-    "Demonstrations/Making lists work the same.md",
-    "Demonstrations/Parsing Images.md",
-    "MOCs/News.md"
+    "Instructions/Quickstart.md",
+    "Instructions/Usage.md",
+    "ObsidianHtml.md",
+    "Instructions/How to resolve common issues.md",
+    "Log/Published ObsidianHtml version 1.0.0!.md",
+    "MOCs/News.md",
+    "Configurations/Configuration Options.md",
+    "MOCs/Features.md",
+    "Instructions/Installation.md",
+    "MOCs/Automate website deployment.md"
   ]
 }
