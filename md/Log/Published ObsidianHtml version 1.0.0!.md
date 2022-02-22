@@ -24,4 +24,8 @@ Minor notable changes:
 - graph.json now contains metadata of the notes. This is nice for those who like [making their own templates](../Configurations/Configuration%20Options.md#html-template-path-str) as now more information is available. Check out [our graph.json](https://obsidian-html.github.io/obs.html/data/graph.json)   
 - All the static files we produce are now bundled in `/obs.html/`, instead of multiple different folders. Way more future proof!   
    
-For the bugfixes, and other minor changes, see here: [https://github.com/obsidian-html/obsidian-html/issues/137](https://github.com/obsidian-html/obsidian-html/issues/137)
+For the bugfixes, and other minor changes, see here: [https://github.com/obsidian-html/obsidian-html/issues/137](https://github.com/obsidian-html/obsidian-html/issues/137)   
+   
+## Patches   
+   
+- [v1.0.1](../Changelog/v1.0.1.md)

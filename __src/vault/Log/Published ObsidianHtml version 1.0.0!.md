@@ -24,3 +24,6 @@ Minor notable changes:
 - All the static files we produce are now bundled in `/obs.html/`, instead of multiple different folders. Way more future proof!
 
 For the bugfixes, and other minor changes, see here: https://github.com/obsidian-html/obsidian-html/issues/137
+
+## Patches
+- [[v1.0.1]]

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "MOCs/Change Log.md",
+            "file": "ObsidianHtml.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MOCs/Change Log.md",
+                "file": "ObsidianHtml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,15 +99,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "MOCs/Change Log.md",
+    "ObsidianHtml.md",
+    "Log/Published ObsidianHtml version 1.0.0!.md",
+    "Changelog/v1.0.0.md",
     "Changelog/v1.0.1.md",
+    "MOCs/Change Log.md",
     "Instructions/Quickstart.md",
     "Instructions/Usage.md",
-    "ObsidianHtml.md",
     "Instructions/How to resolve common issues.md",
-    "Log/Published ObsidianHtml version 1.0.0!.md",
     "MOCs/News.md",
-    "Configurations/Configuration Options.md",
-    "MOCs/Features.md"
+    "Configurations/Configuration Options.md"
   ]
 }
