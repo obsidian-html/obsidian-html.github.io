@@ -76,5 +76,5 @@ Can't this to work? Please let us know via [Report Issues & Request features](..
    
 - [Configuration Options](../Configurations/Configuration%20Options.md)   
 - [Features](../MOCs/Features.md)   
-- [How to resolve common issues](/not_created.md)   
+- [How to resolve common issues](../Instructions/How%20to%20resolve%20common%20issues.md)   
 - [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md)

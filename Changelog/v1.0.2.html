@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="none">
+                <meta name="node_id" content="v1.0.2">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="/obs.html/static/graph.css" />
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/obs.html/static/dirtree.js" /></script>
-<link rel="stylesheet" href="/obs.html/static/taglist.css" />
+
 
                 <!-- Onload tweaks -->
                 <script>
@@ -56,22 +56,30 @@
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="subtags">Subtags</h1>
+        <h1 id="v102">v1.0.2</h1>
+<p>Patch version of <a href="/Changelog/v1.0.0.html">v1.0.0</a>.   </p>
+<blockquote>
+<p><strong>Note</strong>: Pypi docs claim there are config changes in this release, but this was reverted. (I can't update the pypi docs without releasing a new version). No config changes in this release!   </p>
+</blockquote>
+<h2 id="bugfixes">Bugfixes</h2>
+<h3 id="links-in-included-notes-do-not-work-show-up-as-external">Links in included notes do not work / show up as external</h3>
+<p>This is caused by <code>relative_path_md: True</code> not working with includes, as includes are still too stupid to rewrite the relative paths found in the note that is included.   </p>
+<p>Weird thing was that <code>relative_path_md: False</code> also did not work. This is the actual bug: this config settings was not integrated everywhere that it should. Setting this value to False now resolves the links showing up wrong in included notes.   </p>
 <ul>
-<li><a href="/obs.html/tags/date/2022-02-12/index.html">2022-02-12</a></li>
-<li><a href="/obs.html/tags/date/2022-02-14/index.html">2022-02-14</a></li>
-<li><a href="/obs.html/tags/date/2022-02-05/index.html">2022-02-05</a></li>
-<li><a href="/obs.html/tags/date/2022-02-13/index.html">2022-02-13</a></li>
-<li><a href="/obs.html/tags/date/2022-02-04/index.html">2022-02-04</a></li>
-<li><a href="/obs.html/tags/date/2022-02-06/index.html">2022-02-06</a></li>
-<li><a href="/obs.html/tags/date/2022-02-17/index.html">2022-02-17</a></li>
-<li><a href="/obs.html/tags/date/2022-02-16/index.html">2022-02-16</a></li>
-<li><a href="/obs.html/tags/date/2022-02-20/index.html">2022-02-20</a></li>
-<li><a href="/obs.html/tags/date/2022-02-22/index.html">2022-02-22</a></li>
-<li><a href="/obs.html/tags/date/2022-02-15/index.html">2022-02-15</a></li>
-<li><a href="/obs.html/tags/date/2022-03-10/index.html">2022-03-10</a></li>
-<li><a href="/obs.html/tags/date/2022-02-21/index.html">2022-02-21</a></li>
+<li>See the exploration of the bug here: <a href="https://github.com/obsidian-html/obsidian-html/issues/178" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/178</a>   </li>
+<li>See also <a href="/Instructions/How to resolve common issues.html#links-in-included-notes-do-not-work-show-up-as-external">How to resolve common issues#Links in included notes do not work show up as external</a>   </li>
+<li>When <a href="https://github.com/obsidian-html/obsidian-html/issues/179" class="external-link">this change</a> is completed, it will be possible to have the links work even with <code>relative_path_md: True</code>     </li>
+<li>A <a href="https://github.com/obsidian-html/obsidian-html/issues/180" class="external-link">regression test</a> will be added for this case, so it will not return.</li>
+</ul><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/MOCs/Change Log.html">Change Log</a></li>
 </ul>
+<div class="graph">
+    <svg class="graph_svg" id="A206635047039433475714388488762447922607{level}"></svg>
+    <button class="graph_button" id="B206635047039433475714388488762447922607{level}" level="{level}" onclick="run('206635047039433475714388488762447922607'+this.level, 'v1.0.2');">Show Graph</button>
+</div>
+<script src="/obs.html/static/graph.js" type="text/javascript"></script>
+
         <!-- end content -->
         </div>
 </div>

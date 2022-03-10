@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="none">
+                <meta name="node_id" content="How to resolve common issues">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="/obs.html/static/graph.css" />
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/obs.html/static/dirtree.js" /></script>
-<link rel="stylesheet" href="/obs.html/static/taglist.css" />
+
 
                 <!-- Onload tweaks -->
                 <script>
@@ -56,22 +56,31 @@
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="subtags">Subtags</h1>
+        <h1 id="how-to-resolve-common-issues">How to resolve common issues</h1>
+<h2 id="links-in-included-notes-do-not-work-show-up-as-external">Links in included notes do not work / show up as external</h2>
+<blockquote>
+<p>Applies to versions: 1.0.2 and earlier   </p>
+</blockquote>
+<p>This should be resolved by the setting:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">relative_path_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>Note that this will break the links in the markdown output on some markdown viewers (such as gitlab and vscode preview mode).    </p>
+<blockquote>
+<p>If you need both the markdown output and the html output, then consider compiling twice, where the one with this setting points to a different markdown folder.   </p>
+</blockquote>
+<p>This trade-off should be mitigated  once this activity is merged: <a href="https://github.com/obsidian-html/obsidian-html/issues/179" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/179</a></p><h2>Backlinks</h2>
 <ul>
-<li><a href="/obs.html/tags/date/2022-02-12/index.html">2022-02-12</a></li>
-<li><a href="/obs.html/tags/date/2022-02-14/index.html">2022-02-14</a></li>
-<li><a href="/obs.html/tags/date/2022-02-05/index.html">2022-02-05</a></li>
-<li><a href="/obs.html/tags/date/2022-02-13/index.html">2022-02-13</a></li>
-<li><a href="/obs.html/tags/date/2022-02-04/index.html">2022-02-04</a></li>
-<li><a href="/obs.html/tags/date/2022-02-06/index.html">2022-02-06</a></li>
-<li><a href="/obs.html/tags/date/2022-02-17/index.html">2022-02-17</a></li>
-<li><a href="/obs.html/tags/date/2022-02-16/index.html">2022-02-16</a></li>
-<li><a href="/obs.html/tags/date/2022-02-20/index.html">2022-02-20</a></li>
-<li><a href="/obs.html/tags/date/2022-02-22/index.html">2022-02-22</a></li>
-<li><a href="/obs.html/tags/date/2022-02-15/index.html">2022-02-15</a></li>
-<li><a href="/obs.html/tags/date/2022-03-10/index.html">2022-03-10</a></li>
-<li><a href="/obs.html/tags/date/2022-02-21/index.html">2022-02-21</a></li>
+	<li><a class="backlink" href="/Changelog/v1.0.2.html">v1.0.2</a></li>
+	<li><a class="backlink" href="/Instructions/Usage.html">Usage</a></li>
 </ul>
+<div class="graph">
+    <svg class="graph_svg" id="A14937775422831873228212453533892411284{level}"></svg>
+    <button class="graph_button" id="B14937775422831873228212453533892411284{level}" level="{level}" onclick="run('14937775422831873228212453533892411284'+this.level, 'How to resolve common issues');">Show Graph</button>
+</div>
+<script src="/obs.html/static/graph.js" type="text/javascript"></script>
+
         <!-- end content -->
         </div>
 </div>
