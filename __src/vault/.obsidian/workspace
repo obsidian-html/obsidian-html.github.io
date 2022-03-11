@@ -100,6 +100,7 @@
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
     "Changelog/v1.1.0.md",
+    "MOCs/Change Log.md",
     "Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.md",
     "Demonstrations/Parsing Images, videos, and audio.md",
     "ObsidianHtml.md",
@@ -107,7 +108,6 @@
     "Buglog/File links in dirtree note do not work.md",
     "Changelog/v1.0.2.md",
     "Changelog/v1.0.1.md",
-    "MOCs/Demonstration of Obisidian integration.md",
-    "birb.md"
+    "MOCs/Demonstration of Obisidian integration.md"
   ]
 }

@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="v1.1.0">
+                <meta name="node_id" content="Spaces in front of headers allowed by Obsidian but not by ObsidianHtml">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -52,33 +52,25 @@
 </div>
 <div class="container-wrapper">
         <div class="container">
-        <h1 id="v110">v1.1.0</h1>
+        <h1 id="spaces-in-front-of-headers-allowed-by-obsidian-but-not-by-obsidianhtml">Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</h1>
 <blockquote>
-<p>Feature version of <a href="/index_from_tags/Changelog/v1.0.0.html">v1.0.0</a>.   </p>
+<p>Fixed in <a href="/index_from_tags/Changelog/v1.1.0.html">v1.1.0</a>   </p>
 </blockquote>
-<h2 id="added-features">Added features</h2>
+<p>It's possible in Obsidian to have a space in front of a header tag and still have it display as a header:   </p>
+<div class="codehilite"><pre><span></span><code><span class="gh"># is an h1 header</span>
+ # is an h1 header too
+</code></pre></div>
+
+<p>This is not allowed in proper markdown though. So this leads to the headers not being recognized by python-markdown.   </p>
+<p>This is technically a user error, but it happened to me, and with the new auto-format feature in edit mode, typo's like this are very hard to spot. It's not nice if people use this package and are in the dark as to why their headers are not being rendered.    </p>
+<p>Besides, if obsidian implements something, obsidianhtml should implement it too, even if it basically means allowing the user to have random spaces in front of their headers.   </p>
+<p>It's pretty doable to remove these spaces in these cases and only in these cases. The regex in the code is just <code>(^\ [\ ]*)(?=#)</code> (one or more spaces from the beginning of the line immediately followed by a <code>#</code> are removed).</p><h2>Backlinks</h2>
 <ul>
-<li>Video &amp; audio inclusions now supported   <ul>
-<li>Video is tested with .mp4 only at the moment   </li>
-<li>Audio is tested with .wav and .mp3   </li>
-</ul>
-</li>
-</ul>
-<h2 id="bugfixes">Bugfixes</h2>
-<ul>
-<li><a href="/index_from_tags/Buglog/Links in included notes do not work or show up as external.html">Links in included notes do not work or show up as external</a> fixed   </li>
-<li><a href="/index_from_tags/Buglog/File links in dirtree note do not work.html">File links in dirtree note do not work</a> fixed   </li>
-<li><a href="/index_from_tags/Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.html">Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a> fixed</li>
-</ul><h2>Backlinks</h2>
-<ul>
-	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
-	<li><a class="backlink" href="/index_from_tags/Buglog/Links in included notes do not work or show up as external.html">Links in included notes do not work or show up as external</a></li>
-	<li><a class="backlink" href="/index_from_tags/Buglog/File links in dirtree note do not work.html">File links in dirtree note do not work</a></li>
-	<li><a class="backlink" href="/index_from_tags/Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.html">Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v1.1.0.html">v1.1.0</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A96602131596795739524667785783481887305{level}"></svg>
-    <button class="graph_button" id="B96602131596795739524667785783481887305{level}" level="{level}" onclick="run('96602131596795739524667785783481887305'+this.level, 'v1.1.0');">Show Graph</button>
+    <svg class="graph_svg" id="A239622250848052672759307607008775829274{level}"></svg>
+    <button class="graph_button" id="B239622250848052672759307607008775829274{level}" level="{level}" onclick="run('239622250848052672759307607008775829274'+this.level, 'Spaces in front of headers allowed by Obsidian but not by ObsidianHtml');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
