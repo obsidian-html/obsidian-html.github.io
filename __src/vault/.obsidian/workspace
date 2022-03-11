@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "MOCs/Change Log.md",
+            "file": "Changelog/v1.1.0.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MOCs/Change Log.md",
+                "file": "Changelog/v1.1.0.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,14 +99,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "MOCs/Change Log.md",
-    "Changelog/v1.0.2.md",
-    "Instructions/How to resolve common issues.md",
-    "Changelog/v1.0.1.md",
-    "Instructions/Usage.md",
+    "Changelog/v1.1.0.md",
+    "Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.md",
+    "Demonstrations/Parsing Images, videos, and audio.md",
     "ObsidianHtml.md",
-    "Log/Published ObsidianHtml version 1.0.0!.md",
-    "Changelog/v1.0.0.md",
-    "Instructions/Quickstart.md"
+    "Configurations/Configuration Options.md",
+    "Buglog/File links in dirtree note do not work.md",
+    "Changelog/v1.0.2.md",
+    "Changelog/v1.0.1.md",
+    "MOCs/Demonstration of Obisidian integration.md",
+    "birb.md"
   ]
 }

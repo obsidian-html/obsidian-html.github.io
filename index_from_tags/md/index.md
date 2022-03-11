@@ -14,7 +14,7 @@
 ## feature/parsing_markdown   
    
 - [Implementing links & link awareness](Demonstrations/Implementing%20links%20%26%20link%20awareness.md)   
-- [Parsing Images](Demonstrations/Parsing%20Images.md)   
+- [Parsing Images, videos, and audio](Demonstrations/Parsing%20Images%2C%20videos%2C%20and%20audio.md)   
 - [Implementing Note Inclusions](Demonstrations/Implementing%20Note%20Inclusions.md)   
 - [Getting the basics right](Demonstrations/Getting%20the%20basics%20right.md)   
 - [Making lists work the same](Demonstrations/Making%20lists%20work%20the%20same.md)   

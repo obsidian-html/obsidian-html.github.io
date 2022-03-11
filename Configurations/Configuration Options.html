@@ -119,6 +119,18 @@
 <td align="left"><a href="/Configurations/Configuration Options.html#copy-vault-to-tempdir">Copy Vault to Tempdir</a></td>
 <td align="left">(On/Off) Copy vault into temp dir prior to parsing</td>
 </tr>
+<tr>
+<td align="left"><a href="/Configurations/Configuration Options.html#included_file_suffixes">included_file_suffixes</a></td>
+<td align="left">List of all suffixes that should be treated as files, not notes</td>
+</tr>
+<tr>
+<td align="left"><a href="/Configurations/Configuration Options.html#video_format_suffixes">video_format_suffixes</a></td>
+<td align="left">List of all suffixes that should be treated as video files</td>
+</tr>
+<tr>
+<td align="left"><a href="/Configurations/Configuration Options.html#audio_format_suffixes">audio_format_suffixes</a></td>
+<td align="left">List of all suffixes that should be treated as audio files</td>
+</tr>
 </tbody>
 </table>
 <h3 id="html-settings">HTML settings</h3>
@@ -294,11 +306,29 @@
 <blockquote>
 <p>Added in <a href="/Changelog/v1.0.0.html">v1.0.0</a>   </p>
 </blockquote>
-<div class="codehilite"><pre><span></span><code><span class="nt">included_file_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;jpg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;jpeg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;gif&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;png&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;bmp&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;pdf&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">included_file_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;jpg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;jpeg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;gif&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;png&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;bmp&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;pdf&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp3&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;wav&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>ObsidianHtml needs to be able to discern between included notes and included files, because included files need to be treated differently to included notes in the processing steps.   </p>
 <p>This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   </p>
+<h3 id="video_format_suffixes">video_format_suffixes</h3>
+<blockquote>
+<p>Added in <a href="/Changelog/v1.1.0.html">v1.1.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">video_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Used to convert an inclusion statement to a video html tag.   </p>
+<p>This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   </p>
+<p>Note that if you add it yourself here, the passed in mime-type might be missing. This might or might not be an issue depending on your browser/OS.   </p>
+<h3 id="audio_format_suffixes">audio_format_suffixes</h3>
+<blockquote>
+<p>Added in <a href="/Changelog/v1.1.0.html">v1.1.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">audio_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;wav&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp3&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>See also the comments on <a href="/Configurations/Configuration Options.html#video_format_suffixes">video_format_suffixes</a>.   </p>
 <h2 id="html-output">HTML Output</h2>
 <h3 id="site-name">Site name</h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Will be inputted into the Html template as page title</span><span class="w"></span>
@@ -509,8 +539,8 @@
 	<li><a class="backlink" href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A131636365549321710965971663981108000357{level}"></svg>
-    <button class="graph_button" id="B131636365549321710965971663981108000357{level}" level="{level}" onclick="run('131636365549321710965971663981108000357'+this.level, 'Configuration Options');">Show Graph</button>
+    <svg class="graph_svg" id="A193497820368364829463317745682417197396{level}"></svg>
+    <button class="graph_button" id="B193497820368364829463317745682417197396{level}" level="{level}" onclick="run('193497820368364829463317745682417197396'+this.level, 'Configuration Options');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 

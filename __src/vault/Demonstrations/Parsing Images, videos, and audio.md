@@ -22,5 +22,20 @@ tags:
 ## Resizing large images
 ![[wide-image.jpg]]
 
+# Videos
+At the moment of writing mp4 and webm's are supported. If you want to use a different type, contact us via [[Report Issues & Request features]].
 
+`![[reaction_Objection_birb.mp4]]`
+
+![[reaction_Objection_birb.mp4]]
+
+ # Audio
+ ##  .wav
+ `![[geese.wav]]`
  
+ ![[geese.wav]]
+
+## .mp3
+ `![[jazzy.mp3]]`
+ 
+ ![[jazzy.mp3]]

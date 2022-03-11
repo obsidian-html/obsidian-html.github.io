@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Links in included notes do not work or show up as external">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/Documentation</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/obs.html/static/main.css" />
+                <script src="/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                window.location.hash = '!' + window.location.hash.substr(1);
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/obs.html/tags/" title="Open tag view">
+                                <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+        </div>
+
+</div>
+<div class="container-wrapper">
+        <div class="container">
+        <h1 id="links-in-included-notes-do-not-work-show-up-as-external">Links in included notes do not work / show up as external</h1>
+<blockquote>
+<p>Applies to versions: <a href="/Changelog/v1.0.2.html">v1.0.2</a> and earlier <br />
+Fixed in version <a href="/Changelog/v1.1.0.html">v1.1.0</a>   </p>
+</blockquote>
+<h3 id="issue">Issue</h3>
+<p>If a note contains a link, and this note is included in another note, that is at a different folder depth, then the relative links in the markdown output are not corrected.   </p>
+<h3 id="tldr">tl;dr</h3>
+<p>Just upgrade to <a href="/Changelog/v1.1.0.html">v1.1.0</a>, it is fixed there   </p>
+<h3 id="workaround-for-earlier-versions">Workaround for earlier versions</h3>
+<p>The workaround should be to set relative_path_md to false, forcing absolute paths in the markdown output. But this workaround did not work for version <a href="/Changelog/v1.0.1.html">v1.0.1</a> and lower due to a bug, this workaround is valid only for version <a href="/Changelog/v1.0.2.html">v1.0.2</a>.   </p>
+<p>Though succesful in avoiding this bug, this setting would make the markdown output not navigable in certain markdown readers, such as gitlab and vs code preview mode.   </p>
+<h3 id="fix">Fix</h3>
+<p>This issue is fixed starting from version <a href="/Changelog/v1.1.0.html">v1.1.0</a>, as there the code for getting the included note code is aware of the page depth of the calling note, allowing for the links to be generated correctly from the get go.   </p>
+<h3 id="dod">DoD</h3>
+<p>A regression test has been added for this usecase.</p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/Changelog/v1.1.0.html">v1.1.0</a></li>
+	<li><a class="backlink" href="/Changelog/v1.0.2.html">v1.0.2</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A127862073310687229407734757213101026942{level}"></svg>
+    <button class="graph_button" id="B127862073310687229407734757213101026942{level}" level="{level}" onclick="run('127862073310687229407734757213101026942'+this.level, 'Links in included notes do not work or show up as external');">Show Graph</button>
+</div>
+<script src="/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

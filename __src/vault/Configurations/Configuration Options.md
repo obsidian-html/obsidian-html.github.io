@@ -39,6 +39,9 @@ We will now go through all the settings in more-or-less the same order as the ou
 | :------ | :--------------- |
 | [[Configuration Options#Exclude Subfolders|Exclude Subfolders]] | Subfolders from your vault directory to ignore |
 | [[Configuration Options#Copy Vault to Tempdir|Copy Vault to Tempdir]] | (On/Off) Copy vault into temp dir prior to parsing |
+| [[Configuration Options#included_file_suffixes|included_file_suffixes]] | List of all suffixes that should be treated as files, not notes |
+| [[Configuration Options#video_format_suffixes|video_format_suffixes]] | List of all suffixes that should be treated as video files |
+| [[Configuration Options#audio_format_suffixes|audio_format_suffixes]] | List of all suffixes that should be treated as audio files |
 
 ### HTML settings
 | config | Short description |
@@ -151,12 +154,34 @@ Read more: [[Copy vault to temp dir]]
 > Added in [[v1.0.0]]
 
 ``` yaml
-included_file_suffixes: ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'pdf']
+included_file_suffixes: ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'pdf', 'mp4', 'webm', 'mp3', 'wav']
 ```
 
 ObsidianHtml needs to be able to discern between included notes and included files, because included files need to be treated differently to included notes in the processing steps.
 
 This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.
+
+### video_format_suffixes
+> Added in [[v1.1.0]]
+
+``` yaml
+video_format_suffixes: ['mp4', 'webm']
+```
+
+Used to convert an inclusion statement to a video html tag.
+
+This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.
+
+Note that if you add it yourself here, the passed in mime-type might be missing. This might or might not be an issue depending on your browser/OS.
+
+### audio_format_suffixes
+> Added in [[v1.1.0]]
+
+``` yaml
+audio_format_suffixes: ['wav', 'mp3']
+```
+
+See also the comments on [[Configuration Options#video_format_suffixes|video_format_suffixes]].
 
 
 ## HTML Output

@@ -40,6 +40,9 @@ We will now go through all the settings in more-or-less the same order as the ou
 | :------ | :--------------- |   
 | [Exclude Subfolders](../Configurations/Configuration%20Options.md#exclude-subfolders) | Subfolders from your vault directory to ignore |   
 | [Copy Vault to Tempdir](../Configurations/Configuration%20Options.md#copy-vault-to-tempdir) | (On/Off) Copy vault into temp dir prior to parsing |   
+| [included_file_suffixes](../Configurations/Configuration%20Options.md#included_file_suffixes) | List of all suffixes that should be treated as files, not notes |   
+| [video_format_suffixes](../Configurations/Configuration%20Options.md#video_format_suffixes) | List of all suffixes that should be treated as video files |   
+| [audio_format_suffixes](../Configurations/Configuration%20Options.md#audio_format_suffixes) | List of all suffixes that should be treated as audio files |   
    
 ### HTML settings   
 | config | Short description |   
@@ -159,13 +162,37 @@ Read more: [Copy vault to temp dir](../Configurations/Copy%20vault%20to%20temp%2
 > Added in [v1.0.0](../Changelog/v1.0.0.md)   
    
 ``` yaml
-included_file_suffixes: ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'pdf']
+included_file_suffixes: ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'pdf', 'mp4', 'webm', 'mp3', 'wav']
 ```
    
    
 ObsidianHtml needs to be able to discern between included notes and included files, because included files need to be treated differently to included notes in the processing steps.   
    
 This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   
+   
+### video_format_suffixes   
+> Added in [v1.1.0](../Changelog/v1.1.0.md)   
+   
+``` yaml
+video_format_suffixes: ['mp4', 'webm']
+```
+   
+   
+Used to convert an inclusion statement to a video html tag.   
+   
+This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   
+   
+Note that if you add it yourself here, the passed in mime-type might be missing. This might or might not be an issue depending on your browser/OS.   
+   
+### audio_format_suffixes   
+> Added in [v1.1.0](../Changelog/v1.1.0.md)   
+   
+``` yaml
+audio_format_suffixes: ['wav', 'mp3']
+```
+   
+   
+See also the comments on [video_format_suffixes](../Configurations/Configuration%20Options.md#video_format_suffixes).   
    
    
 ## HTML Output   
