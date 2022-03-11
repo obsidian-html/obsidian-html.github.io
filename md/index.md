@@ -16,7 +16,7 @@ tags:
 - [Report Issues & Request features](General%20Information/Report%20Issues%20%26%20Request%20features.md)   
 - [How to navigate this site](General%20Information/HTML%20tweaks.md)   
 - [News](MOCs/News.md)   
-- [Change Log](MOCs/Change%20Log.md)   
+- [Change Log](Change%20Log.md)   
    
 ### Usage & Capabilities   
    
