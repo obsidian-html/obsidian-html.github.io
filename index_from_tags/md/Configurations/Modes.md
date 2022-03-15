@@ -23,4 +23,18 @@ Read more [Process All](../Configurations/Process%20All.md).
 If you want to dynamically create an index that contains links to notes with certain tags, you can use this mode. Read more: [Create index from tags](../Configurations/Create%20index%20from%20tags.md).   
    
 ## Create index from directory structure   
-If you want to dynamically create an index that contains a folder/filetree based on your html output folder. Read more: [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md).
+If you want to dynamically create an index that contains a folder/filetree based on your html output folder. Read more: [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md).   
+   
+## Relative_path_html   
+This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).   
+   
+This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.   
+   
+Read more [Relative_path_html](../Configurations/Relative_path_html.md).   
+   
+## No Tabs Mode   
+Don't like how the tabs work? You can disable them if you want a simpler browsing experience.    
+   
+View this site in no_tabs mode: [https://obsidian-html.github.io/no_tabs/](https://obsidian-html.github.io/no_tabs/)   
+   
+Read more [NoTabs Mode](../Configurations/NoTabs%20Mode.md)

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="HTML tweaks">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/NoTabs-Mode</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/main.css" />
+                <script src="/no_tabs/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/no_tabs/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/no_tabs/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (1 == 0){
+                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                        window.location.hash = '!' + window.location.hash.substr(1);
+                                }
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/no_tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/NoTabs-Mode</a>
+
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/no_tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/no_tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/no_tabs/obs.html/tags/index.html" title="Open tag view">
+                                <img src = "/no_tabs/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/no_tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/no_tabs/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+        </div>
+
+</div>
+<div class="container-wrapper single_tab_page">
+        <div class="container">
+        <h1 id="html-tweaks">Html tweaks</h1>
+<p>Quite some work has been put into the usability of the html website interface. Though if you don't like it, simply change <code>src/template.html</code> out for something more basic - or more fancy.   </p>
+<p>If you use the pypi package, this becomes more difficult, so the option to define your own template has been added to the configuration file: <a href="/no_tabs/Configurations/Configuration Options.html#html-template-path-str">Configuration Options#Html Template Path Str</a>.   </p>
+<h2 id="finding-notes">Finding notes</h2>
+<p>Use the <a href="/no_tabs/Configurations/Graph view.html">Graph view</a>, <a href="/no_tabs/Configurations/Backlinks.html">Backlinks</a>, or <a href="/no_tabs/Configurations/Tags Page.html">Tags Page</a> to find other notes, or just follow the links on the note that you're on.   </p>
+<p>If your notes are very neatly organised in a folder structure, we also reccommend looking into the <a href="/no_tabs/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a> feature.   </p>
+<h2 id="header-links">Header links</h2>
+<p>Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.   </p>
+<h2 id="scrolling-notes">Scrolling notes</h2>
+<p>When you open a whole chain of notes, you'll be scrolled rightward to keep up.   </p>
+<ul>
+<li>To move back to the beginning, keeping all notes open, press <code>1</code>   </li>
+<li>To move back to the beginnning, closing all notes, click on the link in the top left (ObsidianHtml/Documentation)   </li>
+<li>To move left/right by one note, press <code>,</code> or <code>.</code>   </li>
+</ul>
+<p>Of course, the scrollbar and arrow keys are available too as methods of navigation.   </p>
+<h2 id="click-backs">Click-backs</h2>
+<p>Clicking on a click-back corner will align that note with the left of the screen. This is a different way to move back/forward one note at a time.    </p>
+<p>The clickbacks are in the top right corner of every note: <br />
+<img alt="" src="/no_tabs/Resources/img/Pasted%20image%2020211012013603.png" />   </p>
+<h2 id="closing-tabs">Closing tabs</h2>
+<p>When you click on a new link in an earlier tab, all the open tabs after it will be closed.   </p>
+<h2 id="notice-the-url">Notice the url</h2>
+<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.    </p>
+<h2 id="graph-view">Graph view</h2>
+<p>Read more <a href="/no_tabs/Configurations/Graph view.html">Graph View</a>.</p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/index.html">index</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A290891403935039577371364243196399267248{level}"></svg>
+    <button class="graph_button" id="B290891403935039577371364243196399267248{level}" level="{level}" onclick="run('290891403935039577371364243196399267248'+this.level, 'HTML tweaks');">Show Graph</button>
+</div>
+<script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script src="/no_tabs/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="NoTabs Mode">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/NoTabs-Mode</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/main.css" />
+                <script src="/no_tabs/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/no_tabs/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/no_tabs/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (1 == 0){
+                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                        window.location.hash = '!' + window.location.hash.substr(1);
+                                }
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/no_tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/NoTabs-Mode</a>
+
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/no_tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/no_tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/no_tabs/obs.html/tags/index.html" title="Open tag view">
+                                <img src = "/no_tabs/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/no_tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/no_tabs/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+        </div>
+
+</div>
+<div class="container-wrapper single_tab_page">
+        <div class="container">
+        <h1 id="notabs-mode">NoTabs Mode</h1>
+<blockquote>
+<p>New in version <a href="/no_tabs/Changelog/v1.2.0.html">v1.2.0</a>   </p>
+</blockquote>
+<p><em>Don't like how the tabs work? You can disable them if you want a simpler browsing experience.</em>   </p>
+<p>Set the following key in your config.yml:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">no_tabs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>View this site in no_tabs mode: <a href="https://obsidian-html.github.io/no_tabs/" class="external-link">https://obsidian-html.github.io/no_tabs/</a>   </p>
+<p>This setting is enforced when <code>relative_path_html: True</code>.</p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/Changelog/v1.2.0.html">v1.2.0</a></li>
+	<li><a class="backlink" href="/no_tabs/Configurations/Relative_path_html.html">Relative_path_html</a></li>
+	<li><a class="backlink" href="/no_tabs/Configurations/Modes.html">Modes</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A140094733541469547550450295544538144814{level}"></svg>
+    <button class="graph_button" id="B140094733541469547550450295544538144814{level}" level="{level}" onclick="run('140094733541469547550450295544538144814'+this.level, 'NoTabs Mode');">Show Graph</button>
+</div>
+<script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script src="/no_tabs/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

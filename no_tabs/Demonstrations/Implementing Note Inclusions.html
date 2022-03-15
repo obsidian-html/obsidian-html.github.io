@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Inclusions">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/NoTabs-Mode</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/main.css" />
+                <script src="/no_tabs/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/no_tabs/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/no_tabs/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (1 == 0){
+                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                        window.location.hash = '!' + window.location.hash.substr(1);
+                                }
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/no_tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/NoTabs-Mode</a>
+
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/no_tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/no_tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/no_tabs/obs.html/tags/index.html" title="Open tag view">
+                                <img src = "/no_tabs/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/no_tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/no_tabs/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+        </div>
+
+</div>
+<div class="container-wrapper single_tab_page">
+        <div class="container">
+        <h1 id="note-inclusions">Note inclusions</h1>
+<p>Note inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    </p>
+<p>It uses the same link syntax as images:   </p>
+<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
+<span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="err">#</span><span class="n">only</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">chapter</span><span class="p">]]</span><span class="w"></span>
+</code></pre></div>
+
+<p>In Obsidian, included content is denoted with a differently colored background. But since we first convert Obsidian notes to markdown, and markdown does not have this capability, we can only include the content inline, so it is not visible that the content comes from another page.   </p>
+<h2 id="full-page-inclusion">Full page inclusion</h2>
+<p>First take a look at what content is in this page: <a href="/no_tabs/Demonstrations/Test pages/Test Inclusion.html">Test Inclusion</a>.    </p>
+<p>This will be included below by writing  <br />
+<code>![[Test Inclusion]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+![[Test Inclusion]]
+<span class="gs">**---end inclusion---**</span>
+</code></pre></div>
+
+<p><strong>---begin inclusion---</strong>   </p>
+<h2 id="test-inclusion">Test Inclusion</h2>
+<blockquote>
+<p>Content</p>
+</blockquote>
+<p><strong>---end inclusion---</strong>   </p>
+<h2 id="partial-code-inclusion">Partial code inclusion</h2>
+<p>With partial code inclusion, we can reference a header, and then only that header and the content of that header is included. The content is read until the first header of the same level (h1 --&gt; h1, h2 --&gt; h2, etc), or lower level, is found. So, including a h1 header that has h2 header under it, will include those headers and their content too.   </p>
+<p>First take a look at what content is in this page: <a href="/no_tabs/Demonstrations/Test pages/Test inclusion 2.html">Test inclusion 2</a>.   </p>
+<p>Let's say that we only want the second (h2) chapter included.  <br />
+This can be done by writing  <br />
+<code>![[Test inclusion 2#Second chapter]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+![[Test inclusion 2#Second chapter]]
+<span class="gs">**---end inclusion---**</span>
+---
+</code></pre></div>
+
+<p><strong>---begin inclusion---</strong>   </p>
+<h2 id="second-chapter">Second chapter</h2>
+<p>Content second chapter   </p>
+<h3 id="an-h3">An h3</h3>
+<p>This is still a child of <code>Second chapter</code>   </p>
+<p><strong>---end inclusion---</strong></p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/MOCs/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A112942392032258153496722506906068262516{level}"></svg>
+    <button class="graph_button" id="B112942392032258153496722506906068262516{level}" level="{level}" onclick="run('112942392032258153496722506906068262516'+this.level, 'Inclusions');">Show Graph</button>
+</div>
+<script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script src="/no_tabs/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

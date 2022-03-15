@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Links">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/NoTabs-Mode</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/main.css" />
+                <script src="/no_tabs/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/no_tabs/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/no_tabs/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (1 == 0){
+                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                        window.location.hash = '!' + window.location.hash.substr(1);
+                                }
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/no_tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/NoTabs-Mode</a>
+
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/no_tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/no_tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/no_tabs/obs.html/tags/index.html" title="Open tag view">
+                                <img src = "/no_tabs/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/no_tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/no_tabs/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+        </div>
+
+</div>
+<div class="container-wrapper single_tab_page">
+        <div class="container">
+        <h1 id="links">Links</h1>
+<h2 id="obsidian-type-links">Obsidian type links</h2>
+<p><code>[[Simple Obsidian-type Link]]</code> translates to: <br />
+<a href="/no_tabs/Demonstrations/Test pages/Simple Obsidian-type Link.html">Simple Obsidian-type Link</a>   </p>
+<p>Aliasing also works, <code>[[Simple Obsidian-type Link|Same link as before]]</code>: <br />
+<a href="/no_tabs/Demonstrations/Test pages/Simple Obsidian-type Link.html">Same link as before</a>   </p>
+<p>Linking to specific chapters <code>[[Long long page#Chapter of interest]]</code> <br />
+<a href="/no_tabs/Demonstrations/Test pages/Long long page.html#chapter-of-interest">Long long page#Chapter of interest</a>   </p>
+<p>Linking to another header on the same page: <code>[[#Proper markdown links]]</code> <br />
+<a href="#proper-markdown-links" class="anchor-link">Proper markdown links</a>   </p>
+<h2 id="proper-markdown-links">Proper markdown links</h2>
+<p>There is a setting that forces Obsidian to use proper markdown notation. So this is also supported:   </p>
+<p><code>[Proper markdown link](proper%20markdown)</code> <br />
+<a href="/no_tabs/Demonstrations/Test pages/proper markdown.html">Proper markdown link</a>   </p>
+<p>Note that spaces must be encoded in proper markdown links.   </p>
+<h2 id="link-awareness">Link awareness</h2>
+<p>An external links show up the little icon to show it: <br />
+<a href="https://github.com/obsidian-html/obsidian-html" class="external-link">https://github.com/obsidian-html/obsidian-html</a>   </p>
+<p>When linking to new notes, and not creating them, the link will be replaced with "not_created.html", and the link will be color coded by adding <code>class="nonexistent-link"</code> to the a href:   </p>
+<p><a href="/no_tabs/not_created.html" class="nonexistent-link">In the end I never created this note</a>   </p>
+<h2 id="link-to-non-markdown-files">Link to non-markdown files</h2>
+<p>Image files and other non-markdown files local to the given root folder get copied over to the output. Take for example: <a href="../Demonstrations/Test pages/textfile.txt">textfile.txt</a>.   </p>
+<p>Note that Obsidian type links will always be appended with .md if this is missing.    </p>
+<p>This is the default behavior of Obsidian. You can work around this, but when you do, it is impossible to determine with 100% certainty which file is linked to.    </p>
+<p>If you want to link to files that are not markdown, use proper markdown links:   </p>
+<div class="codehilite"><pre><span></span><code><span class="p">[[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">]]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">.</span><span class="n">md</span><span class="p">)</span><span class="w"></span>
+<span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"></span>
+</code></pre></div><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/MOCs/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A317812565431470291777959901760035099719{level}"></svg>
+    <button class="graph_button" id="B317812565431470291777959901760035099719{level}" level="{level}" onclick="run('317812565431470291777959901760035099719'+this.level, 'Links');">Show Graph</button>
+</div>
+<script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script src="/no_tabs/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

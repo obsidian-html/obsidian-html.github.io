@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Auto push site using Git on Linux">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/NoTabs-Mode</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/main.css" />
+                <script src="/no_tabs/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/no_tabs/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/no_tabs/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (1 == 0){
+                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                        window.location.hash = '!' + window.location.hash.substr(1);
+                                }
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/no_tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/NoTabs-Mode</a>
+
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/no_tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/no_tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/no_tabs/obs.html/tags/index.html" title="Open tag view">
+                                <img src = "/no_tabs/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/no_tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/no_tabs/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+        </div>
+
+</div>
+<div class="container-wrapper single_tab_page">
+        <div class="container">
+        <h1 id="auto-push-site-using-git-on-linux">Auto push site using Git on Linux</h1>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Config</span>
+<span class="nv">git_output</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html.github.io&quot;</span>
+<span class="nv">obsidian_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html&quot;</span>
+
+<span class="c1"># Move to output folder and make sure it is up to date</span>
+<span class="nb">cd</span> <span class="nv">$git_output</span>
+git pull
+
+<span class="c1"># Remove all files except .git/ and README.md</span>
+<span class="nb">echo</span> <span class="s2">&quot;Will delete previous output:&quot;</span>
+find . ! -path <span class="s2">&quot;./.git/*&quot;</span> ! -name <span class="s2">&quot;.git&quot;</span> ! -name README.md
+<span class="nb">echo</span> <span class="s2">&quot;Continue? (y/n)&quot;</span>
+<span class="nb">read</span> yn
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$yn</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;y&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Aborted&quot;</span>
+    <span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span>
+
+find . ! -path <span class="s2">&quot;./.git/*&quot;</span> ! -name <span class="s2">&quot;.git&quot;</span> ! -name README.md -delete
+
+
+<span class="c1"># Convert Obsidian to HTML</span>
+<span class="nb">cd</span> <span class="nv">$obsidian_folder</span>
+python -m obsidianhtml -i local_configs/example_site.yml
+<span class="c1"># ^ the config file will output the html to $git_output</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Python script failed. Exited.&quot;</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Successfully created html code&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Push changes</span>
+<span class="nb">cd</span> <span class="nv">$git_output</span>
+mv html/* ./
+rm -rf html/
+
+git add . --all
+git commit -m <span class="s2">&quot;autopush&quot;</span>
+git push
+</code></pre></div><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/MOCs/Automate website deployment.html">Automate website deployment</a></li>
+	<li><a class="backlink" href="/no_tabs/Automation/AutomationLinuxSSH.html">Auto push site using SSH on Linux</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A331858514326486786101245786269123966425{level}"></svg>
+    <button class="graph_button" id="B331858514326486786101245786269123966425{level}" level="{level}" onclick="run('331858514326486786101245786269123966425'+this.level, 'Auto push site using Git on Linux');">Show Graph</button>
+</div>
+<script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script src="/no_tabs/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

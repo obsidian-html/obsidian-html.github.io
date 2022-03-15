@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Auto push site using SSH on Linux">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/NoTabs-Mode</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/main.css" />
+                <script src="/no_tabs/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/no_tabs/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/no_tabs/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (1 == 0){
+                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                        window.location.hash = '!' + window.location.hash.substr(1);
+                                }
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/no_tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/NoTabs-Mode</a>
+
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/no_tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/no_tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/no_tabs/obs.html/tags/index.html" title="Open tag view">
+                                <img src = "/no_tabs/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/no_tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/no_tabs/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+        </div>
+
+</div>
+<div class="container-wrapper single_tab_page">
+        <div class="container">
+        <h1 id="auto-push-site-to-a-local-webserver-on-linux">Auto push site to a local webserver on Linux</h1>
+<p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using th <a href="/no_tabs/Automation/AutomationLinuxGit.html">Git method</a> or something along those lines.   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Config</span>
+<span class="nv">obsidian_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html&quot;</span>
+<span class="nv">output_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html/local_output&quot;</span>
+
+<span class="nv">config_file</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html/local_configs/devfruits.yml&quot;</span>
+
+<span class="nv">target</span><span class="o">=</span><span class="s2">&quot;user@webserver&quot;</span>
+<span class="nv">web_folder</span><span class="o">=</span><span class="s2">&quot;/home/web/www/devfruits&quot;</span>
+
+<span class="c1"># Convert Obsidian to HTML</span>
+<span class="nb">cd</span> <span class="nv">$obsidian_folder</span>
+python -m obsidianhtml -i <span class="nv">$config_file</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Python script failed. Exited.&quot;</span>
+    <span class="nb">cd</span> <span class="nv">$origin</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Successfully created html code&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Remove previous files</span>
+ssh <span class="nv">$target</span> rm -rf <span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/*&quot;</span>
+
+<span class="c1"># Upload new files</span>
+scp -r <span class="s2">&quot;</span><span class="nv">$output_folder</span><span class="s2">/html/*&quot;</span> <span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/&quot;</span>
+</code></pre></div>
+
+<p><a href="/no_tabs/MOCs/Automate website deployment.html">Other ways of pushing websites</a></p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/MOCs/Automate website deployment.html">Automate website deployment</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A212539203421892481604052455308464594745{level}"></svg>
+    <button class="graph_button" id="B212539203421892481604052455308464594745{level}" level="{level}" onclick="run('212539203421892481604052455308464594745'+this.level, 'Auto push site using SSH on Linux');">Show Graph</button>
+</div>
+<script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script src="/no_tabs/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

@@ -25,20 +25,22 @@
                 <!-- Onload tweaks -->
                 <script>
                         // add prefix to hash to avoid scrolling
-                        if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
-                                window.location.hash = '!' + window.location.hash.substr(1);
+                        if (0 == 0){
+                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                        window.location.hash = '!' + window.location.hash.substr(1);
+                                }
                         }
                 </script>
         </head>
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="/index_from_tags/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+        <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
 
         <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
 
                 <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
-                        <a href="/index_from_tags/obs.html/tags/" title="Open tag view">
+                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
                                 <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
                         </a>
                 </div>
@@ -50,7 +52,7 @@
         </div>
 
 </div>
-<div class="container-wrapper">
+<div class="container-wrapper ">
         <div class="container">
         <h1 id="parsing-obsidian-notes-to-proper-markdown">Parsing Obsidian notes to proper markdown</h1>
 <p>The first step in the process is to convert obsidian notes to proper markdown files.   </p>

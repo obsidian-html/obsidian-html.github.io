@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Graph View">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/NoTabs-Mode</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/no_tabs/obs.html/static/main.css" />
+                <script src="/no_tabs/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/no_tabs/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/no_tabs/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // add prefix to hash to avoid scrolling
+                        if (1 == 0){
+                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                        window.location.hash = '!' + window.location.hash.substr(1);
+                                }
+                        }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+<div id="header" class="header">
+        <a href="/no_tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/NoTabs-Mode</a>
+
+        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/no_tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/no_tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                        <a href="/no_tabs/obs.html/tags/index.html" title="Open tag view">
+                                <img src = "/no_tabs/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                        </a>
+                </div>
+        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/no_tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/no_tabs/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+        </div>
+
+</div>
+<div class="container-wrapper single_tab_page">
+        <div class="container">
+        <h1 id="graph-view">Graph view</h1>
+<p>Click on the button at the bottom of a note to view the graph for the current note.   </p>
+<p>To be added in the future:   </p>
+<ul>
+<li><strong>Pruning</strong>: Do not show notes that are not connected directly nor indirectly to the current note. Only show all notes in a site-wide view.   </li>
+<li><strong>Site wide view</strong>: Basically a full page view of the graph   </li>
+<li>Using the text in the first H1 as a graph_name.   </li>
+</ul>
+<h2 id="configure-graph-view">Configure graph view</h2>
+<p>The following key can be found in the <a href="https://github.com/dwrolvink/obsidian-html/blob/master/example_config.yml" class="external-link">example config yaml</a>:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">graph_view</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">          </span><span class="c1"># Include code to build the graph view per page (default: True)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">coalesce_force</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;-200&#39;</span><span class="w"> </span><span class="c1"># How close the nodes will be to eachother.</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="overwrite-the-name-of-a-note-in-the-graph-view">Overwrite the name of a note in the graph view:</h3>
+<ul>
+<li>In your frontmatter, set <code>graph_name: My new note name</code>   </li>
+</ul>
+<p>E.g:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">graph_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Links</span><span class="w"></span>
+<span class="nt">tags</span><span class="p">:</span><span class="w"> </span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type/parsing_markdown</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-02-04</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+</code></pre></div>
+
+<blockquote>
+<p>Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.</p>
+</blockquote><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+	<li><a class="backlink" href="/no_tabs/Configurations/Process All.html">Process All</a></li>
+	<li><a class="backlink" href="/no_tabs/MOCs/Features.html">Features</a></li>
+	<li><a class="backlink" href="/no_tabs/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/no_tabs/Configurations/Relative_path_html.html">Relative_path_html</a></li>
+	<li><a class="backlink" href="/no_tabs/General Information/HTML tweaks.html">HTML tweaks</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A196414167383467228804926404419512796021{level}"></svg>
+    <button class="graph_button" id="B196414167383467228804926404419512796021{level}" level="{level}" onclick="run('196414167383467228804926404419512796021'+this.level, 'Graph View');">Show Graph</button>
+</div>
+<script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
+
+        <!-- end content -->
+        </div>
+</div>
+
+
+<script src="/no_tabs/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

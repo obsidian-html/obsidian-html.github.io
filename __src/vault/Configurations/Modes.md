@@ -25,3 +25,17 @@ If you want to dynamically create an index that contains links to notes with cer
 ## Create index from directory structure
 If you want to dynamically create an index that contains a folder/filetree based on your html output folder. Read more: [[Create Index from Directory Structure]].
 
+## Relative_path_html
+This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).
+
+This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.
+
+Read more [[Relative_path_html]].
+
+## No Tabs Mode
+Don't like how the tabs work? You can disable them if you want a simpler browsing experience. 
+
+View this site in no_tabs mode: https://obsidian-html.github.io/no_tabs/
+
+Read more [[NoTabs Mode]]
+

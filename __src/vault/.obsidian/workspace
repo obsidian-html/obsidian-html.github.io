@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Changelog/v1.1.0.md",
+            "file": "Configurations/Relative_path_html.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Changelog/v1.1.0.md",
+                "file": "Configurations/Relative_path_html.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,15 +99,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
+    "Configurations/Relative_path_html.md",
+    "Configurations/NoTabs Mode.md",
+    "Configurations/Modes.md",
+    "Configurations/Process All.md",
+    "Changelog/v1.2.0.md",
     "Changelog/v1.1.0.md",
-    "Change Log.md",
-    "Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.md",
-    "Demonstrations/Parsing Images, videos, and audio.md",
     "ObsidianHtml.md",
-    "Configurations/Configuration Options.md",
-    "Buglog/File links in dirtree note do not work.md",
-    "Changelog/v1.0.2.md",
-    "Changelog/v1.0.1.md",
-    "MOCs/Demonstration of Obisidian integration.md"
+    "MOCs/Features.md",
+    "Change Log.md",
+    "Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.md"
   ]
 }

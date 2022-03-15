@@ -25,15 +25,17 @@
                 <!-- Onload tweaks -->
                 <script>
                         // add prefix to hash to avoid scrolling
-                        if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
-                                window.location.hash = '!' + window.location.hash.substr(1);
+                        if (0 == 0){
+                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                                        window.location.hash = '!' + window.location.hash.substr(1);
+                                }
                         }
                 </script>
         </head>
 
 <body onload="LoadPage();">
 <div id="header" class="header">
-        <a href="/" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+        <a href="/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
 
         <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
         <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
@@ -42,7 +44,7 @@
             </a>
         </div>
                 <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
-                        <a href="/obs.html/tags/" title="Open tag view">
+                        <a href="/obs.html/tags/index.html" title="Open tag view">
                                 <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
                         </a>
                 </div>
@@ -54,7 +56,7 @@
         </div>
 
 </div>
-<div class="container-wrapper">
+<div class="container-wrapper single_tab_page-left-aligned">
         <div class="container">
         <button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Alternatives</button>
 <div id="folder-container-1" class="dir-container">
@@ -86,6 +88,7 @@
 		<li><a href="/Changelog/v1.0.1.html"  >v1.0.1</a></li>
 		<li><a href="/Changelog/v1.0.2.html"  >v1.0.2</a></li>
 		<li><a href="/Changelog/v1.1.0.html"  >v1.1.0</a></li>
+		<li><a href="/Changelog/v1.2.0.html"  >v1.2.0</a></li>
 	</ul>
 </div>
 <button id="folder-5" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
@@ -98,8 +101,10 @@
 		<li><a href="/Configurations/Create index from tags.html"  >Create index from tags</a></li>
 		<li><a href="/Configurations/Graph view.html"  >Graph view</a></li>
 		<li><a href="/Configurations/Modes.html"  >Modes</a></li>
+		<li><a href="/Configurations/NoTabs Mode.html"  >NoTabs Mode</a></li>
 		<li><a href="/Configurations/Process All.html"  >Process All</a></li>
 		<li><a href="/Configurations/RSS Feed.html"  >RSS Feed</a></li>
+		<li><a href="/Configurations/Relative_path_html.html"  >Relative_path_html</a></li>
 		<li><a href="/Configurations/Tags Page.html"  >Tags Page</a></li>
 	</ul>
 </div>
