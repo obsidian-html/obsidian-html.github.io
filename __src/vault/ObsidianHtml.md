@@ -30,5 +30,3 @@ tags:
 
 ## Alternatives to ObsidianHtml
 - [[Quartz 3]]
-
-
