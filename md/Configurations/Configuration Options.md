@@ -63,6 +63,7 @@ We will now go through all the settings in more-or-less the same order as the ou
 | [Warn on Skipped Image](../Configurations/Configuration%20Options.md#warn-on-skipped-image) | By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off. |   
 | [no_clean](../Configurations/Configuration%20Options.md#no_clean) | Use if you want to clean the output directories yourself, e.g. to preserve the .git folder. |   
 | [relative_path_md](../Configurations/Configuration%20Options.md#relative_path_md) | Compile markdown links relatively or with absolute paths |   
+| [relative_path_html](../Configurations/Configuration%20Options.md#relative_path_html) | Compile html links relatively or with absolute paths |   
 | [external_blank](../Configurations/Configuration%20Options.md#external_blank) | Control whether external links will open in a new tab or not |   
    
 ### Feature settings   
@@ -363,6 +364,17 @@ toggles:
   relative_path_md: True
 ```
    
+   
+### relative_path_html   
+> New in [v1.2.0](../Changelog/v1.2.0.md)   
+``` yaml
+toggles:
+  # Whether the html links are made relative, instead of absolute.
+  relative_path_html: False
+```
+   
+   
+Read more: [Relative_path_html](../Configurations/Relative_path_html.md)   
    
 ## external_blank   
 ``` yaml

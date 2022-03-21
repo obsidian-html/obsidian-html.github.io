@@ -9,7 +9,7 @@ tags:
    
 *This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).*   
    
-*This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.*   
+*This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.*    
    
 This setting will enable [NoTabs Mode](../Configurations/NoTabs%20Mode.md) and disable [Graph view](../Configurations/Graph%20view.md).   
    
@@ -20,3 +20,6 @@ To enable this mode, add the following to your config.yml:
 toggles:
   relative_path_html: True
 ```
+   
+   
+Testing showed that this setting will also work with a webserver, but it is not intended for this use, so regression testing is absent and a general your-mileage-may-vary warning applies.

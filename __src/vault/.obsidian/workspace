@@ -101,14 +101,14 @@
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
     "ObsidianHtml.md",
-    "Configurations/Relative_path_html.md",
-    "Configurations/NoTabs Mode.md",
-    "Configurations/Modes.md",
-    "Configurations/Process All.md",
     "Changelog/v1.2.0.md",
+    "Configurations/Configuration Options.md",
+    "Configurations/Relative_path_html.md",
+    "Configurations/Modes.md",
+    "Configurations/NoTabs Mode.md",
+    "Configurations/Process All.md",
     "Changelog/v1.1.0.md",
     "MOCs/Features.md",
-    "Change Log.md",
-    "Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.md"
+    "Change Log.md"
   ]
 }
