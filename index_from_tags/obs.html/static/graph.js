@@ -96,7 +96,7 @@ function run(uid, pinnedNode){
                 }
                 else {
                         lables.on("click", function(d) {
-                                window.location.href = d.url;
+                                window.location.href = '/index_from_tags/'+d.url;
                                 return false;
                         });
                 }

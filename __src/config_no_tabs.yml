@@ -81,7 +81,7 @@ toggles:
 
   # Whether the markdown interpreter assumes relative path when no / at the beginning of a link
   relative_path_md: True
-  relative_path_html: false
+  relative_path_html: False
   no_tabs: True
 
   # Whether external http anchor links should have a target of "_blank"
