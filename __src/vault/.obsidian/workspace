@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Change Log.md",
+            "file": "ObsidianHtml.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Change Log.md",
+                "file": "ObsidianHtml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,13 +100,13 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
+    "ObsidianHtml.md",
     "Change Log.md",
     "Changelog/v1.2.1.md",
     "Changelog/v1.2.0.md",
     "MOCs/Features.md",
     "General Information/HTML tweaks.md",
     "Configurations/NoTabs Mode.md",
-    "ObsidianHtml.md",
     "General Information/About ObsidianHtml.md",
     "Configurations/Configuration Options.md",
     "Configurations/Relative_path_html.md"
