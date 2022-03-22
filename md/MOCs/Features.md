@@ -18,6 +18,7 @@ tags:
    
 ## HTML features   
    
+- [Tabs](../General%20Information/HTML%20tweaks.md#tabbing-system)   
 - [Graph view](../Configurations/Graph%20view.md)   
 - [Backlinks](../Configurations/Backlinks.md)   
 - [Tags Page](../Configurations/Tags%20Page.md)   

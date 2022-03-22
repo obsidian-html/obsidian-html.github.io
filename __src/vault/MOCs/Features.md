@@ -15,6 +15,7 @@ tags:
 - [[Configuration Options#Exclude Subfolders|Excluding vault subfolders]]
 
 ## HTML features
+- [[HTML tweaks#Tabbing system|Tabs]]
 - [[Graph view]]
 - [[Backlinks]]
 - [[Tags Page]]

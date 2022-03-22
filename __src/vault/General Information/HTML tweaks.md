@@ -19,7 +19,13 @@ If your notes are very neatly organised in a folder structure, we also reccommen
 ## Header links
 Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.
 
-## Scrolling notes
+## Graph view
+Read more [[Graph view|Graph View]].
+
+## Tabbing system
+The default html output uses a tab system, where each internal link opens a new note on the right of the parent note. If you don't like this, you can turn this off via the [[NoTabs Mode]], this will make every link open by itself.
+
+### Scrolling notes
 When you open a whole chain of notes, you'll be scrolled rightward to keep up.
 - To move back to the beginning, keeping all notes open, press `1`
 - To move back to the beginnning, closing all notes, click on the link in the top left (ObsidianHtml/Documentation)
@@ -27,17 +33,16 @@ When you open a whole chain of notes, you'll be scrolled rightward to keep up.
 
 Of course, the scrollbar and arrow keys are available too as methods of navigation.
 
-## Click-backs
+### Click-backs
 Clicking on a click-back corner will align that note with the left of the screen. This is a different way to move back/forward one note at a time. 
 
 The clickbacks are in the top right corner of every note:
 ![[Pasted image 20211012013603.png]]
 
-## Closing tabs
+### Closing tabs
 When you click on a new link in an earlier tab, all the open tabs after it will be closed.
 
-## Notice the url
+### Notice the url
 There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh. 
 
-## Graph view
-Read more [[Graph view|Graph View]].
+
