@@ -62,26 +62,27 @@
 <blockquote>
 <p>New in <a href="/no_tabs/Changelog/v1.2.0.html">v1.2.0</a>   </p>
 </blockquote>
-<p><em>This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).</em>   </p>
-<p><em>This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.</em>    </p>
-<p>This setting will enable <a href="/no_tabs/Configurations/NoTabs Mode.html">NoTabs Mode</a> and disable <a href="/no_tabs/Configurations/Graph view.html">Graph view</a>.   </p>
+<p>This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).   </p>
+<p>This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.    </p>
+<p>In some edgecases, you might want to use relative_path_html in conjunction with a webserver. For example if you add in custom integrations that require relative html paths.    </p>
 <blockquote>
-<p>JS file fetching is not allowed via the filesystem, so these functions have to be disabled for the site to work at all in this mode.   </p>
+<p>In versions <a href="/no_tabs/Changelog/v1.2.1.html">v1.2.1</a> and <a href="/no_tabs/Changelog/v1.2.0.html">v1.2.0</a>, this setting will enable <a href="/no_tabs/Configurations/NoTabs Mode.html">NoTabs Mode</a> and disable <a href="/no_tabs/Configurations/Graph view.html">Graph view</a>. This was turned off from version <a href="/no_tabs/Changelog/v1.2.2.html">v1.2.2</a> onwards, as the relative_path_html setting may be used with a webserver, and in those cases the tabs and graph view will work. If you intend to use the files directly from your filesystem, be sure to manually enable NoTabs and disable the Graph view. (JS file fetching is not allowed via the filesystem, so these functions have to be disabled for the site to work at all in this mode.)   </p>
 </blockquote>
 <p>To enable this mode, add the following to your config.yml:   </p>
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">relative_path_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
 
-<p>Testing showed that this setting will also work with a webserver, but it is not intended for this use, so regression testing is absent and a general your-mileage-may-vary warning applies.</p><h2>Backlinks</h2>
+<p>Testing showed that this setting will also work with a webserver, but at the moment this is not a main feature, so regression testing is absent and a general your-mileage-may-vary warning applies. If you find issues with this settings, be sure to visit <a href="/no_tabs/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a> so that we can mature this mode.</p><h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/Changelog/v1.2.0.html">v1.2.0</a></li>
+	<li><a class="backlink" href="/no_tabs/Changelog/v1.2.2.html">v1.2.2</a></li>
 	<li><a class="backlink" href="/no_tabs/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a class="backlink" href="/no_tabs/Configurations/Modes.html">Modes</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A15618419411935900674767047718914308889{level}"></svg>
-    <button class="graph_button" id="B15618419411935900674767047718914308889{level}" level="{level}" onclick="run('15618419411935900674767047718914308889'+this.level, 'Relative_path_html');">Show Graph</button>
+    <svg class="graph_svg" id="A57297826339004608305038384432445576942{level}"></svg>
+    <button class="graph_button" id="B57297826339004608305038384432445576942{level}" level="{level}" onclick="run('57297826339004608305038384432445576942'+this.level, 'Relative_path_html');">Show Graph</button>
 </div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
