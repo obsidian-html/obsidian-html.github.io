@@ -62,6 +62,7 @@ We will now go through all the settings in more-or-less the same order as the ou
 | [Allow Duplicate Filenames in Root](../Configurations/Configuration%20Options.md#allow-duplicate-filenames-in-root) | By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off. |   
 | [Warn on Skipped Image](../Configurations/Configuration%20Options.md#warn-on-skipped-image) | By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off. |   
 | [no_clean](../Configurations/Configuration%20Options.md#no_clean) | Use if you want to clean the output directories yourself, e.g. to preserve the .git folder. |   
+| [no_tabs](../Configurations/Configuration%20Options.md#no_tabs) | Turn off tabs. Read more: [NoTabs Mode](../Configurations/NoTabs%20Mode.md) |   
 | [relative_path_md](../Configurations/Configuration%20Options.md#relative_path_md) | Compile markdown links relatively or with absolute paths |   
 | [relative_path_html](../Configurations/Configuration%20Options.md#relative_path_html) | Compile html links relatively or with absolute paths |   
 | [external_blank](../Configurations/Configuration%20Options.md#external_blank) | Control whether external links will open in a new tab or not |   
@@ -245,12 +246,12 @@ Every note gets turned into its own contained html page. If you want to provide 
    
 ``` yaml
 html_custom_inclusions:
-  - '<link rel="stylesheet" href="custom.css" />'
-  - '<script src="christmas_snowflakes.js"></script>'
+  - '<link rel="stylesheet" href="/custom.css" />'
+  - '<script src="/christmas_snowflakes.js"></script>'
 ```
    
    
-> **N.b.** you'll have to place the mentioned files into the output yourself. (Unless they are located in your vault and process_all: True)   
+> **N.b.** you'll have to place the mentioned files into the output yourself, and at the correct location; in this case directly in the html output folder. (Unless they are located in your vault and [process_all](../Configurations/Configuration%20Options.md#process-all): True).   
    
    
 ## Toggles   
@@ -356,6 +357,17 @@ toggles:
    
    
 This refers to the markdown and html output folders. If you want to output html directly into a git repo, then by default it will remove the `.git` directory. To avoid this, you can write your own cleanup script to remove the previous output before running.    
+   
+### no_tabs   
+> New in version [v1.2.0](../Changelog/v1.2.0.md)   
+``` yaml
+toggles:
+  # This will skip emptying output folders, if you want to implement this yourself
+  no_tabs: False
+```
+   
+   
+Read more: [NoTabs Mode](../Configurations/NoTabs%20Mode.md).   
    
 ### relative_path_md   
 ``` yaml

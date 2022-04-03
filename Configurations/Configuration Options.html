@@ -200,6 +200,10 @@
 <td align="left">Use if you want to clean the output directories yourself, e.g. to preserve the .git folder.</td>
 </tr>
 <tr>
+<td align="left"><a href="/Configurations/Configuration Options.html#no_tabs">no_tabs</a></td>
+<td align="left">Turn off tabs. Read more: <a href="/Configurations/NoTabs Mode.html">NoTabs Mode</a></td>
+</tr>
+<tr>
 <td align="left"><a href="/Configurations/Configuration Options.html#relative_path_md">relative_path_md</a></td>
 <td align="left">Compile markdown links relatively or with absolute paths</td>
 </tr>
@@ -369,12 +373,12 @@
 
 <p>Every note gets turned into its own contained html page. If you want to provide an extra css file, or javascript file, then you can add, e.g., the following into the setting, to avoid having to edit every single page after compilation:   </p>
 <div class="codehilite"><pre><span></span><code><span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;/custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;/christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span><span class="w"></span>
 </code></pre></div>
 
 <blockquote>
-<p><strong>N.b.</strong> you'll have to place the mentioned files into the output yourself. (Unless they are located in your vault and process_all: True)   </p>
+<p><strong>N.b.</strong> you'll have to place the mentioned files into the output yourself, and at the correct location; in this case directly in the html output folder. (Unless they are located in your vault and <a href="/Configurations/Configuration Options.html#process-all">process_all</a>: True).   </p>
 </blockquote>
 <h2 id="toggles_1">Toggles</h2>
 <p>These are the first second level settings. If you have multiple settings, make sure to combine them. So not like this:   </p>
@@ -452,6 +456,16 @@
 </code></pre></div>
 
 <p>This refers to the markdown and html output folders. If you want to output html directly into a git repo, then by default it will remove the <code>.git</code> directory. To avoid this, you can write your own cleanup script to remove the previous output before running.    </p>
+<h3 id="no_tabs">no_tabs</h3>
+<blockquote>
+<p>New in version <a href="/Changelog/v1.2.0.html">v1.2.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This will skip emptying output folders, if you want to implement this yourself</span><span class="w"></span>
+<span class="w">  </span><span class="nt">no_tabs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/Configurations/NoTabs Mode.html">NoTabs Mode</a>.   </p>
 <h3 id="relative_path_md">relative_path_md</h3>
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># Whether the markdown interpreter assumes relative path when no / at the beginning of a link</span><span class="w"></span>
@@ -556,8 +570,8 @@
 	<li><a class="backlink" href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A76257554102021815385046348792387674216{level}"></svg>
-    <button class="graph_button" id="B76257554102021815385046348792387674216{level}" level="{level}" onclick="run('76257554102021815385046348792387674216'+this.level, 'Configuration Options');">Show Graph</button>
+    <svg class="graph_svg" id="A306571448735758152421417123337005143273{level}"></svg>
+    <button class="graph_button" id="B306571448735758152421417123337005143273{level}" level="{level}" onclick="run('306571448735758152421417123337005143273'+this.level, 'Configuration Options');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 

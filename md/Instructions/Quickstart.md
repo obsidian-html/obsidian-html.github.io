@@ -55,6 +55,29 @@ obsidianhtml -i config.yaml
    
 This will create the folder `output` in your current folder, containing `output/md` and `output/html` for the proper markdown and the html website respectively.   
    
+> **Do not** run this command in your vault, as it will create the output in your vault, which will cause a DuplicateFileName error on subsequent runs!    
+   
+If you place your config in your vault, then go a folder up and run `obsidianhtml -i <vault folder name>/config.yaml`. Alternatively, add the following settings to your config.yml to control the output location (adjust the paths to make sense for your environment):   
+   
+``` yaml
+# Input and output path of markdown files
+# This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
+# Use full path or relative path, but don't use ~/
+md_folder_path_str:  'C:/Users/Username/Documents/Website/md'
+
+# Markdown entrypoint path
+# This has to be md_folder_path_str + '/index.md' when toggles/compile_md == True
+# This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
+# Use full path or relative path, but don't use ~/
+md_entrypoint_path_str: 'C:/Users/Username/Documents/Website/md/index.md'
+
+# Output path of HTML files
+# This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
+# Use full path or relative path, but don't use ~/
+html_output_folder_path_str: 'C:/Users/Username/Documents/Website/html'
+```
+   
+   
 ## Test website   
 ``` bash
 python -m http.server --dir output/html

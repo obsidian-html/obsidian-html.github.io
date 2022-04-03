@@ -88,7 +88,7 @@
 
 <p>Copy the code above into a file called <code>config.yaml</code> and fill in the correct paths.   </p>
 <blockquote>
-<p><strong>Important:</strong> the next step will create a folder called <code>output</code> in your current path. Move to a folder where you don't mind a folder being created.   </p>
+<p><strong>Important:</strong> the next step will create a folder called <code>output</code> in your current path. Move to a folder where you don't mind a folder being created. Make sure you are not in your vault when running obsidianhtml with these settings, because creating the output folder in your vault will cause errors on subsequent runs.   </p>
 </blockquote>
 <p>Running again with now the config file as an input.  <br />
 (Make sure that you give the correct path to your config file!)   </p>
@@ -110,6 +110,38 @@
 
 <p>Then open <a href="http://localhost:8000" class="external-link">http://localhost:8000</a> to view the html site that was created.   </p>
 <p>Can't this to work? Please let us know via <a href="/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a>.   </p>
+<h2 id="further-configurations">Further configurations</h2>
+<p>Add the following settings to your config.yaml to control the behavior of obsidianhtml.    </p>
+<p>This section only names the configurations that most often come up when setting up the config for the first time.    </p>
+<p>For a full list of possible configurations see <a href="/Configurations/Modes.html">Modes</a> and <a href="/MOCs/Features.html">Features</a>. For a full list of all options see <a href="/Configurations/Configuration Options.html">Configuration Options</a>.   </p>
+<h3 id="control-output-location">Control output location</h3>
+<p>At the moment the output folder will just be created where ever we call <code>obsidianhtml</code> from, to pin down the output location, use an absolute path (starting with <code>&lt;Driveletter&gt;:/</code> on Windows, or starting with <code>/</code> on Linux/macOs).    </p>
+<p>Relative paths are also allowed.   </p>
+<ul>
+<li>Make sure that the <code>md_entrypoint_path_str</code> is located in <code>md_folder_path_str</code>.   </li>
+<li>The example paths below are for Windows, for Linux, and example would be <code>/home/&lt;username&gt;/Documents/Website/&lt;folder&gt;</code>   </li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;C:/Users/&lt;Username&gt;/Documents/Website/md&#39;</span><span class="w"></span>
+
+<span class="c1"># Markdown entrypoint path</span><span class="w"></span>
+<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/&lt;Username&gt;/Documents/Website/md/index.md&#39;</span><span class="w"></span>
+
+<span class="c1"># Output path of HTML files</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/&lt;Username&gt;/Documents/Website/html&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="turning-off-the-tabs">Turning off the tabs</h3>
+<p>If you don't like the tabbing behavior, this can easily be turned off, see more at <a href="/Configurations/NoTabs Mode.html">NoTabs Mode</a>   </p>
+<h3 id="html-custom-inclusions">Html Custom Inclusions</h3>
+<p>If you want to edit the style of the website output, you can add in css (and/or javascript) files. Read more here: <a href="/Configurations/Configuration Options.html#html-custom-inclusions">Html Custom Inclusions</a>.   </p>
 <h2 id="next-steps">Next steps</h2>
 <ul>
 <li><a href="/Configurations/Configuration Options.html">Configuration Options</a>   </li>
@@ -122,8 +154,8 @@
 	<li><a class="backlink" href="/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A252284863967592362103365469894720423566{level}"></svg>
-    <button class="graph_button" id="B252284863967592362103365469894720423566{level}" level="{level}" onclick="run('252284863967592362103365469894720423566'+this.level, 'Usage');">Show Graph</button>
+    <svg class="graph_svg" id="A145857849946300496541017365029416057540{level}"></svg>
+    <button class="graph_button" id="B145857849946300496541017365029416057540{level}" level="{level}" onclick="run('145857849946300496541017365029416057540'+this.level, 'Usage');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 

@@ -41,7 +41,7 @@ obsidian_entrypoint_path_str: '/path/to/your/vault/entrypoint.md'
    
 Copy the code above into a file called `config.yaml` and fill in the correct paths.   
    
-> **Important:** the next step will create a folder called `output` in your current path. Move to a folder where you don't mind a folder being created.   
+> **Important:** the next step will create a folder called `output` in your current path. Move to a folder where you don't mind a folder being created. Make sure you are not in your vault when running obsidianhtml with these settings, because creating the output folder in your vault will cause errors on subsequent runs.   
    
 Running again with now the config file as an input.    
 (Make sure that you give the correct path to your config file!)   
@@ -71,6 +71,47 @@ Then open [http://localhost:8000](http://localhost:8000) to view the html site t
    
 Can't this to work? Please let us know via [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md).   
    
+   
+## Further configurations   
+Add the following settings to your config.yaml to control the behavior of obsidianhtml.    
+   
+This section only names the configurations that most often come up when setting up the config for the first time.    
+   
+For a full list of possible configurations see [Modes](../Configurations/Modes.md) and [Features](../MOCs/Features.md). For a full list of all options see [Configuration Options](../Configurations/Configuration%20Options.md).   
+   
+### Control output location   
+At the moment the output folder will just be created where ever we call `obsidianhtml` from, to pin down the output location, use an absolute path (starting with `<Driveletter>:/` on Windows, or starting with `/` on Linux/macOs).    
+   
+Relative paths are also allowed.   
+   
+   
+- Make sure that the `md_entrypoint_path_str` is located in `md_folder_path_str`.   
+- The example paths below are for Windows, for Linux, and example would be `/home/<username>/Documents/Website/<folder>`   
+   
+``` yaml 
+# Input and output path of markdown files
+# This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
+# Use full path or relative path, but don't use ~/
+md_folder_path_str:  'C:/Users/<Username>/Documents/Website/md'
+
+# Markdown entrypoint path
+# This has to be md_folder_path_str + '/index.md' when toggles/compile_md == True
+# This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
+# Use full path or relative path, but don't use ~/
+md_entrypoint_path_str: 'C:/Users/<Username>/Documents/Website/md/index.md'
+
+# Output path of HTML files
+# This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
+# Use full path or relative path, but don't use ~/
+html_output_folder_path_str: 'C:/Users/<Username>/Documents/Website/html'
+```
+   
+   
+### Turning off the tabs   
+If you don't like the tabbing behavior, this can easily be turned off, see more at [NoTabs Mode](../Configurations/NoTabs%20Mode.md)   
+   
+### Html Custom Inclusions   
+If you want to edit the style of the website output, you can add in css (and/or javascript) files. Read more here: [Html Custom Inclusions](../Configurations/Configuration%20Options.md#html-custom-inclusions).   
    
 ## Next steps   
    
