@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Changelog/v2.0.0.md",
+            "file": "Change Log.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Changelog/v2.0.0.md",
+                "file": "Change Log.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,6 +101,7 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
+    "Change Log.md",
     "Changelog/v2.0.0.md",
     "Changelog/v2.0.1.md",
     "Configurations/Configuration Options.md",
@@ -108,7 +109,6 @@
     "Configurations/NoTabs Mode.md",
     "Configurations/Styling/Styling.md",
     "ObsidianHtml.md",
-    "Change Log.md",
     "Configurations/Website navigation menu.md",
     "Configurations/Relative_path_html.md"
   ]
