@@ -160,7 +160,17 @@
 <p>You can add <code>[TOC]</code> to your note to add in a table of contents (toc) in that location.    </p>
 <p>If you want a toc for every note, you can skip this in Obsidian (which doesn't support this at the time of writing, at least not out of the box), and just set <code>add_toc</code> to True. This will add <code>[TOC]</code> to the top of every note just before compiling the html.    </p>
 <p>This looks a bit weird though, as there is no header, just a list at the top of the note. It is best to also enable <code>toc_pane</code> if you are in the documentation or no_tabs layout. This will add the toc in a separate box on the right of the note.    </p>
-<p>In the documentation layout there are two "panes", one for the content view, and one for the table of contents. By default the toc is on the right and the content view on the left. If you want to flip this over you should set <code>flip_panes: True</code> (which is what I did for this website).</p><h2>Backlinks</h2>
+<p>In the documentation layout there are two "panes", one for the content view, and one for the table of contents. By default the toc is on the right and the content view on the left. If you want to flip this over you should set <code>flip_panes: True</code> (which is what I did for this website).   </p>
+<h2 id="max-note-width">Max note width</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">52rem</span><span class="w"> </span><span class="c1"># not supported for layout: tabs</span><span class="w"></span>
+</code></pre></div>
+
+<p>This determines the max width of the content div.    </p>
+<p>This is not supported for the tabs layout as there the width of the notes is more or less tied to the well-being of the tab automation.   </p>
+<p>This can be set to any valid CSS width value, such as <code>100%</code>, or <code>450px</code>. If you want the note to be as wide as possible then 100% will be a good value to configure. Personally I find content divs that are a bit less wide easier to read, and the current configured width ties together nicely with the documentation layout.</p><h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Configurations/Features.html">Features</a></li>
 	<li><a class="backlink" href="/tabs/Configurations/Styling/Tabs Layout.html">Tabs Layout</a></li>
@@ -172,8 +182,8 @@
 	<li><a class="backlink" href="/tabs/index.html">index</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A276842250550559364004833086788203271709{level}"></svg>
-    <button class="graph_button" id="B276842250550559364004833086788203271709{level}" level="{level}" onclick="run('276842250550559364004833086788203271709'+this.level, 'Styling');">Show Graph</button>
+    <svg class="graph_svg" id="A137356101579774679108012375288306691287{level}"></svg>
+    <button class="graph_button" id="B137356101579774679108012375288306691287{level}" level="{level}" onclick="run('137356101579774679108012375288306691287'+this.level, 'Styling');">Show Graph</button>
 </div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 

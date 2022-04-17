@@ -73,3 +73,17 @@ If you want a toc for every note, you can skip this in Obsidian (which doesn't s
 This looks a bit weird though, as there is no header, just a list at the top of the note. It is best to also enable `toc_pane` if you are in the documentation or no_tabs layout. This will add the toc in a separate box on the right of the note. 
 
 In the documentation layout there are two "panes", one for the content view, and one for the table of contents. By default the toc is on the right and the content view on the left. If you want to flip this over you should set `flip_panes: True` (which is what I did for this website).
+
+## Max note width
+``` yaml
+toggles:
+  features:
+    styling: 
+      max_note_width: 52rem # not supported for layout: tabs
+```
+
+This determines the max width of the content div. 
+
+This is not supported for the tabs layout as there the width of the notes is more or less tied to the well-being of the tab automation.
+
+This can be set to any valid CSS width value, such as `100%`, or `450px`. If you want the note to be as wide as possible then 100% will be a good value to configure. Personally I find content divs that are a bit less wide easier to read, and the current configured width ties together nicely with the documentation layout.
