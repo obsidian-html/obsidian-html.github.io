@@ -393,6 +393,10 @@ a.navbar-link:hover
         flex-direction: column;
         margin-top: -1rem;
     }
+    #header_flex2 {
+        flex-direction: column;
+        margin-top: -1rem;
+    }    
     .navbar {
         margin-top: 1rem;
         margin-left: -0.7rem;
