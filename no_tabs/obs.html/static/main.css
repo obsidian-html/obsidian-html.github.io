@@ -67,7 +67,7 @@ h4 + table {
     padding: 2rem;
     height: calc(100vh - 5rem);
     overflow-y: scroll;
-    scrollbar-color: #ff00cb12 #ffffff;
+    scrollbar-color: #f742d112 #ffffff;
     scroll-margin-top: 2rem;
     max-width: 200rem;
 }
@@ -128,7 +128,7 @@ h4 + table {
     padding-top: 0.9rem;
     overflow-y: scroll;
     height: calc(90vh - 4rem);
-    scrollbar-color: #ff00cb12 #ffffff;
+    scrollbar-color: #f742d112 #ffffff;
 }
 #left_pane{
     padding-left: 1.7rem;
@@ -198,7 +198,7 @@ h4 + table {
 
 #homelink {
     width: 15.5rem;
-    background-color: #ff00cb14;
+    background-color: #f742d114;
     padding: 1rem;
     max-width: max-content;
     margin-top: -1rem;
@@ -217,8 +217,8 @@ h4 + table {
     display: none;
     width: calc(100vw - 4rem);
     text-align: center;
-    background-color: #ff00cb2b;
-    color: #ff00cb;
+    background-color: #f742d12b;
+    color: #f742d1;
     padding: 0.7rem;
     border-radius: 0.4rem;
     padding-top: 0.2rem;
@@ -382,7 +382,7 @@ a.navbar-link:visited
     color: #161616;
 }
 .navbar-link:hover {
-    background-color: #ff00cb;
+    background-color: #f742d1;
     color: white;
     text-decoration: none;
 }
@@ -394,10 +394,10 @@ a.navbar-link:hover
 
 
 #homelink:visited {
-    color: #ff00cb;
+    color: #f742d1;
 }
 #homelink:link {
-    color: #ff00cb;
+    color: #f742d1;
 }
 
 .external-link::after {
@@ -414,7 +414,7 @@ a.navbar-link:hover
 
 
 blockquote {
-    background-color: #ff00cb12;
+    background-color: #f742d112;
     padding: 0rem 0rem 0rem 0.5rem;
     margin: 0rem;
     margin-bottom: 0.5rem;

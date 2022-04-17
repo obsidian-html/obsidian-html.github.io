@@ -3,25 +3,7 @@
     text-rendering: optimizeLegibility;
   }
   
-table {
-    width: 100%;
-}
-table, th, td {
-    border-bottom: 1px solid #999;
-    border-right: 1px dotted #6f6f6f;
-    border-left: 1px dotted #6f6f6f;
-    padding: 0.3rem;
-    text-align: left;
-    border-collapse: collapse;
-}
-th {
-    text-transform: capitalize;
-    background-color: #f5f7ff;
-    border-right: 1px solid #d8e0e8;
-    border-left: 1px solid #d8e0e8;
-}
-
-body {
+  body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: rgb(51, 51, 51);
     margin: 0rem;
@@ -29,6 +11,42 @@ body {
     overflow-x: scroll;
     display: flex;
 }
+  
+table {
+    margin: 1.5rem;
+    margin-left: 0rem;
+    text-align: left;
+    border-collapse: collapse;
+}
+td {
+    border-bottom: 1px solid #ececec;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+td:nth-child(2n) {
+    border-left: 1px dotted #cecece;
+}
+td:first-child {
+    min-width: max-content;
+}
+th:first-child, td:first-child{
+    padding-left: 0rem;
+}
+tr:last-child td {
+    border-bottom: 0px;
+}
+th {
+    text-transform: capitalize;
+    border: 0px;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    font-weight: normal;
+    font-style: italic;
+    color: #9fbcd7;    
+}
+
+
 .container {
     padding: 2rem;
     height: calc(100vh - 5rem);
@@ -245,7 +263,7 @@ a.nonexistent-link:visited {
 
 
 blockquote {
-    background-color: #68ca0612;
+    background-color: #4c950212;
     padding: 0rem 0rem 0rem 0.5rem;
     margin: 0rem;
     margin-bottom: 0.5rem;
@@ -327,8 +345,8 @@ span.tag {
     display: none;
     width: calc(100vw - 4rem);
     text-align: center;
-    background-color: #68ca062b;
-    color: #68ca06;
+    background-color: #4c95022b;
+    color: #4c9502;
     padding: 0.7rem;
     border-radius: 0.4rem;
     padding-top: 0.2rem;
@@ -355,7 +373,7 @@ a.navbar-link:visited
     color: #161616;
 }
 .navbar-link:hover {
-    background-color: #68ca06;
+    background-color: #4c9502;
     color: white;
     text-decoration: none;
 }
@@ -365,14 +383,14 @@ a.navbar-link:hover
     color: white;
 }
 #homelink:visited {
-    color: #68ca06;
+    color: #4c9502;
 }
 #homelink:link {
-    color: #68ca06;
+    color: #4c9502;
 }
 #homelink {
     width: 15.5rem;
-    background-color: #68ca0614;
+    background-color: #4c950214;
     padding: 1rem;
     padding-top:0.5rem;
     padding-bottom:0.5rem;
