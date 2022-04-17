@@ -1,4 +1,6 @@
 ---
+obs.html:
+  disable_dir_nav: true
 tags:
 - type/test_page
 - date/2022-02-12

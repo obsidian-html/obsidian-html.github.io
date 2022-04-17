@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Styling">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/index_from_tags</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/main.css" />
+                <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'Styling';
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#styling" class="anchor-link">Styling</a><ul>
+<li><a href="#layouts" class="anchor-link">Layouts</a><ul>
+<li><a href="#documentation" class="anchor-link">Documentation</a></li>
+<li><a href="#tabs" class="anchor-link">Tabs</a></li>
+<li><a href="#no-tabs" class="anchor-link">No tabs</a></li>
+<li><a href="#which-to-choose" class="anchor-link">Which to choose?</a></li>
+</ul>
+</li>
+<li><a href="#accent-color" class="anchor-link">Accent color</a></li>
+<li><a href="#table-of-contents" class="anchor-link">Table of Contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="styling">Styling</h1>
+<blockquote>
+<p>This page discusses the built-in styling options. If you want to use custom code, go to <a href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a>.   </p>
+</blockquote>
+<h2 id="layouts">Layouts</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no_tabs</span><span class="w"> </span><span class="c1"># documentation, tabs, no_tabs</span><span class="w"></span>
+</code></pre></div>
+
+<p>For the layout you can choose between <code>documentation</code>, <code>tabs</code>, and <code>no_tabs</code>.     </p>
+<p>The layout will influence the structure of the pages that are generated. There is a short description below for each layout.    </p>
+<p>To get an actual impression, check out this same site with the different layouts:   </p>
+<ul>
+<li><a href="https://obsidian-html.github.io//tabs" class="external-link">tabs</a>   </li>
+<li><a href="https://obsidian-html.github.io//no_tabs" class="external-link">no_tabs</a>   </li>
+<li><a href="https://obsidian-html.github.io/" class="external-link">documentation</a> (the default)   </li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<p>The documentation layout is used for this site. This layout is suited for people who like to establish a well thought out folder structure, and for − as the name says − documentation vaults such as this one. It is the only layout that supports the content view, which is a list of notes that share the same folder.   </p>
+<h3 id="tabs">Tabs</h3>
+<p>The tabs layout is for people who use the smart note taking / zettelkasten methods, where dense linkage is prefered over giving a strict structure from the get-go. It allows to have multiple notes open at one time, and to scroll back and forth, following a thread of related notes. Tabs has some added navigation options to mediate in the infinite scrolling of notes. Read more on that <a href="/index_from_tags/Configurations/Styling/Tabs Layout.html">here</a>.   </p>
+<h3 id="no-tabs">No tabs</h3>
+<p>No tabs is basically the same as when you view markdown documentation on for example github. One note per page, and every link opens to a new page.   </p>
+<h3 id="which-to-choose">Which to choose?</h3>
+<p>Documentation is set to the default, as I use it for this website, and thus it will be better tested and more stable. (Not to say that the other modes are unstable, though).    </p>
+<p>Personally I like to start off with a very loose structure, and thus use tabs mode. When my vault gets to a certain size, I apply a folder structure, and at that point it could be interesting to move over to the documentation layout.    </p>
+<p>The no tabs layout is nice for people who don't want anything fancy, or who want to <a href="/index_from_tags/Configurations/Configuration Options.html#html-custom-inclusions">edit the website's css</a>, which is a bit easier in this layout as less is happening. Though it should be said that of course the CSS can be edited in every layout mode.   </p>
+<p>In the end there is just the personal preference, so try them out and see which you like best.   </p>
+<h2 id="accent-color">Accent color</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#414cfd&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>This is used to give some color here and there. It is one color that is reused here and there by giving it some extra transparency, making it a bit lighter.   </p>
+<p>Try to use a very bold, slightly dark color, so that the lighter color used in the quotes and scrollbars is still decently visible.   </p>
+<p>For anything more involved you currently have to <a href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">edit the css by hand</a>.   </p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">    </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span><span class="w"></span>
+<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">   </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span><span class="w"></span>
+</code></pre></div>
+
+<p>You can add <code>[TOC]</code> to your note to add in a table of contents (toc) in that location.    </p>
+<p>If you want a toc for every note, you can skip this in Obsidian (which doesn't support this at the time of writing, at least not out of the box), and just set <code>add_toc</code> to True. This will add <code>[TOC]</code> to the top of every note just before compiling the html.    </p>
+<p>This looks a bit weird though, as there is no header, just a list at the top of the note. It is best to also enable <code>toc_pane</code> if you are in the documentation or no_tabs layout. This will add the toc in a separate box on the right of the note.    </p>
+<p>In the documentation layout there are two "panes", one for the content view, and one for the table of contents. By default the toc is on the right and the content view on the left. If you want to flip this over you should set <code>flip_panes: True</code> (which is what I did for this website).</p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/Configurations/NoTabs Mode.html">NoTabs Mode</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Tabs Layout.html">Tabs Layout</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A230793153270484231965597487017395166769{level}"></svg>
+    <button class="graph_button" id="B230793153270484231965597487017395166769{level}" level="{level}" onclick="run('230793153270484231965597487017395166769'+this.level, 'Styling');">Show Graph</button>
+</div>
+<script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
+        </div>
+
+<script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
+</body>
+</html>

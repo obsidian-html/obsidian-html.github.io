@@ -1,4 +1,6 @@
 ---
+obs.html:
+  disable_dir_nav: true
 tags:
 - type/configuration
 - date/2022-02-12

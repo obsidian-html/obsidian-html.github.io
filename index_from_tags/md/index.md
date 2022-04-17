@@ -9,7 +9,7 @@
 - [AutomationLinuxGit](./Automation/AutomationLinuxGit.md)   
 - [AutomationWindowsSSH](./Automation/AutomationWindowsSSH.md)   
 - [AutomationWindows](./Automation/AutomationWindows.md)   
-- [Automate website deployment](./MOCs/Automate%20website%20deployment.md)   
+- [Automate website deployment](./Automation/Automate%20website%20deployment.md)   
    
 ## feature/parsing_markdown   
    

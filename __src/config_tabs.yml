@@ -1,0 +1,188 @@
+# The first folder that contains all obsidian files
+# Can be absent when toggles/compile_md == False
+# Use full path or relative path, but don't use ~/
+obsidian_folder_path_str: '/home/dorus/git/obsidian-html.github.io/__src/vault/' 
+
+# The note that will be used as the index.html 
+# should be in obsidian_folder_path_str
+# Can be absent when toggles/compile_md == False
+# Use full path or relative path, but don't use ~/
+obsidian_entrypoint_path_str: '/home/dorus/git/obsidian-html.github.io/__src/vault/ObsidianHtml.md'
+
+# Input and output path of markdown files
+# This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
+# Use full path or relative path, but don't use ~/
+md_folder_path_str:  '/home/dorus/git/obsidian-html.github.io/tabs/md/'
+
+# Markdown entrypoint path
+# This has to be md_folder_path_str + '/index.md' when toggles/compile_md == True
+# This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
+# Use full path or relative path, but don't use ~/
+md_entrypoint_path_str: '/home/dorus/git/obsidian-html.github.io/tabs/md/index.md'
+
+# Output path of HTML files
+# This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
+# Use full path or relative path, but don't use ~/
+html_output_folder_path_str: '/home/dorus/git/obsidian-html.github.io/tabs/'
+
+# Will be inputted into the Html template as page title
+# Not used anywhere else atm.
+site_name: 'ObsidianHtml/Tabs-Mode'
+
+# Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/
+# use '/html_prefix' (prepend slash, no slash at the end)
+html_url_prefix: '/tabs'
+
+# Provide the fullpath to a template file to use instead of standard template. 
+# Note that this file must contain at least "{content}" somewhere in the page.
+html_template_path_str: ''
+
+# Exclude subfolders
+# These are relative to obsidian_folder_path_str
+# To exclude a folder two levels deep, use level1/level2
+exclude_subfolders:
+  - ".obsidian"
+  - "testexclude/testexclude2"
+  - ".trash"
+  - ".DS_Store"
+  - ".git"
+  - "__src"
+  - "md"
+  - "obs.html"
+
+# Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect
+# the vault data. Should be fine to turn off if copying the vault takes too long / disk space is too limited.
+copy_vault_to_tempdir: True
+
+navbar_links:
+  - name: Home
+    link: index.html
+  - name: About
+    link: General Information/About ObsidianHtml.html  
+  - name: Quickstart
+    link: Instructions/Quickstart.html
+  - name: Styling
+    link: Configurations/Styling/Styling.html    
+  - name: Modes
+    link: Configurations/Modes.html
+  - name: Features
+    link: Configurations/Features.html
+  - name: Configurations
+    link: Configurations/Configuration Options.html
+  - name: News
+    link: News.html    
+
+toggles:
+  # Opt-in/-out of Obsidian->Md conversion, set to False when using proper markdown as input
+  compile_md: True
+
+  # Opt-in/-out of Md->Html conversion, set to False when only wanting to get proper markdown from Obsidian
+  compile_html: True
+
+  # If this is false only the entrypoint and all its links (recursively) are processed
+  # if true all the notes will be processed
+  process_all: False
+
+  # Can be overwritten ad-hoc by using "obsidianhtml -i config.yml -v" (the -v option)
+  verbose_printout: False
+
+  # Write extra information to log_output_folder_path_str
+  extended_logging: True
+
+  # This option should be False for Obsidian->Md, but can be True when compile_md == False
+  # Setting it to True will cause an error when two files with the same file name are found anywhere in the input folder
+  allow_duplicate_filenames_in_root: False
+
+  # Sometimes linked images that should be local (based on the path) cannot be found.
+  # Toggle this to False to disable warnings if that happens.
+  warn_on_skipped_image: True
+
+  # This will skip emptying output folders, if you want to implement this yourself
+  no_clean: True
+
+  # Whether the markdown interpreter assumes relative path when no / at the beginning of a link
+  relative_path_md: True
+  relative_path_html: False
+
+  # Whether external http anchor links should have a target of "_blank"
+  external_blank: False
+  
+  features:
+    styling: 
+      layout: tabs # documentation, tabs, no_tabs
+      add_toc: False    # add "[TOC]" (Table of Contents) when missing
+      toc_pane: False   # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
+      flip_panes: True # switch right and left pane around. (does nothing unless in documentation layout.)
+      accent_color: '#68ca06'
+
+    # Show backlinks at the bottom of each note
+    backlinks:
+      enabled: True
+
+    graph:
+      enabled: True           # Include code to build the graph view per page (default: True)
+      coalesce_force: '-200'
+
+    # Create an index.md with links to notes that have one of the given tags.
+    # This index.md will serve as the entrypoint
+    # !! Enabling this feature will overwrite obsidian_entrypoint_path_str and md_entrypoint_path_str
+    # !  Will only work for process_all: True at the moment.
+    create_index_from_tags:
+      enabled: False
+      tags:
+        - include_this
+        - type/quote
+        - type/parsing_markdown
+      add_links_in_graph_tree: True # The index.md will be created, and thus will be without links, this setting will create links to the notes that are matched.
+
+
+    rss:
+      enabled: True
+      host_root: 'https://obsidian-html.github.io/'
+      styling: 
+        show_icon: True
+      channel: 
+        title: 'ObsidianHtml/Documentation'
+        website_link: 'https://obsidian-html.github.io'
+        description: 'The documentation site of ObsidianHtml, a package used to convert Obsidian notes to proper markdown and static HTML websites.'
+        language_code: 'en-us'
+        managing_editor: 'collector@dwrolvink.com'
+        web_master: 'collector@dwrolvink.com'
+      items:
+        selector: 
+          match_keys: ['yaml','tags', ['']]
+          exclude_keys: ['yaml','tags', ['type/moc']]
+          include_subfolders: ['Log', 'Changelog']
+          exclude_subfolders: ['.git', 'md', 'index_from_tags', 'obs.html','__src']
+          exclude_files: ['not_created.html', 'index.html']
+        description:
+          selectors:
+            - ['yaml','rss:description']
+            - ['first-paragraphs', 2, '<br/><br/>']
+            - ['first-header', 1]
+        title: 
+          selectors: 
+            - ['yaml','rss:title']
+            - ['first-header', 1]
+            - ['path', ['parent',1], '/ ', ['stem']]
+        publish_date: 
+          selectors: 
+            - ['yaml','rss:publish_date']
+            - ['yaml_strip','tags',['date/']]
+          iso_formatted: True
+          format_string: '' #'%Y-%m-%d'
+
+    create_index_from_dir_structure:
+      enabled: True
+      rel_output_path: 'obs.html/dir_index.html'
+      styling: 
+        show_icon: True
+      exclude_subfolders:
+        - ".git"
+        - "__src"
+        - "md"
+        - "obs.html"
+        - "Resources"
+      exclude_files:
+        - "favicon.ico"
+        - "not_created.html"

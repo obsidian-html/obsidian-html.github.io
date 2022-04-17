@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 474
   },
   "right": {
     "id": "9ae8adc8c4e0832c",
@@ -96,18 +96,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
     "Configurations/Configuration Options.md",
-    "Configurations/NoTabs Mode.md",
-    "Instructions/Usage.md",
-    "MOCs/Features.md",
-    "Instructions/Quickstart.md",
-    "Instructions/Installation.md",
-    "Instructions/Run custom code.md",
+    "Changelog/v2.0.0.md",
     "Changelog/v1.2.2.md",
+    "Configurations/NoTabs Mode.md",
+    "Configurations/Styling/Styling.md",
+    "ObsidianHtml.md",
+    "Change Log.md",
+    "Configurations/Website navigation menu.md",
     "Configurations/Relative_path_html.md",
     "Configurations/Modes.md"
   ]

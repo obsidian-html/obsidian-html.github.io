@@ -1,5 +1,4 @@
 ---
-graph_name: Images
 tags:
 - feature/parsing_markdown
 - date/2022-02-04

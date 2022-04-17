@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Create Index from Directory Structure">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/Tabs-Mode</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/tabs/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/tabs/obs.html/static/main.css" />
+                <script src="/tabs/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/tabs/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/tabs/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        // // add prefix to hash to avoid scrolling
+                        // if (0 == 0){
+                        //         if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
+                        //                 window.location.hash = '!' + window.location.hash.substr(1);
+                        //         }
+                        // }
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+        <div class="flex_col" id="site_column">
+                <div id="header" class="header" style="position:fixed">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Tabs-Mode</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                <a class="navbar-link"href="/tabs/index.html" title="Home">Home</a>
+<a class="navbar-link"href="/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
+<a class="navbar-link"href="/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
+<a class="navbar-link"href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link"href="/tabs/Configurations/Modes.html" title="Modes">Modes</a>
+<a class="navbar-link"href="/tabs/Configurations/Features.html" title="Features">Features</a>
+<a class="navbar-link"href="/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link"href="/tabs/News.html" title="News">News</a>
+                                        <div class="icon-tray">
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/tabs/obs.html/tags/index.html" class="system-link" title="Open tag view">
+                                                                <img src = "/tabs/obs.html/static/hashtag.svg" alt="Tags view"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/tabs/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Tabs-Mode</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                <a class="navbar-link"href="/tabs/index.html" title="Home">Home</a>
+<a class="navbar-link"href="/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
+<a class="navbar-link"href="/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
+<a class="navbar-link"href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link"href="/tabs/Configurations/Modes.html" title="Modes">Modes</a>
+<a class="navbar-link"href="/tabs/Configurations/Features.html" title="Features">Features</a>
+<a class="navbar-link"href="/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link"href="/tabs/News.html" title="News">News</a>
+                                        <div class="icon-tray">
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="rss_link" class="system-link" href="/tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/tabs/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/tabs/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/tabs/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>                
+                <div class="flex_row" id="container_row">
+                        <div class="container-wrapper ">
+                                <div class="container">
+                                <h1 id="create-index-from-directory-structure">Create Index from Directory Structure</h1>
+<blockquote>
+<p>New in <a href="/tabs/Changelog/v1.0.0.html">v1.0.0</a>   </p>
+</blockquote>
+<p>If you want to build an index note on the fly, where it just shows the directory structure of the html output, then you can enable this feature.   </p>
+<p>By default this feature is turned on, but it will only create a new page at location <a href="/obs.html/dir_index.html">/obs.html/dir_index.html</a>, which is accessible via the dirtree icon in the top right of the page.   </p>
+<blockquote>
+<p>Note: As opposed to <a href="/tabs/Configurations/Create index from tags.html">Create index from tags</a>, this is not a note selection feature. This is an HTML-only addon that creates a new html page to the HTML output folder, like the <a href="/tabs/Configurations/Tags Page.html">Tags Page</a> feature. <a href="/tabs/Configurations/Create Index from Directory Structure.html#overwrite-the-homepage">Overwriting the homepage</a> is optional, and not the default setting.   </p>
+</blockquote>
+<h2 id="example">Example</h2>
+<p>You can view an index that is created in this way under <a href="/obs.html/dir_index.html">/obs.html/dir_index.html</a>. This is the default location.    </p>
+<h2 id="disable-the-feature">Disable the feature</h2>
+<p>This feature can take some time to process, especially on older machines. To disable it, simply add this to your config:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="disable-the-icon">Disable the icon</h2>
+<p>If you like having the dirtree index, but you don't like the icon, then you can disable it by adding this to your config:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="exclude-foldersfiles">Exclude folders/files</h2>
+<p>There is a good chance that you will want to exclude folders and/or files from being shown on the dirtree index page. This is our configuration, for reference:   </p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;md&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;obs.html&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Resources&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;favicon.ico&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>The defaults for these settings can be found via <a href="/tabs/Configurations/Configuration Options.html#get-all-the-default-settings">Configuration Options#Get all the default settings</a>. At the time of writing these are:   </p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;md&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;obs.html&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;favicon.ico&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="overwrite-the-homepage">Overwrite the homepage</h3>
+<p>If you want to use the index generated by this feature as your homepage, then a configuration like this might work for you:   </p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;md&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;obs.html&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;favicon.ico&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;index.html&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Note the <code>rel_output_path</code> setting. This can also be set to any subpath of the <a href="/tabs/Configurations/Configuration Options.html#html_output_folder_path_str">html_output_folder</a> that you wish. The parent folders are automatically created when necessary.</p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
+	<li><a class="backlink" href="/tabs/Changelog/v1.0.1.html">v1.0.1</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Features.html">Features</a></li>
+	<li><a class="backlink" href="/tabs/Buglog/File links in dirtree note do not work.html">File links in dirtree note do not work</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Modes.html">Modes</a></li>
+	<li><a class="backlink" href="/tabs/General Information/Using the website.html">Using the website</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A156016043820715097252523264052740133522{level}"></svg>
+    <button class="graph_button" id="B156016043820715097252523264052740133522{level}" level="{level}" onclick="run('156016043820715097252523264052740133522'+this.level, 'Create Index from Directory Structure');">Show Graph</button>
+</div>
+<script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
+
+                                <!-- end content -->
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <script src="/tabs/obs.html/static/obsidian.js" type="text/javascript"></script>
+</body>
+</html>

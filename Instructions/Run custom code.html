@@ -24,41 +24,56 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        // add prefix to hash to avoid scrolling
-                        if (0 == 0){
-                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
-                                        window.location.hash = '!' + window.location.hash.substr(1);
-                                }
-                        }
+                        const CURRENT_NODE = 'Run custom code';
                 </script>
         </head>
 
 <body onload="LoadPage();">
-<div id="header" class="header">
-        <a href="/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
-
-        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
-        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                <a class="navbar-link"href="/index.html" title="Home">Home</a>
+<a class="navbar-link"href="/General Information/About ObsidianHtml.html" title="About">About</a>
+<a class="navbar-link"href="/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
+<a class="navbar-link"href="/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link"href="/Configurations/Modes.html" title="Modes">Modes</a>
+<a class="navbar-link"href="/Configurations/Features.html" title="Features">Features</a>
+<a class="navbar-link"href="/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link"href="/News.html" title="News">News</a>
+                                        <div class="icon-tray">
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="rss_link" class="system-link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
                     <img src = "/obs.html/static/rss.svg" alt="RSS Feed link"/>
             </a>
         </div>
-                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
-                        <a href="/obs.html/tags/index.html" title="Open tag view">
-                                <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
-                        </a>
-                </div>
-        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="dirtree_link" class="system-link" href="/obs.html/dir_index.html" title="View directory tree">
                     <img src = "/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-        </div>
-
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#run-custom-code" class="anchor-link">Run custom code</a></li>
+</ul>
 </div>
-<div class="container-wrapper ">
-        <div class="container">
-        <h1 id="run-custom-code">Run custom code</h1>
+<h1 id="run-custom-code">Run custom code</h1>
 <p>These steps describe how to install the requirements and use obsidianhtml from the code, instead of installing it as a package.    </p>
 <p>This way you can quickly test changes.   </p>
 <p>For the normal installation process, follow <a href="/Instructions/Installation.html">Installation</a>.   </p>
@@ -81,16 +96,18 @@ python -m obsidianhtml -i /path/to/config.yml
 	<li><a class="backlink" href="/Instructions/Installation.html">Installation</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A337279334370659968605386517903654962857{level}"></svg>
-    <button class="graph_button" id="B337279334370659968605386517903654962857{level}" level="{level}" onclick="run('337279334370659968605386517903654962857'+this.level, 'Run custom code');">Show Graph</button>
+    <svg class="graph_svg" id="A80809790043340497070945639327098067508{level}"></svg>
+    <button class="graph_button" id="B80809790043340497070945639327098067508{level}" level="{level}" onclick="run('80809790043340497070945639327098067508'+this.level, 'Run custom code');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
-        <!-- end content -->
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
         </div>
-</div>
-
 
 <script src="/obs.html/static/obsidian.js" type="text/javascript"></script>
+
 </body>
 </html>

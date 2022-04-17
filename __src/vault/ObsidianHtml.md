@@ -1,4 +1,6 @@
 ---
+obs.html:
+  disable_dir_nav: true
 tags:
 - type/entrypoint
 ---
@@ -6,14 +8,14 @@ tags:
 # ObsidianHtml
 | Status | Version|
 | :------ | :---| 
-| Last published version | [obsidianhtml-1.2.2](https://pypi.org/project/obsidianhtml/) |
-| Currently working on | [obsidianhtml-1.X.X](https://github.com/obsidian-html/obsidian-html/issues)  [![TestSuite](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml/badge.svg)](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml)|
+| Last published version | [obsidianhtml-2.0.0](https://pypi.org/project/obsidianhtml/) |
+| Currently working on | [obsidianhtml-2.X.X](https://github.com/obsidian-html/obsidian-html/issues)  [![TestSuite](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml/badge.svg)](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml)|
 
 ## Table of Contents
 ### General information
 - [[About ObsidianHtml]]
 - [[Report Issues & Request features]]
-- [[HTML tweaks|How to navigate this site]]
+- [[Using the website|How to navigate this site]]
 - [[News]]
 - [[Change Log]]
 
@@ -22,6 +24,7 @@ tags:
 - [[Installation]]
 - [[Usage]]
 - [[Modes]]
+- [[Styling]]
 - [[Features]]
 - [[Configuration Options]]
 

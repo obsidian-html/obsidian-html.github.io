@@ -32,10 +32,4 @@ This can be useful if you want a basic website for personal use, and don't want 
 
 Read more [[Relative_path_html]].
 
-## No Tabs Mode
-Don't like how the tabs work? You can disable them if you want a simpler browsing experience. 
-
-View this site in no_tabs mode: https://obsidian-html.github.io/no_tabs/
-
-Read more [[NoTabs Mode]]
 

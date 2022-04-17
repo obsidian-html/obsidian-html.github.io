@@ -24,37 +24,52 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        // add prefix to hash to avoid scrolling
-                        if (0 == 0){
-                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
-                                        window.location.hash = '!' + window.location.hash.substr(1);
-                                }
-                        }
+                        const CURRENT_NODE = 'Modes';
                 </script>
         </head>
 
 <body onload="LoadPage();">
-<div id="header" class="header">
-        <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
-
-        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
-
-                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
-                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
-                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
-                        </a>
-                </div>
-        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-        </div>
-
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#modes" class="anchor-link">Modes</a><ul>
+<li><a href="#entrypoint-mode" class="anchor-link">Entrypoint mode</a></li>
+<li><a href="#process-all" class="anchor-link">Process all</a></li>
+<li><a href="#create-index-from-tags" class="anchor-link">Create index from tags</a></li>
+<li><a href="#create-index-from-directory-structure" class="anchor-link">Create index from directory structure</a></li>
+<li><a href="#relative_path_html" class="anchor-link">Relative_path_html</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<div class="container-wrapper ">
-        <div class="container">
-        <h1 id="modes">Modes</h1>
+<h1 id="modes">Modes</h1>
 <p>A <em>mode</em> is a term used for certain <a href="/index_from_tags/Configurations/Configuration Options.html">configuration settings</a> that alter the note selection and/or the contents of the homepage.   </p>
 <h2 id="entrypoint-mode">Entrypoint mode</h2>
 <p>This is the default. An obsidian (<a href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">or markdown</a>) note is selected that functions as the homepage. All the notes linked to by the entrypoint node are parsed, and the notes they link to, and so on and so forth.   </p>
@@ -70,26 +85,24 @@
 <h2 id="relative_path_html">Relative_path_html</h2>
 <p>This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).   </p>
 <p>This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.   </p>
-<p>Read more <a href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a>.   </p>
-<h2 id="no-tabs-mode">No Tabs Mode</h2>
-<p>Don't like how the tabs work? You can disable them if you want a simpler browsing experience.    </p>
-<p>View this site in no_tabs mode: <a href="https://obsidian-html.github.io/no_tabs/" class="external-link">https://obsidian-html.github.io/no_tabs/</a>   </p>
-<p>Read more <a href="/index_from_tags/Configurations/NoTabs Mode.html">NoTabs Mode</a></p><h2>Backlinks</h2>
+<p>Read more <a href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a>.</p><h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A101244511194972865901601204626049534604{level}"></svg>
-    <button class="graph_button" id="B101244511194972865901601204626049534604{level}" level="{level}" onclick="run('101244511194972865901601204626049534604'+this.level, 'Modes');">Show Graph</button>
+    <svg class="graph_svg" id="A294871510430908000066817116354259349452{level}"></svg>
+    <button class="graph_button" id="B294871510430908000066817116354259349452{level}" level="{level}" onclick="run('294871510430908000066817116354259349452'+this.level, 'Modes');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
-        <!-- end content -->
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
         </div>
-</div>
-
 
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
 </body>
 </html>

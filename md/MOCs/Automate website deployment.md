@@ -1,5 +1,7 @@
 ---
 graph_name: Automate website deployment
+obs.html:
+  disable_dir_nav: true
 tags:
 - type/automation
 - date/2022-02-04

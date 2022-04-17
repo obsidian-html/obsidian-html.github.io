@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Tabs Layout">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/index_from_tags</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/main.css" />
+                <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'Tabs Layout';
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#tabs-layout" class="anchor-link">Tabs Layout</a><ul>
+<li><a href="#scrolling-notes" class="anchor-link">Scrolling notes</a></li>
+<li><a href="#closing-tabs" class="anchor-link">Closing tabs</a></li>
+<li><a href="#notice-the-url" class="anchor-link">Notice the url</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="tabs-layout">Tabs Layout</h1>
+<p>When the <a href="/index_from_tags/Configurations/Styling/Styling.html#layouts">styling layout setting</a> is set to <code>tabs</code>, the html output uses a tab system, where each internal link opens a new note on the right of the parent note.    </p>
+<p>This layout is for people who use the smart note taking / zettelkasten methods, where dense linkage is prefered over giving a strict structure from the get-go. It allows to have multiple notes open at one time, and to scroll back and forth, following a thread of related notes.   </p>
+<h3 id="scrolling-notes">Scrolling notes</h3>
+<p>When you open a whole chain of notes, you'll be scrolled rightward to keep up.   </p>
+<ul>
+<li>To move back to the beginning, keeping all notes open, press <code>1</code> (and <code>2</code> for the next one, and so forth).   </li>
+<li>To move back to the beginnning, closing all notes, click on the link in the top left (ObsidianHtml/Documentation).   </li>
+<li>To move left/right by one note, press <code>,</code> or <code>.</code>   </li>
+</ul>
+<p>Of course, the scrollbar and arrow keys are also available as methods of navigation.   </p>
+<h3 id="closing-tabs">Closing tabs</h3>
+<p>When you click on a new link in an earlier tab, all the open tabs after it will be closed.   </p>
+<h3 id="notice-the-url">Notice the url</h3>
+<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.</p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A52898172417547059108906513576272176921{level}"></svg>
+    <button class="graph_button" id="B52898172417547059108906513576272176921{level}" level="{level}" onclick="run('52898172417547059108906513576272176921'+this.level, 'Tabs Layout');">Show Graph</button>
+</div>
+<script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
+        </div>
+
+<script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
+</body>
+</html>

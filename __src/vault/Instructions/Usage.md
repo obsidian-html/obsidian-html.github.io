@@ -72,7 +72,7 @@ Add the following settings to your config.yaml to control the behavior of obsidi
 
 This section only names the configurations that most often come up when setting up the config for the first time. 
 
-For a full list of possible configurations see [[Modes]] and [[Features]]. For a full list of all options see [[Configuration Options]].
+For a high level overview of interesting configurations see [[Styling]], [[Modes]] and [[Features]]. For a full list of all options see [[Configuration Options]].
 
 ### Control output location
 At the moment the output folder will just be created where ever we call `obsidianhtml` from, to pin down the output location, use an absolute path (starting with `<Driveletter>:/` on Windows, or starting with `/` on Linux/macOs). 
@@ -102,6 +102,9 @@ html_output_folder_path_str: 'C:/Users/<Username>/Documents/Website/html'
 
 ### Turning off the tabs
 If you don't like the tabbing behavior, this can easily be turned off, see more at [[NoTabs Mode]]
+
+### Changing the layout
+Read more here [[Styling]].
 
 ### Html Custom Inclusions
 If you want to edit the style of the website output, you can add in css (and/or javascript) files. Read more here: [[Configuration Options#Html Custom Inclusions|Html Custom Inclusions]].

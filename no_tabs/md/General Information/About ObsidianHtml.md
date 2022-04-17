@@ -12,13 +12,15 @@ In fact, this website that you are currently on is directly compiled out of a [v
    
 > **Important note:**    
 >   
-> Only recently I learned that there used to be a similar package under the same name. That one seems to have been renamed to Oboe. The original was located at [https://github.com/kmaasrud/obsidian-html](https://github.com/kmaasrud/obsidian-html) and later [https://github.com/kmaasrud/oboe](https://github.com/kmaasrud/oboe) which you find referenced in a lot of places. I would link to it but I can't find an authoritative source, only forks.    
+> Only after naming this project I learned that there used to be a similar package under the same name. That one seems to have been renamed to Oboe. The original was located at [https://github.com/kmaasrud/obsidian-html](https://github.com/kmaasrud/obsidian-html) and later [https://github.com/kmaasrud/oboe](https://github.com/kmaasrud/oboe) which you find referenced in a lot of places. I would link to it but I can't find an authoritative source, only forks.    
 > Anyways: **This is not that package**.   
    
 ## What does it do?   
 The Obsidian notes will be converted to standard markdown output. Then, optionally, html output is created based on the standard markdown.   
    
 It is also possible to input existing standard markdown to just use the markdown to html functionality.   
+   
+> See [Demonstration of Obisidian integration](../Demonstrations/Demonstration%20of%20Obisidian%20integration.md) for a nice demo of the first part.   
    
 To convert your notes, you need to point to your notes folder, and to one note that will serve as the index.html page.   
    
@@ -32,8 +34,6 @@ By default only notes that are found by following links recursively starting wit
    
 > ObsidianHtml will write a folder to your html output named `obs.html`, if you have a directory in the root of your vault with the same name, there might be issues with the html output.   
    
-## Words of thanks   
-All credit to this site's design goes to Andy Matuschak. I basically [stole his design](https://notes.andymatuschak.org/Evergreen_notes) because I think it is perfect.   
    
 ## Next up   
-Take a look at all the [high level features](../MOCs/Features.md) that can be enabled/disabled, or read about all the [configuration options](../Configurations/Configuration%20Options.md). Or maybe jump directly to [Installation](../Instructions/Installation.md).
+Take a look at all the [high level features](../Configurations/Features.md) that can be enabled/disabled, or read about all the [configuration options](../Configurations/Configuration%20Options.md). Or maybe jump directly to [Installation](../Instructions/Installation.md).

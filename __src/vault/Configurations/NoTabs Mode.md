@@ -6,19 +6,31 @@ tags:
 
 # NoTabs Mode
 > New in version [[v1.2.0]]
+> **Removed in version [[v.2.0.0]]**
 
-*Don't like how the [[HTML tweaks#Tabbing system|tabs]] work? You can disable them if you want a simpler browsing experience.*
-
-## Example
-View this site in no_tabs mode: https://obsidian-html.github.io/no_tabs/
-
-## Configure
->This setting is enforced when `relative_path_html: True`.
-
-Set the following key in your config.yml:
+This setting has been removed:
 ``` yaml
 toggles:
   no_tabs: True
 ```
 
+In favor of the new layout setting. Read more here: [[Styling#Layouts]].
 
+In short: use either
+``` yaml
+toggles:
+  features:
+    styling: 
+      layout: no_tabs
+```
+
+or 
+
+``` yaml
+toggles:
+  features:
+    styling: 
+      layout: documentation
+```
+
+To opt out of tabbing. (Opting out is also not longer needed because documentation is now the default layout).

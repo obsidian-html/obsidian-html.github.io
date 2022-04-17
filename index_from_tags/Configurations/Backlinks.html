@@ -24,57 +24,66 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        // add prefix to hash to avoid scrolling
-                        if (0 == 0){
-                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
-                                        window.location.hash = '!' + window.location.hash.substr(1);
-                                }
-                        }
+                        const CURRENT_NODE = 'Backlinks';
                 </script>
         </head>
 
 <body onload="LoadPage();">
-<div id="header" class="header">
-        <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
-
-        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
-
-                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
-                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
-                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
-                        </a>
-                </div>
-        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-        </div>
-
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#backlinks" class="anchor-link">Backlinks</a></li>
+</ul>
 </div>
-<div class="container-wrapper ">
-        <div class="container">
-        <h1 id="backlinks">Backlinks</h1>
+<h1 id="backlinks">Backlinks</h1>
 <p>Notice on each page of this site, each note ends with a backlinks section.    </p>
 <p>This does not come from the vault notes, but is computed and added in by ObsidianHtml. You can turn this off if you don't like this behavior.   </p>
 <p>See also: <a href="/index_from_tags/Configurations/Configuration Options.html#backlinks">Configuration Options#Backlinks</a></p><h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/General Information/HTML tweaks.html">HTML tweaks</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
-	<li><a class="backlink" href="/index_from_tags/MOCs/Features.html">Features</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
 	<li><a class="backlink" href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A334382400054527081089501660186656758071{level}"></svg>
-    <button class="graph_button" id="B334382400054527081089501660186656758071{level}" level="{level}" onclick="run('334382400054527081089501660186656758071'+this.level, 'Backlinks');">Show Graph</button>
+    <svg class="graph_svg" id="A208148966343278510767295912521261231474{level}"></svg>
+    <button class="graph_button" id="B208148966343278510767295912521261231474{level}" level="{level}" onclick="run('208148966343278510767295912521261231474'+this.level, 'Backlinks');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
-        <!-- end content -->
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
         </div>
-</div>
-
 
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
 </body>
 </html>

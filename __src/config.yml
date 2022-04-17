@@ -58,6 +58,24 @@ exclude_subfolders:
 # the vault data. Should be fine to turn off if copying the vault takes too long / disk space is too limited.
 copy_vault_to_tempdir: True
 
+navbar_links:
+  - name: Home
+    link: index.html
+  - name: About
+    link: General Information/About ObsidianHtml.html  
+  - name: Quickstart
+    link: Instructions/Quickstart.html
+  - name: Styling
+    link: Configurations/Styling/Styling.html    
+  - name: Modes
+    link: Configurations/Modes.html
+  - name: Features
+    link: Configurations/Features.html
+  - name: Configurations
+    link: Configurations/Configuration Options.html
+  - name: News
+    link: News.html    
+
 toggles:
   # Opt-in/-out of Obsidian->Md conversion, set to False when using proper markdown as input
   compile_md: True
@@ -89,12 +107,19 @@ toggles:
   # Whether the markdown interpreter assumes relative path when no / at the beginning of a link
   relative_path_md: True
   relative_path_html: False
-  no_tabs: False
 
   # Whether external http anchor links should have a target of "_blank"
   external_blank: False
   
   features:
+    styling: 
+      layout: documentation # documentation, tabs, no_tabs
+      max_note_width: 52rem # not supported for layout: tabs
+      add_toc: True    # add "[TOC]" (Table of Contents) when missing
+      toc_pane: True   # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
+      flip_panes: True # switch right and left pane around. (does nothing unless in documentation layout.)
+      accent_color: '#414cfd'
+
     # Show backlinks at the bottom of each note
     backlinks:
       enabled: True

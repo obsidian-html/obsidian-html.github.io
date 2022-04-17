@@ -77,7 +77,7 @@ Add the following settings to your config.yaml to control the behavior of obsidi
    
 This section only names the configurations that most often come up when setting up the config for the first time.    
    
-For a full list of possible configurations see [Modes](../Configurations/Modes.md) and [Features](../MOCs/Features.md). For a full list of all options see [Configuration Options](../Configurations/Configuration%20Options.md).   
+For a high level overview of interesting configurations see [Styling](../Configurations/Styling/Styling.md), [Modes](../Configurations/Modes.md) and [Features](../Configurations/Features.md). For a full list of all options see [Configuration Options](../Configurations/Configuration%20Options.md).   
    
 ### Control output location   
 At the moment the output folder will just be created where ever we call `obsidianhtml` from, to pin down the output location, use an absolute path (starting with `<Driveletter>:/` on Windows, or starting with `/` on Linux/macOs).    
@@ -110,12 +110,15 @@ html_output_folder_path_str: 'C:/Users/<Username>/Documents/Website/html'
 ### Turning off the tabs   
 If you don't like the tabbing behavior, this can easily be turned off, see more at [NoTabs Mode](../Configurations/NoTabs%20Mode.md)   
    
+### Changing the layout   
+Read more here [Styling](../Configurations/Styling/Styling.md).   
+   
 ### Html Custom Inclusions   
 If you want to edit the style of the website output, you can add in css (and/or javascript) files. Read more here: [Html Custom Inclusions](../Configurations/Configuration%20Options.md#html-custom-inclusions).   
    
 ## Next steps   
    
 - [Configuration Options](../Configurations/Configuration%20Options.md)   
-- [Features](../MOCs/Features.md)   
+- [Features](../Configurations/Features.md)   
 - [How to resolve common issues](/not_created.md)   
 - [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md)

@@ -30,11 +30,4 @@ This setting will allow you to compile the website in a way that can be browsed 
    
 This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.   
    
-Read more [Relative_path_html](../Configurations/Relative_path_html.md).   
-   
-## No Tabs Mode   
-Don't like how the tabs work? You can disable them if you want a simpler browsing experience.    
-   
-View this site in no_tabs mode: [https://obsidian-html.github.io/no_tabs/](https://obsidian-html.github.io/no_tabs/)   
-   
-Read more [NoTabs Mode](../Configurations/NoTabs%20Mode.md)
+Read more [Relative_path_html](../Configurations/Relative_path_html.md).

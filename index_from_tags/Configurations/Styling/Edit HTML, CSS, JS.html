@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Edit HTML, CSS, JS">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/index_from_tags</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/main.css" />
+                <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'Edit HTML, CSS, JS';
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#edit-html-css-js" class="anchor-link">Edit HTML, CSS, JS</a><ul>
+<li><a href="#add-extra-cssjs-files" class="anchor-link">Add extra css/js files</a></li>
+<li><a href="#custom-template" class="anchor-link">Custom template</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="edit-html-css-js">Edit HTML, CSS, JS</h1>
+<p>There are currently two ways to edit the html code used to build your website:   </p>
+<ul>
+<li>Add extra css/js files to the header of a standard template.   </li>
+<li>Pass in your own html template.   </li>
+</ul>
+<h2 id="add-extra-cssjs-files">Add extra css/js files</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span><span class="w"></span>
+<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Every note gets turned into its own contained html page. If you want to provide an extra css file, or javascript file, then you can add, e.g., the following into the setting, to avoid having to edit every single page after compilation:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;/custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;/christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>N.b.</strong> you'll have to place the mentioned files into the output yourself, and at the correct location; in this case directly in the html output folder. (Unless they are located in your vault and <a href="/index_from_tags/Configurations/Configuration Options.html#process-all">process_all</a>: True).   </p>
+</blockquote>
+<h2 id="custom-template">Custom template</h2>
+<p>If you just want to build your pages yourself entirely, then you can pass in the path to your own template file. Note that you need to have at least <code>{content}</code> somewhere in the page.    </p>
+<p>To fetch the default template, you can run the following to export it, so you can make incremental changes:   </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml -eht path/to/output/file.html &lt;documentation/tabs/no_tabs&gt;
+</code></pre></div>
+
+<p>Use that same output path as the value for html_template_path_str to use it in your runs:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span><span class="w"></span>
+<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span><span class="w"></span>
+<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+</code></pre></div><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A210270449347509864919025063053787889282{level}"></svg>
+    <button class="graph_button" id="B210270449347509864919025063053787889282{level}" level="{level}" onclick="run('210270449347509864919025063053787889282'+this.level, 'Edit HTML, CSS, JS');">Show Graph</button>
+</div>
+<script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
+        </div>
+
+<script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
+</body>
+</html>

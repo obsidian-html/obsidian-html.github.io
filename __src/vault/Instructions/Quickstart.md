@@ -8,6 +8,8 @@ tags:
 This page is a very short summary of installation, usage, and configuration options.
 
 ## Installation
+> Full installation instructions: [[Installation]]
+
 First we need to [Install python 3](https://wiki.python.org/moin/BeginnersGuide/Download). If you already have it installed, check the version:
 
 ```bash

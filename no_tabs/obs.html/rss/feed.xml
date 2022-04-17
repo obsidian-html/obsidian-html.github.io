@@ -4,8 +4,8 @@
         <link>https://obsidian-html.github.io</link>
         <description>The documentation site of ObsidianHtml, a package used to convert Obsidian notes to proper markdown and static HTML websites.</description>
         <language>en-usen-us</language>
-        <pubDate>Sun, 03 Apr 2022 14:05:14 CET</pubDate>
-        <lastBuildDate>Thu, 31 Mar 2022 00:00:00 CET</lastBuildDate>
+        <pubDate>Sun, 17 Apr 2022 16:19:25 CET</pubDate>
+        <lastBuildDate>Sun, 17 Apr 2022 00:00:00 CET</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>ObsidianHtml</generator>
         <managingEditor>collector@dwrolvink.com</managingEditor>
@@ -64,6 +64,14 @@
             <description>Patch version of v1.0.0.   &lt;br/&gt;&lt;br/&gt;Note: Pypi docs claim there are config changes in this release, but this was reverted. (I can&#x27;t update the pypi docs without releasing a new version). No config changes in this release!   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Thu, 10 Mar 2022 00:00:00 CET</pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v1.0.2.html</guid>
+            
+        </item>
+        <item>
+            <title>v2.0.0</title>
+            <link>https://obsidian-html.github.io/Changelog/v2.0.0.html</link>
+            <description>A new major version already. This time mostly for backward compatability reasons.    &lt;br/&gt;&lt;br/&gt;Upgrading from version 1.x.x to version 2.x.x will neccessitate some config changes if you configured more than the bare minimum and/or if want to keep the same layout as before.   &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Sun, 17 Apr 2022 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Changelog/v2.0.0.html</guid>
             
         </item>
         <item>

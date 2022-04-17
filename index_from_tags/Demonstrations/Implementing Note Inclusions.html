@@ -24,37 +24,54 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        // add prefix to hash to avoid scrolling
-                        if (0 == 0){
-                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
-                                        window.location.hash = '!' + window.location.hash.substr(1);
-                                }
-                        }
+                        const CURRENT_NODE = 'Inclusions';
                 </script>
         </head>
 
 <body onload="LoadPage();">
-<div id="header" class="header">
-        <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
-
-        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
-
-                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
-                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
-                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
-                        </a>
-                </div>
-        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-        </div>
-
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#note-inclusions" class="anchor-link">Note inclusions</a><ul>
+<li><a href="#full-page-inclusion" class="anchor-link">Full page inclusion</a></li>
+<li><a href="#test-inclusion" class="anchor-link">Test Inclusion</a></li>
+<li><a href="#partial-code-inclusion" class="anchor-link">Partial code inclusion</a></li>
+<li><a href="#second-chapter" class="anchor-link">Second chapter</a><ul>
+<li><a href="#an-h3" class="anchor-link">An h3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
-<div class="container-wrapper ">
-        <div class="container">
-        <h1 id="note-inclusions">Note inclusions</h1>
+<h1 id="note-inclusions">Note inclusions</h1>
 <p>Note inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    </p>
 <p>It uses the same link syntax as images:   </p>
 <div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
@@ -97,19 +114,21 @@ This can be done by writing  <br />
 <p><strong>---end inclusion---</strong></p><h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags//index_from_tags/index.html">index</a></li>
-	<li><a class="backlink" href="/index_from_tags/MOCs/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
+	<li><a class="backlink" href="/index_from_tags/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A100133701525211926802506968446961659252{level}"></svg>
-    <button class="graph_button" id="B100133701525211926802506968446961659252{level}" level="{level}" onclick="run('100133701525211926802506968446961659252'+this.level, 'Inclusions');">Show Graph</button>
+    <svg class="graph_svg" id="A257909809576214995969593502800398176611{level}"></svg>
+    <button class="graph_button" id="B257909809576214995969593502800398176611{level}" level="{level}" onclick="run('257909809576214995969593502800398176611'+this.level, 'Inclusions');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
-        <!-- end content -->
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
         </div>
-</div>
-
 
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
 </body>
 </html>

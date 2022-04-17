@@ -85,7 +85,7 @@ function run(uid, pinnedNode){
                 .attr('x', 6)
                 .attr('y', 3)
 
-                if (! 0)
+                if (! 1)
                 {
                         lables.on("click", function(d) {
                                 let svg_el = document.getElementById('A' + uid);

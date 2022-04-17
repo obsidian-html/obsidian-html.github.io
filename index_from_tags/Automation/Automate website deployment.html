@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Automate website deployment">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/index_from_tags</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/main.css" />
+                <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'Automate website deployment';
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#automate-website-deployment" class="anchor-link">Automate website deployment</a><ul>
+<li><a href="#using-a-git-repo-as-an-intermediate" class="anchor-link">Using a git repo as an intermediate</a></li>
+<li><a href="#pushing-directly-to-a-local-webserver" class="anchor-link">Pushing directly to a local webserver</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="automate-website-deployment">Automate website deployment</h1>
+<p>If you have a website hosted based on an obsidian project like I do, it can be useful to create some scripting to automate pushing to your webserver.   </p>
+<blockquote>
+<p>Note that these scripts are a starting point, and may not comply to the most up to date security considerations or other best practices!   </p>
+</blockquote>
+<h2 id="using-a-git-repo-as-an-intermediate">Using a git repo as an intermediate</h2>
+<p>The scripts below empty an <em>existing</em> git repo folder, skipping the <code>README.md</code> file and <code>.git</code> directory. The script will then generate the html code an put it in your repo, commit and push.    </p>
+<p>This will update your git repo with the updated code for your website. This is all the script does.    </p>
+<p>As a next step, configure a process on your webserver that periodically pulls the git repo, or configure a pipeline to start running on a git push to get this git code deployed on your server.    </p>
+<ul>
+<li><a href="/index_from_tags/Automation/AutomationLinuxGit.html">Auto push using git (Linux)</a>   </li>
+<li><a href="/index_from_tags/Automation/AutomationWindows.html">Auto push using git (Windows)</a>   </li>
+</ul>
+<h2 id="pushing-directly-to-a-local-webserver">Pushing directly to a local webserver</h2>
+<p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the Git method or something along those lines.   </p>
+<ul>
+<li><a href="/index_from_tags/Automation/AutomationLinuxSSH.html">Auto push to local webserver (Linux)</a>   </li>
+<li><a href="/index_from_tags/Automation/AutomationWindowsSSH.html">Auto push to local webserver (Windows)</a></li>
+</ul><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags//index_from_tags/index.html">index</a></li>
+	<li><a class="backlink" href="/index_from_tags//index_from_tags/Automation/AutomationLinuxSSH.html">Auto push site using SSH on Linux</a></li>
+	<li><a class="backlink" href="/index_from_tags//index_from_tags/Automation/AutomationWindowsSSH.html">Auto push site using Git on Windows</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A154297304054139603459901833597337704536{level}"></svg>
+    <button class="graph_button" id="B154297304054139603459901833597337704536{level}" level="{level}" onclick="run('154297304054139603459901833597337704536'+this.level, 'Automate website deployment');">Show Graph</button>
+</div>
+<script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
+        </div>
+
+<script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
+</body>
+</html>

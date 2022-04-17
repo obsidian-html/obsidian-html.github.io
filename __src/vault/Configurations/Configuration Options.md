@@ -48,6 +48,7 @@ We will now go through all the settings in more-or-less the same order as the ou
 | :------ | :--------------- |
 | [[Configuration Options#Site name|Site name]] | Name of your website, to be used in the `<title>` and such |
 | [[Configuration Options#Html Url Prefix|Html Url Prefix]] | Used to deploy your website to `http://domain.name/[html_url_prefix]/` |
+| [[Configuration Options#Navbar_links|navbar_links]] | Set the website navigation menu items. |
 | [[Configuration Options#Html Template Path Str|Html Template Path Str]] | Used to pass in your own custom template |
 | [[Configuration Options#Html Custom Inclusions|Html Custom Inclusions]] | Used to pass in your own css/js files |
 
@@ -69,6 +70,7 @@ We will now go through all the settings in more-or-less the same order as the ou
 ### Feature settings
 | config | Short description |
 | :------ | :--------------- |
+| [[Configuration Options#Styling|Styling]] | Configure the layout and layout setting. Read more [[Styling]] |
 | [[Configuration Options#Graph|Graph]] | Configure the graph view. Read more [[Graph view]] |
 | [[Configuration Options#Create Index From Tags|Create Index From Tags]] | Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.|
 | [[Configuration Options#Create Index From Directory Structure|Create Index From Directory Structure]] | Overwrite the index.html file with an index that lists all the folders and files in a tree structure. |
@@ -205,37 +207,29 @@ The comments in the yaml above explain this feature pretty well.
 
 Extra note though: when setting this value, make sure to also edit the `html_output_folder_path_str` setting, to end with the same prefix, if you want to be able test locally.
 
+### Navbar_links
+``` yaml
+navbar_links: []
+```
+
+Read more: [[Website navigation menu]]
+
 ### Html Template Path Str
 ``` yaml
 # Provide the fullpath to a template file to use instead of standard template. 
 # Note that this file must contain at least "{content}" somewhere in the page.
 html_template_path_str: ''
 ```
-If you just want to build your pages yourself entirely, then you can pass in the path to your own template file. Note that you need to have at least `{content}` somewhere in the page. 
 
-To fetch the default template, you can run 
-
-``` bash
-obsidianhtml -eht path/to/output/file.html
-```
-
-To export it, so you can make incremental changes. Use that same output path as the value for html_template_path_str to use it in your runs.
+Read more: [[Edit HTML, CSS, JS]]
 
 ### Html Custom Inclusions
 ``` yaml
 # Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html
 html_custom_inclusions: []
 ```
-Every note gets turned into its own contained html page. If you want to provide an extra css file, or javascript file, then you can add, e.g., the following into the setting, to avoid having to edit every single page after compilation:
 
-``` yaml
-html_custom_inclusions:
-  - '<link rel="stylesheet" href="/custom.css" />'
-  - '<script src="/christmas_snowflakes.js"></script>'
-```
-
-> **N.b.** you'll have to place the mentioned files into the output yourself, and at the correct location; in this case directly in the html output folder. (Unless they are located in your vault and [[Configuration Options#Process all|process_all]]: True).
-
+Read more: [[Edit HTML, CSS, JS]]
 
 ## Toggles
 These are the first second level settings. If you have multiple settings, make sure to combine them. So not like this:
@@ -367,6 +361,20 @@ toggles:
 ```
 
 ## Features
+### Styling
+``` yaml
+  features:
+    styling: 
+      layout: documentation # documentation, tabs, no_tabs
+      max_note_width: 52rem # not supported for layout: tabs
+      add_toc: True         # add "[TOC]" (Table of Contents) when missing
+      toc_pane: True        # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
+      flip_panes: False     # switch right and left pane around. (does nothing unless in documentation layout.)
+      accent_color: '#414cfd'
+```
+
+Read more: [[Styling]]
+
 ### Graph
 ``` yaml
 toggles

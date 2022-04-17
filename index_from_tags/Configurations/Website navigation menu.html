@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Website navigation menu">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/index_from_tags</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/mermaid.css" />
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/main.css" />
+                <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
+                
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'Website navigation menu';
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#website-navigation-menu" class="anchor-link">Website navigation menu</a></li>
+</ul>
+</div>
+<h1 id="website-navigation-menu">Website navigation menu</h1>
+<blockquote>
+<p>New in <a href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w">  </span>
+</code></pre></div>
+
+<p>You can set this configuration to add links to notes at the top of the page.    </p>
+<p>This is the config used for this website:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Home</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.html</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">About</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General Information/About ObsidianHtml.html</span><span class="w">  </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Quickstart</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Instructions/Quickstart.html</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Styling</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Styling/Styling.html</span><span class="w">    </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Modes</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Modes.html</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Features</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Features.html</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Configuration Options.html</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News.html</span><span class="w">    </span>
+</code></pre></div>
+
+<p>Make sure to use the full relative path to the note as measured from your webroot (so exclude the <a href="/index_from_tags/Configurations/Configuration Options.html#html-url-prefix">prefix</a>).</p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></li>
+</ul>
+<div class="graph">
+    <svg class="graph_svg" id="A299216755101996115954126354660362113053{level}"></svg>
+    <button class="graph_button" id="B299216755101996115954126354660362113053{level}" level="{level}" onclick="run('299216755101996115954126354660362113053'+this.level, 'Website navigation menu');">Show Graph</button>
+</div>
+<script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
+        </div>
+
+<script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
+</body>
+</html>

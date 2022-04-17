@@ -24,37 +24,93 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        // add prefix to hash to avoid scrolling
-                        if (0 == 0){
-                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
-                                        window.location.hash = '!' + window.location.hash.substr(1);
-                                }
-                        }
+                        const CURRENT_NODE = 'RSS Feed';
                 </script>
         </head>
 
 <body onload="LoadPage();">
-<div id="header" class="header">
-        <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
-
-        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
-
-                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
-                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
-                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
-                        </a>
-                </div>
-        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-        </div>
-
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#rss-feed" class="anchor-link">RSS Feed</a><ul>
+<li><a href="#introduction" class="anchor-link">Introduction</a></li>
+<li><a href="#configuration" class="anchor-link">Configuration</a><ul>
+<li><a href="#introduction_1" class="anchor-link">Introduction</a></li>
+</ul>
+</li>
+<li><a href="#top-level-configuration" class="anchor-link">Top level configuration</a><ul>
+<li><a href="#enabled" class="anchor-link">Enabled</a></li>
+<li><a href="#host-root" class="anchor-link">Host Root</a></li>
+</ul>
+</li>
+<li><a href="#styling-configuration" class="anchor-link">Styling configuration</a><ul>
+<li><a href="#show_icon" class="anchor-link">show_icon</a></li>
+</ul>
+</li>
+<li><a href="#channel-configuration" class="anchor-link">Channel configuration</a></li>
+<li><a href="#items-configuration" class="anchor-link">Items configuration</a><ul>
+<li><a href="#selector" class="anchor-link">Selector</a><ul>
+<li><a href="#match-keys" class="anchor-link" class="anchor-link" class="anchor-link">Match keys</a></li>
+<li><a href="#exclude_keys" class="anchor-link">exclude_keys</a></li>
+<li><a href="#include_subfolders" class="anchor-link" class="anchor-link" class="anchor-link">include_subfolders</a></li>
+<li><a href="#exclude_subfolders" class="anchor-link" class="anchor-link">exclude_subfolders</a></li>
+<li><a href="#exclude_files" class="anchor-link">exclude_files</a></li>
+</ul>
+</li>
+<li><a href="#descriptiontitle" class="anchor-link">Description/Title</a><ul>
+<li><a href="#selectors" class="anchor-link">selectors</a></li>
+</ul>
+</li>
+<li><a href="#publish_date" class="anchor-link">Publish_date</a><ul>
+<li><a href="#selectors_1" class="anchor-link">Selectors</a></li>
+<li><a href="#iso_formatted" class="anchor-link">iso_formatted</a></li>
+<li><a href="#format_string" class="anchor-link">format_string</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a><ul>
+<li><a href="#yaml" class="anchor-link" class="anchor-link">yaml</a><ul>
+<li><a href="#tree-navigation" class="anchor-link">Tree navigation</a></li>
+<li><a href="#yaml_strip" class="anchor-link">yaml_strip</a></li>
+</ul>
+</li>
+<li><a href="#first-paragraphs" class="anchor-link">first-paragraphs</a></li>
+<li><a href="#first-header" class="anchor-link">first-header</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<div class="container-wrapper ">
-        <div class="container">
-        <h1 id="rss-feed">RSS Feed</h1>
+<h1 id="rss-feed">RSS Feed</h1>
 <blockquote>
 <p>New in <a href="/index_from_tags/Changelog/v1.0.0.html">v1.0.0</a>   </p>
 </blockquote>
@@ -116,7 +172,7 @@
 <li>rss/channel/managing_editor    </li>
 <li>rss/channel/web_master   </li>
 </ul>
-<p>You might also want to look into <a href="#match-keys" class="anchor-link" class="anchor-link">Match keys</a> and <a href="#include_subfolders" class="anchor-link" class="anchor-link">include_subfolders</a> for your first configuration settings.   </p>
+<p>You might also want to look into <a href="#match-keys" class="anchor-link" class="anchor-link" class="anchor-link">Match keys</a> and <a href="#include_subfolders" class="anchor-link" class="anchor-link" class="anchor-link">include_subfolders</a> for your first configuration settings.   </p>
 <p>Also make sure that the notes that you include have a publish date set in the frontmatter yaml. E.g.:   </p>
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="c1"># Will be matched first</span><span class="w"></span>
@@ -158,12 +214,12 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 
 <h4 id="match-keys">Match keys</h4>
 <blockquote>
-<p>This value accepts lists of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </p>
+<p>This value accepts lists of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </p>
 </blockquote>
 <p>This setting allows you to only include notes that have a certain key in the frontmatter yaml.   </p>
 <ul>
 <li>This is a list of lists. Each element in the main list is a selector. The first value in the selector list is the function name.    </li>
-<li>At the moment only the <a href="#yaml" class="anchor-link">yaml</a> function is implemented for this setting.   </li>
+<li>At the moment only the <a href="#yaml" class="anchor-link" class="anchor-link">yaml</a> function is implemented for this setting.   </li>
 <li>If any of the given functions return true, then the item is selected.   </li>
 </ul>
 <div class="codehilite"><pre><span></span><code><span class="c1"># will select any notes that have &quot;news: &quot; in the frontmatter</span><span class="w"></span>
@@ -175,10 +231,10 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 
 <h4 id="exclude_keys">exclude_keys</h4>
 <blockquote>
-<p>This value accepts lists of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </p>
+<p>This value accepts lists of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </p>
 </blockquote>
 <ul>
-<li>Same as <a href="#match-keys" class="anchor-link" class="anchor-link">Match keys</a>, but will exclude notes   </li>
+<li>Same as <a href="#match-keys" class="anchor-link" class="anchor-link" class="anchor-link">Match keys</a>, but will exclude notes   </li>
 <li>If a note matches on both match_key and exclude_key, the note will not be included.   </li>
 </ul>
 <h4 id="include_subfolders">include_subfolders</h4>
@@ -189,23 +245,23 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 </ul>
 <h4 id="exclude_subfolders">exclude_subfolders</h4>
 <ul>
-<li>Same as <a href="#include_subfolders" class="anchor-link" class="anchor-link">include_subfolders</a> but in reverse   </li>
+<li>Same as <a href="#include_subfolders" class="anchor-link" class="anchor-link" class="anchor-link">include_subfolders</a> but in reverse   </li>
 <li>If the same folder is in both include_subfolders and exclude_subfolders, then it won't be parsed.   </li>
 </ul>
 <h4 id="exclude_files">exclude_files</h4>
 <ul>
-<li>Same as <a href="#exclude_subfolders" class="anchor-link">exclude_subfolders</a>, but for filenames   </li>
+<li>Same as <a href="#exclude_subfolders" class="anchor-link" class="anchor-link">exclude_subfolders</a>, but for filenames   </li>
 <li><strong>Note</strong>: this should be filenames, not file paths!   </li>
 </ul>
 <h3 id="descriptiontitle">Description/Title</h3>
 <h4 id="selectors">selectors</h4>
 <ul>
-<li>List of any number of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </li>
+<li>List of any number of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </li>
 </ul>
 <h3 id="publish_date">Publish_date</h3>
 <h4 id="selectors_1">Selectors</h4>
 <ul>
-<li>List of any number of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </li>
+<li>List of any number of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </li>
 </ul>
 <h4 id="iso_formatted">iso_formatted</h4>
 <p>Whether the string that is selected is iso formatted. This information is used to parse the date into a dateobject, in order to get to the correct RSS date string.   </p>
@@ -312,19 +368,21 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
-	<li><a class="backlink" href="/index_from_tags/MOCs/Features.html">Features</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A296729628552047618146736016697786855370{level}"></svg>
-    <button class="graph_button" id="B296729628552047618146736016697786855370{level}" level="{level}" onclick="run('296729628552047618146736016697786855370'+this.level, 'RSS Feed');">Show Graph</button>
+    <svg class="graph_svg" id="A247054966559761864478722426939358774844{level}"></svg>
+    <button class="graph_button" id="B247054966559761864478722426939358774844{level}" level="{level}" onclick="run('247054966559761864478722426939358774844'+this.level, 'RSS Feed');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
-        <!-- end content -->
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
         </div>
-</div>
-
 
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
 </body>
 </html>

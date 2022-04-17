@@ -24,38 +24,103 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        // add prefix to hash to avoid scrolling
-                        if (0 == 0){
-                                if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
-                                        window.location.hash = '!' + window.location.hash.substr(1);
-                                }
-                        }
+                        const CURRENT_NODE = 'Configuration Options';
                 </script>
         </head>
 
 <body onload="LoadPage();">
-<div id="header" class="header">
-        <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
-
-        <div style="width:6rem; height:1.6rem; position:fixed; left:calc(100vw - 6rem);top: 0.9rem; ">
-
-                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
-                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
-                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
-                        </a>
-                </div>
-        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-        </div>
-
+                                        </div>                                
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <div class="toc">
+<ul>
+<li><a href="#configuration-options" class="anchor-link">Configuration Options</a><ul>
+<li><a href="#get-all-the-default-settings" class="anchor-link">Get all the default settings</a></li>
+<li><a href="#configurations" class="anchor-link">Configurations</a><ul>
+<li><a href="#paths" class="anchor-link">Paths</a></li>
+<li><a href="#operational-settings" class="anchor-link">Operational settings</a></li>
+<li><a href="#html-settings" class="anchor-link">HTML settings</a></li>
+<li><a href="#toggles" class="anchor-link">Toggles</a></li>
+<li><a href="#feature-settings" class="anchor-link">Feature settings</a></li>
+</ul>
+</li>
+<li><a href="#paths_1" class="anchor-link">Paths</a><ul>
+<li><a href="#obsidian_folder_path_str" class="anchor-link">obsidian_folder_path_str</a></li>
+<li><a href="#obsidian_entrypoint_path_str" class="anchor-link">obsidian_entrypoint_path_str</a></li>
+<li><a href="#md_folder_path_str" class="anchor-link">md_folder_path_str</a></li>
+<li><a href="#md_entrypoint_path_str" class="anchor-link">md_entrypoint_path_str</a></li>
+<li><a href="#html_output_folder_path_str" class="anchor-link">html_output_folder_path_str</a></li>
+</ul>
+</li>
+<li><a href="#operations" class="anchor-link">Operations</a><ul>
+<li><a href="#exclude-subfolders" class="anchor-link">Exclude Subfolders</a></li>
+<li><a href="#copy-vault-to-tempdir" class="anchor-link">Copy Vault to Tempdir</a></li>
+<li><a href="#included_file_suffixes" class="anchor-link">included_file_suffixes</a></li>
+<li><a href="#video_format_suffixes" class="anchor-link">video_format_suffixes</a></li>
+<li><a href="#audio_format_suffixes" class="anchor-link">audio_format_suffixes</a></li>
+</ul>
+</li>
+<li><a href="#html-output" class="anchor-link">HTML Output</a><ul>
+<li><a href="#site-name" class="anchor-link">Site name</a></li>
+<li><a href="#html-url-prefix" class="anchor-link">Html Url Prefix</a></li>
+<li><a href="#navbar_links" class="anchor-link">Navbar_links</a></li>
+<li><a href="#html-template-path-str" class="anchor-link">Html Template Path Str</a></li>
+<li><a href="#html-custom-inclusions" class="anchor-link">Html Custom Inclusions</a></li>
+</ul>
+</li>
+<li><a href="#toggles_1" class="anchor-link">Toggles</a><ul>
+<li><a href="#compile-md" class="anchor-link">Compile Md</a></li>
+<li><a href="#compile-html" class="anchor-link">Compile Html</a></li>
+<li><a href="#process-all" class="anchor-link">Process all</a></li>
+<li><a href="#verbose_printout" class="anchor-link">verbose_printout</a></li>
+<li><a href="#allow-duplicate-filenames-in-root" class="anchor-link">Allow Duplicate Filenames in Root</a></li>
+<li><a href="#warn-on-skipped-image" class="anchor-link">Warn on Skipped Image</a></li>
+<li><a href="#no_clean" class="anchor-link">no_clean</a></li>
+<li><a href="#no_tabs" class="anchor-link">no_tabs</a></li>
+<li><a href="#relative_path_md" class="anchor-link">relative_path_md</a></li>
+<li><a href="#relative_path_html" class="anchor-link">relative_path_html</a></li>
+</ul>
+</li>
+<li><a href="#external_blank" class="anchor-link">external_blank</a></li>
+<li><a href="#features" class="anchor-link">Features</a><ul>
+<li><a href="#styling" class="anchor-link">Styling</a></li>
+<li><a href="#graph" class="anchor-link">Graph</a></li>
+<li><a href="#create-index-from-tags" class="anchor-link">Create Index From Tags</a></li>
+<li><a href="#create-index-from-directory-structure" class="anchor-link">Create Index From Directory Structure</a></li>
+<li><a href="#backlinks" class="anchor-link">Backlinks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
-<div class="container-wrapper ">
-        <div class="container">
-        <h1 id="configuration-options">Configuration Options</h1>
-<p>This page goes through all the configuration options and will refer to features. For a toplevel view of these features, see <a href="/index_from_tags/MOCs/Features.html">Features</a>.   </p>
+<h1 id="configuration-options">Configuration Options</h1>
+<p>This page goes through all the configuration options and will refer to features. For a toplevel view of these features, see <a href="/index_from_tags/Configurations/Features.html">Features</a>.   </p>
 <p>Certain settings change the flow of how notes are selected and presented on the homepage. You can find a glossary on those in <a href="/index_from_tags/Configurations/Modes.html">Modes</a>.   </p>
 <h2 id="get-all-the-default-settings">Get all the default settings</h2>
 <p>Run:   </p>
@@ -149,6 +214,10 @@
 <td align="left">Used to deploy your website to <code>http://domain.name/[html_url_prefix]/</code></td>
 </tr>
 <tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#navbar_links">navbar_links</a></td>
+<td align="left">Set the website navigation menu items.</td>
+</tr>
+<tr>
 <td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#html-template-path-str">Html Template Path Str</a></td>
 <td align="left">Used to pass in your own custom template</td>
 </tr>
@@ -222,6 +291,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#styling">Styling</a></td>
+<td align="left">Configure the layout and layout setting. Read more <a href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a></td>
+</tr>
 <tr>
 <td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#graph">Graph</a></td>
 <td align="left">Configure the graph view. Read more <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a></td>
@@ -350,32 +423,24 @@
 
 <p>The comments in the yaml above explain this feature pretty well.    </p>
 <p>Extra note though: when setting this value, make sure to also edit the <code>html_output_folder_path_str</code> setting, to end with the same prefix, if you want to be able test locally.   </p>
+<h3 id="navbar_links">Navbar_links</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Website navigation menu.html">Website navigation menu</a>   </p>
 <h3 id="html-template-path-str">Html Template Path Str</h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span><span class="w"></span>
 <span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span><span class="w"></span>
 <span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
 </code></pre></div>
 
-<p>If you just want to build your pages yourself entirely, then you can pass in the path to your own template file. Note that you need to have at least <code>{content}</code> somewhere in the page.    </p>
-<p>To fetch the default template, you can run    </p>
-<div class="codehilite"><pre><span></span><code>obsidianhtml -eht path/to/output/file.html
-</code></pre></div>
-
-<p>To export it, so you can make incremental changes. Use that same output path as the value for html_template_path_str to use it in your runs.   </p>
+<p>Read more: <a href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a>   </p>
 <h3 id="html-custom-inclusions">Html Custom Inclusions</h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span><span class="w"></span>
 <span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
 </code></pre></div>
 
-<p>Every note gets turned into its own contained html page. If you want to provide an extra css file, or javascript file, then you can add, e.g., the following into the setting, to avoid having to edit every single page after compilation:   </p>
-<div class="codehilite"><pre><span></span><code><span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;/custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;/christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span><span class="w"></span>
-</code></pre></div>
-
-<blockquote>
-<p><strong>N.b.</strong> you'll have to place the mentioned files into the output yourself, and at the correct location; in this case directly in the html output folder. (Unless they are located in your vault and <a href="/index_from_tags/Configurations/Configuration Options.html#process-all">process_all</a>: True).   </p>
-</blockquote>
+<p>Read more: <a href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a>   </p>
 <h2 id="toggles_1">Toggles</h2>
 <p>These are the first second level settings. If you have multiple settings, make sure to combine them. So not like this:   </p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># wrong</span><span class="w"></span>
@@ -485,6 +550,18 @@
 </code></pre></div>
 
 <h2 id="features">Features</h2>
+<h3 id="styling">Styling</h3>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w"> </span><span class="c1"># documentation, tabs, no_tabs</span><span class="w"></span>
+<span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">52rem</span><span class="w"> </span><span class="c1"># not supported for layout: tabs</span><span class="w"></span>
+<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">         </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span><span class="w"></span>
+<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">        </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">     </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#414cfd&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a>   </p>
 <h3 id="graph">Graph</h3>
 <div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
@@ -554,24 +631,28 @@
 	<li><a class="backlink" href="/index_from_tags/Configurations/RSS Feed.html">RSS Feed</a></li>
 	<li><a class="backlink" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></li>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v1.2.2.html">v1.2.2</a></li>
-	<li><a class="backlink" href="/index_from_tags/General Information/HTML tweaks.html">HTML tweaks</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Website navigation menu.html">Website navigation menu</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
-	<li><a class="backlink" href="/index_from_tags/MOCs/Features.html">Features</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
 	<li><a class="backlink" href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
 	<li><a class="backlink" href="/index_from_tags//index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 </ul>
 <div class="graph">
-    <svg class="graph_svg" id="A149614736353775963297726413694743941065{level}"></svg>
-    <button class="graph_button" id="B149614736353775963297726413694743941065{level}" level="{level}" onclick="run('149614736353775963297726413694743941065'+this.level, 'Configuration Options');">Show Graph</button>
+    <svg class="graph_svg" id="A217710372663144992619437713859290015999{level}"></svg>
+    <button class="graph_button" id="B217710372663144992619437713859290015999{level}" level="{level}" onclick="run('217710372663144992619437713859290015999'+this.level, 'Configuration Options');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
-        <!-- end content -->
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
         </div>
-</div>
-
 
 <script src="/index_from_tags/obs.html/static/obsidian.js" type="text/javascript"></script>
+
 </body>
 </html>
