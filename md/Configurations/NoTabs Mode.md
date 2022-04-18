@@ -6,7 +6,7 @@ tags:
    
 # NoTabs Mode   
 > New in version [v1.2.0](../Changelog/v1.2.0.md)   
-> **Removed in version [v.2.0.0](/not_created.md)**   
+> **Removed in version [v2.0.0](../Changelog/v2.0.0.md)**   
    
 This setting has been removed:   
 ``` yaml

@@ -221,6 +221,7 @@ The comments in the yaml above explain this feature pretty well.
 Extra note though: when setting this value, make sure to also edit the `html_output_folder_path_str` setting, to end with the same prefix, if you want to be able test locally.   
    
 ### Navbar_links   
+> Added in [v2.0.0](../Changelog/v2.0.0.md)   
 ``` yaml
 navbar_links: []
 ```
@@ -391,6 +392,7 @@ toggles:
    
 ## Features   
 ### Styling   
+> Added in [v2.0.0](../Changelog/v2.0.0.md)   
 ``` yaml
   features:
     styling: 
@@ -464,7 +466,6 @@ toggles
    
    
 Read more: [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md)   
-   
    
 ### Backlinks   
 ``` yaml

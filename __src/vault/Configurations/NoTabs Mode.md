@@ -6,7 +6,7 @@ tags:
 
 # NoTabs Mode
 > New in version [[v1.2.0]]
-> **Removed in version [[v.2.0.0]]**
+> **Removed in version [[v2.0.0]]**
 
 This setting has been removed:
 ``` yaml
