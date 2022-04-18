@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Configurations/Styling/Styling.md",
+            "file": "Configurations/Styling/Tabs Layout.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Configurations/Styling/Styling.md",
+                "file": "Configurations/Styling/Tabs Layout.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,6 +101,7 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
+    "Configurations/Styling/Tabs Layout.md",
     "Configurations/Styling/Styling.md",
     "Change Log.md",
     "Changelog/v2.0.0.md",
@@ -109,7 +110,6 @@
     "Changelog/v1.2.2.md",
     "Configurations/NoTabs Mode.md",
     "ObsidianHtml.md",
-    "Configurations/Website navigation menu.md",
-    "Configurations/Relative_path_html.md"
+    "Configurations/Website navigation menu.md"
   ]
 }

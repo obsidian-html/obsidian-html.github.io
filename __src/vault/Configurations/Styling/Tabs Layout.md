@@ -7,6 +7,8 @@ tags:
 # Tabs Layout
 When the [[Styling#Layouts|styling layout setting]] is set to `tabs`, the html output uses a tab system, where each internal link opens a new note on the right of the parent note. 
 
+You can view this site in tabs layout [here](https://obsidian-html.github.io/tabs/).
+
 This layout is for people who use the smart note taking / zettelkasten methods, where dense linkage is prefered over giving a strict structure from the get-go. It allows to have multiple notes open at one time, and to scroll back and forth, following a thread of related notes.
 
 ### Scrolling notes
