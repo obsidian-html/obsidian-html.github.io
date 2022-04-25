@@ -6,7 +6,7 @@ var no_tab_mode = 1;
 var toc_pane = 1;
 var toc_pane_div = "left_pane";
 var content_pane_div = "right_pane";
-var html_url_prefix = "";
+var html_url_prefix = "../..";
 var documentation_mode = 1;
 var tab_mode = ! no_tab_mode;
 

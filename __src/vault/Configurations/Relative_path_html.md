@@ -13,7 +13,7 @@ This can be useful if you want a basic website for personal use, and don't want 
 
 In some edgecases, you might want to use relative_path_html in conjunction with a webserver. For example if you add in custom integrations that require relative html paths. 
 
-> In versions [[v1.2.1]] and [[v1.2.0]], this setting will enable [[NoTabs Mode]] and disable [[Graph view]]. This was turned off from version [[v1.2.2]] onwards, as the relative_path_html setting may be used with a webserver, and in those cases the tabs and graph view will work. If you intend to use the files directly from your filesystem, be sure to manually enable NoTabs and disable the Graph view. (JS file fetching is not allowed via the filesystem, so these functions have to be disabled for the site to work at all in this mode.)
+> In versions [[v1.2.1]] and [[v1.2.0]], this setting will enable [[NoTabs Mode]] and disable [[Graph view]]. This was turned off from version [[v1.2.2]] onwards, as the relative_path_html setting may be used with a webserver, and in those cases the tabs and graph view will work. If you intend to use the files directly from your filesystem, be sure to select a layout that is not `tabs` and disable the Graph view. (JS file fetching is not allowed via the filesystem, so these functions have to be disabled for the site to work at all in this mode.)
 
 To enable this mode, add the following to your config.yml:
 ```yaml

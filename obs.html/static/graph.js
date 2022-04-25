@@ -46,11 +46,11 @@ function get_graph_args(uid){
 }
 
 function get_graph_data(){
-        return '/obs.html/data/graph.json';
+        return '../../obs.html/data/graph.json';
 }
 
 function get_node_graph_data(){
-        return '/obs.html/data/node_graph.json';
+        return '../../obs.html/data/node_graph.json';
 }
 
 

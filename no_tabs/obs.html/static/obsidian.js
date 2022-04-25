@@ -3,7 +3,7 @@
 // Globals
 var path_to_open = [];
 var no_tab_mode = 1;
-var toc_pane = 0;
+var toc_pane = 1;
 var toc_pane_div = "right_pane";
 var content_pane_div = "left_pane";
 var html_url_prefix = "/no_tabs";

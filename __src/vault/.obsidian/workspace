@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Changelog/v2.1.0.md",
+            "file": "Configurations/Relative_path_html.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Changelog/v2.1.0.md",
+                "file": "Configurations/Relative_path_html.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,6 +101,7 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
+    "Configurations/Relative_path_html.md",
     "Changelog/v2.1.0.md",
     "Configurations/Graph view.md",
     "Configurations/Styling/Writing a custom graph view template.md",
@@ -109,7 +110,6 @@
     "Configurations/NoTabs Mode.md",
     "Changelog/v1.2.0.md",
     "Change Log.md",
-    "Changelog/v2.0.2.md",
-    "Changelog/v2.0.1.md"
+    "Changelog/v2.0.2.md"
   ]
 }
