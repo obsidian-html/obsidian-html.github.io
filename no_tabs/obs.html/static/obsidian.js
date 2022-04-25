@@ -3,7 +3,7 @@
 // Globals
 var path_to_open = [];
 var no_tab_mode = 1;
-var toc_pane = 1;
+var toc_pane = 0;
 var toc_pane_div = "right_pane";
 var content_pane_div = "left_pane";
 var html_url_prefix = "/no_tabs";
@@ -16,17 +16,24 @@ function LoadPage() {
         if (documentation_mode){
                 httpGetAsync(html_url_prefix+'/obs.html/data/graph.json', load_dirtree_as_left_pane, 0, 'callbackpath');
         }
-        if (toc_pane && no_tab_mode){
-                let collection = document.getElementsByClassName("toc");
-                if (collection.length > 0){
-                        let toc = collection[0];
-                        toc.style.display = 'none';
-                        let tpd = document.getElementById(toc_pane_div);
-                        tpd.display = 'block';
-                        tpd.innerHTML = '<span class="toc-header">Table of contents</span>' + collection[0].innerHTML;
+        
+        let collection = document.getElementsByClassName("toc");
+        if (collection.length > 0){
+                let toc = collection[0];
+                if (toc.getElementsByTagName('li').length > 1){
+
+                        if (toc_pane && no_tab_mode){
+                                let tpd = document.getElementById(toc_pane_div);
+                                tpd.display = 'block';
+                                tpd.innerHTML = '<span class="toc-header">Table of contents</span>' + collection[0].innerHTML;
+                        }
+                        else{
+                                toc.style.display = 'block';
+                                toc.innerHTML = '<h3>Table of Contents</h1>\n'+toc.innerHTML
+                        }
                 }
         }
-
+        
         if (tab_mode){
                 SetLinks(0);
         }
@@ -322,8 +329,11 @@ function SetLinks(level) {
                         }
                         if (tab_mode && l.classList.contains('anchor-link')) {
                                 l.onclick = function () {
-                                        console.log('anch')
                                         levelcont = this.closest('div')
+                                        if (levelcont.classList.contains('container') == false){
+                                                levelcont = levelcont.parentElement;
+                                        }
+                                        
                                         var el = levelcont.querySelectorAll(this.getAttribute("href"))[0];
                                         if (el) {
                                                 el.parentElement.scrollTop = el.offsetTop - rem(1);
@@ -364,6 +374,11 @@ function SetContainer(container) {
         if (svgs.length == 1) {
                 svgs[0].id = svgs[0].id.replace('{level}', container.level)
         }
+
+        divs = container.querySelectorAll(".graph_div");
+        if (divs.length == 1) {
+                divs[0].id = divs[0].id.replace('{level}', container.level)
+        }        
 
         let buttons = container.querySelectorAll(".graph_button");
         if (buttons.length == 1) {

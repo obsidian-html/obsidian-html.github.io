@@ -18,7 +18,6 @@
                 <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
 
 
@@ -50,32 +49,92 @@
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-                                        </div>                                
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Backlinks" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <div class="toc">
+                                        <h1 id="backlinks">Backlinks</h1>
+<div class="toc">
 <ul>
 <li><a href="#backlinks" class="anchor-link">Backlinks</a></li>
 </ul>
 </div>
-<h1 id="backlinks">Backlinks</h1>
 <p>Notice on each page of this site, each note ends with a backlinks section.    </p>
 <p>This does not come from the vault notes, but is computed and added in by ObsidianHtml. You can turn this off if you don't like this behavior.   </p>
 <p>See also: <a href="/index_from_tags/Configurations/Configuration Options.html#backlinks">Configuration Options#Backlinks</a></p><h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/Configurations/Configuration Options.html">Configuration Options</a></li>
-	<li><a class="backlink" href="/Configurations/Features.html">Features</a></li>
-	<li><a class="backlink" href="/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
+	<li><a class="backlink" href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
 </ul>
-<div class="graph">
-    <svg class="graph_svg" id="A208148966343278510767295912521261231474{level}"></svg>
-    <button class="graph_button" id="B208148966343278510767295912521261231474{level}" level="{level}" onclick="run('208148966343278510767295912521261231474'+this.level, 'Backlinks');">Show Graph</button>
+<!-- <div class="graph">
+    <svg class="graph_svg" id="A246724940950834944078362140543771836946{level}"></svg>
+    <button class="graph_button" id="B246724940950834944078362140543771836946{level}" level="{level}" onclick="run('246724940950834944078362140543771836946'+this.level, 'Backlinks');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+ -->
+ <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A246724940950834944078362140543771836946{level}" class="graph_div"></div>
+    <button class="graph_button" id="B246724940950834944078362140543771836946{level}" level="{level}" onclick="run('246724940950834944078362140543771836946'+this.level, 'Backlinks');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
 
                         <!-- end content -->
                         </div>

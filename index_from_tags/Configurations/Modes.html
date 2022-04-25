@@ -18,7 +18,6 @@
                 <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
 
 
@@ -50,14 +49,20 @@
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-                                        </div>                                
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Modes" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <div class="toc">
+                                        <h1 id="modes">Modes</h1>
+<div class="toc">
 <ul>
 <li><a href="#modes" class="anchor-link">Modes</a><ul>
 <li><a href="#entrypoint-mode" class="anchor-link">Entrypoint mode</a></li>
@@ -69,7 +74,6 @@
 </li>
 </ul>
 </div>
-<h1 id="modes">Modes</h1>
 <p>A <em>mode</em> is a term used for certain <a href="/index_from_tags/Configurations/Configuration Options.html">configuration settings</a> that alter the note selection and/or the contents of the homepage.   </p>
 <h2 id="entrypoint-mode">Entrypoint mode</h2>
 <p>This is the default. An obsidian (<a href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">or markdown</a>) note is selected that functions as the homepage. All the notes linked to by the entrypoint node are parsed, and the notes they link to, and so on and so forth.   </p>
@@ -87,14 +91,69 @@
 <p>This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.   </p>
 <p>Read more <a href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a>.</p><h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/Configurations/Process All.html">Process All</a></li>
-	<li><a class="backlink" href="/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
-<div class="graph">
-    <svg class="graph_svg" id="A294871510430908000066817116354259349452{level}"></svg>
-    <button class="graph_button" id="B294871510430908000066817116354259349452{level}" level="{level}" onclick="run('294871510430908000066817116354259349452'+this.level, 'Modes');">Show Graph</button>
+<!-- <div class="graph">
+    <svg class="graph_svg" id="A33848968753816302188930169704513426580{level}"></svg>
+    <button class="graph_button" id="B33848968753816302188930169704513426580{level}" level="{level}" onclick="run('33848968753816302188930169704513426580'+this.level, 'Modes');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+ -->
+ <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A33848968753816302188930169704513426580{level}" class="graph_div"></div>
+    <button class="graph_button" id="B33848968753816302188930169704513426580{level}" level="{level}" onclick="run('33848968753816302188930169704513426580'+this.level, 'Modes');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
 
                         <!-- end content -->
                         </div>

@@ -18,7 +18,6 @@
                 <script src="/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/obs.html/static/graph.css" />
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/obs.html/static/dirtree.js" /></script>
 
 
@@ -37,14 +36,14 @@
                                         ≡
                                 </div>
                                 <div id="navbar" class="navbar">
-                                <a class="navbar-link"href="/index.html" title="Home">Home</a>
-<a class="navbar-link"href="/General Information/About ObsidianHtml.html" title="About">About</a>
-<a class="navbar-link"href="/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
-<a class="navbar-link"href="/Configurations/Styling/Styling.html" title="Styling">Styling</a>
-<a class="navbar-link"href="/Configurations/Modes.html" title="Modes">Modes</a>
-<a class="navbar-link"href="/Configurations/Features.html" title="Features">Features</a>
-<a class="navbar-link"href="/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
-<a class="navbar-link"href="/News.html" title="News">News</a>
+                                <a class="navbar-link" href="/index.html" title="Home">Home</a>
+<a class="navbar-link" href="/General Information/About ObsidianHtml.html" title="About">About</a>
+<a class="navbar-link" href="/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
+<a class="navbar-link" href="/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/Configurations/Modes.html" title="Modes">Modes</a>
+<a class="navbar-link" href="/Configurations/Features.html" title="Features">Features</a>
+<a class="navbar-link" href="/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/News.html" title="News">News</a>
                                         <div class="icon-tray">
                                                         <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="rss_link" class="system-link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
@@ -61,19 +60,24 @@
                     <img src = "/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-                                        </div>                                
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=Published ObsidianHtml version 0.0.9!" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <div class="toc">
+                                        <h1 id="published-obsidianhtml-version-009">Published ObsidianHtml version 0.0.9!</h1>
+<div class="toc">
 <ul>
 <li><a href="#published-obsidianhtml-version-009" class="anchor-link">Published ObsidianHtml version 0.0.9!</a></li>
 </ul>
 </div>
-<h1 id="published-obsidianhtml-version-009">Published ObsidianHtml version 0.0.9!</h1>
 <p>Lots of new features, like: graph view, backlinks, index from tags, image scaling, temporary vault copy.    </p>
 <p>We made these features configurable: folder exclusion, external link behavior, css/js inclusions. And of course we added a lot of bugfixes.   </p>
 <p>Next version is going to be again a slew of new features, but also a strong focus on putting everything in its place, and having a place for everything, to (hopefully) get a version that sees less changes in the output and config structures.   </p>
@@ -81,11 +85,66 @@
 <ul>
 	<li><a class="backlink" href="/News.html">News</a></li>
 </ul>
-<div class="graph">
-    <svg class="graph_svg" id="A203478944355757390517494521904392114119{level}"></svg>
-    <button class="graph_button" id="B203478944355757390517494521904392114119{level}" level="{level}" onclick="run('203478944355757390517494521904392114119'+this.level, 'Published ObsidianHtml version 0.0.9!');">Show Graph</button>
+<!-- <div class="graph">
+    <svg class="graph_svg" id="A204471701140879444349859908019187086215{level}"></svg>
+    <button class="graph_button" id="B204471701140879444349859908019187086215{level}" level="{level}" onclick="run('204471701140879444349859908019187086215'+this.level, 'Published ObsidianHtml version 0.0.9!');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
+
+ -->
+ <script src="/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A204471701140879444349859908019187086215{level}" class="graph_div"></div>
+    <button class="graph_button" id="B204471701140879444349859908019187086215{level}" level="{level}" onclick="run('204471701140879444349859908019187086215'+this.level, 'Published ObsidianHtml version 0.0.9!');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
 
                         <!-- end content -->
                         </div>

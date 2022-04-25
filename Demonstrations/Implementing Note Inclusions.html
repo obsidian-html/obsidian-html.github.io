@@ -18,7 +18,6 @@
                 <script src="/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/obs.html/static/graph.css" />
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/obs.html/static/dirtree.js" /></script>
 
 
@@ -37,14 +36,14 @@
                                         ≡
                                 </div>
                                 <div id="navbar" class="navbar">
-                                <a class="navbar-link"href="/index.html" title="Home">Home</a>
-<a class="navbar-link"href="/General Information/About ObsidianHtml.html" title="About">About</a>
-<a class="navbar-link"href="/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
-<a class="navbar-link"href="/Configurations/Styling/Styling.html" title="Styling">Styling</a>
-<a class="navbar-link"href="/Configurations/Modes.html" title="Modes">Modes</a>
-<a class="navbar-link"href="/Configurations/Features.html" title="Features">Features</a>
-<a class="navbar-link"href="/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
-<a class="navbar-link"href="/News.html" title="News">News</a>
+                                <a class="navbar-link" href="/index.html" title="Home">Home</a>
+<a class="navbar-link" href="/General Information/About ObsidianHtml.html" title="About">About</a>
+<a class="navbar-link" href="/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
+<a class="navbar-link" href="/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/Configurations/Modes.html" title="Modes">Modes</a>
+<a class="navbar-link" href="/Configurations/Features.html" title="Features">Features</a>
+<a class="navbar-link" href="/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/News.html" title="News">News</a>
                                         <div class="icon-tray">
                                                         <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
             <a id="rss_link" class="system-link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
@@ -61,14 +60,20 @@
                     <img src = "/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-                                        </div>                                
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=Inclusions" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <div class="toc">
+                                        <h1 id="note-inclusions">Note inclusions</h1>
+<div class="toc">
 <ul>
 <li><a href="#note-inclusions" class="anchor-link">Note inclusions</a><ul>
 <li><a href="#full-page-inclusion" class="anchor-link">Full page inclusion</a></li>
@@ -82,7 +87,6 @@
 </li>
 </ul>
 </div>
-<h1 id="note-inclusions">Note inclusions</h1>
 <p>Note inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    </p>
 <p>It uses the same link syntax as images:   </p>
 <div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
@@ -126,11 +130,66 @@ This can be done by writing  <br />
 <ul>
 	<li><a class="backlink" href="/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
 </ul>
-<div class="graph">
-    <svg class="graph_svg" id="A277495031749629133701634493428466787555{level}"></svg>
-    <button class="graph_button" id="B277495031749629133701634493428466787555{level}" level="{level}" onclick="run('277495031749629133701634493428466787555'+this.level, 'Inclusions');">Show Graph</button>
+<!-- <div class="graph">
+    <svg class="graph_svg" id="A247756808123299553052733815451260791075{level}"></svg>
+    <button class="graph_button" id="B247756808123299553052733815451260791075{level}" level="{level}" onclick="run('247756808123299553052733815451260791075'+this.level, 'Inclusions');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
+
+ -->
+ <script src="/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A247756808123299553052733815451260791075{level}" class="graph_div"></div>
+    <button class="graph_button" id="B247756808123299553052733815451260791075{level}" level="{level}" onclick="run('247756808123299553052733815451260791075'+this.level, 'Inclusions');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
 
                         <!-- end content -->
                         </div>

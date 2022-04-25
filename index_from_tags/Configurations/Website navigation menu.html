@@ -18,7 +18,6 @@
                 <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
 
 
@@ -50,19 +49,24 @@
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-                                        </div>                                
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Website navigation menu" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <div class="toc">
+                                        <h1 id="website-navigation-menu">Website navigation menu</h1>
+<div class="toc">
 <ul>
 <li><a href="#website-navigation-menu" class="anchor-link">Website navigation menu</a></li>
 </ul>
 </div>
-<h1 id="website-navigation-menu">Website navigation menu</h1>
 <blockquote>
 <p>New in <a href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a>   </p>
 </blockquote>
@@ -92,14 +96,69 @@
 
 <p>Make sure to use the full relative path to the note as measured from your webroot (so exclude the <a href="/index_from_tags/Configurations/Configuration Options.html#html-url-prefix">prefix</a>).</p><h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/Changelog/v2.0.0.html">v2.0.0</a></li>
-	<li><a class="backlink" href="/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
-<div class="graph">
-    <svg class="graph_svg" id="A299216755101996115954126354660362113053{level}"></svg>
-    <button class="graph_button" id="B299216755101996115954126354660362113053{level}" level="{level}" onclick="run('299216755101996115954126354660362113053'+this.level, 'Website navigation menu');">Show Graph</button>
+<!-- <div class="graph">
+    <svg class="graph_svg" id="A264808238365203080348740927062431542637{level}"></svg>
+    <button class="graph_button" id="B264808238365203080348740927062431542637{level}" level="{level}" onclick="run('264808238365203080348740927062431542637'+this.level, 'Website navigation menu');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+ -->
+ <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A264808238365203080348740927062431542637{level}" class="graph_div"></div>
+    <button class="graph_button" id="B264808238365203080348740927062431542637{level}" level="{level}" onclick="run('264808238365203080348740927062431542637'+this.level, 'Website navigation menu');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
 
                         <!-- end content -->
                         </div>

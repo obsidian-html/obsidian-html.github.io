@@ -110,7 +110,7 @@ toggles:
   features:
     styling: 
       layout: tabs # documentation, tabs, no_tabs
-      add_toc: False    # add "[TOC]" (Table of Contents) when missing
+      add_toc: True    # add "[TOC]" (Table of Contents) when missing
       toc_pane: False   # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
       flip_panes: True # switch right and left pane around. (does nothing unless in documentation layout.)
       accent_color: '#4c9502'
@@ -121,7 +121,7 @@ toggles:
 
     graph:
       enabled: True           # Include code to build the graph view per page (default: True)
-      coalesce_force: '-200'
+      template: "3d"
 
     # Create an index.md with links to notes that have one of the given tags.
     # This index.md will serve as the entrypoint

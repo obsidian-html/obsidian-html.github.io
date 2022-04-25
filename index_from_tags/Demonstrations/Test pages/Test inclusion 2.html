@@ -18,7 +18,6 @@
                 <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
 
 
@@ -50,14 +49,20 @@
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-                                        </div>                                
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Test inclusion 2" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <div class="toc">
+                                        <h1 id="test-inclusion-2">Test Inclusion 2</h1>
+<div class="toc">
 <ul>
 <li><a href="#test-inclusion-2" class="anchor-link">Test Inclusion 2</a><ul>
 <li><a href="#second-chapter" class="anchor-link">Second chapter</a><ul>
@@ -70,7 +75,6 @@
 <li><a href="#new-h1-header" class="anchor-link">New h1 header</a></li>
 </ul>
 </div>
-<h1 id="test-inclusion-2">Test Inclusion 2</h1>
 <p>First chapter   </p>
 <h2 id="second-chapter">Second chapter</h2>
 <p>Content second chapter   </p>
@@ -83,11 +87,66 @@
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Demonstrations/Implementing Note Inclusions.html">Inclusions</a></li>
 </ul>
-<div class="graph">
-    <svg class="graph_svg" id="A55562017367332076490122156357638277770{level}"></svg>
-    <button class="graph_button" id="B55562017367332076490122156357638277770{level}" level="{level}" onclick="run('55562017367332076490122156357638277770'+this.level, 'Test inclusion 2');">Show Graph</button>
+<!-- <div class="graph">
+    <svg class="graph_svg" id="A105395550923038973139575932087162368682{level}"></svg>
+    <button class="graph_button" id="B105395550923038973139575932087162368682{level}" level="{level}" onclick="run('105395550923038973139575932087162368682'+this.level, 'Test inclusion 2');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+ -->
+ <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A105395550923038973139575932087162368682{level}" class="graph_div"></div>
+    <button class="graph_button" id="B105395550923038973139575932087162368682{level}" level="{level}" onclick="run('105395550923038973139575932087162368682'+this.level, 'Test inclusion 2');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
 
                         <!-- end content -->
                         </div>

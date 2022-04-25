@@ -18,7 +18,6 @@
                 <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
 
 
@@ -50,31 +49,91 @@
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-                                        </div>                                
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Creating a static html website from markdown files" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <div class="toc">
+                                        <h1 id="creating-a-static-html-website-from-markdown-files">Creating a static html website from markdown files</h1>
+<div class="toc">
 <ul>
 <li><a href="#creating-a-static-html-website-from-markdown-files" class="anchor-link">Creating a static html website from markdown files</a></li>
 </ul>
 </div>
-<h1 id="creating-a-static-html-website-from-markdown-files">Creating a static html website from markdown files</h1>
 <p>The second step is to take the generated proper markdown files and convert them into a website. You are looking at the endproduct of this step.   </p>
 <p>See <a href="/index_from_tags/Configurations/Features.html">Features</a> for all the ways in which you can influence this step.    </p>
 <p>You can for example <a href="/index_from_tags/Configurations/Configuration Options.html#html-custom-inclusions">add in your own stylesheets/script files</a>, <a href="/index_from_tags/Configurations/Configuration Options.html#html-template-path-str">edit the default html template</a> (or just provide your own template entirely), turn on/off the <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a> and the <a href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a>, among other things.</p><h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
-	<li><a class="backlink" href="/Configurations/Features.html">Features</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
 </ul>
-<div class="graph">
-    <svg class="graph_svg" id="A9772567991217546152554314003062005876{level}"></svg>
-    <button class="graph_button" id="B9772567991217546152554314003062005876{level}" level="{level}" onclick="run('9772567991217546152554314003062005876'+this.level, 'Creating a static html website from markdown files');">Show Graph</button>
+<!-- <div class="graph">
+    <svg class="graph_svg" id="A213811461115894638079546737315820769492{level}"></svg>
+    <button class="graph_button" id="B213811461115894638079546737315820769492{level}" level="{level}" onclick="run('213811461115894638079546737315820769492'+this.level, 'Creating a static html website from markdown files');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+ -->
+ <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A213811461115894638079546737315820769492{level}" class="graph_div"></div>
+    <button class="graph_button" id="B213811461115894638079546737315820769492{level}" level="{level}" onclick="run('213811461115894638079546737315820769492'+this.level, 'Creating a static html website from markdown files');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
 
                         <!-- end content -->
                         </div>

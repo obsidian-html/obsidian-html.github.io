@@ -18,7 +18,6 @@
                 <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
 
 
@@ -50,14 +49,20 @@
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-                                        </div>                                
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Styling" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <div class="toc">
+                                        <h1 id="styling">Styling</h1>
+<div class="toc">
 <ul>
 <li><a href="#styling" class="anchor-link">Styling</a><ul>
 <li><a href="#layouts" class="anchor-link">Layouts</a><ul>
@@ -74,7 +79,6 @@
 </li>
 </ul>
 </div>
-<h1 id="styling">Styling</h1>
 <blockquote>
 <p>This page discusses the built-in styling options. If you want to use custom code, go to <a href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a>.   </p>
 </blockquote>
@@ -138,17 +142,72 @@
 <p>This is not supported for the tabs layout as there the width of the notes is more or less tied to the well-being of the tab automation.   </p>
 <p>This can be set to any valid CSS width value, such as <code>100%</code>, or <code>450px</code>. If you want the note to be as wide as possible then 100% will be a good value to configure. Personally I find content divs that are a bit less wide easier to read, and the current configured width ties together nicely with the documentation layout.</p><h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/Changelog/v2.0.0.html">v2.0.0</a></li>
-	<li><a class="backlink" href="/Configurations/Styling/Tabs Layout.html">Tabs Layout</a></li>
-	<li><a class="backlink" href="/Configurations/NoTabs Mode.html">NoTabs Mode</a></li>
-	<li><a class="backlink" href="/Configurations/Configuration Options.html">Configuration Options</a></li>
-	<li><a class="backlink" href="/Configurations/Features.html">Features</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Tabs Layout.html">Tabs Layout</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/NoTabs Mode.html">NoTabs Mode</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
 </ul>
-<div class="graph">
-    <svg class="graph_svg" id="A95097697170895261487801569906774588833{level}"></svg>
-    <button class="graph_button" id="B95097697170895261487801569906774588833{level}" level="{level}" onclick="run('95097697170895261487801569906774588833'+this.level, 'Styling');">Show Graph</button>
+<!-- <div class="graph">
+    <svg class="graph_svg" id="A256550983297264837585687719950954604905{level}"></svg>
+    <button class="graph_button" id="B256550983297264837585687719950954604905{level}" level="{level}" onclick="run('256550983297264837585687719950954604905'+this.level, 'Styling');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+ -->
+ <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A256550983297264837585687719950954604905{level}" class="graph_div"></div>
+    <button class="graph_button" id="B256550983297264837585687719950954604905{level}" level="{level}" onclick="run('256550983297264837585687719950954604905'+this.level, 'Styling');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
 
                         <!-- end content -->
                         </div>

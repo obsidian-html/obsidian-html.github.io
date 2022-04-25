@@ -18,7 +18,6 @@
                 <script src="/index_from_tags/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="/index_from_tags/obs.html/static/dirtree.js" /></script>
 
 
@@ -50,14 +49,20 @@
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
             </a>
         </div>
-                                        </div>                                
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Features" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <div class="toc">
+                                        <h1 id="features">Features</h1>
+<div class="toc">
 <ul>
 <li><a href="#features" class="anchor-link">Features</a><ul>
 <li><a href="#high-level" class="anchor-link">High level</a></li>
@@ -69,7 +74,6 @@
 </li>
 </ul>
 </div>
-<h1 id="features">Features</h1>
 <h2 id="high-level">High level</h2>
 <ul>
 <li><a href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a>   </li>
@@ -101,14 +105,69 @@
 <h2 id="other">Other</h2>
 <p>See <a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a> for a detailed look at all the configuration options available.</p><h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
-	<li><a class="backlink" href="/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
-<div class="graph">
-    <svg class="graph_svg" id="A174777056961912257221860296281429577537{level}"></svg>
-    <button class="graph_button" id="B174777056961912257221860296281429577537{level}" level="{level}" onclick="run('174777056961912257221860296281429577537'+this.level, 'Features');">Show Graph</button>
+<!-- <div class="graph">
+    <svg class="graph_svg" id="A93647543298350474797512203375028528329{level}"></svg>
+    <button class="graph_button" id="B93647543298350474797512203375028528329{level}" level="{level}" onclick="run('93647543298350474797512203375028528329'+this.level, 'Features');">Show Graph</button>
 </div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+ -->
+ <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A93647543298350474797512203375028528329{level}" class="graph_div"></div>
+    <button class="graph_button" id="B93647543298350474797512203375028528329{level}" level="{level}" onclick="run('93647543298350474797512203375028528329'+this.level, 'Features');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
 
                         <!-- end content -->
                         </div>
