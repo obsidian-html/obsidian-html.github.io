@@ -124,6 +124,9 @@
 <li><a href="#v210" class="anchor-link">v2.1.0</a><ul>
 <li><a href="#graph-view" class="anchor-link">Graph view</a></li>
 <li><a href="#call-outs" class="anchor-link">Call-outs</a></li>
+<li><a href="#bugfixes" class="anchor-link">Bugfixes</a></li>
+<li><a href="#tweaks" class="anchor-link">Tweaks</a></li>
+<li><a href="#lifecycling" class="anchor-link">Lifecycling</a></li>
 </ul>
 </li>
 </ul>
@@ -152,7 +155,22 @@
 <ul>
 <li>Added in this version   </li>
 <li>Achieved feature parity (as far as I can tell), but there might be some bugs/styling tweaks to be done in following patch versions   </li>
-<li>Read more: <a href="/tabs/Demonstrations/Implementing Call-outs.html">Implementing Call-outs</a></li>
+<li>Read more: <a href="/tabs/Demonstrations/Implementing Call-outs.html">Implementing Call-outs</a>   </li>
+</ul>
+<h2 id="bugfixes">Bugfixes</h2>
+<ul>
+<li>When backlinks are turned off, a key not found error occurs at the AddCrosslinks() step   <ul>
+<li>Fixed   </li>
+</ul>
+</li>
+</ul>
+<h2 id="tweaks">Tweaks</h2>
+<ul>
+<li>TOC/Content panes were added in <a href="/tabs/Changelog/v2.0.0.html">v2.0.0</a> there were some small implementation/styling tweaks done. Inline TOC is now a bit better styled, for example.   </li>
+</ul>
+<h2 id="lifecycling">Lifecycling</h2>
+<ul>
+<li>distutils copy_tree was deprecated, this is replaced by a custom function based on shutil's copytree</li>
 </ul><h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Demonstrations/Implementing Call-outs.html">Implementing Call-outs</a></li>
@@ -160,8 +178,8 @@
 	<li><a class="backlink" href="/tabs/Change Log.html">Change Log</a></li>
 </ul>
 <!-- <div class="graph">
-    <svg class="graph_svg" id="A201285303452560261316797640021158807810{level}"></svg>
-    <button class="graph_button" id="B201285303452560261316797640021158807810{level}" level="{level}" onclick="run('201285303452560261316797640021158807810'+this.level, 'v2.1.0');">Show Graph</button>
+    <svg class="graph_svg" id="A251358360590056689949196772953754634014{level}"></svg>
+    <button class="graph_button" id="B251358360590056689949196772953754634014{level}" level="{level}" onclick="run('251358360590056689949196772953754634014'+this.level, 'v2.1.0');">Show Graph</button>
 </div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -169,8 +187,8 @@
  <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A201285303452560261316797640021158807810{level}" class="graph_div"></div>
-    <button class="graph_button" id="B201285303452560261316797640021158807810{level}" level="{level}" onclick="run('201285303452560261316797640021158807810'+this.level, 'v2.1.0');">Show Graph</button>
+    <div id="A251358360590056689949196772953754634014{level}" class="graph_div"></div>
+    <button class="graph_button" id="B251358360590056689949196772953754634014{level}" level="{level}" onclick="run('251358360590056689949196772953754634014'+this.level, 'v2.1.0');">Show Graph</button>
 </div>
 
 
