@@ -1,6 +1,5 @@
 ---
-obs.html:
-  disable_dir_nav: true
+graph_name: Homepage
 tags:
 - type/entrypoint
 ---

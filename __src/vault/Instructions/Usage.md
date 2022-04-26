@@ -38,7 +38,8 @@ obsidian_entrypoint_path_str: '/path/to/your/vault/entrypoint.md'
 
 Copy the code above into a file called `config.yaml` and fill in the correct paths.
 
-> **Important:** the next step will create a folder called `output` in your current path. Move to a folder where you don't mind a folder being created. Make sure you are not in your vault when running obsidianhtml with these settings, because creating the output folder in your vault will cause errors on subsequent runs.
+> [!important]- Important: output will be created in your cwd!
+> The next step will create a folder called `output` in your current path. Move to a folder where you don't mind a folder being created. Make sure you are not in your vault when running obsidianhtml with these settings, because creating the output folder in your vault will cause errors on subsequent runs.
 
 Running again with now the config file as an input. 
 (Make sure that you give the correct path to your config file!)
@@ -49,7 +50,8 @@ obsidianhtml -i config.yaml
 
 You might get a lot of warnings if you use external images, or have a lot of notes linked but not created. This is expected, and such warnings can be turned off, if desired, see [[Configuration Options]]. 
 
-> Tip: run `obsidianhtml -i config.yaml -v` to run in verbose mode to get more detail on what is going on in which note / step of the process.
+> [!Tip]- Tip: verbosity
+> Run `obsidianhtml -i config.yaml -v` to run in verbose mode to get more detail on what is going on in which note / step of the process.
 
 The output will be located in your current directory under `output/md` and `output/html`. 
 

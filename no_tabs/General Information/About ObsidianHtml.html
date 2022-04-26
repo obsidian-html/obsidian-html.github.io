@@ -17,6 +17,7 @@
                 <link rel="stylesheet" href="/no_tabs/obs.html/static/main.css" />
                 <script src="/no_tabs/obs.html/static/mermaid.min.js"></script> 
                 
+<link rel="stylesheet" href="/no_tabs/obs.html/static/callouts.css" />
 <link rel="stylesheet" href="/no_tabs/obs.html/static/graph.css" />
 <script src="/no_tabs/obs.html/static/dirtree.js" /></script>
 
@@ -86,17 +87,38 @@
 <h2 id="description">Description</h2>
 <p>ObsidianHtml is an application that can be used to export Obsidian notes to standard markdown and an html based website.    </p>
 <p>In fact, this website that you are currently on is directly compiled out of a <a href="https://github.com/obsidian-html/obsidian-html.github.io/tree/main/__src/vault" class="external-link">vault</a>. The compiled markdown can be <a href="/no_tabs/index.html">found here</a>.   </p>
-<blockquote>
-<p><strong>Important note:</strong>    </p>
-<p>Only after naming this project I learned that there used to be a similar package under the same name. That one seems to have been renamed to Oboe. The original was located at <a href="https://github.com/kmaasrud/obsidian-html" class="external-link">https://github.com/kmaasrud/obsidian-html</a> and later <a href="https://github.com/kmaasrud/oboe" class="external-link">https://github.com/kmaasrud/oboe</a> which you find referenced in a lot of places. I would link to it but I can't find an authoritative source, only forks.  <br />
-Anyways: <strong>This is not that package</strong>.   </p>
-</blockquote>
+<div class="callout callout-important note callout-folded">
+<div class="callout-title" onclick="fold_callout(this)">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
+</div>
+<div class="callout-title-name">Notice: obsidian-html != obsidian-html <br />
+</div>
+<div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
+</div>
+</div>
+<p></p>
+<p>Only after naming this project I learned that there used to be a similar package under the same name. That one seems to have been renamed to Oboe.  <br />
+</p>
+<p>The original was located at <a href="https://github.com/kmaasrud/obsidian-html" class="external-link">https://github.com/kmaasrud/obsidian-html</a> and later <a href="https://github.com/kmaasrud/oboe" class="external-link">https://github.com/kmaasrud/oboe</a> which you find referenced in a lot of places.  <br />
+</p>
+<p>I would link to it but I can't find an authoritative source, only forks.  <br />
+Anyways: <strong>This is not that package</strong>. <br />
+</p>
+</div>
 <h2 id="what-does-it-do">What does it do?</h2>
 <p>The Obsidian notes will be converted to standard markdown output. Then, optionally, html output is created based on the standard markdown.   </p>
 <p>It is also possible to input existing standard markdown to just use the markdown to html functionality.   </p>
-<blockquote>
-<p>See <a href="/no_tabs/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a> for a nice demo of the first part.   </p>
-</blockquote>
+<p>Though truth be told, the main usecase is converting an obsidian vault directly to html. The other usecases are kind of stuck in beta due to lack of interest by users and myself.   </p>
+<div class="callout callout-example">
+<div class="callout-title">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+</div>
+<div class="callout-title-name">Example
+</div>
+</div>
+<p>See <a href="/no_tabs/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a> for a nice demo of the first part. <br />
+</p>
+</div>
 <p>To convert your notes, you need to point to your notes folder, and to one note that will serve as the index.html page.   </p>
 <p>By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, <a href="/no_tabs/Configurations/Modes.html">there are other modes available</a>.   </p>
 <h2 id="compatibility">Compatibility</h2>
@@ -105,17 +127,15 @@ Anyways: <strong>This is not that package</strong>.   </p>
 <li>Python version 3.9 or higher is required   </li>
 <li>Make sure that the <code>python</code> command points to <code>python3</code>, and not a python2 version.   </li>
 </ul>
-<blockquote>
-<p>ObsidianHtml will write a folder to your html output named <code>obs.html</code>, if you have a directory in the root of your vault with the same name, there might be issues with the html output.   </p>
-</blockquote>
+<p>One thing to take note of is that ObsidianHtml will write a folder to your html output named obs.html, if you have a directory in the root of your vault with the same name (however unlikely that is...) there might be issues with the html output.   </p>
 <h2 id="next-up">Next up</h2>
 <p>Take a look at all the <a href="/no_tabs/Configurations/Features.html">high level features</a> that can be enabled/disabled, or read about all the <a href="/no_tabs/Configurations/Configuration Options.html">configuration options</a>. Or maybe jump directly to <a href="/no_tabs/Instructions/Installation.html">Installation</a>.</p><h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/no_tabs/index.html">index</a></li>
+	<li><a class="backlink" href="/no_tabs/index.html">Homepage</a></li>
 </ul>
 <!-- <div class="graph">
-    <svg class="graph_svg" id="A174285475451226899685619049353237005532{level}"></svg>
-    <button class="graph_button" id="B174285475451226899685619049353237005532{level}" level="{level}" onclick="run('174285475451226899685619049353237005532'+this.level, 'About ObsidianHtml');">Show Graph</button>
+    <svg class="graph_svg" id="A73911439645135148250351180252683896258{level}"></svg>
+    <button class="graph_button" id="B73911439645135148250351180252683896258{level}" level="{level}" onclick="run('73911439645135148250351180252683896258'+this.level, 'About ObsidianHtml');">Show Graph</button>
 </div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -123,8 +143,8 @@ Anyways: <strong>This is not that package</strong>.   </p>
  <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A174285475451226899685619049353237005532{level}" class="graph_div"></div>
-    <button class="graph_button" id="B174285475451226899685619049353237005532{level}" level="{level}" onclick="run('174285475451226899685619049353237005532'+this.level, 'About ObsidianHtml');">Show Graph</button>
+    <div id="A73911439645135148250351180252683896258{level}" class="graph_div"></div>
+    <button class="graph_button" id="B73911439645135148250351180252683896258{level}" level="{level}" onclick="run('73911439645135148250351180252683896258'+this.level, 'About ObsidianHtml');">Show Graph</button>
 </div>
 
 

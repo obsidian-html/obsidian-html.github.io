@@ -17,6 +17,7 @@
                 <link rel="stylesheet" href="/obs.html/static/main.css" />
                 <script src="/obs.html/static/mermaid.min.js"></script> 
                 
+<link rel="stylesheet" href="/obs.html/static/callouts.css" />
 <link rel="stylesheet" href="/obs.html/static/graph.css" />
 <script src="/obs.html/static/dirtree.js" /></script>
 
@@ -121,9 +122,18 @@
 </code></pre></div>
 
 <p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.   </p>
-<blockquote>
-<p><strong>Do not</strong> run this command in your vault, as it will create the output in your vault, which will cause a DuplicateFileName error on subsequent runs!    </p>
-</blockquote>
+<div class="callout callout-caution callout-folded">
+<div class="callout-title" onclick="fold_callout(this)">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+</div>
+<div class="callout-title-name">Caution: don't run this command <strong>in</strong> your vault! <br />
+</div>
+<div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
+</div>
+</div>
+<p><strong>Do not</strong> run this command in your vault, as it will create the output in your vault, which will cause a DuplicateFileName error on subsequent runs!  <br />
+</p>
+</div>
 <p>If you place your config in your vault, then go a folder up and run <code>obsidianhtml -i &lt;vault folder name&gt;/config.yaml</code>. Alternatively, add the following settings to your config.yml to control the output location (adjust the paths to make sense for your environment):   </p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
 <span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
@@ -153,11 +163,11 @@
 <li>If the conversion works, but you want to change the behavior, check out <a href="/Configurations/Features.html">Features</a>, <a href="/Configurations/Modes.html">Modes</a>, and finally <a href="/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul><h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/index.html">index</a></li>
+	<li><a class="backlink" href="/index.html">Homepage</a></li>
 </ul>
 <!-- <div class="graph">
-    <svg class="graph_svg" id="A298749856872927341385722455115550714307{level}"></svg>
-    <button class="graph_button" id="B298749856872927341385722455115550714307{level}" level="{level}" onclick="run('298749856872927341385722455115550714307'+this.level, 'Quickstart');">Show Graph</button>
+    <svg class="graph_svg" id="A43426939796431369371826570064039211791{level}"></svg>
+    <button class="graph_button" id="B43426939796431369371826570064039211791{level}" level="{level}" onclick="run('43426939796431369371826570064039211791'+this.level, 'Quickstart');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -165,8 +175,8 @@
  <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A298749856872927341385722455115550714307{level}" class="graph_div"></div>
-    <button class="graph_button" id="B298749856872927341385722455115550714307{level}" level="{level}" onclick="run('298749856872927341385722455115550714307'+this.level, 'Quickstart');">Show Graph</button>
+    <div id="A43426939796431369371826570064039211791{level}" class="graph_div"></div>
+    <button class="graph_button" id="B43426939796431369371826570064039211791{level}" level="{level}" onclick="run('43426939796431369371826570064039211791'+this.level, 'Quickstart');">Show Graph</button>
 </div>
 
 

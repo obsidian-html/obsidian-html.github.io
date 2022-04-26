@@ -17,6 +17,7 @@
                 <link rel="stylesheet" href="/obs.html/static/main.css" />
                 <script src="/obs.html/static/mermaid.min.js"></script> 
                 
+<link rel="stylesheet" href="/obs.html/static/callouts.css" />
 <link rel="stylesheet" href="/obs.html/static/graph.css" />
 <script src="/obs.html/static/dirtree.js" /></script>
 
@@ -77,6 +78,7 @@
 <ul>
 <li><a href="#v210" class="anchor-link">v2.1.0</a><ul>
 <li><a href="#graph-view" class="anchor-link">Graph view</a></li>
+<li><a href="#call-outs" class="anchor-link">Call-outs</a></li>
 </ul>
 </li>
 </ul>
@@ -84,17 +86,37 @@
 <blockquote>
 <p>Feature version of <a href="/Changelog/v2.0.0.html">v2.0.0</a>   </p>
 </blockquote>
+<div class="callout callout-warning callout-folded">
+<div class="callout-title" onclick="fold_callout(this)">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+</div>
+<div class="callout-title-name">Under construction <br />
+</div>
+<div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
+</div>
+</div>
+<p>This feature has not been released yet. <br />
+</p>
+</div>
 <h2 id="graph-view">Graph view</h2>
 <ul>
 <li>It is now possible to <a href="/Configurations/Styling/Writing a custom graph view template.html">write a custom graph view template</a>.   </li>
-<li>The default graph is now the 3d built-in template, based on <a href="https://github.com/vasturiano/force-graph" class="external-link">force-graph</a> instead of d3.js</li>
+<li>The default graph is now the 3d built-in template, based on <a href="https://github.com/vasturiano/force-graph" class="external-link">force-graph</a> instead of d3.js   </li>
+</ul>
+<h2 id="call-outs">Call-outs</h2>
+<ul>
+<li>Added in this version   </li>
+<li>Achieved feature parity (as far as I can tell), but there might be some bugs/styling tweaks to be done in following patch versions   </li>
+<li>Read more: <a href="/Demonstrations/Implementing Call-outs.html">Implementing Call-outs</a></li>
 </ul><h2>Backlinks</h2>
 <ul>
+	<li><a class="backlink" href="/Demonstrations/Implementing Call-outs.html">Implementing Call-outs</a></li>
 	<li><a class="backlink" href="/Configurations/Styling/Writing a custom graph view template.html">Writing a custom graph view template</a></li>
+	<li><a class="backlink" href="/Change Log.html">Change Log</a></li>
 </ul>
 <!-- <div class="graph">
-    <svg class="graph_svg" id="A286219081492579851865978183253944035354{level}"></svg>
-    <button class="graph_button" id="B286219081492579851865978183253944035354{level}" level="{level}" onclick="run('286219081492579851865978183253944035354'+this.level, 'v2.1.0');">Show Graph</button>
+    <svg class="graph_svg" id="A214128027138637808106048338960633016341{level}"></svg>
+    <button class="graph_button" id="B214128027138637808106048338960633016341{level}" level="{level}" onclick="run('214128027138637808106048338960633016341'+this.level, 'v2.1.0');">Show Graph</button>
 </div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
@@ -102,8 +124,8 @@
  <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A286219081492579851865978183253944035354{level}" class="graph_div"></div>
-    <button class="graph_button" id="B286219081492579851865978183253944035354{level}" level="{level}" onclick="run('286219081492579851865978183253944035354'+this.level, 'v2.1.0');">Show Graph</button>
+    <div id="A214128027138637808106048338960633016341{level}" class="graph_div"></div>
+    <button class="graph_button" id="B214128027138637808106048338960633016341{level}" level="{level}" onclick="run('214128027138637808106048338960633016341'+this.level, 'v2.1.0');">Show Graph</button>
 </div>
 
 

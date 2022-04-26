@@ -12,3 +12,4 @@ tags:
 - [[Making Code blocks look pretty]]
 - [[Implementing Note Inclusions]]
 - [[Implementing Mermaid diagrams in HTML output]]
+- [[Implementing Call-outs]]

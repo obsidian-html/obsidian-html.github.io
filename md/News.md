@@ -1,6 +1,4 @@
 ---
-obs.html:
-  disable_dir_nav: true
 tags:
 - type/moc
 - date/2022-02-15

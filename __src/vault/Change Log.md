@@ -1,6 +1,4 @@
 ---
-obs.html:
-  disable_dir_nav: true
 rss:
   description: "An index page of all releases of ObsidianHtml since v1.0.0."
 tags:
@@ -9,6 +7,7 @@ tags:
 ---
 
 # Change Log
+- [[v2.1.0]] (Under construction)
 - [[v2.0.2]]
 - [[v2.0.1]]
 - [[v2.0.0]]

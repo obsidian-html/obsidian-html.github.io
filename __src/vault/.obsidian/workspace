@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Configurations/Relative_path_html.md",
+            "file": "General Information/About ObsidianHtml.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Configurations/Relative_path_html.md",
+                "file": "General Information/About ObsidianHtml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,15 +101,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "Configurations/Relative_path_html.md",
-    "Changelog/v2.1.0.md",
-    "Configurations/Graph view.md",
-    "Configurations/Styling/Writing a custom graph view template.md",
-    "ObsidianHtml.md",
-    "Configurations/Configuration Options.md",
-    "Configurations/NoTabs Mode.md",
-    "Changelog/v1.2.0.md",
+    "General Information/About ObsidianHtml.md",
     "Change Log.md",
-    "Changelog/v2.0.2.md"
+    "News.md",
+    "ObsidianHtml.md",
+    "Changelog/v2.1.0.md",
+    "Demonstrations/Implementing Call-outs.md",
+    "Instructions/Quickstart.md",
+    "Instructions/Installation.md",
+    "Instructions/Usage.md",
+    "Configurations/Features.md"
   ]
 }
