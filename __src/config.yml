@@ -106,7 +106,7 @@ toggles:
 
   # Whether the markdown interpreter assumes relative path when no / at the beginning of a link
   relative_path_md: True
-  relative_path_html: True
+  relative_path_html: False
 
   # Whether external http anchor links should have a target of "_blank"
   external_blank: False
@@ -126,7 +126,7 @@ toggles:
 
     graph:
       enabled: True           # Include code to build the graph view per page (default: True)
-      template: "3d"
+      template: "2d"
 
     # Create an index.md with links to notes that have one of the given tags.
     # This index.md will serve as the entrypoint
