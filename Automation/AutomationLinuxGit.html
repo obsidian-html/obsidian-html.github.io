@@ -144,17 +144,16 @@ git push
 <script src="//unpkg.com/d3-force"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
-    var centered = false;
 
     function graph_select_node(args){
         return function() {
             current_node_id = args.node.id;
-            window.Graph.zoomToFit(1000, rem(3), select)
+            window.Graph.zoomToFit(1000, rem(3), zoom_select)
             return false;
         }
     }
 
-    function select(n){
+    function zoom_select(n){
         if (n.id == current_node_id){
             return true
         }
@@ -204,14 +203,6 @@ git push
                         return
                     }
 
-                    // // Center/zoom on node
-                    // if (centered == false){
-                    //     Graph.centerAt(node.x, node.y, 1000);
-                    //     Graph.zoom(2, 500);
-                    // }
-                    // centered = true;
-
-
                     // color node
                     ctx.beginPath();
                     ctx.arc(node.x, node.y, 4+1, 0, 2 * Math.PI);
@@ -248,9 +239,8 @@ git push
                     args.node = node;
                     graph_right_click(args)()
                 })
-
             
-            setTimeout( () => window.Graph.zoomToFit(1000, rem(3), select), 1000 );
+            setTimeout( () => window.Graph.zoomToFit(1000, rem(3), zoom_select), 1000 );
         });
 
         
