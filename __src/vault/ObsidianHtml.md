@@ -5,10 +5,16 @@ tags:
 ---
 
 # ObsidianHtml
-| Status | Version|
-| :------ | :---| 
-| Last published version | https://pypi.org/project/obsidianhtml/ |
-| Currently working on | [obsidianhtml-2.X.X](https://github.com/obsidian-html/obsidian-html/issues)  [![TestSuite](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml/badge.svg)](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml)|
+> [!example]- Code
+> https://github.com/obsidian-html/obsidian-html/  ![TestSuite](https://github.com/obsidian-html/obsidian-html/actions/workflows/test.yml/badge.svg)
+
+> [!done]- PyPi package
+> https://pypi.org/project/obsidianhtml/
+
+> [!faq]- Quickstart
+> - **[[Quickstart]]**
+> - [[Installation]]
+> - [[Usage]]
 
 ## Table of Contents
 ### General information

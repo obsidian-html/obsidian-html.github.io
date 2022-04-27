@@ -7,7 +7,8 @@ tags:
 ---
 
 # Change Log
-- [[v2.1.0]] (Under construction)
+- [[v2.1.1]]
+- [[v2.1.0]]
 - [[v2.0.2]]
 - [[v2.0.1]]
 - [[v2.0.0]]

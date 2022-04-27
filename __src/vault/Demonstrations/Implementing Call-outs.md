@@ -1,6 +1,7 @@
 ---
 tags:
-- type/template
+- feature/html_output
+- type/configuration
 - date/2022-04-26
 ---
 
