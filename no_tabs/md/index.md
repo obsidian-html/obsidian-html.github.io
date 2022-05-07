@@ -16,8 +16,7 @@ tags:
 > - [Installation](./Instructions/Installation.md)   
 > - [Usage](./Instructions/Usage.md)   
    
-## Table of Contents   
-### General information   
+## General information   
    
 - [About ObsidianHtml](./General%20Information/About%20ObsidianHtml.md)   
 - [Report Issues & Request features](./General%20Information/Report%20Issues%20%26%20Request%20features.md)   
@@ -25,7 +24,7 @@ tags:
 - [News](./News.md)   
 - [Change Log](./Change%20Log.md)   
    
-### Usage & Capabilities   
+## Usage & Capabilities   
    
 - **[Quickstart](./Instructions/Quickstart.md)**   
 - [Installation](./Instructions/Installation.md)   
@@ -35,10 +34,6 @@ tags:
 - [Features](./Configurations/Features.md)   
 - [Configuration Options](./Configurations/Configuration%20Options.md)   
    
-### Tips and tricks   
+## Tips and tricks   
    
-- [Automate website deployment](./Automation/Automate%20website%20deployment.md)    
-   
-## Alternatives to ObsidianHtml   
-   
-- [Quartz 3](./Alternatives/Quartz%203.md)
+- [Automate website deployment](./Automation/Automate%20website%20deployment.md)

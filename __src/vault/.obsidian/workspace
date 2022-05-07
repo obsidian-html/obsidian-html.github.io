@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Changelog/v2.1.0.md",
+            "file": "General Information/About ObsidianHtml.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Changelog/v2.1.0.md",
+                "file": "General Information/About ObsidianHtml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,25 +91,23 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "Changelog/v2.1.0.md",
-    "Changelog/v2.1.1.md",
+    "General Information/About ObsidianHtml.md",
+    "Changelog/v2.2.0.md",
     "Change Log.md",
     "ObsidianHtml.md",
-    "Demonstrations/Implementing Call-outs.md",
-    "Configurations/NoTabs Mode.md",
-    "Demonstrations/Implementing Mermaid diagrams in HTML output.md",
-    "Demonstrations/Implementing links & link awareness.md",
-    "Demonstrations/Getting the basics right.md",
-    "Changelog/v2.0.2.md"
+    "Automation/Automate website deployment.md",
+    "Changelog/v2.0.0.md",
+    "Changelog/v2.1.1.md",
+    "Demonstrations/Implementing Latex.md",
+    "Changelog/v2.1.0.md",
+    "Demonstrations/Parsing Images, videos, and audio.md"
   ]
 }

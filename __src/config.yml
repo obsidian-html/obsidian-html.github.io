@@ -128,6 +128,9 @@ toggles:
       enabled: True           # Include code to build the graph view per page (default: True)
       template: "3d"
 
+    # search:
+    #   enabled: False
+
     # Create an index.md with links to notes that have one of the given tags.
     # This index.md will serve as the entrypoint
     # !! Enabling this feature will overwrite obsidian_entrypoint_path_str and md_entrypoint_path_str

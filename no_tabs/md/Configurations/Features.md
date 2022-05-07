@@ -27,6 +27,7 @@ tags:
 - [Custom stylesheet/javascript inclusions](../Configurations/Configuration%20Options.md#html-custom-inclusions)   
 - [Mermaid diagrams](../Demonstrations/Implementing%20Mermaid%20diagrams%20in%20HTML%20output.md)   
 - [Call-outs](../Demonstrations/Implementing%20Call-outs.md)   
+- [Mathjax support](../Demonstrations/Implementing%20Latex.md)   
 - [RSS Feed](../Configurations/RSS%20Feed.md)   
 - [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md)   
    

@@ -6,9 +6,11 @@ tags:
 
 # Images
 ## Obsidian type image links 
-`![[Resources/img/obsidian-html-logo-sq.png]]`
+`![[Resources/img/obsidian-html-logo-sq.png|300]]`
 ![[Resources/img/obsidian-html-logo.png|300]]
 
+`![[obsidian-html-logo-sq.png]]`
+![[obsidian-html-logo-sq.png]] 
 ## Proper markdown image links
 `![](Resources/img/obsidian-html-logo.png)`
 ![](Resources/img/obsidian-html-logo.png)

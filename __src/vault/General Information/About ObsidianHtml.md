@@ -34,7 +34,7 @@ To convert your notes, you need to point to your notes folder, and to one note t
 By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, [[Modes|there are other modes available]].
 
 ## Compatibility
-- This application is extensively tested on Linux/OSX, and occasionally tested on Windows.
+- This application is extensively tested on Linux, regularly tested by users on OSX, and basically never tested on (but intended to be compatible with) Windows.
 - Python version 3.9 or higher is required
 - Make sure that the `python` command points to `python3`, and not a python2 version.
 

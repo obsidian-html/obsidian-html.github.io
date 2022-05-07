@@ -16,15 +16,14 @@ tags:
 > - [[Installation]]
 > - [[Usage]]
 
-## Table of Contents
-### General information
+## General information
 - [[About ObsidianHtml]]
 - [[Report Issues & Request features]]
 - [[Using the website|How to navigate this site]]
 - [[News]]
 - [[Change Log]]
 
-### Usage & Capabilities
+## Usage & Capabilities
 - **[[Quickstart]]**
 - [[Installation]]
 - [[Usage]]
@@ -33,8 +32,6 @@ tags:
 - [[Features]]
 - [[Configuration Options]]
 
-### Tips and tricks
+## Tips and tricks
 - [[Automate website deployment|Automate website deployment]] 
 
-## Alternatives to ObsidianHtml
-- [[Quartz 3]]

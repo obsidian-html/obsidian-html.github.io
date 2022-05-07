@@ -13,12 +13,19 @@
                 <title>ObsidianHtml/Tabs-Mode</title>
 
                 <!-- Includes -->
+                <link rel="stylesheet" href="/tabs/obs.html/static/global_main.css" />
                 <link rel="stylesheet" href="/tabs/obs.html/static/mermaid.css" />
                 <link rel="stylesheet" href="/tabs/obs.html/static/main.css" />
                 <script src="/tabs/obs.html/static/mermaid.min.js"></script> 
                 
 <link rel="stylesheet" href="/tabs/obs.html/static/callouts.css" />
 <link rel="stylesheet" href="/tabs/obs.html/static/graph.css" />
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="/tabs/obs.html/static/load_mathjax.js" /></script>
+<link rel="stylesheet" href="/tabs/obs.html/static/search.css" />
+<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.2/dist/flexsearch.bundle.js"></script>
+<script src="/tabs/obs.html/static/search.js" /></script>
 <script src="/tabs/obs.html/static/dirtree.js" /></script>
 
 
@@ -34,6 +41,51 @@
         </head>
 
 <body onload="LoadPage();">
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction">
+                                <b>esc</b> to dismiss
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle('search-master-div', 'block');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            console.log(event);
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            document.getElementById('search-master-div').style.display = 'none';
+            return false;
+        }
+    }, true);
+
+    function click_inner_link(element){
+        element.getElementsByTagName('a')[0].click()
+    }
+</script>
         <div class="flex_col" id="site_column">
                 <div id="header" class="header" style="position:fixed">
                         <div id="header_flex" class="flex_row">
@@ -71,6 +123,17 @@
                     <img class="graph_header_div_svg" src = "/tabs/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
             </a>
         </div>
+                                                        <div onclick="openSearch()" style="width: calc(1.6rem - 12px); height: calc(1.6rem - 12px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right; padding: 3px; padding-bottom: 6px; padding-top: 0px;cursor: pointer;">
+                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes"/>
+        </div>
+        <script>
+                function openSearch(){
+                        if (toggle('search-master-div', 'block')){
+                                document.getElementById('search_string').focus()
+                                document.getElementById('search_string').select()
+                        }
+                }
+        </script>
                                         </div>                                
                                 </div>
                         </div>
@@ -157,14 +220,7 @@ scp -r <span class="s2">&quot;</span><span class="nv">$output_folder</span><span
 <ul>
 	<li><a class="backlink" href="/tabs/Automation/Automate website deployment.html">Automate website deployment</a></li>
 </ul>
-<!-- <div class="graph">
-    <svg class="graph_svg" id="A290746111082276861089228525316100463413{level}"></svg>
-    <button class="graph_button" id="B290746111082276861089228525316100463413{level}" level="{level}" onclick="run('290746111082276861089228525316100463413'+this.level, 'Auto push site using SSH on Linux');">Show Graph</button>
-</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
-
- -->
- <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
     <div id="A290746111082276861089228525316100463413{level}" class="graph_div"></div>

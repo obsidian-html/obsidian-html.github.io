@@ -1,5 +1,5 @@
 ---
-graph_name: Automate website deployment
+graph_name: Automate website deployment 
 tags:
 - type/automation
 - date/2022-02-04

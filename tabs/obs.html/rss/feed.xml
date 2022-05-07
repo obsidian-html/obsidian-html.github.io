@@ -4,8 +4,8 @@
         <link>https://obsidian-html.github.io</link>
         <description>The documentation site of ObsidianHtml, a package used to convert Obsidian notes to proper markdown and static HTML websites.</description>
         <language>en-usen-us</language>
-        <pubDate>Wed, 27 Apr 2022 15:22:01 CET</pubDate>
-        <lastBuildDate>Sun, 24 Apr 2022 00:00:00 CET</lastBuildDate>
+        <pubDate>Sat, 07 May 2022 16:03:12 CET</pubDate>
+        <lastBuildDate>Sat, 07 May 2022 00:00:00 CET</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>ObsidianHtml</generator>
         <managingEditor>collector@dwrolvink.com</managingEditor>
@@ -128,6 +128,14 @@
             <description>Feature version of v2.0.0   &lt;br/&gt;&lt;br/&gt;Added in this version   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Sun, 24 Apr 2022 00:00:00 CET</pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v2.1.0.html</guid>
+            
+        </item>
+        <item>
+            <title>v2.2.0</title>
+            <link>https://obsidian-html.github.io/Changelog/v2.2.0.html</link>
+            <description>Feature version of v2.0.0   &lt;br/&gt;&lt;br/&gt;New in this version   &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Sat, 07 May 2022 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Changelog/v2.2.0.html</guid>
             
         </item>
 

@@ -7,9 +7,9 @@ tags:
 # Run custom code   
 These steps describe how to install the requirements and use obsidianhtml from the code, instead of installing it as a package.    
    
-This way you can quickly test changes.   
+This way you can quickly test changes and/or customize the code to your liking.   
    
-For the normal installation process, follow [Installation](../Instructions/Installation.md).   
+For the normal installation process, follow [Installation](../Instructions/Installation.md). If you are asked to install the latest working version, follow [Install a different version](../Instructions/Install%20a%20different%20version.md).   
    
 ``` bash
 # Get the code

@@ -35,7 +35,7 @@ By default only notes that are found by following links recursively starting wit
    
 ## Compatibility   
    
-- This application is extensively tested on Linux/OSX, and occasionally tested on Windows.   
+- This application is extensively tested on Linux, regularly tested by users on OSX, and basically never tested on (but intended to be compatible with) Windows.   
 - Python version 3.9 or higher is required   
 - Make sure that the `python` command points to `python3`, and not a python2 version.   
    

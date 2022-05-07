@@ -13,3 +13,4 @@ tags:
 - [[Implementing Note Inclusions]]
 - [[Implementing Mermaid diagrams in HTML output]]
 - [[Implementing Call-outs]]
+- [[Implementing Latex]]

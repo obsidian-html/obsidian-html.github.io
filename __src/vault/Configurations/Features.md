@@ -24,6 +24,7 @@ tags:
 - [[Configuration Options#Html Custom Inclusions|Custom stylesheet/javascript inclusions]]
 - [[Implementing Mermaid diagrams in HTML output|Mermaid diagrams]]
 - [[Implementing Call-outs|Call-outs]]
+- [[Implementing Latex|Mathjax support]]
 - [[RSS Feed]]
 - [[Create Index from Directory Structure]]
 
