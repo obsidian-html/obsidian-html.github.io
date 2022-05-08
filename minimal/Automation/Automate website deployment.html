@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <!-- Includes -->
+        <link rel="stylesheet" href="/minimal/obs.html/static/global_main.css" />
+        <link rel="stylesheet" href="/minimal/obs.html/static/main.css" />
+        
+<script src="/minimal/obs.html/static/obsidian_core_header.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/callouts.css" />
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 id="automate-website-deployment">Automate website deployment</h1>
+<p>If you have a website hosted based on an obsidian project like I do, it can be useful to create some scripting to automate pushing to your webserver.   </p>
+<blockquote>
+<p>Note that these scripts are a starting point, and may not comply to the most up to date security considerations or other best practices!   </p>
+</blockquote>
+<h2 id="using-a-git-repo-as-an-intermediate">Using a git repo as an intermediate</h2>
+<p>The scripts below empty an <em>existing</em> git repo folder, skipping the <code>README.md</code> file and <code>.git</code> directory. The script will then generate the html code an put it in your repo, commit and push.    </p>
+<p>This will update your git repo with the updated code for your website. This is all the script does.    </p>
+<p>As a next step, configure a process on your webserver that periodically pulls the git repo, or configure a pipeline to start running on a git push to get this git code deployed on your server.    </p>
+<ul>
+<li><a href="/minimal/Automation/AutomationLinuxGit.html">Auto push using git (Linux)</a>   </li>
+<li><a href="/minimal/Automation/AutomationWindows.html">Auto push using git (Windows)</a>   </li>
+</ul>
+<h2 id="pushing-directly-to-a-local-webserver">Pushing directly to a local webserver</h2>
+<p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the Git method or something along those lines.   </p>
+<ul>
+<li><a href="/minimal/Automation/AutomationLinuxSSH.html">Auto push to local webserver (Linux)</a>   </li>
+<li><a href="/minimal/Automation/AutomationWindowsSSH.html">Auto push to local webserver (Windows)</a></li>
+</ul><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/index.html">Homepage</a></li>
+	<li><a class="backlink" href="/minimal/Automation/AutomationLinuxSSH.html">Auto push site using SSH on Linux</a></li>
+	<li><a class="backlink" href="/minimal/Automation/AutomationWindows.html">Auto push site using Git on Windows</a></li>
+</ul>
+        </div>
+        
+        <script src="/minimal/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+        
+    </body>
+</html>

@@ -24,6 +24,14 @@ tags:
 - [News](./News.md)   
 - [Change Log](./Change%20Log.md)   
    
+Try this site with different [layouts](./Configurations/Styling/Styling.md#layouts):   
+> use ctrl+click when in tabs mode!   
+   
+- [minimal](/minimal/index.html)   
+- [tabs](/tabs/index.html)   
+- [no_tabs](/no_tabs/index.html)   
+- [documentation](/index.html) (default).   
+   
 ## Usage & Capabilities   
    
 - **[Quickstart](./Instructions/Quickstart.md)**   
@@ -36,4 +44,5 @@ tags:
    
 ## Tips and tricks   
    
+- [Performance Tuning](./Configurations/Performance%20Tuning.md)   
 - [Automate website deployment](./Automation/Automate%20website%20deployment.md)

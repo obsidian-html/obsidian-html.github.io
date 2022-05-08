@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <!-- Includes -->
+        <link rel="stylesheet" href="/minimal/obs.html/static/global_main.css" />
+        <link rel="stylesheet" href="/minimal/obs.html/static/main.css" />
+        
+<script src="/minimal/obs.html/static/obsidian_core_header.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/callouts.css" />
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 id="quickstart">Quickstart</h1>
+<p>This page is a very short summary of installation, usage, and configuration options.   </p>
+<h2 id="installation">Installation</h2>
+<blockquote>
+<p>Full installation instructions: <a href="/minimal/Instructions/Installation.html">Installation</a>   </p>
+</blockquote>
+<p>First we need to <a href="https://wiki.python.org/moin/BeginnersGuide/Download" class="external-link">Install python 3</a>. If you already have it installed, check the version:   </p>
+<div class="codehilite"><pre><span></span><code>python --version
+</code></pre></div>
+
+<p>If you are running a version below 3.9 then you need to upgrade.   </p>
+<p>After a clean install of Python, you need to upgrade pip (the python package manager that we use to install ObsidianHtml):   </p>
+<div class="codehilite"><pre><span></span><code>pip install --upgrade pip
+</code></pre></div>
+
+<p>Now we can install ObsidianHtml:   </p>
+<div class="codehilite"><pre><span></span><code>pip install obsidianhtml
+</code></pre></div>
+
+<h2 id="configuration">Configuration</h2>
+<p>Pick a folder where you don't mind a folder being created. Then create a file in this folder named <code>config.yaml</code>, and fill it with this content (and fill in the values):   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">obsidian_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault&#39;</span><span class="w"> </span>
+
+<span class="c1"># The note that will be used as the index.html </span><span class="w"></span>
+<span class="c1"># should be in obsidian_folder_path_str</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault/entrypoint.md&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="run">Run</h2>
+<p>Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:   </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml -i config.yaml
+</code></pre></div>
+
+<p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.   </p>
+<div class="callout callout-caution callout-folded">
+<div class="callout-title" onclick="fold_callout(this)">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+</div>
+<div class="callout-title-name">Caution: don't run this command <strong>in</strong> your vault! <br />
+</div>
+<div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
+</div>
+</div>
+<p><strong>Do not</strong> run this command in your vault, as it will create the output in your vault, which will cause a DuplicateFileName error on subsequent runs!  <br />
+</p>
+</div>
+<p>If you place your config in your vault, then go a folder up and run <code>obsidianhtml -i &lt;vault folder name&gt;/config.yaml</code>. Alternatively, add the following settings to your config.yml to control the output location (adjust the paths to make sense for your environment):   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;C:/Users/Username/Documents/Website/md&#39;</span><span class="w"></span>
+
+<span class="c1"># Markdown entrypoint path</span><span class="w"></span>
+<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/Username/Documents/Website/md/index.md&#39;</span><span class="w"></span>
+
+<span class="c1"># Output path of HTML files</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/Username/Documents/Website/html&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="test-website">Test website</h2>
+<div class="codehilite"><pre><span></span><code>python -m http.server --dir output/html
+</code></pre></div>
+
+<p>Then open <a href="http://localhost:8000" class="external-link">http://localhost:8000</a> to view the html site that was created.   </p>
+<h1 id="next-steps">Next steps</h1>
+<ul>
+<li>Read the full notes on <a href="/minimal/Instructions/Installation.html">Installation</a> and <a href="/minimal/Instructions/Usage.html">Usage</a> if you want to know more about these steps.   </li>
+<li>If the conversion works, but you want to change the behavior, check out <a href="/minimal/Configurations/Features.html">Features</a>, <a href="/minimal/Configurations/Modes.html">Modes</a>, and finally <a href="/minimal/Configurations/Configuration Options.html">Configuration Options</a></li>
+</ul><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/index.html">Homepage</a></li>
+</ul>
+        </div>
+        
+        <script src="/minimal/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+        
+    </body>
+</html>

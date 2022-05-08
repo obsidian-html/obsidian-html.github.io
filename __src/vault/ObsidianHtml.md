@@ -23,6 +23,13 @@ tags:
 - [[News]]
 - [[Change Log]]
 
+Try this site with different [[Styling#Layouts|layouts]]:
+> use ctrl+click when in tabs mode!
+- [minimal](/minimal/index.html)
+- [tabs](/tabs/index.html)
+- [no_tabs](/no_tabs/index.html)
+- [documentation](/index.html) (default).
+
 ## Usage & Capabilities
 - **[[Quickstart]]**
 - [[Installation]]
@@ -33,5 +40,6 @@ tags:
 - [[Configuration Options]]
 
 ## Tips and tricks
+- [[Performance Tuning]]
 - [[Automate website deployment|Automate website deployment]] 
 

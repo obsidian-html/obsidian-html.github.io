@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <!-- Includes -->
+        <link rel="stylesheet" href="/minimal/obs.html/static/global_main.css" />
+        <link rel="stylesheet" href="/minimal/obs.html/static/main.css" />
+        
+<script src="/minimal/obs.html/static/obsidian_core_header.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/callouts.css" />
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 id="v200">v2.0.0</h1>
+<p>A new major version already. This time mostly for backward compatability reasons.    </p>
+<p>Upgrading from version 1.x.x to version 2.x.x will neccessitate some config changes if you configured more than the bare minimum and/or if want to keep the same layout as before.   </p>
+<p>The html output is also markedly different because of a refactored html layout design caused by a new usecase. So if you have <a href="/minimal/Configurations/Styling/Edit HTML, CSS, JS.html">custom html/css code</a> there might be some work to get the same result as before.   </p>
+<h2 id="added">Added</h2>
+<h3 id="layouts">Layouts</h3>
+<p>There was a new feature request for a <a href="/minimal/Configurations/Styling/Styling.html#documentation">documentation layout</a>. Of which you can see the result in the new design of this very documentation website.    </p>
+<p>To facilitate this, an entire rewrite of the html template system was needed. In this rewrite, the <code>no_tabs</code> toggle has been merged with the new <a href="/minimal/Configurations/Styling/Styling.html">Styling</a> feature.    </p>
+<p>While working on this, we've also added a <a href="/minimal/Configurations/Website navigation menu.html">Website navigation menu</a>. And as a part of the feature request, the <a href="/minimal/Configurations/Styling/Styling.html#table-of-contents">Table of Contents</a> and content view panes have been added.   </p>
+<h2 id="removedchanged">Removed/Changed</h2>
+<ul>
+<li><code>toggles/no_tabs</code> has been moved to <a href="/minimal/Configurations/Styling/Styling.html">Styling</a>. See also <a href="/minimal/Configurations/NoTabs Mode.html">NoTabs Mode</a>.   </li>
+<li>The default layout has changed from <code>tabs</code> to <code>documentation</code>. Read more: <a href="/minimal/Configurations/Styling/Styling.html#layouts">Styling#Layouts</a>.   </li>
+</ul>
+<h2 id="bugfixes">Bugfixes</h2>
+<p>There was an issue with paths not being resolved correctly on Windows, as the behavior of pathlib differs inextricably between Windows and Linux. (On Windows, if the path does not yet exist then path.resolve() would not create an absolute path out of a relative one). This was fixed by making sure the folders are created before running resolve.</p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Changelog/v2.1.0.html">v2.1.0</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v2.3.0.html">v2.3.0</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Website navigation menu.html">Website navigation menu</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/NoTabs Mode.html">NoTabs Mode</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v2.2.0.html">v2.2.0</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v2.0.2.html">v2.0.2</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v2.0.1.html">v2.0.1</a></li>
+	<li><a class="backlink" href="/minimal/Change Log.html">Change Log</a></li>
+</ul>
+        </div>
+        
+        <script src="/minimal/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+        
+    </body>
+</html>

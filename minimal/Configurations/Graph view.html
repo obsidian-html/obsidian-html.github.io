@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <!-- Includes -->
+        <link rel="stylesheet" href="/minimal/obs.html/static/global_main.css" />
+        <link rel="stylesheet" href="/minimal/obs.html/static/main.css" />
+        
+<script src="/minimal/obs.html/static/obsidian_core_header.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/callouts.css" />
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 id="graph-view">Graph view</h1>
+<p>Click on the button at the bottom of a note to view the graph for the current note. Click on the graph icon in the menu to go to a full page graph view.   </p>
+<p>In the graph view, clicking on a note will open that note. In the full page view clicking on a note will highlight it, so that you can quickly go through your notes and seeing clearly which are connected to which. Use rightclick in the full page view to open a note.   </p>
+<p>The graph view works based on a template. <a href="/minimal/Configurations/Styling/Writing a custom graph view template.html">Your own template can be added in</a> when you want to customize the look and/or functionality of the graph view. Or you can <a href="#template" class="anchor-link">Template</a>.   </p>
+<p>To be added in the future:   </p>
+<ul>
+<li><strong>Pruning</strong>: Do not show notes that are not connected directly nor indirectly to the current note. Only show all notes in a site-wide view.   </li>
+<li>Using the text in the first H1 as a graph_name.   </li>
+</ul>
+<h2 id="configure-graph-view">Configure graph view</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Include code to build the graph view per page </span><span class="w"></span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page (default: True)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w">            </span><span class="c1"># &quot;2d&quot;, &quot;3d&quot;, or path to own code</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="custom-template">(Custom) Template</h3>
+<p>There are two default graph view templates that can be used out of the box: 2d and 3d.    </p>
+<p>Note that the 2d version shows the name of the notes that are connected to the current note, the 3d version only shows it on mouseover, which might be an issue for mobile/tablet users.   </p>
+<p>If you want to pass in your own custom template, change this value to anything other than 2d/3d, and it will be parsed as a path to the template.    </p>
+<p>Read more: <a href="/minimal/Configurations/Styling/Writing a custom graph view template.html">Writing a custom graph view template</a>.   </p>
+<h3 id="overwrite-the-name-of-a-note-in-the-graph-view">Overwrite the name of a note in the graph view</h3>
+<ul>
+<li>In your frontmatter, set <code>graph_name: My new note name</code>   </li>
+</ul>
+<p>E.g:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
+<span class="nt">graph_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Links</span><span class="w"></span>
+<span class="nt">tags</span><span class="p">:</span><span class="w"> </span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type/parsing_markdown</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-02-04</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+</code></pre></div>
+
+<blockquote>
+<p>Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.</p>
+</blockquote><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Relative_path_html.html">Relative_path_html</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v1.2.2.html">v1.2.2</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Styling/Writing a custom graph view template.html">Writing a custom graph view template</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Process All.html">Process All</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Features.html">Features</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/minimal/General Information/Using the website.html">Using the website</a></li>
+</ul>
+        </div>
+        
+        <script src="/minimal/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+        
+    </body>
+</html>

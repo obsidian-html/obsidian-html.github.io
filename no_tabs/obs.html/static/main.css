@@ -1,15 +1,29 @@
-* {
-    text-rendering: optimizeLegibility;
-  }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: rgb(51, 51, 51);
-    margin: 0rem;
+body {
     width: 100vw;
     height: 100vh;
     position: static;
     overflow: hidden;
+}
+
+.container {
+    flex-grow: 1;
+    flex: auto;
+
+    height: calc(100vh - 5rem);
+    overflow-y: scroll;
+    scrollbar-color: #f742d112 #ffffff;
+    scroll-margin-top: 2rem;
+    max-width: 200rem;
+}
+.container-clickback {
+    position: absolute;
+    background-color: rgb(240, 240, 240);
+    width: 2.0rem;
+    height: 1.1rem;
+    top: 0px;
+    right: 0.75rem;
+    border-radius: 0 0 0 1rem;
+    cursor: pointer;
 }
 
   
@@ -61,29 +75,7 @@ h4 + table {
 
 
 
-.container {
-    flex-grow: 1;
-    flex: auto;
-    padding: 2rem;
-    height: calc(100vh - 5rem);
-    overflow-y: scroll;
-    scrollbar-color: #f742d112 #ffffff;
-    scroll-margin-top: 2rem;
-    max-width: 200rem;
-}
-.container img {
-    max-width: 100%;
-    padding: 0.2rem;
-}
-.container video {
-    margin: auto;  
-    max-width: 100%;
-}
-.container audio {
-    margin: auto;  
-    border-radius: 1.5rem;
-    background-color: black;
-}
+
 .single_tab_page {
     width: 80vw;
     max-width: 75rem;
@@ -93,20 +85,7 @@ h4 + table {
     width: auto;
     margin: 0rem;
 }
-.container:after {
-    content: "\a";
-    white-space: pre;
-}
-.container-clickback {
-    position: absolute;
-    background-color: rgb(240, 240, 240);
-    width: 2.0rem;
-    height: 1.1rem;
-    top: 0px;
-    right: 0.75rem;
-    border-radius: 0 0 0 1rem;
-    cursor: pointer;
-}
+
 ::-webkit-scrollbar {
     width: 0.4rem;
     height: 0.4rem;

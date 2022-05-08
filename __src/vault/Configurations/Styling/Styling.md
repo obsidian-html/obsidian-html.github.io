@@ -12,7 +12,7 @@ tags:
 toggles:
   features:
     styling: 
-      layout: no_tabs # documentation, tabs, no_tabs
+      layout: no_tabs # documentation, tabs, no_tabs, minimal
 ```
 
 For the layout you can choose between `documentation`, `tabs`, and `no_tabs`.  
@@ -33,12 +33,21 @@ The tabs layout is for people who use the smart note taking / zettelkasten metho
 ### No tabs
 No tabs is basically the same as when you view markdown documentation on for example github. One note per page, and every link opens to a new page.
 
+### Minimal
+> New in [[v2.3.0]]
+
+The minimal template has been added to cut away any "frivolous" features that aren't strictly necessary to view/navigate your site. It removes the menu, graph view, and search.
+
+Read more here about optimizing your website for low-bandwidth clients: [[Performance Tuning]].
+
 ### Which to choose?
 Documentation is set to the default, as I use it for this website, and thus it will be better tested and more stable. (Not to say that the other modes are unstable, though). 
 
 Personally I like to start off with a very loose structure, and thus use tabs mode. When my vault gets to a certain size, I apply a folder structure, and at that point it could be interesting to move over to the documentation layout. 
 
 The no tabs layout is nice for people who don't want anything fancy, or who want to [[Configuration Options#Html Custom Inclusions|edit the website's css]], which is a bit easier in this layout as less is happening. Though it should be said that of course the CSS can be edited in every layout mode.
+
+If your expected users have low bandwidth, or if your are a web 1.0 purist, then the minimal template might be for you.
 
 In the end there is just the personal preference, so try them out and see which you like best.
 

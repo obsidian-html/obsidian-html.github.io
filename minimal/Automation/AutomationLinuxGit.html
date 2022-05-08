@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <!-- Includes -->
+        <link rel="stylesheet" href="/minimal/obs.html/static/global_main.css" />
+        <link rel="stylesheet" href="/minimal/obs.html/static/main.css" />
+        
+<script src="/minimal/obs.html/static/obsidian_core_header.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/callouts.css" />
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 id="auto-push-site-using-git-on-linux">Auto push site using Git on Linux</h1>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Config</span>
+<span class="nv">git_output</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html.github.io&quot;</span>
+<span class="nv">obsidian_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html&quot;</span>
+
+<span class="c1"># Move to output folder and make sure it is up to date</span>
+<span class="nb">cd</span> <span class="nv">$git_output</span>
+git pull
+
+<span class="c1"># Remove all files except .git/ and README.md</span>
+<span class="nb">echo</span> <span class="s2">&quot;Will delete previous output:&quot;</span>
+find . ! -path <span class="s2">&quot;./.git/*&quot;</span> ! -name <span class="s2">&quot;.git&quot;</span> ! -name README.md
+<span class="nb">echo</span> <span class="s2">&quot;Continue? (y/n)&quot;</span>
+<span class="nb">read</span> yn
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$yn</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;y&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Aborted&quot;</span>
+    <span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span>
+
+find . ! -path <span class="s2">&quot;./.git/*&quot;</span> ! -name <span class="s2">&quot;.git&quot;</span> ! -name README.md -delete
+
+
+<span class="c1"># Convert Obsidian to HTML</span>
+<span class="nb">cd</span> <span class="nv">$obsidian_folder</span>
+python -m obsidianhtml -i local_configs/example_site.yml
+<span class="c1"># ^ the config file will output the html to $git_output</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Python script failed. Exited.&quot;</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Successfully created html code&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Push changes</span>
+<span class="nb">cd</span> <span class="nv">$git_output</span>
+mv html/* ./
+rm -rf html/
+
+git add . --all
+git commit -m <span class="s2">&quot;autopush&quot;</span>
+git push
+</code></pre></div><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Automation/Automate website deployment.html">Automate website deployment</a></li>
+	<li><a class="backlink" href="/minimal/Automation/AutomationLinuxSSH.html">Auto push site using SSH on Linux</a></li>
+</ul>
+        </div>
+        
+        <script src="/minimal/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+        
+    </body>
+</html>

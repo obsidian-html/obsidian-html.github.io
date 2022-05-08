@@ -7,6 +7,7 @@ tags:
 ---
    
 # Change Log   
+[v2.3.0](./Changelog/v2.3.0.md)   
    
 - [v2.2.0](./Changelog/v2.2.0.md)   
 - [v2.1.1](./Changelog/v2.1.1.md)   

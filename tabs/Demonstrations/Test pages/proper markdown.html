@@ -14,29 +14,27 @@
 
                 <!-- Includes -->
                 <link rel="stylesheet" href="/tabs/obs.html/static/global_main.css" />
-                <link rel="stylesheet" href="/tabs/obs.html/static/mermaid.css" />
                 <link rel="stylesheet" href="/tabs/obs.html/static/main.css" />
-                <script src="/tabs/obs.html/static/mermaid.min.js"></script> 
                 
+<script src="/tabs/obs.html/static/obsidian_core_header.js"></script>
 <link rel="stylesheet" href="/tabs/obs.html/static/callouts.css" />
 <link rel="stylesheet" href="/tabs/obs.html/static/graph.css" />
+<link rel="stylesheet" href="/tabs/obs.html/static/codehilite.css" />
+<link rel="stylesheet" href="/tabs/obs.html/static/mermaid.css" />
+<script src="/tabs/obs.html/static/mermaid.9.0.1.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<script src="/tabs/obs.html/static/load_mathjax.js" /></script>
+<script src="/tabs/obs.html/static/load_mathjax.js"></script>
 <link rel="stylesheet" href="/tabs/obs.html/static/search.css" />
 <script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.2/dist/flexsearch.bundle.js"></script>
-<script src="/tabs/obs.html/static/search.js" /></script>
-<script src="/tabs/obs.html/static/dirtree.js" /></script>
+<script src="/tabs/obs.html/static/pako.js"></script>
+<script src="/tabs/obs.html/static/search.js"></script>
+<script src="/tabs/obs.html/static/dirtree.js"></script>
 
 
                 <!-- Onload tweaks -->
                 <script>
-                        // // add prefix to hash to avoid scrolling
-                        // if (0 == 0){
-                        //         if (window.location.hash != '' && window.location.hash.substr(1)[0] != '!'){
-                        //                 window.location.hash = '!' + window.location.hash.substr(1);
-                        //         }
-                        // }
+                        const CURRENT_NODE = 'proper markdown';
                 </script>
         </head>
 
@@ -251,6 +249,8 @@
                 </div>
         </div>
 
-        <script src="/tabs/obs.html/static/obsidian.js" type="text/javascript"></script>
+        <script src="/tabs/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+<script src="/tabs/obs.html/static/obsidian_tabs_footer.js" type="text/javascript"></script>
+
 </body>
 </html>

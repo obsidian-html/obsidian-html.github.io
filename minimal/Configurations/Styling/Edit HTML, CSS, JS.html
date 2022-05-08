@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <!-- Includes -->
+        <link rel="stylesheet" href="/minimal/obs.html/static/global_main.css" />
+        <link rel="stylesheet" href="/minimal/obs.html/static/main.css" />
+        
+<script src="/minimal/obs.html/static/obsidian_core_header.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/callouts.css" />
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 id="edit-html-css-js">Edit HTML, CSS, JS</h1>
+<p>There are currently two ways to edit the html code used to build your website:   </p>
+<ul>
+<li>Add extra css/js files to the header of a standard template.   </li>
+<li>Pass in your own html template.   </li>
+</ul>
+<h2 id="add-extra-cssjs-files">Add extra css/js files</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span><span class="w"></span>
+<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Every note gets turned into its own contained html page. If you want to provide an extra css file, or javascript file, then you can add, e.g., the following into the setting, to avoid having to edit every single page after compilation:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;/custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;/christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>N.b.</strong> you'll have to place the mentioned files into the output yourself, and at the correct location; in this case directly in the html output folder. (Unless they are located in your vault and <a href="/minimal/Configurations/Configuration Options.html#process-all">process_all</a>: True).   </p>
+</blockquote>
+<h2 id="custom-template">Custom template</h2>
+<p>If you just want to build your pages yourself entirely, then you can pass in the path to your own template file. Note that you need to have at least <code>{content}</code> somewhere in the page.    </p>
+<p>To fetch the default template, you can run the following to export it, so you can make incremental changes:   </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml -eht path/to/output/file.html &lt;documentation/tabs/no_tabs&gt;
+</code></pre></div>
+
+<p>Use that same output path as the value for html_template_path_str to use it in your runs:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span><span class="w"></span>
+<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span><span class="w"></span>
+<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+</code></pre></div><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Changelog/v2.0.0.html">v2.0.0</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Styling/Styling.html">Styling</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Configuration Options.html">Configuration Options</a></li>
+</ul>
+        </div>
+        
+        <script src="/minimal/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+        
+    </body>
+</html>
