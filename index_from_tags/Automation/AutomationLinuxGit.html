@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Auto push site using Git on Linux">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/index_from_tags</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/global_main.css" />
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/main.css" />
+                
+<script src="/index_from_tags/obs.html/static/obsidian_core_header.js"></script>
+<script src="/index_from_tags/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/callouts.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/codehilite.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/mermaid.css" />
+<script src="/index_from_tags/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="/index_from_tags/obs.html/static/load_mathjax.js"></script>
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/search.css" />
+<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.2/dist/flexsearch.bundle.js"></script>
+<script src="/index_from_tags/obs.html/static/pako.js"></script>
+<script src="/index_from_tags/obs.html/static/search.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'Auto push site using Git on Linux';
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction">
+                                <b>esc</b> to dismiss
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle('search-master-div', 'block');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            document.getElementById('search-master-div').style.display = 'none';
+            return false;
+        }
+    }, true);
+
+    function click_inner_link(element){
+        element.getElementsByTagName('a')[0].click()
+    }
+</script>
+
+
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Auto push site using Git on Linux" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                                        <div onclick="openSearch()" style="width: calc(1.6rem - 12px); height: calc(1.6rem - 12px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right; padding: 3px; padding-bottom: 6px; padding-top: 0px;cursor: pointer;">
+                <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes"/>
+        </div>
+        <script>
+                function openSearch(){
+                        if (toggle('search-master-div', 'block')){
+                                let ss = document.getElementById('search_string');
+                                ss.value = '';
+                                ss.focus()
+                                ss.select()
+                        }
+                }
+        </script>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <h1 id="auto-push-site-using-git-on-linux">Auto push site using Git on Linux</h1>
+<div class="toc">
+<ul>
+<li><a href="#auto-push-site-using-git-on-linux" class="anchor-link">Auto push site using Git on Linux</a></li>
+</ul>
+</div>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Config</span>
+<span class="nv">git_output</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html.github.io&quot;</span>
+<span class="nv">obsidian_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html&quot;</span>
+
+<span class="c1"># Move to output folder and make sure it is up to date</span>
+<span class="nb">cd</span> <span class="nv">$git_output</span>
+git pull
+
+<span class="c1"># Remove all files except .git/ and README.md</span>
+<span class="nb">echo</span> <span class="s2">&quot;Will delete previous output:&quot;</span>
+find . ! -path <span class="s2">&quot;./.git/*&quot;</span> ! -name <span class="s2">&quot;.git&quot;</span> ! -name README.md
+<span class="nb">echo</span> <span class="s2">&quot;Continue? (y/n)&quot;</span>
+<span class="nb">read</span> yn
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$yn</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;y&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Aborted&quot;</span>
+    <span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span>
+
+find . ! -path <span class="s2">&quot;./.git/*&quot;</span> ! -name <span class="s2">&quot;.git&quot;</span> ! -name README.md -delete
+
+
+<span class="c1"># Convert Obsidian to HTML</span>
+<span class="nb">cd</span> <span class="nv">$obsidian_folder</span>
+python -m obsidianhtml -i local_configs/example_site.yml
+<span class="c1"># ^ the config file will output the html to $git_output</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Python script failed. Exited.&quot;</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Successfully created html code&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Push changes</span>
+<span class="nb">cd</span> <span class="nv">$git_output</span>
+mv html/* ./
+rm -rf html/
+
+git add . --all
+git commit -m <span class="s2">&quot;autopush&quot;</span>
+git push
+</code></pre></div><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/index.html">index</a></li>
+	<li><a class="backlink" href="/index_from_tags/Automation/AutomationLinuxSSH.html">Auto push site using SSH on Linux</a></li>
+	<li><a class="backlink" href="/index_from_tags/Automation/Automate website deployment.html">Automate website deployment</a></li>
+</ul>
+<script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A147501808903469906774732710315117922252{level}" class="graph_div"></div>
+    <button class="graph_button" id="B147501808903469906774732710315117922252{level}" level="{level}" onclick="run('147501808903469906774732710315117922252'+this.level, 'Auto push site using Git on Linux');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
+
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
+        </div>
+
+<script src="/index_from_tags/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+<script src="/index_from_tags/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+
+</body>
+</html>

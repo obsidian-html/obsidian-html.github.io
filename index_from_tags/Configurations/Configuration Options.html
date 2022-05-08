@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Configuration Options">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/index_from_tags</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/global_main.css" />
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/main.css" />
+                
+<script src="/index_from_tags/obs.html/static/obsidian_core_header.js"></script>
+<script src="/index_from_tags/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/callouts.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/codehilite.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/mermaid.css" />
+<script src="/index_from_tags/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="/index_from_tags/obs.html/static/load_mathjax.js"></script>
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/search.css" />
+<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.2/dist/flexsearch.bundle.js"></script>
+<script src="/index_from_tags/obs.html/static/pako.js"></script>
+<script src="/index_from_tags/obs.html/static/search.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'Configuration Options';
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction">
+                                <b>esc</b> to dismiss
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle('search-master-div', 'block');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            document.getElementById('search-master-div').style.display = 'none';
+            return false;
+        }
+    }, true);
+
+    function click_inner_link(element){
+        element.getElementsByTagName('a')[0].click()
+    }
+</script>
+
+
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Configuration Options" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                                        <div onclick="openSearch()" style="width: calc(1.6rem - 12px); height: calc(1.6rem - 12px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right; padding: 3px; padding-bottom: 6px; padding-top: 0px;cursor: pointer;">
+                <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes"/>
+        </div>
+        <script>
+                function openSearch(){
+                        if (toggle('search-master-div', 'block')){
+                                let ss = document.getElementById('search_string');
+                                ss.value = '';
+                                ss.focus()
+                                ss.select()
+                        }
+                }
+        </script>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <h1 id="configuration-options">Configuration Options</h1>
+<div class="toc">
+<ul>
+<li><a href="#configuration-options" class="anchor-link">Configuration Options</a><ul>
+<li><a href="#get-all-the-default-settings" class="anchor-link">Get all the default settings</a></li>
+<li><a href="#configurations" class="anchor-link">Configurations</a><ul>
+<li><a href="#paths" class="anchor-link">Paths</a></li>
+<li><a href="#operational-settings" class="anchor-link">Operational settings</a></li>
+<li><a href="#html-settings" class="anchor-link">HTML settings</a></li>
+<li><a href="#toggles" class="anchor-link">Toggles</a></li>
+<li><a href="#feature-settings" class="anchor-link">Feature settings</a></li>
+</ul>
+</li>
+<li><a href="#paths_1" class="anchor-link">Paths</a><ul>
+<li><a href="#obsidian_folder_path_str" class="anchor-link">obsidian_folder_path_str</a></li>
+<li><a href="#obsidian_entrypoint_path_str" class="anchor-link">obsidian_entrypoint_path_str</a></li>
+<li><a href="#md_folder_path_str" class="anchor-link">md_folder_path_str</a></li>
+<li><a href="#md_entrypoint_path_str" class="anchor-link">md_entrypoint_path_str</a></li>
+<li><a href="#html_output_folder_path_str" class="anchor-link">html_output_folder_path_str</a></li>
+</ul>
+</li>
+<li><a href="#operations" class="anchor-link">Operations</a><ul>
+<li><a href="#exclude-subfolders" class="anchor-link">Exclude Subfolders</a></li>
+<li><a href="#copy-vault-to-tempdir" class="anchor-link">Copy Vault to Tempdir</a></li>
+<li><a href="#included_file_suffixes" class="anchor-link">included_file_suffixes</a></li>
+<li><a href="#video_format_suffixes" class="anchor-link">video_format_suffixes</a></li>
+<li><a href="#audio_format_suffixes" class="anchor-link">audio_format_suffixes</a></li>
+</ul>
+</li>
+<li><a href="#html-output" class="anchor-link">HTML Output</a><ul>
+<li><a href="#site-name" class="anchor-link">Site name</a></li>
+<li><a href="#html-url-prefix" class="anchor-link">Html Url Prefix</a></li>
+<li><a href="#navbar_links" class="anchor-link">Navbar_links</a></li>
+<li><a href="#html-template-path-str" class="anchor-link">Html Template Path Str</a></li>
+<li><a href="#html-custom-inclusions" class="anchor-link">Html Custom Inclusions</a></li>
+</ul>
+</li>
+<li><a href="#toggles_1" class="anchor-link">Toggles</a><ul>
+<li><a href="#compile-md" class="anchor-link">Compile Md</a></li>
+<li><a href="#compile-html" class="anchor-link">Compile Html</a></li>
+<li><a href="#process-all" class="anchor-link">Process all</a></li>
+<li><a href="#verbose_printout" class="anchor-link">verbose_printout</a></li>
+<li><a href="#allow-duplicate-filenames-in-root" class="anchor-link">Allow Duplicate Filenames in Root</a></li>
+<li><a href="#warn-on-skipped-image" class="anchor-link">Warn on Skipped Image</a></li>
+<li><a href="#no_clean" class="anchor-link">no_clean</a></li>
+<li><a href="#no_tabs" class="anchor-link">no_tabs</a></li>
+<li><a href="#relative_path_md" class="anchor-link">relative_path_md</a></li>
+<li><a href="#relative_path_html" class="anchor-link">relative_path_html</a></li>
+</ul>
+</li>
+<li><a href="#external_blank" class="anchor-link">external_blank</a></li>
+<li><a href="#features" class="anchor-link">Features</a><ul>
+<li><a href="#styling" class="anchor-link">Styling</a></li>
+<li><a href="#graph" class="anchor-link">Graph</a></li>
+<li><a href="#create-index-from-tags" class="anchor-link">Create Index From Tags</a></li>
+<li><a href="#create-index-from-directory-structure" class="anchor-link">Create Index From Directory Structure</a></li>
+<li><a href="#backlinks" class="anchor-link">Backlinks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This page goes through all the configuration options and will refer to features. For a toplevel view of these features, see <a href="/index_from_tags/Configurations/Features.html">Features</a>.   </p>
+<p>Certain settings change the flow of how notes are selected and presented on the homepage. You can find a glossary on those in <a href="/index_from_tags/Configurations/Modes.html">Modes</a>.   </p>
+<h2 id="get-all-the-default-settings">Get all the default settings</h2>
+<p>Run:   </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml -gc
+</code></pre></div>
+
+<p>To view the defaults_config.yaml that is used by ObsidianHtml.    </p>
+<blockquote>
+<p>Tip: run <code>obsidianhtml -gc &gt; config.yaml</code> on Linux to get a config file with all possible inputs.    </p>
+</blockquote>
+<p>Note that the inputs that need to be filled in always are marked with <code>'&lt;REQUIRED_INPUT&gt;'</code>.   </p>
+<p>We will now go through all the settings in more-or-less the same order as the output of that command.   </p>
+<h2 id="configurations">Configurations</h2>
+<h3 id="paths">Paths</h3>
+<table>
+<thead>
+<tr>
+<th align="left">config</th>
+<th align="left">Short description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#obsidian_folder_path_str">obsidian_folder_path_str</a></td>
+<td align="left">The location of your vault directory</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#obsidian_entrypoint_path_str">obsidian_entrypoint_path_str</a></td>
+<td align="left">The location of your entrypoint note</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#md_folder_path_str">md_folder_path_str</a></td>
+<td align="left">The (output/input) location of your markdown files</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#md_entrypoint_path_str">md_entrypoint_path_str</a></td>
+<td align="left">The (output/input) location of your markdown entrypoint file</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#html_output_folder_path_str">html_output_folder_path_str</a></td>
+<td align="left">The output location of your html files</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operational-settings">Operational settings</h3>
+<table>
+<thead>
+<tr>
+<th align="left">config</th>
+<th align="left">Short description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#exclude-subfolders">Exclude Subfolders</a></td>
+<td align="left">Subfolders from your vault directory to ignore</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#copy-vault-to-tempdir">Copy Vault to Tempdir</a></td>
+<td align="left">(On/Off) Copy vault into temp dir prior to parsing</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#included_file_suffixes">included_file_suffixes</a></td>
+<td align="left">List of all suffixes that should be treated as files, not notes</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#video_format_suffixes">video_format_suffixes</a></td>
+<td align="left">List of all suffixes that should be treated as video files</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#audio_format_suffixes">audio_format_suffixes</a></td>
+<td align="left">List of all suffixes that should be treated as audio files</td>
+</tr>
+</tbody>
+</table>
+<h3 id="html-settings">HTML settings</h3>
+<table>
+<thead>
+<tr>
+<th align="left">config</th>
+<th align="left">Short description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#site-name">Site name</a></td>
+<td align="left">Name of your website, to be used in the <code>&lt;title&gt;</code> and such</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#html-url-prefix">Html Url Prefix</a></td>
+<td align="left">Used to deploy your website to <code>http://domain.name/[html_url_prefix]/</code></td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#navbar_links">navbar_links</a></td>
+<td align="left">Set the website navigation menu items.</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#html-template-path-str">Html Template Path Str</a></td>
+<td align="left">Used to pass in your own custom template</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#html-custom-inclusions">Html Custom Inclusions</a></td>
+<td align="left">Used to pass in your own css/js files</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toggles">Toggles</h3>
+<table>
+<thead>
+<tr>
+<th align="left">config</th>
+<th align="left">Short description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#compile-md">Compile Md</a></td>
+<td align="left">Used to skip the obsidian --&gt; markdown compilation step</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#compile-html">Compile Html</a></td>
+<td align="left">Used to skip the markdown --&gt; html compilation step</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#process-all">Process all</a></td>
+<td align="left">Include all notes. Read more: <a href="/index_from_tags/Configurations/Process All.html">Process All</a></td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#verbose_printout">verbose_printout</a></td>
+<td align="left">Used for debugging, show in detail what is going on during processing.</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#allow-duplicate-filenames-in-root">Allow Duplicate Filenames in Root</a></td>
+<td align="left">By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off.</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#warn-on-skipped-image">Warn on Skipped Image</a></td>
+<td align="left">By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off.</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#no_clean">no_clean</a></td>
+<td align="left">Use if you want to clean the output directories yourself, e.g. to preserve the .git folder.</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#no_tabs">no_tabs</a></td>
+<td align="left">Turn off tabs. Read more: <a href="/index_from_tags/Configurations/NoTabs Mode.html">NoTabs Mode</a></td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#relative_path_md">relative_path_md</a></td>
+<td align="left">Compile markdown links relatively or with absolute paths</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#relative_path_html">relative_path_html</a></td>
+<td align="left">Compile html links relatively or with absolute paths</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#external_blank">external_blank</a></td>
+<td align="left">Control whether external links will open in a new tab or not</td>
+</tr>
+</tbody>
+</table>
+<h3 id="feature-settings">Feature settings</h3>
+<table>
+<thead>
+<tr>
+<th align="left">config</th>
+<th align="left">Short description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#styling">Styling</a></td>
+<td align="left">Configure the layout and layout setting. Read more <a href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a></td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#graph">Graph</a></td>
+<td align="left">Configure the graph view. Read more <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a></td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#create-index-from-tags">Create Index From Tags</a></td>
+<td align="left">Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#create-index-from-directory-structure">Create Index From Directory Structure</a></td>
+<td align="left">Overwrite the index.html file with an index that lists all the folders and files in a tree structure.</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/Configuration Options.html#backlinks">Backlinks</a></td>
+<td align="left">Turn backlinks on or off.</td>
+</tr>
+<tr>
+<td align="left"><a href="/index_from_tags/Configurations/RSS Feed.html">RSS Feed</a></td>
+<td align="left">Compile (a selection of) your notes into an RSS Feed.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="paths_1">Paths</h2>
+<h3 id="obsidian_folder_path_str">obsidian_folder_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
+<span class="c1"># Can be absent when toggles/compile_md == False</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">obsidian_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;REQUIRED_INPUT&gt;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>If you want to only compile markdown to html (<a href="/index_from_tags/Configurations/Configuration Options.html#compile-md">Configuration Options#Compile Md</a>), and not use an obsidian vault as input, you can change value to anything other than <code>&lt;REQUIRED_INPUT&gt;</code>.   </p>
+<h3 id="obsidian_entrypoint_path_str">obsidian_entrypoint_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The note that will be used as the index.html </span><span class="w"></span>
+<span class="c1"># should be in obsidian_folder_path_str</span><span class="w"></span>
+<span class="c1"># Can be absent when toggles/compile_md == False</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;REQUIRED_INPUT&gt;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>If you want to only compile markdown to html (<a href="/index_from_tags/Configurations/Configuration Options.html#compile-md">Configuration Options#Compile Md</a>), and not use an obsidian vault as input, you can change value to anything other than <code>&lt;REQUIRED_INPUT&gt;</code>.   </p>
+<h3 id="md_folder_path_str">md_folder_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;output/md&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="md_entrypoint_path_str">md_entrypoint_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Markdown entrypoint path</span><span class="w"></span>
+<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;output/md/index.md&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="html_output_folder_path_str">html_output_folder_path_str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Output path of HTML files</span><span class="w"></span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;output/html&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="operations">Operations</h2>
+<h3 id="exclude-subfolders">Exclude Subfolders</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Exclude subfolders</span><span class="w"></span>
+<span class="c1"># These are relative to obsidian_folder_path_str</span><span class="w"></span>
+<span class="c1"># To exclude a folder two levels deep, use level1/level2</span><span class="w"></span>
+<span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.obsidian&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.trash&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.DS_Store&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>ObsidianHtml will go through the entire vault and build a file tree. To have this work, we can't have duplicate file names. Of course, this is normally not an issue because this is also not allowed in Obsidian. However, there are some hidden folders in every vault that can share filenames with your notes. Aside from that, we don't need to parse those folders anyways.   </p>
+<p>This setting will make the file tree builder ignore those folders. If you have personal notes in certain folders that you don't want to have end up on a website, you can add those here too.   </p>
+<h3 id="copy-vault-to-tempdir">Copy Vault to Tempdir</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect the vault data. </span><span class="w"></span>
+<span class="c1"># Should be fine to turn off if copying the vault takes too long / disk space is too limited.</span><span class="w"></span>
+<span class="c1"># The tempdir is automatically removed on exit of the program.</span><span class="w"></span>
+<span class="nt">copy_vault_to_tempdir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a>   </p>
+<blockquote>
+<p>This setting should be enabled for the option <a href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
+</blockquote>
+<h3 id="included_file_suffixes">included_file_suffixes</h3>
+<blockquote>
+<p>Added in <a href="/index_from_tags/Changelog/v1.0.0.html">v1.0.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">included_file_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;jpg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;jpeg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;gif&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;png&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;bmp&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;pdf&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp3&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;wav&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>ObsidianHtml needs to be able to discern between included notes and included files, because included files need to be treated differently to included notes in the processing steps.   </p>
+<p>This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   </p>
+<h3 id="video_format_suffixes">video_format_suffixes</h3>
+<blockquote>
+<p>Added in <a href="/index_from_tags/Changelog/v1.1.0.html">v1.1.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">video_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Used to convert an inclusion statement to a video html tag.   </p>
+<p>This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   </p>
+<p>Note that if you add it yourself here, the passed in mime-type might be missing. This might or might not be an issue depending on your browser/OS.   </p>
+<h3 id="audio_format_suffixes">audio_format_suffixes</h3>
+<blockquote>
+<p>Added in <a href="/index_from_tags/Changelog/v1.1.0.html">v1.1.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">audio_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;wav&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp3&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>See also the comments on <a href="/index_from_tags/Configurations/Configuration Options.html#video_format_suffixes">video_format_suffixes</a>.   </p>
+<h2 id="html-output">HTML Output</h2>
+<h3 id="site-name">Site name</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Will be inputted into the Html template as page title</span><span class="w"></span>
+<span class="c1"># Not used anywhere else atm.</span><span class="w"></span>
+<span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Obsidian-Html/Notes&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="html-url-prefix">Html Url Prefix</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span><span class="w"></span>
+<span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span><span class="w"></span>
+<span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>The comments in the yaml above explain this feature pretty well.    </p>
+<p>Extra note though: when setting this value, make sure to also edit the <code>html_output_folder_path_str</code> setting, to end with the same prefix, if you want to be able test locally.   </p>
+<h3 id="navbar_links">Navbar_links</h3>
+<blockquote>
+<p>Added in <a href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Website navigation menu.html">Website navigation menu</a>   </p>
+<h3 id="html-template-path-str">Html Template Path Str</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span><span class="w"></span>
+<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span><span class="w"></span>
+<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a>   </p>
+<h3 id="html-custom-inclusions">Html Custom Inclusions</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span><span class="w"></span>
+<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a>   </p>
+<h2 id="toggles_1">Toggles</h2>
+<p>These are the first second level settings. If you have multiple settings, make sure to combine them. So not like this:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># wrong</span><span class="w"></span>
+<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+
+<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>But like this:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># good</span><span class="w"></span>
+<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>When in doubt, look at the default config yaml: <a href="/index_from_tags/Configurations/Configuration Options.html#get-all-the-default-settings">Configuration Options#Get all the default settings</a>.   </p>
+<h3 id="compile-md">Compile Md</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Opt-in/-out of Obsidian-&gt;Md conversion, set to False when using proper markdown as input</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>If this setting is turned off, the steps of converting obsidian notes to markdown will be skipped, and the markdown to html conversion will start immediately from <code>md_folder_path_str</code> and <code>md_entrypoint_path_str</code>.    </p>
+<blockquote>
+<p>This method is not tested often, nor tested well, expect issues when you use this option. If you do, please let us know: <a href="/index_from_tags/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a>   </p>
+</blockquote>
+<p>Note that even though the obsidian paths are not used, they are still required inputs, so fill them in with a tempdir or another kind of placeholder. See also <a href="/index_from_tags/Configurations/Configuration Options.html#paths">Configuration Options#Paths</a>.   </p>
+<h3 id="compile-html">Compile Html</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Opt-in/-out of Md-&gt;Html conversion, set to False when only wanting to get proper markdown from Obsidian</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>Turn on or off the markdown to html conversion.   </p>
+<h3 id="process-all">Process all</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># If this is false only the entrypoint and all its links (recursively) are processed</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># if true all the notes will be processed</span><span class="w"></span>
+<span class="w">  </span><span class="nt">process_all</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>The normal behavior of ObsidianHtml is to take an entrypoint note, convert it, and then do the same for all the links on the page, and so on and so forth.   </p>
+<p>To include all notes in your vault in the output, set this value to true. The notes that can not be reached through the index.html can be found via the <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a> or the <a href="/index_from_tags/Configurations/Tags Page.html">Tags Page</a>.   </p>
+<p>See also <a href="/index_from_tags/Configurations/Process All.html">Process All</a>.   </p>
+<h3 id="verbose_printout">verbose_printout</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Can be overwritten ad-hoc by using &quot;obsidianhtml -i config.yml -v&quot; (the -v option)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">verbose_printout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="allow-duplicate-filenames-in-root">Allow Duplicate Filenames in Root</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This option should be False for Obsidian-&gt;Md, but can be True when compile_md == False</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Setting it to True will cause an error when two files with the same file name are found anywhere in the input folder</span><span class="w"></span>
+<span class="w">  </span><span class="nt">allow_duplicate_filenames_in_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>If you are converting markdown to html directly, then all the links should have already been figured out. So then it should be fine to have duplicate names in your root. You can set this setting to True then.   </p>
+<h3 id="warn-on-skipped-image">Warn on Skipped Image</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Sometimes linked images that should be local (based on the path) cannot be found.</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Toggle this to False to disable warnings if that happens.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">warn_on_skipped_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>This setting is enabled by default because it can be tricky to notice a random image missing on a random page.    </p>
+<p>The thing is that this will also warn you for external images, so there is no harm in turning off this setting if there are no issues with your images being included.    </p>
+<h3 id="no_clean">no_clean</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This will skip emptying output folders, if you want to implement this yourself</span><span class="w"></span>
+<span class="w">  </span><span class="nt">no_clean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>This refers to the markdown and html output folders. If you want to output html directly into a git repo, then by default it will remove the <code>.git</code> directory. To avoid this, you can write your own cleanup script to remove the previous output before running.    </p>
+<h3 id="no_tabs">no_tabs</h3>
+<blockquote>
+<p>New in version <a href="/index_from_tags/Changelog/v1.2.0.html">v1.2.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This will skip emptying output folders, if you want to implement this yourself</span><span class="w"></span>
+<span class="w">  </span><span class="nt">no_tabs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/NoTabs Mode.html">NoTabs Mode</a>.   </p>
+<h3 id="relative_path_md">relative_path_md</h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Whether the markdown interpreter assumes relative path when no / at the beginning of a link</span><span class="w"></span>
+<span class="w">  </span><span class="nt">relative_path_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="relative_path_html">relative_path_html</h3>
+<blockquote>
+<p>New in <a href="/index_from_tags/Changelog/v1.2.0.html">v1.2.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Whether the html links are made relative, instead of absolute.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">relative_path_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a>   </p>
+<h2 id="external_blank">external_blank</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Whether external http anchor links should have a target of &quot;_blank&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">external_blank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">  </span>
+</code></pre></div>
+
+<h2 id="features">Features</h2>
+<h3 id="styling">Styling</h3>
+<blockquote>
+<p>Added in <a href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w"> </span><span class="c1"># documentation, tabs, no_tabs</span><span class="w"></span>
+<span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">52rem</span><span class="w"> </span><span class="c1"># not supported for layout: tabs</span><span class="w"></span>
+<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">         </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span><span class="w"></span>
+<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">        </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">     </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#414cfd&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a>   </p>
+<h3 id="graph">Graph</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Include code to build the graph view per page </span><span class="w"></span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page</span><span class="w"></span>
+<span class="w">      </span><span class="nt">coalesce_force</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;-100&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a>   </p>
+<h3 id="create-index-from-tags">Create Index From Tags</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Create an index.md with links to notes that have one of the given tags.</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># This index.md will serve as the entrypoint.</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># !! Enabling this feature will overwrite obsidian_entrypoint_path_str </span><span class="w"></span>
+<span class="w">    </span><span class="c1"># and md_entrypoint_path_str</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_tags</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">      </span><span class="nt">add_links_in_graph_tree</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">sort</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;none&#39;</span><span class="w">          </span><span class="c1"># &lt;key_value, creation_time, modified_time, none&gt;</span><span class="w"></span>
+<span class="w">                                </span><span class="c1"># ! created_time not available on Linux!</span><span class="w"></span>
+<span class="w">        </span><span class="nt">key_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">            </span><span class="c1"># empty for top level, use &#39;:&#39; to go down </span><span class="w"></span>
+<span class="w">                                </span><span class="c1"># multiple levels</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">        </span><span class="c1"># in case of multiple values under key_path, </span><span class="w"></span>
+<span class="w">                                </span><span class="c1"># match on this prefix, and then remove prefix</span><span class="w"></span>
+<span class="w">        </span><span class="nt">reverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">          </span><span class="c1"># false/true reverses output</span><span class="w"></span>
+<span class="w">        </span><span class="nt">none_on_bottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">    </span><span class="c1"># will put notes at the bottom that do not have </span><span class="w"></span>
+<span class="w">                                </span><span class="c1"># the sort key, otherwise at the top</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a>   </p>
+<h3 id="create-index-from-directory-structure">Create Index From Directory Structure</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;md&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;obs.html&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;index.html&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;favicon.ico&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a>   </p>
+<h3 id="backlinks">Backlinks</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Show backlinks at the bottom of each note</span><span class="w"></span>
+<span class="w">    </span><span class="nt">backlinks</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>Read more: <a href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a></p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Modes.html">Modes</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/RSS Feed.html">RSS Feed</a></li>
+	<li><a class="backlink" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Website navigation menu.html">Website navigation menu</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v1.2.2.html">v1.2.2</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
+	<li><a class="backlink" href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+	<li><a class="backlink" href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
+</ul>
+<script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A78113686744268484342671346386799622775{level}" class="graph_div"></div>
+    <button class="graph_button" id="B78113686744268484342671346386799622775{level}" level="{level}" onclick="run('78113686744268484342671346386799622775'+this.level, 'Configuration Options');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
+
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
+        </div>
+
+<script src="/index_from_tags/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+<script src="/index_from_tags/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+
+</body>
+</html>

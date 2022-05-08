@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="Styling">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/index_from_tags</title>
+
+                <!-- Includes -->
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/global_main.css" />
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/main.css" />
+                
+<script src="/index_from_tags/obs.html/static/obsidian_core_header.js"></script>
+<script src="/index_from_tags/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/callouts.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/codehilite.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/mermaid.css" />
+<script src="/index_from_tags/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="/index_from_tags/obs.html/static/load_mathjax.js"></script>
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/search.css" />
+<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.2/dist/flexsearch.bundle.js"></script>
+<script src="/index_from_tags/obs.html/static/pako.js"></script>
+<script src="/index_from_tags/obs.html/static/search.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'Styling';
+                </script>
+        </head>
+
+<body onload="LoadPage();">
+
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction">
+                                <b>esc</b> to dismiss
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle('search-master-div', 'block');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            document.getElementById('search-master-div').style.display = 'none';
+            return false;
+        }
+    }, true);
+
+    function click_inner_link(element){
+        element.getElementsByTagName('a')[0].click()
+    }
+</script>
+
+
+        <div class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                
+                                        <div class="icon-tray">
+                                                
+                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
+                                                        <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+                                                                <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
+                                                        </a>
+                                                </div>
+                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                        <div class="graph_header_div">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Styling" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+            </a>
+        </div>
+                                                        <div onclick="openSearch()" style="width: calc(1.6rem - 12px); height: calc(1.6rem - 12px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right; padding: 3px; padding-bottom: 6px; padding-top: 0px;cursor: pointer;">
+                <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes"/>
+        </div>
+        <script>
+                function openSearch(){
+                        if (toggle('search-master-div', 'block')){
+                                let ss = document.getElementById('search_string');
+                                ss.value = '';
+                                ss.focus()
+                                ss.select()
+                        }
+                }
+        </script>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane"></div>
+                        <div class="container">
+                                        <h1 id="styling">Styling</h1>
+<div class="toc">
+<ul>
+<li><a href="#styling" class="anchor-link">Styling</a><ul>
+<li><a href="#layouts" class="anchor-link">Layouts</a><ul>
+<li><a href="#documentation" class="anchor-link">Documentation</a></li>
+<li><a href="#tabs" class="anchor-link">Tabs</a></li>
+<li><a href="#no-tabs" class="anchor-link">No tabs</a></li>
+<li><a href="#minimal" class="anchor-link">Minimal</a></li>
+<li><a href="#which-to-choose" class="anchor-link">Which to choose?</a></li>
+</ul>
+</li>
+<li><a href="#accent-color" class="anchor-link">Accent color</a></li>
+<li><a href="#table-of-contents" class="anchor-link">Table of Contents</a></li>
+<li><a href="#max-note-width" class="anchor-link">Max note width</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<blockquote>
+<p>This page discusses the built-in styling options. If you want to use custom code, go to <a href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a>.   </p>
+</blockquote>
+<h2 id="layouts">Layouts</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no_tabs</span><span class="w"> </span><span class="c1"># documentation, tabs, no_tabs, minimal</span><span class="w"></span>
+</code></pre></div>
+
+<p>For the layout you can choose between <code>documentation</code>, <code>tabs</code>, and <code>no_tabs</code>.     </p>
+<p>The layout will influence the structure of the pages that are generated. There is a short description below for each layout.    </p>
+<p>To get an actual impression, check out this same site with the different layouts:   </p>
+<ul>
+<li><a href="https://obsidian-html.github.io//tabs" class="external-link">tabs</a>   </li>
+<li><a href="https://obsidian-html.github.io//no_tabs" class="external-link">no_tabs</a>   </li>
+<li><a href="https://obsidian-html.github.io/" class="external-link">documentation</a> (the default)   </li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<p>The documentation layout is used for this site. This layout is suited for people who like to establish a well thought out folder structure, and for − as the name says − documentation vaults such as this one. It is the only layout that supports the content view, which is a list of notes that share the same folder.   </p>
+<h3 id="tabs">Tabs</h3>
+<p>The tabs layout is for people who use the smart note taking / zettelkasten methods, where dense linkage is prefered over giving a strict structure from the get-go. It allows to have multiple notes open at one time, and to scroll back and forth, following a thread of related notes. Tabs has some added navigation options to mediate in the infinite scrolling of notes. Read more on that <a href="/index_from_tags/Configurations/Styling/Tabs Layout.html">here</a>.   </p>
+<h3 id="no-tabs">No tabs</h3>
+<p>No tabs is basically the same as when you view markdown documentation on for example github. One note per page, and every link opens to a new page.   </p>
+<h3 id="minimal">Minimal</h3>
+<blockquote>
+<p>New in <a href="/index_from_tags/Changelog/v2.3.0.html">v2.3.0</a>   </p>
+</blockquote>
+<p>The minimal template has been added to cut away any "frivolous" features that aren't strictly necessary to view/navigate your site. It removes the menu, graph view, and search.   </p>
+<p>Read more here about optimizing your website for low-bandwidth clients: <a href="/index_from_tags/Configurations/Performance Tuning.html">Performance Tuning</a>.   </p>
+<h3 id="which-to-choose">Which to choose?</h3>
+<p>Documentation is set to the default, as I use it for this website, and thus it will be better tested and more stable. (Not to say that the other modes are unstable, though).    </p>
+<p>Personally I like to start off with a very loose structure, and thus use tabs mode. When my vault gets to a certain size, I apply a folder structure, and at that point it could be interesting to move over to the documentation layout.    </p>
+<p>The no tabs layout is nice for people who don't want anything fancy, or who want to <a href="/index_from_tags/Configurations/Configuration Options.html#html-custom-inclusions">edit the website's css</a>, which is a bit easier in this layout as less is happening. Though it should be said that of course the CSS can be edited in every layout mode.   </p>
+<p>If your expected users have low bandwidth, or if your are a web 1.0 purist, then the minimal template might be for you.   </p>
+<p>In the end there is just the personal preference, so try them out and see which you like best.   </p>
+<h2 id="accent-color">Accent color</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#414cfd&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>This is used to give some color here and there. It is one color that is reused here and there by giving it some extra transparency, making it a bit lighter.   </p>
+<p>Try to use a very bold, slightly dark color, so that the lighter color used in the quotes and scrollbars is still decently visible.   </p>
+<p>For anything more involved you currently have to <a href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">edit the css by hand</a>.   </p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">    </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span><span class="w"></span>
+<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">   </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span><span class="w"></span>
+</code></pre></div>
+
+<p>You can add <code>[TOC]</code> to your note to add in a table of contents (toc) in that location.    </p>
+<p>If you want a toc for every note, you can skip this in Obsidian (which doesn't support this at the time of writing, at least not out of the box), and just set <code>add_toc</code> to True. This will add <code>[TOC]</code> to the top of every note just before compiling the html.    </p>
+<p>This looks a bit weird though, as there is no header, just a list at the top of the note. It is best to also enable <code>toc_pane</code> if you are in the documentation or no_tabs layout. This will add the toc in a separate box on the right of the note.    </p>
+<p>In the documentation layout there are two "panes", one for the content view, and one for the table of contents. By default the toc is on the right and the content view on the left. If you want to flip this over you should set <code>flip_panes: True</code> (which is what I did for this website).   </p>
+<h2 id="max-note-width">Max note width</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">52rem</span><span class="w"> </span><span class="c1"># not supported for layout: tabs</span><span class="w"></span>
+</code></pre></div>
+
+<p>This determines the max width of the content div.    </p>
+<p>This is not supported for the tabs layout as there the width of the notes is more or less tied to the well-being of the tab automation.   </p>
+<p>This can be set to any valid CSS width value, such as <code>100%</code>, or <code>450px</code>. If you want the note to be as wide as possible then 100% will be a good value to configure. Personally I find content divs that are a bit less wide easier to read, and the current configured width ties together nicely with the documentation layout.</p><h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Tabs Layout.html">Tabs Layout</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Performance Tuning.html">Performance Tuning</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/NoTabs Mode.html">NoTabs Mode</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
+</ul>
+<script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+
+<div class="graph">
+    <div id="A228671146189622575914315711663856790689{level}" class="graph_div"></div>
+    <button class="graph_button" id="B228671146189622575914315711663856790689{level}" level="{level}" onclick="run('228671146189622575914315711663856790689'+this.level, 'Styling');">Show Graph</button>
+</div>
+
+
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    function grapher(args) {
+        window.Graph = ForceGraph3D()
+            (args.graph_container)
+            .jsonUrl(args.data)
+            .width(args.width)
+            .height(args.height)
+            .nodeLabel('id')
+            .linkDirectionalParticles("value")
+            .linkDirectionalParticleSpeed(0.010)
+            .linkDirectionalParticleWidth(2.0)
+            .nodeColor(node => {
+                if (node.id == current_node_id){
+                    return '#ff0000'
+                }
+                let isConnected = false;
+                node.links.forEach(link => {
+                    if (link == current_node_id){
+                        isConnected = true;
+                    }
+                })
+                if (isConnected){
+                    return '#f7be49';
+                }
+                return '#ffffff'
+            })
+            .linkColor(link => {
+                if (link.source == current_node_id || link.target == current_node_id){
+                    return '#ff0000'
+                }
+                return '#dadada'
+            })
+            .linkOpacity(0.3)
+            .onNodeClick(node => {
+                args.node = node;
+                graph_left_click(args)()
+            })
+            .onNodeRightClick(node => {
+                args.node = node;
+                graph_right_click(args)()
+            });
+    }
+</script>
+
+
+                        <!-- end content -->
+                        </div>
+                        <div id="right_pane"></div>
+                </div>
+        </div>
+
+<script src="/index_from_tags/obs.html/static/obsidian_core_footer.js" type="text/javascript"></script>
+<script src="/index_from_tags/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+
+</body>
+</html>

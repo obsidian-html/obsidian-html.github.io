@@ -114,7 +114,7 @@ async function GzipUnzipLocalFile(request_url) {
         .then(blob => blob.arrayBuffer())                                   // convert blob to arraybuffer and continue when done
         .then(ab => {
             data = pako.inflate(ab)                                         // go from zipped arraybuffer to unzipped arraybuffer
-            return String.fromCharCode.apply(null, new Uint16Array(data));  // convert arraybuffer to string
+            return new TextDecoder('utf-8').decode(new Uint8Array(data));   // convert arraybuffer to string
         })
 }
 
