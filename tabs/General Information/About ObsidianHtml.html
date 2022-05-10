@@ -196,12 +196,14 @@
 </div>
 <h2 id="description">Description</h2>
 <p>ObsidianHtml is an application that can be used to export Obsidian notes to standard markdown and an html based website.    </p>
-<p>In fact, this website that you are currently on is directly compiled out of a <a href="https://github.com/obsidian-html/obsidian-html.github.io/tree/main/__src/vault" class="external-link">vault</a>. The compiled markdown can be <a href="/tabs/index.html">found here</a>.   </p>
+<p>In fact, this website that you are currently on is directly compiled out of a <a href="https://github.com/obsidian-html/obsidian-html.github.io/tree/main/__src/vault" class="external-link">vault</a>. The compiled markdown can be <a href="https://github.com/obsidian-html/obsidian-html.github.io/blob/main/md/index.md" class="external-link">found here</a>.   </p>
+<p>The html website output is fully static. Only a simple http webserver is needed to view the website locally, and it can be pushed to static site host platforms like gitpages and cloudflare pages for free.    </p>
+<p>The http webserver is needed for features that do client-side javascript calls, but if you turn those off you can even browse the html website via the filesystem (<a href="/tabs/Configurations/Relative_path_html.html">with the correct settings</a>).    </p>
 <div class="callout callout-important note callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
 </div>
-<div class="callout-title-name">Notice: obsidian-html != obsidian-html <br />
+<div class="callout-title-name">Notice: this is not the kmaasrud/obsidian-html package! <br />
 </div>
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
@@ -218,6 +220,8 @@ Anyways: <strong>This is not that package</strong>. <br />
 <p>The Obsidian notes will be converted to standard markdown output. Then, optionally, html output is created based on the standard markdown.   </p>
 <p>It is also possible to input existing standard markdown to just use the markdown to html functionality.   </p>
 <p>Though truth be told, the main usecase is converting an obsidian vault directly to html. The other usecases are kind of stuck in beta due to lack of interest by users and myself.   </p>
+<p>To convert your notes, you need to point to your notes folder, and to one note that will serve as the index.html page.   </p>
+<p>By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, <a href="/tabs/Configurations/Modes.html">there are other modes available</a>.   </p>
 <div class="callout callout-example">
 <div class="callout-title">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
@@ -228,11 +232,10 @@ Anyways: <strong>This is not that package</strong>. <br />
 <p>See <a href="/tabs/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a> for a nice demo of the first part. <br />
 </p>
 </div>
-<p>To convert your notes, you need to point to your notes folder, and to one note that will serve as the index.html page.   </p>
-<p>By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, <a href="/tabs/Configurations/Modes.html">there are other modes available</a>.   </p>
 <h2 id="compatibility">Compatibility</h2>
 <ul>
 <li>This application is extensively tested on Linux, regularly tested by users on OSX, and basically never tested on (but intended to be compatible with) Windows.   </li>
+<li>The website output is developed and fully tested on Firefox, and occasionally on Chrome, but supported for all modern browsers.   </li>
 <li>Python version 3.9 or higher is required   </li>
 <li>Make sure that the <code>python</code> command points to <code>python3</code>, and not a python2 version.   </li>
 </ul>
@@ -245,8 +248,8 @@ Anyways: <strong>This is not that package</strong>. <br />
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A99962208822548696921710266114463443654{level}" class="graph_div"></div>
-    <button class="graph_button" id="B99962208822548696921710266114463443654{level}" level="{level}" onclick="run('99962208822548696921710266114463443654'+this.level, 'About ObsidianHtml');">Show Graph</button>
+    <div id="A325121856551522757199879931738802420709{level}" class="graph_div"></div>
+    <button class="graph_button" id="B325121856551522757199879931738802420709{level}" level="{level}" onclick="run('325121856551522757199879931738802420709'+this.level, 'About ObsidianHtml');">Show Graph</button>
 </div>
 
 
