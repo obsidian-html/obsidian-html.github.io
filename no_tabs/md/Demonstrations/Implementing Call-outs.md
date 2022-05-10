@@ -67,7 +67,7 @@ Continue the block with a `>`, like so:
 > This is an info block   
    
 > [!note]-    
-> This is a note block   
+> This is a note block [link](brtdar)   
    
 > [!abstract]-    
 > This is an abstract block   

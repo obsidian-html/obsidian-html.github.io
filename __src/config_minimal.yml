@@ -121,7 +121,7 @@ toggles:
       accent_color: '#414cfd'
 
     code_highlight:
-      enabled: False
+      enabled: True
     mermaid_diagrams:
       enabled: False
     callouts:
