@@ -6,8 +6,8 @@ var path_to_open = [];
 var no_tab_mode = 1;
 var toc_pane = 1;
 var mermaid_enabled = 1;
-var toc_pane_div = "left_pane";
-var content_pane_div = "right_pane";
+var toc_pane_div = "right_pane";
+var content_pane_div = "left_pane";
 var html_url_prefix = "";
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
@@ -15,9 +15,15 @@ var tab_mode = !no_tab_mode;
 
 // Functions 
 // ----------------------------------------------------------------------------
-
 function LoadPage() {
-    console.log('threshold', (1.2 * 40 * getComputedStyle(document.documentElement).fontSize.split("px")[0]));
+
+    let theme_name = window.localStorage.getItem('theme_name');
+    if (!theme_name){
+        window.localStorage.setItem('theme_name', 'obs-light');
+    }
+
+    set_theme(window.localStorage.getItem('theme_name'));
+    document.getElementById('page_holder').style.visibility = 'visible';
 
     if (documentation_mode) {
         httpGetAsync(html_url_prefix + '/obs.html/data/graph.json', load_dirtree_as_left_pane, 0, 'callbackpath');
@@ -211,36 +217,3 @@ function SetHeaders(container) {
 }
 
 
-function toggle(id, display_value) {
-    el = document.getElementById(id);
-    if (el.style.display == 'none') {
-        el.style.display = display_value;
-        return true
-    }
-    else if (el.style.display == display_value) {
-        el.style.display = 'none';
-        return false
-    }
-    else {
-        el.style.display = display_value;
-        return true
-    }
-}
-
-function fold_callout(el) {
-    let div = el.parentElement
-    if (div.classList.contains("callout-folded-active")) {
-        div.classList.remove("callout-folded-active")
-    } else {
-        div.classList.add("callout-folded-active")
-    }
-}
-
-// general option, to replace function above
-function fold(el) {
-    if (el.classList.contains("fold-active")) {
-        el.classList.remove("fold-active")
-    } else {
-        el.classList.add("fold-active")
-    }
-}

@@ -26,9 +26,9 @@ tags:
 # Videos
 At the moment of writing mp4 and webm's are supported. If you want to use a different type, contact us via [[Report Issues & Request features]].
 
-`![[reaction_Objection_birb.mp4]]`
+`![[chill_frog.mp4]]`
 
-![[reaction_Objection_birb.mp4]]
+![[chill_frog.mp4]]
 
  # Audio
  ##  .wav

@@ -15,6 +15,7 @@
                 <!-- Includes -->
                 <link rel="stylesheet" href="/obs.html/static/global_main.css" />
                 <link rel="stylesheet" href="/obs.html/static/main.css" />
+                <link rel="stylesheet" href="/obs.html/static/theme-obsidian.css" />
                 
 <script src="/obs.html/static/obsidian_core_header.js"></script>
 <script src="/obs.html/static/encoding.js"></script>
@@ -39,8 +40,7 @@
                 </script>
         </head>
 
-<body onload="LoadPage();">
-
+<body onload="LoadPage();" class="theme-obs-light">
         <div id="search-master-div">
     <div id="search-slab" king_ramses="return the slaaab">
             <div id="search-controls">
@@ -87,12 +87,11 @@
     }
 </script>
 
-
-        <div class="flex_col">
+        <div id="page_holder" class="flex_col">
                 <div id="header" class="header">
                         <div id="header_flex" class="flex_row">
                                 <a href="/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
-                                <div class="navbar-button" onclick="toggle('navbar', 'flex')">
+                                <div class="navbar-button" onclick="toggle_menu()">
                                         ≡
                                 </div>
                                 <div id="navbar" class="navbar">
@@ -105,28 +104,28 @@
 <a class="navbar-link" href="/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
 <a class="navbar-link" href="/News.html" title="News">News</a>
                                         <div class="icon-tray">
-                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+                                                        <div>
             <a id="rss_link" class="system-link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
                     <img src = "/obs.html/static/rss.svg" alt="RSS Feed link"/>
             </a>
         </div>
-                                                <div style="width:1.6rem; height:1.6rem; float:right; margin-right:0.2rem">
-                                                        <a href="/obs.html/tags/index.html" title="Open tag view">
-                                                                <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link"/>
-                                                        </a>
-                                                </div>
-                                                        <div style="width: calc(1.6rem - 6px); height: calc(1.6rem - 6px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right;">
+                                                <div>
+    <a href="/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                                                        <div >
             <a id="dirtree_link" class="system-link" href="/obs.html/dir_index.html" title="View directory tree">
-                    <img src = "/obs.html/static/dirtree.svg" style="width: 14px; padding: 3px;" alt="Directory tree link"/>
+                    <img src = "/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
             </a>
         </div>
                                                         <div class="graph_header_div">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=Implementing Call-outs" title="Open fullpage Graph">
-                    <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph"/>
+                    <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
-                                                        <div onclick="openSearch()" style="width: calc(1.6rem - 12px); height: calc(1.6rem - 12px); border: 3px solid #f0f0f0; margin-right:0.2rem; float:right; padding: 3px; padding-bottom: 6px; padding-top: 0px;cursor: pointer;">
-                <img src = "/obs.html/static/search.svg" alt="Search notes"/>
+                                                        <div onclick="openSearch()">
+                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
                 function openSearch(){
@@ -138,14 +137,39 @@
                         }
                 }
         </script>
+                                                <div id="theme-button" class="theme-button" title="Change theme" onclick="toggle_theme_popup(this)">
+    T
+</div>
+<script>
+    function toggle_theme_popup(el){
+        cl_toggle(el.id, 'active');
+        toggle('theme-popup','block')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            toggle_el(pu,'block');
+        }
+    }
+</script>
                                         </div>
                                 </div>
                         </div>
+                        <div class="popup" id="theme-popup">
+    <label for="cars">Theme </label>
+
+    <select name="theme" id="theme" onchange="set_theme(this.value)">
+      <option value="light">light</option>
+      <option value="obs-light" selected="selected">obsidian-light</option>
+      <option value="obs-dark">obsidian-dark</option>
+      <option value="none">none</option>
+    </select> 
+</div>
                 </div>
                 <div class="flex_row">
                         <div id="left_pane"></div>
                         <div class="container">
-                                        <h1 id="implementing-call-outs">Implementing Call-outs</h1>
+                                <h1 id="implementing-call-outs">Implementing Call-outs</h1>
 <div class="toc">
 <ul>
 <li><a href="#implementing-call-outs" class="anchor-link">Implementing Call-outs</a><ul>
@@ -180,8 +204,10 @@
 <div class="callout-title-name">Note
 </div>
 </div>
+<div class="callout-content">
 <p>This is a note block <br />
 </p>
+</div>
 </div>
 <h3 id="folded-note">Folded note</h3>
 <div class="codehilite"><pre><span></span><code><span class="k">&gt; </span><span class="ge">[!note]-</span>
@@ -197,8 +223,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a folded note block <br />
 </p>
+</div>
 </div>
 <h3 id="custom-title">Custom title</h3>
 <div class="codehilite"><pre><span></span><code><span class="k">&gt; </span><span class="ge">[!note]- Custom callout title</span>
@@ -214,8 +242,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a folded note block with a custom title <br />
 </p>
+</div>
 </div>
 <h3 id="multi-paragraph">Multi paragraph</h3>
 <p>Continue the block with a <code>&gt;</code>, like so:   </p>
@@ -232,10 +262,12 @@
 <div class="callout-title-name">Note
 </div>
 </div>
+<div class="callout-content">
 <p>This is a note block. <br />
 </p>
 <p>It has two paragraphs. <br />
 </p>
+</div>
 </div>
 <h2 id="types">Types</h2>
 <ul>
@@ -251,8 +283,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is an info block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-note callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -263,8 +297,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a note block <a href="brtdar" class="external-link">link</a> <br />
 </p>
+</div>
 </div>
 <div class="callout callout-abstract callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -275,8 +311,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is an abstract block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-summary callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -287,8 +325,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a summary block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-tldr callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -299,8 +339,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a tldr block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-todo callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -311,8 +353,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a todo block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-tip callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -323,8 +367,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a tip block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-important callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -335,8 +381,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a important block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-success callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -347,8 +395,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a success block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-check callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -359,8 +409,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a check block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-done callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -371,8 +423,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a done block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-question callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -383,8 +437,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a question block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-help callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -395,8 +451,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a help block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-faq callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -407,8 +465,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a faq block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-warning callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -419,8 +479,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a warning block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-caution callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -431,8 +493,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a caution block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-attention callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -443,8 +507,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a attention block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-failure callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -455,8 +521,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a failure block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-fail callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -467,8 +535,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a fail block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-missing callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -479,8 +549,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a missing block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-danger callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -491,8 +563,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a danger block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-error callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -503,8 +577,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a error block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-bug callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -515,8 +591,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a bug block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-example callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -527,8 +605,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a example block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-quote callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -539,8 +619,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a quote block <br />
 </p>
+</div>
 </div>
 <div class="callout callout-cite callout-folded">
 <div class="callout-title" onclick="fold_callout(this)">
@@ -551,8 +633,10 @@
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
+<div class="callout-content">
 <p>This is a cite block
 </p>
+</div>
 </div><h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Changelog/v2.1.0.html">v2.1.0</a></li>
@@ -562,8 +646,8 @@
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A302355895252664876625060021677497325065{level}" class="graph_div"></div>
-    <button class="graph_button" id="B302355895252664876625060021677497325065{level}" level="{level}" onclick="run('302355895252664876625060021677497325065'+this.level, 'Implementing Call-outs');">Show Graph</button>
+    <div id="A339374405376189879351818219593625983753{level}" class="graph_div"></div>
+    <button class="graph_button" id="B339374405376189879351818219593625983753{level}" level="{level}" onclick="run('339374405376189879351818219593625983753'+this.level, 'Implementing Call-outs');">Show Graph</button>
 </div>
 
 
@@ -613,7 +697,7 @@
 </script>
 
 
-                        <!-- end content -->
+                                <!-- end content -->
                         </div>
                         <div id="right_pane"></div>
                 </div>
