@@ -3,7 +3,7 @@
     text-rendering: optimizeLegibility;
 
     --accent-color: 65, 76, 253;
-    --loading-bg-color: 32, 32, 32;
+    --loading-bg-color: 255, 255, 255;
 
     --normal-text-color: 51, 51, 51;
 
