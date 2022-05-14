@@ -36,6 +36,7 @@
         </head>
 
 <body onload="LoadPage();" class="theme-obs-light">
+        <div id="antiflash"></div>
         <div id="search-master-div">
     <div id="search-slab" king_ramses="return the slaaab">
             <div id="search-controls">
@@ -123,7 +124,12 @@
         </div>
         <script>
                 function openSearch(){
+                        // set 'search-master-div' to follow the viewport in case of tabs mode
+                        document.getElementById('search-master-div').style.left = window.visualViewport.pageLeft + 'px';
+
+                        // toggle search popup and continue with extra code if it is enabled this time
                         if (toggle('search-master-div', 'block')){
+                                // clear input and put focus on it so that we can start typing immediately
                                 let ss = document.getElementById('search_string');
                                 ss.value = '';
                                 ss.focus()
@@ -136,7 +142,10 @@
 </div>
 <script>
     function toggle_theme_popup(el){
+        // make theme button show that it's active by adding the .active class
         cl_toggle(el.id, 'active');
+
+        // show the theme selector
         toggle('theme-popup','block')
 
         let h2 = document.getElementById('header2')
@@ -201,7 +210,12 @@
         </div>
         <script>
                 function openSearch(){
+                        // set 'search-master-div' to follow the viewport in case of tabs mode
+                        document.getElementById('search-master-div').style.left = window.visualViewport.pageLeft + 'px';
+
+                        // toggle search popup and continue with extra code if it is enabled this time
                         if (toggle('search-master-div', 'block')){
+                                // clear input and put focus on it so that we can start typing immediately
                                 let ss = document.getElementById('search_string');
                                 ss.value = '';
                                 ss.focus()
@@ -214,7 +228,10 @@
 </div>
 <script>
     function toggle_theme_popup(el){
+        // make theme button show that it's active by adding the .active class
         cl_toggle(el.id, 'active');
+
+        // show the theme selector
         toggle('theme-popup','block')
 
         let h2 = document.getElementById('header2')
