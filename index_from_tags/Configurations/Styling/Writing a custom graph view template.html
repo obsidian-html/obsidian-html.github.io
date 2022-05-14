@@ -13,22 +13,17 @@
                 <title>ObsidianHtml/index_from_tags</title>
 
                 <!-- Includes -->
-                <link rel="stylesheet" href="/index_from_tags/obs.html/static/global_main.css" />
+<!--                 <link rel="stylesheet" href="/index_from_tags/obs.html/static/global_main.css" />
                 <link rel="stylesheet" href="/index_from_tags/obs.html/static/main.css" />
-                <link rel="stylesheet" href="/index_from_tags/obs.html/static/theme-obsidian.css" />
+                <link rel="stylesheet" href="/index_from_tags/obs.html/static/theme-obsidian.css" /> -->
                 
 <script src="/index_from_tags/obs.html/static/obsidian_core_header.js"></script>
 <script src="/index_from_tags/obs.html/static/encoding.js"></script>
-<link rel="stylesheet" href="/index_from_tags/obs.html/static/callouts.css" />
-<link rel="stylesheet" href="/index_from_tags/obs.html/static/graph.css" />
-<link rel="stylesheet" href="/index_from_tags/obs.html/static/codehilite.css" />
-<link rel="stylesheet" href="/index_from_tags/obs.html/static/mermaid.css" />
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/master.css" />
 <script src="/index_from_tags/obs.html/static/mermaid.9.0.1.min.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="/index_from_tags/obs.html/static/tex-chtml.js"></script>
 <script src="/index_from_tags/obs.html/static/load_mathjax.js"></script>
-<link rel="stylesheet" href="/index_from_tags/obs.html/static/search.css" />
-<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.7.2/dist/flexsearch.bundle.js"></script>
+<script src="/index_from_tags/obs.html/static/flexsearch.bundle.js"></script>
 <script src="/index_from_tags/obs.html/static/pako.js"></script>
 <script src="/index_from_tags/obs.html/static/search.js"></script>
 <script src="/index_from_tags/obs.html/static/dirtree.js"></script>
@@ -37,10 +32,12 @@
                 <!-- Onload tweaks -->
                 <script>
                         const CURRENT_NODE = 'Writing a custom graph view template';
+                        const HTML_URL_PREFIX = '/index_from_tags';
                 </script>
         </head>
 
 <body onload="LoadPage();" class="theme-obs-light">
+        <div id="antiflash"></div>
         <div id="search-master-div">
     <div id="search-slab" king_ramses="return the slaaab">
             <div id="search-controls">
@@ -223,7 +220,7 @@ It is still in beta, so let us know if you are having issues with it or want add
 <li>graph_container: the object returned by calling <code>document.getElementById('&lt;id-of-the-div-where-the-graph-should-be-drawn&gt;')</code>   </li>
 <li>width/height: the width and height of the container above   </li>
 <li>current_node_id: the page is aware of which node id belongs to the page, this can be used to highlight the correct node for the page when loading the graph.   </li>
-<li>data: the path to the graph.json, containing all the node/link data (i.e. the value of <code>{html_url_prefix}/obs.html/data/graph.json</code>)   </li>
+<li>data: the path to the graph.json, containing all the node/link data (i.e. the value of <code>/index_from_tags/obs.html/data/graph.json</code>)   </li>
 <li>node/link: initially set to null, these are used for left/right click actions.   </li>
 <li>coalesce_force: used in the default templates to control how close the nodes bunch up together. This can be configured in the config.yml   </li>
 </ul>
@@ -402,7 +399,8 @@ It is still in beta, so let us know if you are having issues with it or want add
 </div>
 
 
-<script src="//unpkg.com/3d-force-graph"></script>
+<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
+
 <script>
     function grapher(args) {
         window.Graph = ForceGraph3D()

@@ -16,8 +16,7 @@
         
 <script src="/minimal/obs.html/static/obsidian_core_header.js"></script>
 <script src="/minimal/obs.html/static/encoding.js"></script>
-<link rel="stylesheet" href="/minimal/obs.html/static/callouts.css" />
-<link rel="stylesheet" href="/minimal/obs.html/static/codehilite.css" />
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
 
 
     </head>
@@ -60,7 +59,7 @@ It is still in beta, so let us know if you are having issues with it or want add
 <li>graph_container: the object returned by calling <code>document.getElementById('&lt;id-of-the-div-where-the-graph-should-be-drawn&gt;')</code>   </li>
 <li>width/height: the width and height of the container above   </li>
 <li>current_node_id: the page is aware of which node id belongs to the page, this can be used to highlight the correct node for the page when loading the graph.   </li>
-<li>data: the path to the graph.json, containing all the node/link data (i.e. the value of <code>{html_url_prefix}/obs.html/data/graph.json</code>)   </li>
+<li>data: the path to the graph.json, containing all the node/link data (i.e. the value of <code>/minimal/obs.html/data/graph.json</code>)   </li>
 <li>node/link: initially set to null, these are used for left/right click actions.   </li>
 <li>coalesce_force: used in the default templates to control how close the nodes bunch up together. This can be configured in the config.yml   </li>
 </ul>
