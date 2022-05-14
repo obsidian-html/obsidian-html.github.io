@@ -11,8 +11,6 @@
         <title>ObsidianHtml/Documentation (Minimal)</title>
 
         <!-- Includes -->
-        <link rel="stylesheet" href="/minimal/obs.html/static/global_main.css" />
-        <link rel="stylesheet" href="/minimal/obs.html/static/main.css" />
         
 <script src="/minimal/obs.html/static/obsidian_core_header.js"></script>
 <script src="/minimal/obs.html/static/encoding.js"></script>
@@ -27,19 +25,25 @@
 <blockquote>
 <p>Feature version of <a href="/minimal/Changelog/v2.0.0.html">v2.0.0</a>   </p>
 </blockquote>
-<h2 id="refactor">Refactor</h2>
-<ul>
-<li>The minimal template has been added to allow for lighter weight websites. For this to work well, all the little features should be able to be turned on/off at will. These settings have been added. Read more: <a href="/minimal/Configurations/Performance Tuning.html">Performance Tuning</a>.   </li>
-<li>The number of css files has been growing, and there was a lot of duplication and conflicts going on during development. The general code has been moved to global_main.css and features get their own css file too. Ongoing project.   </li>
-<li>Same story for the obsidian.js file. It has been split into obsidian_core_header.js and obsidian_core_footer.js and all specific code has been moved into files that can be included/excluded at will.   </li>
-</ul>
-<h2 id="theme-selection">Theme selection</h2>
+<h2 id="themes-theme-selection">Themes &amp; Theme selection</h2>
 <ul>
 <li>The standard theme has been renamed to "light" and two more themes have been added, which aim to mimic the look and feel of obsidian's default light and dark themes. You can select the theme you want by clicking the <code>T</code> in the icon tray.   </li>
 </ul>
+<h2 id="minimal-template">Minimal template</h2>
+<ul>
+<li>The minimal template has been added to allow for lighter weight websites. For this to work well, all the little features should be able to be turned on/off at will. These settings have been added. Read more: <a href="/minimal/Configurations/Performance Tuning.html">Performance Tuning</a>.   </li>
+</ul>
 <h2 id="life-cycle">Life cycle</h2>
 <ul>
-<li>Upgraded to mermaid 9.0.1. (from unknown version) and corrected the missing source map which gave an error when opening developer tools.</li>
+<li>Upgraded to mermaid 9.0.1. (from unknown version) and corrected the missing source map which gave an error when opening developer tools.   </li>
+</ul>
+<h2 id="refactor">Refactor</h2>
+<ul>
+<li>The number of css files has been growing, and there was a lot of duplication and conflicts going on during development. The general code has been moved to global_main.css and features get their own css file too. Ongoing project.   </li>
+<li>A lot of tiny/big css bugs have been discovered, fixed, newly created, discovered... it should be better now than before, hopefully.   </li>
+<li>The css files are now all packaged into 1 file upon export to html for a (tiny) performance boost when loading the page.    </li>
+<li>The obsidian.js file has been split into obsidian_core_header.js and obsidian_core_footer.js and all specific code has been moved into files that can be included/excluded at will.   </li>
+<li>The search data is now gzipped after compilation, and the client now unzips it. The unzip overhead is hopefully small enough compared with the benefits of downloading a considerably smaller data file over the wire, to justify this change.</li>
 </ul><h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/minimal/Configurations/Styling/Styling.html">Styling</a></li>
