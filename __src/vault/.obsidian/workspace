@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Changelog/v2.3.0.md",
+            "file": "Changelog/v2.3.1.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Changelog/v2.3.0.md",
+                "file": "Changelog/v2.3.1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,15 +100,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
+    "Changelog/v2.3.1.md",
+    "Change Log.md",
     "Changelog/v2.3.0.md",
+    "Changelog/v2.1.1.md",
     "Instructions/Quickstart.md",
     "Demonstrations/Parsing Images, videos, and audio.md",
     "Configurations/Styling/Edit HTML, CSS, JS.md",
     "ObsidianHtml.md",
     "Demonstrations/Implementing Call-outs.md",
-    "General Information/About ObsidianHtml.md",
-    "Configurations/Relative_path_html.md",
-    "Change Log.md",
-    "Changelog/v2.2.0.md"
+    "General Information/About ObsidianHtml.md"
   ]
 }

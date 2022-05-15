@@ -626,10 +626,6 @@ span.tag {
     }
 }
 
-.graph_button {
-    display: None;
-}
-
 /* colors */
 * {
     --muted-link-color: #2d68b1;

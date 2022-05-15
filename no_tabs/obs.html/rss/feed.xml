@@ -4,8 +4,8 @@
         <link>https://obsidian-html.github.io</link>
         <description>The documentation site of ObsidianHtml, a package used to convert Obsidian notes to proper markdown and static HTML websites.</description>
         <language>en-usen-us</language>
-        <pubDate>Sun, 15 May 2022 00:11:37 CET</pubDate>
-        <lastBuildDate>Sun, 08 May 2022 00:00:00 CET</lastBuildDate>
+        <pubDate>Sun, 15 May 2022 13:48:49 CET</pubDate>
+        <lastBuildDate>Sun, 15 May 2022 00:00:00 CET</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>ObsidianHtml</generator>
         <managingEditor>collector@dwrolvink.com</managingEditor>
@@ -40,6 +40,14 @@
             <description>Version 1.0.0 has been released.   &lt;br/&gt;&lt;br/&gt;The changes related to the prior version can be found here: https://github.com/obsidian-html/obsidian-html/issues/137   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Wed, 16 Feb 2022 00:00:00 CET</pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v1.0.0.html</guid>
+            
+        </item>
+        <item>
+            <title>v2.3.1</title>
+            <link>https://obsidian-html.github.io/Changelog/v2.3.1.html</link>
+            <description>Patch version of v2.3.0   &lt;br/&gt;&lt;br/&gt;The css refactor gave rise to a bug where the graph button was always disabled, where that should&#x27;ve only been the case for the taglist.   &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Sun, 15 May 2022 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Changelog/v2.3.1.html</guid>
             
         </item>
         <item>
