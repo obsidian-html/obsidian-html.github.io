@@ -326,7 +326,10 @@
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;index.html&quot;</span><span class="w"></span>
 </code></pre></div>
 
-<p>Note the <code>rel_output_path</code> setting. This can also be set to any subpath of the <a href="/tabs/Configurations/Configuration Options.html#html_output_folder_path_str">html_output_folder</a> that you wish. The parent folders are automatically created when necessary.</p><h2>Backlinks</h2>
+<p>Note the <code>rel_output_path</code> setting. This can also be set to any subpath of the <a href="/tabs/Configurations/Configuration Options.html#html_output_folder_path_str">html_output_folder</a> that you wish. The parent folders are automatically created when necessary.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></li>
 	<li><a class="backlink" href="/tabs/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
@@ -337,18 +340,37 @@
 	<li><a class="backlink" href="/tabs/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a class="backlink" href="/tabs/General Information/Using the website.html">Using the website</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-02-20/index.html">date/2022-02-20</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A156016043820715097252523264052740133522{level}" class="graph_div"></div>
-    <button class="graph_button" id="B156016043820715097252523264052740133522{level}" level="{level}" onclick="run('156016043820715097252523264052740133522'+this.level, 'Create Index from Directory Structure');">Show Graph</button>
+    <div id="A240936548563049487150423564051057631249{level}" class="graph_div"></div>
+    <button class="graph_button" id="B240936548563049487150423564051057631249{level}" level="{level}" onclick="run('240936548563049487150423564051057631249'+this.level, 'Create Index from Directory Structure');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

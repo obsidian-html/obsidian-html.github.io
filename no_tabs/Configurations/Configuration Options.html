@@ -735,7 +735,10 @@
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
 
-<p>Read more: <a href="/no_tabs/Configurations/Backlinks.html">Backlinks</a></p><h2>Backlinks</h2>
+<p>Read more: <a href="/no_tabs/Configurations/Backlinks.html">Backlinks</a></p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/Instructions/Usage.html">Usage</a></li>
 	<li><a class="backlink" href="/no_tabs/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
@@ -758,18 +761,37 @@
 	<li><a class="backlink" href="/no_tabs/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
 	<li><a class="backlink" href="/no_tabs/index.html">Homepage</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A45025681015005916671944022216747093047{level}" class="graph_div"></div>
-    <button class="graph_button" id="B45025681015005916671944022216747093047{level}" level="{level}" onclick="run('45025681015005916671944022216747093047'+this.level, 'Configuration Options');">Show Graph</button>
+    <div id="A85151121944598567095092542031550819676{level}" class="graph_div"></div>
+    <button class="graph_button" id="B85151121944598567095092542031550819676{level}" level="{level}" onclick="run('85151121944598567095092542031550819676'+this.level, 'Configuration Options');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

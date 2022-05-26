@@ -197,7 +197,10 @@
 <span class="w">    </span><span class="nt">create_index_from_tags</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_tag</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">my_other_tag</span><span class="p p-Indicator">]</span><span class="w"></span>
-</code></pre></div><h2>Backlinks</h2>
+</code></pre></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
 	<li><a class="backlink" href="/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
@@ -205,18 +208,37 @@
 	<li><a class="backlink" href="/Configurations/Features.html">Features</a></li>
 	<li><a class="backlink" href="/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/feature/dynamic_index/index.html">feature/dynamic_index</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-02-13/index.html">date/2022-02-13</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A207419700000231767900405041252347056884{level}" class="graph_div"></div>
-    <button class="graph_button" id="B207419700000231767900405041252347056884{level}" level="{level}" onclick="run('207419700000231767900405041252347056884'+this.level, 'Create index from tags');">Show Graph</button>
+    <div id="A293515920545391073456950349392644629894{level}" class="graph_div"></div>
+    <button class="graph_button" id="B293515920545391073456950349392644629894{level}" level="{level}" onclick="run('293515920545391073456950349392644629894'+this.level, 'Create index from tags');">Show Graph</button>
 </div>
 
 
-<script src="/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

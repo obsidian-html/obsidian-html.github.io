@@ -633,24 +633,47 @@
 <p>This is a cite block
 </p>
 </div>
-</div><h2>Backlinks</h2>
+</div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/Changelog/v2.1.0.html">v2.1.0</a></li>
 	<li><a class="backlink" href="/no_tabs/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
 	<li><a class="backlink" href="/no_tabs/Configurations/Features.html">Features</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/feature/html_output/index.html">feature/html_output</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-04-26/index.html">date/2022-04-26</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A89124401437228480813821403718429776928{level}" class="graph_div"></div>
-    <button class="graph_button" id="B89124401437228480813821403718429776928{level}" level="{level}" onclick="run('89124401437228480813821403718429776928'+this.level, 'Implementing Call-outs');">Show Graph</button>
+    <div id="A131457758633439216438225876281607449698{level}" class="graph_div"></div>
+    <button class="graph_button" id="B131457758633439216438225876281607449698{level}" level="{level}" onclick="run('131457758633439216438225876281607449698'+this.level, 'Implementing Call-outs');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

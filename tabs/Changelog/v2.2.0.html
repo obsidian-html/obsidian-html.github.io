@@ -276,22 +276,44 @@
 <li>For code like <code>![](link) some text (with parentheses on the same line)</code>, the regex would match everything until the last <code>)</code>. This was wrong obviously, so this was fixed.</li>
 </ul>
 </li>
-</ul><h2>Backlinks</h2>
+</ul>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Change Log.html">Change Log</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-05-07/index.html">date/2022-05-07</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A21504994622788864987538885059416393323{level}" class="graph_div"></div>
-    <button class="graph_button" id="B21504994622788864987538885059416393323{level}" level="{level}" onclick="run('21504994622788864987538885059416393323'+this.level, 'v2.2.0');">Show Graph</button>
+    <div id="A76985580284385132519992115806359701606{level}" class="graph_div"></div>
+    <button class="graph_button" id="B76985580284385132519992115806359701606{level}" level="{level}" onclick="run('76985580284385132519992115806359701606'+this.level, 'v2.2.0');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

@@ -184,23 +184,45 @@
 <h2 id="relative_path_html">Relative_path_html</h2>
 <p>This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).   </p>
 <p>This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.   </p>
-<p>Read more <a href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a>.</p><h2>Backlinks</h2>
+<p>Read more <a href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a>.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-14/index.html">date/2022-02-14</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A33848968753816302188930169704513426580{level}" class="graph_div"></div>
-    <button class="graph_button" id="B33848968753816302188930169704513426580{level}" level="{level}" onclick="run('33848968753816302188930169704513426580'+this.level, 'Modes');">Show Graph</button>
+    <div id="A124700061486171015815019632508868208391{level}" class="graph_div"></div>
+    <button class="graph_button" id="B124700061486171015815019632508868208391{level}" level="{level}" onclick="run('124700061486171015815019632508868208391'+this.level, 'Modes');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

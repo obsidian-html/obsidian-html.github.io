@@ -173,22 +173,44 @@
 <p>Using the feature <a href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a>, you can navigate your notes by the folder structure on disk.    </p>
 <p>This works great, but if you have a non-md link, the javascript gets confused.   </p>
 <h3 id="fix">Fix</h3>
-<p>Starting with <a href="/index_from_tags/Changelog/v1.1.0.html">v1.1.0</a>, non-md links are tagged as external, and thus avoid the tabulation javascript code that cannot deal with non-md files.</p><h2>Backlinks</h2>
+<p>Starting with <a href="/index_from_tags/Changelog/v1.1.0.html">v1.1.0</a>, non-md links are tagged as external, and thus avoid the tabulation javascript code that cannot deal with non-md files.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v1.1.0.html">v1.1.0</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-03-11/index.html">date/2022-03-11</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A74729579130424442015057428597346039238{level}" class="graph_div"></div>
-    <button class="graph_button" id="B74729579130424442015057428597346039238{level}" level="{level}" onclick="run('74729579130424442015057428597346039238'+this.level, 'File links in dirtree note do not work');">Show Graph</button>
+    <div id="A92255421337395783730168303712998716217{level}" class="graph_div"></div>
+    <button class="graph_button" id="B92255421337395783730168303712998716217{level}" level="{level}" onclick="run('92255421337395783730168303712998716217'+this.level, 'File links in dirtree note do not work');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

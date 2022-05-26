@@ -184,18 +184,36 @@
 <li><a href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a>   </li>
 <li><a href="/index_from_tags/Configurations/Tags Page.html">Tags Page</a></li>
 </ul>
+<div class="note-footer">
+<div class="backlinks">
+
+</div>
+<div class="tags">
+
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A175290667680112326888676631170067488916{level}" class="graph_div"></div>
-    <button class="graph_button" id="B175290667680112326888676631170067488916{level}" level="{level}" onclick="run('175290667680112326888676631170067488916'+this.level, 'index');">Show Graph</button>
+    <div id="A282150858501710756937307490781577351817{level}" class="graph_div"></div>
+    <button class="graph_button" id="B282150858501710756937307490781577351817{level}" level="{level}" onclick="run('282150858501710756937307490781577351817'+this.level, 'index');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

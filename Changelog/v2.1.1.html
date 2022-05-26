@@ -182,22 +182,44 @@
 <h2 id="call-outs">Call-outs</h2>
 <ul>
 <li>The text in the callout's body wasn't parsed correctly, resulting in (among other shortcomings) markdown lists not being converted to html lists. This has been corrected.</li>
-</ul><h2>Backlinks</h2>
+</ul>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Change Log.html">Change Log</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-04-24/index.html">date/2022-04-24</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A272507702690872629087199992930686290557{level}" class="graph_div"></div>
-    <button class="graph_button" id="B272507702690872629087199992930686290557{level}" level="{level}" onclick="run('272507702690872629087199992930686290557'+this.level, 'v2.1.1');">Show Graph</button>
+    <div id="A120189326578606105212090601764619051994{level}" class="graph_div"></div>
+    <button class="graph_button" id="B120189326578606105212090601764619051994{level}" level="{level}" onclick="run('120189326578606105212090601764619051994'+this.level, 'v2.1.1');">Show Graph</button>
 </div>
 
 
-<script src="/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

@@ -258,23 +258,45 @@
 <li><a href="/tabs/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Implementing Mermaid diagrams in HTML output</a>   </li>
 <li><a href="/tabs/Demonstrations/Implementing Call-outs.html">Implementing Call-outs</a>   </li>
 <li><a href="/tabs/Demonstrations/Implementing Latex.html">Implementing Latex</a></li>
-</ul><h2>Backlinks</h2>
+</ul>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 	<li><a class="backlink" href="/tabs/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/test_page/index.html">type/test_page</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A35696404987991530036462328933468956576{level}" class="graph_div"></div>
-    <button class="graph_button" id="B35696404987991530036462328933468956576{level}" level="{level}" onclick="run('35696404987991530036462328933468956576'+this.level, 'Demonstration of Obisidian integration');">Show Graph</button>
+    <div id="A59796904774587768599381501994981733701{level}" class="graph_div"></div>
+    <button class="graph_button" id="B59796904774587768599381501994981733701{level}" level="{level}" onclick="run('59796904774587768599381501994981733701'+this.level, 'Demonstration of Obisidian integration');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

@@ -173,23 +173,45 @@
 <h3 id="overwriting-index-with-the-dirtree-feature-causes-graph-view-to-not-work">Overwriting index with the dirtree feature causes graph view to not work</h3>
 <p>It is permitted when using <a href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a> to overwrite the index.html.    </p>
 <p>In the previous version of ObsidianHtml, the graph.js does not get loaded into the homepage created by this feature, which causes the graph view to not work at all when starting from the homepage (which will be 99% of all traffic).   </p>
-<p>This is fixed in this patch update.</p><h2>Backlinks</h2>
+<p>This is fixed in this patch update.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></li>
 	<li><a class="backlink" href="/index_from_tags/Buglog/Links in included notes do not work or show up as external.html">Links in included notes do not work or show up as external</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-22/index.html">date/2022-02-22</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A293786352731411159359328259547454441765{level}" class="graph_div"></div>
-    <button class="graph_button" id="B293786352731411159359328259547454441765{level}" level="{level}" onclick="run('293786352731411159359328259547454441765'+this.level, 'v1.0.1');">Show Graph</button>
+    <div id="A315039685014669313620023141712311079400{level}" class="graph_div"></div>
+    <button class="graph_button" id="B315039685014669313620023141712311079400{level}" level="{level}" onclick="run('315039685014669313620023141712311079400'+this.level, 'v1.0.1');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

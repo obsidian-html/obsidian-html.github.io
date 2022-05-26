@@ -187,22 +187,43 @@
 <h2 id="another-h2">Another h2</h2>
 <p>This is a sibling of <code>Second chapter</code>, and thus not included when you include <code>Second chapter</code>.   </p>
 <h1 id="new-h1-header">New h1 header</h1>
-<p>content second h1</p><h2>Backlinks</h2>
+<p>content second h1</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/Demonstrations/Implementing Note Inclusions.html">Inclusions</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/test_page/index.html">type/test_page</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A105395550923038973139575932087162368682{level}" class="graph_div"></div>
-    <button class="graph_button" id="B105395550923038973139575932087162368682{level}" level="{level}" onclick="run('105395550923038973139575932087162368682'+this.level, 'Test inclusion 2');">Show Graph</button>
+    <div id="A304647013397377564822378732592859374411{level}" class="graph_div"></div>
+    <button class="graph_button" id="B304647013397377564822378732592859374411{level}" level="{level}" onclick="run('304647013397377564822378732592859374411'+this.level, 'Test inclusion 2');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

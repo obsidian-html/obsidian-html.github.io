@@ -173,23 +173,45 @@
 </div>
 <p>The second step is to take the generated proper markdown files and convert them into a website. You are looking at the endproduct of this step.   </p>
 <p>See <a href="/no_tabs/Configurations/Features.html">Features</a> for all the ways in which you can influence this step.    </p>
-<p>You can for example <a href="/no_tabs/Configurations/Configuration Options.html#html-custom-inclusions">add in your own stylesheets/script files</a>, <a href="/no_tabs/Configurations/Configuration Options.html#html-template-path-str">edit the default html template</a> (or just provide your own template entirely), turn on/off the <a href="/no_tabs/Configurations/Graph view.html">Graph view</a> and the <a href="/no_tabs/Configurations/Backlinks.html">Backlinks</a>, among other things.</p><h2>Backlinks</h2>
+<p>You can for example <a href="/no_tabs/Configurations/Configuration Options.html#html-custom-inclusions">add in your own stylesheets/script files</a>, <a href="/no_tabs/Configurations/Configuration Options.html#html-template-path-str">edit the default html template</a> (or just provide your own template entirely), turn on/off the <a href="/no_tabs/Configurations/Graph view.html">Graph view</a> and the <a href="/no_tabs/Configurations/Backlinks.html">Backlinks</a>, among other things.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 	<li><a class="backlink" href="/no_tabs/Configurations/Features.html">Features</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/general_information/index.html">type/general_information</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A193149461662812577251435482828714101427{level}" class="graph_div"></div>
-    <button class="graph_button" id="B193149461662812577251435482828714101427{level}" level="{level}" onclick="run('193149461662812577251435482828714101427'+this.level, 'Creating a static html website from markdown files');">Show Graph</button>
+    <div id="A27043924811594964258551447660390006874{level}" class="graph_div"></div>
+    <button class="graph_button" id="B27043924811594964258551447660390006874{level}" level="{level}" onclick="run('27043924811594964258551447660390006874'+this.level, 'Creating a static html website from markdown files');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

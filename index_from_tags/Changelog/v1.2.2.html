@@ -173,22 +173,44 @@
 <p>Bugfix for a little bug where a halting error occurs when <a href="/index_from_tags/Configurations/Configuration Options.html#verbose_printout">toggles/verbose_printout</a> is true, due to a faulty concatenation in a print statement somewhere. <a href="https://github.com/obsidian-html/obsidian-html/pull/203" class="external-link">See also</a>.   </p>
 <p>Also added a <a href="https://github.com/obsidian-html/obsidian-html/issues/204" class="external-link">regression test</a> for this.   </p>
 <h2 id="config-changes">Config changes</h2>
-<p>Removed the behavior where <a href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a> automatically disabled <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a> and enables <a href="/index_from_tags/Configurations/NoTabs Mode.html">NoTabs Mode</a>. (Read more about this on the Relative_path_html page).</p><h2>Backlinks</h2>
+<p>Removed the behavior where <a href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a> automatically disabled <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a> and enables <a href="/index_from_tags/Configurations/NoTabs Mode.html">NoTabs Mode</a>. (Read more about this on the Relative_path_html page).</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-03-31/index.html">date/2022-03-31</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A139294638844061194061111775305881434132{level}" class="graph_div"></div>
-    <button class="graph_button" id="B139294638844061194061111775305881434132{level}" level="{level}" onclick="run('139294638844061194061111775305881434132'+this.level, 'v1.2.2');">Show Graph</button>
+    <div id="A42315245030165888470681105855796249372{level}" class="graph_div"></div>
+    <button class="graph_button" id="B42315245030165888470681105855796249372{level}" level="{level}" onclick="run('42315245030165888470681105855796249372'+this.level, 'v1.2.2');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

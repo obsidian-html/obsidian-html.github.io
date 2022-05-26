@@ -180,22 +180,44 @@ a new line, just like in Obsidian!
 
 <p>One enter <br />
 translates to <br />
-a new line, just like in Obsidian!</p><h2>Backlinks</h2>
+a new line, just like in Obsidian!</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/feature/parsing_markdown/index.html">feature/parsing_markdown</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A196082444577168495876631441113595082160{level}" class="graph_div"></div>
-    <button class="graph_button" id="B196082444577168495876631441113595082160{level}" level="{level}" onclick="run('196082444577168495876631441113595082160'+this.level, 'Basics');">Show Graph</button>
+    <div id="A198270834525722230690417695866871732110{level}" class="graph_div"></div>
+    <button class="graph_button" id="B198270834525722230690417695866871732110{level}" level="{level}" onclick="run('198270834525722230690417695866871732110'+this.level, 'Basics');">Show Graph</button>
 </div>
 
 
-<script src="/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

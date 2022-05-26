@@ -187,22 +187,44 @@
 </ul>
 </li>
 <li>changed code so that the content view is empty if only one file exists in the folder.</li>
-</ul><h2>Backlinks</h2>
+</ul>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Change Log.html">Change Log</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-04-18/index.html">date/2022-04-18</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A169301852946743275019470840511139189450{level}" class="graph_div"></div>
-    <button class="graph_button" id="B169301852946743275019470840511139189450{level}" level="{level}" onclick="run('169301852946743275019470840511139189450'+this.level, 'v2.0.2');">Show Graph</button>
+    <div id="A27219451612413989244315374603330257407{level}" class="graph_div"></div>
+    <button class="graph_button" id="B27219451612413989244315374603330257407{level}" level="{level}" onclick="run('27219451612413989244315374603330257407'+this.level, 'v2.0.2');">Show Graph</button>
 </div>
 
 
-<script src="/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

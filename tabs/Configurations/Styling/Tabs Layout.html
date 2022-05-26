@@ -262,23 +262,45 @@
 <h3 id="closing-tabs">Closing tabs</h3>
 <p>When you click on a new link in an earlier tab, all the open tabs after it will be closed.   </p>
 <h3 id="notice-the-url">Notice the url</h3>
-<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.</p><h2>Backlinks</h2>
+<p>There is a <code>?path=</code> part in the link that allows you to open the same set of tabs after a refresh.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Configurations/Styling/Styling.html">Styling</a></li>
 	<li><a class="backlink" href="/tabs/General Information/Using the website.html">Using the website</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A18112441522580481338158088200222406713{level}" class="graph_div"></div>
-    <button class="graph_button" id="B18112441522580481338158088200222406713{level}" level="{level}" onclick="run('18112441522580481338158088200222406713'+this.level, 'Tabs Layout');">Show Graph</button>
+    <div id="A75091884486134482531883405328765269636{level}" class="graph_div"></div>
+    <button class="graph_button" id="B75091884486134482531883405328765269636{level}" level="{level}" onclick="run('75091884486134482531883405328765269636'+this.level, 'Tabs Layout');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

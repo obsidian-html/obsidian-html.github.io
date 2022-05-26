@@ -279,7 +279,10 @@
 <li><a href="/tabs/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a>   </li>
 </ul>
 <h2 id="other">Other</h2>
-<p>See <a href="/tabs/Configurations/Configuration Options.html">Configuration Options</a> for a detailed look at all the configuration options available.</p><h2>Backlinks</h2>
+<p>See <a href="/tabs/Configurations/Configuration Options.html">Configuration Options</a> for a detailed look at all the configuration options available.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a class="backlink" href="/tabs/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
@@ -288,18 +291,37 @@
 	<li><a class="backlink" href="/tabs/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
 	<li><a class="backlink" href="/tabs/index.html">Homepage</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A325054256794705890278266556860111916564{level}" class="graph_div"></div>
-    <button class="graph_button" id="B325054256794705890278266556860111916564{level}" level="{level}" onclick="run('325054256794705890278266556860111916564'+this.level, 'Features');">Show Graph</button>
+    <div id="A122752635031852098248480363718793973052{level}" class="graph_div"></div>
+    <button class="graph_button" id="B122752635031852098248480363718793973052{level}" level="{level}" onclick="run('122752635031852098248480363718793973052'+this.level, 'Features');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

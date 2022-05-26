@@ -251,23 +251,45 @@
 <blockquote>
 <p>bugfix for <a href="/tabs/Changelog/v1.2.0.html">v1.2.0</a>   </p>
 </blockquote>
-<p>In the rewrites the usecase of converting proper markdown directly to html was broken. Not sure if anyone uses it, but it is something that I listed prominently as a feature, so this warrants its own release (and maybe a regression test soon...)</p><h2>Backlinks</h2>
+<p>In the rewrites the usecase of converting proper markdown directly to html was broken. Not sure if anyone uses it, but it is something that I listed prominently as a feature, so this warrants its own release (and maybe a regression test soon...)</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Configurations/Relative_path_html.html">Relative_path_html</a></li>
 	<li><a class="backlink" href="/tabs/Change Log.html">Change Log</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-03-22/index.html">date/2022-03-22</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A79151501445183503601539914253042065385{level}" class="graph_div"></div>
-    <button class="graph_button" id="B79151501445183503601539914253042065385{level}" level="{level}" onclick="run('79151501445183503601539914253042065385'+this.level, 'v1.2.1');">Show Graph</button>
+    <div id="A329207453913235654752068102988119654302{level}" class="graph_div"></div>
+    <button class="graph_button" id="B329207453913235654752068102988119654302{level}" level="{level}" onclick="run('329207453913235654752068102988119654302'+this.level, 'v1.2.1');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

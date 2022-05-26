@@ -254,22 +254,44 @@
 <h2 id="bugfixes">Bugfixes</h2>
 <ul>
 <li>Site menu in mobile mode overlapping content for tabs layout fixed.</li>
-</ul><h2>Backlinks</h2>
+</ul>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Change Log.html">Change Log</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A117545904761332042530460951349351853648{level}" class="graph_div"></div>
-    <button class="graph_button" id="B117545904761332042530460951349351853648{level}" level="{level}" onclick="run('117545904761332042530460951349351853648'+this.level, 'v2.0.1');">Show Graph</button>
+    <div id="A298662851288656600836208396519484215282{level}" class="graph_div"></div>
+    <button class="graph_button" id="B298662851288656600836208396519484215282{level}" level="{level}" onclick="run('298662851288656600836208396519484215282'+this.level, 'v2.0.1');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

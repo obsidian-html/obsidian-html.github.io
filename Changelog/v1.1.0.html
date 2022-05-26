@@ -193,7 +193,10 @@
 <li><a href="/Buglog/Links in included notes do not work or show up as external.html">Links in included notes do not work or show up as external</a> fixed   </li>
 <li><a href="/Buglog/File links in dirtree note do not work.html">File links in dirtree note do not work</a> fixed   </li>
 <li><a href="/Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.html">Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a> fixed</li>
-</ul><h2>Backlinks</h2>
+</ul>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a class="backlink" href="/Buglog/Links in included notes do not work or show up as external.html">Links in included notes do not work or show up as external</a></li>
@@ -201,18 +204,37 @@
 	<li><a class="backlink" href="/Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.html">Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a></li>
 	<li><a class="backlink" href="/Change Log.html">Change Log</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-03-11/index.html">date/2022-03-11</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A278310760143648326506112481505239198262{level}" class="graph_div"></div>
-    <button class="graph_button" id="B278310760143648326506112481505239198262{level}" level="{level}" onclick="run('278310760143648326506112481505239198262'+this.level, 'v1.1.0');">Show Graph</button>
+    <div id="A329612239611814838016172127265694621779{level}" class="graph_div"></div>
+    <button class="graph_button" id="B329612239611814838016172127265694621779{level}" level="{level}" onclick="run('329612239611814838016172127265694621779'+this.level, 'v1.1.0');">Show Graph</button>
 </div>
 
 
-<script src="/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

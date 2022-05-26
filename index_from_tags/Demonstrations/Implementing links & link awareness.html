@@ -194,23 +194,41 @@
 <p>If you want to link to files that are not markdown, use proper markdown links:   </p>
 <div class="codehilite"><pre><span></span><code><span class="p">[[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">]]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">.</span><span class="n">md</span><span class="p">)</span><span class="w"></span>
 <span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">](</span><span class="n">textfile</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span><span class="w"></span>
-</code></pre></div><h2>Backlinks</h2>
+</code></pre></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/index.html">index</a></li>
 	<li><a class="backlink" href="/index_from_tags/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
 </ul>
+</div>
+<div class="tags">
+
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A193040048380829003263528181114069363095{level}" class="graph_div"></div>
-    <button class="graph_button" id="B193040048380829003263528181114069363095{level}" level="{level}" onclick="run('193040048380829003263528181114069363095'+this.level, 'Links');">Show Graph</button>
+    <div id="A179231185925575022602637334262271856907{level}" class="graph_div"></div>
+    <button class="graph_button" id="B179231185925575022602637334262271856907{level}" level="{level}" onclick="run('179231185925575022602637334262271856907'+this.level, 'Links');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

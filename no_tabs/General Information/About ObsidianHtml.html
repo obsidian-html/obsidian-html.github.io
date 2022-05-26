@@ -228,22 +228,44 @@ Anyways: <strong>This is not that package</strong>. <br />
 </ul>
 <p>One thing to take note of is that ObsidianHtml will write a folder to your html output named obs.html, if you have a directory in the root of your vault with the same name (however unlikely that is...) there might be issues with the html output.   </p>
 <h2 id="next-up">Next up</h2>
-<p>Take a look at all the <a href="/no_tabs/Configurations/Features.html">high level features</a> that can be enabled/disabled, or read about all the <a href="/no_tabs/Configurations/Configuration Options.html">configuration options</a>. Or maybe jump directly to <a href="/no_tabs/Instructions/Installation.html">Installation</a>.</p><h2>Backlinks</h2>
+<p>Take a look at all the <a href="/no_tabs/Configurations/Features.html">high level features</a> that can be enabled/disabled, or read about all the <a href="/no_tabs/Configurations/Configuration Options.html">configuration options</a>. Or maybe jump directly to <a href="/no_tabs/Instructions/Installation.html">Installation</a>.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/index.html">Homepage</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/general_information/index.html">type/general_information</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A69747656237583335054214663034393272373{level}" class="graph_div"></div>
-    <button class="graph_button" id="B69747656237583335054214663034393272373{level}" level="{level}" onclick="run('69747656237583335054214663034393272373'+this.level, 'About ObsidianHtml');">Show Graph</button>
+    <div id="A230112529345559874779542502203765695503{level}" class="graph_div"></div>
+    <button class="graph_button" id="B230112529345559874779542502203765695503{level}" level="{level}" onclick="run('230112529345559874779542502203765695503'+this.level, 'About ObsidianHtml');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

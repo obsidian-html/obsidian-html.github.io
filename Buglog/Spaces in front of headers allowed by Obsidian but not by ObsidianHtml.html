@@ -184,22 +184,44 @@
 <p>This is not allowed in proper markdown though. So this leads to the headers not being recognized by python-markdown.   </p>
 <p>This is technically a user error, but it happened to me, and with the new auto-format feature in edit mode, typo's like this are very hard to spot. It's not nice if people use this package and are in the dark as to why their headers are not being rendered.    </p>
 <p>Besides, if obsidian implements something, obsidianhtml should implement it too, even if it basically means allowing the user to have random spaces in front of their headers.   </p>
-<p>It's pretty doable to remove these spaces in these cases and only in these cases. The regex in the code is just <code>(^\ [\ ]*)(?=#)</code> (one or more spaces from the beginning of the line immediately followed by a <code>#</code> are removed).</p><h2>Backlinks</h2>
+<p>It's pretty doable to remove these spaces in these cases and only in these cases. The regex in the code is just <code>(^\ [\ ]*)(?=#)</code> (one or more spaces from the beginning of the line immediately followed by a <code>#</code> are removed).</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Changelog/v1.1.0.html">v1.1.0</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-03-11/index.html">date/2022-03-11</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A339605596424636946649616102859683751256{level}" class="graph_div"></div>
-    <button class="graph_button" id="B339605596424636946649616102859683751256{level}" level="{level}" onclick="run('339605596424636946649616102859683751256'+this.level, 'Spaces in front of headers allowed by Obsidian but not by ObsidianHtml');">Show Graph</button>
+    <div id="A41832078905535878781983638148224850704{level}" class="graph_div"></div>
+    <button class="graph_button" id="B41832078905535878781983638148224850704{level}" level="{level}" onclick="run('41832078905535878781983638148224850704'+this.level, 'Spaces in front of headers allowed by Obsidian but not by ObsidianHtml');">Show Graph</button>
 </div>
 
 
-<script src="/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

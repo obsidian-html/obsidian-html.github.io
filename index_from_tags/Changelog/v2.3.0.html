@@ -190,23 +190,45 @@
 <li>The css files are now all packaged into 1 file upon export to html for a (tiny) performance boost when loading the page.    </li>
 <li>The obsidian.js file has been split into obsidian_core_header.js and obsidian_core_footer.js and all specific code has been moved into files that can be included/excluded at will.   </li>
 <li>The search data is now gzipped after compilation, and the client now unzips it. The unzip overhead is hopefully small enough compared with the benefits of downloading a considerably smaller data file over the wire, to justify this change.</li>
-</ul><h2>Backlinks</h2>
+</ul>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Performance Tuning.html">Performance Tuning</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-05-08/index.html">date/2022-05-08</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A227493898971608236597235619759903308431{level}" class="graph_div"></div>
-    <button class="graph_button" id="B227493898971608236597235619759903308431{level}" level="{level}" onclick="run('227493898971608236597235619759903308431'+this.level, 'v2.3.0');">Show Graph</button>
+    <div id="A36108825137983760870664403321192846703{level}" class="graph_div"></div>
+    <button class="graph_button" id="B36108825137983760870664403321192846703{level}" level="{level}" onclick="run('36108825137983760870664403321192846703'+this.level, 'v2.3.0');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

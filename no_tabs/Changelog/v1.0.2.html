@@ -181,23 +181,45 @@
 <h2 id="bugfixes">Bugfixes</h2>
 <ul>
 <li><a href="/no_tabs/Buglog/Links in included notes do not work or show up as external.html">Links in included notes do not work or show up as external</a> (workaround implemented)</li>
-</ul><h2>Backlinks</h2>
+</ul>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/Buglog/Links in included notes do not work or show up as external.html">Links in included notes do not work or show up as external</a></li>
 	<li><a class="backlink" href="/no_tabs/Change Log.html">Change Log</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-03-10/index.html">date/2022-03-10</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A130271416575145239212843162050090950145{level}" class="graph_div"></div>
-    <button class="graph_button" id="B130271416575145239212843162050090950145{level}" level="{level}" onclick="run('130271416575145239212843162050090950145'+this.level, 'v1.0.2');">Show Graph</button>
+    <div id="A316840176466258445411247706416289312987{level}" class="graph_div"></div>
+    <button class="graph_button" id="B316840176466258445411247706416289312987{level}" level="{level}" onclick="run('316840176466258445411247706416289312987'+this.level, 'v1.0.2');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

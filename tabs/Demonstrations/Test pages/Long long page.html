@@ -313,22 +313,43 @@
 1 <br />
 1   </p>
 <h1 id="chapter-of-interest">Chapter of interest</h1>
-<p>Hi</p><h2>Backlinks</h2>
+<p>Hi</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Demonstrations/Making lists work the same.html">Links</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/test_page/test_tag/index.html">type/test_page/test_tag</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A190086037876496965352340640539661493588{level}" class="graph_div"></div>
-    <button class="graph_button" id="B190086037876496965352340640539661493588{level}" level="{level}" onclick="run('190086037876496965352340640539661493588'+this.level, 'Long long page');">Show Graph</button>
+    <div id="A134432390978109406011223728284329259456{level}" class="graph_div"></div>
+    <button class="graph_button" id="B134432390978109406011223728284329259456{level}" level="{level}" onclick="run('134432390978109406011223728284329259456'+this.level, 'Long long page');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

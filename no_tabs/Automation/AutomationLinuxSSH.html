@@ -200,22 +200,44 @@ ssh <span class="nv">$target</span> rm -rf <span class="s2">&quot;</span><span c
 scp -r <span class="s2">&quot;</span><span class="nv">$output_folder</span><span class="s2">/html/*&quot;</span> <span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/&quot;</span>
 </code></pre></div>
 
-<p><a href="/no_tabs/Automation/Automate website deployment.html">Other ways of pushing websites</a></p><h2>Backlinks</h2>
+<p><a href="/no_tabs/Automation/Automate website deployment.html">Other ways of pushing websites</a></p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/Automation/Automate website deployment.html">Automate website deployment</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/automation/index.html">type/automation</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A157562531446014544819140925054817631789{level}" class="graph_div"></div>
-    <button class="graph_button" id="B157562531446014544819140925054817631789{level}" level="{level}" onclick="run('157562531446014544819140925054817631789'+this.level, 'Auto push site using SSH on Linux');">Show Graph</button>
+    <div id="A213512179742446143480062545698474885041{level}" class="graph_div"></div>
+    <button class="graph_button" id="B213512179742446143480062545698474885041{level}" level="{level}" onclick="run('213512179742446143480062545698474885041'+this.level, 'Auto push site using SSH on Linux');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

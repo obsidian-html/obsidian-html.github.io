@@ -463,24 +463,46 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <h2 id="first-header">first-header</h2>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Get the first H1 header, and return the inner html</span><span class="w"></span>
 <span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-header&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"></span>
-</code></pre></div><h2>Backlinks</h2>
+</code></pre></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/feature/rss/index.html">feature/rss</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-17/index.html">date/2022-02-17</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A306681774485955578626680110316086703452{level}" class="graph_div"></div>
-    <button class="graph_button" id="B306681774485955578626680110316086703452{level}" level="{level}" onclick="run('306681774485955578626680110316086703452'+this.level, 'RSS Feed');">Show Graph</button>
+    <div id="A275243411721712787376536007400029724935{level}" class="graph_div"></div>
+    <button class="graph_button" id="B275243411721712787376536007400029724935{level}" level="{level}" onclick="run('275243411721712787376536007400029724935'+this.level, 'RSS Feed');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

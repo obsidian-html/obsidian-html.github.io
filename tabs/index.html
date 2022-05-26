@@ -327,18 +327,39 @@
 <li><a href="/tabs/Configurations/Performance Tuning.html">Performance Tuning</a>   </li>
 <li><a href="/tabs/Automation/Automate website deployment.html">Automate website deployment</a></li>
 </ul>
+<div class="note-footer">
+<div class="backlinks">
+
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/entrypoint/index.html">type/entrypoint</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A305497172248695014616830743109839672455{level}" class="graph_div"></div>
-    <button class="graph_button" id="B305497172248695014616830743109839672455{level}" level="{level}" onclick="run('305497172248695014616830743109839672455'+this.level, 'Homepage');">Show Graph</button>
+    <div id="A61705685812879650759791107185419300080{level}" class="graph_div"></div>
+    <button class="graph_button" id="B61705685812879650759791107185419300080{level}" level="{level}" onclick="run('61705685812879650759791107185419300080'+this.level, 'Homepage');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

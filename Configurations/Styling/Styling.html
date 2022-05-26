@@ -254,7 +254,10 @@
 
 <p>This determines the max width of the content div.    </p>
 <p>This is not supported for the tabs layout as there the width of the notes is more or less tied to the well-being of the tab automation.   </p>
-<p>This can be set to any valid CSS width value, such as <code>100%</code>, or <code>450px</code>. If you want the note to be as wide as possible then 100% will be a good value to configure. Personally I find content divs that are a bit less wide easier to read, and the current configured width ties together nicely with the documentation layout.</p><h2>Backlinks</h2>
+<p>This can be set to any valid CSS width value, such as <code>100%</code>, or <code>450px</code>. If you want the note to be as wide as possible then 100% will be a good value to configure. Personally I find content divs that are a bit less wide easier to read, and the current configured width ties together nicely with the documentation layout.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Changelog/v2.0.0.html">v2.0.0</a></li>
 	<li><a class="backlink" href="/Configurations/Styling/Tabs Layout.html">Tabs Layout</a></li>
@@ -266,18 +269,37 @@
 	<li><a class="backlink" href="/General Information/Using the website.html">Using the website</a></li>
 	<li><a class="backlink" href="/index.html">Homepage</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A69453595500631447129745358489696892529{level}" class="graph_div"></div>
-    <button class="graph_button" id="B69453595500631447129745358489696892529{level}" level="{level}" onclick="run('69453595500631447129745358489696892529'+this.level, 'Styling');">Show Graph</button>
+    <div id="A166566605034011349499169975667009542440{level}" class="graph_div"></div>
+    <button class="graph_button" id="B166566605034011349499169975667009542440{level}" level="{level}" onclick="run('166566605034011349499169975667009542440'+this.level, 'Styling');">Show Graph</button>
 </div>
 
 
-<script src="/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

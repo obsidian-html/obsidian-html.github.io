@@ -208,7 +208,10 @@
 
 <blockquote>
 <p>Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.</p>
-</blockquote><h2>Backlinks</h2>
+</blockquote>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Writing a custom graph view template.html">Writing a custom graph view template</a></li>
@@ -218,18 +221,39 @@
 	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
 	<li><a class="backlink" href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-05/index.html">date/2022-02-05</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/feature/html_output/index.html">feature/html_output</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/feature/graph_view/index.html">feature/graph_view</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A153145257512000294571596248597976184382{level}" class="graph_div"></div>
-    <button class="graph_button" id="B153145257512000294571596248597976184382{level}" level="{level}" onclick="run('153145257512000294571596248597976184382'+this.level, 'Graph View');">Show Graph</button>
+    <div id="A300555795525103416961804280191343349224{level}" class="graph_div"></div>
+    <button class="graph_button" id="B300555795525103416961804280191343349224{level}" level="{level}" onclick="run('300555795525103416961804280191343349224'+this.level, 'Graph View');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

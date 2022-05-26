@@ -176,23 +176,46 @@
 <p>There are a lot of little details that go into converting Obsidian notes to proper markdown. See the <a href="/no_tabs/Demonstrations/Demonstration of Obisidian integration.html">demonstration page</a> for all the little things that <em>should just work</em> for this package to be worth its salt.   </p>
 <blockquote>
 <p>This step <a href="/no_tabs/Configurations/Configuration Options.html#compile-md">can be skipped</a>, if you want to convert existing markdown to an html site.</p>
-</blockquote><h2>Backlinks</h2>
+</blockquote>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/Configurations/Features.html">Features</a></li>
 	<li><a class="backlink" href="/no_tabs/Configurations/Modes.html">Modes</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/feature/parsing_markdown/index.html">feature/parsing_markdown</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/general_information/index.html">type/general_information</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A78101770461295843054264076663730467634{level}" class="graph_div"></div>
-    <button class="graph_button" id="B78101770461295843054264076663730467634{level}" level="{level}" onclick="run('78101770461295843054264076663730467634'+this.level, 'Parsing Obsidian notes to proper markdown');">Show Graph</button>
+    <div id="A334282485868116324537575133776590268273{level}" class="graph_div"></div>
+    <button class="graph_button" id="B334282485868116324537575133776590268273{level}" level="{level}" onclick="run('334282485868116324537575133776590268273'+this.level, 'Parsing Obsidian notes to proper markdown');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

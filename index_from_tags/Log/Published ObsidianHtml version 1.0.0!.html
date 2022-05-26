@@ -185,22 +185,44 @@
 <h2 id="patches">Patches</h2>
 <ul>
 <li><a href="/index_from_tags/Changelog/v1.0.1.html">v1.0.1</a></li>
-</ul><h2>Backlinks</h2>
+</ul>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v1.0.0.html">v1.0.0</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/news/index.html">type/news</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-20/index.html">date/2022-02-20</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A309011911452785931669876756305407203414{level}" class="graph_div"></div>
-    <button class="graph_button" id="B309011911452785931669876756305407203414{level}" level="{level}" onclick="run('309011911452785931669876756305407203414'+this.level, 'Published ObsidianHtml version 1.0.0!');">Show Graph</button>
+    <div id="A201449438464788758740520484216069194183{level}" class="graph_div"></div>
+    <button class="graph_button" id="B201449438464788758740520484216069194183{level}" level="{level}" onclick="run('201449438464788758740520484216069194183'+this.level, 'Published ObsidianHtml version 1.0.0!');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

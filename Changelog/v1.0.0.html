@@ -175,7 +175,10 @@
 </div>
 <p><a href="https://pypi.org/project/obsidianhtml/1.0.0/" class="external-link">Version 1.0.0 has been released.</a>   </p>
 <p>The changes related to the prior version can be found here: <a href="https://github.com/obsidian-html/obsidian-html/issues/137" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/137</a>   </p>
-<p>See also our post on it: <a href="/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></p><h2>Backlinks</h2>
+<p>See also our post on it: <a href="/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Changelog/v1.2.0.html">v1.2.0</a></li>
 	<li><a class="backlink" href="/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
@@ -186,18 +189,37 @@
 	<li><a class="backlink" href="/Changelog/v1.0.2.html">v1.0.2</a></li>
 	<li><a class="backlink" href="/Change Log.html">Change Log</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-02-16/index.html">date/2022-02-16</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A35782159864766302134618942006640852432{level}" class="graph_div"></div>
-    <button class="graph_button" id="B35782159864766302134618942006640852432{level}" level="{level}" onclick="run('35782159864766302134618942006640852432'+this.level, 'v1.0.0');">Show Graph</button>
+    <div id="A180562151630632235410879972107590485304{level}" class="graph_div"></div>
+    <button class="graph_button" id="B180562151630632235410879972107590485304{level}" level="{level}" onclick="run('180562151630632235410879972107590485304'+this.level, 'v1.0.0');">Show Graph</button>
 </div>
 
 
-<script src="/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

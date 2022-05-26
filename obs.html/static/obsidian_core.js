@@ -9,7 +9,7 @@ var content_pane_div = "left_pane";
 var html_url_prefix = "";
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '50033839671389802075678128444104678134'                       // used to check whether the localStorage data is stale
+var gzip_hash = '10957092550531327110439542563918332814'                       // used to check whether the localStorage data is stale
 
 
 // Onloads
@@ -306,6 +306,27 @@ function httpGetAsync(theUrl, callback, level, callbackpath) {
     xmlHttp.send(null);
 }
 
+
+function load_script_on_demand(path, callback){
+    // create script tag
+    var elScript = document.createElement('script');
+    elScript.setAttribute('type','text/javascript');
+    elScript.setAttribute('charset', 'utf-8');
+
+    // set path to load, and callback to be run when loaded
+    elScript.setAttribute( 'src', path);
+    elScript.onload = callback;
+
+    // add script tag to the end of body
+    document.getElementsByTagName("body")[0].appendChild( elScript );
+}
+
+function get_graph_data(){
+    return get_html_url_prefix()+'/obs.html/data/graph.json';
+}
+function get_html_url_prefix(){
+    return ''  // this value is replaced by the actual url prefix when compiled
+}
 
 // Helper Functions 
 // ----------------------------------------------------------------------------

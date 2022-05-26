@@ -189,23 +189,45 @@
 <span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News.html</span><span class="w">    </span>
 </code></pre></div>
 
-<p>Make sure to use the full relative path to the note as measured from your webroot (so exclude the <a href="/index_from_tags/Configurations/Configuration Options.html#html-url-prefix">prefix</a>).</p><h2>Backlinks</h2>
+<p>Make sure to use the full relative path to the note as measured from your webroot (so exclude the <a href="/index_from_tags/Configurations/Configuration Options.html#html-url-prefix">prefix</a>).</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A264808238365203080348740927062431542637{level}" class="graph_div"></div>
-    <button class="graph_button" id="B264808238365203080348740927062431542637{level}" level="{level}" onclick="run('264808238365203080348740927062431542637'+this.level, 'Website navigation menu');">Show Graph</button>
+    <div id="A293995553694306505779279360038300222452{level}" class="graph_div"></div>
+    <button class="graph_button" id="B293995553694306505779279360038300222452{level}" level="{level}" onclick="run('293995553694306505779279360038300222452'+this.level, 'Website navigation menu');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

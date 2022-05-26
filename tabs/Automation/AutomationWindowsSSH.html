@@ -283,23 +283,45 @@
 <span class="p">}</span>
 </code></pre></div>
 
-<p><a href="/tabs/Automation/Automate website deployment.html">Other ways of pushing websites</a></p><h2>Backlinks</h2>
+<p><a href="/tabs/Automation/Automate website deployment.html">Other ways of pushing websites</a></p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Automation/Automate website deployment.html">Automate website deployment</a></li>
 	<li><a class="backlink" href="/tabs/Automation/AutomationWindows.html">Auto push site using Git on Windows</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/automation/index.html">type/automation</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A30428896337287182338775930568961906472{level}" class="graph_div"></div>
-    <button class="graph_button" id="B30428896337287182338775930568961906472{level}" level="{level}" onclick="run('30428896337287182338775930568961906472'+this.level, 'Auto push site using Git on Windows');">Show Graph</button>
+    <div id="A274642811188952885544418460293225100307{level}" class="graph_div"></div>
+    <button class="graph_button" id="B274642811188952885544418460293225100307{level}" level="{level}" onclick="run('274642811188952885544418460293225100307'+this.level, 'Auto push site using Git on Windows');">Show Graph</button>
 </div>
 
 
-<script src="/tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

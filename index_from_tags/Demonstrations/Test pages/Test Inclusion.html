@@ -164,22 +164,43 @@
 <h2 id="test-inclusion">Test Inclusion</h2>
 <blockquote>
 <p>Content</p>
-</blockquote><h2>Backlinks</h2>
+</blockquote>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Demonstrations/Implementing Note Inclusions.html">Inclusions</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/test_page/index.html">type/test_page</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A102263645169044132403338724291989926606{level}" class="graph_div"></div>
-    <button class="graph_button" id="B102263645169044132403338724291989926606{level}" level="{level}" onclick="run('102263645169044132403338724291989926606'+this.level, 'Test Inclusion');">Show Graph</button>
+    <div id="A205496262810612924994235735041198962021{level}" class="graph_div"></div>
+    <button class="graph_button" id="B205496262810612924994235735041198962021{level}" level="{level}" onclick="run('205496262810612924994235735041198962021'+this.level, 'Test Inclusion');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

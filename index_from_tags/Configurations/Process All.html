@@ -169,24 +169,46 @@
 <p>This package was written with the idea that <a href="/index_from_tags/Configurations/Modes.html#entrypoint-mode">you give one note that will serve as the homepage</a>. Then all the notes that are linked directly or indirectly by that first note are processed, ignoring what else might still be in your vault.   </p>
 <p>Process all is a <a href="/index_from_tags/Configurations/Modes.html">mode</a>, which will tell ObsidianHtml to convert and include all notes in the output.    </p>
 <p>This has become more useful because of the new <a href="/index_from_tags/Configurations/Graph view.html">Graph view</a> and <a href="/index_from_tags/Configurations/Tags Page.html">Tags Page</a> features. These can make those notes reachable now.    </p>
-<p>See <a href="/index_from_tags/Configurations/Configuration Options.html#process-all">Configuration Options#Process all</a> for how to enable this setting.</p><h2>Backlinks</h2>
+<p>See <a href="/index_from_tags/Configurations/Configuration Options.html#process-all">Configuration Options#Process all</a> for how to enable this setting.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Modes.html">Modes</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-06/index.html">date/2022-02-06</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A334538585427786294142797944986296401920{level}" class="graph_div"></div>
-    <button class="graph_button" id="B334538585427786294142797944986296401920{level}" level="{level}" onclick="run('334538585427786294142797944986296401920'+this.level, 'Process All');">Show Graph</button>
+    <div id="A223804473325206972139788034271544583545{level}" class="graph_div"></div>
+    <button class="graph_button" id="B223804473325206972139788034271544583545{level}" level="{level}" onclick="run('223804473325206972139788034271544583545'+this.level, 'Process All');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

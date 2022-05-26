@@ -211,24 +211,46 @@
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 </code></pre></div>
 
-<p>Personally, I would not bother with disabling the bottom two features, as the memory impact is negligable, unless you don't have  any code blocks / callouts in your vault.</p><h2>Backlinks</h2>
+<p>Personally, I would not bother with disabling the bottom two features, as the memory impact is negligable, unless you don't have  any code blocks / callouts in your vault.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/Changelog/v2.3.0.html">v2.3.0</a></li>
 	<li><a class="backlink" href="/no_tabs/Configurations/Styling/Styling.html">Styling</a></li>
 	<li><a class="backlink" href="/no_tabs/index.html">Homepage</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-05-08/index.html">date/2022-05-08</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A107397432445972029189642872299444138479{level}" class="graph_div"></div>
-    <button class="graph_button" id="B107397432445972029189642872299444138479{level}" level="{level}" onclick="run('107397432445972029189642872299444138479'+this.level, 'Performance Tuning');">Show Graph</button>
+    <div id="A4335186982424498403836400530455397383{level}" class="graph_div"></div>
+    <button class="graph_button" id="B4335186982424498403836400530455397383{level}" level="{level}" onclick="run('4335186982424498403836400530455397383'+this.level, 'Performance Tuning');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

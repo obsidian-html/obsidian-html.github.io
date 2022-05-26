@@ -186,7 +186,10 @@
 <span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w"></span>
 </code></pre></div>
 
-<p>To opt out of tabbing. (Opting out is also not longer needed because documentation is now the default layout).</p><h2>Backlinks</h2>
+<p>To opt out of tabbing. (Opting out is also not longer needed because documentation is now the default layout).</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Relative_path_html.html">Relative_path_html</a></li>
@@ -194,18 +197,37 @@
 	<li><a class="backlink" href="/index_from_tags/Changelog/v1.2.2.html">v1.2.2</a></li>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v1.2.0.html">v1.2.0</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-03-15/index.html">date/2022-03-15</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A126290122793754319814351090951862867317{level}" class="graph_div"></div>
-    <button class="graph_button" id="B126290122793754319814351090951862867317{level}" level="{level}" onclick="run('126290122793754319814351090951862867317'+this.level, 'NoTabs Mode');">Show Graph</button>
+    <div id="A245777852883382855489964366708146906528{level}" class="graph_div"></div>
+    <button class="graph_button" id="B245777852883382855489964366708146906528{level}" level="{level}" onclick="run('245777852883382855489964366708146906528'+this.level, 'NoTabs Mode');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

@@ -177,22 +177,44 @@
 <p>Patch version of <a href="/Changelog/v2.3.0.html">v2.3.0</a>   </p>
 </blockquote>
 <p>The css refactor gave rise to a bug where the graph button was always disabled, where that should've only been the case for the taglist.   </p>
-<p>As this is a major bug, this fix is released as it's own patch version.</p><h2>Backlinks</h2>
+<p>As this is a major bug, this fix is released as it's own patch version.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/Change Log.html">Change Log</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-05-15/index.html">date/2022-05-15</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A324297333218092425709594946147258233631{level}" class="graph_div"></div>
-    <button class="graph_button" id="B324297333218092425709594946147258233631{level}" level="{level}" onclick="run('324297333218092425709594946147258233631'+this.level, 'v2.3.1');">Show Graph</button>
+    <div id="A220278178813684783337633064009673603586{level}" class="graph_div"></div>
+    <button class="graph_button" id="B220278178813684783337633064009673603586{level}" level="{level}" onclick="run('220278178813684783337633064009673603586'+this.level, 'v2.3.1');">Show Graph</button>
 </div>
 
 
-<script src="/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

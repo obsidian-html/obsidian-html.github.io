@@ -172,7 +172,10 @@
 </ul>
 </div>
 <p>If you face any problems with using ObsidianHtml, please don't hesitate to <a href="https://github.com/obsidian-html/obsidian-html/issues" class="external-link">create an issue on our github</a>.    </p>
-<p>Here you can also request new features.</p><h2>Backlinks</h2>
+<p>Here you can also request new features.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/no_tabs/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
 	<li><a class="backlink" href="/no_tabs/Configurations/RSS Feed.html">RSS Feed</a></li>
@@ -183,18 +186,37 @@
 	<li><a class="backlink" href="/no_tabs/Instructions/Usage.html">Usage</a></li>
 	<li><a class="backlink" href="/no_tabs/index.html">Homepage</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/general_information/index.html">type/general_information</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/no_tabs/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A84939738462744106648567784738251483604{level}" class="graph_div"></div>
-    <button class="graph_button" id="B84939738462744106648567784738251483604{level}" level="{level}" onclick="run('84939738462744106648567784738251483604'+this.level, 'Report Issues & Request features');">Show Graph</button>
+    <div id="A126269267352245644626937999261939634811{level}" class="graph_div"></div>
+    <button class="graph_button" id="B126269267352245644626937999261939634811{level}" level="{level}" onclick="run('126269267352245644626937999261939634811'+this.level, 'Report Issues & Request features');">Show Graph</button>
 </div>
 
 
-<script src="/no_tabs/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/no_tabs/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)

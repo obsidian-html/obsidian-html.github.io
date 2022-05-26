@@ -184,7 +184,10 @@
 <li>The default layout has changed from <code>tabs</code> to <code>documentation</code>. Read more: <a href="/index_from_tags/Configurations/Styling/Styling.html#layouts">Styling#Layouts</a>.   </li>
 </ul>
 <h2 id="bugfixes">Bugfixes</h2>
-<p>There was an issue with paths not being resolved correctly on Windows, as the behavior of pathlib differs inextricably between Windows and Linux. (On Windows, if the path does not yet exist then path.resolve() would not create an absolute path out of a relative one). This was fixed by making sure the folders are created before running resolve.</p><h2>Backlinks</h2>
+<p>There was an issue with paths not being resolved correctly on Windows, as the behavior of pathlib differs inextricably between Windows and Linux. (On Windows, if the path does not yet exist then path.resolve() would not create an absolute path out of a relative one). This was fixed by making sure the folders are created before running resolve.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v2.1.0.html">v2.1.0</a></li>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v2.3.0.html">v2.3.0</a></li>
@@ -192,18 +195,37 @@
 	<li><a class="backlink" href="/index_from_tags/Configurations/NoTabs Mode.html">NoTabs Mode</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
+</div>
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
+</ul>
+</div>
+
+</div>
 <script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
 
 <div class="graph">
-    <div id="A181306543651861887882975138312696065805{level}" class="graph_div"></div>
-    <button class="graph_button" id="B181306543651861887882975138312696065805{level}" level="{level}" onclick="run('181306543651861887882975138312696065805'+this.level, 'v2.0.0');">Show Graph</button>
+    <div id="A38728397765865452599343404866848158490{level}" class="graph_div"></div>
+    <button class="graph_button" id="B38728397765865452599343404866848158490{level}" level="{level}" onclick="run('38728397765865452599343404866848158490'+this.level, 'v2.0.0');">Show Graph</button>
 </div>
 
 
-<script src="/index_from_tags/obs.html/static/3d-force-graph.js"></script>
-
+<!-- <script defer src="/index_from_tags/obs.html/static/3d-force-graph.js"></script> -->
 <script>
     function grapher(args) {
+        load_script_on_demand(
+            '/obs.html/static/3d-force-graph.js', 
+            function(){
+                args.graph_container.style.display = "block";       // open div right before loading the graph to avoid opening an empty div
+                initGraph(args)
+            }
+        )
+    }
+
+    function initGraph(args) {
         window.Graph = ForceGraph3D()
             (args.graph_container)
             .jsonUrl(args.data)
