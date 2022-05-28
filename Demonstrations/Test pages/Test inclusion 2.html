@@ -197,6 +197,7 @@
 	<li><a class="backlink" href="/Demonstrations/Implementing Note Inclusions.html">Inclusions</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -206,13 +207,13 @@
 
 </div>
 <div class="graph">
-    <div id="A304647013397377564822378732592859374411{level}" class="graph_div"></div>
+    <div id="A160162638659606276785491626594887317607{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B304647013397377564822378732592859374411{level}" level="{level}" note_temp_id="304647013397377564822378732592859374411" onclick="window.ObsHtmlGraph.run(this, '304647013397377564822378732592859374411', 'Test inclusion 2');">
+        <button class="graph_button graph_show_button" id="B160162638659606276785491626594887317607{level}" level="{level}" note_temp_id="160162638659606276785491626594887317607" onclick="window.ObsHtmlGraph.run(this, '160162638659606276785491626594887317607', 'Test inclusion 2');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C304647013397377564822378732592859374411{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C160162638659606276785491626594887317607{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -222,6 +223,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

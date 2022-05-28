@@ -182,6 +182,7 @@
 	<li><a class="backlink" href="/no_tabs/News.html">News</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -192,13 +193,13 @@
 
 </div>
 <div class="graph">
-    <div id="A66162758777687272435476739261136271022{level}" class="graph_div"></div>
+    <div id="A277722596908976715313076352276494753482{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B66162758777687272435476739261136271022{level}" level="{level}" note_temp_id="66162758777687272435476739261136271022" onclick="window.ObsHtmlGraph.run(this, '66162758777687272435476739261136271022', 'Published ObsidianHtml version 0.0.9!');">
+        <button class="graph_button graph_show_button" id="B277722596908976715313076352276494753482{level}" level="{level}" note_temp_id="277722596908976715313076352276494753482" onclick="window.ObsHtmlGraph.run(this, '277722596908976715313076352276494753482', 'Published ObsidianHtml version 0.0.9!');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C66162758777687272435476739261136271022{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C277722596908976715313076352276494753482{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -208,6 +209,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/no_tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

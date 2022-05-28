@@ -205,6 +205,7 @@ Start --> Stop
 	<li><a class="backlink" href="/Configurations/Features.html">Features</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -216,13 +217,13 @@ Start --> Stop
 
 </div>
 <div class="graph">
-    <div id="A148553407523445267316654410428734290312{level}" class="graph_div"></div>
+    <div id="A86832737639460596987994089377030217332{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B148553407523445267316654410428734290312{level}" level="{level}" note_temp_id="148553407523445267316654410428734290312" onclick="window.ObsHtmlGraph.run(this, '148553407523445267316654410428734290312', 'Mermaid Diagrams');">
+        <button class="graph_button graph_show_button" id="B86832737639460596987994089377030217332{level}" level="{level}" note_temp_id="86832737639460596987994089377030217332" onclick="window.ObsHtmlGraph.run(this, '86832737639460596987994089377030217332', 'Mermaid Diagrams');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C148553407523445267316654410428734290312{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C86832737639460596987994089377030217332{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -232,6 +233,7 @@ Start --> Stop
     if (window.ObsHtmlGraph == undefined){
         import('/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

@@ -271,6 +271,7 @@ Fixed in version <a href="/tabs/Changelog/v1.1.0.html">v1.1.0</a>   </p>
 	<li><a class="backlink" href="/tabs/Changelog/v1.0.2.html">v1.0.2</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -281,13 +282,13 @@ Fixed in version <a href="/tabs/Changelog/v1.1.0.html">v1.1.0</a>   </p>
 
 </div>
 <div class="graph">
-    <div id="A145561714985818632751185701874297091921{level}" class="graph_div"></div>
+    <div id="A101388826643843299455884243834866334061{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B145561714985818632751185701874297091921{level}" level="{level}" note_temp_id="145561714985818632751185701874297091921" onclick="window.ObsHtmlGraph.run(this, '145561714985818632751185701874297091921', 'Links in included notes do not work or show up as external');">
+        <button class="graph_button graph_show_button" id="B101388826643843299455884243834866334061{level}" level="{level}" note_temp_id="101388826643843299455884243834866334061" onclick="window.ObsHtmlGraph.run(this, '101388826643843299455884243834866334061', 'Links in included notes do not work or show up as external');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C145561714985818632751185701874297091921{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C101388826643843299455884243834866334061{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -297,6 +298,7 @@ Fixed in version <a href="/tabs/Changelog/v1.1.0.html">v1.1.0</a>   </p>
     if (window.ObsHtmlGraph == undefined){
         import('/tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

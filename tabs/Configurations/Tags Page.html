@@ -270,6 +270,7 @@ E.g. adding the following frontyaml at the top of this note:   </p>
 	<li><a class="backlink" href="/tabs/General Information/Using the website.html">Using the website</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -280,13 +281,13 @@ E.g. adding the following frontyaml at the top of this note:   </p>
 
 </div>
 <div class="graph">
-    <div id="A92404785264962392457328181848809178909{level}" class="graph_div"></div>
+    <div id="A249190473632801194419042627250922255681{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B92404785264962392457328181848809178909{level}" level="{level}" note_temp_id="92404785264962392457328181848809178909" onclick="window.ObsHtmlGraph.run(this, '92404785264962392457328181848809178909', 'Tags Page');">
+        <button class="graph_button graph_show_button" id="B249190473632801194419042627250922255681{level}" level="{level}" note_temp_id="249190473632801194419042627250922255681" onclick="window.ObsHtmlGraph.run(this, '249190473632801194419042627250922255681', 'Tags Page');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C92404785264962392457328181848809178909{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C249190473632801194419042627250922255681{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -296,6 +297,7 @@ E.g. adding the following frontyaml at the top of this note:   </p>
     if (window.ObsHtmlGraph == undefined){
         import('/tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

@@ -333,23 +333,24 @@
 	<li><a class="backlink" href="/tabs/index.html">Homepage</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
 	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-02-21/index.html">date/2022-02-21</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A133886123852110671851093668350334861805{level}" class="graph_div"></div>
+    <div id="A163983925611218731442227627628504473241{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B133886123852110671851093668350334861805{level}" level="{level}" note_temp_id="133886123852110671851093668350334861805" onclick="window.ObsHtmlGraph.run(this, '133886123852110671851093668350334861805', 'Quickstart');">
+        <button class="graph_button graph_show_button" id="B163983925611218731442227627628504473241{level}" level="{level}" note_temp_id="163983925611218731442227627628504473241" onclick="window.ObsHtmlGraph.run(this, '163983925611218731442227627628504473241', 'Quickstart');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C133886123852110671851093668350334861805{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C163983925611218731442227627628504473241{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -359,6 +360,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

@@ -199,23 +199,24 @@
 	<li><a class="backlink" href="/no_tabs/General Information/Using the website.html">Using the website</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/styling/index.html">type/styling</a></li>
 	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A42178467556406883080868477453942651495{level}" class="graph_div"></div>
+    <div id="A214436605294097302164891495655384740411{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B42178467556406883080868477453942651495{level}" level="{level}" note_temp_id="42178467556406883080868477453942651495" onclick="window.ObsHtmlGraph.run(this, '42178467556406883080868477453942651495', 'Tabs Layout');">
+        <button class="graph_button graph_show_button" id="B214436605294097302164891495655384740411{level}" level="{level}" note_temp_id="214436605294097302164891495655384740411" onclick="window.ObsHtmlGraph.run(this, '214436605294097302164891495655384740411', 'Tabs Layout');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C42178467556406883080868477453942651495{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C214436605294097302164891495655384740411{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -225,6 +226,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/no_tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

@@ -256,23 +256,24 @@
 	<li><a class="backlink" href="/tabs/Demonstrations/Making lists work the same.html">Links</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/test_page/index.html">type/test_page</a></li>
 	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-02-13/index.html">date/2022-02-13</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A183778420917536404191804733666994895833{level}" class="graph_div"></div>
+    <div id="A142819417672310567170896400511144178085{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B183778420917536404191804733666994895833{level}" level="{level}" note_temp_id="183778420917536404191804733666994895833" onclick="window.ObsHtmlGraph.run(this, '183778420917536404191804733666994895833', 'Simple Obsidian-type Link');">
+        <button class="graph_button graph_show_button" id="B142819417672310567170896400511144178085{level}" level="{level}" note_temp_id="142819417672310567170896400511144178085" onclick="window.ObsHtmlGraph.run(this, '142819417672310567170896400511144178085', 'Simple Obsidian-type Link');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C183778420917536404191804733666994895833{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C142819417672310567170896400511144178085{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -282,6 +283,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

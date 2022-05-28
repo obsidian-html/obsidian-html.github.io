@@ -281,23 +281,24 @@ I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><
 	<li><a class="backlink" href="/tabs/Changelog/v2.2.0.html">v2.2.0</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/test_page/index.html">type/test_page</a></li>
 	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-05-05/index.html">date/2022-05-05</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A204288342019563470467479348109315918473{level}" class="graph_div"></div>
+    <div id="A153408235718377402209733437903278173277{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B204288342019563470467479348109315918473{level}" level="{level}" note_temp_id="204288342019563470467479348109315918473" onclick="window.ObsHtmlGraph.run(this, '204288342019563470467479348109315918473', 'Implementing Latex');">
+        <button class="graph_button graph_show_button" id="B153408235718377402209733437903278173277{level}" level="{level}" note_temp_id="153408235718377402209733437903278173277" onclick="window.ObsHtmlGraph.run(this, '153408235718377402209733437903278173277', 'Implementing Latex');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C204288342019563470467479348109315918473{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C153408235718377402209733437903278173277{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -307,6 +308,7 @@ I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><
     if (window.ObsHtmlGraph == undefined){
         import('/tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

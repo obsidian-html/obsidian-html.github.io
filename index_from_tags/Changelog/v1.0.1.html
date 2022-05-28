@@ -182,6 +182,7 @@
 	<li><a class="backlink" href="/index_from_tags/Buglog/Links in included notes do not work or show up as external.html">Links in included notes do not work or show up as external</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -192,13 +193,13 @@
 
 </div>
 <div class="graph">
-    <div id="A315039685014669313620023141712311079400{level}" class="graph_div"></div>
+    <div id="A48361683359103765922050245129913231836{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B315039685014669313620023141712311079400{level}" level="{level}" note_temp_id="315039685014669313620023141712311079400" onclick="window.ObsHtmlGraph.run(this, '315039685014669313620023141712311079400', 'v1.0.1');">
+        <button class="graph_button graph_show_button" id="B48361683359103765922050245129913231836{level}" level="{level}" note_temp_id="48361683359103765922050245129913231836" onclick="window.ObsHtmlGraph.run(this, '48361683359103765922050245129913231836', 'v1.0.1');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C315039685014669313620023141712311079400{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C48361683359103765922050245129913231836{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -208,6 +209,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/index_from_tags/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

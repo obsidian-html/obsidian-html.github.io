@@ -1,7 +1,7 @@
 ---
 graph_name: Homepage
 tags:
-- type/entrypoint
+- type/moc
 ---
    
 # ObsidianHtml   

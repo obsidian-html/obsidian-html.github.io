@@ -184,6 +184,7 @@
 	<li><a class="backlink" href="/Configurations/Features.html">Features</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -194,13 +195,13 @@
 
 </div>
 <div class="graph">
-    <div id="A308041471417020885192386069533732168683{level}" class="graph_div"></div>
+    <div id="A40998706802534965569217836406444396423{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B308041471417020885192386069533732168683{level}" level="{level}" note_temp_id="308041471417020885192386069533732168683" onclick="window.ObsHtmlGraph.run(this, '308041471417020885192386069533732168683', 'Creating a static html website from markdown files');">
+        <button class="graph_button graph_show_button" id="B40998706802534965569217836406444396423{level}" level="{level}" note_temp_id="40998706802534965569217836406444396423" onclick="window.ObsHtmlGraph.run(this, '40998706802534965569217836406444396423', 'Creating a static html website from markdown files');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C308041471417020885192386069533732168683{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C40998706802534965569217836406444396423{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -210,6 +211,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

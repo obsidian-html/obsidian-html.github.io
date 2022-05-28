@@ -189,23 +189,24 @@
 	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/styling/index.html">type/styling</a></li>
 	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A240579965035999518640366007860558120080{level}" class="graph_div"></div>
+    <div id="A336914313974170617352252754986051545556{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B240579965035999518640366007860558120080{level}" level="{level}" note_temp_id="240579965035999518640366007860558120080" onclick="window.ObsHtmlGraph.run(this, '240579965035999518640366007860558120080', 'Tabs Layout');">
+        <button class="graph_button graph_show_button" id="B336914313974170617352252754986051545556{level}" level="{level}" note_temp_id="336914313974170617352252754986051545556" onclick="window.ObsHtmlGraph.run(this, '336914313974170617352252754986051545556', 'Tabs Layout');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C240579965035999518640366007860558120080{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C336914313974170617352252754986051545556{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -215,6 +216,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/index_from_tags/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

@@ -1,6 +1,6 @@
 ---
 tags:
-- type/template
+- type/test_page
 - date/2022-02-13
 ---
 

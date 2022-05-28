@@ -263,23 +263,24 @@
 	<li><a class="backlink" href="/tabs/Changelog/v1.1.0.html">v1.1.0</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/bug_report/index.html">type/bug_report</a></li>
 	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-03-11/index.html">date/2022-03-11</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A211390658842005270229088194252959345223{level}" class="graph_div"></div>
+    <div id="A235441575899296229272161004388397692171{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B211390658842005270229088194252959345223{level}" level="{level}" note_temp_id="211390658842005270229088194252959345223" onclick="window.ObsHtmlGraph.run(this, '211390658842005270229088194252959345223', 'File links in dirtree note do not work');">
+        <button class="graph_button graph_show_button" id="B235441575899296229272161004388397692171{level}" level="{level}" note_temp_id="235441575899296229272161004388397692171" onclick="window.ObsHtmlGraph.run(this, '235441575899296229272161004388397692171', 'File links in dirtree note do not work');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C211390658842005270229088194252959345223{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C235441575899296229272161004388397692171{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -289,6 +290,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

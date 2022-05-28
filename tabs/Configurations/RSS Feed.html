@@ -512,6 +512,7 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 	<li><a class="backlink" href="/tabs/News.html">News</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -522,13 +523,13 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 
 </div>
 <div class="graph">
-    <div id="A150058262445277867493571383348461487864{level}" class="graph_div"></div>
+    <div id="A27577234978168554801162547077817474348{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B150058262445277867493571383348461487864{level}" level="{level}" note_temp_id="150058262445277867493571383348461487864" onclick="window.ObsHtmlGraph.run(this, '150058262445277867493571383348461487864', 'RSS Feed');">
+        <button class="graph_button graph_show_button" id="B27577234978168554801162547077817474348{level}" level="{level}" note_temp_id="27577234978168554801162547077817474348" onclick="window.ObsHtmlGraph.run(this, '27577234978168554801162547077817474348', 'RSS Feed');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C150058262445277867493571383348461487864{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C27577234978168554801162547077817474348{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -538,6 +539,7 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
     if (window.ObsHtmlGraph == undefined){
         import('/tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

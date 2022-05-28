@@ -7,8 +7,12 @@
         "id": "88525a7a638025a1",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Changelog/v2.4.0.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -36,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#type/configuration",
+                "query": "tag:#type/template",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Changelog/v2.4.0.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,15 +100,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "ObsidianHtml.md",
-    "Demonstrations/Implementing Call-outs.md",
-    "Changelog/v2.3.1.md",
-    "Change Log.md",
+    "Changelog/v2.4.0.md",
     "Changelog/v2.3.0.md",
-    "Changelog/v2.1.1.md",
-    "Instructions/Quickstart.md",
-    "Demonstrations/Parsing Images, videos, and audio.md",
-    "Configurations/Styling/Edit HTML, CSS, JS.md",
-    "General Information/About ObsidianHtml.md"
+    "Changelog/v2.3.1.md",
+    "Configurations/Styling/Writing a custom graph view template.md",
+    "Instructions/Install a different version.md",
+    "Demonstrations/Test pages/Simple Obsidian-type Link.md",
+    "Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.md",
+    "Configurations/Website navigation menu.md",
+    "Configurations/Styling/Tabs Layout.md",
+    "Demonstrations/Implementing Latex.md"
   ]
 }

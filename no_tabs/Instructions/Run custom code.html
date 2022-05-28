@@ -197,6 +197,7 @@ python -m obsidianhtml -i /path/to/config.yml
 	<li><a class="backlink" href="/no_tabs/Instructions/Install a different version.html">Install a different version</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -207,13 +208,13 @@ python -m obsidianhtml -i /path/to/config.yml
 
 </div>
 <div class="graph">
-    <div id="A65409585541088766334050507667589697477{level}" class="graph_div"></div>
+    <div id="A23014660885077567329158691898391457633{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B65409585541088766334050507667589697477{level}" level="{level}" note_temp_id="65409585541088766334050507667589697477" onclick="window.ObsHtmlGraph.run(this, '65409585541088766334050507667589697477', 'Run custom code');">
+        <button class="graph_button graph_show_button" id="B23014660885077567329158691898391457633{level}" level="{level}" note_temp_id="23014660885077567329158691898391457633" onclick="window.ObsHtmlGraph.run(this, '23014660885077567329158691898391457633', 'Run custom code');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C65409585541088766334050507667589697477{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C23014660885077567329158691898391457633{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -223,6 +224,7 @@ python -m obsidianhtml -i /path/to/config.yml
     if (window.ObsHtmlGraph == undefined){
         import('/no_tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

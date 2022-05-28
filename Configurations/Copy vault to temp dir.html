@@ -189,6 +189,7 @@
 	<li><a class="backlink" href="/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -199,13 +200,13 @@
 
 </div>
 <div class="graph">
-    <div id="A42743265162548741526192799570250495352{level}" class="graph_div"></div>
+    <div id="A217435204756851512080098136791993649716{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B42743265162548741526192799570250495352{level}" level="{level}" note_temp_id="42743265162548741526192799570250495352" onclick="window.ObsHtmlGraph.run(this, '42743265162548741526192799570250495352', 'Copy vault to temp dir');">
+        <button class="graph_button graph_show_button" id="B217435204756851512080098136791993649716{level}" level="{level}" note_temp_id="217435204756851512080098136791993649716" onclick="window.ObsHtmlGraph.run(this, '217435204756851512080098136791993649716', 'Copy vault to temp dir');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C42743265162548741526192799570250495352{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C217435204756851512080098136791993649716{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -215,6 +216,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

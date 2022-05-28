@@ -1,6 +1,6 @@
 ---
 tags:
-- type/template
+- type/instruction
 - date/2022-02-21
 ---
 

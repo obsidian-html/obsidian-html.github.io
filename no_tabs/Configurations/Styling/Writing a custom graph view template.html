@@ -196,7 +196,8 @@
 </ul>
 </div>
 <blockquote>
-<p>This functionality has been added in version <a href="/no_tabs/Changelog/v2.1.0.html">v2.1.0</a> <br />
+<p>**THIS PAGE IS OUTDATED SINCE [v2.4.0] to be rewritten. <br />
+This functionality has been added in version <a href="/no_tabs/Changelog/v2.1.0.html">v2.1.0</a> <br />
 It is still in beta, so let us know if you are having issues with it or want added functionality: <a href="/no_tabs/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a>.   </p>
 </blockquote>
 <p>See also <a href="/no_tabs/Configurations/Graph view.html">Graph view</a>.   </p>
@@ -405,23 +406,24 @@ It is still in beta, so let us know if you are having issues with it or want add
 	<li><a class="backlink" href="/no_tabs/Changelog/v2.1.0.html">v2.1.0</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
 	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-04-24/index.html">date/2022-04-24</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A81449539848492729454240812304275349919{level}" class="graph_div"></div>
+    <div id="A255165808784038390135194032452568009875{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B81449539848492729454240812304275349919{level}" level="{level}" note_temp_id="81449539848492729454240812304275349919" onclick="window.ObsHtmlGraph.run(this, '81449539848492729454240812304275349919', 'Writing a custom graph view template');">
+        <button class="graph_button graph_show_button" id="B255165808784038390135194032452568009875{level}" level="{level}" note_temp_id="255165808784038390135194032452568009875" onclick="window.ObsHtmlGraph.run(this, '255165808784038390135194032452568009875', 'Writing a custom graph view template');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C81449539848492729454240812304275349919{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C255165808784038390135194032452568009875{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -431,6 +433,7 @@ It is still in beta, so let us know if you are having issues with it or want add
     if (window.ObsHtmlGraph == undefined){
         import('/no_tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

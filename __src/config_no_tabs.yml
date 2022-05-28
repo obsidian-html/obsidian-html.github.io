@@ -1,29 +1,29 @@
 # The first folder that contains all obsidian files
 # Can be absent when toggles/compile_md == False
 # Use full path or relative path, but don't use ~/
-obsidian_folder_path_str: '/home/dorus/git/obsidian-html.github.io/__src/vault/' 
+obsidian_folder_path_str: '../obsidian-html.github.io/__src/vault/' 
 
 # The note that will be used as the index.html 
 # should be in obsidian_folder_path_str
 # Can be absent when toggles/compile_md == False
 # Use full path or relative path, but don't use ~/
-obsidian_entrypoint_path_str: '/home/dorus/git/obsidian-html.github.io/__src/vault/ObsidianHtml.md'
+obsidian_entrypoint_path_str: '../obsidian-html.github.io/__src/vault/ObsidianHtml.md'
 
 # Input and output path of markdown files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-md_folder_path_str:  '/home/dorus/git/obsidian-html.github.io/no_tabs/md/'
+md_folder_path_str:  '../obsidian-html.github.io/no_tabs/md/'
 
 # Markdown entrypoint path
 # This has to be md_folder_path_str + '/index.md' when toggles/compile_md == True
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-md_entrypoint_path_str: '/home/dorus/git/obsidian-html.github.io/no_tabs/md/index.md'
+md_entrypoint_path_str: '../obsidian-html.github.io/no_tabs/md/index.md'
 
 # Output path of HTML files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-html_output_folder_path_str: '/home/dorus/git/obsidian-html.github.io/no_tabs/'
+html_output_folder_path_str: '../obsidian-html.github.io/no_tabs/'
 
 # Will be inputted into the Html template as page title
 # Not used anywhere else atm.
@@ -122,7 +122,16 @@ toggles:
 
     graph:
       enabled: True           # Include code to build the graph view per page (default: True)
-      template: "3d"
+      templates:
+        - id: 2d
+          name: 2d
+          path: builtin<2d>
+        - id: 3d
+          name: 3d
+          path: builtin<3d>
+        - id: custom
+          name: custom
+          path: ../obsidian-html.github.io/__src/custom_grapher.js
 
     # Create an index.md with links to notes that have one of the given tags.
     # This index.md will serve as the entrypoint

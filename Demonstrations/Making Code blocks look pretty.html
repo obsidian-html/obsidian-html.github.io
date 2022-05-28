@@ -318,6 +318,7 @@ Any codeblock or codeline is excempt from modification because they get cut out 
 	<li><a class="backlink" href="/Demonstrations/Demonstration of Obisidian integration.html">Demonstration of Obisidian integration</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -329,13 +330,13 @@ Any codeblock or codeline is excempt from modification because they get cut out 
 
 </div>
 <div class="graph">
-    <div id="A115082454445132337607410660727428228473{level}" class="graph_div"></div>
+    <div id="A322681291456453159816224661726506370413{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B115082454445132337607410660727428228473{level}" level="{level}" note_temp_id="115082454445132337607410660727428228473" onclick="window.ObsHtmlGraph.run(this, '115082454445132337607410660727428228473', 'Code blocks');">
+        <button class="graph_button graph_show_button" id="B322681291456453159816224661726506370413{level}" level="{level}" note_temp_id="322681291456453159816224661726506370413" onclick="window.ObsHtmlGraph.run(this, '322681291456453159816224661726506370413', 'Code blocks');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C115082454445132337607410660727428228473{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C322681291456453159816224661726506370413{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -345,6 +346,7 @@ Any codeblock or codeline is excempt from modification because they get cut out 
     if (window.ObsHtmlGraph == undefined){
         import('/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

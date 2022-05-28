@@ -187,23 +187,24 @@
 	<li><a class="backlink" href="/no_tabs/Instructions/Run custom code.html">Run custom code</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/no_tabs/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
 	<li><a class="backlink" href="/no_tabs/obs.html/tags/date/2022-05-06/index.html">date/2022-05-06</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A80921321591530385420815311324504569143{level}" class="graph_div"></div>
+    <div id="A169041122453259897881601729099539491155{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B80921321591530385420815311324504569143{level}" level="{level}" note_temp_id="80921321591530385420815311324504569143" onclick="window.ObsHtmlGraph.run(this, '80921321591530385420815311324504569143', 'Install a different version');">
+        <button class="graph_button graph_show_button" id="B169041122453259897881601729099539491155{level}" level="{level}" note_temp_id="169041122453259897881601729099539491155" onclick="window.ObsHtmlGraph.run(this, '169041122453259897881601729099539491155', 'Install a different version');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C80921321591530385420815311324504569143{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C169041122453259897881601729099539491155{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -213,6 +214,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/no_tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

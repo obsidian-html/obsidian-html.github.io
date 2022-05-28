@@ -1,10 +1,11 @@
 ---
 tags:
-- type/template
+- type/instruction
 - date/2022-04-24
 ---
    
 # Writing a custom graph view template   
+> **THIS PAGE IS OUTDATED SINCE [v2.4.0] to be rewritten.   
 > This functionality has been added in version [v2.1.0](../../Changelog/v2.1.0.md)   
 > It is still in beta, so let us know if you are having issues with it or want added functionality: [Report Issues & Request features](../../General%20Information/Report%20Issues%20%26%20Request%20features.md).   
    

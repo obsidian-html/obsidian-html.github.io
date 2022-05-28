@@ -749,6 +749,7 @@
 	<li><a class="backlink" href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -759,13 +760,13 @@
 
 </div>
 <div class="graph">
-    <div id="A171534496359223665597279460174438447004{level}" class="graph_div"></div>
+    <div id="A319157702693493513570706487885292508808{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B171534496359223665597279460174438447004{level}" level="{level}" note_temp_id="171534496359223665597279460174438447004" onclick="window.ObsHtmlGraph.run(this, '171534496359223665597279460174438447004', 'Configuration Options');">
+        <button class="graph_button graph_show_button" id="B319157702693493513570706487885292508808{level}" level="{level}" note_temp_id="319157702693493513570706487885292508808" onclick="window.ObsHtmlGraph.run(this, '319157702693493513570706487885292508808', 'Configuration Options');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C171534496359223665597279460174438447004{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C319157702693493513570706487885292508808{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -775,6 +776,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/index_from_tags/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

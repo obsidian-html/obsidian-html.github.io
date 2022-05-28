@@ -9,7 +9,7 @@ var content_pane_div = "left_pane";
 var html_url_prefix = "/index_from_tags";
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '72210119051358021477770445772648208258'                       // used to check whether the localStorage data is stale
+var gzip_hash = '83193477321703751900131000801862638767'                       // used to check whether the localStorage data is stale
 
 
 // Onloads
@@ -212,18 +212,15 @@ function SetContainer(container) {
         graph_show_button[0].setAttribute('level', container.level);
         graph_show_button[0].id = graph_show_button[0].id.replace('{level}', container.level)
     }
+    
     let graph_type_button = container.querySelectorAll(".graph_type_button");
     if (graph_type_button.length == 1) {
-        // fetch or set default graph type value
-        let type_d = window.localStorage.getItem('graph_type_d');
-        if (!type_d){
-            window.localStorage.setItem('graph_type_d', '2D');
-            type_d = '2D';
-        }
-        graph_type_button[0].innerHTML = type_d;
         graph_type_button[0].id = graph_type_button[0].id.replace('{level}', container.level)
     }
-    
+
+    if (window.ObsHtmlGraph){
+        window.ObsHtmlGraph.arm_page(container)
+    }
 }
 
 // Adds link icon to headers and creates the anchor link to the header.

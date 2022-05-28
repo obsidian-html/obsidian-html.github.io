@@ -1,29 +1,29 @@
 # The first folder that contains all obsidian files
 # Can be absent when toggles/compile_md == False
 # Use full path or relative path, but don't use ~/
-obsidian_folder_path_str: '/home/dorus/git/obsidian-html.github.io/__src/vault/' 
+obsidian_folder_path_str: '../obsidian-html.github.io/__src/vault/' 
 
 # The note that will be used as the index.html 
 # should be in obsidian_folder_path_str
 # Can be absent when toggles/compile_md == False
 # Use full path or relative path, but don't use ~/
-obsidian_entrypoint_path_str: '/home/dorus/git/obsidian-html.github.io/__src/vault/ObsidianHtml.md'
+obsidian_entrypoint_path_str: '../obsidian-html.github.io/__src/vault/ObsidianHtml.md'
 
 # Input and output path of markdown files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-md_folder_path_str:  '/home/dorus/git/obsidian-html.github.io/md/minimal'
+md_folder_path_str:  '../obsidian-html.github.io/md/minimal'
 
 # Markdown entrypoint path
 # This has to be md_folder_path_str + '/index.md' when toggles/compile_md == True
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-md_entrypoint_path_str: '/home/dorus/git/obsidian-html.github.io/md/minimal/index.md'
+md_entrypoint_path_str: '../obsidian-html.github.io/md/minimal/index.md'
 
 # Output path of HTML files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-html_output_folder_path_str: '/home/dorus/git/obsidian-html.github.io/minimal'
+html_output_folder_path_str: '../obsidian-html.github.io/minimal'
 
 # If extended logging is enabled under toggles/extended_logging
 # Extra information is written to this folder
@@ -133,7 +133,6 @@ toggles:
 
     graph:
       enabled: False           # Include code to build the graph view per page (default: True)
-      template: "3d"
 
     search:
       enabled: False

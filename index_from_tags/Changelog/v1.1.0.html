@@ -193,6 +193,7 @@
 	<li><a class="backlink" href="/index_from_tags/Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.html">Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -203,13 +204,13 @@
 
 </div>
 <div class="graph">
-    <div id="A103741673873281616945668934155730909827{level}" class="graph_div"></div>
+    <div id="A108402789979625392200491470336798070815{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B103741673873281616945668934155730909827{level}" level="{level}" note_temp_id="103741673873281616945668934155730909827" onclick="window.ObsHtmlGraph.run(this, '103741673873281616945668934155730909827', 'v1.1.0');">
+        <button class="graph_button graph_show_button" id="B108402789979625392200491470336798070815{level}" level="{level}" note_temp_id="108402789979625392200491470336798070815" onclick="window.ObsHtmlGraph.run(this, '108402789979625392200491470336798070815', 'v1.1.0');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C103741673873281616945668934155730909827{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C108402789979625392200491470336798070815{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -219,6 +220,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/index_from_tags/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

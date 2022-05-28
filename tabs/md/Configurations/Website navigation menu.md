@@ -1,6 +1,6 @@
 ---
 tags:
-- type/template
+- type/configuration
 - date/2022-04-17
 ---
    

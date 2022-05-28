@@ -271,23 +271,24 @@
 	<li><a class="backlink" href="/tabs/General Information/Using the website.html">Using the website</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/styling/index.html">type/styling</a></li>
 	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A75091884486134482531883405328765269636{level}" class="graph_div"></div>
+    <div id="A210162521912460998080311550763574709600{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B75091884486134482531883405328765269636{level}" level="{level}" note_temp_id="75091884486134482531883405328765269636" onclick="window.ObsHtmlGraph.run(this, '75091884486134482531883405328765269636', 'Tabs Layout');">
+        <button class="graph_button graph_show_button" id="B210162521912460998080311550763574709600{level}" level="{level}" note_temp_id="210162521912460998080311550763574709600" onclick="window.ObsHtmlGraph.run(this, '210162521912460998080311550763574709600', 'Tabs Layout');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C75091884486134482531883405328765269636{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C210162521912460998080311550763574709600{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -297,6 +298,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

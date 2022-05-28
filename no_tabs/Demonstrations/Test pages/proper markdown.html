@@ -179,6 +179,7 @@
 	<li><a class="backlink" href="/no_tabs/Demonstrations/Making lists work the same.html">Links</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
@@ -188,13 +189,13 @@
 
 </div>
 <div class="graph">
-    <div id="A111815671983020499215345122717644738810{level}" class="graph_div"></div>
+    <div id="A304037399694225954641543052623976970198{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B111815671983020499215345122717644738810{level}" level="{level}" note_temp_id="111815671983020499215345122717644738810" onclick="window.ObsHtmlGraph.run(this, '111815671983020499215345122717644738810', 'proper markdown');">
+        <button class="graph_button graph_show_button" id="B304037399694225954641543052623976970198{level}" level="{level}" note_temp_id="304037399694225954641543052623976970198" onclick="window.ObsHtmlGraph.run(this, '304037399694225954641543052623976970198', 'proper markdown');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C111815671983020499215345122717644738810{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C304037399694225954641543052623976970198{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -204,6 +205,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/no_tabs/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>

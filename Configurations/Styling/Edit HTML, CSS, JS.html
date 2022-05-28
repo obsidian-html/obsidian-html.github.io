@@ -216,23 +216,25 @@
 	<li><a class="backlink" href="/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
 </div>
+
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/obs.html/tags/type/styling/index.html">type/styling</a></li>
 	<li><a class="backlink" href="/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph">
-    <div id="A22950556970018640633158902730485207184{level}" class="graph_div"></div>
+    <div id="A59013575872216661980071843335816133804{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B22950556970018640633158902730485207184{level}" level="{level}" note_temp_id="22950556970018640633158902730485207184" onclick="window.ObsHtmlGraph.run(this, '22950556970018640633158902730485207184', 'Edit HTML, CSS, JS');">
+        <button class="graph_button graph_show_button" id="B59013575872216661980071843335816133804{level}" level="{level}" note_temp_id="59013575872216661980071843335816133804" onclick="window.ObsHtmlGraph.run(this, '59013575872216661980071843335816133804', 'Edit HTML, CSS, JS');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C22950556970018640633158902730485207184{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C59013575872216661980071843335816133804{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -242,6 +244,7 @@
     if (window.ObsHtmlGraph == undefined){
         import('/obs.html/static/graph.js').then((Module) => {
             window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
         })
     }
 </script>
