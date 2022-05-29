@@ -29,18 +29,90 @@ It is still in beta, so let us know if you are having issues with it or want add
 </blockquote>
 <p>See also <a href="/minimal/Configurations/Graph view.html">Graph view</a>.   </p>
 <h2 id="passing-in-a-custom-template">Passing in a custom template</h2>
-<p>If we look at the <a href="/minimal/Configurations/Graph view.html">configuration for graph view</a>, then we see the template key:   </p>
+<p>If we look at the <a href="/minimal/Configurations/Graph view.html">configuration for graph view</a>, then we see the 'templates' key:   </p>
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"> </span>
 <span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w">            </span><span class="c1"># &quot;2d&quot;, &quot;3d&quot;, or path to own code</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">templates</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;3d&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span><span class="w"></span>
 </code></pre></div>
 
-<p>When set to either "2d" or "3d", the system will use a built-in template. (<a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html" class="external-link" class="external-link" class="external-link">2d</a> or <a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_3d.html" class="external-link">3d</a>). When set to anything else, the string is parsed as a path (either relative to the working directory that you run the obsidianhtml command from, or absolute). This path should then be your custom template.   </p>
+<p>The built-in templates can be found here:<a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html" class="external-link" class="external-link">2d</a> or <a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_3d.html" class="external-link">3d</a>.    </p>
+<p>When passing in a custom template, <code>path</code> should be either relative to the working directory that you run the obsidianhtml command from, or absolute, e.g.:   </p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span>
+<span class="w">      </span><span class="nt">templates</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span><span class="w"></span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../obsidian-html.github.io/__src/custom_grapher.js</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Id will be used in the code to point to your custom grapher code, and name is used display your code being selected in the graph type toggle button.   </p>
 <h2 id="what-your-custom-template-should-contain">What your custom template should contain</h2>
-<p>The custom template should be valid html code. This code should at least contain a <code>&lt;script&gt;&lt;/script&gt;</code> block defining a <code>grapher(args)</code> function.    </p>
-<p>This function is <a href="https://github.com/obsidian-html/obsidian-html/blob/06f8cd8896c3f00a035d6ecce8445d4462e801b9/obsidianhtml/src/graph/graph.js#L33" class="external-link">called by the default obsidianhtml graphview javascript code</a> to load the graphview.   </p>
-<h3 id="args">args</h3>
+<p>The contents of your custom grapher code will be loaded as a javascript module and should thus be valid javascript code. When a user opens a graph with your grapher selected, ObsidianHtml will call the <code>run(args)</code> method from your file.    </p>
+<p>It is up to your implementation to change the display of the graph div to <code>block</code> so that it becomes visible. (This is done to avoid opening an empty div when the grapher takes some time to initialize, as it looks sloppy.)   </p>
+<p>This makes the bare minimal functional code for a custom grapher to be this:   </p>
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span> <span class="nx">run</span><span class="p">(</span><span class="nx">args</span><span class="p">){</span>
+    <span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;still not very functional&#39;</span><span class="p">;</span>
+    <span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// because this code is loaded as a module, we need this export statement</span>
+<span class="c1">// in order to be able to call run(args) from elsewhere in the code.</span>
+<span class="k">export</span> <span class="p">{</span> 
+    <span class="nx">run</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>The <code>args</code> variable contains all the information that your grapher should need to make a graph. What exacly is in there will be explained further below shortly.   </p>
+<h2 id="minimal-functional-example">Minimal functional example</h2>
+<p>First, a slightly more functional example. This one will actually draw a graph this time.   </p>
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span> <span class="nx">run</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">){</span>
+        <span class="nx">load_script_on_demand</span><span class="p">(</span>
+            <span class="s1">&#39;//unpkg.com/force-graph&#39;</span><span class="p">,</span> <span class="nx">initGraph</span><span class="p">,</span> <span class="p">[</span><span class="nx">args</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span><span class="p">;</span>
+
+    <span class="c1">// Load data then start graph</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">g</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graphs</span><span class="p">[</span><span class="nx">args</span><span class="p">.</span><span class="nx">uid</span><span class="p">];</span>
+        <span class="nx">g</span><span class="p">.</span><span class="nx">graph</span> <span class="o">=</span> <span class="nx">ForceGraph</span><span class="p">()</span>
+            <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">graphData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">nodeLabel</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="p">{</span> 
+    <span class="nx">run</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>This time we need to load in a javascript file for our grapher to work. This is handled dynamically by the <code>load_script_on_demand(script_path, callback, arguments[])</code> function. This function loads in the script in the first argument, once that is fully loaded it will call  <code>callback(...arguments)</code>.    </p>
+<p>To avoid loading in the external dependencies every time that we click open the graph, we keep track of whether we have loaded them in already. That is what the <code>window.ObsHtmlGraph.graph_dependencies_loaded['custom']</code> is for. The 'custom' part here should be the key that you used in the config.    </p>
+<p>The line <code>fetch(args.data).then(res =&gt; res.json()).then(data =&gt; {</code> will load the contents of the file in the <code>args.data</code> filepath and convert the json in that file to a js object called <code>data</code>. Once that is done we create our graph. Note that the graph is saved to <code>window.ObsHtmlGraph.graphs[args.uid].graph</code>, this is ideal because then the graph can be cleaned up when the user toggles between different graphers. (But honestly this is probably not a very big issue if it does not work).   </p>
+<p>That is all there is to the custom graph.   </p>
+<h2 id="args">args</h2>
 <p>Note the args variable, this is a hashtable containing information that is needed for most graph packages to initialize. At the time of writing the following values are passed in:   </p>
 <div class="codehilite"><pre><span></span><code> <span class="k">return</span> <span class="p">{</span>
        <span class="s1">&#39;graph_container&#39;</span><span class="o">:</span> <span class="nx">cont</span><span class="p">,</span> 
@@ -62,57 +134,16 @@ It is still in beta, so let us know if you are having issues with it or want add
 <li>node/link: initially set to null, these are used for left/right click actions.   </li>
 <li>coalesce_force: used in the default templates to control how close the nodes bunch up together. This can be configured in the config.yml   </li>
 </ul>
-<h3 id="minimal-template">Minimal template</h3>
-<p>So for a very basic (non-functional!) test template, we could write something like this:   </p>
-<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="kd">function</span> <span class="nx">grapher</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Node id for this page: &quot;</span><span class="o">+</span><span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-
-<p>You can load in dependencies simply by adding a script tag like so:   </p>
-<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//unpkg.com/force-graph&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-
-<h3 id="minimal-functional-template">Minimal functional template</h3>
-<p>I advice you to use the <a href="https://github.com/vasturiano/force-graph" class="external-link">force-graph</a> package to build your graphs. It is pretty powerful and the documentation is amazing. It uses <a href="https://github.com/d3/d3-force" class="external-link">d3-force</a> to build the graph, which can also be used directly; the expected json structure for the data is compatible along these packages.   </p>
-<p>Below is a template based on the <a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html" class="external-link" class="external-link" class="external-link">2d</a> default template.   </p>
-<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//unpkg.com/force-graph&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//unpkg.com/d3-force&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://d3js.org/d3.v4.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="kd">function</span> <span class="nx">grapher</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">fetch</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
-            <span class="nb">window</span><span class="p">.</span><span class="nx">Graph</span> <span class="o">=</span> <span class="nx">ForceGraph</span><span class="p">()</span>
-                <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">graphData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">nodeLabel</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">backgroundColor</span><span class="p">(</span><span class="s1">&#39;#f4f4f4&#39;</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">d3Force</span><span class="p">(</span><span class="s2">&quot;charge&quot;</span><span class="p">,</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">forceManyBody</span><span class="p">().</span><span class="nx">strength</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">coalesce_force</span><span class="p">))</span>
-                <span class="p">.</span><span class="nx">nodeColor</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span><span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">}</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
-
-<p>Note that this code is basically the same as <a href="https://github.com/vasturiano/force-graph/blob/master/example/load-json/index.html" class="external-link">the example code of force-graph</a>.   </p>
-<ul>
-<li>Instead of <code>(document.getElementById('graph'))</code> we have <code>(args.graph_container)</code>, because obsidianhtml decides where the best location is, though you can ignore this of course.   </li>
-<li>Instead of <code>const Graph =</code> we have <code>window.Graph =</code>, so that the Graph object is global and can be easily manipulated in other functions.   </li>
-<li>The <code>args.coalesce_force</code> value is replaced with the value set in configurations, where the default is <code>-30</code>.   </li>
-</ul>
-<p>If you get to run this code, you will see a very basic graph, where clicking doesn't do anything.    </p>
+<h2 id="expanding-on-the-minimal-example">Expanding on the minimal example</h2>
+<p>See the <a href="#minimal-functional-example" class="anchor-link">Minimal functional example</a> section.  Below we will add some functionality to inch closer to a useable example.   </p>
 <h3 id="color-the-main-node-red">Color the main node red</h3>
-<p>Change the .nodeColor line to this block:   </p>
-<div class="codehilite"><pre><span></span><code> <span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
-       <span class="k">return</span> <span class="s1">&#39;#ff0000&#39;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span>
- <span class="p">});</span>
+<p>Add this block right below the <code>.height(args.height)</code> line:   </p>
+<div class="codehilite"><pre><span></span><code>            <span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
+                   <span class="k">return</span> <span class="s1">&#39;#ff0000&#39;</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span>
+             <span class="p">});</span>
 </code></pre></div>
 
 <p>This will color the selected note red.   </p>
@@ -192,7 +223,7 @@ It is still in beta, so let us know if you are having issues with it or want add
 <li>Globals   </li>
 <li>Actions (right click)   </li>
 </ul>
-<p>This should be enough of a basis to understand the full <a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html" class="external-link" class="external-link" class="external-link">2d</a> default template, which contains way more such as:   </p>
+<p>This should be enough of a basis to understand the full <a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html" class="external-link" class="external-link">2d</a> default template, which contains way more such as:   </p>
 <ul>
 <li>link colors   </li>
 <li>text below the nodes   </li>
@@ -238,6 +269,7 @@ It is still in beta, so let us know if you are having issues with it or want add
 <h2>Tags</h2>
 <ul>
 	<li><a class="backlink" href="/minimal/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/styling/index.html">type/styling</a></li>
 	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-04-24/index.html">date/2022-04-24</a></li>
 </ul>
 </div>

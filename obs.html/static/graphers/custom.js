@@ -1,5 +1,7 @@
+// This function is called by obshtml when it wants to open the graph
 function run(args) {
     if (window.ObsHtmlGraph.graph_dependencies_loaded['custom'] == false){
+        // load the dependency and when done run initGraph(args)
         load_script_on_demand(
             '//unpkg.com/force-graph', initGraph, [args]
         )
@@ -7,6 +9,7 @@ function run(args) {
         window.ObsHtmlGraph.graph_dependencies_loaded['custom'] = true;
     }
     else {
+        // just run directly
         initGraph(args)
     }
 }
@@ -17,19 +20,19 @@ function initGraph(args) {
 
     // Load data then start graph
     fetch(args.data).then(res => res.json()).then(data => {
-
-        // overwrites
         let g = window.ObsHtmlGraph.graphs[args.uid];
-        // g.actions['select_node'] = function(args, graph){
-        //     return graph_select_node_2d(args, graph)
-        // }
-
         g.graph = ForceGraph()
             (args.graph_container)
             .graphData(data)
             .nodeLabel('id')
             .width(args.width)
             .height(args.height)
+            .nodeColor((node) => {
+                if (node.id == args.current_node_id){
+                    return '#ff0000'
+                }
+                return '#546bdd'
+             });
     });
 }
 

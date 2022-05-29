@@ -1,6 +1,7 @@
 ---
 tags:
 - type/instruction
+- type/styling
 - date/2022-04-24
 ---
 
@@ -12,23 +13,106 @@ tags:
 See also [[Graph view]].
 
 ## Passing in a custom template
-If we look at the [[Graph view|configuration for graph view]], then we see the template key:
+If we look at the [[Graph view|configuration for graph view]], then we see the 'templates' key:
 
 ``` yaml
 toggles:
   features: 
     graph:
-      template: 3d            # "2d", "3d", or path to own code
+      enabled: True 
+      templates:
+        - id: 3d
+          name: 3d
+          path: builtin<3d>
+        - id: 2d
+          name: 2d
+          path: builtin<2d>
 ```
 
-When set to either "2d" or "3d", the system will use a built-in template. ([2d](https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html) or [3d](https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_3d.html)). When set to anything else, the string is parsed as a path (either relative to the working directory that you run the obsidianhtml command from, or absolute). This path should then be your custom template.
+The built-in templates can be found here:[2d](https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html) or [3d](https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_3d.html). 
+
+When passing in a custom template, `path` should be either relative to the working directory that you run the obsidianhtml command from, or absolute, e.g.:
+
+``` yaml
+    graph:
+      enabled: True           
+      templates:
+        - id: custom
+          name: custom
+          path: ../obsidian-html.github.io/__src/custom_grapher.js
+        - id: 2d
+          name: 2d
+          path: builtin<2d>
+```
+
+Id will be used in the code to point to your custom grapher code, and name is used display your code being selected in the graph type toggle button.
 
 ## What your custom template should contain
-The custom template should be valid html code. This code should at least contain a `<script></script>` block defining a `grapher(args)` function. 
+The contents of your custom grapher code will be loaded as a javascript module and should thus be valid javascript code. When a user opens a graph with your grapher selected, ObsidianHtml will call the `run(args)` method from your file. 
 
-This function is [called by the default obsidianhtml graphview javascript code](https://github.com/obsidian-html/obsidian-html/blob/06f8cd8896c3f00a035d6ecce8445d4462e801b9/obsidianhtml/src/graph/graph.js#L33) to load the graphview.
+It is up to your implementation to change the display of the graph div to `block` so that it becomes visible. (This is done to avoid opening an empty div when the grapher takes some time to initialize, as it looks sloppy.)
 
-### args
+This makes the bare minimal functional code for a custom grapher to be this:
+``` js
+function run(args){
+	args.graph_container.innerHTML = 'still not very functional';
+	args.graph_container.style.display = "block";
+}
+
+// because this code is loaded as a module, we need this export statement
+// in order to be able to call run(args) from elsewhere in the code.
+export { 
+    run
+};
+```
+
+The `args` variable contains all the information that your grapher should need to make a graph. What exacly is in there will be explained further below shortly.
+
+## Minimal functional example
+First, a slightly more functional example. This one will actually draw a graph this time.
+
+``` js
+function run(args) {
+    if (window.ObsHtmlGraph.graph_dependencies_loaded['custom'] == false){
+        load_script_on_demand(
+            '//unpkg.com/force-graph', initGraph, [args]
+        )
+        window.ObsHtmlGraph.graph_dependencies_loaded['custom'] = true;
+    }
+    else {
+        initGraph(args)
+    }
+}
+
+function initGraph(args) {
+    args.graph_container.style.display = "block";
+
+    // Load data then start graph
+    fetch(args.data).then(res => res.json()).then(data => {
+        let g = window.ObsHtmlGraph.graphs[args.uid];
+        g.graph = ForceGraph()
+            (args.graph_container)
+            .graphData(data)
+            .nodeLabel('id')
+            .width(args.width)
+            .height(args.height)
+    });
+}
+
+export { 
+    run
+};
+```
+
+This time we need to load in a javascript file for our grapher to work. This is handled dynamically by the `load_script_on_demand(script_path, callback, arguments[])` function. This function loads in the script in the first argument, once that is fully loaded it will call  `callback(...arguments)`. 
+
+To avoid loading in the external dependencies every time that we click open the graph, we keep track of whether we have loaded them in already. That is what the `window.ObsHtmlGraph.graph_dependencies_loaded['custom']` is for. The 'custom' part here should be the key that you used in the config. 
+
+The line `fetch(args.data).then(res => res.json()).then(data => {` will load the contents of the file in the `args.data` filepath and convert the json in that file to a js object called `data`. Once that is done we create our graph. Note that the graph is saved to `window.ObsHtmlGraph.graphs[args.uid].graph`, this is ideal because then the graph can be cleaned up when the user toggles between different graphers. (But honestly this is probably not a very big issue if it does not work).
+
+That is all there is to the custom graph.
+
+## args
 Note the args variable, this is a hashtable containing information that is needed for most graph packages to initialize. At the time of writing the following values are passed in:
 
 ``` js
@@ -51,66 +135,19 @@ Note the args variable, this is a hashtable containing information that is neede
 - node/link: initially set to null, these are used for left/right click actions.
 - coalesce_force: used in the default templates to control how close the nodes bunch up together. This can be configured in the config.yml
 
-### Minimal template
-So for a very basic (non-functional!) test template, we could write something like this:
 
-``` html
-<script>
-    function grapher(args) {
-        alert("Node id for this page: "+args.current_node_id)
-    }
-</script>
-```
-
-You can load in dependencies simply by adding a script tag like so:
-
-``` html
-<script src="//unpkg.com/force-graph"></script>
-```
-
-### Minimal functional template
-I advice you to use the [force-graph](https://github.com/vasturiano/force-graph) package to build your graphs. It is pretty powerful and the documentation is amazing. It uses [d3-force](https://github.com/d3/d3-force) to build the graph, which can also be used directly; the expected json structure for the data is compatible along these packages.
-
-Below is a template based on the [2d](https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html) default template.
-
-``` html
-<script src="//unpkg.com/force-graph"></script>
-<script src="//unpkg.com/d3-force"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
-    function grapher(args) {
-        fetch(args.data).then(res => res.json()).then(data => {
-            window.Graph = ForceGraph()
-                (args.graph_container)
-                .graphData(data)
-                .width(args.width)
-                .height(args.height)
-                .nodeLabel('id')
-                .backgroundColor('#f4f4f4')
-                .d3Force("charge", d3.forceManyBody().strength(args.coalesce_force))
-                .nodeColor(() => {return '#546bdd'});
-        });
-    }
-</script>
-```
-
-Note that this code is basically the same as [the example code of force-graph](https://github.com/vasturiano/force-graph/blob/master/example/load-json/index.html).
-
-- Instead of `(document.getElementById('graph'))` we have `(args.graph_container)`, because obsidianhtml decides where the best location is, though you can ignore this of course.
-- Instead of `const Graph =` we have `window.Graph =`, so that the Graph object is global and can be easily manipulated in other functions.
-- The `args.coalesce_force` value is replaced with the value set in configurations, where the default is `-30`.
-
-If you get to run this code, you will see a very basic graph, where clicking doesn't do anything. 
+## Expanding on the minimal example
+See the [[#Minimal functional example]] section.  Below we will add some functionality to inch closer to a useable example.
 
 ### Color the main node red
-Change the .nodeColor line to this block:
+Add this block right below the `.height(args.height)` line:
 ``` js
- .nodeColor((node) => {
-    if (node.id == args.current_node_id){
- 	   return '#ff0000'
-    }
-    return '#546bdd'
- });
+            .nodeColor((node) => {
+                if (node.id == args.current_node_id){
+             	   return '#ff0000'
+                }
+                return '#546bdd'
+             });
 ```
 
 This will color the selected note red.
