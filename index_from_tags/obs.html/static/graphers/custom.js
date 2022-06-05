@@ -21,6 +21,10 @@ function initGraph(args) {
     // Load data then start graph
     fetch(args.data).then(res => res.json()).then(data => {
         let g = window.ObsHtmlGraph.graphs[args.uid];
+    
+        // load starting node into global current_node_id
+        g.current_node_id = args.current_node_id
+    
         g.graph = ForceGraph()
             (args.graph_container)
             .graphData(data)
@@ -28,11 +32,14 @@ function initGraph(args) {
             .width(args.width)
             .height(args.height)
             .nodeColor((node) => {
-                if (node.id == args.current_node_id){
+                if (node.id == g.current_node_id){
                     return '#ff0000'
                 }
                 return '#546bdd'
-             });
+             })
+             .onNodeRightClick(node => {
+                g.current_node_id = node.id;
+            });
     });
 }
 

@@ -179,18 +179,6 @@
 <li><a href="#further-steps" class="anchor-link">Further steps</a></li>
 </ul>
 </li>
-<li><a href="#overwrite-default-functions" class="anchor-link">Overwrite default functions</a><ul>
-<li><a href="#runuid-pinnednode" class="anchor-link">run(uid, pinnedNode)</a></li>
-<li><a href="#get_graph_argsuid" class="anchor-link">get_graph_args(uid)</a></li>
-<li><a href="#graph_open_linkargs" class="anchor-link">graph_open_link(args)</a></li>
-<li><a href="#graph_select_nodeargs" class="anchor-link">graph_select_node(args)</a></li>
-</ul>
-</li>
-<li><a href="#globals" class="anchor-link">Globals</a><ul>
-<li><a href="#current_node_id" class="anchor-link">current_node_id</a></li>
-<li><a href="#graph" class="anchor-link">Graph</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -216,7 +204,7 @@ It is still in beta, so let us know if you are having issues with it or want add
 <span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span><span class="w"></span>
 </code></pre></div>
 
-<p>The built-in templates can be found here:<a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html" class="external-link" class="external-link">2d</a> or <a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_3d.html" class="external-link">3d</a>.    </p>
+<p>The built-in templates can be found here:<a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.js" class="external-link">2d</a> or <a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_3d.js" class="external-link">3d</a>.    </p>
 <p>When passing in a custom template, <code>path</code> should be either relative to the working directory that you run the obsidianhtml command from, or absolute, e.g.:   </p>
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span>
@@ -283,8 +271,10 @@ It is still in beta, so let us know if you are having issues with it or want add
 
 <p>This time we need to load in a javascript file for our grapher to work. This is handled dynamically by the <code>load_script_on_demand(script_path, callback, arguments[])</code> function. This function loads in the script in the first argument, once that is fully loaded it will call  <code>callback(...arguments)</code>.    </p>
 <p>To avoid loading in the external dependencies every time that we click open the graph, we keep track of whether we have loaded them in already. That is what the <code>window.ObsHtmlGraph.graph_dependencies_loaded['custom']</code> is for. The 'custom' part here should be the key that you used in the config.    </p>
-<p>The line <code>fetch(args.data).then(res =&gt; res.json()).then(data =&gt; {</code> will load the contents of the file in the <code>args.data</code> filepath and convert the json in that file to a js object called <code>data</code>. Once that is done we create our graph. Note that the graph is saved to <code>window.ObsHtmlGraph.graphs[args.uid].graph</code>, this is ideal because then the graph can be cleaned up when the user toggles between different graphers. (But honestly this is probably not a very big issue if it does not work).   </p>
-<p>That is all there is to the custom graph.   </p>
+<p>The line <code>fetch(args.data).then(res =&gt; res.json()).then(data =&gt; {</code> will load the contents of the file in the <code>args.data</code> filepath and convert the json in that file to a js object called <code>data</code>. Once that is done we create our graph.    </p>
+<p>Note that the graph is saved to <code>window.ObsHtmlGraph.graphs[args.uid].graph</code>, this is ideal because then the graph can be cleaned up when the user toggles between different graphers. (But honestly this is probably not a very big issue if it does not work).    </p>
+<p>Whilst that is the shared location, we can use the local <code>g</code> for brevity. Note that <code>g</code> is a collection object (dict), and <code>g.graph</code> is the actual graph. That will be of importance once we start to do more complex things.   </p>
+<p>That is all there is to the custom graph for now.   </p>
 <h2 id="args">args</h2>
 <p>Note the args variable, this is a hashtable containing information that is needed for most graph packages to initialize. At the time of writing the following values are passed in:   </p>
 <div class="codehilite"><pre><span></span><code> <span class="k">return</span> <span class="p">{</span>
@@ -323,112 +313,97 @@ It is still in beta, so let us know if you are having issues with it or want add
 <h3 id="rightclick-another-node-to-select-it">Rightclick another node to select it</h3>
 <p>The graph still isn't very interactive, let's change that by setting right click to select the node.   </p>
 <p>In the list of <code>.&lt;command&gt;()</code> lines, add the following block:   </p>
-<div class="codehilite"><pre><span></span><code>    <span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-       <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">current_node_id</span><span class="p">){</span>
-           <span class="k">return</span> <span class="s1">&#39;#ff0000&#39;</span>
-       <span class="p">}</span>
-       <span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span>
-    <span class="p">})</span>
+<div class="codehilite"><pre><span></span><code>            <span class="p">.</span><span class="nx">onNodeRightClick</span><span class="p">(</span><span class="nx">node</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+            <span class="p">})</span>
 </code></pre></div>
 
-<p>Note that we now use current_node_id. This is a global that makes it easier to set the current node from different sources. <code>args.current_node_id</code> will contain the node that the page thinks is the current node (for the page). We can set <code>current_node_id</code> to this value upon loading the graph, so we start out with the correct node highlighted. After that, the right clicks will edit this <code>current_node_id</code> value, but leave  <code>args.current_node_id</code> untouched.   </p>
-<p>To do this, simply add this line at the start of your function:   </p>
+<p>This will change the value of the global <code>current_node_id</code> when right clicking on a node, which we can then use to color our nodes:   </p>
+<div class="codehilite"><pre><span></span><code>            <span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+               <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
+                   <span class="k">return</span> <span class="s1">&#39;#ff0000&#39;</span>
+               <span class="p">}</span>
+               <span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span>
+            <span class="p">})</span>
+</code></pre></div>
+
+<p>Note that we now use <code>g.current_node_id</code> instead of <code>args.current_node_id</code>.    </p>
+<p><code>args.current_node_id</code> will contain the node that the page thinks is the current node (for the page). We can set <code>g.current_node_id</code> to this value upon loading the graph, so we start out with the correct node highlighted. After that, the right clicks will edit this <code>current_node_id</code> value, but leave  <code>args.current_node_id</code> untouched.   </p>
+<p>To do this, simply add this line at the start of your function (after creating <code>g</code>):   </p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// load starting node into global current_node_id</span>
-    <span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span>
-</code></pre></div>
-
-<p>And outside the grapher function, add this function to overwrite the default (which doesn't work for the 2d version):   </p>
-<div class="codehilite"><pre><span></span><code>    <span class="kd">function</span> <span class="nx">graph_select_node</span><span class="p">(</span><span class="nx">args</span><span class="p">){</span>
-        <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-            <span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span>
 </code></pre></div>
 
 <p>All together the template now looks like this:   </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;//unpkg.com/force-graph&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;//unpkg.com/d3-force&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https://d3js.org/d3.v4.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
-
-<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-    <span class="kd">function</span> <span class="nx">graph_select_node</span><span class="p">(</span><span class="nx">args</span><span class="p">){</span>
-        <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-            <span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">// This function is called by obshtml when it wants to open the graph</span>
+<span class="kd">function</span> <span class="nx">run</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">){</span>
+        <span class="c1">// load the dependency and when done run initGraph(args)</span>
+        <span class="nx">load_script_on_demand</span><span class="p">(</span>
+            <span class="s1">&#39;//unpkg.com/force-graph&#39;</span><span class="p">,</span> <span class="nx">initGraph</span><span class="p">,</span> <span class="p">[</span><span class="nx">args</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="c1">// tell obshtml that the dependencies have been loaded, so that they will not be loaded again a next time</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// just run directly</span>
+        <span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-    <span class="kd">function</span> <span class="nx">grapher</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// open div right before loading the graph to avoid opening an empty div</span>
+    <span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span><span class="p">;</span>
+
+    <span class="c1">// Load data then start graph</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">g</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graphs</span><span class="p">[</span><span class="nx">args</span><span class="p">.</span><span class="nx">uid</span><span class="p">];</span>
+
         <span class="c1">// load starting node into global current_node_id</span>
-        <span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span>
+        <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span>
 
-        <span class="nx">fetch</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
-            <span class="nb">window</span><span class="p">.</span><span class="nx">Graph</span> <span class="o">=</span> <span class="nx">ForceGraph</span><span class="p">()</span>
-                <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">graphData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">nodeLabel</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">backgroundColor</span><span class="p">(</span><span class="s1">&#39;#f4f4f4&#39;</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">current_node_id</span><span class="p">){</span>
-                        <span class="k">return</span> <span class="s1">&#39;#ff0000&#39;</span>
-                    <span class="p">}</span>
-                    <span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span>
-                <span class="p">})</span>
-                <span class="p">.</span><span class="nx">onNodeRightClick</span><span class="p">(</span><span class="nx">node</span> <span class="p">=&gt;</span> <span class="p">{</span>
-                    <span class="nx">args</span><span class="p">.</span><span class="nx">node</span> <span class="o">=</span> <span class="nx">node</span><span class="p">;</span>
-                    <span class="nx">graph_select_node</span><span class="p">(</span><span class="nx">args</span><span class="p">)()</span>
-                <span class="p">})</span>
-        <span class="p">});</span>
-    <span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
+        <span class="nx">g</span><span class="p">.</span><span class="nx">graph</span> <span class="o">=</span> <span class="nx">ForceGraph</span><span class="p">()</span>
+            <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">graphData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">nodeLabel</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
+                    <span class="k">return</span> <span class="s1">&#39;#ff0000&#39;</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span>
+             <span class="p">})</span>
+             <span class="p">.</span><span class="nx">onNodeRightClick</span><span class="p">(</span><span class="nx">node</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+            <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// export the run() method so that it can be called by obshtml</span>
+<span class="k">export</span> <span class="p">{</span> 
+    <span class="nx">run</span>
+<span class="p">};</span>
 </code></pre></div>
 
 <p>This will now give you a graph where the current page is highlighted, and you can right click on other nodes to highlight them.    </p>
+<p><a href="https://obsidian-html.github.io/no_tabs/obs.html/graph/index.html?node=Homepage" class="external-link">Preview</a> (set grapher to custom in the topright).   </p>
 <h3 id="further-steps">Further steps</h3>
 <p>We've now touched upon    </p>
 <ul>
 <li>Building and passing in a custom template   </li>
 <li>The args hashtable   </li>
-<li>Overwriting functions   </li>
 <li>Globals   </li>
 <li>Actions (right click)   </li>
 </ul>
-<p>This should be enough of a basis to understand the full <a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html" class="external-link" class="external-link">2d</a> default template, which contains way more such as:   </p>
+<p>This should be enough of a basis to understand the full <a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.html" class="external-link">2d</a> default template, which contains way more such as:   </p>
 <ul>
 <li>link colors   </li>
 <li>text below the nodes   </li>
 <li>advanced styling of the selected node using html5 canvas code   </li>
 <li>opening links   </li>
 </ul>
-<p>Make sure to also check out the force-graph docs, which contains many examples. Below is some more in depth information on the functions and globals being used. If you have any questions, be sure to drop by and make an issue <a href="/no_tabs/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a>, even if it is just for a question on how to configure things!   </p>
-<h2 id="overwrite-default-functions">Overwrite default functions</h2>
-<p>There are a couple of functions provided by the graph.js file, which can be overwritten if you feel like it. Just add a new function with the same name to your template file, and it will be used instead.   </p>
-<p>I will list a couple of functions of interest here.   </p>
-<h3 id="runuid-pinnednode">run(uid, pinnedNode)</h3>
-<ul>
-<li>uid: the unique id of the graph div and its button. the unique id is necessary for the tabs layout, and for standardization it is used for every layout.   </li>
-<li>pinnedNode: the node id for the current page, will be null for a generated page such as the tags pages.   </li>
-</ul>
-<p>Run() is called when the "show graph" button is pressed. It collects the args hashtable, toggles the button, and then calls the <code>grapher(args)</code> function to load the (custom) code to load the actual graph.   </p>
-<p>Note that on the fullpage graph view, run is skipped and <a href="https://github.com/obsidian-html/obsidian-html/blob/06f8cd8896c3f00a035d6ecce8445d4462e801b9/obsidianhtml/src/graph/graph_full_page.html#L75" class="external-link">grapher(args) is called directly</a>, since no button toggle is necessary and we want to display the graph immediately.   </p>
-<h3 id="get_graph_argsuid">get_graph_args(uid)</h3>
-<ul>
-<li>uid: see run()   </li>
-</ul>
-<p>This function provides the args variable, and is used by run(). Overwriting it will make sure that your additions/alterations will be present in every graph related function   </p>
-<h3 id="graph_open_linkargs">graph_open_link(args)</h3>
-<p>This action is called by default by the <code>graph_left_click()</code> function. It opens the link. This code will have different actions based on the layout. The tabs mode will call a function to load the new tab on the current page, all others will just open the link as normal.   </p>
-<h3 id="graph_select_nodeargs">graph_select_node(args)</h3>
-<p>This functions expects <code>args.node.id</code> to be set with the id of the node that you want to select. It will then write it to the global of <code>current_node_id</code> and do a call to <code>Graph.refresh()</code>. Note that this default assumes the use of <a href="https://github.com/vasturiano/3d-force-graph" class="external-link">3d-force-graph</a> as the 2d version doesn't have a <code>Graph.refresh()</code> method.   </p>
-<p>This function is set as the <code>graph_left_click()</code> action for the <a href="https://github.com/obsidian-html/obsidian-html/blob/06f8cd8896c3f00a035d6ecce8445d4462e801b9/obsidianhtml/src/graph/graph_full_page.html#L61" class="external-link">full page graph view</a>.   </p>
-<h2 id="globals">Globals</h2>
-<h3 id="current_node_id">current_node_id</h3>
-<p>This value is the node id of the currently selected node. It is set by the grapher function (if you code this) and can be used to highlight the selected node, or be ignored. The args hashtable will contain <code>args.current_node_id</code>, which is the node id that corresponds to the page you are currently on, or, in the case of the full page view, the page on which you clicked on the graph view icon.   </p>
-<h3 id="graph">Graph</h3>
-<p>This is the graph object that is created by the grapher function. It is global for the 3d function, which needs a call to <code>Graph.refresh()</code> after an action to redraw the elements (and thus reflect changes in what nodes are selected). To set the graph value, assign to <code>window.Graph</code> when creating the graph object.</p>
+<p>Make sure to also check out the force-graph docs, which contains many examples. Below is some more in depth information on the functions and globals being used. If you have any questions, be sure to drop by and make an issue <a href="/no_tabs/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a>, even if it is just for a question on how to configure things!</p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -449,13 +424,13 @@ It is still in beta, so let us know if you are having issues with it or want add
 
 </div>
 <div class="graph requires_js">
-    <div id="A74068512331015366931116013244307555275{level}" class="graph_div"></div>
+    <div id="A54421134285250655492074923563988135917{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B74068512331015366931116013244307555275{level}" level="{level}" note_temp_id="74068512331015366931116013244307555275" onclick="window.ObsHtmlGraph.run(this, '74068512331015366931116013244307555275', 'Writing a custom graph view template');">
+        <button class="graph_button graph_show_button" id="B54421134285250655492074923563988135917{level}" level="{level}" note_temp_id="54421134285250655492074923563988135917" onclick="window.ObsHtmlGraph.run(this, '54421134285250655492074923563988135917', 'Writing a custom graph view template');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C74068512331015366931116013244307555275{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C54421134285250655492074923563988135917{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
