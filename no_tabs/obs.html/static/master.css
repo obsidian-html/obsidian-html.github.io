@@ -1,6 +1,6 @@
 
 
-@layer defaults, plugins, layout, themes, user;
+@layer defaults, plugins, layout, themes, overwrites, user;
 
 @layer defaults {
     /* ----------------------------------------     General    ------------------------------------------------- */
@@ -305,9 +305,9 @@
     /* ----------------------------------------    One-offs   ---------------------------------------- */
 
     .icon-tray {
-        width:12rem; 
         height:1.6rem; 
         margin-top: -0.1rem;
+        display:flex
     }
 
     /* Theme selector */
@@ -363,7 +363,7 @@
         height: calc(1.6rem - 6px);
         border: 3px solid #f0f0f0;
         margin-right: 0.2rem;
-        float: right;
+        flex: 1
         cursor: pointer;
     }
 
@@ -373,15 +373,6 @@
         font-weight: bold;
     }
 
-    #left_pane ul a,
-    #right_pane ul a {
-        color: var(--color-accent);
-    }
-    #left_pane ul a:hover,
-    #right_pane ul a:hover {
-        color: var(--muted-link-color);
-        text-decoration: none;
-    }
     h3 {
         font-size: 13pt;
         font-weight: 500;
@@ -407,7 +398,7 @@
         .navbar {
             margin: auto
         }
-        #navbar {
+        .navbar {
             padding-top: 1rem;
             width: unset;
             margin-top: 0rem;
@@ -419,6 +410,10 @@
             margin-left: unset;
             background-color: unset;
             color: unset;
+        }
+        .icon-tray {
+            position: initial;
+            margin:auto;
         }
     }
 
@@ -487,10 +482,6 @@
         height: 100vh;
     }
 
-    .dir-button {
-        color: rgb(var(--normal-text-color));
-    }
-
     .note-footer {
         display: flex;
     }
@@ -500,7 +491,99 @@
     .note-footer .tags {
         flex:1;
     }
+
+
+    .left_pane ul a,
+    .right_pane ul a {
+        color: var(--color-accent);
+    }
+    .left_pane ul a:hover,
+    .right_pane ul a:hover {
+        color: var(--muted-link-color);
+        text-decoration: none;
+    }
+
+    .dir-container {
+        padding-left:1rem;
+        display: none;
+        padding-left: 1.5rem;
+    }
+    .dir-container.active {
+        display: block 
+    }
+
+    .dir-button {
+        background-color: transparent;
+        border: none;
+        font-size: 11pt;
+        display: block;
+        cursor: pointer;
+        margin-bottom: 0.2rem;
+        font-family: 'Roboto-Regular';
+        color: var(--dir-tree-color);
+        font-weight: bold;
+    }
+    .dir-list {
+        margin-top: 0.2rem;
+        padding-left: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+    .dir-list li {
+        list-style-type: none;
+        font-size: 11pt;
+    }
+
+    .dir-list li a:visited,
+    .dir-list li a:link,
+    .dir-list li a:hover {
+        color: var(--color-accent);
+        text-decoration: none;
+    }
+    .dir-list li a:hover {
+        color: var(--muted-link-color);
+    }
+    .dir-list li a.active:visited,
+    .dir-list li a.active:link,
+    .dir-list li a.active:hover {
+        color: var(--code-hightlight-color);
+        font-weight: bold;
+    }
+    
+
+    
+
 }
+
+@layer overwrites {
+    /* -------------------------------  Make site work when js is disabled ----------------------------- */
+    /* 
+        .requires_js will be removed when js is loaded 
+    */
+    .requires_js {
+        display: none
+    }
+    .dir-container.requires_js {
+        display: block
+    }
+    .navbar.requires_js {
+        margin-bottom: 0px;
+        margin-top: 0px;
+        margin-left: 1rem !important;
+        margin-right: 1rem;
+        flex-direction: row;
+        display: flex
+    }
+    .requires_js .icon-tray {
+        margin: unset;
+    }
+    .requires_js .navbar-link {
+        width: unset;
+    }
+    .requires_js.navbar-button {
+        display: none
+    }
+}
+
 
 @layer layout {
     body {
@@ -594,28 +677,6 @@
         height: 400px;
     }
 
-    .dir-container {
-        padding-left:1rem;
-        display: none;
-        padding-left: 1.5rem;
-    }
-    .dir-button {
-        background-color: transparent;
-        border: none;
-        font-size: 12pt;
-        display: block;
-        cursor: pointer;
-        margin-bottom: 0.2rem;
-        font-family: 'Roboto-Regular';
-    }
-    .dir-list {
-        margin-top: 0.2rem;
-        padding-left: 0.2rem;
-        margin-bottom: 0.2rem;
-    }
-    .dir-list li {
-        list-style-type: none;
-    }
 
     @media (max-width: 1300px) {
         #left_pane {
@@ -676,10 +737,6 @@
         }
         #homelink {
             display: none
-        }
-        .icon-tray {
-            position: initial;
-            margin:auto;
         }
         .header {
             margin-bottom: 0rem;
@@ -1235,6 +1292,8 @@
         --header-bg: #f6f7f8;
         --code-hightlight-color: #9c27ec;
         --homelink-color: #000000;
+
+        --dir-tree-color: var(--color-accent);
     }
     .theme-obs-dark,
     .theme-obs-dark * {
@@ -1259,6 +1318,8 @@
         --homelink-color: var(--color-accent3);
 
         --graph-bg: #161616;
+
+        --dir-tree-color: var(--color-accent2);
     }
     .theme-obs-dark .callout,
     .theme-obs-dark .callout * {
@@ -1291,6 +1352,8 @@
         --header-bg: #FFFFFF;
         --code-hightlight-color: #9c27ec;
         --homelink-color: #2d68b1;
+
+        --dir-tree-color: var(--color-accent);
     }
 
     /* icon tray */ 
@@ -1324,8 +1387,8 @@
     .theme-obs-dark #homelink:visited,
     .theme-obs-dark #homelink:link,
     .theme-obs-dark #homelink:hover {
-        margin-left: 3rem;
-        margin-right: 2.5rem;
+        margin-left: 2rem;
+        margin-right: 3.5rem;
         background-color: unset;
         color: var(--homelink-color);
         width: 14rem;
@@ -1413,9 +1476,9 @@
         .theme-obs-light .icon-tray {
             width: unset;
         }
-        .theme-light #navbar,
-        .theme-obs-dark #navbar,
-        .theme-obs-light #navbar {
+        .theme-light .navbar,
+        .theme-obs-dark .navbar,
+        .theme-obs-light .navbar {
             margin-left: auto;
         }
         .theme-light .icon-tray {

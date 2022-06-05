@@ -87,7 +87,7 @@
                                         ≡
                                 </div>
                                 <div id="navbar" class="navbar">
-                                <a class="navbar-link" href="/tabs/index.html" title="Home">Home</a>
+                                        <a class="navbar-link" href="/tabs/index.html" title="Home">Home</a>
 <a class="navbar-link" href="/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
 <a class="navbar-link" href="/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
 <a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
@@ -96,42 +96,7 @@
 <a class="navbar-link" href="/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
 <a class="navbar-link" href="/tabs/News.html" title="News">News</a>
                                         <div class="icon-tray">
-                                                        <div>
-            <a id="rss_link" class="system-link" href="/tabs/obs.html/rss/feed.xml" title="RSS Feed link">
-                    <img src = "/tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
-            </a>
-        </div>
-                                                <div>
-    <a href="/tabs/obs.html/tags/index.html" title="Open tag view">
-            <img src = "/tabs/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
-    </a>
-</div>
-                                                        <div >
-            <a id="dirtree_link" class="system-link" href="/tabs/obs.html/dir_index.html" title="View directory tree">
-                    <img src = "/tabs/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
-            </a>
-        </div>
-                                                        <div class="graph_header_div">
-            <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=Implementing Latex" title="Open fullpage Graph">
-                    <img class="graph_header_div_svg" src = "/tabs/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
-            </a>
-        </div>
-                                                        <div onclick="openSearch()">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
-        </div>
-        <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle('search-master-div', 'block')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
-                }
-        </script>
-                                                <div id="theme-button" class="theme-button" title="Change theme" onclick="toggle_theme_popup(this)">
+                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
     T
 </div>
 <script>
@@ -149,7 +114,42 @@
         }
     }
 </script>
-                                        </div>                                
+                                                        <div onclick="openSearch()" class="requires_js">
+                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+        </div>
+        <script>
+                function openSearch(){
+                        // toggle search popup and continue with extra code if it is enabled this time
+                        if (toggle('search-master-div', 'block')){
+                                // clear input and put focus on it so that we can start typing immediately
+                                let ss = document.getElementById('search_string');
+                                ss.value = '';
+                                ss.focus()
+                                ss.select()
+                        }
+                }
+        </script>
+                                                        <div class="graph_header_div requires_js">
+            <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=Implementing Latex" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/tabs/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
+            </a>
+        </div>
+                                                        <div >
+            <a id="dirtree_link" class="system-link" href="/tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/tabs/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                <div>
+    <a href="/tabs/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/tabs/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                                                        <div>
+            <a id="rss_link" class="system-link" href="/tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                                        </div>
                                 </div>
                         </div>
                         <div class="popup" id="theme-popup">
@@ -169,7 +169,7 @@
                                         ≡
                                 </div>
                                 <div id="navbar2" class="navbar">
-                                <a class="navbar-link" href="/tabs/index.html" title="Home">Home</a>
+                                        <a class="navbar-link" href="/tabs/index.html" title="Home">Home</a>
 <a class="navbar-link" href="/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
 <a class="navbar-link" href="/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
 <a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
@@ -178,42 +178,7 @@
 <a class="navbar-link" href="/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
 <a class="navbar-link" href="/tabs/News.html" title="News">News</a>
                                         <div class="icon-tray">
-                                                        <div>
-            <a id="rss_link" class="system-link" href="/tabs/obs.html/rss/feed.xml" title="RSS Feed link">
-                    <img src = "/tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
-            </a>
-        </div>
-                                                <div>
-    <a href="/tabs/obs.html/tags/index.html" title="Open tag view">
-            <img src = "/tabs/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
-    </a>
-</div>
-                                                        <div >
-            <a id="dirtree_link" class="system-link" href="/tabs/obs.html/dir_index.html" title="View directory tree">
-                    <img src = "/tabs/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
-            </a>
-        </div>
-                                                        <div class="graph_header_div">
-            <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=Implementing Latex" title="Open fullpage Graph">
-                    <img class="graph_header_div_svg" src = "/tabs/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
-            </a>
-        </div>
-                                                        <div onclick="openSearch()">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
-        </div>
-        <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle('search-master-div', 'block')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
-                }
-        </script>
-                                                <div id="theme-button" class="theme-button" title="Change theme" onclick="toggle_theme_popup(this)">
+                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
     T
 </div>
 <script>
@@ -231,6 +196,41 @@
         }
     }
 </script>
+                                                        <div onclick="openSearch()" class="requires_js">
+                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+        </div>
+        <script>
+                function openSearch(){
+                        // toggle search popup and continue with extra code if it is enabled this time
+                        if (toggle('search-master-div', 'block')){
+                                // clear input and put focus on it so that we can start typing immediately
+                                let ss = document.getElementById('search_string');
+                                ss.value = '';
+                                ss.focus()
+                                ss.select()
+                        }
+                }
+        </script>
+                                                        <div class="graph_header_div requires_js">
+            <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=Implementing Latex" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/tabs/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
+            </a>
+        </div>
+                                                        <div >
+            <a id="dirtree_link" class="system-link" href="/tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/tabs/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                <div>
+    <a href="/tabs/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/tabs/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                                                        <div>
+            <a id="rss_link" class="system-link" href="/tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
                                         </div>
                                 </div>
                         </div>
@@ -291,14 +291,14 @@ I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><
 </div>
 
 </div>
-<div class="graph">
-    <div id="A153408235718377402209733437903278173277{level}" class="graph_div"></div>
+<div class="graph requires_js">
+    <div id="A21653317982345636774163885943762190005{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B153408235718377402209733437903278173277{level}" level="{level}" note_temp_id="153408235718377402209733437903278173277" onclick="window.ObsHtmlGraph.run(this, '153408235718377402209733437903278173277', 'Implementing Latex');">
+        <button class="graph_button graph_show_button" id="B21653317982345636774163885943762190005{level}" level="{level}" note_temp_id="21653317982345636774163885943762190005" onclick="window.ObsHtmlGraph.run(this, '21653317982345636774163885943762190005', 'Implementing Latex');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C153408235718377402209733437903278173277{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C21653317982345636774163885943762190005{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -312,6 +312,7 @@ I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><
         })
     }
 </script>
+
 
 
 

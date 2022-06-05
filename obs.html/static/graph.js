@@ -2,17 +2,14 @@
 ///////////////////////////////////////////////////////////////////////////////
 import * as grapher_2d from '/obs.html/static/graphers/2d.js';
 import * as grapher_3d from '/obs.html/static/graphers/3d.js';
-import * as grapher_custom from '/obs.html/static/graphers/custom.js';
 
 var graphers = [
 	{'id': '2d', 'name': '2d', 'module': grapher_2d},
-	{'id': '3d', 'name': '3d', 'module': grapher_3d},
-	{'id': 'custom', 'name': 'custom', 'module': grapher_custom}
+	{'id': '3d', 'name': '3d', 'module': grapher_3d}
 ]
 var graphers_hash = {
 	'2d': {'id': '2d', 'name': '2d', 'module': grapher_2d},
-	'3d': {'id': '3d', 'name': '3d', 'module': grapher_3d},
-	'custom': {'id': 'custom', 'name': 'custom', 'module': grapher_custom}
+	'3d': {'id': '3d', 'name': '3d', 'module': grapher_3d}
 }
 // // DYNAMIC
 // ///////////////////////////////////////////////////////////////////////////////

@@ -119,7 +119,7 @@ toggles:
       toc_pane: True   # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
       flip_panes: False # switch right and left pane around. (does nothing unless in documentation layout.)
       accent_color: '65, 76, 253'
-      loading_bg_color: '255, 255, 255'
+      loading_bg_color: '22, 22, 22'
 
     # Show backlinks at the bottom of each note
     backlinks:
@@ -134,9 +134,9 @@ toggles:
         - id: 3d
           name: 3d
           path: builtin<3d>
-        - id: custom
-          name: custom
-          path: ../obsidian-html.github.io/__src/custom_grapher.js
+        # - id: custom
+        #   name: custom
+        #   path: ../obsidian-html.github.io/__src/custom_grapher.js
     search:
       enabled: True
 
