@@ -14,3 +14,4 @@ tags:
 - [[Implementing Mermaid diagrams in HTML output]]
 - [[Implementing Call-outs]]
 - [[Implementing Latex]]
+- [[Implementing Dataview]]

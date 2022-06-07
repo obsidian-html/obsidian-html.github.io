@@ -59,7 +59,7 @@
             if(e.target !== e.currentTarget){
                     return
             }
-            toggle('search-master-div', 'block');
+            toggle_id('search-master-div');
     })
     document.getElementById("search_string").addEventListener("input", function(event) {
             setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
@@ -70,7 +70,7 @@
 
     window.addEventListener('keydown', e => {
         if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
-            document.getElementById('search-master-div').style.display = 'none';
+            toggle_id('search-master-div');
             return false;
         } 
     }, true);
@@ -103,15 +103,28 @@
 <script>
     function toggle_theme_popup(el){
         // make theme button show that it's active by adding the .active class
-        cl_toggle(el.id, 'active');
+        toggle(el);
 
         // show the theme selector
-        toggle('theme-popup','block')
+        toggle_id('theme-popup')
 
         let h2 = document.getElementById('header2')
         if (h2){
             let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
-            toggle_el(pu,'block');
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
         }
     }
 </script>
@@ -121,7 +134,7 @@
         <script>
                 function openSearch(){
                         // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle('search-master-div', 'block')){
+                        if (toggle_id('search-master-div')){
                                 // clear input and put focus on it so that we can start typing immediately
                                 let ss = document.getElementById('search_string');
                                 ss.value = '';
@@ -177,6 +190,7 @@
 <li><a href="/no_tabs/Demonstrations/Test pages/Test Inclusion.html">Test Inclusion</a></li>
 <li><a href="/no_tabs/Demonstrations/Test pages/Test inclusion 2.html">Test inclusion 2</a></li>
 <li><a href="/no_tabs/Demonstrations/Implementing Latex.html">Implementing Latex</a></li>
+<li><a href="/no_tabs/Demonstrations/Implementing Dataview.html">Implementing Dataview</a></li>
 </ul>
                                 <!-- end content -->
                         </div>

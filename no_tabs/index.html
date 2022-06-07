@@ -59,7 +59,7 @@
             if(e.target !== e.currentTarget){
                     return
             }
-            toggle('search-master-div', 'block');
+            toggle_id('search-master-div');
     })
     document.getElementById("search_string").addEventListener("input", function(event) {
             setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
@@ -70,7 +70,7 @@
 
     window.addEventListener('keydown', e => {
         if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
-            document.getElementById('search-master-div').style.display = 'none';
+            toggle_id('search-master-div');
             return false;
         } 
     }, true);
@@ -103,15 +103,28 @@
 <script>
     function toggle_theme_popup(el){
         // make theme button show that it's active by adding the .active class
-        cl_toggle(el.id, 'active');
+        toggle(el);
 
         // show the theme selector
-        toggle('theme-popup','block')
+        toggle_id('theme-popup')
 
         let h2 = document.getElementById('header2')
         if (h2){
             let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
-            toggle_el(pu,'block');
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
         }
     }
 </script>
@@ -121,7 +134,7 @@
         <script>
                 function openSearch(){
                         // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle('search-master-div', 'block')){
+                        if (toggle_id('search-master-div')){
                                 // clear input and put focus on it so that we can start typing immediately
                                 let ss = document.getElementById('search_string');
                                 ss.value = '';
@@ -177,7 +190,7 @@
 </ul>
 </div>
 <div class="callout callout-example active callout-folded" rasa="1">
-<div class="callout-title" onclick="fold_callout(this)">
+<div class="callout-title" onclick="toggle(this.parentElement)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
 </div>
 <div class="callout-title-name">Code <br />
@@ -191,7 +204,7 @@
 </div>
 </div>
 <div class="callout callout-done active callout-folded" rasa="1">
-<div class="callout-title" onclick="fold_callout(this)">
+<div class="callout-title" onclick="toggle(this.parentElement)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
 </div>
 <div class="callout-title-name">PyPi package <br />
@@ -205,7 +218,7 @@
 </div>
 </div>
 <div class="callout callout-faq active callout-folded" rasa="1">
-<div class="callout-title" onclick="fold_callout(this)">
+<div class="callout-title" onclick="toggle(this.parentElement)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
 </div>
 <div class="callout-title-name">Quickstart <br />
@@ -267,13 +280,13 @@
 
 </div>
 <div class="graph requires_js">
-    <div id="A180122848172817809862546288167306309992{level}" class="graph_div"></div>
+    <div id="A299442928561216361412321014122814133316{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B180122848172817809862546288167306309992{level}" level="{level}" note_temp_id="180122848172817809862546288167306309992" onclick="window.ObsHtmlGraph.run(this, '180122848172817809862546288167306309992', 'Homepage');">
+        <button class="graph_button graph_show_button" id="B299442928561216361412321014122814133316{level}" level="{level}" note_temp_id="299442928561216361412321014122814133316" onclick="window.ObsHtmlGraph.run(this, '299442928561216361412321014122814133316', 'Homepage');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C180122848172817809862546288167306309992{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C299442928561216361412321014122814133316{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

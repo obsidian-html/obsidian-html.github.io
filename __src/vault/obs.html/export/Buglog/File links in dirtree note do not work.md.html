@@ -1,0 +1,50 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/bug_report
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>03<span class="token punctuation">-</span><span class="token number">11</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="6" height="6">
+          <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/bug_report">#type/bug_report</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-03-11">#date/2022-03-11</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="File links in dirtree note do not work">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>File links in dirtree note do not work
+  </h1>
+</div>
+<div>
+  <blockquote>
+    <p>Fixed in <a data-href="v1.1.0" href="v1.1.0" class="internal-link" target="_blank" rel="noopener">v1.1.0</a></p>
+  </blockquote>
+</div>
+<div>
+  <h3 data-heading="Issue">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>Issue
+  </h3>
+</div>
+<div>
+  <p>Using the feature <a data-href="Create Index from Directory Structure" href="Create Index from Directory Structure" class="internal-link" target="_blank" rel="noopener">Create Index from Directory Structure</a>, you can navigate your notes by the folder structure on disk. </p>
+</div>
+<div>
+  <p>This works great, but if you have a non-md link, the javascript gets confused.</p>
+</div>
+<div>
+  <h3 data-heading="Fix">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>Fix
+  </h3>
+</div>
+<div>
+  <p>Starting with <a data-href="v1.1.0" href="v1.1.0" class="internal-link" target="_blank" rel="noopener">v1.1.0</a>, non-md links are tagged as external, and thus avoid the tabulation javascript code that cannot deal with non-md files.</p>
+</div>

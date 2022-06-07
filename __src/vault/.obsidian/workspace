@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Configurations/Styling/Writing a custom graph view template.md",
-            "mode": "source",
+            "file": "Demonstrations/Implementing Dataview.md",
+            "mode": "preview",
             "source": false
           }
         }
@@ -49,7 +49,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Configurations/Styling/Writing a custom graph view template.md",
+                "file": "Demonstrations/Implementing Dataview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,15 +101,15 @@
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "Configurations/Styling/Writing a custom graph view template.md",
-    "Changelog/v2.4.0.md",
-    "Changelog/v2.3.0.md",
-    "Changelog/v2.3.1.md",
-    "Instructions/Install a different version.md",
-    "Demonstrations/Test pages/Simple Obsidian-type Link.md",
+    "Demonstrations/Implementing Dataview.md",
+    "Automation/Automate website deployment.md",
+    "Automation/AutomationLinuxGit.md",
+    "Automation/AutomationLinuxSSH.md",
+    "Automation/AutomationWindows.md",
+    "Automation/AutomationWindowsSSH.md",
+    "Buglog/File links in dirtree note do not work.md",
+    "Buglog/Links in included notes do not work or show up as external.md",
     "Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.md",
-    "Configurations/Website navigation menu.md",
-    "Configurations/Styling/Tabs Layout.md",
-    "Demonstrations/Implementing Latex.md"
+    "Change Log.md"
   ]
 }

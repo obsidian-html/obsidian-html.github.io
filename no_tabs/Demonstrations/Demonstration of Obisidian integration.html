@@ -59,7 +59,7 @@
             if(e.target !== e.currentTarget){
                     return
             }
-            toggle('search-master-div', 'block');
+            toggle_id('search-master-div');
     })
     document.getElementById("search_string").addEventListener("input", function(event) {
             setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
@@ -70,7 +70,7 @@
 
     window.addEventListener('keydown', e => {
         if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
-            document.getElementById('search-master-div').style.display = 'none';
+            toggle_id('search-master-div');
             return false;
         } 
     }, true);
@@ -103,15 +103,28 @@
 <script>
     function toggle_theme_popup(el){
         // make theme button show that it's active by adding the .active class
-        cl_toggle(el.id, 'active');
+        toggle(el);
 
         // show the theme selector
-        toggle('theme-popup','block')
+        toggle_id('theme-popup')
 
         let h2 = document.getElementById('header2')
         if (h2){
             let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
-            toggle_el(pu,'block');
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
         }
     }
 </script>
@@ -121,7 +134,7 @@
         <script>
                 function openSearch(){
                         // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle('search-master-div', 'block')){
+                        if (toggle_id('search-master-div')){
                                 // clear input and put focus on it so that we can start typing immediately
                                 let ss = document.getElementById('search_string');
                                 ss.value = '';
@@ -180,7 +193,8 @@
 <li><a href="/no_tabs/Demonstrations/Implementing Note Inclusions.html">Implementing Note Inclusions</a>   </li>
 <li><a href="/no_tabs/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Implementing Mermaid diagrams in HTML output</a>   </li>
 <li><a href="/no_tabs/Demonstrations/Implementing Call-outs.html">Implementing Call-outs</a>   </li>
-<li><a href="/no_tabs/Demonstrations/Implementing Latex.html">Implementing Latex</a></li>
+<li><a href="/no_tabs/Demonstrations/Implementing Latex.html">Implementing Latex</a>   </li>
+<li><a href="/no_tabs/Demonstrations/Implementing Dataview.html">Implementing Dataview</a></li>
 </ul>
 <div class="note-footer">
 <div class="backlinks">
@@ -201,13 +215,13 @@
 
 </div>
 <div class="graph requires_js">
-    <div id="A4197344064207363487454082415254254347{level}" class="graph_div"></div>
+    <div id="A99372525994305563034543437015120786397{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B4197344064207363487454082415254254347{level}" level="{level}" note_temp_id="4197344064207363487454082415254254347" onclick="window.ObsHtmlGraph.run(this, '4197344064207363487454082415254254347', 'Demonstration of Obisidian integration');">
+        <button class="graph_button graph_show_button" id="B99372525994305563034543437015120786397{level}" level="{level}" note_temp_id="99372525994305563034543437015120786397" onclick="window.ObsHtmlGraph.run(this, '99372525994305563034543437015120786397', 'Demonstration of Obisidian integration');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C4197344064207363487454082415254254347{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C99372525994305563034543437015120786397{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

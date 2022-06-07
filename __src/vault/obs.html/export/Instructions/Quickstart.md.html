@@ -1,0 +1,94 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/instruction
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>02<span class="token punctuation">-</span><span class="token number">21</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="6" height="6">
+          <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/instruction">#type/instruction</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-02-21">#date/2022-02-21</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Quickstart">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>Quickstart
+  </h1>
+</div>
+<div>
+  <p>This page is a very short summary of installation, usage, and configuration options.</p>
+</div>
+<div>
+  <h2 data-heading="Installation">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>Installation
+  </h2>
+</div>
+<div>
+  <blockquote>
+    <p>Full installation instructions: <a data-href="Installation" href="Installation" class="internal-link" target="_blank" rel="noopener">Installation</a></p>
+  </blockquote>
+</div>
+<div>
+  <p>First we need to <a aria-label-position="top" aria-label="https://wiki.python.org/moin/BeginnersGuide/Download" rel="noopener" class="external-link" href="https://wiki.python.org/moin/BeginnersGuide/Download" target="_blank">Install python 3</a>. If you already have it installed, check the version:</p>
+</div>
+<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">python --version
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>If you are running a version below 3.9 then you need to upgrade.</p>
+</div>
+<div>
+  <p>After a clean install of Python, you need to upgrade pip (the python package manager that we use to install ObsidianHtml):</p>
+</div>
+<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">pip <span class="token function">install</span> --upgrade pip
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>Now we can install ObsidianHtml:</p>
+</div>
+<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">pip <span class="token function">install</span> obsidianhtml
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h2 data-heading="Configuration">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>Configuration
+  </h2>
+</div>
+<div>
+  <p>Pick a folder where you don't mind a folder being created. Then create a file in this folder named <code>config.yaml</code>, and fill it with this content (and fill in the values):</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token comment"># The first folder that contains all obsidian files</span>
+<span class="token comment"># Use full path or relative path, but don't use ~/</span>
+<span class="token key atrule">obsidian_folder_path_str</span><span class="token punctuation">:</span> <span class="token string">'/path/to/your/vault'</span> 
+
+<span class="token comment"># The note that will be used as the index.html </span>
+<span class="token comment"># should be in obsidian_folder_path_str</span>
+<span class="token comment"># Use full path or relative path, but don't use ~/</span>
+<span class="token key atrule">obsidian_entrypoint_path_str</span><span class="token punctuation">:</span> <span class="token string">'/path/to/your/vault/entrypoint.md'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h2 data-heading="Run">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>Run
+  </h2>
+</div>
+<div>
+  <p>Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:</p>
+</div>
+<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">obsidianhtml -i config.yaml
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.</p>
+</div>

@@ -28,7 +28,6 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        console.log('e0')
                         const CURRENT_NODE = 'index';
                         const HTML_URL_PREFIX = '/index_from_tags';
                 </script>
@@ -37,7 +36,6 @@
 <body class="theme-obs-light">
         <div id="antiflash" style="display: none;"></div>
         <script>
-                console.log('e1')
                 document.getElementById('antiflash').style.display = 'block';
         </script>
         <div id="search-master-div">
@@ -65,7 +63,7 @@
             if(e.target !== e.currentTarget){
                     return
             }
-            toggle('search-master-div', 'block');
+            toggle_id('search-master-div');
     })
     document.getElementById("search_string").addEventListener("input", function(event) {
             setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
@@ -76,7 +74,7 @@
 
     window.addEventListener('keydown', e => {
         if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
-            document.getElementById('search-master-div').style.display = 'none';
+            toggle_id('search-master-div');
             return false;
         } 
     }, true);
@@ -102,15 +100,28 @@
 <script>
     function toggle_theme_popup(el){
         // make theme button show that it's active by adding the .active class
-        cl_toggle(el.id, 'active');
+        toggle(el);
 
         // show the theme selector
-        toggle('theme-popup','block')
+        toggle_id('theme-popup')
 
         let h2 = document.getElementById('header2')
         if (h2){
             let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
-            toggle_el(pu,'block');
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
         }
     }
 </script>
@@ -120,7 +131,7 @@
         <script>
                 function openSearch(){
                         // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle('search-master-div', 'block')){
+                        if (toggle_id('search-master-div')){
                                 // clear input and put focus on it so that we can start typing immediately
                                 let ss = document.getElementById('search_string');
                                 ss.value = '';
@@ -240,6 +251,7 @@
 		<li><a class="" href="/index_from_tags/Demonstrations/Demonstration of Obisidian integration.html"  >Demonstration of Obisidian integration</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Getting the basics right.html"  >Getting the basics right</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Call-outs.html"  >Implementing Call-outs</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Dataview.html"  >Implementing Dataview</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Latex.html"  >Implementing Latex</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Mermaid diagrams in HTML output.html"  >Implementing Mermaid diagrams in HTML output</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Note Inclusions.html"  >Implementing Note Inclusions</a></li>

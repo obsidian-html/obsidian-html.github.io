@@ -1,0 +1,84 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">graph_name</span><span class="token punctuation">:</span> Code blocks
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> feature/html_output
+<span class="token punctuation">-</span> type/styling
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>02<span class="token punctuation">-</span><span class="token number">04</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="6" height="6">
+          <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#feature/html_output">#feature/html_output</a><a class="tag" target="_blank" rel="noopener" href="#type/styling">#type/styling</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-02-04">#date/2022-02-04</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Code blocks">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>Code blocks
+  </h1>
+</div>
+<div>
+  <p>This is built into python-markdown, and enabled by default.<br>
+    Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created.</p>
+</div>
+<div>
+  <h2 data-heading="Python">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>Python
+  </h2>
+</div>
+<div><pre class="language-python" tabindex="0"><code class="language-python is-loaded"><span class="token keyword">import</span> sys 					<span class="token comment"># commandline arguments</span>
+<span class="token keyword">import</span> shutil 				<span class="token comment"># used to remove a non-empty directory, copy files</span>
+<span class="token keyword">import</span> re 					<span class="token comment"># regex string finding/replacing</span>
+<span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path 	<span class="token comment"># </span>
+<span class="token keyword">import</span> frontmatter 			<span class="token comment"># remove yaml frontmatter from md files</span>
+<span class="token keyword">import</span> markdown 			<span class="token comment"># convert markdown to html</span>
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse 		<span class="token comment"># convert link characters like %</span>
+
+<span class="token comment"># python run.py 'C:\Users\Installer\OneDrive\Obsidian\Notes' 'C:\Users\Installer\OneDrive\Obsidian\Notes\Work.md'</span>
+  
+<span class="token comment"># Input</span>
+<span class="token comment"># ------------------------------------------</span>
+root_folder <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> 	<span class="token comment"># first folder that contains all markdown files</span>
+entrypoint <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> 	<span class="token comment"># The note that will be used as the index.html</span>
+
+<span class="token keyword">if</span> root_folder<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'\\'</span><span class="token punctuation">:</span>
+ root_folder <span class="token operator">=</span> root_folder<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div><pre class="language-python" tabindex="0"><code class="language-python is-loaded"><span class="token comment"># -- CLIENT SETUP --------------------------------------------------------------------</span>
+<span class="token comment"># ====================================================================================</span>
+load_dotenv<span class="token punctuation">(</span><span class="token punctuation">)</span>
+TOKEN <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'DISCORD_TOKEN'</span><span class="token punctuation">)</span>
+
+intents <span class="token operator">=</span> discord<span class="token punctuation">.</span>Intents<span class="token punctuation">.</span>default<span class="token punctuation">(</span><span class="token punctuation">)</span>
+intents<span class="token punctuation">.</span>members <span class="token operator">=</span> <span class="token boolean">True</span>
+
+client <span class="token operator">=</span> discord<span class="token punctuation">.</span>Client<span class="token punctuation">(</span>intents<span class="token operator">=</span>intents<span class="token punctuation">)</span>   
+
+<span class="token comment"># -- MESSAGE EVENT -------------------------------------------------------------------</span>
+<span class="token comment"># ====================================================================================</span>
+<span class="token decorator annotation punctuation">@client<span class="token punctuation">.</span>event</span>
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">on_message</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Init</span>
+    now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># current date and time</span>
+    date_time <span class="token operator">=</span> now<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%m/%d/%Y, %H:%M:%S"</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># Don't respond to self to avoid endless loops</span>
+    <span class="token keyword">if</span> message<span class="token punctuation">.</span>author <span class="token operator">==</span> client<span class="token punctuation">.</span>user<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h2 data-heading="Powershell">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>Powershell
+  </h2>
+</div>

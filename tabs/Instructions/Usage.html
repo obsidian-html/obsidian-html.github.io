@@ -59,7 +59,7 @@
             if(e.target !== e.currentTarget){
                     return
             }
-            toggle('search-master-div', 'block');
+            toggle_id('search-master-div');
     })
     document.getElementById("search_string").addEventListener("input", function(event) {
             setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
@@ -70,7 +70,7 @@
 
     window.addEventListener('keydown', e => {
         if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
-            document.getElementById('search-master-div').style.display = 'none';
+            toggle_id('search-master-div');
             return false;
         } 
     }, true);
@@ -102,15 +102,28 @@
 <script>
     function toggle_theme_popup(el){
         // make theme button show that it's active by adding the .active class
-        cl_toggle(el.id, 'active');
+        toggle(el);
 
         // show the theme selector
-        toggle('theme-popup','block')
+        toggle_id('theme-popup')
 
         let h2 = document.getElementById('header2')
         if (h2){
             let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
-            toggle_el(pu,'block');
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
         }
     }
 </script>
@@ -120,7 +133,7 @@
         <script>
                 function openSearch(){
                         // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle('search-master-div', 'block')){
+                        if (toggle_id('search-master-div')){
                                 // clear input and put focus on it so that we can start typing immediately
                                 let ss = document.getElementById('search_string');
                                 ss.value = '';
@@ -184,15 +197,28 @@
 <script>
     function toggle_theme_popup(el){
         // make theme button show that it's active by adding the .active class
-        cl_toggle(el.id, 'active');
+        toggle(el);
 
         // show the theme selector
-        toggle('theme-popup','block')
+        toggle_id('theme-popup')
 
         let h2 = document.getElementById('header2')
         if (h2){
             let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
-            toggle_el(pu,'block');
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
         }
     }
 </script>
@@ -202,7 +228,7 @@
         <script>
                 function openSearch(){
                         // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle('search-master-div', 'block')){
+                        if (toggle_id('search-master-div')){
                                 // clear input and put focus on it so that we can start typing immediately
                                 let ss = document.getElementById('search_string');
                                 ss.value = '';
@@ -277,7 +303,7 @@
 
 <p>Copy the code above into a file called <code>config.yaml</code> and fill in the correct paths.   </p>
 <div class="callout callout-important active callout-folded" rasa="1">
-<div class="callout-title" onclick="fold_callout(this)">
+<div class="callout-title" onclick="toggle(this.parentElement)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"></path></svg>
 </div>
 <div class="callout-title-name">Important: output will be created in your cwd! <br />
@@ -297,7 +323,7 @@
 
 <p>You might get a lot of warnings if you use external images, or have a lot of notes linked but not created. This is expected, and such warnings can be turned off, if desired, see <a href="/tabs/Configurations/Configuration Options.html">Configuration Options</a>.    </p>
 <div class="callout callout-tip active callout-folded" rasa="1">
-<div class="callout-title" onclick="fold_callout(this)">
+<div class="callout-title" onclick="toggle(this.parentElement)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"></path></svg>
 </div>
 <div class="callout-title-name">Tip: verbosity <br />
@@ -381,13 +407,13 @@
 
 </div>
 <div class="graph requires_js">
-    <div id="A159322294372212807258695814224912820770{level}" class="graph_div"></div>
+    <div id="A294545119150813385217691602235058328066{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B159322294372212807258695814224912820770{level}" level="{level}" note_temp_id="159322294372212807258695814224912820770" onclick="window.ObsHtmlGraph.run(this, '159322294372212807258695814224912820770', 'Usage');">
+        <button class="graph_button graph_show_button" id="B294545119150813385217691602235058328066{level}" level="{level}" note_temp_id="294545119150813385217691602235058328066" onclick="window.ObsHtmlGraph.run(this, '294545119150813385217691602235058328066', 'Usage');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C159322294372212807258695814224912820770{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C294545119150813385217691602235058328066{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
