@@ -80,7 +80,7 @@
         padding: 2rem;
         scrollbar-color: var(--code-hightlight-color) var(--bg-note);
         scroll-margin-top: 2rem;
-        max-width: 120rem;
+        max-width: 60rem;
         flex: 10;
         font-size: 11pt;
     }
@@ -972,7 +972,7 @@
     #search-results-box {
         height: 0rem;
         margin-top: 1rem;
-        max-width: 120rem;
+        max-width: 60rem;
     }
     #search-results {
         height: calc(100% - 1rem);
