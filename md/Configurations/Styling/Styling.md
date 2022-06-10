@@ -12,18 +12,18 @@ tags:
 toggles:
   features:
     styling: 
-      layout: no_tabs # documentation, tabs, no_tabs, minimal
+      layout: documentation # documentation, tabs, minimal
 ```
    
    
-For the layout you can choose between `documentation`, `tabs`, and `no_tabs`.     
+For the layout you can choose between `documentation`, `minimal`, and `tabs`     
    
 The layout will influence the structure of the pages that are generated. There is a short description below for each layout.    
    
 To get an actual impression, check out this same site with the different layouts:   
    
-- [tabs](https://obsidian-html.github.io//tabs)   
-- [no_tabs](https://obsidian-html.github.io//no_tabs)   
+- [tabs](https://obsidian-html.github.io/tabs)   
+- [minimal](https://obsidian-html.github.io/minimal/index.html)   
 - [documentation](https://obsidian-html.github.io/) (the default)   
    
 ### Documentation   
@@ -31,9 +31,6 @@ The documentation layout is used for this site. This layout is suited for people
    
 ### Tabs   
 The tabs layout is for people who use the smart note taking / zettelkasten methods, where dense linkage is prefered over giving a strict structure from the get-go. It allows to have multiple notes open at one time, and to scroll back and forth, following a thread of related notes. Tabs has some added navigation options to mediate in the infinite scrolling of notes. Read more on that [here](../../Configurations/Styling/Tabs%20Layout.md).   
-   
-### No tabs   
-No tabs is basically the same as when you view markdown documentation on for example github. One note per page, and every link opens to a new page.   
    
 ### Minimal   
 > New in [v2.3.0](../../Changelog/v2.3.0.md)   
@@ -46,8 +43,6 @@ Read more here about optimizing your website for low-bandwidth clients: [Perform
 Documentation is set to the default, as I use it for this website, and thus it will be better tested and more stable. (Not to say that the other modes are unstable, though).    
    
 Personally I like to start off with a very loose structure, and thus use tabs mode. When my vault gets to a certain size, I apply a folder structure, and at that point it could be interesting to move over to the documentation layout.    
-   
-The no tabs layout is nice for people who don't want anything fancy, or who want to [edit the website's css](../../Configurations/Configuration%20Options.md#html-custom-inclusions), which is a bit easier in this layout as less is happening. Though it should be said that of course the CSS can be edited in every layout mode.   
    
 If your expected users have low bandwidth, or if your are a web 1.0 purist, then the minimal template might be for you.   
    

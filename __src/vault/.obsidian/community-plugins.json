@@ -1,5 +1,5 @@
 [
+  "dataview",
   "hot-reload",
-  "obs-html-plugin",
-  "dataview"
+  "obs-html-plugin"
 ]

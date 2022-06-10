@@ -29,7 +29,6 @@ Try this site with different [layouts](./Configurations/Styling/Styling.md#layou
    
 - [minimal](/minimal/index.html)   
 - [tabs](/tabs/index.html)   
-- [no_tabs](/no_tabs/index.html)   
 - [documentation](/index.html) (default).   
    
 ## Usage & Capabilities   

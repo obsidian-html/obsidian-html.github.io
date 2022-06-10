@@ -354,6 +354,7 @@ This refers to the markdown and html output folders. If you want to output html 
    
 ### no_tabs   
 > New in version [v1.2.0](../Changelog/v1.2.0.md)   
+> **Removed** in version [v2.0.0](../Changelog/v2.0.0.md)   
 ``` yaml
 toggles:
   # This will skip emptying output folders, if you want to implement this yourself
@@ -396,7 +397,7 @@ toggles:
 ``` yaml
   features:
     styling: 
-      layout: documentation # documentation, tabs, no_tabs
+      layout: documentation # documentation, tabs, minimal
       max_note_width: 52rem # not supported for layout: tabs
       add_toc: True         # add "[TOC]" (Table of Contents) when missing
       toc_pane: True        # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)

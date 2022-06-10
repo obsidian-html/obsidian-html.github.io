@@ -88,11 +88,11 @@
                 <div id="header" class="header">
                         <div id="header_flex" class="flex_row">
                                 <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
-                                <div class="navbar-button requires_js" onclick="toggle_menu()">
+                                <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
                                         ≡
                                 </div>
                                 <div id="navbar" class="navbar requires_js">
-                                
+                                        
                                         <div class="icon-tray">
                                                 <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
     T
@@ -157,6 +157,10 @@
 </div>
                                                 
                                         </div>
+                                        <div style="display: flex; flex-direction:column">
+                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav left_pane_fold_header fold_header">Toggle Directory Tree Pane</div>
+                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav right_pane_fold_header fold_header">Toggle Table of Contents Pane</div>
+                                        </div>
                                 </div>
                         </div>
                         <div class="popup" id="theme-popup">
@@ -170,8 +174,10 @@
 </div>
                 </div>
                 <div class="flex_row">
-                        <div id="left_pane" class="left_pane">
-                                <button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
+                        <div id="left_pane" class="left_pane active">
+                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+                                <div id="left_pane_content" class="left_pane_content">
+                                        <button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
 <div id="folder-container-1" class="dir-container requires_js " path="/index_from_tags/Automation">
 	<ul class="dir-list">
 		<li><a class="" href="/index_from_tags/Automation/Automate website deployment.html"  >Automate website deployment</a></li>
@@ -202,7 +208,7 @@
 		<li><a class="" href="/index_from_tags/Changelog/v2.0.0.html"  >v2.0.0</a></li>
 		<li><a class="" href="/index_from_tags/Changelog/v2.1.0.html"  >v2.1.0</a></li>
 		<li><a class="" href="/index_from_tags/Changelog/v2.3.0.html"  >v2.3.0</a></li>
-		<li><a class="" href="/index_from_tags/Changelog/v2.4.0.html"  >v2.4.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v3.0.0.html"  >v3.0.0</a></li>
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
@@ -305,6 +311,7 @@
 	<li><a class="" href="/index_from_tags/index.html"  >index</a></li>
 </ul>
 
+                                </div>
                         </div>
                         <div class="container">
                                 <h1 id="configuration-options">Configuration Options</h1>
@@ -772,7 +779,8 @@
 <p>This refers to the markdown and html output folders. If you want to output html directly into a git repo, then by default it will remove the <code>.git</code> directory. To avoid this, you can write your own cleanup script to remove the previous output before running.    </p>
 <h3 id="no_tabs">no_tabs</h3>
 <blockquote>
-<p>New in version <a href="/index_from_tags/Changelog/v1.2.0.html">v1.2.0</a>   </p>
+<p>New in version <a href="/index_from_tags/Changelog/v1.2.0.html">v1.2.0</a> <br />
+<strong>Removed</strong> in version <a href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a>   </p>
 </blockquote>
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># This will skip emptying output folders, if you want to implement this yourself</span><span class="w"></span>
@@ -809,7 +817,7 @@
 </blockquote>
 <div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
-<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w"> </span><span class="c1"># documentation, tabs, no_tabs</span><span class="w"></span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w"> </span><span class="c1"># documentation, tabs, minimal</span><span class="w"></span>
 <span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">52rem</span><span class="w"> </span><span class="c1"># not supported for layout: tabs</span><span class="w"></span>
 <span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">         </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span><span class="w"></span>
 <span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">        </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span><span class="w"></span>
@@ -890,7 +898,6 @@
 	<li><a class="backlink" href="/index_from_tags/Configurations/RSS Feed.html">RSS Feed</a></li>
 	<li><a class="backlink" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a></li>
-	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Website navigation menu.html">Website navigation menu</a></li>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v1.2.2.html">v1.2.2</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a></li>
@@ -911,13 +918,13 @@
 
 </div>
 <div class="graph requires_js">
-    <div id="A170399966441825217266197874473110997208{level}" class="graph_div"></div>
+    <div id="A121854789353138669356412121776842994170{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B170399966441825217266197874473110997208{level}" level="{level}" note_temp_id="170399966441825217266197874473110997208" onclick="window.ObsHtmlGraph.run(this, '170399966441825217266197874473110997208', 'Configuration Options');">
+        <button class="graph_button graph_show_button" id="B121854789353138669356412121776842994170{level}" level="{level}" note_temp_id="121854789353138669356412121776842994170" onclick="window.ObsHtmlGraph.run(this, '121854789353138669356412121776842994170', 'Configuration Options');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C170399966441825217266197874473110997208{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C121854789353138669356412121776842994170{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -937,13 +944,138 @@
 
                                 <!-- end content -->
                         </div>
-                        <div id="right_pane" class="right_pane">
-                                
+                        <div id="right_pane" class="right_pane active">
+                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                                <div id="right_pane_content" class="right_pane_content">
+                                        
+                                </div>
                         </div>
                 </div>
         </div>
 
-<script src="/index_from_tags/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+        <script>
+                function handle_toggle_side_bar(e){
+                        console.log(e);
+                        let header;
+                        let pane; 
+                        let target = e.target
+
+                        // switch out the navbar button click for a header click
+                        if (target.id == 'left_pane_toggle_nav'){
+                                target = document.getElementById('left_pane_fold_header')
+                        }
+                        else if (target.id == 'right_pane_toggle_nav'){
+                                target = document.getElementById('right_pane_fold_header')
+                        }
+
+                        // get header and pane
+                        if (target.classList.contains('fold_header')) {
+                                header = target;
+                                pane = target.parentElement;
+                        }
+                        else {
+                                pane = target;
+                                header = target.getElementsByClassName('fold_header')[0];
+                        }
+                        toggle_side_bar(pane, header, true)
+                        e.stopPropagation();
+                }
+                function handle_toggle_side_bar_button(e){
+                        document.getElementById('menu_toggle_button').click()
+                        handle_toggle_side_bar(e);
+                }
+
+                function toggle_side_bar(pane, header, save) {
+                        let active = (pane.classList.contains('active'))
+                        if (active){
+                                disable_side_bar(pane, header, save);
+                        }
+                        else {
+                                enable_side_bar(pane, header, save);
+                        }
+                }
+                function enable_side_bar(pane, header, save){
+                        pane.classList.add('active');
+                        pane.removeEventListener('click', handle_toggle_side_bar);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, true) }
+                }
+                function disable_side_bar(pane, header, save){
+                        pane.classList.remove('active');
+                        pane.addEventListener('click', handle_toggle_side_bar);
+                        header.removeEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, false) }
+                }
+                function set_correct_header_symbol(header){
+                        let pane = header.parentElement;
+                        let symbol = [['>', '<'],['<', '>']]
+                        symbol = symbol[Number(header.classList.contains('right_pane_fold_header'))][Number(pane.classList.contains('active'))];
+                        console.log(symbol);
+                        header.innerHTML = symbol
+                        return header;
+                }
+                function panel_folding_get_panel_name(header){
+                        return ['left', 'right'][Number(header.classList.contains('right_pane_fold_header'))]
+                }
+                function save_panel_folding_state(header, active){
+                        localStorage.setItem('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
+                }
+                function load_panel_folding_state(panel_name){
+                        val = localStorage.getItem('pane_folding_state_'+panel_name)
+                        if (!val){ return {'exists': false, 'value': null}}
+                        return {'exists': true, 'value': Boolean(Number(val))}
+                }
+                function set_pane_folding_start(left_header, right_header){
+                        // small screen = closed
+                        let right_pane_enabled = true;
+                        let left_pane_enabled = true;
+                        let w = window.visualViewport.width
+                        if (w < 1000){
+                                left_pane_enabled = false
+                        }
+                        if (w < 800){
+                                right_pane_enabled = false
+                        }
+
+                        // get saved values if present
+                        let rval = load_panel_folding_state('right')
+                        if (rval['exists']){
+                                right_pane_enabled = rval['value']
+                        }
+                        let lval = load_panel_folding_state('left')
+                        if (lval['exists']){
+                                left_pane_enabled = lval['value']
+                        }
+
+                        // default = enabled, so we only need to disable
+                        if (!left_pane_enabled){
+                                disable_side_bar(document.getElementById('left_pane'), document.getElementById('left_pane_fold_header'))
+                        }
+                        if (!right_pane_enabled){
+                                disable_side_bar(document.getElementById('right_pane'), document.getElementById('right_pane_fold_header'))
+                        }
+                }
+
+                function init_pane_folding(header){
+                        set_correct_header_symbol(header);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                }
+                
+                
+                set_pane_folding_start()
+                init_pane_folding(document.getElementById('left_pane_fold_header'));
+                init_pane_folding(document.getElementById('right_pane_fold_header'));
+
+                document.getElementById('left_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+                document.getElementById('right_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+
+        </script>
+
+        <script src="/index_from_tags/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+
 
 
 </body>

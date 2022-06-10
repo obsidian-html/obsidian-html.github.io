@@ -82,3 +82,30 @@ client <span class="token operator">=</span> discord<span class="token punctuati
       </svg></div>Powershell
   </h2>
 </div>
+<div><pre class="language-powershell" tabindex="0"><code class="language-powershell is-loaded"><span class="token keyword">Function</span> <span class="token function">Add-Link</span> <span class="token punctuation">{</span>
+    <span class="token keyword">param</span><span class="token punctuation">(</span>
+        <span class="token variable">$Link</span><span class="token punctuation">,</span> 
+        <span class="token variable">$Title</span><span class="token punctuation">,</span>
+        <span class="token variable">$Description</span><span class="token punctuation">,</span>
+        <span class="token variable">$Category</span> = <span class="token string">'misc'</span><span class="token punctuation">,</span>
+        <span class="token variable">$PrivateKeyPath</span> = <span class="token variable">$script</span>:PrivateKeyPath        
+    <span class="token punctuation">)</span>
+
+    <span class="token comment"># Compile script to be run on the linux host</span>
+    <span class="token variable">$script</span> = <span class="token string">"cd /home/user/www/devfruits/links`n"</span>
+    <span class="token variable">$script</span> <span class="token operator">+=</span> <span class="token string">"python3 add.py '<span class="token variable">$Category</span>' '<span class="token variable">$Link</span>' '<span class="token variable">$Title</span>' '<span class="token variable">$Description</span>'`n"</span>
+    <span class="token variable">$script</span> <span class="token operator">+=</span> <span class="token string">"python3 publish.py"</span>
+    <span class="token namespace">[System.IO.File]</span>::WriteAllLines<span class="token punctuation">(</span><span class="token string">"<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$env</span>:TEMP<span class="token punctuation">)</span></span>\_addlink.sh"</span><span class="token punctuation">,</span> <span class="token variable">$script</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># Run script</span>
+    plink <span class="token operator">-</span>batch <span class="token operator">-</span>i <span class="token variable">$PrivateKeyPath</span> user@web002 <span class="token operator">-</span>m <span class="token string">"<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$env</span>:TEMP<span class="token punctuation">)</span></span>\_addlink.sh"</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h2 data-heading="YAML">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
+        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      </svg></div>YAML
+  </h2>
+</div>

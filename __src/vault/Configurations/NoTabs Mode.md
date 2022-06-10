@@ -16,16 +16,7 @@ toggles:
 
 In favor of the new layout setting. Read more here: [[Styling#Layouts]].
 
-In short: use either
-``` yaml
-toggles:
-  features:
-    styling: 
-      layout: no_tabs
-```
-
-or 
-
+In short, use:
 ``` yaml
 toggles:
   features:

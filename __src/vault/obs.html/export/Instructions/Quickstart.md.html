@@ -92,3 +92,24 @@
 <div>
   <p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.</p>
 </div>
+<div>
+  <div data-callout-metadata="" data-callout-fold="-" data-callout="caution" class="callout is-collapsible is-collapsed">
+    <div class="callout-title">
+      <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-alert-triangle">
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg></div>
+      <div class="callout-title-inner">Caution: don't run this command <strong>in</strong> your vault!</div>
+      <div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg></div>
+    </div>
+    <div class="callout-content" style="display: none;">
+      <p><strong>Do not</strong> run this command in your vault, as it will create the output in your vault, which will cause a DuplicateFileName error on subsequent runs! </p>
+    </div>
+  </div>
+</div>
+<div>
+  <p>If you place your config in your vault, then go a folder up and run <code>obsidianhtml -i &lt;vault folder name&gt;/config.yaml</code>. Alternatively, add the following settings to your config.yml to control the output location (adjust the paths to make sense for your environment):</p>
+</div>

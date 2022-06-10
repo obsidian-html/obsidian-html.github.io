@@ -17,17 +17,7 @@ toggles:
    
 In favor of the new layout setting. Read more here: [Styling#Layouts](../Configurations/Styling/Styling.md#layouts).   
    
-In short: use either   
-``` yaml
-toggles:
-  features:
-    styling: 
-      layout: no_tabs
-```
-   
-   
-or    
-   
+In short, use:   
 ``` yaml
 toggles:
   features:
