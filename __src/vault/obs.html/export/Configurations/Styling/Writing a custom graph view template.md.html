@@ -86,3 +86,18 @@
 <div>
   <p>It is up to your implementation to change the display of the graph div to <code>block</code> so that it becomes visible. (This is done to avoid opening an empty div when the grapher takes some time to initialize, as it looks sloppy.)</p>
 </div>
+<div>
+  <p>This makes the bare minimal functional code for a custom grapher to be this:</p>
+</div>
+<div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token parameter">args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	args<span class="token punctuation">.</span><span class="token property-access">graph_container</span><span class="token punctuation">.</span><span class="token property-access">innerHTML</span> <span class="token operator">=</span> <span class="token string">'still not very functional'</span><span class="token punctuation">;</span>
+	args<span class="token punctuation">.</span><span class="token property-access">graph_container</span><span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">display</span> <span class="token operator">=</span> <span class="token string">"block"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// because this code is loaded as a module, we need this export statement</span>
+<span class="token comment">// in order to be able to call run(args) from elsewhere in the code.</span>
+<span class="token keyword module">export</span> <span class="token exports"><span class="token punctuation">{</span> 
+    run
+<span class="token punctuation">}</span></span><span class="token punctuation">;</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>

@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Demonstrations/Implementing Dataview.md",
-            "mode": "preview",
+            "file": "Configurations/Configuration Options.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#type/template",
+                "query": "no_tabs",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Demonstrations/Implementing Dataview.md",
+                "file": "Configurations/Configuration Options.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,24 +92,23 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 299
   },
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
-    "Demonstrations/Implementing Dataview.md",
-    "Automation/Automate website deployment.md",
-    "Automation/AutomationLinuxGit.md",
-    "Automation/AutomationLinuxSSH.md",
-    "Automation/AutomationWindows.md",
-    "Automation/AutomationWindowsSSH.md",
-    "Buglog/File links in dirtree note do not work.md",
-    "Buglog/Links in included notes do not work or show up as external.md",
-    "Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.md",
-    "Change Log.md"
+    "Configurations/Configuration Options.md",
+    "Changelog/v3.0.0.md",
+    "Changelog/v2.0.0.md",
+    "Configurations/Styling/Styling.md",
+    "Configurations/Styling/Edit HTML, CSS, JS.md",
+    "ObsidianHtml.md",
+    "Configurations/NoTabs Mode.md",
+    "Log/Deprecated and removed config settings.md",
+    "Configurations/Styling/Writing a custom graph view template.md",
+    "Demonstrations/Implementing Dataview.md"
   ]
 }

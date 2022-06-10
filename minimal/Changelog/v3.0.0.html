@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 id="v300">v3.0.0</h1>
+<blockquote>
+<p><strong>Under construction, not yet released</strong>   </p>
+</blockquote>
+<h2 id="breaking-changes">Breaking changes</h2>
+<ul>
+<li>The no_tabs layout has been removed, as with the folding panels this layout is practically the same as the documentation layout.   </li>
+<li>The custom grapher system has been rewritten to make use of javascript modules. Any custom grapher code will have to be rewritten as well.   </li>
+</ul>
+<h2 id="graph-toggling">Graph toggling</h2>
+<p>The user can now choose which grapher they want to use. The choice is persisted in localStorage. The custom grapher system has been rewritten to make use of javascript modules. Any custom grapher code will have to be rewritten.   </p>
+<h2 id="modularizing-of-javascript-code">Modularizing of javascript code</h2>
+<p>This is mostly to tidy up the code and keep us from polluting the global scope. Aside from that not yet really interesting in itself.   </p>
+<h2 id="browsable-without-javascript-enabled">Browsable without javascript enabled</h2>
+<p>At heart what the compiled is, is a wiki, and for this we don't need any javascript. Some people want to have javascript disabled for security reasons, and the sites compiled by obsidianhtml should accommodate that when feasible. These changes are aimed at opening toggleable divs by default and then closing them with javascript, making sure that content is viewabe when javascript is disabled.   </p>
+<h2 id="full-collapsible-directory-tree-in-side-pane">Full collapsible directory tree in side pane</h2>
+<p>The dir tree in the left pane now shows the entire directory. It is now compiled in the python step, instead of via javascript, and the current page is highlighted + the necessary folders are opened on load to make the current page visible.   </p>
+<h2 id="collapsible-side-panes-in-documentation-view">Collapsible side panes in documentation view</h2>
+<p>The whole of the left and right panes are collapsible to make more space for reading. The panes are folded open/closed based on screen width <em>until</em> a user toggles a pane, from that moment on the choice is persisted in localStorage and this choice is then used going forward.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Configurations/Styling/Writing a custom graph view template.html">Writing a custom graph view template</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-05-28/index.html">date/2022-05-28</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+                
+    </body>
+</html>

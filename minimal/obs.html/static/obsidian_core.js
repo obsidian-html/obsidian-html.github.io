@@ -4,8 +4,8 @@
 var no_tab_mode = 1;
 var toc_pane = 1;
 var mermaid_enabled = 0;
-var toc_pane_div = "right_pane";
-var content_pane_div = "left_pane";
+var toc_pane_div = "right_pane_content";
+var content_pane_div = "left_pane_content";
 var html_url_prefix = "/minimal";
 var documentation_mode = 0;
 var tab_mode = !no_tab_mode;
@@ -380,6 +380,9 @@ function disable(el){
 
 
 // standard
+function cl_toggle_id(id, class_name){
+    return cl_toggle(document.getElementById(id), class_name)
+}
 function cl_toggle(el, class_name) {
     if (el.classList.contains(class_name)) {
         el.classList.remove(class_name)

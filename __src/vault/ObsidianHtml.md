@@ -27,7 +27,6 @@ Try this site with different [[Styling#Layouts|layouts]]:
 > use ctrl+click when in tabs mode!
 - [minimal](/minimal/index.html)
 - [tabs](/tabs/index.html)
-- [no_tabs](/no_tabs/index.html)
 - [documentation](/index.html) (default).
 
 ## Usage & Capabilities

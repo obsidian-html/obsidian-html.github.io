@@ -88,11 +88,11 @@
                 <div id="header" class="header">
                         <div id="header_flex" class="flex_row">
                                 <a href="/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
-                                <div class="navbar-button requires_js" onclick="toggle_menu()">
+                                <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
                                         ≡
                                 </div>
                                 <div id="navbar" class="navbar requires_js">
-                                <a class="navbar-link" href="/index.html" title="Home">Home</a>
+                                        <a class="navbar-link" href="/index.html" title="Home">Home</a>
 <a class="navbar-link" href="/General Information/About ObsidianHtml.html" title="About">About</a>
 <a class="navbar-link" href="/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
 <a class="navbar-link" href="/Configurations/Styling/Styling.html" title="Styling">Styling</a>
@@ -168,6 +168,10 @@
             </a>
         </div>
                                         </div>
+                                        <div style="display: flex; flex-direction:column">
+                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav left_pane_fold_header fold_header">Toggle Directory Tree Pane</div>
+                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav right_pane_fold_header fold_header">Toggle Table of Contents Pane</div>
+                                        </div>
                                 </div>
                         </div>
                         <div class="popup" id="theme-popup">
@@ -181,8 +185,10 @@
 </div>
                 </div>
                 <div class="flex_row">
-                        <div id="left_pane" class="left_pane">
-                                <button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
+                        <div id="left_pane" class="left_pane active">
+                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+                                <div id="left_pane_content" class="left_pane_content">
+                                        <button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
 <div id="folder-container-1" class="dir-container requires_js " path="/Automation">
 	<ul class="dir-list">
 		<li><a class="" href="/Automation/Automate website deployment.html"  >Automate website deployment</a></li>
@@ -218,7 +224,7 @@
 		<li><a class="" href="/Changelog/v2.2.0.html"  >v2.2.0</a></li>
 		<li><a class="" href="/Changelog/v2.3.0.html"  >v2.3.0</a></li>
 		<li><a class="" href="/Changelog/v2.3.1.html"  >v2.3.1</a></li>
-		<li><a class="" href="/Changelog/v2.4.0.html"  >v2.4.0</a></li>
+		<li><a class="" href="/Changelog/v3.0.0.html"  >v3.0.0</a></li>
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
@@ -311,6 +317,7 @@
 	<li><a class="" href="/index.html"  >index</a></li>
 </ul>
 
+                                </div>
                         </div>
                         <div class="container">
                                 <h1 id="styling">Styling</h1>
@@ -320,7 +327,6 @@
 <li><a href="#layouts" class="anchor-link">Layouts</a><ul>
 <li><a href="#documentation" class="anchor-link">Documentation</a></li>
 <li><a href="#tabs" class="anchor-link">Tabs</a></li>
-<li><a href="#no-tabs" class="anchor-link">No tabs</a></li>
 <li><a href="#minimal" class="anchor-link">Minimal</a></li>
 <li><a href="#which-to-choose" class="anchor-link">Which to choose?</a></li>
 </ul>
@@ -339,23 +345,21 @@
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
-<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no_tabs</span><span class="w"> </span><span class="c1"># documentation, tabs, no_tabs, minimal</span><span class="w"></span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w"> </span><span class="c1"># documentation, tabs, minimal</span><span class="w"></span>
 </code></pre></div>
 
-<p>For the layout you can choose between <code>documentation</code>, <code>tabs</code>, and <code>no_tabs</code>.     </p>
+<p>For the layout you can choose between <code>documentation</code>, <code>minimal</code>, and <code>tabs</code>     </p>
 <p>The layout will influence the structure of the pages that are generated. There is a short description below for each layout.    </p>
 <p>To get an actual impression, check out this same site with the different layouts:   </p>
 <ul>
-<li><a href="https://obsidian-html.github.io//tabs" class="external-link">tabs</a>   </li>
-<li><a href="https://obsidian-html.github.io//no_tabs" class="external-link">no_tabs</a>   </li>
+<li><a href="https://obsidian-html.github.io/tabs" class="external-link">tabs</a>   </li>
+<li><a href="https://obsidian-html.github.io/minimal/index.html" class="external-link">minimal</a>   </li>
 <li><a href="https://obsidian-html.github.io/" class="external-link">documentation</a> (the default)   </li>
 </ul>
 <h3 id="documentation">Documentation</h3>
 <p>The documentation layout is used for this site. This layout is suited for people who like to establish a well thought out folder structure, and for − as the name says − documentation vaults such as this one. It is the only layout that supports the content view, which is a list of notes that share the same folder.   </p>
 <h3 id="tabs">Tabs</h3>
 <p>The tabs layout is for people who use the smart note taking / zettelkasten methods, where dense linkage is prefered over giving a strict structure from the get-go. It allows to have multiple notes open at one time, and to scroll back and forth, following a thread of related notes. Tabs has some added navigation options to mediate in the infinite scrolling of notes. Read more on that <a href="/Configurations/Styling/Tabs Layout.html">here</a>.   </p>
-<h3 id="no-tabs">No tabs</h3>
-<p>No tabs is basically the same as when you view markdown documentation on for example github. One note per page, and every link opens to a new page.   </p>
 <h3 id="minimal">Minimal</h3>
 <blockquote>
 <p>New in <a href="/Changelog/v2.3.0.html">v2.3.0</a>   </p>
@@ -365,7 +369,6 @@
 <h3 id="which-to-choose">Which to choose?</h3>
 <p>Documentation is set to the default, as I use it for this website, and thus it will be better tested and more stable. (Not to say that the other modes are unstable, though).    </p>
 <p>Personally I like to start off with a very loose structure, and thus use tabs mode. When my vault gets to a certain size, I apply a folder structure, and at that point it could be interesting to move over to the documentation layout.    </p>
-<p>The no tabs layout is nice for people who don't want anything fancy, or who want to <a href="/Configurations/Configuration Options.html#html-custom-inclusions">edit the website's css</a>, which is a bit easier in this layout as less is happening. Though it should be said that of course the CSS can be edited in every layout mode.   </p>
 <p>If your expected users have low bandwidth, or if your are a web 1.0 purist, then the minimal template might be for you.   </p>
 <p>In the end there is just the personal preference, so try them out and see which you like best.   </p>
 <h2 id="accent-color">Accent color</h2>
@@ -427,13 +430,13 @@
 
 </div>
 <div class="graph requires_js">
-    <div id="A140926634926900046837277037397350340444{level}" class="graph_div"></div>
+    <div id="A142541172990396195821153827939992924649{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B140926634926900046837277037397350340444{level}" level="{level}" note_temp_id="140926634926900046837277037397350340444" onclick="window.ObsHtmlGraph.run(this, '140926634926900046837277037397350340444', 'Styling');">
+        <button class="graph_button graph_show_button" id="B142541172990396195821153827939992924649{level}" level="{level}" note_temp_id="142541172990396195821153827939992924649" onclick="window.ObsHtmlGraph.run(this, '142541172990396195821153827939992924649', 'Styling');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C140926634926900046837277037397350340444{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C142541172990396195821153827939992924649{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -453,13 +456,138 @@
 
                                 <!-- end content -->
                         </div>
-                        <div id="right_pane" class="right_pane">
-                                
+                        <div id="right_pane" class="right_pane active">
+                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                                <div id="right_pane_content" class="right_pane_content">
+                                        
+                                </div>
                         </div>
                 </div>
         </div>
 
-<script src="/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+        <script>
+                function handle_toggle_side_bar(e){
+                        console.log(e);
+                        let header;
+                        let pane; 
+                        let target = e.target
+
+                        // switch out the navbar button click for a header click
+                        if (target.id == 'left_pane_toggle_nav'){
+                                target = document.getElementById('left_pane_fold_header')
+                        }
+                        else if (target.id == 'right_pane_toggle_nav'){
+                                target = document.getElementById('right_pane_fold_header')
+                        }
+
+                        // get header and pane
+                        if (target.classList.contains('fold_header')) {
+                                header = target;
+                                pane = target.parentElement;
+                        }
+                        else {
+                                pane = target;
+                                header = target.getElementsByClassName('fold_header')[0];
+                        }
+                        toggle_side_bar(pane, header, true)
+                        e.stopPropagation();
+                }
+                function handle_toggle_side_bar_button(e){
+                        document.getElementById('menu_toggle_button').click()
+                        handle_toggle_side_bar(e);
+                }
+
+                function toggle_side_bar(pane, header, save) {
+                        let active = (pane.classList.contains('active'))
+                        if (active){
+                                disable_side_bar(pane, header, save);
+                        }
+                        else {
+                                enable_side_bar(pane, header, save);
+                        }
+                }
+                function enable_side_bar(pane, header, save){
+                        pane.classList.add('active');
+                        pane.removeEventListener('click', handle_toggle_side_bar);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, true) }
+                }
+                function disable_side_bar(pane, header, save){
+                        pane.classList.remove('active');
+                        pane.addEventListener('click', handle_toggle_side_bar);
+                        header.removeEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, false) }
+                }
+                function set_correct_header_symbol(header){
+                        let pane = header.parentElement;
+                        let symbol = [['>', '<'],['<', '>']]
+                        symbol = symbol[Number(header.classList.contains('right_pane_fold_header'))][Number(pane.classList.contains('active'))];
+                        console.log(symbol);
+                        header.innerHTML = symbol
+                        return header;
+                }
+                function panel_folding_get_panel_name(header){
+                        return ['left', 'right'][Number(header.classList.contains('right_pane_fold_header'))]
+                }
+                function save_panel_folding_state(header, active){
+                        localStorage.setItem('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
+                }
+                function load_panel_folding_state(panel_name){
+                        val = localStorage.getItem('pane_folding_state_'+panel_name)
+                        if (!val){ return {'exists': false, 'value': null}}
+                        return {'exists': true, 'value': Boolean(Number(val))}
+                }
+                function set_pane_folding_start(left_header, right_header){
+                        // small screen = closed
+                        let right_pane_enabled = true;
+                        let left_pane_enabled = true;
+                        let w = window.visualViewport.width
+                        if (w < 1000){
+                                left_pane_enabled = false
+                        }
+                        if (w < 800){
+                                right_pane_enabled = false
+                        }
+
+                        // get saved values if present
+                        let rval = load_panel_folding_state('right')
+                        if (rval['exists']){
+                                right_pane_enabled = rval['value']
+                        }
+                        let lval = load_panel_folding_state('left')
+                        if (lval['exists']){
+                                left_pane_enabled = lval['value']
+                        }
+
+                        // default = enabled, so we only need to disable
+                        if (!left_pane_enabled){
+                                disable_side_bar(document.getElementById('left_pane'), document.getElementById('left_pane_fold_header'))
+                        }
+                        if (!right_pane_enabled){
+                                disable_side_bar(document.getElementById('right_pane'), document.getElementById('right_pane_fold_header'))
+                        }
+                }
+
+                function init_pane_folding(header){
+                        set_correct_header_symbol(header);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                }
+                
+                
+                set_pane_folding_start()
+                init_pane_folding(document.getElementById('left_pane_fold_header'));
+                init_pane_folding(document.getElementById('right_pane_fold_header'));
+
+                document.getElementById('left_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+                document.getElementById('right_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+
+        </script>
+
+        <script src="/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+
 
 
 </body>
