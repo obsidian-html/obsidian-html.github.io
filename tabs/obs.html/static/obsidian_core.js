@@ -9,7 +9,7 @@ var content_pane_div = "left_pane_content";
 var html_url_prefix = "/tabs";
 var documentation_mode = 0;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '135221067213461660766327848344338805593'                       // used to check whether the localStorage data is stale
+var gzip_hash = '312612398112940233955228225672823169161'                       // used to check whether the localStorage data is stale
 
 
 // Onloads
