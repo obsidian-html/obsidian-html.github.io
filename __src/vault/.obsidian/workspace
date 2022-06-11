@@ -100,14 +100,14 @@
   "active": "88525a7a638025a1",
   "lastOpenFiles": [
     "Changelog/v3.0.0.md",
+    "Changelog/v2.3.0.md",
+    "Changelog/v2.3.1.md",
     "Configurations/Configuration Options.md",
     "Changelog/v2.0.0.md",
     "Configurations/Styling/Styling.md",
     "Configurations/Styling/Edit HTML, CSS, JS.md",
     "ObsidianHtml.md",
     "Configurations/NoTabs Mode.md",
-    "Log/Deprecated and removed config settings.md",
-    "Configurations/Styling/Writing a custom graph view template.md",
-    "Demonstrations/Implementing Dataview.md"
+    "Log/Deprecated and removed config settings.md"
   ]
 }
