@@ -4,7 +4,7 @@
         <link>https://obsidian-html.github.io</link>
         <description>The documentation site of ObsidianHtml, a package used to convert Obsidian notes to proper markdown and static HTML websites.</description>
         <language>en-usen-us</language>
-        <pubDate>Tue, 12 Jul 2022 15:22:25 CET</pubDate>
+        <pubDate>Tue, 12 Jul 2022 15:31:33 CET</pubDate>
         <lastBuildDate>Sat, 28 May 2022 00:00:00 CET</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>ObsidianHtml</generator>
@@ -144,6 +144,14 @@
             <description>bugfix for v1.2.0   &lt;br/&gt;&lt;br/&gt;Bugfix for a little bug where a halting error occurs when toggles/verbose_printout is true, due to a faulty concatenation in a print statement somewhere. See also.   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Thu, 31 Mar 2022 00:00:00 CET</pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v1.2.2.html</guid>
+            
+        </item>
+        <item>
+            <title>v3.0.1</title>
+            <link>https://obsidian-html.github.io/Changelog/v3.0.1.html</link>
+            <description>Patch version of v3.0.0   &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Sun, 15 May 2022 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Changelog/v3.0.1.html</guid>
             
         </item>
         <item>
