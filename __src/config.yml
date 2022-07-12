@@ -52,7 +52,7 @@ exclude_subfolders:
   - ".git"
   - "__src"
   - "md"
-  - "obs.html"
+  - "obs.html" 
 
 # Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect
 # the vault data. Should be fine to turn off if copying the vault takes too long / disk space is too limited.
@@ -141,7 +141,7 @@ toggles:
       enabled: True
 
     dataview:
-      enabled: True
+      enabled: False
       folder: 'obs.html/export' # relative to the vault being processed. this folder should always be in the vault
 
     # Create an index.md with links to notes that have one of the given tags.
