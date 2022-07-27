@@ -74,7 +74,10 @@ navbar_links:
   - name: Configurations
     link: Configurations/Configuration Options.html
   - name: News
-    link: News.html    
+    link: News.html
+  # - name: Test external
+  #   link: https://github.com/obsidian-html/obsidian-html/issues/212
+  #   type: external
 
 toggles:
   # Opt-in/-out of Obsidian->Md conversion, set to False when using proper markdown as input
@@ -125,6 +128,11 @@ toggles:
     backlinks:
       enabled: True
 
+    theme_picker:
+      enabled: True
+      styling:
+        show_icon: True
+
     graph:
       enabled: True           # Include code to build the graph view per page (default: True)
       templates:
@@ -143,6 +151,11 @@ toggles:
     dataview:
       enabled: False
       folder: 'obs.html/export' # relative to the vault being processed. this folder should always be in the vault
+
+    folder_notes:
+      enabled: True
+      placement: 'outside folder'   # 'inside folder' , 'outside folder' 
+      naming: 'folder name'           # 'folder name', 'index'
 
     # Create an index.md with links to notes that have one of the given tags.
     # This index.md will serve as the entrypoint

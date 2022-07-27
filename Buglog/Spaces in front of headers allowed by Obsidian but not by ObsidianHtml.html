@@ -206,7 +206,7 @@
 		<li><a class="active" href="/Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.html"  >Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a></li>
 	</ul>
 </div>
-<button id="folder-3" class="dir-button" onclick="toggle_dir(this.id)">Changelog</button>
+<button id="folder-3" class="dir-button folder_note " onclick="open_folder_note('/Changelog.html')"><div class="fn_pf"></div>Changelog</button>
 <div id="folder-container-3" class="dir-container requires_js " path="/Changelog">
 	<ul class="dir-list">
 		<li><a class="" href="/Changelog/v1.0.0.html"  >v1.0.0</a></li>
@@ -226,6 +226,9 @@
 		<li><a class="" href="/Changelog/v2.3.1.html"  >v2.3.1</a></li>
 		<li><a class="" href="/Changelog/v3.0.0.html"  >v3.0.0</a></li>
 		<li><a class="" href="/Changelog/v3.0.1.html"  >v3.0.1</a></li>
+		<li><a class="" href="/Changelog/v3.0.2.html"  >v3.0.2</a></li>
+		<li><a class="" href="/Changelog/v3.0.3.html"  >v3.0.3</a></li>
+		<li><a class="" href="/Changelog/v3.1.0.html"  >v3.1.0</a></li>
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
@@ -312,7 +315,6 @@
 	</ul>
 </div>
 <ul class="dir-list">
-	<li><a class="" href="/Change Log.html"  >Change Log</a></li>
 	<li><a class="" href="/News.html"  >News</a></li>
 	<li><a class="" href="/index.html"  >index</a></li>
 </ul>
@@ -335,8 +337,9 @@
 </code></pre></div>
 
 <p>This is not allowed in proper markdown though. So this leads to the headers not being recognized by python-markdown.   </p>
-<p>This is technically a user error, but it happened to me, and with the new auto-format feature in edit mode, typo's like this are very hard to spot. It's not nice if people use this package and are in the dark as to why their headers are not being rendered.    </p>
-<p>Besides, if obsidian implements something, obsidianhtml should implement it too, even if it basically means allowing the user to have random spaces in front of their headers.   </p>
+<p>This is technically a user error, but it happened to me, and with the new auto-format feature in edit mode, typo's like this are very hard to spot.    </p>
+<p>It's not nice if people use this package and are in the dark as to why their headers are not being rendered.   <br />
+Besides, if obsidian implements something, obsidianhtml should implement it too, even if it basically means allowing the user to have random spaces in front of their headers. ^131340   </p>
 <p>It's pretty doable to remove these spaces in these cases and only in these cases. The regex in the code is just <code>(^\ [\ ]*)(?=#)</code> (one or more spaces from the beginning of the line immediately followed by a <code>#</code> are removed).</p>
 <div class="note-footer">
 <div class="backlinks">
@@ -356,13 +359,13 @@
 
 </div>
 <div class="graph requires_js">
-    <div id="A327081710324347872343977539299766907540{level}" class="graph_div"></div>
+    <div id="A218939172142820272785068335488673647149{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B327081710324347872343977539299766907540{level}" level="{level}" note_temp_id="327081710324347872343977539299766907540" onclick="window.ObsHtmlGraph.run(this, '327081710324347872343977539299766907540', 'Spaces in front of headers allowed by Obsidian but not by ObsidianHtml');">
+        <button class="graph_button graph_show_button" id="B218939172142820272785068335488673647149{level}" level="{level}" note_temp_id="218939172142820272785068335488673647149" onclick="window.ObsHtmlGraph.run(this, '218939172142820272785068335488673647149', 'Spaces in front of headers allowed by Obsidian but not by ObsidianHtml');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C327081710324347872343977539299766907540{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C218939172142820272785068335488673647149{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -382,6 +385,8 @@
 
                                 <!-- end content -->
                         </div>
+                        <div class="container_filler">
+                        </div>
                         <div id="right_pane" class="right_pane active">
                                 <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
                                 <div id="right_pane_content" class="right_pane_content">
@@ -393,7 +398,6 @@
 
         <script>
                 function handle_toggle_side_bar(e){
-                        console.log(e);
                         let header;
                         let pane; 
                         let target = e.target

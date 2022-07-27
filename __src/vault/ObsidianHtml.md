@@ -21,7 +21,7 @@ tags:
 - [[Report Issues & Request features]]
 - [[Using the website|How to navigate this site]]
 - [[News]]
-- [[Change Log]]
+- [[Changelog]]
 
 Try this site with different [[Styling#Layouts|layouts]]:
 > use ctrl+click when in tabs mode!
@@ -41,5 +41,3 @@ Try this site with different [[Styling#Layouts|layouts]]:
 ## Tips and tricks
 - [[Performance Tuning]]
 - [[Automate website deployment|Automate website deployment]] 
-
-

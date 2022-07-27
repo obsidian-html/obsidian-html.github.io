@@ -79,6 +79,9 @@ blockquote p {
     flex: auto;
     font-size: 11pt;
 }
+.container_filler {
+    background-color: var(--bg-note);
+}
 
 .container:after {
     content: "\a\a\a\a\a\a\a\a\a";
@@ -129,11 +132,17 @@ blockquote p {
     padding-right: 1rem;
     max-width: unset;
 }
+.container_filler {
+    flex: 1;
+}
 
 .active .right_pane_content,
 .active .left_pane_content {
     display: block;
 }
+
+
+
 
 .fold_header {
     text-align: center;
@@ -170,9 +179,12 @@ blockquote p {
 }
 
 .right_pane {
-    flex: auto;
     display: inline-flex;
     flex-direction: column;
+}
+
+.active.right_pane {
+    flex: auto;
 }
 
 .left_pane_toggle_nav,
@@ -530,6 +542,7 @@ h3+p {
 }
 
 @media (max-width: 450px) {
+
     .left_pane,
     .right_pane {
         display: none;
@@ -646,6 +659,7 @@ li {
     margin-bottom: 1rem;
 }
 
+
 .dir-button {
     background-color: transparent;
     border: none;
@@ -689,6 +703,16 @@ li {
 .dir-list li a.active:hover {
     color: rgba(var(--code-hightlight-color), 1.0);
     font-weight: bold;
+}
+.dir-button.folder_note.active {
+    color: rgba(var(--code-hightlight-color), 1.0);
+    font-weight: bold;
+}
+.fn_pf {
+    display: inline list-item;
+    list-style: disclosure-closed;
+    margin-left: -0.8rem;
+    color: var(--marker-color);
 }
 
 ul.dir-list {
@@ -1480,6 +1504,7 @@ span.linenos.special {
     --code-hightlight-color: 200, 119, 255;
     --homelink-color: #000000;
     --dir-tree-color: var(--color-accent);
+    --marker-color: var(--divider-color);
 }
 
 .theme-obs-dark,
@@ -1499,6 +1524,7 @@ span.linenos.special {
     --homelink-color: var(--color-accent3);
     --graph-bg: #161616;
     --dir-tree-color: var(--color-accent2);
+    --marker-color: var(--bg-accent3);
 }
 
 .theme-obs-dark .callout,
@@ -1525,6 +1551,7 @@ span.linenos.special {
     --code-hightlight-color: 200, 119, 255;
     --homelink-color: #2d68b1;
     --dir-tree-color: var(--color-accent);
+    --marker-color: var(--divider-color);
 }
 
 
@@ -1586,8 +1613,9 @@ span.linenos.special {
 }
 
 .theme-obs-dark .container,
-.theme-obs-light .container {
-    padding-top: 2rem;
+.theme-obs-light .container, 
+.theme-obs-dark .container_filler,
+.theme-obs-light .container_filler {
     border-top: 3px solid var(--divider-color);
 }
 
@@ -1640,6 +1668,8 @@ span.linenos.special {
 .theme-obs-dark .navbar-link .theme-obs-light .navbar-link {
     width: unset;
 }
+
+
 
 @media (max-width: 602px) {
     .theme-obs-light .header {

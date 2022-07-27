@@ -209,6 +209,7 @@
 		<li><a class="" href="/index_from_tags/Changelog/v2.1.0.html"  >v2.1.0</a></li>
 		<li><a class="" href="/index_from_tags/Changelog/v2.3.0.html"  >v2.3.0</a></li>
 		<li><a class="" href="/index_from_tags/Changelog/v3.0.0.html"  >v3.0.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v3.1.0.html"  >v3.1.0</a></li>
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
@@ -316,7 +317,10 @@
                                 <h1 id="website-navigation-menu">Website navigation menu</h1>
 <div class="toc">
 <ul>
-<li><a href="#website-navigation-menu" class="anchor-link">Website navigation menu</a></li>
+<li><a href="#website-navigation-menu" class="anchor-link">Website navigation menu</a><ul>
+<li><a href="#external-links-in-the-website-navigation-menu" class="anchor-link">External links in the website navigation menu</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <blockquote>
@@ -346,12 +350,25 @@
 <span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News.html</span><span class="w">    </span>
 </code></pre></div>
 
-<p>Make sure to use the full relative path to the note as measured from your webroot (so exclude the <a href="/index_from_tags/Configurations/Configuration Options.html#html-url-prefix">prefix</a>).</p>
+<p>Make sure to use the full relative path to the note as measured from your webroot (so exclude the <a href="/index_from_tags/Configurations/Configuration Options.html#html-url-prefix">prefix</a>).   </p>
+<h2 id="external-links-in-the-website-navigation-menu">External links in the website navigation menu</h2>
+<blockquote>
+<p>New in <a href="/index_from_tags/Changelog/v3.1.0.html">v3.1.0</a>   </p>
+</blockquote>
+<p>If you want to link to a different website, then you should add <code>type: external</code> to the link item, e.g.   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Home</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.html</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Code</span><span class="w"></span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/obsidian-html/obsidian-html</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external</span><span class="w">    </span>
+</code></pre></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v3.1.0.html">v3.1.0</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 </ul>
 </div>
@@ -366,13 +383,13 @@
 
 </div>
 <div class="graph requires_js">
-    <div id="A158181026668636428831737125550550361600{level}" class="graph_div"></div>
+    <div id="A300759972375612025844331947150909432953{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B158181026668636428831737125550550361600{level}" level="{level}" note_temp_id="158181026668636428831737125550550361600" onclick="window.ObsHtmlGraph.run(this, '158181026668636428831737125550550361600', 'Website navigation menu');">
+        <button class="graph_button graph_show_button" id="B300759972375612025844331947150909432953{level}" level="{level}" note_temp_id="300759972375612025844331947150909432953" onclick="window.ObsHtmlGraph.run(this, '300759972375612025844331947150909432953', 'Website navigation menu');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C158181026668636428831737125550550361600{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C300759972375612025844331947150909432953{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -392,6 +409,8 @@
 
                                 <!-- end content -->
                         </div>
+                        <div class="container_filler">
+                        </div>
                         <div id="right_pane" class="right_pane active">
                                 <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
                                 <div id="right_pane_content" class="right_pane_content">
@@ -403,7 +422,6 @@
 
         <script>
                 function handle_toggle_side_bar(e){
-                        console.log(e);
                         let header;
                         let pane; 
                         let target = e.target

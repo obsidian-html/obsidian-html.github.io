@@ -37,4 +37,18 @@ navbar_links:
 ```
    
    
-Make sure to use the full relative path to the note as measured from your webroot (so exclude the [prefix](../Configurations/Configuration%20Options.md#html-url-prefix)).
+Make sure to use the full relative path to the note as measured from your webroot (so exclude the [prefix](../Configurations/Configuration%20Options.md#html-url-prefix)).   
+   
+## External links in the website navigation menu   
+> New in [v3.1.0](../Changelog/v3.1.0.md)   
+   
+If you want to link to a different website, then you should add `type: external` to the link item, e.g.   
+   
+``` yaml
+navbar_links:
+  - name: Home
+    link: index.html
+  - name: Code
+    link: https://github.com/obsidian-html/obsidian-html
+    type: external    
+```

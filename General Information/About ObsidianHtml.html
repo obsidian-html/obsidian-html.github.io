@@ -206,7 +206,7 @@
 		<li><a class="" href="/Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.html"  >Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a></li>
 	</ul>
 </div>
-<button id="folder-3" class="dir-button" onclick="toggle_dir(this.id)">Changelog</button>
+<button id="folder-3" class="dir-button folder_note " onclick="open_folder_note('/Changelog.html')"><div class="fn_pf"></div>Changelog</button>
 <div id="folder-container-3" class="dir-container requires_js " path="/Changelog">
 	<ul class="dir-list">
 		<li><a class="" href="/Changelog/v1.0.0.html"  >v1.0.0</a></li>
@@ -226,6 +226,9 @@
 		<li><a class="" href="/Changelog/v2.3.1.html"  >v2.3.1</a></li>
 		<li><a class="" href="/Changelog/v3.0.0.html"  >v3.0.0</a></li>
 		<li><a class="" href="/Changelog/v3.0.1.html"  >v3.0.1</a></li>
+		<li><a class="" href="/Changelog/v3.0.2.html"  >v3.0.2</a></li>
+		<li><a class="" href="/Changelog/v3.0.3.html"  >v3.0.3</a></li>
+		<li><a class="" href="/Changelog/v3.1.0.html"  >v3.1.0</a></li>
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
@@ -312,7 +315,6 @@
 	</ul>
 </div>
 <ul class="dir-list">
-	<li><a class="" href="/Change Log.html"  >Change Log</a></li>
 	<li><a class="" href="/News.html"  >News</a></li>
 	<li><a class="" href="/index.html"  >index</a></li>
 </ul>
@@ -428,6 +430,8 @@ Anyways: <strong>This is not that package</strong>. <br />
 
                                 <!-- end content -->
                         </div>
+                        <div class="container_filler">
+                        </div>
                         <div id="right_pane" class="right_pane active">
                                 <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
                                 <div id="right_pane_content" class="right_pane_content">
@@ -439,7 +443,6 @@ Anyways: <strong>This is not that package</strong>. <br />
 
         <script>
                 function handle_toggle_side_bar(e){
-                        console.log(e);
                         let header;
                         let pane; 
                         let target = e.target

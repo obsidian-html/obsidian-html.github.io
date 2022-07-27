@@ -16,8 +16,9 @@ It's possible in Obsidian to have a space in front of a header tag and still hav
    
 This is not allowed in proper markdown though. So this leads to the headers not being recognized by python-markdown.   
    
-This is technically a user error, but it happened to me, and with the new auto-format feature in edit mode, typo's like this are very hard to spot. It's not nice if people use this package and are in the dark as to why their headers are not being rendered.    
+This is technically a user error, but it happened to me, and with the new auto-format feature in edit mode, typo's like this are very hard to spot.    
    
-Besides, if obsidian implements something, obsidianhtml should implement it too, even if it basically means allowing the user to have random spaces in front of their headers.   
+It's not nice if people use this package and are in the dark as to why their headers are not being rendered.     
+Besides, if obsidian implements something, obsidianhtml should implement it too, even if it basically means allowing the user to have random spaces in front of their headers. ^131340   
    
 It's pretty doable to remove these spaces in these cases and only in these cases. The regex in the code is just `(^\ [\ ]*)(?=#)` (one or more spaces from the beginning of the line immediately followed by a `#` are removed).

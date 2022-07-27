@@ -120,14 +120,21 @@ toggles:
       flip_panes: True # switch right and left pane around. (does nothing unless in documentation layout.)
       accent_color: '65, 76, 253'
 
+    theme_picker:
+      enabled: False
+
     code_highlight:
       enabled: True
+
     mermaid_diagrams:
       enabled: False
+
     callouts:
       enabled: True
+
     math_latex:
       enabled: False
+      
     backlinks:
       enabled: True
 
