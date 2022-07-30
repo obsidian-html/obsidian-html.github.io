@@ -17,4 +17,5 @@ test test
    
 [note1#TCP IP Model](./note1.md#tcp-ip-model)   
 [note1#CI CD DevOps](./note1.md#ci-cd-devops)   
-[note1#CI CD DevOps](./note1.md#ci-cd-devops)
+[News](./test/News.md)   
+[News](./News.md)

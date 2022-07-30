@@ -15,3 +15,4 @@ tags:
 - [[Implementing Call-outs]]
 - [[Implementing Latex]]
 - [[Implementing Dataview]]
+- [[Implementing inline tags]]

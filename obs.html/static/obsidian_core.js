@@ -9,7 +9,7 @@ var content_pane_div = "left_pane_content";
 var html_url_prefix = "";
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '114864190379746122679722978480885631696'                       // used to check whether the localStorage data is stale
+var gzip_hash = '163965862105866849651087093912230566019'                       // used to check whether the localStorage data is stale
 
 
 // Onloads
@@ -353,7 +353,6 @@ function load_script_on_demand(path, callback, callback_args){
     elScript.addEventListener('load', (event) => {
         callback(...callback_args);
     });
-    //elScript.onload = callback;
 
     // add script tag to the end of body
     document.getElementsByTagName("body")[0].appendChild( elScript );

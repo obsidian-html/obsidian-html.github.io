@@ -41,6 +41,11 @@ html_url_prefix: ''
 # Note that this file must contain at least "{content}" somewhere in the page.
 html_template_path_str: ''
 
+# Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html
+html_custom_inclusions: []
+html_custom_footer_inclusions:
+  - '<script>console.log("hello")</script>'
+
 # Exclude subfolders
 # These are relative to obsidian_folder_path_str
 # To exclude a folder two levels deep, use level1/level2
@@ -98,7 +103,7 @@ toggles:
 
   # This option should be False for Obsidian->Md, but can be True when compile_md == False
   # Setting it to True will cause an error when two files with the same file name are found anywhere in the input folder
-  allow_duplicate_filenames_in_root: False
+  allow_duplicate_filenames_in_root: True
 
   # Sometimes linked images that should be local (based on the path) cannot be found.
   # Toggle this to False to disable warnings if that happens.
@@ -113,6 +118,9 @@ toggles:
 
   # Whether external http anchor links should have a target of "_blank"
   external_blank: False
+
+  # Will preserve inline tags. This will give polluted markdown output
+  preserve_inline_tags: True
   
   features:
     styling: 

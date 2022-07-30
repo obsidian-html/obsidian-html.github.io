@@ -10,4 +10,5 @@ tags:
 
 [[note1#TCP IP Model]]
 [[note1#CI CD DevOps]]
-[[note1#CI CD DevOps]]
+[[test/News]]
+[[News]]

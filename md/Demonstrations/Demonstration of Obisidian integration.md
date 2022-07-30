@@ -15,4 +15,5 @@ tags:
 - [Implementing Mermaid diagrams in HTML output](../Demonstrations/Implementing%20Mermaid%20diagrams%20in%20HTML%20output.md)   
 - [Implementing Call-outs](../Demonstrations/Implementing%20Call-outs.md)   
 - [Implementing Latex](../Demonstrations/Implementing%20Latex.md)   
-- [Implementing Dataview](../Demonstrations/Implementing%20Dataview.md)
+- [Implementing Dataview](../Demonstrations/Implementing%20Dataview.md)   
+- [Implementing inline tags](../Demonstrations/Implementing%20inline%20tags.md)
