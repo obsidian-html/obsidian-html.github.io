@@ -316,7 +316,29 @@
 	<li><a class="" href="/index_from_tags/index.html"  >index</a></li>
 </ul>
 
-<script src="/index_from_tags/obs.html/static/graph.js" type="text/javascript"></script>
+<div class="graph requires_js hidden">
+    <div id="A5309121740321241255875432537937854232{level}" class="graph_div"></div>
+    
+    <div class="graph-button-row" style="display:flex;">
+        <button class="graph_button graph_show_button" id="B5309121740321241255875432537937854232{level}" level="{level}" note_temp_id="5309121740321241255875432537937854232" onclick="window.ObsHtmlGraph.run(this, '5309121740321241255875432537937854232', 'dirtree');">
+            Show Graph
+        </button>
+        <button class="graph_button graph_type_button" id="C5309121740321241255875432537937854232{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+            2D
+        </button>
+    </div>
+</div>
+
+<script type="module">
+    if (window.ObsHtmlGraph == undefined){
+        import('/index_from_tags/obs.html/static/graph.js').then((Module) => {
+            window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
+        })
+    }
+</script>
+
+
 
                                 <!-- end content -->
                         </div>

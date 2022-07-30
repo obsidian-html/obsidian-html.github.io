@@ -719,7 +719,6 @@ ul.dir-list {
     padding-left: 0px;
 }
 
-
 a.inline-tag:visited,
 a.inline-tag:link,
 a.inline-tag:hover {
@@ -2094,6 +2093,9 @@ blockquote {
     display: none
 }
 
-
+.hide,
+.hidden {
+    display: none
+}
 
 /*  ----------------------------------------- /OVERWRITES ------------------------------------------------ */
