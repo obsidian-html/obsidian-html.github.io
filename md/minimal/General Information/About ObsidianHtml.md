@@ -35,7 +35,7 @@ To convert your notes, you need to point to your notes folder, and to one note t
 By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, [there are other modes available](../Configurations/Modes.md).   
    
 > [!example]   
-> See [Demonstration of Obisidian integration](../Demonstrations/Demonstration%20of%20Obisidian%20integration.md) for a nice demo of the first part.   
+> See [Demonstrations](../Demonstrations/Demonstrations.md) for a nice demo of the first part.   
    
 ## Compatibility   
    

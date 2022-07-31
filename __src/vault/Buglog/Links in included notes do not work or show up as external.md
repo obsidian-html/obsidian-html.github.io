@@ -24,3 +24,4 @@ This issue is fixed starting from version [[v1.1.0]], as there the code for gett
 
 ### DoD
 A regression test has been added for this usecase.
+

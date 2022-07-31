@@ -19,7 +19,7 @@ flowchart LR
 Example code:   
    
 ```
-  ``` mermaid
+``` mermaid
   flowchart LR  
     Start --> Stop 
  \```

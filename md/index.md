@@ -22,7 +22,7 @@ tags:
 - [Report Issues & Request features](./General%20Information/Report%20Issues%20%26%20Request%20features.md)   
 - [How to navigate this site](./General%20Information/Using%20the%20website.md)   
 - [News](./News.md)   
-- [Changelog](./Changelog.md)   
+- [Changelog](./Changelog/Changelog.md)   
    
 Try this site with different [layouts](./Configurations/Styling/Styling.md#layouts):   
 > use ctrl+click when in tabs mode!   

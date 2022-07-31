@@ -35,7 +35,7 @@ To convert your notes, you need to point to your notes folder, and to one note t
 By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, [[Modes|there are other modes available]].
 
 > [!example]
-> See [[Demonstration of Obisidian integration]] for a nice demo of the first part.
+> See [[Demonstrations]] for a nice demo of the first part.
 
 ## Compatibility
 - This application is extensively tested on Linux, regularly tested by users on OSX, and basically never tested on (but intended to be compatible with) Windows.

@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="Demonstration of Obisidian integration">
+                <meta name="node_id" content="Removing obisidian comments">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -28,7 +28,7 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        const CURRENT_NODE = 'Demonstration of Obisidian integration';
+                        const CURRENT_NODE = 'Removing obisidian comments';
                         const HTML_URL_PREFIX = '/index_from_tags';
                 </script>
         </head>
@@ -141,7 +141,7 @@
                 }
         </script>
                                                         <div class="graph_header_div requires_js">
-            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Demonstration of Obisidian integration" title="Open fullpage Graph">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=Removing obisidian comments" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
@@ -254,7 +254,7 @@
 		</ul>
 	</div>
 	<ul class="dir-list">
-		<li><a class="" href="/index_from_tags/Demonstrations/Demonstration of Obisidian integration.html"  >Demonstration of Obisidian integration</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Demonstrations.html"  >Demonstrations</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Getting the basics right.html"  >Getting the basics right</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Call-outs.html"  >Implementing Call-outs</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Dataview.html"  >Implementing Dataview</a></li>
@@ -266,6 +266,7 @@
 		<li><a class="" href="/index_from_tags/Demonstrations/Making Code blocks look pretty.html"  >Making Code blocks look pretty</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Making lists work the same.html"  >Making lists work the same</a></li>
 		<li><a class="" href="/index_from_tags/Demonstrations/Parsing Images, videos, and audio.html"  >Parsing Images, videos, and audio</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Removing obisidian comments.html"  >Removing obisidian comments</a></li>
 	</ul>
 </div>
 <button id="folder-8" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
@@ -315,50 +316,76 @@
                                 </div>
                         </div>
                         <div class="container">
-                                <h1 id="demonstration-of-obisidian-integration">Demonstration of Obisidian integration</h1>
+                                <h1 id="removing-obisidian-comments">Removing obisidian comments</h1>
 <div class="toc">
 <ul>
-<li><a href="#demonstration-of-obisidian-integration" class="anchor-link">Demonstration of Obisidian integration</a></li>
+<li><a href="#removing-obisidian-comments" class="anchor-link">Removing obisidian comments</a><ul>
+<li><a href="#configure" class="anchor-link">Configure</a></li>
+<li><a href="#behavior" class="anchor-link">Behavior</a></li>
+</ul>
+</li>
 </ul>
 </div>
+<blockquote>
+<p>New in <a href="/index_from_tags/Changelog/v3.1.0.html">v3.1.0</a>   </p>
+</blockquote>
+<h2 id="configure">Configure</h2>
+<p>If you don't want the behavior as defined below, you can turn this off by setting the following key in your config yml:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">eraser</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="behavior">Behavior</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">Obisidian</span><span class="w"> </span><span class="s">has</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">comment</span><span class="w"> </span><span class="s">system:</span><span class="w"> </span><span class="s">everything</span><span class="w"> </span><span class="s">between</span><span class="w"> </span><span class="s">%%</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">comment</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">will</span><span class="w"> </span><span class="s">not</span><span class="w"> </span><span class="s">be</span><span class="w"> </span><span class="s">shown</span><span class="w"> </span><span class="s">in</span><span class="w"> </span><span class="s">view</span><span class="w"> </span><span class="s">mode</span><span class="w"></span>
+
+<span class="n">Text</span><span class="w"></span>
+<span class="s">%%</span><span class="w"></span>
+<span class="n">comment</span><span class="w"> </span><span class="s">block</span><span class="w"></span>
+<span class="c">%%</span><span class="w"></span>
+<span class="n">Text</span><span class="w"></span>
+
+<span class="s">Text</span><span class="w"> </span><span class="s">%%</span><span class="w"> </span><span class="s">inline</span><span class="w"> </span><span class="s">comment</span><span class="w"> </span><span class="s">%%</span><span class="w"> </span><span class="s">text</span><span class="w"></span>
+
+<span class="o">-</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="n">removes</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="n">comments</span><span class="p">.</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span>`<span class="c">%%` in codelines/-blocks are ignored.</span><span class="w"></span>
+</code></pre></div>
+
+<p>Below here you will see the same text as above, but outside of the code block:   </p>
+<p>Text <br />
+Text   </p>
+<p>Text  text   </p>
 <ul>
-<li><a href="/index_from_tags/Demonstrations/Getting the basics right.html">Getting the basics right</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Making lists work the same.html">Making lists work the same</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Implementing links &amp; link awareness.html">Implementing links &amp; link awareness</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Parsing Images, videos, and audio.html">Parsing Images, videos, and audio</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Making Code blocks look pretty.html">Making Code blocks look pretty</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Implementing Note Inclusions.html">Implementing Note Inclusions</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Implementing Mermaid diagrams in HTML output</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Implementing Call-outs.html">Implementing Call-outs</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Implementing Latex.html">Implementing Latex</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Implementing Dataview.html">Implementing Dataview</a>   </li>
-<li><a href="/index_from_tags/Demonstrations/Implementing inline tags.html">Implementing inline tags</a></li>
+<li>This extension removes these comments.   </li>
+<li><code>%%</code> in codelines/-blocks are ignored.</li>
 </ul>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v3.1.0.html">v3.1.0</a></li>
+	<li><a class="backlink" href="/index_from_tags/Demonstrations/Demonstrations.html">Demonstrations</a></li>
 </ul>
 </div>
 
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/test_page/index.html">type/test_page</a></li>
-	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-07-31/index.html">date/2022-07-31</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A197594425947593848175930006677133614500{level}" class="graph_div"></div>
+    <div id="A148934427289746243004301690065633098902{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B197594425947593848175930006677133614500{level}" level="{level}" note_temp_id="197594425947593848175930006677133614500" onclick="window.ObsHtmlGraph.run(this, '197594425947593848175930006677133614500', 'Demonstration of Obisidian integration');">
+        <button class="graph_button graph_show_button" id="B148934427289746243004301690065633098902{level}" level="{level}" note_temp_id="148934427289746243004301690065633098902" onclick="window.ObsHtmlGraph.run(this, '148934427289746243004301690065633098902', 'Removing obisidian comments');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C197594425947593848175930006677133614500{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C148934427289746243004301690065633098902{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
