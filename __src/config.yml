@@ -46,6 +46,14 @@ html_custom_inclusions: []
 html_custom_footer_inclusions:
   - '<script>console.log("hello")</script>'
 
+# file_exports:
+#   - encoding: binary
+#     src: /home/dorus/Downloads/favicon.ico
+#     dst: favicon.ico
+#   - src: Resources/Includes/test.md
+#     dst: test.md
+
+
 # Exclude subfolders
 # These are relative to obsidian_folder_path_str
 # To exclude a folder two levels deep, use level1/level2

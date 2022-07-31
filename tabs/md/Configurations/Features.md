@@ -30,6 +30,8 @@ tags:
 - [Mathjax support](../Demonstrations/Implementing%20Latex.md)   
 - [RSS Feed](../Configurations/RSS%20Feed.md)   
 - [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md)   
+- [Export vault files to html output](../Configurations/Export%20vault%20files%20to%20html%20output.md)   
+- [Website navigation menu](../Configurations/Website%20navigation%20menu.md)   
    
 ## Safety   
    

@@ -27,6 +27,8 @@ tags:
 - [[Implementing Latex|Mathjax support]]
 - [[RSS Feed]]
 - [[Create Index from Directory Structure]]
+- [[Export vault files to html output]]
+- [[Website navigation menu]]
 
 ## Safety
 - [[Copy vault to temp dir]]
