@@ -19,6 +19,7 @@
 <script src="/minimal/obs.html/static/obsidian_core.js"></script>
 <script src="/minimal/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
 
 
     </head>
@@ -465,13 +466,14 @@
 <p>Added in <a href="/minimal/Changelog/v2.0.0.html">v2.0.0</a>   </p>
 </blockquote>
 <div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
-<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w"> </span><span class="c1"># documentation, tabs, minimal</span><span class="w"></span>
-<span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">52rem</span><span class="w"> </span><span class="c1"># not supported for layout: tabs</span><span class="w"></span>
-<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">         </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span><span class="w"></span>
-<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">        </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span><span class="w"></span>
-<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">     </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span><span class="w"></span>
-<span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#414cfd&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w">               </span><span class="c1"># documentation, tabs, minimal</span><span class="w"></span>
+<span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">120rem</span><span class="w">              </span><span class="c1"># not supported for layout: tabs</span><span class="w"></span>
+<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                       </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span><span class="w"></span>
+<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                      </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">                   </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">add_dir_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                  </span><span class="c1"># show directory contents in one of the panes (only documentation layout). create_index_from_tags needs to be enabled for &lt;v3.2.0</span><span class="w"></span>
+<span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;65,</span><span class="nv"> </span><span class="s">76,</span><span class="nv"> </span><span class="s">253&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">loading_bg_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;255,</span><span class="nv"> </span><span class="s">255,</span><span class="nv"> </span><span class="s">255&#39;</span><span class="w"></span>
 </code></pre></div>
 
 <p>Read more: <a href="/minimal/Configurations/Styling/Styling.html">Styling</a>   </p>

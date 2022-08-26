@@ -11,6 +11,7 @@ tags:
 - [[Parsing Images, videos, and audio]]
 - [[Making Code blocks look pretty]]
 - [[Implementing Note Inclusions]]
+- [[Implementing Footnotes]]
 - [[Implementing Mermaid diagrams in HTML output]]
 - [[Implementing Call-outs]]
 - [[Implementing Latex]]

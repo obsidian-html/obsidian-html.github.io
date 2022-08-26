@@ -396,13 +396,15 @@ toggles:
 > Added in [v2.0.0](../Changelog/v2.0.0.md)   
 ``` yaml
   features:
-    styling: 
-      layout: documentation # documentation, tabs, minimal
-      max_note_width: 52rem # not supported for layout: tabs
-      add_toc: True         # add "[TOC]" (Table of Contents) when missing
-      toc_pane: True        # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
-      flip_panes: False     # switch right and left pane around. (does nothing unless in documentation layout.)
-      accent_color: '#414cfd'
+      layout: documentation               # documentation, tabs, minimal
+      max_note_width: 120rem              # not supported for layout: tabs
+      add_toc: True                       # add "[TOC]" (Table of Contents) when missing
+      toc_pane: True                      # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
+      flip_panes: False                   # switch right and left pane around. (does nothing unless in documentation layout.)
+      add_dir_list: True                  # show directory contents in one of the panes (only documentation layout). create_index_from_tags needs to be enabled for <v3.2.0
+      accent_color: '65, 76, 253'
+      loading_bg_color: '255, 255, 255'
+      
 ```
    
    

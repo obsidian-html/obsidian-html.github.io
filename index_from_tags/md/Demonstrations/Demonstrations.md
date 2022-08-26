@@ -12,6 +12,7 @@ tags:
 - [Parsing Images, videos, and audio](../Demonstrations/Parsing%20Images%2C%20videos%2C%20and%20audio.md)   
 - [Making Code blocks look pretty](../Demonstrations/Making%20Code%20blocks%20look%20pretty.md)   
 - [Implementing Note Inclusions](../Demonstrations/Implementing%20Note%20Inclusions.md)   
+- [Implementing Footnotes](../Demonstrations/Implementing%20Footnotes.md)   
 - [Implementing Mermaid diagrams in HTML output](../Demonstrations/Implementing%20Mermaid%20diagrams%20in%20HTML%20output.md)   
 - [Implementing Call-outs](../Demonstrations/Implementing%20Call-outs.md)   
 - [Implementing Latex](../Demonstrations/Implementing%20Latex.md)   

@@ -165,7 +165,7 @@ toggles:
       enabled: True
 
     dataview:
-      enabled: False
+      enabled: True
       folder: 'obs.html/export' # relative to the vault being processed. this folder should always be in the vault
 
     folder_notes:
