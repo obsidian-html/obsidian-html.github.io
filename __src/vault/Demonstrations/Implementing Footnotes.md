@@ -1,6 +1,6 @@
 ---
 tags:
-- type/template
+- feature/parsing_markdown
 - date/2022-08-26
 ---
 
