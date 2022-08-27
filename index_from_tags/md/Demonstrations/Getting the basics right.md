@@ -30,4 +30,19 @@ Use two equal signs to ==highlight text==.
 Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
 ```
    
-Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
+Any word wrapped with two tildes (like ~~this~~) will appear crossed out.   
+   
+## Specifics   
+This is safe:   
+   
+```
+
+WINEDEBUG=+io wine XXXX 2> >(sed 's/^[^:]*:io:[^ ]* //' > YYYY
+
+```
+   
+   
+   
+But there is a problem here:   
+   
+`WINEDEBUG=+io wine XXXX 2> >(sed 's/^[^:]*:io:[^ ]* //' > YYYY`

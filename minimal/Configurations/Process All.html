@@ -26,7 +26,14 @@
 
     <body>
         <div class="container">
-            <h1 id="process-all">Process all</h1>
+            
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/minimal/Configurations/Process All.html"  >Process All</a>
+                        </div>
+                    </div>
+<h1 id="process-all">Process all</h1>
 <h2 id="crawling-versus-converting-all-nodes">Crawling versus converting all nodes</h2>
 <p>This package was written with the idea that <a href="/minimal/Configurations/Modes.html#entrypoint-mode">you give one note that will serve as the homepage</a>. Then all the notes that are linked directly or indirectly by that first note are processed, ignoring what else might still be in your vault.   </p>
 <p>Process all is a <a href="/minimal/Configurations/Modes.html">mode</a>, which will tell ObsidianHtml to convert and include all notes in the output.    </p>

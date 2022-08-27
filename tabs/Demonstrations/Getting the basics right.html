@@ -273,7 +273,14 @@
                 <div class="flex_row" id="container_row">
                         <div class="container-wrapper ">
                                 <div class="container">
-                                <h1 id="basics">Basics</h1>
+                                
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/tabs/Demonstrations/Demonstrations.html" style="color: var(--normal-text-color);">Demonstrations</a> / <a href="/tabs/Demonstrations/Getting the basics right.html"  >Getting the basics right</a>
+                        </div>
+                    </div>
+<h1 id="basics">Basics</h1>
 <div class="codehilite"><pre><span></span><code>One enter
 translates to
 a new line, just like in Obsidian!
@@ -292,7 +299,14 @@ a new line, just like in Obsidian!   </p>
 <div class="codehilite"><pre><span></span><code>Any word wrapped with two tildes (like <span class="gd">~~this~~</span>) will appear crossed out.
 </code></pre></div>
 
-<p>Any word wrapped with two tildes (like <span class="formatting_strikethrough">this</span>) will appear crossed out.</p>
+<p>Any word wrapped with two tildes (like <span class="formatting_strikethrough">this</span>) will appear crossed out.   </p>
+<h2 id="specifics">Specifics</h2>
+<p>This is safe:   </p>
+<div class="codehilite"><pre><span></span><code>WINEDEBUG=+io wine XXXX 2&gt; &gt;(sed &#39;s/^[^:]*:io:[^ ]* //&#39; &gt; YYYY
+</code></pre></div>
+
+<p>But there is a problem here:   </p>
+<p><code>WINEDEBUG=+io wine XXXX 2&gt; &gt;(sed 's/^[^:]*:io:[^ ]* //' &gt; YYYY</code></p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -311,13 +325,13 @@ a new line, just like in Obsidian!   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A151514880421402288560345915396988718592{level}" class="graph_div"></div>
+    <div id="A191745971639272445652298044136078776187{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B151514880421402288560345915396988718592{level}" level="{level}" note_temp_id="151514880421402288560345915396988718592" onclick="window.ObsHtmlGraph.run(this, '151514880421402288560345915396988718592', 'Getting the basics right');">
+        <button class="graph_button graph_show_button" id="B191745971639272445652298044136078776187{level}" level="{level}" note_temp_id="191745971639272445652298044136078776187" onclick="window.ObsHtmlGraph.run(this, '191745971639272445652298044136078776187', 'Getting the basics right');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C151514880421402288560345915396988718592{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C191745971639272445652298044136078776187{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

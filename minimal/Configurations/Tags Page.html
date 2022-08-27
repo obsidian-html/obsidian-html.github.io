@@ -26,7 +26,14 @@
 
     <body>
         <div class="container">
-            <h1 id="tags">Tags</h1>
+            
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/minimal/Configurations/Tags Page.html"  >Tags Page</a>
+                        </div>
+                    </div>
+<h1 id="tags">Tags</h1>
 <p>Inline tags are stripped, but frontmatter tags are parsed and added to a site-wide list which can be found under <code>&lt;sitename&gt;/obs.html/tags</code>, see for example: <a href="/obs.html/tags">/obs.html/tags</a>.   </p>
 <p>If you use slashes in your tags, these will be split into different pages (like a tree view). <br />
 E.g. adding the following frontyaml at the top of this note:   </p>

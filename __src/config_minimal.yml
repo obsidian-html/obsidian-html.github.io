@@ -126,6 +126,9 @@ toggles:
     code_highlight:
       enabled: True
 
+    breadcrumbs:
+      enabled: True
+
     mermaid_diagrams:
       enabled: False
 

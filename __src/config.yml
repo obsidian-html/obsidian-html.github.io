@@ -144,6 +144,9 @@ toggles:
     backlinks:
       enabled: True
 
+    breadcrumbs:
+      enabled: True
+
     theme_picker:
       enabled: True
       styling:

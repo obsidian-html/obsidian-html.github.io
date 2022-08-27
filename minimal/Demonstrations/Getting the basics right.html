@@ -26,7 +26,14 @@
 
     <body>
         <div class="container">
-            <h1 id="basics">Basics</h1>
+            
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/minimal/Demonstrations/Demonstrations.html" style="color: var(--normal-text-color);">Demonstrations</a> / <a href="/minimal/Demonstrations/Getting the basics right.html"  >Getting the basics right</a>
+                        </div>
+                    </div>
+<h1 id="basics">Basics</h1>
 <div class="codehilite"><pre><span></span><code>One enter
 translates to
 a new line, just like in Obsidian!
@@ -45,7 +52,14 @@ a new line, just like in Obsidian!   </p>
 <div class="codehilite"><pre><span></span><code>Any word wrapped with two tildes (like <span class="gd">~~this~~</span>) will appear crossed out.
 </code></pre></div>
 
-<p>Any word wrapped with two tildes (like <span class="formatting_strikethrough">this</span>) will appear crossed out.</p>
+<p>Any word wrapped with two tildes (like <span class="formatting_strikethrough">this</span>) will appear crossed out.   </p>
+<h2 id="specifics">Specifics</h2>
+<p>This is safe:   </p>
+<div class="codehilite"><pre><span></span><code>WINEDEBUG=+io wine XXXX 2&gt; &gt;(sed &#39;s/^[^:]*:io:[^ ]* //&#39; &gt; YYYY
+</code></pre></div>
+
+<p>But there is a problem here:   </p>
+<p><code>WINEDEBUG=+io wine XXXX 2&gt; &gt;(sed 's/^[^:]*:io:[^ ]* //' &gt; YYYY</code></p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>

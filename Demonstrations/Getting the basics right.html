@@ -325,7 +325,14 @@
                                 </div>
                         </div>
                         <div class="container">
-                                <h1 id="basics">Basics</h1>
+                                
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/Demonstrations/Demonstrations.html" style="color: var(--normal-text-color);">Demonstrations</a> / <a href="/Demonstrations/Getting the basics right.html"  >Getting the basics right</a>
+                        </div>
+                    </div>
+<h1 id="basics">Basics</h1>
 <div class="toc">
 <ul>
 <li><a href="#basics" class="anchor-link">Basics</a><ul>
@@ -334,6 +341,7 @@
 <li><a href="#strikethrough" class="anchor-link">Strikethrough</a></li>
 </ul>
 </li>
+<li><a href="#specifics" class="anchor-link">Specifics</a></li>
 </ul>
 </li>
 </ul>
@@ -356,7 +364,14 @@ a new line, just like in Obsidian!   </p>
 <div class="codehilite"><pre><span></span><code>Any word wrapped with two tildes (like <span class="gd">~~this~~</span>) will appear crossed out.
 </code></pre></div>
 
-<p>Any word wrapped with two tildes (like <span class="formatting_strikethrough">this</span>) will appear crossed out.</p>
+<p>Any word wrapped with two tildes (like <span class="formatting_strikethrough">this</span>) will appear crossed out.   </p>
+<h2 id="specifics">Specifics</h2>
+<p>This is safe:   </p>
+<div class="codehilite"><pre><span></span><code>WINEDEBUG=+io wine XXXX 2&gt; &gt;(sed &#39;s/^[^:]*:io:[^ ]* //&#39; &gt; YYYY
+</code></pre></div>
+
+<p>But there is a problem here:   </p>
+<p><code>WINEDEBUG=+io wine XXXX 2&gt; &gt;(sed 's/^[^:]*:io:[^ ]* //' &gt; YYYY</code></p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -375,13 +390,13 @@ a new line, just like in Obsidian!   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A270054508866537985422184721691413414095{level}" class="graph_div"></div>
+    <div id="A51184940949761164984481311982995529854{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B270054508866537985422184721691413414095{level}" level="{level}" note_temp_id="270054508866537985422184721691413414095" onclick="window.ObsHtmlGraph.run(this, '270054508866537985422184721691413414095', 'Getting the basics right');">
+        <button class="graph_button graph_show_button" id="B51184940949761164984481311982995529854{level}" level="{level}" note_temp_id="51184940949761164984481311982995529854" onclick="window.ObsHtmlGraph.run(this, '51184940949761164984481311982995529854', 'Getting the basics right');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C270054508866537985422184721691413414095{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C51184940949761164984481311982995529854{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
