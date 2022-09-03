@@ -30,7 +30,9 @@ These features implement standard Obsidian behavior in the html output.
 | [[Tags Page]] | Add a list of tags under each note. Nb: the default preserve_inline_tags setting will create polluted md output! | Enabled |
 | [[Configuration Options#Simple feature toggles\|Erase comments]] | Remove anything in between `%%` | Enabled |
 
-## Extras
+### Extras
+These features add functionality from popular obsidian plugins, or extra functionality that make sense for websites (such as an rss feed).
+
 | Feature | Short description | Default |
 | ------- | ----------------- | ------- |
 | [[Folder Notes]] | Open a note when you click on a directory | Enabled |

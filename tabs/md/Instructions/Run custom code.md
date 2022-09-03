@@ -20,7 +20,7 @@ git clone git@github.com:obsidian-html/obsidian-html.git
 # Move into folder
 cd obsidian-html
 
-# Install all the dependencies of the package, but not the package itself.
+# Install all the dependencies of the package, and the package itself.
 # You only need to do this once.
 pip install .
 

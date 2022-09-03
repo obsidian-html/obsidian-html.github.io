@@ -24,6 +24,14 @@ After a clean install of Python, you need to upgrade pip (the python package man
 pip install --upgrade pip
 ```
 
+When running on Windows,  also run:
+
+```bash
+pip install --pre pythonnet
+```
+For more information: [[Installation#On Windows]].
+
+
 Now we can install ObsidianHtml:
 
 ``` bash
@@ -53,7 +61,7 @@ obsidianhtml -i config.yaml
 This will create the folder `output` in your current folder, containing `output/md` and `output/html` for the proper markdown and the html website respectively.
 
 > [!caution]- Caution: don't run this command **in** your vault!
-> **Do not** run this command in your vault, as it will create the output in your vault, which will cause a DuplicateFileName error on subsequent runs! 
+> **Do not** run this command in your vault, as it will create the output in your vault, which can confuse Obsidian and causes issues in ObsidianHtml in later runs!
 
 If you place your config in your vault, then go a folder up and run `obsidianhtml -i <vault folder name>/config.yaml`. Alternatively, add the following settings to your config.yml to control the output location (adjust the paths to make sense for your environment):
 
