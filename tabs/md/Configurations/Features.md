@@ -19,6 +19,7 @@ tags:
 ## HTML features   
 ### Add-ons   
 These features implement standard Obsidian behavior in the html output.   
+   
 | Feature | Short description | Default |   
 | ------- | ----------------- | ------- |   
 | [Backlinks](../Configurations/Backlinks.md) | Adds the backlinks to the note at the bottom of the note. | Enabed |   
