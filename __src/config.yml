@@ -185,7 +185,7 @@ toggles:
     folder_notes:
       enabled: True
       placement: 'inside folder'   # 'inside folder' , 'outside folder' 
-      naming: 'folder name'           # 'folder name', 'index'
+      naming: 'folder name'
 
 
     # Create an index.md with links to notes that have one of the given tags.

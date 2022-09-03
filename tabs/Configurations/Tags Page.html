@@ -281,7 +281,28 @@
                         </div>
                     </div>
 <h1 id="tags">Tags</h1>
-<p>Inline tags are stripped, but frontmatter tags are parsed and added to a site-wide list which can be found under <code>&lt;sitename&gt;/obs.html/tags</code>, see for example: <a href="/obs.html/tags">/obs.html/tags</a>.   </p>
+<h2 id="preserve-inline-tags">Preserve inline tags</h2>
+<p>Inline tags are preserved by default, but this will create polluted markdown output. You can disable this feature by setting:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Will preserve inline tags. This will give polluted markdown output</span><span class="w"></span>
+<span class="w">    </span><span class="nt">preserve_inline_tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+<p>The inline tags will be added to the tags_list regardless. See also    </p>
+<h2 id="tags-page">Tags page</h2>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">tags_page</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_in_note_footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>This is the default setting, and will create an html page at under <code>&lt;sitename&gt;/obs.html/tags</code>, see for example: <a href="/obs.html/tags">/obs.html/tags</a>.   </p>
+<h3 id="tags-list-in-note">Tags list in note</h3>
+<p>The <code>show_in_note_footer</code> setting above determines whether the tags will be listed at the bottom of each note as well. Note that you have to create the tags_page for this function to work, at the tags will be links pointing to their respective tag pages.   </p>
+<h2 id="note-on-slashes">Note on slashes</h2>
 <p>If you use slashes in your tags, these will be split into different pages (like a tree view). <br />
 E.g. adding the following frontyaml at the top of this note:   </p>
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
@@ -314,13 +335,13 @@ E.g. adding the following frontyaml at the top of this note:   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A187549519584948197281199686763485290662{level}" class="graph_div"></div>
+    <div id="A233056236540582294768322464576770069497{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B187549519584948197281199686763485290662{level}" level="{level}" note_temp_id="187549519584948197281199686763485290662" onclick="window.ObsHtmlGraph.run(this, '187549519584948197281199686763485290662', 'Tags Page');">
+        <button class="graph_button graph_show_button" id="B233056236540582294768322464576770069497{level}" level="{level}" note_temp_id="233056236540582294768322464576770069497" onclick="window.ObsHtmlGraph.run(this, '233056236540582294768322464576770069497', 'Tags Page');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C187549519584948197281199686763485290662{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C233056236540582294768322464576770069497{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

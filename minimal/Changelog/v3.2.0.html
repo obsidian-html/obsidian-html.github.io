@@ -43,7 +43,12 @@ Not yet published!   </p>
 <li>It is now possible to configure vault files to be exported to any path in the html output folder. <a href="/minimal/Configurations/Export vault files to html output.html">Export vault files to html output</a>.   </li>
 <li>The rsync copy method was added. This should be way quicker and be less buggy on MacOS. This is set as the default. If rsync is not present it fallsback to the older shutil method. Read more: <a href="/minimal/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a>   </li>
 <li>Inline footnotes are now supported. <a href="/minimal/Demonstrations/Implementing Footnotes.html">Implementing Footnotes</a>   </li>
-<li><mark class="formatting_highlight">Highlight</mark> and <span class="formatting_strikethrough">strikethrough</span> formatting has been added. <a href="/minimal/Demonstrations/Getting the basics right.html#formatting">Getting the basics right#Formatting</a></li>
+<li><mark class="formatting_highlight">Highlight</mark> and <span class="formatting_strikethrough">strikethrough</span> formatting has been added. <a href="/minimal/Demonstrations/Getting the basics right.html#formatting">Getting the basics right#Formatting</a>   </li>
+<li>ObisidianHtml now briefly highlights the section that was linked to when following a link.   </li>
+</ul>
+<h2 id="bugfixes">Bugfixes</h2>
+<ul>
+<li><code>\|</code> as can be used when wanting to type <code>|</code> in a table,  no longer leads to butchered table output. Note that any occurence of <code>\|</code> outside of codeblocks/-lines will be replaced with <code>|</code>!</li>
 </ul>
 <div class="note-footer">
 <div class="backlinks">

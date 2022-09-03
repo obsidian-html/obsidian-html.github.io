@@ -194,6 +194,10 @@
 <td style="text-align: left;"><a href="/minimal/Configurations/Configuration Options.html#external_blank">external_blank</a></td>
 <td style="text-align: left;">Control whether external links will open in a new tab or not</td>
 </tr>
+<tr>
+<td style="text-align: left;"><a href="/minimal/Configurations/Configuration Options.html#preserve_inline_tags">preserve_inline_tags</a></td>
+<td style="text-align: left;">Control whether inline tags will be removed from the note</td>
+</tr>
 </tbody>
 </table>
 <h3 id="feature-settings">Feature settings</h3>
@@ -228,6 +232,14 @@
 <tr>
 <td style="text-align: left;"><a href="/minimal/Configurations/RSS Feed.html">RSS Feed</a></td>
 <td style="text-align: left;">Compile (a selection of) your notes into an RSS Feed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="/minimal/Configurations/Folder Notes.html">Folder Notes</a></td>
+<td style="text-align: left;">Attach a note to a folder.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="/minimal/Configurations/Configuration Options.html#simple-feature-toggles">Simple feature toggles</a></td>
+<td style="text-align: left;">Ability to disable various components</td>
 </tr>
 </tbody>
 </table>
@@ -553,7 +565,34 @@
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
 
-<p>Read more: <a href="/minimal/Configurations/Backlinks.html">Backlinks</a></p>
+<p>Read more: <a href="/minimal/Configurations/Backlinks.html">Backlinks</a>   </p>
+<h3 id="simple-feature-toggles">Simple feature toggles</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">code_highlight</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mermaid_diagrams</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">callouts</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">math_latex</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">backlinks</span><span class="p">:</span><span class="w">                  </span><span class="c1"># Show backlinks at the bottom of each note</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">tags_page</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_in_note_footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">eraser</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">breadcrumbs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>

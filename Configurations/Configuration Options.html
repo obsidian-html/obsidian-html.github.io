@@ -250,6 +250,7 @@
 		<li><a class="" href="/Configurations/Create index from tags.html"  >Create index from tags</a></li>
 		<li><a class="" href="/Configurations/Export vault files to html output.html"  >Export vault files to html output</a></li>
 		<li><a class="" href="/Configurations/Features.html"  >Features</a></li>
+		<li><a class="" href="/Configurations/Folder Notes.html"  >Folder Notes</a></li>
 		<li><a class="" href="/Configurations/Graph view.html"  >Graph view</a></li>
 		<li><a class="" href="/Configurations/Modes.html"  >Modes</a></li>
 		<li><a class="" href="/Configurations/NoTabs Mode.html"  >NoTabs Mode</a></li>
@@ -389,6 +390,7 @@
 <li><a href="#create-index-from-tags" class="anchor-link">Create Index From Tags</a></li>
 <li><a href="#create-index-from-directory-structure" class="anchor-link">Create Index From Directory Structure</a></li>
 <li><a href="#backlinks" class="anchor-link">Backlinks</a></li>
+<li><a href="#simple-feature-toggles" class="anchor-link">Simple feature toggles</a></li>
 </ul>
 </li>
 </ul>
@@ -555,6 +557,10 @@
 <td style="text-align: left;"><a href="/Configurations/Configuration Options.html#external_blank">external_blank</a></td>
 <td style="text-align: left;">Control whether external links will open in a new tab or not</td>
 </tr>
+<tr>
+<td style="text-align: left;"><a href="/Configurations/Configuration Options.html#preserve_inline_tags">preserve_inline_tags</a></td>
+<td style="text-align: left;">Control whether inline tags will be removed from the note</td>
+</tr>
 </tbody>
 </table>
 <h3 id="feature-settings">Feature settings</h3>
@@ -589,6 +595,14 @@
 <tr>
 <td style="text-align: left;"><a href="/Configurations/RSS Feed.html">RSS Feed</a></td>
 <td style="text-align: left;">Compile (a selection of) your notes into an RSS Feed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="/Configurations/Folder Notes.html">Folder Notes</a></td>
+<td style="text-align: left;">Attach a note to a folder.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="/Configurations/Configuration Options.html#simple-feature-toggles">Simple feature toggles</a></td>
+<td style="text-align: left;">Ability to disable various components</td>
 </tr>
 </tbody>
 </table>
@@ -914,7 +928,34 @@
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
 
-<p>Read more: <a href="/Configurations/Backlinks.html">Backlinks</a></p>
+<p>Read more: <a href="/Configurations/Backlinks.html">Backlinks</a>   </p>
+<h3 id="simple-feature-toggles">Simple feature toggles</h3>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">code_highlight</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mermaid_diagrams</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">callouts</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">math_latex</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">backlinks</span><span class="p">:</span><span class="w">                  </span><span class="c1"># Show backlinks at the bottom of each note</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">tags_page</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_in_note_footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">eraser</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">    </span><span class="nt">breadcrumbs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -952,13 +993,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A51103436458376326022814512734923975092{level}" class="graph_div"></div>
+    <div id="A267785562692593069116813487934142200312{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B51103436458376326022814512734923975092{level}" level="{level}" note_temp_id="51103436458376326022814512734923975092" onclick="window.ObsHtmlGraph.run(this, '51103436458376326022814512734923975092', 'Configuration Options');">
+        <button class="graph_button graph_show_button" id="B267785562692593069116813487934142200312{level}" level="{level}" note_temp_id="267785562692593069116813487934142200312" onclick="window.ObsHtmlGraph.run(this, '267785562692593069116813487934142200312', 'Configuration Options');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C51103436458376326022814512734923975092{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C267785562692593069116813487934142200312{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

@@ -5,8 +5,35 @@ tags:
 ---
    
 # Tags   
-Inline tags are stripped, but frontmatter tags are parsed and added to a site-wide list which can be found under `<sitename>/obs.html/tags`, see for example: [/obs.html/tags](/obs.html/tags).   
+## Preserve inline tags   
+Inline tags are preserved by default, but this will create polluted markdown output. You can disable this feature by setting:   
+``` yaml
+toggles:
+	# Will preserve inline tags. This will give polluted markdown output
+	preserve_inline_tags: False
+```
    
+   
+The inline tags will be added to the tags_list regardless. See also    
+   
+## Tags page   
+``` yaml
+toggles:
+  features:
+    tags_page:
+      enabled: True
+      styling:
+        show_icon: True
+        show_in_note_footer: True
+```
+   
+   
+This is the default setting, and will create an html page at under `<sitename>/obs.html/tags`, see for example: [/obs.html/tags](/obs.html/tags).   
+   
+### Tags list in note   
+The `show_in_note_footer` setting above determines whether the tags will be listed at the bottom of each note as well. Note that you have to create the tags_page for this function to work, at the tags will be links pointing to their respective tag pages.   
+   
+## Note on slashes   
 If you use slashes in your tags, these will be split into different pages (like a tree view).   
 E.g. adding the following frontyaml at the top of this note:   
    

@@ -28,54 +28,57 @@ We will now go through all the settings in more-or-less the same order as the ou
 ### Paths
 | config | Short description |
 | :------ | :--------------- |
-| [[Configuration Options#obsidian_folder_path_str|obsidian_folder_path_str]] | The location of your vault directory |
-| [[Configuration Options#obsidian_entrypoint_path_str|obsidian_entrypoint_path_str]] | The location of your entrypoint note |
-| [[Configuration Options#md_folder_path_str|md_folder_path_str]] | The (output/input) location of your markdown files |
-| [[Configuration Options#md_entrypoint_path_str|md_entrypoint_path_str]] | The (output/input) location of your markdown entrypoint file |
-| [[Configuration Options#html_output_folder_path_str|html_output_folder_path_str]] | The output location of your html files |
+| [[Configuration Options#obsidian_folder_path_str\|obsidian_folder_path_str]] | The location of your vault directory |
+| [[Configuration Options#obsidian_entrypoint_path_str\|obsidian_entrypoint_path_str]] | The location of your entrypoint note |
+| [[Configuration Options#md_folder_path_str\|md_folder_path_str]] | The (output/input) location of your markdown files |
+| [[Configuration Options#md_entrypoint_path_str\|md_entrypoint_path_str]] | The (output/input) location of your markdown entrypoint file |
+| [[Configuration Options#html_output_folder_path_str\|html_output_folder_path_str]] | The output location of your html files |
 
 ### Operational settings
 | config | Short description |
 | :------ | :--------------- |
-| [[Configuration Options#Exclude Subfolders|Exclude Subfolders]] | Subfolders from your vault directory to ignore |
-| [[Configuration Options#Copy Vault to Tempdir|Copy Vault to Tempdir]] | (On/Off) Copy vault into temp dir prior to parsing |
-| [[Configuration Options#included_file_suffixes|included_file_suffixes]] | List of all suffixes that should be treated as files, not notes |
-| [[Configuration Options#video_format_suffixes|video_format_suffixes]] | List of all suffixes that should be treated as video files |
-| [[Configuration Options#audio_format_suffixes|audio_format_suffixes]] | List of all suffixes that should be treated as audio files |
+| [[Configuration Options#Exclude Subfolders\|Exclude Subfolders]] | Subfolders from your vault directory to ignore |
+| [[Configuration Options#Copy Vault to Tempdir\|Copy Vault to Tempdir]] | (On/Off) Copy vault into temp dir prior to parsing |
+| [[Configuration Options#included_file_suffixes\|included_file_suffixes]] | List of all suffixes that should be treated as files, not notes |
+| [[Configuration Options#video_format_suffixes\|video_format_suffixes]] | List of all suffixes that should be treated as video files |
+| [[Configuration Options#audio_format_suffixes\|audio_format_suffixes]] | List of all suffixes that should be treated as audio files |
 
 ### HTML settings
 | config | Short description |
 | :------ | :--------------- |
-| [[Configuration Options#Site name|Site name]] | Name of your website, to be used in the `<title>` and such |
-| [[Configuration Options#Html Url Prefix|Html Url Prefix]] | Used to deploy your website to `http://domain.name/[html_url_prefix]/` |
-| [[Configuration Options#Navbar_links|navbar_links]] | Set the website navigation menu items. |
-| [[Configuration Options#Html Template Path Str|Html Template Path Str]] | Used to pass in your own custom template |
-| [[Configuration Options#Html Custom Inclusions|Html Custom Inclusions]] | Used to pass in your own css/js files |
+| [[Configuration Options#Site name\|Site name]] | Name of your website, to be used in the `<title>` and such |
+| [[Configuration Options#Html Url Prefix\|Html Url Prefix]] | Used to deploy your website to `http://domain.name/[html_url_prefix]/` |
+| [[Configuration Options#Navbar_links\|navbar_links]] | Set the website navigation menu items. |
+| [[Configuration Options#Html Template Path Str\|Html Template Path Str]] | Used to pass in your own custom template |
+| [[Configuration Options#Html Custom Inclusions\|Html Custom Inclusions]] | Used to pass in your own css/js files |
 
 ### Toggles
 | config | Short description |
 | :------ | :--------------- |
-| [[Configuration Options#Compile Md|Compile Md]] | Used to skip the obsidian --> markdown compilation step |
-| [[Configuration Options#Compile Html|Compile Html]] | Used to skip the markdown --> html compilation step |
-| [[Configuration Options#Process all|Process all]] | Include all notes. Read more: [[Process All]] |
-| [[Configuration Options#verbose_printout|verbose_printout]] | Used for debugging, show in detail what is going on during processing. |
-| [[Configuration Options#Allow Duplicate Filenames in Root|Allow Duplicate Filenames in Root]] | By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off. |
-| [[Configuration Options#Warn on Skipped Image|Warn on Skipped Image]] | By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off. |
-| [[Configuration Options#no_clean|no_clean]] | Use if you want to clean the output directories yourself, e.g. to preserve the .git folder. |
-| [[Configuration Options#no_tabs|no_tabs]] | Turn off tabs. Read more: [[NoTabs Mode]] |
-| [[Configuration Options#relative_path_md|relative_path_md]] | Compile markdown links relatively or with absolute paths |
-| [[Configuration Options#relative_path_html|relative_path_html]] | Compile html links relatively or with absolute paths |
-| [[Configuration Options#external_blank|external_blank]] | Control whether external links will open in a new tab or not |
+| [[Configuration Options#Compile Md\|Compile Md]] | Used to skip the obsidian --> markdown compilation step |
+| [[Configuration Options#Compile Html\|Compile Html]] | Used to skip the markdown --> html compilation step |
+| [[Configuration Options#Process all\|Process all]] | Include all notes. Read more: [[Process All]] |
+| [[Configuration Options#verbose_printout\|verbose_printout]] | Used for debugging, show in detail what is going on during processing. |
+| [[Configuration Options#Allow Duplicate Filenames in Root\|Allow Duplicate Filenames in Root]] | By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off. |
+| [[Configuration Options#Warn on Skipped Image\|Warn on Skipped Image]] | By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off. |
+| [[Configuration Options#no_clean\|no_clean]] | Use if you want to clean the output directories yourself, e.g. to preserve the .git folder. |
+| [[Configuration Options#no_tabs\|no_tabs]] | Turn off tabs. Read more: [[NoTabs Mode]] |
+| [[Configuration Options#relative_path_md\|relative_path_md]] | Compile markdown links relatively or with absolute paths |
+| [[Configuration Options#relative_path_html\|relative_path_html]] | Compile html links relatively or with absolute paths |
+| [[Configuration Options#external_blank\|external_blank]] | Control whether external links will open in a new tab or not |
+| [[Configuration Options#preserve_inline_tags\|preserve_inline_tags]] | Control whether inline tags will be removed from the note |
 
 ### Feature settings
 | config | Short description |
 | :------ | :--------------- |
-| [[Configuration Options#Styling|Styling]] | Configure the layout and layout setting. Read more [[Styling]] |
-| [[Configuration Options#Graph|Graph]] | Configure the graph view. Read more [[Graph view]] |
-| [[Configuration Options#Create Index From Tags|Create Index From Tags]] | Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.|
-| [[Configuration Options#Create Index From Directory Structure|Create Index From Directory Structure]] | Overwrite the index.html file with an index that lists all the folders and files in a tree structure. |
-| [[Configuration Options#Backlinks|Backlinks]] | Turn backlinks on or off. |
+| [[Configuration Options#Styling\|Styling]] | Configure the layout and layout setting. Read more [[Styling]] |
+| [[Configuration Options#Graph\|Graph]] | Configure the graph view. Read more [[Graph view]] |
+| [[Configuration Options#Create Index From Tags\|Create Index From Tags]] | Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.|
+| [[Configuration Options#Create Index From Directory Structure\|Create Index From Directory Structure]] | Overwrite the index.html file with an index that lists all the folders and files in a tree structure. |
+| [[Configuration Options#Backlinks\|Backlinks]] | Turn backlinks on or off. |
 | [[RSS Feed]] | Compile (a selection of) your notes into an RSS Feed. |
+| [[Folder Notes]] | Attach a note to a folder. |
+| [[Configuration Options#Simple feature toggles\|Simple feature toggles]] | Ability to disable various components |
 
 
 ## Paths
@@ -457,3 +460,32 @@ toggles
 ```
 
 Read more: [[Backlinks]]
+
+### Simple feature toggles
+``` yaml
+toggles
+  features:
+    code_highlight:
+      enabled: True
+    mermaid_diagrams:
+      enabled: True
+    callouts:
+      enabled: True
+    math_latex:
+      enabled: True
+    backlinks:                  # Show backlinks at the bottom of each note
+      enabled: True
+    search:
+      enabled: True
+      styling:
+        show_icon: True
+    tags_page:
+      enabled: True
+      styling:
+        show_icon: True
+        show_in_note_footer: True
+    eraser:
+      enabled: True
+    breadcrumbs:
+      enabled: False
+```

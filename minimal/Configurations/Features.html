@@ -46,25 +46,66 @@
 <li><a href="/minimal/Configurations/Configuration Options.html#exclude-subfolders">Excluding vault subfolders</a>   </li>
 </ul>
 <h2 id="html-features">HTML features</h2>
-<ul>
-<li><a href="/minimal/Configurations/Styling/Styling.html">Styling</a> (Layouts)   </li>
-<li><a href="/minimal/Configurations/Styling/Styling.html#table-of-contents">Table of Contents</a>   </li>
-<li><a href="/minimal/Configurations/Graph view.html">Graph view</a>   </li>
-<li><a href="/minimal/Configurations/Backlinks.html">Backlinks</a>   </li>
-<li><a href="/minimal/Configurations/Tags Page.html">Tags Page</a>   </li>
-<li><a href="/minimal/Configurations/Configuration Options.html#html-template-path-str">Use custom HTML template</a>   </li>
-<li><a href="/minimal/Configurations/Configuration Options.html#html-custom-inclusions">Custom stylesheet/javascript inclusions</a>   </li>
-<li><a href="/minimal/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Mermaid diagrams</a>   </li>
-<li><a href="/minimal/Demonstrations/Implementing Call-outs.html">Call-outs</a>   </li>
-<li><a href="/minimal/Demonstrations/Implementing Latex.html">Mathjax support</a>   </li>
-<li><a href="/minimal/Configurations/RSS Feed.html">RSS Feed</a>   </li>
-<li><a href="/minimal/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a>   </li>
-<li><a href="/minimal/Configurations/Export vault files to html output.html">Export vault files to html output</a>   </li>
-<li><a href="/minimal/Configurations/Website navigation menu.html">Website navigation menu</a>   </li>
-</ul>
+<h3 id="add-ons">Add-ons</h3>
+<p>These features implement standard Obsidian behavior in the html output. <br />
+| Feature | Short description | Default | <br />
+| ------- | ----------------- | ------- | <br />
+| <a href="/minimal/Configurations/Backlinks.html">Backlinks</a> | Adds the backlinks to the note at the bottom of the note. | Enabed | <br />
+| <a href="/minimal/Demonstrations/Implementing Call-outs.html">Call-outs</a> | Enable call-outs | Enabled | <br />
+| <a href="/minimal/Configurations/Graph view.html">Graph view</a> | Add graph view at the bottom of the note | Enabled | <br />
+| <a href="/minimal/Demonstrations/Implementing Latex.html">Mathjax support</a> | Convert mathjax code to formulas | Enabled | <br />
+| <a href="/minimal/Demonstrations/Implementing Mermaid diagrams in HTML output.html">Mermaid diagrams</a> | Convert mermaid code to diagrams | Enabled | <br />
+| <a href="/minimal/Configurations/Styling/Styling.html">Styling</a> | Enable user to switch between light and dark mode / Choose a different layout. | Enabled | <br />
+| <a href="/minimal/Configurations/Styling/Styling.html#table-of-contents">Table of Contents</a> | Add TOC to side-pane instead of in note / add TOC to notes when missing | Enabled | <br />
+| <a href="/minimal/Configurations/Tags Page.html">Tags Page</a> | Add a list of tags under each note. Nb: the default preserve_inline_tags setting will create polluted md output! | Enabled | <br />
+| <a href="/minimal/Configurations/Configuration Options.html#simple-feature-toggles">Erase comments</a> | Remove anything in between <code>%%</code> | Enabled |   </p>
+<h2 id="extras">Extras</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Short description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/minimal/Configurations/Folder Notes.html">Folder Notes</a></td>
+<td>Open a note when you click on a directory</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/minimal/Configurations/RSS Feed.html">RSS Feed</a></td>
+<td>Output an rss feed.</td>
+<td><strong>Disabled</strong></td>
+</tr>
+<tr>
+<td><a href="/minimal/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></td>
+<td>Create a homepage based on your directory structure</td>
+<td>Enabled, but points to <code>obs.html/dir_index.html</code> instead of <code>index.html</code> by default.</td>
+</tr>
+<tr>
+<td><a href="/minimal/Configurations/Website navigation menu.html">Website navigation menu</a></td>
+<td>Add shortcuts at the top of the page.</td>
+<td>Enabled, but empty list</td>
+</tr>
+<tr>
+<td><a href="/minimal/Configurations/Configuration Options.html#simple-feature-toggles">Breadcrumbs</a></td>
+<td>Add the path to the note at the top of the note</td>
+<td>Disabled, but enabled on this website</td>
+</tr>
+</tbody>
+</table>
 <h2 id="safety">Safety</h2>
 <ul>
 <li><a href="/minimal/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a>   </li>
+</ul>
+<h2 id="extensability">Extensability</h2>
+<ul>
+<li><a href="/minimal/Configurations/Configuration Options.html#html-custom-inclusions">Custom stylesheet/javascript inclusions</a>   </li>
+<li><a href="/minimal/Configurations/Configuration Options.html#html-template-path-str">Use custom HTML template</a>   </li>
+<li><a href="/minimal/Configurations/Export vault files to html output.html">Export vault files to html output</a>   </li>
+<li><a href="/minimal/Configurations/Styling/Writing a custom graph view template.html">Writing a custom graph view template</a>   </li>
 </ul>
 <h2 id="other">Other</h2>
 <p>See <a href="/minimal/Configurations/Configuration Options.html">Configuration Options</a> for a detailed look at all the configuration options available.</p>

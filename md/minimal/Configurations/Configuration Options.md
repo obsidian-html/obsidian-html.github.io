@@ -67,6 +67,7 @@ We will now go through all the settings in more-or-less the same order as the ou
 | [relative_path_md](../Configurations/Configuration%20Options.md#relative_path_md) | Compile markdown links relatively or with absolute paths |   
 | [relative_path_html](../Configurations/Configuration%20Options.md#relative_path_html) | Compile html links relatively or with absolute paths |   
 | [external_blank](../Configurations/Configuration%20Options.md#external_blank) | Control whether external links will open in a new tab or not |   
+| [preserve_inline_tags](../Configurations/Configuration%20Options.md#preserve_inline_tags) | Control whether inline tags will be removed from the note |   
    
 ### Feature settings   
 | config | Short description |   
@@ -77,6 +78,8 @@ We will now go through all the settings in more-or-less the same order as the ou
 | [Create Index From Directory Structure](../Configurations/Configuration%20Options.md#create-index-from-directory-structure) | Overwrite the index.html file with an index that lists all the folders and files in a tree structure. |   
 | [Backlinks](../Configurations/Configuration%20Options.md#backlinks) | Turn backlinks on or off. |   
 | [RSS Feed](../Configurations/RSS%20Feed.md) | Compile (a selection of) your notes into an RSS Feed. |   
+| [Folder Notes](../Configurations/Folder%20Notes.md) | Attach a note to a folder. |   
+| [Simple feature toggles](../Configurations/Configuration%20Options.md#simple-feature-toggles) | Ability to disable various components |   
    
    
 ## Paths   
@@ -490,4 +493,33 @@ toggles
 ```
    
    
-Read more: [Backlinks](../Configurations/Backlinks.md)
+Read more: [Backlinks](../Configurations/Backlinks.md)   
+   
+### Simple feature toggles   
+``` yaml
+toggles
+  features:
+    code_highlight:
+      enabled: True
+    mermaid_diagrams:
+      enabled: True
+    callouts:
+      enabled: True
+    math_latex:
+      enabled: True
+    backlinks:                  # Show backlinks at the bottom of each note
+      enabled: True
+    search:
+      enabled: True
+      styling:
+        show_icon: True
+    tags_page:
+      enabled: True
+      styling:
+        show_icon: True
+        show_in_note_footer: True
+    eraser:
+      enabled: True
+    breadcrumbs:
+      enabled: False
+```

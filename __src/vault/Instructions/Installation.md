@@ -15,6 +15,16 @@ Do this by executing the following command:
 pip install --upgrade pip
 ```
 
+### On Windows
+Windows needs pythonnet to be installed. You should be able to do this by running this command:
+``` bash
+pip install --pre pythonnet
+```
+
+> In the future the `--pre` might become obsolete.
+
+If this doesn't work consult https://stackoverflow.com/questions/67418533/how-to-fix-error-during-pythonnet-installation/67418773#67418773 **and** please let us know: [[Report Issues & Request features]] so that we can improve this instruction.
+
 ## Installation
 You can choose to install ObsidianHtml via the official PyPi package, or opt to use the latest build. 
 
