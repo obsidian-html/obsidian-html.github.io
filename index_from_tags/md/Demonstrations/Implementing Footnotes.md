@@ -42,6 +42,8 @@ Sed ut ipsum sit amet tellus dapibus pellentesque. Ut sem quam, ultrices in inte
    
    
 ## Inline footnotes   
+> New in [v3.2.0](../Changelog/v3.2.0.md)   
+   
 ```md
 You can also use inline footnotes. ^[notice that the carat goes outside of the brackets on this one.]
 ```

@@ -16,6 +16,8 @@ The temporary dir will be removed once ObisidianHtml is done running. This shoul
 See config options: [Configuration Options#Copy Vault to Tempdir](../Configurations/Configuration%20Options.md#copy-vault-to-tempdir)   
    
 ## Exclude subfolders   
+> New in [v3.2.0](../Changelog/v3.2.0.md)   
+   
 The copy method will exclude the subfolders set under [exclude_subfolders](../Configurations/Configuration%20Options.md#exclude-subfolders).   
    
 ## Copy methods   
@@ -25,6 +27,8 @@ We started out with a simple `distutils.dir_util.copy_tree()` call, which is kin
 This turned out to be slow in some circumstances though, such as when copying from one filesystem/drive to another in macos. It also wasn't without errors. This lead to adding a new copy function that uses the system binary `rsync`. This turned out to be way quicker on Linux compared to the old method. Causing it to be selected as the default for systems that have it installed.   
    
 ### Settings   
+> New in [v3.2.0](../Changelog/v3.2.0.md)   
+   
 The default setting is as follows:   
 ``` yaml
 # Determines the function to use to copy your vault over to the tempdir.
@@ -38,6 +42,8 @@ copy_vault_to_tempdir_method: default
 As the comments are saying: any configuration will try to use rsync and fallback to shutil when rsync is not found, except for when you configure `copy_vault_to_tempdir_method: shutil`.   
    
 ## Verbosity   
+> New in [v3.2.0](../Changelog/v3.2.0.md)   
+   
 You can enable the copy method to print out the files it copies by setting this setting:   
 ``` yaml
 # Enable to print the files being copied
