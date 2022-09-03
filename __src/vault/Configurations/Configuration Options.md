@@ -136,6 +136,7 @@ exclude_subfolders:
   - ".obsidian"
   - ".trash"
   - ".DS_Store"
+  - ".git"
 ```
 
 ObsidianHtml will go through the entire vault and build a file tree. To have this work, we can't have duplicate file names. Of course, this is normally not an issue because this is also not allowed in Obsidian. However, there are some hidden folders in every vault that can share filenames with your notes. Aside from that, we don't need to parse those folders anyways.
@@ -148,6 +149,15 @@ This setting will make the file tree builder ignore those folders. If you have p
 # Should be fine to turn off if copying the vault takes too long / disk space is too limited.
 # The tempdir is automatically removed on exit of the program.
 copy_vault_to_tempdir: True
+
+# Determines the function to use to copy your vault over to the tempdir.
+# `default` will try to use rsync if it is installed, and otherwise use `shutil`
+# `rsync` will do the same, but give a warning when it falls back to shutil
+# `shutil` will just use shutil to copy. Use this when rsync is installed but is giving problems.
+copy_vault_to_tempdir_method: default
+
+# Enable to print the files being copied
+copy_vault_to_tempdir_follow_copy: false
 ```
 
 Read more: [[Copy vault to temp dir]]

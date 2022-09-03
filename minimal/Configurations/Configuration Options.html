@@ -280,6 +280,7 @@
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.obsidian&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.trash&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.DS_Store&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
 </code></pre></div>
 
 <p>ObsidianHtml will go through the entire vault and build a file tree. To have this work, we can't have duplicate file names. Of course, this is normally not an issue because this is also not allowed in Obsidian. However, there are some hidden folders in every vault that can share filenames with your notes. Aside from that, we don't need to parse those folders anyways.   </p>
@@ -289,6 +290,15 @@
 <span class="c1"># Should be fine to turn off if copying the vault takes too long / disk space is too limited.</span><span class="w"></span>
 <span class="c1"># The tempdir is automatically removed on exit of the program.</span><span class="w"></span>
 <span class="nt">copy_vault_to_tempdir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+
+<span class="c1"># Determines the function to use to copy your vault over to the tempdir.</span><span class="w"></span>
+<span class="c1"># `default` will try to use rsync if it is installed, and otherwise use `shutil`</span><span class="w"></span>
+<span class="c1"># `rsync` will do the same, but give a warning when it falls back to shutil</span><span class="w"></span>
+<span class="c1"># `shutil` will just use shutil to copy. Use this when rsync is installed but is giving problems.</span><span class="w"></span>
+<span class="nt">copy_vault_to_tempdir_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
+
+<span class="c1"># Enable to print the files being copied</span><span class="w"></span>
+<span class="nt">copy_vault_to_tempdir_follow_copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 
 <p>Read more: <a href="/minimal/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a>   </p>

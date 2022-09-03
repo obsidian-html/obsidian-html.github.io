@@ -635,6 +635,7 @@
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.obsidian&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.trash&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.DS_Store&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
 </code></pre></div>
 
 <p>ObsidianHtml will go through the entire vault and build a file tree. To have this work, we can't have duplicate file names. Of course, this is normally not an issue because this is also not allowed in Obsidian. However, there are some hidden folders in every vault that can share filenames with your notes. Aside from that, we don't need to parse those folders anyways.   </p>
@@ -644,6 +645,15 @@
 <span class="c1"># Should be fine to turn off if copying the vault takes too long / disk space is too limited.</span><span class="w"></span>
 <span class="c1"># The tempdir is automatically removed on exit of the program.</span><span class="w"></span>
 <span class="nt">copy_vault_to_tempdir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+
+<span class="c1"># Determines the function to use to copy your vault over to the tempdir.</span><span class="w"></span>
+<span class="c1"># `default` will try to use rsync if it is installed, and otherwise use `shutil`</span><span class="w"></span>
+<span class="c1"># `rsync` will do the same, but give a warning when it falls back to shutil</span><span class="w"></span>
+<span class="c1"># `shutil` will just use shutil to copy. Use this when rsync is installed but is giving problems.</span><span class="w"></span>
+<span class="nt">copy_vault_to_tempdir_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
+
+<span class="c1"># Enable to print the files being copied</span><span class="w"></span>
+<span class="nt">copy_vault_to_tempdir_follow_copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
 
 <p>Read more: <a href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a>   </p>
@@ -903,22 +913,22 @@
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a></li>
-	<li><a class="backlink" href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
-	<li><a class="backlink" href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a></li>
-	<li><a class="backlink" href="/index_from_tags/Configurations/Website navigation menu.html">Website navigation menu</a></li>
-	<li><a class="backlink" href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Modes.html">Modes</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/RSS Feed.html">RSS Feed</a></li>
 	<li><a class="backlink" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html">Published ObsidianHtml version 1.0.0!</a></li>
-	<li><a class="backlink" href="/index_from_tags/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html">Edit HTML, CSS, JS</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Website navigation menu.html">Website navigation menu</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v3.0.0.html">v3.0.0</a></li>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v1.2.2.html">v1.2.2</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Backlinks.html">Backlinks</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Process All.html">Process All</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
-	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
-	<li><a class="backlink" href="/index_from_tags/Changelog/v3.0.0.html">v3.0.0</a></li>
+	<li><a class="backlink" href="/index_from_tags/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
+	<li><a class="backlink" href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a></li>
 </ul>
 </div>
 
@@ -932,13 +942,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A234023686892729112199124852939216893562{level}" class="graph_div"></div>
+    <div id="A40152187823439925168340659212551441546{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B234023686892729112199124852939216893562{level}" level="{level}" note_temp_id="234023686892729112199124852939216893562" onclick="window.ObsHtmlGraph.run(this, '234023686892729112199124852939216893562', 'Configuration Options');">
+        <button class="graph_button graph_show_button" id="B40152187823439925168340659212551441546{level}" level="{level}" note_temp_id="40152187823439925168340659212551441546" onclick="window.ObsHtmlGraph.run(this, '40152187823439925168340659212551441546', 'Configuration Options');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C234023686892729112199124852939216893562{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C40152187823439925168340659212551441546{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

@@ -335,16 +335,48 @@
 <h1 id="copy-vault-to-temp-dir">Copy vault to temp dir</h1>
 <div class="toc">
 <ul>
-<li><a href="#copy-vault-to-temp-dir" class="anchor-link">Copy vault to temp dir</a></li>
+<li><a href="#copy-vault-to-temp-dir" class="anchor-link">Copy vault to temp dir</a><ul>
+<li><a href="#exclude-subfolders" class="anchor-link">Exclude subfolders</a></li>
+<li><a href="#copy-methods" class="anchor-link">Copy methods</a><ul>
+<li><a href="#history" class="anchor-link">History</a></li>
+<li><a href="#settings" class="anchor-link">Settings</a></li>
+</ul>
+</li>
+<li><a href="#verbosity" class="anchor-link">Verbosity</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <p>We try to not have bugs, but sometimes we just can't help ourselves. I think everyone would agree that the only thing that we should guarantee is that we don't touch your vault files. To help assure that, ObsidianHtml will make a copy of your entire vault to a temporary directory and work from out of that folder.    </p>
-<p>This is an optional setting, and if you have severe file storage problems, or an enormous vault that takes very long to copy, then you can turn this setting off. Though we advise you to make a backup yourself the first couple of times that you use ObsidianHtml, or when you update ObsidianHtml to a new version.    </p>
+<p>This is the default behavior,  but an optional setting, and if you have severe file storage problems, or an enormous vault that takes very long to copy, then you can turn this setting off. Though we advise you to make a backup yourself the first couple of times that you use ObsidianHtml, or when you update ObsidianHtml to a new version.    </p>
 <blockquote>
 <p>This setting should be enabled for the option <a href="/Configurations/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
 </blockquote>
 <p>The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please <a href="/General Information/Report Issues &amp; Request features.html">report it as an issue</a>.   </p>
-<p>See config options: <a href="/Configurations/Configuration Options.html#copy-vault-to-tempdir">Configuration Options#Copy Vault to Tempdir</a></p>
+<p>See config options: <a href="/Configurations/Configuration Options.html#copy-vault-to-tempdir">Configuration Options#Copy Vault to Tempdir</a>   </p>
+<h2 id="exclude-subfolders">Exclude subfolders</h2>
+<p>The copy method will exclude the subfolders set under <a href="/Configurations/Configuration Options.html#exclude-subfolders">exclude_subfolders</a>.   </p>
+<h2 id="copy-methods">Copy methods</h2>
+<h3 id="history">History</h3>
+<p>We started out with a simple <code>distutils.dir_util.copy_tree()</code> call, which is kind of a defacto standard in Python if you go by stackoverflow. This turned out to give errors in macos, so the function was copied into our code and edited to work on macos without errors. This function uses <code>shutil.copy()</code> calls in a recursive fashion to copy over all your files to a temporary directory.   </p>
+<p>This turned out to be slow in some circumstances though, such as when copying from one filesystem/drive to another in macos. It also wasn't without errors. This lead to adding a new copy function that uses the system binary <code>rsync</code>. This turned out to be way quicker on Linux compared to the old method. Causing it to be selected as the default for systems that have it installed.   </p>
+<h3 id="settings">Settings</h3>
+<p>The default setting is as follows:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Determines the function to use to copy your vault over to the tempdir.</span><span class="w"></span>
+<span class="c1"># `default` will try to use rsync if it is installed, and otherwise use `shutil`</span><span class="w"></span>
+<span class="c1"># `rsync` will do the same, but give a warning when it falls back to shutil</span><span class="w"></span>
+<span class="c1"># `shutil` will just use shutil to copy. Use this when rsync is installed but is giving problems.</span><span class="w"></span>
+<span class="nt">copy_vault_to_tempdir_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
+</code></pre></div>
+
+<p>As the comments are saying: any configuration will try to use rsync and fallback to shutil when rsync is not found, except for when you configure <code>copy_vault_to_tempdir_method: shutil</code>.   </p>
+<h2 id="verbosity">Verbosity</h2>
+<p>You can enable the copy method to print out the files it copies by setting this setting:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Enable to print the files being copied</span><span class="w"></span>
+<span class="nt">copy_vault_to_tempdir_follow_copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>Note that this defaults to False and is not affected by the <a href="/Configurations/Configuration Options.html#verbose_printout">global verbosity setting</a>.</p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -365,13 +397,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A115106100768154417643153069712924215523{level}" class="graph_div"></div>
+    <div id="A49990669422073296070246418603455802314{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B115106100768154417643153069712924215523{level}" level="{level}" note_temp_id="115106100768154417643153069712924215523" onclick="window.ObsHtmlGraph.run(this, '115106100768154417643153069712924215523', 'Copy vault to temp dir');">
+        <button class="graph_button graph_show_button" id="B49990669422073296070246418603455802314{level}" level="{level}" note_temp_id="49990669422073296070246418603455802314" onclick="window.ObsHtmlGraph.run(this, '49990669422073296070246418603455802314', 'Copy vault to temp dir');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C115106100768154417643153069712924215523{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C49990669422073296070246418603455802314{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
