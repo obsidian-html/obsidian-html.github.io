@@ -66,7 +66,7 @@ python -m http.server --dir output/html
 
 Then open [http://localhost:8000](http://localhost:8000) to view the html site that was created.
 
-Can't this to work? Please let us know via [[Report Issues & Request features]].
+Can't get this to work? Please let us know via [[Report Issues & Request features]].
 
 
 ## Further configurations
@@ -102,9 +102,6 @@ md_entrypoint_path_str: 'C:/Users/<Username>/Documents/Website/md/index.md'
 html_output_folder_path_str: 'C:/Users/<Username>/Documents/Website/html'
 ```
 
-### Turning off the tabs
-If you don't like the tabbing behavior, this can easily be turned off, see more at [[NoTabs Mode]]
-
 ### Changing the layout
 Read more here [[Styling]].
 
@@ -112,7 +109,7 @@ Read more here [[Styling]].
 If you want to edit the style of the website output, you can add in css (and/or javascript) files. Read more here: [[Configuration Options#Html Custom Inclusions|Html Custom Inclusions]].
 
 ## Next steps
-- [[Configuration Options]]
 - [[Features]]
-- [[How to resolve common issues]]
+- [[Configuration Options]]
 - [[Report Issues & Request features]]
+- [[How to resolve common issues]]
