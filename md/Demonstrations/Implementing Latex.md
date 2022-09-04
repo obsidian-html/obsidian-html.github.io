@@ -38,6 +38,7 @@ $$
 \end   
 {vmatrix}=ad-bc   
 $$   
+## Centernot   
 ``` latex
 $$
 \begin{array}{c}
