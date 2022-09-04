@@ -19,7 +19,21 @@
 <link rel="stylesheet" href="/tabs/obs.html/static/master.css" />
 <script src="/tabs/obs.html/static/mermaid.9.0.1.min.js"></script>
 <script src="/tabs/obs.html/static/tex-chtml.js"></script>
-<script src="/tabs/obs.html/static/load_mathjax.js"></script>
+<script>
+  MathJax = {
+    loader: {
+      load: [
+        'input/tex-base', '[tex]/newcommand', '[tex]/action',
+        'output/chtml'
+      ]
+    },
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      packages: ['base', 'newcommand', 'action']
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"></script>
 <script src="/tabs/obs.html/static/flexsearch.bundle.js"></script>
 <script src="/tabs/obs.html/static/pako.js"></script>
 <script src="/tabs/obs.html/static/search.js"></script>
