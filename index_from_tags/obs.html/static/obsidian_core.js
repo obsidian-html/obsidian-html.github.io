@@ -10,7 +10,7 @@ var html_url_prefix = "/index_from_tags";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '13735352252146382598122555674316605219'                       // used to check whether the localStorage data is stale
+var gzip_hash = '292119655020623217899195807329939461851'                       // used to check whether the localStorage data is stale
 
 
 // Onloads
