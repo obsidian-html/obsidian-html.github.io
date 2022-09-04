@@ -36,4 +36,18 @@ $$
 \end
 {vmatrix}=ad-bc
 $$
+``` latex
+$$
+\begin{array}{c}
+  A \not\longrightarrow B\\
+  A \centernot\longrightarrow B
+\end{array}
+$$
+```
+$$
+\begin{array}{c}
+  A \not\longrightarrow B\\
+  A \centernot\longrightarrow B
+\end{array}
+$$
 

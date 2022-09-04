@@ -23,14 +23,16 @@
     loader: {
       load: [
         '[tex]/action',
-        'output/chtml'
+        'output/chtml',
+        '[tex]/centernot'
       ]
     },
     tex: {
       inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: {'[+]': ['centernot']}
     }
   };
 </script>
@@ -379,6 +381,20 @@ I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><
 \end   
 {vmatrix}=ad-bc   
 \]</div>
+<div class="codehilite"><pre><span></span><code><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\begin</span><span class="nb">{array}{c}</span>
+<span class="nb">  A </span><span class="nv">\not\longrightarrow</span><span class="nb"> B</span><span class="nv">\\</span><span class="nb"></span>
+<span class="nb">  A </span><span class="nv">\centernot\longrightarrow</span><span class="nb"> B</span>
+<span class="nv">\end</span><span class="nb">{array}</span>
+<span class="s">$$</span>
+</code></pre></div>
+
+<div class="arithmatex">\[   
+\begin{array}{c}   
+  A \not\longrightarrow B\\   
+  A \centernot\longrightarrow B   
+\end{array}   
+\]</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -398,13 +414,13 @@ I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><
 
 </div>
 <div class="graph requires_js ">
-    <div id="A324424784887682909975089273798703720308{level}" class="graph_div"></div>
+    <div id="A144269168040965988938325723408373737616{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B324424784887682909975089273798703720308{level}" level="{level}" note_temp_id="324424784887682909975089273798703720308" onclick="window.ObsHtmlGraph.run(this, '324424784887682909975089273798703720308', 'Implementing Latex');">
+        <button class="graph_button graph_show_button" id="B144269168040965988938325723408373737616{level}" level="{level}" note_temp_id="144269168040965988938325723408373737616" onclick="window.ObsHtmlGraph.run(this, '144269168040965988938325723408373737616', 'Implementing Latex');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C324424784887682909975089273798703720308{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C144269168040965988938325723408373737616{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
