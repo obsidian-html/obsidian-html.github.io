@@ -7,6 +7,7 @@ var mermaid_enabled = 0;
 var toc_pane_div = "right_pane_content";
 var content_pane_div = "left_pane_content";
 var html_url_prefix = "/minimal";
+var RELATIVE_PATHS = 0;
 var documentation_mode = 0;
 var tab_mode = !no_tab_mode;
 var gzip_hash = ''                       // used to check whether the localStorage data is stale
@@ -14,9 +15,32 @@ var gzip_hash = ''                       // used to check whether the localStora
 
 // Onloads
 // ----------------------------------------------------------------------------
-
 document.addEventListener('DOMContentLoaded', load_theme);  //set theme as quickly as possible to avoid flickering
 document.addEventListener('DOMContentLoaded', load_page);   // all the code that needs to be run when everything is loaded
+if (RELATIVE_PATHS){
+    document.addEventListener('DOMContentLoaded', set_rel_paths);
+}
+
+function set_rel_paths(){
+    // update directory navigation links
+    list = document.getElementById('left_pane_content').getElementsByTagName('a')
+    for (let el of list) {
+        el.href = ('../'.repeat(PAGE_DEPTH)) + el.href.replace('file:///', '');
+    }
+    // update directory navigation buttons
+    list = document.getElementById('left_pane_content').getElementsByTagName('button')
+    for (let el of list) {
+        let href = el.getAttribute('href');
+        if (href){
+            el.setAttribute('href', ('../'.repeat(PAGE_DEPTH)) + href.substring(1));
+        }
+    }
+    // update navbar links
+    list = document.getElementsByClassName('navbar-link')
+    for (let el of list) {
+        el.href = ('../'.repeat(PAGE_DEPTH)) + el.href.replace('file:///', '');
+    }
+}
 
 
 // Keybindings

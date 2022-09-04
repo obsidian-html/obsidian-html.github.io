@@ -70,7 +70,7 @@ exclude_subfolders:
 # Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect the vault data. 
 # Should be fine to turn off if copying the vault takes too long / disk space is too limited.
 # The tempdir is automatically removed on exit of the program.
-copy_vault_to_tempdir: True
+copy_vault_to_tempdir: False
 
 # Determines the function to use to copy your vault over to the tempdir.
 # `default` will try to use rsync if it is installed, and otherwise use `shutil`
@@ -116,6 +116,7 @@ toggles:
 
   # Can be overwritten ad-hoc by using "obsidianhtml -i config.yml -v" (the -v option)
   verbose_printout: False
+  debug_filetree_keys: False
 
   # Write extra information to log_output_folder_path_str
   extended_logging: True

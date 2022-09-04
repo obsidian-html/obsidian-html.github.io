@@ -15,6 +15,9 @@ tags:
 `![](Resources/img/obsidian-html-logo.png)`   
 ![](../Resources/img/obsidian-html-logo.png)   
    
+`![200](obsidian-html-logo.png)`   
+![200](../Resources/img/obsidian-html-logo.png)   
+   
 ## External images   
 `![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ObsidianOregon.jpg/480px-ObsidianOregon.jpg)`   
    

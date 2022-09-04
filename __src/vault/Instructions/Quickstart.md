@@ -90,6 +90,9 @@ python -m http.server --dir output/html
 
 Then open [http://localhost:8000](http://localhost:8000) to view the html site that was created.
 
+## Deployment configuration
+![[Deployment instructions]]
+
 # Next steps
 - Read the full notes on [[Installation]] and [[Usage]] if you want to know more about these steps.
 - If the conversion works, but you want to change the behavior, check out [[Features]], [[Modes]], and finally [[Configuration Options]]

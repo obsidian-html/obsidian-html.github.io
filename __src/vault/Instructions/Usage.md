@@ -5,6 +5,7 @@ tags:
 ---
 
 # Usage
+## Basic usage and required configurations
 After [[Installation]], we can run obsidian via the commandline like so:
 ``` bash
 obsidianhtml
@@ -68,6 +69,8 @@ Then open [http://localhost:8000](http://localhost:8000) to view the html site t
 
 Can't get this to work? Please let us know via [[Report Issues & Request features]].
 
+## Deployment configuration
+![[Deployment instructions]]
 
 ## Further configurations
 Add the following settings to your config.yaml to control the behavior of obsidianhtml. 
