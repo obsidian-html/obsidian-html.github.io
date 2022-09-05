@@ -53,4 +53,23 @@ $$
   A \not\longrightarrow B\\   
   A \centernot\longrightarrow B   
 \end{array}   
+$$   
+   
+## Double centered block   
+``` latex
+$$
+\text{block 1}
+$$
+$$
+\text{block 2}
+$$
+```
+   
+   
+$$   
+\text{block 1}   
+$$    
+   
+$$   
+\text{block 2}   
 $$

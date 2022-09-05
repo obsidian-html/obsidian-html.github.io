@@ -35,7 +35,7 @@
                             <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/minimal/Demonstrations/Demonstrations.html" style="color: var(--normal-text-color);">Demonstrations</a> / <a href="/minimal/Demonstrations/Implementing Mermaid diagrams in HTML output.html"  >Implementing Mermaid diagrams in HTML output</a>
                         </div>
                     </div>
-<h1 id="mermaid">Mermaid</h1>
+<embeddedtitle>Mermaid diagrams</embeddedtitle>
 <p>Mermaid diagram code is converted into an actual diagram in the HTML output.   </p>
 <div class="mermaid">
 flowchart LR
@@ -43,14 +43,11 @@ Start --> Stop
 </div>
 
 <p>Example code:   </p>
-<p>```</p>
-<div class="mermaid">
-flowchart LR
-Start --> Stop
-\```
-
-
-</div>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="err">\```</span><span class="w"> </span><span class="n">mermaid</span><span class="w"></span>
+<span class="w">  </span><span class="n">flowchart</span><span class="w"> </span><span class="n">LR</span><span class="w">  </span>
+<span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Stop</span><span class="w"> </span>
+<span class="w"> </span><span class="err">\```</span><span class="w"></span>
+</code></pre></div>
 
 <script>
                     function initializeMermaid() {
