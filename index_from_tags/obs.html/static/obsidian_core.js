@@ -7,10 +7,11 @@ var mermaid_enabled = 1;
 var toc_pane_div = "right_pane_content";
 var content_pane_div = "left_pane_content";
 var html_url_prefix = "/index_from_tags";
+var configured_html_url_prefix = "/index_from_tags";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '292119655020623217899195807329939461851'                       // used to check whether the localStorage data is stale
+var gzip_hash = '178268085334847090873144920754092505348'                       // used to check whether the localStorage data is stale
 
 
 // Onloads
@@ -25,20 +26,53 @@ function set_rel_paths(){
     // update directory navigation links
     list = document.getElementById('left_pane_content').getElementsByTagName('a')
     for (let el of list) {
-        el.href = ('../'.repeat(PAGE_DEPTH)) + el.href.replace('file:///', '');
+        let href = el.getAttribute('href');
+        console.log(href);
+
+        if (href){
+            if (PAGE_DEPTH == 0){
+                el.setAttribute('href', ('.' + href));
+            }
+            else {
+                href = href.substring(1)
+                el.setAttribute('href', ('../'.repeat(PAGE_DEPTH)) + href);
+            }
+        }
+        console.log(href);
+        // let prefix1 = window.location.protocol + '//' + window.location.host + '/'
+        // let prefix2 = 'file:///';
+        // el.href = ('../'.repeat(PAGE_DEPTH)) + el.href.replace(prefix1, '').replace(prefix2, '');
     }
     // update directory navigation buttons
     list = document.getElementById('left_pane_content').getElementsByTagName('button')
     for (let el of list) {
         let href = el.getAttribute('href');
+        console.log(href);
+
         if (href){
-            el.setAttribute('href', ('../'.repeat(PAGE_DEPTH)) + href.substring(1));
+            if (PAGE_DEPTH == 0){
+                el.setAttribute('href', ('.' + href));
+            }
+            else {
+                href = href.substring(1)
+                el.setAttribute('href', ('../'.repeat(PAGE_DEPTH)) + href);
+            }
         }
+        console.log(href);
     }
     // update navbar links
     list = document.getElementsByClassName('navbar-link')
     for (let el of list) {
-        el.href = ('../'.repeat(PAGE_DEPTH)) + el.href.replace('file:///', '');
+        let href = el.getAttribute('href');
+        if (href){
+            if (href.startsWith(configured_html_url_prefix + '/')){
+                href = href.replace(configured_html_url_prefix + '/', '');
+            } 
+            else {
+                href = href.substring(1)
+            }
+            el.setAttribute('href', ('../'.repeat(PAGE_DEPTH)) + href);
+        }
     }
 }
 
