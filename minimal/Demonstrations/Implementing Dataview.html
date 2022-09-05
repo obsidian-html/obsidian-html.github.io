@@ -35,9 +35,27 @@
                         </div>
                     </div>
 <h1 id="implementing-dataview">Implementing Dataview</h1>
+<blockquote>
+<p>This feature is still in alpha, <a href="https://github.com/obsidian-html/obsidian-html/issues/271" class="external-link">join us on github</a> if you want to know more.    </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code>\``` dataview
+table version_type
+from &quot;Changelog&quot;
+sort version_type asc
+\```
+</code></pre></div>
+
 <div class="codehilite"><pre><span></span><code>table version_type
 from &quot;Changelog&quot;
 sort version_type asc
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>\``` dataview
+table graph_name
+from &quot;/&quot;
+where graph_name != null
+sort graph_name asc
+\```
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>table graph_name

@@ -26,4 +26,4 @@ Based on the plugin settings it will then add `<embeddedtitle>{title.capitalize(
    
 At time of writing all the settings should be implemented except for "daily note title format".   
    
-![](../../Pasted%20image%2020220905184629.png)
+![](../../Resources/img/Pasted%20image%2020220905184629.png)

@@ -26,9 +26,7 @@ The http webserver is needed for features that do client-side javascript calls, 
 ## What does it do?   
 The Obsidian notes will be converted to standard markdown output. Then, optionally, html output is created based on the standard markdown.   
    
-It is also possible to input existing standard markdown to just use the markdown to html functionality.   
-   
-Though truth be told, the main usecase is converting an obsidian vault directly to html. The other usecases are kind of stuck in beta due to lack of interest by users and myself.   
+It is also possible to input existing standard markdown to just use the markdown to html functionality. Though truth be told, the main usecase is converting an obsidian vault directly to html. The other usecases are kind of stuck in beta due to lack of interest by users and myself. There are also better options to convert standard markdown to html, such as [Hugo](https://gohugo.io/about/what-is-hugo/) and [MKDocs](https://www.mkdocs.org/).   
    
 To convert your notes, you need to point to your notes folder, and to one note that will serve as the index.html page.   
    

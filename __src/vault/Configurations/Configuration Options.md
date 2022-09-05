@@ -24,6 +24,9 @@ Note that the inputs that need to be filled in always are marked with `'<REQUIRE
 
 We will now go through all the settings in more-or-less the same order as the output of that command.
 
+## Where has this setting gone?
+ObsidianHtml is evolving a little bit each new version. A setting might become obsolete or replaced by a new feature with its own configurations. You can find all the deprecated/removed settings here: [[Deprecated Configurations]].
+
 ## Configurations
 ### Paths
 | config | Short description |

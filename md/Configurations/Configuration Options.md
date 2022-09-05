@@ -25,6 +25,9 @@ Note that the inputs that need to be filled in always are marked with `'<REQUIRE
    
 We will now go through all the settings in more-or-less the same order as the output of that command.   
    
+## Where has this setting gone?   
+ObsidianHtml is evolving a little bit each new version. A setting might become obsolete or replaced by a new feature with its own configurations. You can find all the deprecated/removed settings here: [Deprecated Configurations](../Configurations/Deprecated%20Configurations/Deprecated%20Configurations.md).   
+   
 ## Configurations   
 ### Paths   
 | config | Short description |   
@@ -63,7 +66,7 @@ We will now go through all the settings in more-or-less the same order as the ou
 | [Allow Duplicate Filenames in Root](../Configurations/Configuration%20Options.md#allow-duplicate-filenames-in-root) | By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off. |   
 | [Warn on Skipped Image](../Configurations/Configuration%20Options.md#warn-on-skipped-image) | By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off. |   
 | [no_clean](../Configurations/Configuration%20Options.md#no_clean) | Use if you want to clean the output directories yourself, e.g. to preserve the .git folder. |   
-| [no_tabs](../Configurations/Configuration%20Options.md#no_tabs) | Turn off tabs. Read more: [NoTabs Mode](../Configurations/NoTabs%20Mode.md) |   
+| [no_tabs](../Configurations/Configuration%20Options.md#no_tabs) | Turn off tabs. Read more: [NoTabs Mode](../Configurations/Deprecated%20Configurations/NoTabs%20Mode.md) |   
 | [relative_path_md](../Configurations/Configuration%20Options.md#relative_path_md) | Compile markdown links relatively or with absolute paths |   
 | [relative_path_html](../Configurations/Configuration%20Options.md#relative_path_html) | Compile html links relatively or with absolute paths |   
 | [external_blank](../Configurations/Configuration%20Options.md#external_blank) | Control whether external links will open in a new tab or not |   
@@ -375,7 +378,7 @@ toggles:
 ```
    
    
-Read more: [NoTabs Mode](../Configurations/NoTabs%20Mode.md).   
+Read more: [NoTabs Mode](../Configurations/Deprecated%20Configurations/NoTabs%20Mode.md).   
    
 ### relative_path_md   
 ``` yaml

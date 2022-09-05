@@ -115,10 +115,10 @@
                                         <a class="navbar-link" href="/index.html" title="Home">Home</a>
 <a class="navbar-link" href="/General Information/About ObsidianHtml.html" title="About">About</a>
 <a class="navbar-link" href="/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
-<a class="navbar-link" href="/Configurations/Styling/Styling.html" title="Styling">Styling</a>
-<a class="navbar-link" href="/Configurations/Modes.html" title="Modes">Modes</a>
 <a class="navbar-link" href="/Configurations/Features.html" title="Features">Features</a>
 <a class="navbar-link" href="/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/Configurations/Modes.html" title="Modes">Modes</a>
 <a class="navbar-link" href="/News.html" title="News">News</a>
                                         <div class="icon-tray">
                                                 <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
@@ -254,14 +254,20 @@
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
 <div id="folder-container-4" class="dir-container requires_js " path="/Configurations">
-	<button id="folder-5" class="dir-button" onclick="toggle_dir(this.id)">Plugins</button>
-	<div id="folder-container-5" class="dir-container requires_js " path="/Configurations/Plugins">
+	<button id="folder-5" class="dir-button folder_note " href="/Configurations/Deprecated Configurations/Deprecated Configurations.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Deprecated Configurations</button>
+	<div id="folder-container-5" class="dir-container requires_js " path="/Configurations/Deprecated Configurations">
+		<ul class="dir-list">
+			<li><a class="" href="/Configurations/Deprecated Configurations/NoTabs Mode.html"  >NoTabs Mode</a></li>
+		</ul>
+	</div>
+	<button id="folder-6" class="dir-button" onclick="toggle_dir(this.id)">Plugins</button>
+	<div id="folder-container-6" class="dir-container requires_js " path="/Configurations/Plugins">
 		<ul class="dir-list">
 			<li><a class="" href="/Configurations/Plugins/Embedded note title.html"  >Embedded note title</a></li>
 		</ul>
 	</div>
-	<button id="folder-6" class="dir-button folder_note " href="/Configurations/Styling/Styling.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Styling</button>
-	<div id="folder-container-6" class="dir-container requires_js " path="/Configurations/Styling">
+	<button id="folder-7" class="dir-button folder_note " href="/Configurations/Styling/Styling.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Styling</button>
+	<div id="folder-container-7" class="dir-container requires_js " path="/Configurations/Styling">
 		<ul class="dir-list">
 			<li><a class="" href="/Configurations/Styling/Edit HTML, CSS, JS.html"  >Edit HTML, CSS, JS</a></li>
 			<li><a class="" href="/Configurations/Styling/Tabs Layout.html"  >Tabs Layout</a></li>
@@ -279,7 +285,6 @@
 		<li><a class="" href="/Configurations/Folder Notes.html"  >Folder Notes</a></li>
 		<li><a class="" href="/Configurations/Graph view.html"  >Graph view</a></li>
 		<li><a class="" href="/Configurations/Modes.html"  >Modes</a></li>
-		<li><a class="" href="/Configurations/NoTabs Mode.html"  >NoTabs Mode</a></li>
 		<li><a class="" href="/Configurations/Performance Tuning.html"  >Performance Tuning</a></li>
 		<li><a class="" href="/Configurations/Process All.html"  >Process All</a></li>
 		<li><a class="" href="/Configurations/RSS Feed.html"  >RSS Feed</a></li>
@@ -288,10 +293,10 @@
 		<li><a class="" href="/Configurations/Website navigation menu.html"  >Website navigation menu</a></li>
 	</ul>
 </div>
-<button id="folder-7" class="dir-button folder_note " href="/Demonstrations/Demonstrations.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Demonstrations</button>
-<div id="folder-container-7" class="dir-container requires_js " path="/Demonstrations">
-	<button id="folder-8" class="dir-button" onclick="toggle_dir(this.id)">Test pages</button>
-	<div id="folder-container-8" class="dir-container requires_js " path="/Demonstrations/Test pages">
+<button id="folder-8" class="dir-button folder_note " href="/Demonstrations/Demonstrations.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Demonstrations</button>
+<div id="folder-container-8" class="dir-container requires_js " path="/Demonstrations">
+	<button id="folder-9" class="dir-button" onclick="toggle_dir(this.id)">Test pages</button>
+	<div id="folder-container-9" class="dir-container requires_js " path="/Demonstrations/Test pages">
 		<ul class="dir-list">
 			<li><a class="" href="/Demonstrations/Test pages/Long long page.html"  >Long long page</a></li>
 			<li><a class="" href="/Demonstrations/Test pages/Simple Obsidian-type Link.html"  >Simple Obsidian-type Link</a></li>
@@ -316,8 +321,8 @@
 		<li><a class="" href="/Demonstrations/Removing obisidian comments.html"  >Removing obisidian comments</a></li>
 	</ul>
 </div>
-<button id="folder-9" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
-<div id="folder-container-9" class="dir-container requires_js active" path="/General Information">
+<button id="folder-10" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
+<div id="folder-container-10" class="dir-container requires_js active" path="/General Information">
 	<ul class="dir-list">
 		<li><a class="active" href="/General Information/About ObsidianHtml.html"  >About ObsidianHtml</a></li>
 		<li><a class="" href="/General Information/Creating a static html website from markdown files.html"  >Creating a static html website from markdown files</a></li>
@@ -326,8 +331,8 @@
 		<li><a class="" href="/General Information/Using the website.html"  >Using the website</a></li>
 	</ul>
 </div>
-<button id="folder-10" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
-<div id="folder-container-10" class="dir-container requires_js " path="/Instructions">
+<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
+<div id="folder-container-11" class="dir-container requires_js " path="/Instructions">
 	<ul class="dir-list">
 		<li><a class="" href="/Instructions/Install a different version.html"  >Install a different version</a></li>
 		<li><a class="" href="/Instructions/Installation.html"  >Installation</a></li>
@@ -336,8 +341,8 @@
 		<li><a class="" href="/Instructions/Usage.html"  >Usage</a></li>
 	</ul>
 </div>
-<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-11" class="dir-container requires_js " path="/Log">
+<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-12" class="dir-container requires_js " path="/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/Log/Published ObsidianHtml version 0.0.9!.html"  >Published ObsidianHtml version 0.0.9!</a></li>
 		<li><a class="" href="/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
@@ -346,7 +351,6 @@
 </div>
 <ul class="dir-list">
 	<li><a class="" href="/News.html"  >News</a></li>
-	<li><a class="" href="/Pasted image 20220905184629.png"  class="external-link">Pasted image 20220905184629</a></li>
 	<li><a class="" href="/index.html"  >index</a></li>
 </ul>
 
@@ -398,8 +402,7 @@ Anyways: <strong>This is not that package</strong>. <br />
 </div>
 <h2 id="what-does-it-do">What does it do?</h2>
 <p>The Obsidian notes will be converted to standard markdown output. Then, optionally, html output is created based on the standard markdown.   </p>
-<p>It is also possible to input existing standard markdown to just use the markdown to html functionality.   </p>
-<p>Though truth be told, the main usecase is converting an obsidian vault directly to html. The other usecases are kind of stuck in beta due to lack of interest by users and myself.   </p>
+<p>It is also possible to input existing standard markdown to just use the markdown to html functionality. Though truth be told, the main usecase is converting an obsidian vault directly to html. The other usecases are kind of stuck in beta due to lack of interest by users and myself. There are also better options to convert standard markdown to html, such as <a href="https://gohugo.io/about/what-is-hugo/" class="external-link">Hugo</a> and <a href="https://www.mkdocs.org/" class="external-link">MKDocs</a>.   </p>
 <p>To convert your notes, you need to point to your notes folder, and to one note that will serve as the index.html page.   </p>
 <p>By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, <a href="/Configurations/Modes.html">there are other modes available</a>.   </p>
 <div class="callout callout-example active" rasa="1">
@@ -442,13 +445,13 @@ Anyways: <strong>This is not that package</strong>. <br />
 
 </div>
 <div class="graph requires_js ">
-    <div id="A200186661646500071617010230964500715456{level}" class="graph_div"></div>
+    <div id="A78824554617445462562929422404565455309{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B200186661646500071617010230964500715456{level}" level="{level}" note_temp_id="200186661646500071617010230964500715456" onclick="window.ObsHtmlGraph.run(this, '200186661646500071617010230964500715456', 'About ObsidianHtml');">
+        <button class="graph_button graph_show_button" id="B78824554617445462562929422404565455309{level}" level="{level}" note_temp_id="78824554617445462562929422404565455309" onclick="window.ObsHtmlGraph.run(this, '78824554617445462562929422404565455309', 'About ObsidianHtml');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C200186661646500071617010230964500715456{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C78824554617445462562929422404565455309{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

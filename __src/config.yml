@@ -89,14 +89,14 @@ navbar_links:
     link: General Information/About ObsidianHtml.html  
   - name: Quickstart
     link: Instructions/Quickstart.html
-  - name: Styling
-    link: Configurations/Styling/Styling.html    
-  - name: Modes
-    link: Configurations/Modes.html
   - name: Features
     link: Configurations/Features.html
   - name: Configurations
     link: Configurations/Configuration Options.html
+  - name: Styling
+    link: Configurations/Styling/Styling.html    
+  - name: Modes
+    link: Configurations/Modes.html
   - name: News
     link: News.html
   # - name: Test external

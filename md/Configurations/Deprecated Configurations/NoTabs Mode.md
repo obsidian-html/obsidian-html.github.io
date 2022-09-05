@@ -5,8 +5,8 @@ tags:
 ---
    
 # NoTabs Mode   
-> New in version [v1.2.0](../Changelog/v1.2.0.md)   
-> **Removed in version [v2.0.0](../Changelog/v2.0.0.md)**   
+> New in version [v1.2.0](../../Changelog/v1.2.0.md)   
+> **Removed in version [v2.0.0](../../Changelog/v2.0.0.md)**   
    
 This setting has been removed:   
 ``` yaml
@@ -15,7 +15,7 @@ toggles:
 ```
    
    
-In favor of the new layout setting. Read more here: [Styling#Layouts](../Configurations/Styling/Styling.md#layouts).   
+In favor of the new layout setting. Read more here: [Styling#Layouts](../../Configurations/Styling/Styling.md#layouts).   
    
 In short, use:   
 ``` yaml
