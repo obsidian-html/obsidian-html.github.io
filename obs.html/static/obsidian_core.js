@@ -7,11 +7,11 @@ var mermaid_enabled = 1;
 var toc_pane_div = "right_pane_content";
 var content_pane_div = "left_pane_content";
 var html_url_prefix = "";
-var configured_html_url_prefix = "";
+var CONFIGURED_HTML_URL_PREFIX = "";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '316121978376644506714201507437207780649'                       // used to check whether the localStorage data is stale
+var gzip_hash = '90553723844113606509958492993247954521'                       // used to check whether the localStorage data is stale
 
 
 // Onloads
@@ -27,7 +27,6 @@ function set_rel_paths(){
     list = document.getElementById('left_pane_content').getElementsByTagName('a')
     for (let el of list) {
         let href = el.getAttribute('href');
-        console.log(href);
 
         if (href){
             if (PAGE_DEPTH == 0){
@@ -38,17 +37,11 @@ function set_rel_paths(){
                 el.setAttribute('href', ('../'.repeat(PAGE_DEPTH)) + href);
             }
         }
-        console.log(href);
-        // let prefix1 = window.location.protocol + '//' + window.location.host + '/'
-        // let prefix2 = 'file:///';
-        // el.href = ('../'.repeat(PAGE_DEPTH)) + el.href.replace(prefix1, '').replace(prefix2, '');
     }
     // update directory navigation buttons
     list = document.getElementById('left_pane_content').getElementsByTagName('button')
     for (let el of list) {
         let href = el.getAttribute('href');
-        console.log(href);
-
         if (href){
             if (PAGE_DEPTH == 0){
                 el.setAttribute('href', ('.' + href));
@@ -58,15 +51,14 @@ function set_rel_paths(){
                 el.setAttribute('href', ('../'.repeat(PAGE_DEPTH)) + href);
             }
         }
-        console.log(href);
     }
     // update navbar links
     list = document.getElementsByClassName('navbar-link')
     for (let el of list) {
         let href = el.getAttribute('href');
         if (href){
-            if (href.startsWith(configured_html_url_prefix + '/')){
-                href = href.replace(configured_html_url_prefix + '/', '');
+            if (href.startsWith(CONFIGURED_HTML_URL_PREFIX + '/')){
+                href = href.replace(CONFIGURED_HTML_URL_PREFIX + '/', '');
             } 
             else {
                 href = href.substring(1)
@@ -431,6 +423,15 @@ function load_script_on_demand(path, callback, callback_args){
 }
 
 function get_graph_data(){
+    if (RELATIVE_PATHS){
+        let page_depth = window.location.pathname.split('/').length - CONFIGURED_HTML_URL_PREFIX.split('/').length - 1;
+        if (page_depth > 0){
+            return '../'.repeat(page_depth) + '/obs.html/data/graph.json';
+        }
+        else {
+            return './' + '/obs.html/data/graph.json';
+        }
+    }
     return get_html_url_prefix()+'/obs.html/data/graph.json';
 }
 function get_html_url_prefix(){

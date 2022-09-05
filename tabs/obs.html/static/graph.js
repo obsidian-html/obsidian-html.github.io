@@ -1,8 +1,11 @@
 // DYNAMIC
 ///////////////////////////////////////////////////////////////////////////////
-import * as grapher_2d from '/tabs/obs.html/static/graphers/2d.js';
-import * as grapher_3d from '/tabs/obs.html/static/graphers/3d.js';
-import * as grapher_custom from '/tabs/obs.html/static/graphers/custom.js';
+import * as grapher_2d from './graphers/2d.js';
+import * as grapher_3d from './graphers/3d.js';
+import * as grapher_custom from './graphers/custom.js';
+
+const CONFIGURED_HTML_URL_PREFIX = '/tabs';
+const URL_MODE = "absolute";
 
 var graphers = [
 	{'id': '2d', 'name': '2d', 'module': grapher_2d},
@@ -300,7 +303,7 @@ function graph_open_link(args){
 
 // fn
 function graph_open_link_tabs(args){
-    let url = args.node.url;
+    let url = get_node_url_adaptive(args.node);
 
     return function() {
         let level = parseInt(args.graph_container.parentElement.parentElement.level);
@@ -311,13 +314,34 @@ function graph_open_link_tabs(args){
 
 // fn
 function graph_open_link_normal(args){
-    let url = args.node.url;
-
     return function(){
-        window.location.href = url;
+        window.location.href = get_node_url_adaptive(args.node);
         return false;
     }
 }
+
+function get_node_url_adaptive(node){
+    // build url: relative path
+    if (URL_MODE == 'relative'){
+        let url = node.rtr_url;
+        let page_depth = window.location.pathname.split('/').length - CONFIGURED_HTML_URL_PREFIX.split('/').length - 1;
+        if (page_depth > 0){
+            return '../'.repeat(page_depth) + url;
+        }
+        else {
+            return './' + url;
+        }
+    }
+
+    // build url: absolute path
+    if (URL_MODE == 'absolute'){
+        return node.url;
+    }
+
+    // fallthrough
+    throw 'OBS.HTML: URL_MODE should be either "absolute" or "relative"! Grapher failed to get node url.';
+}
+
 // (action)
 function graph_select_node(args){
     graphs[args.uid].current_node_id = args.node.id;

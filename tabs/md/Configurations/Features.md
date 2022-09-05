@@ -37,6 +37,7 @@ These features add functionality from popular obsidian plugins, or extra functio
    
 | Feature | Short description | Default |   
 | ------- | ----------------- | ------- |   
+| [Embedded note title](../Configurations/Plugins/Embedded%20note%20title.md) | Have h1 headers be added to your notes so you have more levels to work with | Enabled |   
 | [Folder Notes](../Configurations/Folder%20Notes.md) | Open a note when you click on a directory | Enabled |   
 | [RSS Feed](../Configurations/RSS%20Feed.md) | Output an rss feed. | **Disabled** |   
 | [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md) | Create a homepage based on your directory structure | Enabled, but points to `obs.html/dir_index.html` instead of `index.html` by default. |   
