@@ -30,7 +30,7 @@ This will then do the following:
 - Set the config settings for the markdown and html output folders. These will be created as a temporary folder. These folders will not be removed by obsidianhtml at the end, but should be cleaned up by your OS after a restart or when it thinks it is time to clean up temporary folders.
 - Write the compiled config settings to a file called config.yml. This file will be located in an [AppDir folder](https://pypi.org/project/appdirs/) which is a standard location on your OS for applications to store config. 
 - Compile your website
-- Start hosting your website at port 8000 using the built-in python `http.server` module.
+- Start hosting your website at port 8888 using the built-in python `http.server` module.
 - Print out the location to your newly compiled config yaml
 - Print out the instruction to open your browser and navigate to http://localhost:8888 so that you can view your website.
 
@@ -52,4 +52,10 @@ obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder sites/
 ```
 
 
+### More options
+Run 
+``` bash
+obsidianhtml help
+```
 
+For more information on the run command.
