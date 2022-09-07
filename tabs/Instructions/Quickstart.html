@@ -324,6 +324,21 @@
 <div class="codehilite"><pre><span></span><code>pip install obsidianhtml
 </code></pre></div>
 
+<h2 id="run">Run</h2>
+<blockquote>
+<p>New in <a href="/tabs/Changelog/v3.2.0.html">v3.2.0</a>. Note that at the time of writing, this version is not published yet. <a href="/tabs/Instructions/Install a different version.html#install-master-branch">Install the master branch</a> if you want to preview this method.   </p>
+</blockquote>
+<p>To hit the ground running you can use <code>obsidianhtml run</code>. This way you only have to provide the path to a note that will serve as your homepage. (Parts of) the rest of your vault will be included by following the links on your entrypoint note. The vault is then converted to html and the website is hosted on <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a>   </p>
+<p>Read more: <a href="/tabs/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a>   </p>
+<p>When this works, or you want more configuration settings out of the box, you can skip this section and continue with the next section.   </p>
+<h3 id="short-instructions">Short instructions</h3>
+<p>Run   </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md
+</code></pre></div>
+
+<p>Then follow the instructions in the terminal. If all is well it will spit out some information and then tell you to open <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a> in your browser. Do so and admire your new website.   </p>
+<p>When done return to the terminal and press enter to exit obsidianhtml and stop the webserver.   </p>
+<p>If you are happy with the result, you can take the path to your generated config yaml in the steps below as a starting point. Follow the instructions at <a href="#convert-vault" class="anchor-link">Convert vault</a> to just convert your vault to html (and or markdown) and forgo running the integrated webserver.   </p>
 <h2 id="configuration">Configuration</h2>
 <p>Pick a folder where you don't mind a folder being created. Then create a file in this folder named <code>config.yaml</code>, and fill it with this content (and fill in the values):   </p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
@@ -336,7 +351,7 @@
 <span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault/entrypoint.md&#39;</span><span class="w"></span>
 </code></pre></div>
 
-<h2 id="run">Run</h2>
+<h2 id="convert-vault">Convert vault</h2>
 <p>Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:   </p>
 <div class="codehilite"><pre><span></span><code>obsidianhtml -i config.yaml
 </code></pre></div>
@@ -429,13 +444,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A50062894731599950492297351048335430497{level}" class="graph_div"></div>
+    <div id="A242988053077755454395884593878093879915{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B50062894731599950492297351048335430497{level}" level="{level}" note_temp_id="50062894731599950492297351048335430497" onclick="window.ObsHtmlGraph.run(this, '50062894731599950492297351048335430497', 'Quickstart');">
+        <button class="graph_button graph_show_button" id="B242988053077755454395884593878093879915{level}" level="{level}" note_temp_id="242988053077755454395884593878093879915" onclick="window.ObsHtmlGraph.run(this, '242988053077755454395884593878093879915', 'Quickstart');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C50062894731599950492297351048335430497{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C242988053077755454395884593878093879915{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

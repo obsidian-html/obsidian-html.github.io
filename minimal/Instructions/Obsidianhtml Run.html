@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Instructions</span> / <a href="/minimal/Instructions/Obsidianhtml Run.html"  >Obsidianhtml Run</a>
+                        </div>
+                    </div>
+<embeddedtitle>Obsidianhtml run</embeddedtitle>
+<blockquote>
+<p>New in <a href="/minimal/Changelog/v3.2.0.html">v3.2.0</a>   </p>
+</blockquote>
+<p>To help new users to quickly start using obsidianhtml we created the <code>obsidianhtml run</code>  <br />
+command.   </p>
+<h2 id="quickstart">Quickstart</h2>
+<h3 id="short-instructions">Short instructions</h3>
+<p>Run   </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md
+</code></pre></div>
+
+<p>Then follow the instructions in the terminal. If all is well it will spit out some information and then tell you to open <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a> in your browser. Do so and admire your new website.   </p>
+<p>When done return to the terminal and press enter to exit obsidianhtml and stop the webserver.   </p>
+<h2 id="about">About</h2>
+<p>This is a very opinionated mode, which allows us to do a lot of checking of input, and more importantly: compute sensible defaults. This will give you the highest chance of getting a working config right off the bat.   </p>
+<p>In the basis you run obsidianhtml run by only providing the path to your note. We advice you to use an absolute path for this.   </p>
+<div class="codehilite"><pre><span></span><code>obsidianhtml run -f /home/user/git/obsidian-html.github.io/__src/vault/ObsidianHtml.md
+</code></pre></div>
+
+<p>This will then do the following:   </p>
+<ul>
+<li>Load in the default config file. These already have sensible defaults, but some will be overwritten in the steps below to work for <code>obsidianhtml run</code>.   </li>
+<li>Figure out your vault folder. It does this by starting with the folder that your entrypoint node is in and looking for the folder <code>.obsidian</code>, which is present in every vault. If it can't find this folder, it goes one folder up and tries again.   </li>
+<li>Set the config settings for the markdown and html output folders. These will be created as a temporary folder. These folders will not be removed by obsidianhtml at the end, but should be cleaned up by your OS after a restart or when it thinks it is time to clean up temporary folders.   </li>
+<li>Write the compiled config settings to a file called config.yml. This file will be located in an <a href="https://pypi.org/project/appdirs/" class="external-link">AppDir folder</a> which is a standard location on your OS for applications to store config.    </li>
+<li>Compile your website   </li>
+<li>Start hosting your website at port 8000 using the built-in python <code>http.server</code> module.   </li>
+<li>Print out the location to your newly compiled config yaml   </li>
+<li>Print out the instruction to open your browser and navigate to <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a> so that you can view your website.   </li>
+</ul>
+<p>The process will keep running to keep the webserver alive. Press enter to exit the process and stop the webserver. The webserver will print logs to your terminal so that you can debug any issues.   </p>
+<h2 id="further-configuration">Further configuration</h2>
+<h3 id="get-a-working-config-for-deploying-to-a-subfolder">Get a working config for deploying to a subfolder</h3>
+<p>Read more on this subject: <a href="/minimal/Instructions/Snippets/Deployment instructions.html#deploying-to-a-subfolder">Deployment instructions#Deploying to a subfolder</a>.   </p>
+<p>Add the <code>--subfolder test</code> setting to get a working config for publishing to e.g. <a href="http://mywebsite.com/test" class="external-link">http://mywebsite.com/test</a>    </p>
+<p>Example:   </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># for http://mywebsite.com/test</span>
+obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder <span class="nb">test</span>
+
+<span class="c1"># for http://mywebsite.com/sites/test</span>
+obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder sites/test
+</code></pre></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Instructions/Quickstart.html">Quickstart</a></li>
+</ul>
+</div>
+
+<div class="tags">
+
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>
