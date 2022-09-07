@@ -2,7 +2,7 @@
 {}
 ---
    
-> New in [v3.2.0](../Changelog/v3.2.0.md)   
+> New in [v3.2.0](../Changelog/v3.2.0.md). Note that at the time of writing, this version is not published yet. [Install the master branch](../Instructions/Install%20a%20different%20version.md#install-master-branch) if you want to preview this method.   
    
 To help new users to quickly start using obsidianhtml we created the `obsidianhtml run`    
 command.   
