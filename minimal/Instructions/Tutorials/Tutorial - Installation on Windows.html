@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Instructions</span> / <span style="color: #666;">Tutorials</span> / <a href="/minimal/Instructions/Tutorials/Tutorial - Installation on Windows.html"  >Tutorial - Installation on Windows</a>
+                        </div>
+                    </div>
+<embeddedtitle>Tutorial - installation on windows</embeddedtitle>
+<p>Working with Python on Windows can sometimes be a headache.   </p>
+<p>This page goes through all the steps to install obsidianhtml on a Windows machine. We will use a virtual environment for this so that you don't pollute your environment.   </p>
+<p>You can skip this step. You don't need to create a virtualenvironment for obsidianhtml to work on Windows if you have functional Python/Pip installations on the right versions. But if you are having issues with Python, or are following <a href="/minimal/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html">Bootstrapping Python on Windows</a>, then using a venv is a plus.   </p>
+<h2 id="installing-and-or-upgrading-python">Installing and or upgrading python</h2>
+<p>To install python go to <a href="https://www.python.org/downloads/" class="external-link">https://www.python.org/downloads/</a> and click on the big yellow download button. A default installation will do.   </p>
+<div class="callout callout-note active" rasa="1">
+<div class="callout-title">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
+</div>
+<div class="callout-title-name">Note
+</div>
+</div>
+<div class="callout-content">
+<p>If you are on a system where you are not allowed to install python, follow these instructions: <a href="/minimal/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html">Bootstrapping Python on Windows</a> <br />
+</p>
+</div>
+</div>
+<p>If you already have python installed, run <code>python --version</code> and check that your version is at least 3.9. If not, you will need to upgrade. Follow standard instructions on upgrating python for Windows. (Google)   </p>
+<h2 id="create-a-virtual-environment">Create a virtual environment</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>To enter a virtual env, we need to install the virtualenv package using pip. If you have both installed already, you can skip to the next section.   </p>
+<p>Open powershell and run the following commands:   </p>
+<div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">ensurepip</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
+</code></pre></div>
+
+<h3 id="create-virtualenv">Create virtualenv</h3>
+<p>Next we can create a virtualenv. This will appear as a regular folder in the folder where you run the following commands. So move to a location where you don't mind a folder being created.    </p>
+<p>Later in this tutorial we will download the example vault, so it might be good to move to a location where you keep your git projects, so they are close together.   </p>
+<div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">obsenv</span>
+</code></pre></div>
+
+<p>Wait patiently for the above command to finish. <br />
+When done, you will notice a new folder called <code>obsenv</code>.   </p>
+<h2 id="enter-virtual-env">Enter virtual env</h2>
+<p>To enter the virtual env, we need to execute a script that is located in the virtual env folder, like so:   </p>
+<div class="codehilite"><pre><span></span><code><span class="p">.\</span><span class="n">obsenv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+
+<p>This will add the prefix <code>(obsenv)</code> to your prompt, letting you know that you are in the virtual env.   </p>
+<p>From this moment forward, any python/pip command will work as if you have it installed globally, but will actually use the version from the venv.    </p>
+<p>Any pip install commands will only affect your virtualenv. Once you exit the venv and delete the obsenv folder, it will be like you never installed anything at all. This is the major benefit of using venvs.   </p>
+<p>Run the following command to double check that you are using a python version of 3.9 or higher:   </p>
+<div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="p">-</span><span class="n">-version</span>
+</code></pre></div>
+
+<h2 id="exit-virtualenv">Exit virtualenv</h2>
+<p>When we ran the <code>activate.ps1</code> script, it loaded a command into our session called <code>deactivate</code>, when we run this, we will exit our virtualenv again:   </p>
+<div class="codehilite"><pre><span></span><code><span class="n">deactivate</span>
+</code></pre></div>
+
+<p>Don't do this now though, as we have more work to do.   </p>
+<h2 id="install-obsidianhtml">Install Obsidianhtml</h2>
+<p>On WIndows we need to use a special command to install pythonnet, as the version that we need is still in a pre-release state.   </p>
+<div class="codehilite"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-pre</span> <span class="n">pythonnet</span> 
+</code></pre></div>
+
+<p>Then we can install obsidianhtml itself:   </p>
+<div class="codehilite"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">obsidianhtml</span>
+<span class="c"># test version</span>
+<span class="n">obsidianhtml</span> <span class="n">version</span>
+</code></pre></div>
+
+<blockquote>
+<p>See <a href="/minimal/Instructions/Install a different version.html">Install a different version</a> for more options, such as installing the pre-released version of obsidianhtml.   </p>
+</blockquote>
+<h2 id="use-obsidianhtml">Use obsidianhtml</h2>
+<h3 id="clone-example-vault">Clone example vault</h3>
+<p>If you have your own vault, you can start testing with that, but for the sake of this tutorial, I will use an example vault so that you can follow along.   </p>
+<p>Go to a folder using <code>cd</code> where you want to create a new folder, and then use git to clone the example vault repo.   </p>
+<div class="callout callout-note active" rasa="1">
+<div class="callout-title">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
+</div>
+<div class="callout-title-name">Note
+</div>
+</div>
+<div class="callout-content">
+<p>If you don't have git installed, you can also go to <a href="https://github.com/obsidian-html/example_vault" class="external-link">https://github.com/obsidian-html/example_vault</a> then click the green code button, select Download ZIP, and then unzip the archive to your desired location. <br />
+</p>
+</div>
+</div>
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/obsidian-html/example_vault.git
+</code></pre></div>
+
+<p>Then move into the cloned folder:   </p>
+<div class="codehilite"><pre><span></span><code>cd example_vault
+</code></pre></div>
+
+<h2 id="convert">Convert</h2>
+<p>The main mode of obsidianhtml is <code>convert</code>. This command will look for a <code>config.yml</code> file in the current folder. It will then use the settings in that file to convert your file to html.   </p>
+<blockquote>
+<p>Alternatively you can pass the path to a config file using <code>-i path/to/config.yml</code>.  <br />
+See for more information: <a href="/minimal/Instructions/Usage.html">Usage</a>.    </p>
+</blockquote>
+<p>You can create your own config file easily using <a href="/minimal/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a>. But for now, you will see that a config.yml already exists in our current folder, so let's use that   </p>
+<div class="codehilite"><pre><span></span><code>obisidanhtml convert
+</code></pre></div>
+
+<p>This should give the following output:   </p>
+<div class="codehilite"><pre><span></span><code>(obsenv) PS ~\test_obs\example_vault&gt; obsidianhtml convert
+No config provided, using config at C:/Users/User/Documents/test_obs/example_vault/config.yml. (Default config path)
+&gt; COPYING VAULT C:\Users\User\Documents\test_obs\example_vault\vault TO C:\Users\ADEF0F~1\AppData\Local\Temp\116\tmpyunxraky
+Paths that will be ignored: [&#39;C:/Users/User/Documents/test_obs/example_vault/vault/.obsidian&#39;, &#39;C:/Users/User/Documents/test_obs/example_vault/vault/.trash&#39;, &#39;C:/Users/User/Documents/test_obs/example_vault/vault/.DS_Store&#39;, &#39;C:/Users/User/Documents/test_obs/example_vault/vault/.git&#39;]
+&lt; COPYING VAULT: Done
+&gt; CLEARING OUTPUT FOLDERS
+&gt; CREATING OUTPUT FOLDERS
+&gt; COMPILING MARKDOWN FROM OBSIDIAN CODE (C:\Users\User\AppData\Local\Temp\116\tmpyunxraky\Home.md)
+&gt; COMPILING HTML FROM MARKDOWN CODE (C:\Users\User\Documents\test_obs\example_vault\output\md\index.md)
+index.md
+        &gt; COMPILING INDEX FROM DIR STRUCTURE (C:\Users\User\Documents\test_obs\example_vault\output\html\obs.html\dir_index.html)
+        &lt; COMPILING INDEX FROM DIR STRUCTURE: Done
+        &gt; SECOND PASS HTML
+        &lt; SECOND PASS HTML: Done
+&lt; COMPILING HTML FROM MARKDOWN CODE: Done
+
+You can find your output at:
+        md: C:\Users\User\Documents\test_obs\example_vault\output\md
+        html: C:\Users\User\Documents\test_obs\example_vault\output\html
+</code></pre></div>
+
+<p>The most important information for now is that it uses config.yml located at <code>C:/Users/User/Documents/test_obs/example_vault/config.yml</code> (first line) and that it outputted our html at <code>C:\Users\User\Documents\test_obs\example_vault\output\html</code> (last line).   </p>
+<h3 id="preview-site">Preview site</h3>
+<p>This compiled html should be served by a webserver. If you are going to publish a website on the world wide web, I highly recommend not to use the method below, but for testing on your own environment this will do nicely.   </p>
+<div class="callout callout-note active" rasa="1">
+<div class="callout-title">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
+</div>
+<div class="callout-title-name">Note
+</div>
+</div>
+<div class="callout-content">
+<p>Using a service like <a href="https://pages.github.com/" class="external-link">https://pages.github.com/</a> is a nice free way to quickly get a static website up and running.  <br />
+</p>
+</div>
+</div>
+<p>I've prepared a script that will start a local webserver at port 8000, using the folder <code>output/html</code> as the webroot. Run it like so:   </p>
+<div class="codehilite"><pre><span></span><code>python ./serve.py
+</code></pre></div>
+
+<p>Then open <a href="http://localhost:8000/" class="external-link">http://localhost:8000/</a> in your web browser. This should show you a website.   </p>
+<p>The website is pretty bare bones at the moment, but it serves as a good proof of concept.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Instructions/Installation.html">Installation</a></li>
+	<li><a class="backlink" href="/minimal/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html">Bootstrapping Python on Windows</a></li>
+</ul>
+</div>
+
+<div class="tags">
+
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

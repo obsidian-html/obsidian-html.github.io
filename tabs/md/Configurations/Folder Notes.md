@@ -71,4 +71,7 @@ toggles:
    
    
 > [!info]    
-> The homepage will always be placed at `{html_output_folder}/index.html`; even when you set `naming: index`,  the homepage will be **not** treated as a folder note
+> The homepage will always be placed at `{html_output_folder}/index.html`; even when you set `naming: index`,  the homepage will be **not** treated as a folder note   
+   
+## Breadcrumbs   
+If you are using folder notes, you might also be interested in [Breadcrumbs](../Configurations/Breadcrumbs.md).

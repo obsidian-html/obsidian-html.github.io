@@ -276,6 +276,7 @@
 	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/Configurations/Backlinks.html"  >Backlinks</a></li>
+		<li><a class="" href="/Configurations/Breadcrumbs.html"  >Breadcrumbs</a></li>
 		<li><a class="" href="/Configurations/Configuration Options.html"  >Configuration Options</a></li>
 		<li><a class="" href="/Configurations/Copy vault to temp dir.html"  >Copy vault to temp dir</a></li>
 		<li><a class="" href="/Configurations/Create Index from Directory Structure.html"  >Create Index from Directory Structure</a></li>
@@ -339,6 +340,18 @@
 			<li><a class="" href="/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
 		</ul>
 	</div>
+	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
+	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Tutorials">
+		<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
+		<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
+			<ul class="dir-list">
+				<li><a class="" href="/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html"  >Bootstrapping Python on Windows</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><a class="" href="/Instructions/Tutorials/Tutorial - Installation on Windows.html"  >Tutorial - Installation on Windows</a></li>
+		</ul>
+	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/Instructions/Install a different version.html"  >Install a different version</a></li>
 		<li><a class="" href="/Instructions/Installation.html"  >Installation</a></li>
@@ -348,8 +361,8 @@
 		<li><a class="" href="/Instructions/Usage.html"  >Usage</a></li>
 	</ul>
 </div>
-<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-13" class="dir-container requires_js " path="/Log">
+<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-15" class="dir-container requires_js " path="/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/Log/Published ObsidianHtml version 0.0.9!.html"  >Published ObsidianHtml version 0.0.9!</a></li>
 		<li><a class="" href="/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
@@ -387,10 +400,22 @@
 </ul>
 </div>
 <blockquote>
-<p>New in <a href="/Changelog/v3.2.0.html">v3.2.0</a>. Note that at the time of writing, this version is not published yet. <a href="/Instructions/Install a different version.html#install-master-branch">Install the master branch</a> if you want to preview this method.   </p>
+<p>New in <a href="/Changelog/v3.2.0.html">v3.2.0</a>.    </p>
 </blockquote>
 <p>To help new users to quickly start using obsidianhtml we created the <code>obsidianhtml run</code>  <br />
 command.   </p>
+<div class="callout callout-note active" rasa="1">
+<div class="callout-title">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
+</div>
+<div class="callout-title-name">Note
+</div>
+</div>
+<div class="callout-content">
+<p>obsidianhtml run was added in the latest release <a href="/Changelog/v3.2.0.html">v3.2.0</a>, and is currently not fully tested yet. If you experience issues, then I ask you to go to <a href="/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a>. In the mean time you can continue with the section below. <br />
+</p>
+</div>
+</div>
 <h2 id="quickstart">Quickstart</h2>
 <h3 id="short-instructions">Short instructions</h3>
 <p>Run   </p>
@@ -439,6 +464,9 @@ obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder sites/
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
+	<li><a class="backlink" href="/Instructions/Usage.html">Usage</a></li>
+	<li><a class="backlink" href="/Changelog/v3.2.0.html">v3.2.0</a></li>
+	<li><a class="backlink" href="/Instructions/Tutorials/Tutorial - Installation on Windows.html">Tutorial - Installation on Windows</a></li>
 	<li><a class="backlink" href="/Instructions/Quickstart.html">Quickstart</a></li>
 </ul>
 </div>
@@ -449,13 +477,13 @@ obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder sites/
 
 </div>
 <div class="graph requires_js ">
-    <div id="A191018653635910997973575136478419400996{level}" class="graph_div"></div>
+    <div id="A91003761013356948457285429456458958699{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B191018653635910997973575136478419400996{level}" level="{level}" note_temp_id="191018653635910997973575136478419400996" onclick="window.ObsHtmlGraph.run(this, '191018653635910997973575136478419400996', 'Obsidianhtml Run');">
+        <button class="graph_button graph_show_button" id="B91003761013356948457285429456458958699{level}" level="{level}" note_temp_id="91003761013356948457285429456458958699" onclick="window.ObsHtmlGraph.run(this, '91003761013356948457285429456458958699', 'Obsidianhtml Run');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C191018653635910997973575136478419400996{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C91003761013356948457285429456458958699{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

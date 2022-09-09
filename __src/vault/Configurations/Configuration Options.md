@@ -13,12 +13,12 @@ Certain settings change the flow of how notes are selected and presented on the 
 Run:
 
 ``` bash
-obsidianhtml -gc
+obsidianhtml export default-config
 ``` 
 
 To view the defaults_config.yaml that is used by ObsidianHtml. 
 
-> Tip: run `obsidianhtml -gc > config.yaml` on Linux to get a config file with all possible inputs. 
+> Tip: run `obsidianhtml export default-config -o config.yml` to get a config file with all possible inputs. 
 
 Note that the inputs that need to be filled in always are marked with `'<REQUIRED_INPUT>'`.
 

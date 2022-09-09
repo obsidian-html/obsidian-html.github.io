@@ -24,6 +24,7 @@ After a clean install of Python, you need to upgrade pip (the python package man
 pip install --upgrade pip
 ```
 
+
 When running on Windows,  also run:
 
 ```bash
@@ -39,7 +40,7 @@ pip install obsidianhtml
 ```
 
 ## Run
-> New in [[v3.2.0]]. Note that at the time of writing, this version is not published yet. [[Install a different version#Install master branch|Install the master branch]] if you want to preview this method.
+> New in [[v3.2.0]]. 
 
 To hit the ground running you can use `obsidianhtml run`. This way you only have to provide the path to a note that will serve as your homepage. (Parts of) the rest of your vault will be included by following the links on your entrypoint note. The vault is then converted to html and the website is hosted on http://localhost:8888
 
@@ -68,7 +69,7 @@ obsidian_entrypoint_path_str: '/path/to/your/vault/entrypoint.md'
 ## Convert vault
 Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:
 ``` bash
-obsidianhtml -i config.yaml
+obsidianhtml convert -i config.yaml
 ```
 
 This will create the folder `output` in your current folder, containing `output/md` and `output/html` for the proper markdown and the html website respectively.
@@ -98,7 +99,7 @@ html_output_folder_path_str: 'C:/Users/Username/Documents/Website/html'
 
 ## Test website
 ``` bash
-python -m http.server --dir output/html
+obsidianhtml serve --directory output/html --port 8000
 ```
 
 Then open [http://localhost:8000](http://localhost:8000) to view the html site that was created.

@@ -16,6 +16,8 @@ pip install --upgrade pip
 ```
 
 ### On Windows
+> Windows can require some extra attention to get started. Read [[Tutorial - Installation on Windows]] for a deep dive.
+
 Windows needs pythonnet to be installed. You should be able to do this by running this command:
 ``` bash
 pip install --pre pythonnet

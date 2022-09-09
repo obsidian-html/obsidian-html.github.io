@@ -259,6 +259,7 @@
 	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/index_from_tags/Configurations/Backlinks.html"  >Backlinks</a></li>
+		<li><a class="" href="/index_from_tags/Configurations/Breadcrumbs.html"  >Breadcrumbs</a></li>
 		<li><a class="" href="/index_from_tags/Configurations/Configuration Options.html"  >Configuration Options</a></li>
 		<li><a class="" href="/index_from_tags/Configurations/Copy vault to temp dir.html"  >Copy vault to temp dir</a></li>
 		<li><a class="" href="/index_from_tags/Configurations/Create Index from Directory Structure.html"  >Create Index from Directory Structure</a></li>
@@ -315,38 +316,43 @@
 </div>
 <button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
 <div id="folder-container-11" class="dir-container requires_js " path="/index_from_tags/Instructions">
+	<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
+	<div id="folder-container-12" class="dir-container requires_js " path="/index_from_tags/Instructions/Snippets">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
+		</ul>
+	</div>
 	<ul class="dir-list">
-		<li><a class="" href="/index_from_tags/Instructions/Install a different version.html"  >Install a different version</a></li>
-		<li><a class="" href="/index_from_tags/Instructions/Installation.html"  >Installation</a></li>
-		<li><a class="" href="/index_from_tags/Instructions/Run custom code.html"  >Run custom code</a></li>
+		<li><a class="" href="/index_from_tags/Instructions/Obsidianhtml Run.html"  >Obsidianhtml Run</a></li>
 	</ul>
 </div>
-<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-12" class="dir-container requires_js " path="/index_from_tags/Log">
+<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-13" class="dir-container requires_js " path="/index_from_tags/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
 	</ul>
 </div>
-<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Resources</button>
-<div id="folder-container-13" class="dir-container requires_js " path="/index_from_tags/Resources">
-	<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">audio</button>
-	<div id="folder-container-14" class="dir-container requires_js " path="/index_from_tags/Resources/audio">
+<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Resources</button>
+<div id="folder-container-14" class="dir-container requires_js " path="/index_from_tags/Resources">
+	<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">audio</button>
+	<div id="folder-container-15" class="dir-container requires_js " path="/index_from_tags/Resources/audio">
 		<ul class="dir-list">
 			<li><a class="" href="/index_from_tags/Resources/audio/geese.wav"  class="external-link">geese</a></li>
 			<li><a class="" href="/index_from_tags/Resources/audio/jazzy.mp3"  class="external-link">jazzy</a></li>
 		</ul>
 	</div>
-	<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">img</button>
-	<div id="folder-container-15" class="dir-container requires_js " path="/index_from_tags/Resources/img">
+	<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">img</button>
+	<div id="folder-container-16" class="dir-container requires_js " path="/index_from_tags/Resources/img">
 		<ul class="dir-list">
 			<li><a class="" href="/index_from_tags/Resources/img/Pasted image 20220905184629.png"  class="external-link">Pasted image 20220905184629</a></li>
+			<li><a class="" href="/index_from_tags/Resources/img/Pasted image 20220909145416.png"  class="external-link">Pasted image 20220909145416</a></li>
 			<li><a class="" href="/index_from_tags/Resources/img/obsidian-html-logo.png"  class="external-link">obsidian-html-logo</a></li>
 			<li><a class="" href="/index_from_tags/Resources/img/obsidian-html-logo-sq.png"  class="external-link">obsidian-html-logo-sq</a></li>
 			<li><a class="" href="/index_from_tags/Resources/img/wide-image.jpg"  class="external-link">wide-image</a></li>
 		</ul>
 	</div>
-	<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">mp4</button>
-	<div id="folder-container-16" class="dir-container requires_js " path="/index_from_tags/Resources/mp4">
+	<button id="folder-17" class="dir-button" onclick="toggle_dir(this.id)">mp4</button>
+	<div id="folder-container-17" class="dir-container requires_js " path="/index_from_tags/Resources/mp4">
 		<ul class="dir-list">
 			<li><a class="" href="/index_from_tags/Resources/mp4/chill_frog.mp4"  class="external-link">chill_frog</a></li>
 		</ul>
@@ -374,30 +380,64 @@
 <li><a href="#v3-2-0" class="anchor-link">v3.2.0</a><ul>
 <li><a href="#added-features" class="anchor-link">Added features</a></li>
 <li><a href="#bugfixes" class="anchor-link">Bugfixes</a></li>
+<li><a href="#changes" class="anchor-link">Changes</a></li>
+<li><a href="#breaking-changes" class="anchor-link">Breaking changes</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <blockquote>
-<p>Feature version of <a href="/index_from_tags/Changelog/v3.0.0.html">v3.0.0</a>. Note that at the time of writing, this version is not published yet. <a href="/index_from_tags/Instructions/Install a different version.html#install-master-branch">Install the master branch</a> if you want to preview this method.   </p>
+<p>Feature version of <a href="/index_from_tags/Changelog/v3.0.0.html">v3.0.0</a>.    </p>
 </blockquote>
 <h2 id="added-features">Added features</h2>
 <ul>
+<li><a href="/index_from_tags/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a> has been added to help in getting a first working config for new users.   </li>
 <li>It is now possible to configure vault files to be exported to any path in the html output folder. <a href="/index_from_tags/Configurations/Export vault files to html output.html">Export vault files to html output</a>.   </li>
 <li>The rsync copy method was added. This should be way quicker and be less buggy on MacOS. This is set as the default. If rsync is not present it fallsback to the older shutil method. Read more: <a href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a>   </li>
 <li>Inline footnotes are now supported. <a href="/index_from_tags/Demonstrations/Implementing Footnotes.html">Implementing Footnotes</a>   </li>
+<li><a href="/index_from_tags/Configurations/Breadcrumbs.html">Breadcrumbs</a> feature added.   </li>
 <li><mark class="formatting_highlight">Highlight</mark> and <span class="formatting_strikethrough">strikethrough</span> formatting has been added. <a href="/index_from_tags/Demonstrations/Getting the basics right.html#formatting">Getting the basics right#Formatting</a>   </li>
 <li>ObisidianHtml now briefly highlights the section that was linked to when following a link.   </li>
+<li>Latex (mathjax) tweaks to offer greater range of support, and the correct fonts are used now. <a href="/index_from_tags/Demonstrations/Implementing Latex.html">Implementing Latex</a>.   </li>
+<li>The <a href="/index_from_tags/Configurations/Tags Page.html">Tags Page</a> now includes folding, so that you get all tags on one page.   </li>
+<li>Version can now be queried consistently using <code>obsidianhtml version</code>   </li>
+<li>Obsidian has a special behavior regarding the <code>tags:</code> frontmatter key, this has been added, and an empty <code>tags:</code> key now also no longer gives an error.   </li>
 </ul>
 <h2 id="bugfixes">Bugfixes</h2>
 <ul>
-<li><code>\|</code> as can be used when wanting to type <code>|</code> in a table,  no longer leads to butchered table output. Note that any occurence of <code>\|</code> outside of codeblocks/-lines will be replaced with <code>|</code>!</li>
+<li><code>\|</code> as can be used when wanting to type <code>|</code> in a table,  no longer leads to butchered table output. Note that any occurence of <code>\|</code> outside of codeblocks/-lines will be replaced with <code>|</code>!   </li>
+<li>Relative and absolute markdown links can be used interchangably on Obsidian, this was not yet the case in obsidianhtml. This has been fixed.   </li>
+<li>There were bugs when <a href="https://github.com/obsidian-html/obsidian-html/issues/327" class="external-link">disabling # create_index_from_dir_structure</a>. This has been fixed. Same for disabling the graph.   </li>
+<li><a href="https://github.com/obsidian-html/obsidian-html/issues/388" class="external-link">Fix disallowed MIME type (“text/plain”) on Windows</a>. This happened when following the instructions in the documentation telling you to run <code>python -m http.server</code>. These instructions have been replaced with <code>obsidianhtml serve</code>. This is also a new tool that uses http.server with extra settings to serve js files as <code>application/javascript</code>.   </li>
+<li>Bugfix for when one <a href="https://github.com/obsidian-html/obsidian-html/issues/332" class="external-link">exports their output into their vault</a> (note: this is not recommended). Underlying bug was an issue in the new note finding code.    </li>
 </ul>
+<h2 id="changes">Changes</h2>
+<ul>
+<li>Running <code>obsidianhtml -i config.yml</code> has been deprecated for <code>obsidianhtml convert -i config.yml</code> to create a better structure for new tooling.   </li>
+<li><code>obsidian help</code> can be called to get the new help text.   </li>
+</ul>
+<h2 id="breaking-changes">Breaking changes</h2>
+<p>Normally a feature version doesn't have breaking changes, but in this case it is for miscelaneous tooling that isn't core to the functionality.   </p>
+<p>The export settings have been changed. The old help text stated:   </p>
+<div class="codehilite"><pre><span></span><code><span class="k">[Obsidian-html]</span><span class="w"></span>
+<span class="na">- Add -i &lt;/path/to/input.yml&gt; to provide config</span><span class="w"></span>
+<span class="na">- Add -v for verbose output</span><span class="w"></span>
+<span class="na">- Add -h to get helptext</span><span class="w"></span>
+<span class="na">- Add -eht &lt;target/path/file.name&gt; to export the html template.</span><span class="w"></span>
+<span class="na">- Add -gc to output all configurable keys and their default values.</span><span class="w"></span>
+</code></pre></div>
+
+<ul>
+<li><code>obsidianhtml -eht</code> has been replaced with <code>obsidianhtml export layout</code>   </li>
+<li><code>obsidianhtml -gc</code> has been replaced with <code>obsidianhtml export default-config</code>   </li>
+</ul>
+<p>Run <code>obsidianhtml export</code> by itself to get its helptext.</p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
+	<li><a class="backlink" href="/index_from_tags/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Export vault files to html output.html">Export vault files to html output</a></li>
 	<li><a class="backlink" href="/index_from_tags/Demonstrations/Implementing Footnotes.html">Implementing Footnotes</a></li>
 	<li><a class="backlink" href="/index_from_tags/Demonstrations/Getting the basics right.html">Getting the basics right</a></li>
@@ -415,13 +455,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A211669652906037697571880274714957289636{level}" class="graph_div"></div>
+    <div id="A53818272906354377447649829987830282373{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B211669652906037697571880274714957289636{level}" level="{level}" note_temp_id="211669652906037697571880274714957289636" onclick="window.ObsHtmlGraph.run(this, '211669652906037697571880274714957289636', 'v3.2.0');">
+        <button class="graph_button graph_show_button" id="B53818272906354377447649829987830282373{level}" level="{level}" note_temp_id="53818272906354377447649829987830282373" onclick="window.ObsHtmlGraph.run(this, '53818272906354377447649829987830282373', 'v3.2.0');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C211669652906037697571880274714957289636{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C53818272906354377447649829987830282373{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

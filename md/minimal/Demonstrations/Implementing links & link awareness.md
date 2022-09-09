@@ -23,7 +23,7 @@ Linking to another header on the same page: `[[#Proper markdown links]]`
 There is a setting that forces Obsidian to use proper markdown notation. So this is also supported:   
    
 `[Proper markdown link](proper%20markdown)`   
-[Proper markdown link](../Demonstrations/Test pages/proper markdown.md)   
+[Proper markdown link](../Demonstrations/Test%20pages/proper%20markdown.md)   
     
  Note that spaces must be encoded in proper markdown links.   
    

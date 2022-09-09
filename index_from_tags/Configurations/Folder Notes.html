@@ -259,6 +259,7 @@
 	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/index_from_tags/Configurations/Backlinks.html"  >Backlinks</a></li>
+		<li><a class="" href="/index_from_tags/Configurations/Breadcrumbs.html"  >Breadcrumbs</a></li>
 		<li><a class="" href="/index_from_tags/Configurations/Configuration Options.html"  >Configuration Options</a></li>
 		<li><a class="" href="/index_from_tags/Configurations/Copy vault to temp dir.html"  >Copy vault to temp dir</a></li>
 		<li><a class="" href="/index_from_tags/Configurations/Create Index from Directory Structure.html"  >Create Index from Directory Structure</a></li>
@@ -315,38 +316,43 @@
 </div>
 <button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
 <div id="folder-container-11" class="dir-container requires_js " path="/index_from_tags/Instructions">
+	<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
+	<div id="folder-container-12" class="dir-container requires_js " path="/index_from_tags/Instructions/Snippets">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
+		</ul>
+	</div>
 	<ul class="dir-list">
-		<li><a class="" href="/index_from_tags/Instructions/Install a different version.html"  >Install a different version</a></li>
-		<li><a class="" href="/index_from_tags/Instructions/Installation.html"  >Installation</a></li>
-		<li><a class="" href="/index_from_tags/Instructions/Run custom code.html"  >Run custom code</a></li>
+		<li><a class="" href="/index_from_tags/Instructions/Obsidianhtml Run.html"  >Obsidianhtml Run</a></li>
 	</ul>
 </div>
-<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-12" class="dir-container requires_js " path="/index_from_tags/Log">
+<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-13" class="dir-container requires_js " path="/index_from_tags/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
 	</ul>
 </div>
-<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Resources</button>
-<div id="folder-container-13" class="dir-container requires_js " path="/index_from_tags/Resources">
-	<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">audio</button>
-	<div id="folder-container-14" class="dir-container requires_js " path="/index_from_tags/Resources/audio">
+<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Resources</button>
+<div id="folder-container-14" class="dir-container requires_js " path="/index_from_tags/Resources">
+	<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">audio</button>
+	<div id="folder-container-15" class="dir-container requires_js " path="/index_from_tags/Resources/audio">
 		<ul class="dir-list">
 			<li><a class="" href="/index_from_tags/Resources/audio/geese.wav"  class="external-link">geese</a></li>
 			<li><a class="" href="/index_from_tags/Resources/audio/jazzy.mp3"  class="external-link">jazzy</a></li>
 		</ul>
 	</div>
-	<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">img</button>
-	<div id="folder-container-15" class="dir-container requires_js " path="/index_from_tags/Resources/img">
+	<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">img</button>
+	<div id="folder-container-16" class="dir-container requires_js " path="/index_from_tags/Resources/img">
 		<ul class="dir-list">
 			<li><a class="" href="/index_from_tags/Resources/img/Pasted image 20220905184629.png"  class="external-link">Pasted image 20220905184629</a></li>
+			<li><a class="" href="/index_from_tags/Resources/img/Pasted image 20220909145416.png"  class="external-link">Pasted image 20220909145416</a></li>
 			<li><a class="" href="/index_from_tags/Resources/img/obsidian-html-logo.png"  class="external-link">obsidian-html-logo</a></li>
 			<li><a class="" href="/index_from_tags/Resources/img/obsidian-html-logo-sq.png"  class="external-link">obsidian-html-logo-sq</a></li>
 			<li><a class="" href="/index_from_tags/Resources/img/wide-image.jpg"  class="external-link">wide-image</a></li>
 		</ul>
 	</div>
-	<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">mp4</button>
-	<div id="folder-container-16" class="dir-container requires_js " path="/index_from_tags/Resources/mp4">
+	<button id="folder-17" class="dir-button" onclick="toggle_dir(this.id)">mp4</button>
+	<div id="folder-container-17" class="dir-container requires_js " path="/index_from_tags/Resources/mp4">
 		<ul class="dir-list">
 			<li><a class="" href="/index_from_tags/Resources/mp4/chill_frog.mp4"  class="external-link">chill_frog</a></li>
 		</ul>
@@ -378,6 +384,7 @@
 <li><a href="#naming" class="anchor-link">Naming</a></li>
 </ul>
 </li>
+<li><a href="#breadcrumbs" class="anchor-link">Breadcrumbs</a></li>
 </ul>
 </li>
 </ul>
@@ -451,14 +458,17 @@ index.md --&gt; mocs.md --&gt; folder1/index.md, folder2/index.md, etc <br />
 </div>
 </div>
 <div class="callout-content">
-<p>The homepage will always be placed at <code>{html_output_folder}/index.html</code>; even when you set <code>naming: index</code>,  the homepage will be <strong>not</strong> treated as a folder note
+<p>The homepage will always be placed at <code>{html_output_folder}/index.html</code>; even when you set <code>naming: index</code>,  the homepage will be <strong>not</strong> treated as a folder note <br />
 </p>
 </div>
 </div>
+<h2 id="breadcrumbs">Breadcrumbs</h2>
+<p>If you are using folder notes, you might also be interested in <a href="/index_from_tags/Configurations/Breadcrumbs.html">Breadcrumbs</a>.</p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Breadcrumbs.html">Breadcrumbs</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Features.html">Features</a></li>
 </ul>
@@ -474,13 +484,13 @@ index.md --&gt; mocs.md --&gt; folder1/index.md, folder2/index.md, etc <br />
 
 </div>
 <div class="graph requires_js ">
-    <div id="A239985548209319045646632399043035391661{level}" class="graph_div"></div>
+    <div id="A280901946166741736146364951063563479458{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B239985548209319045646632399043035391661{level}" level="{level}" note_temp_id="239985548209319045646632399043035391661" onclick="window.ObsHtmlGraph.run(this, '239985548209319045646632399043035391661', 'Folder Notes');">
+        <button class="graph_button graph_show_button" id="B280901946166741736146364951063563479458{level}" level="{level}" note_temp_id="280901946166741736146364951063563479458" onclick="window.ObsHtmlGraph.run(this, '280901946166741736146364951063563479458', 'Folder Notes');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C239985548209319045646632399043035391661{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C280901946166741736146364951063563479458{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

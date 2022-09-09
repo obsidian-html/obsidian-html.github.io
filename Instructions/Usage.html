@@ -276,6 +276,7 @@
 	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/Configurations/Backlinks.html"  >Backlinks</a></li>
+		<li><a class="" href="/Configurations/Breadcrumbs.html"  >Breadcrumbs</a></li>
 		<li><a class="" href="/Configurations/Configuration Options.html"  >Configuration Options</a></li>
 		<li><a class="" href="/Configurations/Copy vault to temp dir.html"  >Copy vault to temp dir</a></li>
 		<li><a class="" href="/Configurations/Create Index from Directory Structure.html"  >Create Index from Directory Structure</a></li>
@@ -339,6 +340,18 @@
 			<li><a class="" href="/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
 		</ul>
 	</div>
+	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
+	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Tutorials">
+		<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
+		<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
+			<ul class="dir-list">
+				<li><a class="" href="/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html"  >Bootstrapping Python on Windows</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><a class="" href="/Instructions/Tutorials/Tutorial - Installation on Windows.html"  >Tutorial - Installation on Windows</a></li>
+		</ul>
+	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/Instructions/Install a different version.html"  >Install a different version</a></li>
 		<li><a class="" href="/Instructions/Installation.html"  >Installation</a></li>
@@ -348,8 +361,8 @@
 		<li><a class="active" href="/Instructions/Usage.html"  >Usage</a></li>
 	</ul>
 </div>
-<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-13" class="dir-container requires_js " path="/Log">
+<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-15" class="dir-container requires_js " path="/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/Log/Published ObsidianHtml version 0.0.9!.html"  >Published ObsidianHtml version 0.0.9!</a></li>
 		<li><a class="" href="/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
@@ -375,7 +388,11 @@
 <div class="toc">
 <ul>
 <li><a href="#usage" class="anchor-link">Usage</a><ul>
-<li><a href="#basic-usage-and-required-configurations" class="anchor-link">Basic usage and required configurations</a></li>
+<li><a href="#introduction" class="anchor-link">Introduction</a></li>
+<li><a href="#basic-conversion-and-required-configurations" class="anchor-link">Basic conversion and required configurations</a><ul>
+<li><a href="#building-a-config-file" class="anchor-link">Building a config file</a></li>
+</ul>
+</li>
 <li><a href="#deployment-configuration" class="anchor-link">Deployment configuration</a><ul>
 <li><a href="#deploying-to-a-subfolder" class="anchor-link">Deploying to a subfolder</a></li>
 <li><a href="#viewing-your-website-without-a-webserver" class="anchor-link">Viewing your website without a webserver</a></li>
@@ -392,23 +409,56 @@
 </li>
 </ul>
 </div>
-<h2 id="basic-usage-and-required-configurations">Basic usage and required configurations</h2>
+<h2 id="introduction">Introduction</h2>
 <p>After <a href="/Instructions/Installation.html">Installation</a>, we can run obsidian via the commandline like so:   </p>
-<div class="codehilite"><pre><span></span><code>obsidianhtml
+<div class="codehilite"><pre><span></span><code>obsidianhtml <span class="nb">help</span>
 </code></pre></div>
 
 <p>That will give us the following output:   </p>
-<div class="codehilite"><pre><span></span><code><span class="n">Could</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">locate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="o">.</span><span class="w"></span>
-<span class="w">  </span><span class="n">Please</span><span class="w"> </span><span class="n">try</span><span class="w"> </span><span class="n">passing</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="n">location</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="n">obsidianhtml</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="n">your</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">yml</span><span class="err">`</span><span class="w"> </span><span class="n">parameter</span><span class="o">.</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="n">obsidianhtml</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">3.2.0</span><span class="w"></span>
 
-<span class="p">[</span><span class="n">Obsidian</span><span class="o">-</span><span class="n">html</span><span class="p">]</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">input</span><span class="o">.</span><span class="n">yml</span><span class="o">&gt;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">provide</span><span class="w"> </span><span class="n">config</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">verbose</span><span class="w"> </span><span class="n">output</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="n">helptext</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="o">-</span><span class="n">eht</span><span class="w"> </span><span class="o">&lt;</span><span class="n">target</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="o">&gt;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="n">template</span><span class="o">.</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="o">-</span><span class="n">gc</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">configurable</span><span class="w"> </span><span class="n">keys</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">values</span><span class="o">.</span><span class="w"></span>
+<span class="nl">Usage</span><span class="p">:</span><span class="w"> </span><span class="n">obsidianhtml</span><span class="w"> </span><span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">arguments</span><span class="p">...]</span><span class="w"> </span><span class="p">[</span><span class="n">command</span><span class="w"> </span><span class="n">options</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">global</span><span class="w"> </span><span class="n">options</span><span class="p">]</span><span class="w"></span>
+
+<span class="nl">Commands</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">run</span><span class="w">             </span><span class="n">Convert</span><span class="w"> </span><span class="n">vault</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">sensible</span><span class="w"> </span><span class="n">defaults</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">local</span><span class="w"> </span><span class="n">webserver</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">serve</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">development</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">testing</span><span class="w"> </span><span class="n">purposes</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="n">Very</span><span class="w"> </span><span class="n">opinionated</span><span class="p">).</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">The</span><span class="w"> </span><span class="n">generated</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">yml</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">convert</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">convert</span><span class="w">         </span><span class="n">Just</span><span class="w"> </span><span class="n">convert</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">vault</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">markdown</span><span class="p">.</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">Will</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">provided</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">exactly</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">provided</span><span class="p">.</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">export</span><span class="w">          </span><span class="n">Used</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">export</span><span class="w"> </span><span class="n">packaged</span><span class="w"> </span><span class="n">resources</span><span class="w"></span>
+<span class="w">        </span><span class="n">version</span><span class="w">         </span><span class="n">Print</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="n">cleanly</span><span class="w"></span>
+<span class="w">        </span><span class="n">help</span><span class="w">            </span><span class="n">Show</span><span class="w"> </span><span class="n">help</span><span class="p">.</span><span class="w"></span>
+
+<span class="n">Global</span><span class="w"> </span><span class="n">options</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="o">--</span><span class="n">help</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w">      </span><span class="n">Show</span><span class="w"> </span><span class="n">help</span><span class="w"></span>
+<span class="w">        </span><span class="o">-</span><span class="n">v</span><span class="w">              </span><span class="n">Set</span><span class="w"> </span><span class="n">Verbose</span><span class="w"> </span><span class="n">mode</span><span class="w"></span>
+
+<span class="p">(....)</span><span class="w"></span>
 </code></pre></div>
 
+<p>This gives a nice overview of what we can do.   </p>
+<p>For new users, <a href="/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a> was created. This allows you to only pass in the link to the note that will serve as your homepage. If that succeeds you can immediately browse your generated website. This will also create a config.yml for you, which you can use in <code>obsidian convert</code>.    </p>
+<p>For ObsidianHtml run, see the <a href="/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a> page.   </p>
+<h2 id="basic-conversion-and-required-configurations">Basic conversion and required configurations</h2>
+<p>As opposed to <code>obsidian run</code>, the convert command will only convert your vault to md and/or html.    </p>
+<p>This mode is the recommended mode for creating a publishing workflow, as you don't need to start a development webserver every time that you want to convert your vault.   </p>
+<p>When we run <code>obsidianhtml convert</code>, it will look for a config file to tell it what to do, where your vault is, and where to save the output.   </p>
+<p>It will first look in the current folder for <code>config.yml</code>, then <code>config.yaml</code>, and then it will look for a config.yml file in your appdir. If you have previously ran <code>obsidianhtml run</code>, this last location will contain a config.yml file.   </p>
+<p>So you will either get:   </p>
+<div class="codehilite"><pre><span></span><code>No config path given, and none found in default locations.
+  Use `obsidianhtml convert -i /target/path/to/config.yml` to provide input.
+</code></pre></div>
+
+<p>Or it will start the conversion step using the generated config of your last  <code>obsidian run</code> result.    </p>
+<div class="codehilite"><pre><span></span><code>No config provided, using config at /home/user/.config/obsidianhtml/config.yml (Default config path)
+&gt; COPYING VAULT /home/user/g...
+&gt; (...)
+</code></pre></div>
+
+<p>When you run <code>obsidianhtml convert -i path/to/config.yml</code> it will always use that path.   </p>
+<h3 id="building-a-config-file">Building a config file</h3>
 <p>So we need to input a config file. The minimum config that you need to have obsidianhtml work is the following:   </p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
 <span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
@@ -437,7 +487,7 @@
 </div>
 <p>Running again with now the config file as an input.  <br />
 (Make sure that you give the correct path to your config file!)   </p>
-<div class="codehilite"><pre><span></span><code>obsidianhtml -i config.yaml
+<div class="codehilite"><pre><span></span><code>obsidianhtml convert -i config.yaml
 </code></pre></div>
 
 <p>You might get a lot of warnings if you use external images, or have a lot of notes linked but not created. This is expected, and such warnings can be turned off, if desired, see <a href="/Configurations/Configuration Options.html">Configuration Options</a>.    </p>
@@ -451,7 +501,7 @@
 </div>
 </div>
 <div class="callout-content">
-<p>Run <code>obsidianhtml -i config.yaml -v</code> to run in verbose mode to get more detail on what is going on in which note / step of the process. <br />
+<p>Run <code>obsidianhtml convert -i config.yaml -v</code> to run in verbose mode to get more detail on what is going on in which note / step of the process. <br />
 </p>
 </div>
 </div>
@@ -461,7 +511,7 @@
 <p>Tip: open a new terminal and move to the same folder as where you ran the previous command.   </p>
 </blockquote>
 <p>Run:   </p>
-<div class="codehilite"><pre><span></span><code>python -m http.server --dir output/html
+<div class="codehilite"><pre><span></span><code>obsidianhtml serve --directory output/html --port <span class="m">8000</span>
 </code></pre></div>
 
 <p>Then open <a href="http://localhost:8000" class="external-link" class="external-link">http://localhost:8000</a> to view the html site that was created.   </p>
@@ -536,6 +586,7 @@
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
+	<li><a class="backlink" href="/Instructions/Tutorials/Tutorial - Installation on Windows.html">Tutorial - Installation on Windows</a></li>
 	<li><a class="backlink" href="/Instructions/Quickstart.html">Quickstart</a></li>
 	<li><a class="backlink" href="/index.html">index</a></li>
 </ul>
@@ -551,13 +602,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A162230813358590769598106362888321499373{level}" class="graph_div"></div>
+    <div id="A279158441787476531666612183935408210413{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B162230813358590769598106362888321499373{level}" level="{level}" note_temp_id="162230813358590769598106362888321499373" onclick="window.ObsHtmlGraph.run(this, '162230813358590769598106362888321499373', 'Usage');">
+        <button class="graph_button graph_show_button" id="B279158441787476531666612183935408210413{level}" level="{level}" note_temp_id="279158441787476531666612183935408210413" onclick="window.ObsHtmlGraph.run(this, '279158441787476531666612183935408210413', 'Usage');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C162230813358590769598106362888321499373{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C279158441787476531666612183935408210413{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

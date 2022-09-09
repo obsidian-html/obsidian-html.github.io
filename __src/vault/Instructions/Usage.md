@@ -5,25 +5,73 @@ tags:
 ---
 
 # Usage
-## Basic usage and required configurations
+## Introduction
 After [[Installation]], we can run obsidian via the commandline like so:
+
 ``` bash
-obsidianhtml
+obsidianhtml help
 ```
 
 That will give us the following output:
+
 ``` init
-Could not locate the config file config.yml.
-  Please try passing the exact location of it with the `obsidianhtml -i /your/path/to/config.yml` parameter.
-  
-[Obsidian-html]
-- Add -i </path/to/input.yml> to provide config
-- Add -v for verbose output
-- Add -h to get helptext
-- Add -eht <target/path/file.name> to export the html template.
-- Add -gc to output all configurable keys and their default values.
+obsidianhtml version 3.2.0
+
+Usage: obsidianhtml <command> [arguments...] [command options] [global options]
+
+Commands:
+        run             Convert vault using sensible defaults, and run a local webserver to serve it for 
+                        development and testing purposes. (Very opinionated). 
+                        The generated config.yml can be used in the convert command.
+
+        convert         Just convert your vault to html and or markdown. 
+                        Will use provided config exactly as provided.
+
+        export          Used to export packaged resources
+        version         Print version cleanly
+        help            Show help.
+
+Global options:
+        --help, -h      Show help
+        -v              Set Verbose mode
+
+(....)
 ```
 
+This gives a nice overview of what we can do.
+
+For new users, [[Obsidianhtml Run]] was created. This allows you to only pass in the link to the note that will serve as your homepage. If that succeeds you can immediately browse your generated website. This will also create a config.yml for you, which you can use in `obsidian convert`. 
+
+For ObsidianHtml run, see the [[Obsidianhtml Run]] page.
+
+
+## Basic conversion and required configurations
+As opposed to `obsidian run`, the convert command will only convert your vault to md and/or html. 
+
+This mode is the recommended mode for creating a publishing workflow, as you don't need to start a development webserver every time that you want to convert your vault.
+
+When we run `obsidianhtml convert`, it will look for a config file to tell it what to do, where your vault is, and where to save the output.
+
+It will first look in the current folder for `config.yml`, then `config.yaml`, and then it will look for a config.yml file in your appdir. If you have previously ran `obsidianhtml run`, this last location will contain a config.yml file.
+
+So you will either get:
+
+```
+No config path given, and none found in default locations.
+  Use `obsidianhtml convert -i /target/path/to/config.yml` to provide input.
+```
+
+Or it will start the conversion step using the generated config of your last  `obsidian run` result. 
+
+```
+No config provided, using config at /home/user/.config/obsidianhtml/config.yml (Default config path)
+> COPYING VAULT /home/user/g...
+> (...)
+```
+
+When you run `obsidianhtml convert -i path/to/config.yml` it will always use that path.
+
+### Building a config file
 So we need to input a config file. The minimum config that you need to have obsidianhtml work is the following:
 
 ``` yaml
@@ -46,13 +94,13 @@ Running again with now the config file as an input.
 (Make sure that you give the correct path to your config file!)
 
 ``` bash
-obsidianhtml -i config.yaml
+obsidianhtml convert -i config.yaml
 ```
 
 You might get a lot of warnings if you use external images, or have a lot of notes linked but not created. This is expected, and such warnings can be turned off, if desired, see [[Configuration Options]]. 
 
 > [!Tip]- Tip: verbosity
-> Run `obsidianhtml -i config.yaml -v` to run in verbose mode to get more detail on what is going on in which note / step of the process.
+> Run `obsidianhtml convert -i config.yaml -v` to run in verbose mode to get more detail on what is going on in which note / step of the process.
 
 The output will be located in your current directory under `output/md` and `output/html`. 
 
@@ -62,7 +110,7 @@ Now we can run a simple webserver to view the output.
 
 Run:
 ``` bash
-python -m http.server --dir output/html
+obsidianhtml serve --directory output/html --port 8000
 ```
 
 Then open [http://localhost:8000](http://localhost:8000) to view the html site that was created.

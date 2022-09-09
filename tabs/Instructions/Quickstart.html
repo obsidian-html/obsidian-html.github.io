@@ -326,7 +326,7 @@
 
 <h2 id="run">Run</h2>
 <blockquote>
-<p>New in <a href="/tabs/Changelog/v3.2.0.html">v3.2.0</a>. Note that at the time of writing, this version is not published yet. <a href="/tabs/Instructions/Install a different version.html#install-master-branch">Install the master branch</a> if you want to preview this method.   </p>
+<p>New in <a href="/tabs/Changelog/v3.2.0.html">v3.2.0</a>.    </p>
 </blockquote>
 <p>To hit the ground running you can use <code>obsidianhtml run</code>. This way you only have to provide the path to a note that will serve as your homepage. (Parts of) the rest of your vault will be included by following the links on your entrypoint note. The vault is then converted to html and the website is hosted on <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a>   </p>
 <p>Read more: <a href="/tabs/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a>   </p>
@@ -353,7 +353,7 @@
 
 <h2 id="convert-vault">Convert vault</h2>
 <p>Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:   </p>
-<div class="codehilite"><pre><span></span><code>obsidianhtml -i config.yaml
+<div class="codehilite"><pre><span></span><code>obsidianhtml convert -i config.yaml
 </code></pre></div>
 
 <p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.   </p>
@@ -390,7 +390,7 @@
 </code></pre></div>
 
 <h2 id="test-website">Test website</h2>
-<div class="codehilite"><pre><span></span><code>python -m http.server --dir output/html
+<div class="codehilite"><pre><span></span><code>obsidianhtml serve --directory output/html --port <span class="m">8000</span>
 </code></pre></div>
 
 <p>Then open <a href="http://localhost:8000" class="external-link" class="external-link">http://localhost:8000</a> to view the html site that was created.   </p>
@@ -444,13 +444,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A242988053077755454395884593878093879915{level}" class="graph_div"></div>
+    <div id="A174917385634185554429641985956657722001{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B242988053077755454395884593878093879915{level}" level="{level}" note_temp_id="242988053077755454395884593878093879915" onclick="window.ObsHtmlGraph.run(this, '242988053077755454395884593878093879915', 'Quickstart');">
+        <button class="graph_button graph_show_button" id="B174917385634185554429641985956657722001{level}" level="{level}" note_temp_id="174917385634185554429641985956657722001" onclick="window.ObsHtmlGraph.run(this, '174917385634185554429641985956657722001', 'Quickstart');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C242988053077755454395884593878093879915{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C174917385634185554429641985956657722001{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

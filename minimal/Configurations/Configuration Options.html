@@ -39,12 +39,12 @@
 <p>Certain settings change the flow of how notes are selected and presented on the homepage. You can find a glossary on those in <a href="/minimal/Configurations/Modes.html">Modes</a>.   </p>
 <h2 id="get-all-the-default-settings">Get all the default settings</h2>
 <p>Run:   </p>
-<div class="codehilite"><pre><span></span><code>obsidianhtml -gc
+<div class="codehilite"><pre><span></span><code>obsidianhtml <span class="nb">export</span> default-config
 </code></pre></div>
 
 <p>To view the defaults_config.yaml that is used by ObsidianHtml.    </p>
 <blockquote>
-<p>Tip: run <code>obsidianhtml -gc &gt; config.yaml</code> on Linux to get a config file with all possible inputs.    </p>
+<p>Tip: run <code>obsidianhtml export default-config -o config.yml</code> to get a config file with all possible inputs.    </p>
 </blockquote>
 <p>Note that the inputs that need to be filled in always are marked with <code>'&lt;REQUIRED_INPUT&gt;'</code>.   </p>
 <p>We will now go through all the settings in more-or-less the same order as the output of that command.   </p>

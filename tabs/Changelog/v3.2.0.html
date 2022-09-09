@@ -302,31 +302,62 @@
                     </div>
 <h1 id="v3-2-0">v3.2.0</h1>
 <blockquote>
-<p>Feature version of <a href="/tabs/Changelog/v3.0.0.html">v3.0.0</a>. Note that at the time of writing, this version is not published yet. <a href="/tabs/Instructions/Install a different version.html#install-master-branch">Install the master branch</a> if you want to preview this method.   </p>
+<p>Feature version of <a href="/tabs/Changelog/v3.0.0.html">v3.0.0</a>.    </p>
 </blockquote>
 <h2 id="added-features">Added features</h2>
 <ul>
+<li><a href="/tabs/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a> has been added to help in getting a first working config for new users.   </li>
 <li>It is now possible to configure vault files to be exported to any path in the html output folder. <a href="/tabs/Configurations/Export vault files to html output.html">Export vault files to html output</a>.   </li>
 <li>The rsync copy method was added. This should be way quicker and be less buggy on MacOS. This is set as the default. If rsync is not present it fallsback to the older shutil method. Read more: <a href="/tabs/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a>   </li>
 <li>Inline footnotes are now supported. <a href="/tabs/Demonstrations/Implementing Footnotes.html">Implementing Footnotes</a>   </li>
+<li><a href="/tabs/Configurations/Breadcrumbs.html">Breadcrumbs</a> feature added.   </li>
 <li><mark class="formatting_highlight">Highlight</mark> and <span class="formatting_strikethrough">strikethrough</span> formatting has been added. <a href="/tabs/Demonstrations/Getting the basics right.html#formatting">Getting the basics right#Formatting</a>   </li>
 <li>ObisidianHtml now briefly highlights the section that was linked to when following a link.   </li>
+<li>Latex (mathjax) tweaks to offer greater range of support, and the correct fonts are used now. <a href="/tabs/Demonstrations/Implementing Latex.html">Implementing Latex</a>.   </li>
+<li>The <a href="/tabs/Configurations/Tags Page.html">Tags Page</a> now includes folding, so that you get all tags on one page.   </li>
+<li>Version can now be queried consistently using <code>obsidianhtml version</code>   </li>
+<li>Obsidian has a special behavior regarding the <code>tags:</code> frontmatter key, this has been added, and an empty <code>tags:</code> key now also no longer gives an error.   </li>
 </ul>
 <h2 id="bugfixes">Bugfixes</h2>
 <ul>
-<li><code>\|</code> as can be used when wanting to type <code>|</code> in a table,  no longer leads to butchered table output. Note that any occurence of <code>\|</code> outside of codeblocks/-lines will be replaced with <code>|</code>!</li>
+<li><code>\|</code> as can be used when wanting to type <code>|</code> in a table,  no longer leads to butchered table output. Note that any occurence of <code>\|</code> outside of codeblocks/-lines will be replaced with <code>|</code>!   </li>
+<li>Relative and absolute markdown links can be used interchangably on Obsidian, this was not yet the case in obsidianhtml. This has been fixed.   </li>
+<li>There were bugs when <a href="https://github.com/obsidian-html/obsidian-html/issues/327" class="external-link">disabling # create_index_from_dir_structure</a>. This has been fixed. Same for disabling the graph.   </li>
+<li><a href="https://github.com/obsidian-html/obsidian-html/issues/388" class="external-link">Fix disallowed MIME type (“text/plain”) on Windows</a>. This happened when following the instructions in the documentation telling you to run <code>python -m http.server</code>. These instructions have been replaced with <code>obsidianhtml serve</code>. This is also a new tool that uses http.server with extra settings to serve js files as <code>application/javascript</code>.   </li>
+<li>Bugfix for when one <a href="https://github.com/obsidian-html/obsidian-html/issues/332" class="external-link">exports their output into their vault</a> (note: this is not recommended). Underlying bug was an issue in the new note finding code.    </li>
 </ul>
+<h2 id="changes">Changes</h2>
+<ul>
+<li>Running <code>obsidianhtml -i config.yml</code> has been deprecated for <code>obsidianhtml convert -i config.yml</code> to create a better structure for new tooling.   </li>
+<li><code>obsidian help</code> can be called to get the new help text.   </li>
+</ul>
+<h2 id="breaking-changes">Breaking changes</h2>
+<p>Normally a feature version doesn't have breaking changes, but in this case it is for miscelaneous tooling that isn't core to the functionality.   </p>
+<p>The export settings have been changed. The old help text stated:   </p>
+<div class="codehilite"><pre><span></span><code><span class="k">[Obsidian-html]</span><span class="w"></span>
+<span class="na">- Add -i &lt;/path/to/input.yml&gt; to provide config</span><span class="w"></span>
+<span class="na">- Add -v for verbose output</span><span class="w"></span>
+<span class="na">- Add -h to get helptext</span><span class="w"></span>
+<span class="na">- Add -eht &lt;target/path/file.name&gt; to export the html template.</span><span class="w"></span>
+<span class="na">- Add -gc to output all configurable keys and their default values.</span><span class="w"></span>
+</code></pre></div>
+
+<ul>
+<li><code>obsidianhtml -eht</code> has been replaced with <code>obsidianhtml export layout</code>   </li>
+<li><code>obsidianhtml -gc</code> has been replaced with <code>obsidianhtml export default-config</code>   </li>
+</ul>
+<p>Run <code>obsidianhtml export</code> by itself to get its helptext.</p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/Instructions/Quickstart.html">Quickstart</a></li>
+	<li><a class="backlink" href="/tabs/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a></li>
 	<li><a class="backlink" href="/tabs/Demonstrations/Getting the basics right.html">Getting the basics right</a></li>
 	<li><a class="backlink" href="/tabs/Demonstrations/Implementing Footnotes.html">Implementing Footnotes</a></li>
 	<li><a class="backlink" href="/tabs/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a></li>
 	<li><a class="backlink" href="/tabs/Configurations/Plugins/Embedded note title.html">Embedded note title</a></li>
 	<li><a class="backlink" href="/tabs/Configurations/Export vault files to html output.html">Export vault files to html output</a></li>
-	<li><a class="backlink" href="/tabs/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a></li>
+	<li><a class="backlink" href="/tabs/Instructions/Quickstart.html">Quickstart</a></li>
 	<li><a class="backlink" href="/tabs/Changelog/Changelog.html">Changelog</a></li>
 </ul>
 </div>
@@ -341,13 +372,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A59750415358517733553344816374300755059{level}" class="graph_div"></div>
+    <div id="A211938157553485732420591926803335766850{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B59750415358517733553344816374300755059{level}" level="{level}" note_temp_id="59750415358517733553344816374300755059" onclick="window.ObsHtmlGraph.run(this, '59750415358517733553344816374300755059', 'v3.2.0');">
+        <button class="graph_button graph_show_button" id="B211938157553485732420591926803335766850{level}" level="{level}" note_temp_id="211938157553485732420591926803335766850" onclick="window.ObsHtmlGraph.run(this, '211938157553485732420591926803335766850', 'v3.2.0');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C59750415358517733553344816374300755059{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C211938157553485732420591926803335766850{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

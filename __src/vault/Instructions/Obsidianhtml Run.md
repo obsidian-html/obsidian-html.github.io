@@ -1,7 +1,10 @@
-> New in [[v3.2.0]]. Note that at the time of writing, this version is not published yet. [[Install a different version#Install master branch|Install the master branch]] if you want to preview this method.
+> New in [[v3.2.0]]. 
 
 To help new users to quickly start using obsidianhtml we created the `obsidianhtml run` 
 command.
+
+> [!note]
+> obsidianhtml run was added in the latest release [[v3.2.0]], and is currently not fully tested yet. If you experience issues, then I ask you to go to [[Report Issues & Request features]]. In the mean time you can continue with the section below.
 
 ## Quickstart
 ### Short instructions

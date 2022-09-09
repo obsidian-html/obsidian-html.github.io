@@ -276,6 +276,7 @@
 	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/Configurations/Backlinks.html"  >Backlinks</a></li>
+		<li><a class="" href="/Configurations/Breadcrumbs.html"  >Breadcrumbs</a></li>
 		<li><a class="" href="/Configurations/Configuration Options.html"  >Configuration Options</a></li>
 		<li><a class="" href="/Configurations/Copy vault to temp dir.html"  >Copy vault to temp dir</a></li>
 		<li><a class="" href="/Configurations/Create Index from Directory Structure.html"  >Create Index from Directory Structure</a></li>
@@ -339,6 +340,18 @@
 			<li><a class="" href="/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
 		</ul>
 	</div>
+	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
+	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Tutorials">
+		<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
+		<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
+			<ul class="dir-list">
+				<li><a class="" href="/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html"  >Bootstrapping Python on Windows</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><a class="" href="/Instructions/Tutorials/Tutorial - Installation on Windows.html"  >Tutorial - Installation on Windows</a></li>
+		</ul>
+	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/Instructions/Install a different version.html"  >Install a different version</a></li>
 		<li><a class="" href="/Instructions/Installation.html"  >Installation</a></li>
@@ -348,8 +361,8 @@
 		<li><a class="" href="/Instructions/Usage.html"  >Usage</a></li>
 	</ul>
 </div>
-<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-13" class="dir-container requires_js " path="/Log">
+<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-15" class="dir-container requires_js " path="/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/Log/Published ObsidianHtml version 0.0.9!.html"  >Published ObsidianHtml version 0.0.9!</a></li>
 		<li><a class="" href="/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
@@ -418,7 +431,7 @@
 
 <h2 id="run">Run</h2>
 <blockquote>
-<p>New in <a href="/Changelog/v3.2.0.html">v3.2.0</a>. Note that at the time of writing, this version is not published yet. <a href="/Instructions/Install a different version.html#install-master-branch">Install the master branch</a> if you want to preview this method.   </p>
+<p>New in <a href="/Changelog/v3.2.0.html">v3.2.0</a>.    </p>
 </blockquote>
 <p>To hit the ground running you can use <code>obsidianhtml run</code>. This way you only have to provide the path to a note that will serve as your homepage. (Parts of) the rest of your vault will be included by following the links on your entrypoint note. The vault is then converted to html and the website is hosted on <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a>   </p>
 <p>Read more: <a href="/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a>   </p>
@@ -445,7 +458,7 @@
 
 <h2 id="convert-vault">Convert vault</h2>
 <p>Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:   </p>
-<div class="codehilite"><pre><span></span><code>obsidianhtml -i config.yaml
+<div class="codehilite"><pre><span></span><code>obsidianhtml convert -i config.yaml
 </code></pre></div>
 
 <p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.   </p>
@@ -482,7 +495,7 @@
 </code></pre></div>
 
 <h2 id="test-website">Test website</h2>
-<div class="codehilite"><pre><span></span><code>python -m http.server --dir output/html
+<div class="codehilite"><pre><span></span><code>obsidianhtml serve --directory output/html --port <span class="m">8000</span>
 </code></pre></div>
 
 <p>Then open <a href="http://localhost:8000" class="external-link" class="external-link">http://localhost:8000</a> to view the html site that was created.   </p>
@@ -536,13 +549,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A171196652533320582458779520533854608587{level}" class="graph_div"></div>
+    <div id="A250061254700470038671297653901394411662{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B171196652533320582458779520533854608587{level}" level="{level}" note_temp_id="171196652533320582458779520533854608587" onclick="window.ObsHtmlGraph.run(this, '171196652533320582458779520533854608587', 'Quickstart');">
+        <button class="graph_button graph_show_button" id="B250061254700470038671297653901394411662{level}" level="{level}" note_temp_id="250061254700470038671297653901394411662" onclick="window.ObsHtmlGraph.run(this, '250061254700470038671297653901394411662', 'Quickstart');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C171196652533320582458779520533854608587{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C250061254700470038671297653901394411662{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

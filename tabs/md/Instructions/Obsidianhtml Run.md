@@ -2,10 +2,13 @@
 {}
 ---
    
-> New in [v3.2.0](../Changelog/v3.2.0.md). Note that at the time of writing, this version is not published yet. [Install the master branch](../Instructions/Install%20a%20different%20version.md#install-master-branch) if you want to preview this method.   
+> New in [v3.2.0](../Changelog/v3.2.0.md).    
    
 To help new users to quickly start using obsidianhtml we created the `obsidianhtml run`    
 command.   
+   
+> [!note]   
+> obsidianhtml run was added in the latest release [v3.2.0](../Changelog/v3.2.0.md), and is currently not fully tested yet. If you experience issues, then I ask you to go to [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md). In the mean time you can continue with the section below.   
    
 ## Quickstart   
 ### Short instructions   
