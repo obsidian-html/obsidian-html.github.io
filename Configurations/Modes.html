@@ -250,6 +250,7 @@
 		<li><a class="" href="/Changelog/v3.0.3.html"  >v3.0.3</a></li>
 		<li><a class="" href="/Changelog/v3.1.0.html"  >v3.1.0</a></li>
 		<li><a class="" href="/Changelog/v3.2.0.html"  >v3.2.0</a></li>
+		<li><a class="" href="/Changelog/v3.2.1.html"  >v3.2.1</a></li>
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
@@ -324,6 +325,12 @@
 </div>
 <button id="folder-10" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
 <div id="folder-container-10" class="dir-container requires_js " path="/General Information">
+	<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
+	<div id="folder-container-11" class="dir-container requires_js " path="/General Information/Snippets">
+		<ul class="dir-list">
+			<li><a class="" href="/General Information/Snippets/md --> html.html"  >md --> html</a></li>
+		</ul>
+	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/General Information/About ObsidianHtml.html"  >About ObsidianHtml</a></li>
 		<li><a class="" href="/General Information/Creating a static html website from markdown files.html"  >Creating a static html website from markdown files</a></li>
@@ -332,18 +339,18 @@
 		<li><a class="" href="/General Information/Using the website.html"  >Using the website</a></li>
 	</ul>
 </div>
-<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
-<div id="folder-container-11" class="dir-container requires_js " path="/Instructions">
-	<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
-	<div id="folder-container-12" class="dir-container requires_js " path="/Instructions/Snippets">
+<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
+<div id="folder-container-12" class="dir-container requires_js " path="/Instructions">
+	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
+	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Snippets">
 		<ul class="dir-list">
 			<li><a class="" href="/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
 		</ul>
 	</div>
-	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
-	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Tutorials">
-		<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
-		<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
+	<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
+	<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials">
+		<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
+		<div id="folder-container-15" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
 			<ul class="dir-list">
 				<li><a class="" href="/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html"  >Bootstrapping Python on Windows</a></li>
 			</ul>
@@ -361,8 +368,8 @@
 		<li><a class="" href="/Instructions/Usage.html"  >Usage</a></li>
 	</ul>
 </div>
-<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-15" class="dir-container requires_js " path="/Log">
+<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-16" class="dir-container requires_js " path="/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/Log/Published ObsidianHtml version 0.0.9!.html"  >Published ObsidianHtml version 0.0.9!</a></li>
 		<li><a class="" href="/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
@@ -399,7 +406,7 @@
 </div>
 <p>A <em>mode</em> is a term used for certain <a href="/Configurations/Configuration Options.html">configuration settings</a> that alter the note selection and/or the contents of the homepage.   </p>
 <h2 id="entrypoint-mode">Entrypoint mode</h2>
-<p>This is the default. An obsidian (<a href="/General Information/Parsing Obsidian notes to proper markdown.html">or markdown</a>) note is selected that functions as the homepage. All the notes linked to by the entrypoint node are parsed, and the notes they link to, and so on and so forth.   </p>
+<p>This is the default. An obsidian (<a href="../General%20Information/Parsing%20Obsidian%20notes%20to%20proper%20markdown.md" class="external-link">or markdown</a>) note is selected that functions as the homepage. All the notes linked to by the entrypoint node are parsed, and the notes they link to, and so on and so forth.   </p>
 <p>In the end the website will only contain notes that are reachable (directly or indirectly) by the starting entrypoint note.   </p>
 <p>This enables you to only include part of your vault. To be extra secure, you can manually <a href="/Configurations/Configuration Options.html#exclude-subfolders">exclude subfolders</a>, to be sure personal notes will not be shared publicly. Note that this does not apply to note inclusions. When a note is parsed all the note inclusions will always be processed.   </p>
 <h2 id="process-all">Process all</h2>
@@ -437,13 +444,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A57152457938352537436073805414743918346{level}" class="graph_div"></div>
+    <div id="A59237493032615566108716100688401988185{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B57152457938352537436073805414743918346{level}" level="{level}" note_temp_id="57152457938352537436073805414743918346" onclick="window.ObsHtmlGraph.run(this, '57152457938352537436073805414743918346', 'Modes');">
+        <button class="graph_button graph_show_button" id="B59237493032615566108716100688401988185{level}" level="{level}" note_temp_id="59237493032615566108716100688401988185" onclick="window.ObsHtmlGraph.run(this, '59237493032615566108716100688401988185', 'Modes');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C57152457938352537436073805414743918346{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C59237493032615566108716100688401988185{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

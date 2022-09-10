@@ -26,12 +26,18 @@ This page will service mostly as a demonstration and to show the style that we u
 
 ### Folded note
 ``` markdown
-> [!note]-
-> This is a folded note block
+> [!note]- Folded
+> This is a folded note block. It is closed by default.
+
+> [!note]+ Unfolded, but foldable
+> This is a folded note block. It is unfolded by default.
 ```
 
-> [!note]-
-> This is a folded note block
+> [!note]- Folded
+> This is a folded note block. It is closed by default.
+
+> [!note]+ Unfolded, but foldable
+> This is a folded note block. It is unfolded by default.
 
 ### Custom title
 ``` markdown

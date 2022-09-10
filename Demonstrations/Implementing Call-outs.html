@@ -250,6 +250,7 @@
 		<li><a class="" href="/Changelog/v3.0.3.html"  >v3.0.3</a></li>
 		<li><a class="" href="/Changelog/v3.1.0.html"  >v3.1.0</a></li>
 		<li><a class="" href="/Changelog/v3.2.0.html"  >v3.2.0</a></li>
+		<li><a class="" href="/Changelog/v3.2.1.html"  >v3.2.1</a></li>
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
@@ -324,6 +325,12 @@
 </div>
 <button id="folder-10" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
 <div id="folder-container-10" class="dir-container requires_js " path="/General Information">
+	<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
+	<div id="folder-container-11" class="dir-container requires_js " path="/General Information/Snippets">
+		<ul class="dir-list">
+			<li><a class="" href="/General Information/Snippets/md --> html.html"  >md --> html</a></li>
+		</ul>
+	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/General Information/About ObsidianHtml.html"  >About ObsidianHtml</a></li>
 		<li><a class="" href="/General Information/Creating a static html website from markdown files.html"  >Creating a static html website from markdown files</a></li>
@@ -332,18 +339,18 @@
 		<li><a class="" href="/General Information/Using the website.html"  >Using the website</a></li>
 	</ul>
 </div>
-<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
-<div id="folder-container-11" class="dir-container requires_js " path="/Instructions">
-	<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
-	<div id="folder-container-12" class="dir-container requires_js " path="/Instructions/Snippets">
+<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
+<div id="folder-container-12" class="dir-container requires_js " path="/Instructions">
+	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
+	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Snippets">
 		<ul class="dir-list">
 			<li><a class="" href="/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
 		</ul>
 	</div>
-	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
-	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Tutorials">
-		<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
-		<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
+	<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
+	<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials">
+		<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
+		<div id="folder-container-15" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
 			<ul class="dir-list">
 				<li><a class="" href="/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html"  >Bootstrapping Python on Windows</a></li>
 			</ul>
@@ -361,8 +368,8 @@
 		<li><a class="" href="/Instructions/Usage.html"  >Usage</a></li>
 	</ul>
 </div>
-<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-15" class="dir-container requires_js " path="/Log">
+<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-16" class="dir-container requires_js " path="/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/Log/Published ObsidianHtml version 0.0.9!.html"  >Published ObsidianHtml version 0.0.9!</a></li>
 		<li><a class="" href="/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
@@ -425,21 +432,38 @@
 </div>
 </div>
 <h3 id="folded-note">Folded note</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">&gt; </span><span class="ge">[!note]-</span>
-<span class="k">&gt; </span><span class="ge">This is a folded note block</span>
+<div class="codehilite"><pre><span></span><code><span class="k">&gt; </span><span class="ge">[!note]- Folded</span>
+<span class="k">&gt; </span><span class="ge">This is a folded note block. It is closed by default.</span>
+
+<span class="k">&gt; </span><span class="ge">[!note]+ Unfolded, but foldable</span>
+<span class="k">&gt; </span><span class="ge">This is a folded note block. It is unfolded by default.</span>
 </code></pre></div>
 
 <div class="callout callout-note active callout-folded" rasa="1">
 <div class="callout-title" onclick="toggle(this.parentElement)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
 </div>
-<div class="callout-title-name">Note
+<div class="callout-title-name">Folded <br />
 </div>
 <div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
 </div>
 </div>
 <div class="callout-content">
-<p>This is a folded note block <br />
+<p>This is a folded note block. It is closed by default. <br />
+</p>
+</div>
+</div>
+<div class="callout callout-note active callout-folded" rasa="0">
+<div class="callout-title" onclick="toggle(this.parentElement)">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
+</div>
+<div class="callout-title-name">Unfolded, but foldable <br />
+</div>
+<div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
+</div>
+</div>
+<div class="callout-content">
+<p>This is a folded note block. It is unfolded by default. <br />
 </p>
 </div>
 </div>
@@ -874,13 +898,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A157228258688285213040896690179764196968{level}" class="graph_div"></div>
+    <div id="A46495594644010342133916503737530874139{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B157228258688285213040896690179764196968{level}" level="{level}" note_temp_id="157228258688285213040896690179764196968" onclick="window.ObsHtmlGraph.run(this, '157228258688285213040896690179764196968', 'Implementing Call-outs');">
+        <button class="graph_button graph_show_button" id="B46495594644010342133916503737530874139{level}" level="{level}" note_temp_id="46495594644010342133916503737530874139" onclick="window.ObsHtmlGraph.run(this, '46495594644010342133916503737530874139', 'Implementing Call-outs');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C157228258688285213040896690179764196968{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C46495594644010342133916503737530874139{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

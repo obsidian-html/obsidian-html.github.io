@@ -11,7 +11,7 @@ var CONFIGURED_HTML_URL_PREFIX = "/tabs";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 0;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '280787596859312893862072713264145379325'                       // used to check whether the localStorage data is stale
+var gzip_hash = '174897674255122284192616132725752854936'                       // used to check whether the localStorage data is stale
 
 
 // Onloads
@@ -290,7 +290,7 @@ function SetContainer(container) {
     let callout_folded = container.querySelectorAll(".callout-folded");
     callout_folded.forEach(div => {
         let rasa = div.getAttribute('rasa')
-        if (rasa){
+        if (rasa == '1'){
             div.setAttribute('rasa', 0)
             div.classList.remove('active')
         }
