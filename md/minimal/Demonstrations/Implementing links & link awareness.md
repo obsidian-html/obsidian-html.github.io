@@ -36,7 +36,7 @@ When linking to new notes, and not creating them, the link will be replaced with
 [In the end I never created this note](/not_created.md)   
    
 ## Link to non-markdown files   
-Image files and other non-markdown files local to the given root folder get copied over to the output. Take for example: [textfile.txt](Test%20Pages/textfile.txt).   
+Image files and other non-markdown files local to the given root folder get copied over to the output. Take for example: [textfile.txt](../Demonstrations/Test%20pages/textfile.txt).   
    
 Note that Obsidian type links will always be appended with .md if this is missing.    
    

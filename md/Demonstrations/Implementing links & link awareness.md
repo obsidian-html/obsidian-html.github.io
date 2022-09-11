@@ -23,7 +23,7 @@ Linking to another header on the same page: `[[#Proper markdown links]]`
 There is a setting that forces Obsidian to use proper markdown notation. So this is also supported:   
    
 `[Proper markdown link](proper%20markdown)`   
-[Proper markdown link](../Demonstrations/Test pages/proper markdown.md)   
+[Proper markdown link](../Demonstrations/Test%20pages/proper%20markdown.md)   
     
  Note that spaces must be encoded in proper markdown links.   
    
@@ -36,7 +36,7 @@ When linking to new notes, and not creating them, the link will be replaced with
 [In the end I never created this note](/not_created.md)   
    
 ## Link to non-markdown files   
-Image files and other non-markdown files local to the given root folder get copied over to the output. Take for example: [textfile.txt](Test%20Pages/textfile.txt).   
+Image files and other non-markdown files local to the given root folder get copied over to the output. Take for example: [textfile.txt](../Demonstrations/Test%20pages/textfile.txt).   
    
 Note that Obsidian type links will always be appended with .md if this is missing.    
    

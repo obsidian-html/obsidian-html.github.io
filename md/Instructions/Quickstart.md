@@ -26,6 +26,7 @@ pip install --upgrade pip
 ```
    
    
+   
 When running on Windows,  also run:   
    
 ```bash
@@ -42,6 +43,31 @@ pip install obsidianhtml
 ```
    
    
+## Run   
+> New in [v3.2.0](../Changelog/v3.2.0.md).    
+   
+To hit the ground running you can use `obsidianhtml run`. This way you only have to provide the path to a note that will serve as your homepage. (Parts of) the rest of your vault will be included by following the links on your entrypoint note. The vault is then converted to html and the website is hosted on [http://localhost:8888](http://localhost:8888)   
+   
+Read more: [Obsidianhtml Run](../Instructions/Obsidianhtml%20Run.md)   
+   
+When this works, or you want more configuration settings out of the box, you can skip this section and continue with the next section.   
+   
+### Short instructions   
+Run   
+``` bash
+obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md
+```
+
+   
+   
+Then follow the instructions in the terminal. If all is well it will spit out some information and then tell you to open [http://localhost:8888](http://localhost:8888) in your browser. Do so and admire your new website.   
+   
+When done return to the terminal and press enter to exit obsidianhtml and stop the webserver.   
+   
+   
+   
+If you are happy with the result, you can take the path to your generated config yaml in the steps below as a starting point. Follow the instructions at [Convert vault](#convert-vault) to just convert your vault to html (and or markdown) and forgo running the integrated webserver.   
+   
 ## Configuration   
 Pick a folder where you don't mind a folder being created. Then create a file in this folder named `config.yaml`, and fill it with this content (and fill in the values):   
    
@@ -57,10 +83,10 @@ obsidian_entrypoint_path_str: '/path/to/your/vault/entrypoint.md'
 ```
    
    
-## Run   
+## Convert vault   
 Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:   
 ``` bash
-obsidianhtml -i config.yaml
+obsidianhtml convert -i config.yaml
 ```
    
    
@@ -92,7 +118,7 @@ html_output_folder_path_str: 'C:/Users/Username/Documents/Website/html'
    
 ## Test website   
 ``` bash
-python -m http.server --dir output/html
+obsidianhtml serve --directory output/html --port 8000
 ```
    
    

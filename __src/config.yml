@@ -12,13 +12,13 @@ obsidian_entrypoint_path_str: '../obsidian-html.github.io/__src/vault/ObsidianHt
 # Input and output path of markdown files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-#md_folder_path_str:  '../obsidian-html.github.io/md'
+md_folder_path_str:  '../obsidian-html.github.io/md'
 
 # Markdown entrypoint path
 # This has to be md_folder_path_str + '/index.md' when toggles/compile_md == True
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-#md_entrypoint_path_str: '../obsidian-html.github.io/md/index.md'
+md_entrypoint_path_str: '../obsidian-html.github.io/md/index.md'
 
 # Output path of HTML files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
