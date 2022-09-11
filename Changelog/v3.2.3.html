@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="automationlinuxgit">
+                <meta name="node_id" content="v3.2.3">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -47,7 +47,7 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        const CURRENT_NODE = 'automationlinuxgit';
+                        const CURRENT_NODE = 'v3.2.3';
                         const HTML_URL_PREFIX = '';
                         const PAGE_DEPTH = 1;
                 </script>
@@ -168,7 +168,7 @@
                 }
         </script>
                                                         <div class="graph_header_div requires_js">
-            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=automationlinuxgit" title="Open fullpage Graph">
+            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=v3.2.3" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
@@ -209,10 +209,10 @@
                                 <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
                                 <div id="left_pane_content" class="left_pane_content">
                                         <button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
-<div id="folder-container-1" class="dir-container requires_js active" path="/Automation">
+<div id="folder-container-1" class="dir-container requires_js " path="/Automation">
 	<ul class="dir-list">
 		<li><a class="" href="/Automation/Automate website deployment.html"  >Automate website deployment</a></li>
-		<li><a class="active" href="/Automation/AutomationLinuxGit.html"  >AutomationLinuxGit</a></li>
+		<li><a class="" href="/Automation/AutomationLinuxGit.html"  >AutomationLinuxGit</a></li>
 		<li><a class="" href="/Automation/AutomationLinuxSSH.html"  >AutomationLinuxSSH</a></li>
 		<li><a class="" href="/Automation/AutomationWindows.html"  >AutomationWindows</a></li>
 		<li><a class="" href="/Automation/AutomationWindowsSSH.html"  >AutomationWindowsSSH</a></li>
@@ -227,7 +227,7 @@
 	</ul>
 </div>
 <button id="folder-3" class="dir-button folder_note " href="/Changelog/Changelog.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Changelog</button>
-<div id="folder-container-3" class="dir-container requires_js " path="/Changelog">
+<div id="folder-container-3" class="dir-container requires_js active" path="/Changelog">
 	<ul class="dir-list">
 		<li><a class="" href="/Changelog/v1.0.0.html"  >v1.0.0</a></li>
 		<li><a class="" href="/Changelog/v1.0.1.html"  >v1.0.1</a></li>
@@ -252,7 +252,7 @@
 		<li><a class="" href="/Changelog/v3.2.0.html"  >v3.2.0</a></li>
 		<li><a class="" href="/Changelog/v3.2.1.html"  >v3.2.1</a></li>
 		<li><a class="" href="/Changelog/v3.2.2.html"  >v3.2.2</a></li>
-		<li><a class="" href="/Changelog/v3.2.3.html"  >v3.2.3</a></li>
+		<li><a class="active" href="/Changelog/v3.2.3.html"  >v3.2.3</a></li>
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
@@ -392,84 +392,43 @@
                     <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
                         <div style="flex:1;display: none;"></div>
                         <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
-                            <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Automation</span> / <a href="/Automation/AutomationLinuxGit.html" >AutomationLinuxGit</a>
+                            <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/Changelog/Changelog.html" style="color: var(--normal-text-color);">Changelog</a> / <a href="/Changelog/v3.2.3.html" >v3.2.3</a>
                         </div>
                     </div>
-<h1 id="auto-push-site-using-git-on-linux">Auto push site using Git on Linux</h1>
+<embeddedtitle>V3.2.3</embeddedtitle>
 <div class="toc">
 <ul>
-<li><a href="#auto-push-site-using-git-on-linux" class="anchor-link">Auto push site using Git on Linux</a></li>
+<li><a href="#bugfixes" class="anchor-link">Bugfixes</a></li>
 </ul>
 </div>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Config</span>
-<span class="nv">git_output</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html.github.io&quot;</span>
-<span class="nv">obsidian_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html&quot;</span>
-
-<span class="c1"># Move to output folder and make sure it is up to date</span>
-<span class="nb">cd</span> <span class="nv">$git_output</span>
-git pull
-
-<span class="c1"># Remove all files except .git/ and README.md</span>
-<span class="nb">echo</span> <span class="s2">&quot;Will delete previous output:&quot;</span>
-find . ! -path <span class="s2">&quot;./.git/*&quot;</span> ! -name <span class="s2">&quot;.git&quot;</span> ! -name README.md
-<span class="nb">echo</span> <span class="s2">&quot;Continue? (y/n)&quot;</span>
-<span class="nb">read</span> yn
-
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$yn</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;y&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Aborted&quot;</span>
-    <span class="nb">exit</span> <span class="m">0</span>
-<span class="k">fi</span>
-
-find . ! -path <span class="s2">&quot;./.git/*&quot;</span> ! -name <span class="s2">&quot;.git&quot;</span> ! -name README.md -delete
-
-
-<span class="c1"># Convert Obsidian to HTML</span>
-<span class="nb">cd</span> <span class="nv">$obsidian_folder</span>
-python -m obsidianhtml -i local_configs/example_site.yml
-<span class="c1"># ^ the config file will output the html to $git_output</span>
-
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Python script failed. Exited.&quot;</span>
-    <span class="nb">exit</span> <span class="m">1</span>
-<span class="k">else</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Successfully created html code&quot;</span>
-<span class="k">fi</span>
-
-<span class="c1"># Push changes</span>
-<span class="nb">cd</span> <span class="nv">$git_output</span>
-mv html/* ./
-rm -rf html/
-
-git add . --all
-git commit -m <span class="s2">&quot;autopush&quot;</span>
-git push
-</code></pre></div>
+<blockquote>
+<p>Patch version of <a href="/Changelog/v3.2.0.html">v3.2.0</a>.    </p>
+</blockquote>
+<h2 id="bugfixes">Bugfixes</h2>
+<ul>
+<li>The setting <code>force_filename_to_lowercase</code>  would break breadcrumbs. This has been fixed.</li>
+</ul>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/Automation/Automate website deployment.html">automate website deployment</a></li>
-	<li><a class="backlink" href="/Automation/AutomationLinuxSSH.html">automationlinuxssh</a></li>
+	<li><a class="backlink" href="/Changelog/Changelog.html">changelog</a></li>
 </ul>
 </div>
 
 <div class="tags">
-<h2>Tags</h2>
-<ul>
-	<li><a class="backlink" href="/obs.html/tags/type/automation/index.html">type/automation</a></li>
-	<li><a class="backlink" href="/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
-</ul>
+
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A202771031870002789444285359882150514257{level}" class="graph_div"></div>
+    <div id="A290303359657429740412686215374273890390{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B202771031870002789444285359882150514257{level}" level="{level}" note_temp_id="202771031870002789444285359882150514257" onclick="window.ObsHtmlGraph.run(this, '202771031870002789444285359882150514257', 'automationlinuxgit');">
+        <button class="graph_button graph_show_button" id="B290303359657429740412686215374273890390{level}" level="{level}" note_temp_id="290303359657429740412686215374273890390" onclick="window.ObsHtmlGraph.run(this, '290303359657429740412686215374273890390', 'v3.2.3');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C202771031870002789444285359882150514257{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C290303359657429740412686215374273890390{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
