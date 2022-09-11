@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="v3.2.0">
+                <meta name="node_id" content="v3.2.2">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -47,7 +47,7 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        const CURRENT_NODE = 'v3.2.0';
+                        const CURRENT_NODE = 'v3.2.2';
                         const PAGE_DEPTH = 1;
                 </script>
         </head>
@@ -163,7 +163,7 @@
                 }
         </script>
                                                         <div class="graph_header_div requires_js">
-            <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=v3.2.0" title="Open fullpage Graph">
+            <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=v3.2.2" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "/tabs/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
@@ -258,7 +258,7 @@
                 }
         </script>
                                                         <div class="graph_header_div requires_js">
-            <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=v3.2.0" title="Open fullpage Graph">
+            <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=v3.2.2" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "/tabs/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
@@ -297,90 +297,43 @@
                     <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
                         <div style="flex:1;display: none;"></div>
                         <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
-                            <a href="/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Changelog</span> / <a href="/tabs/Changelog/v3.2.0.html"  >v3.2.0</a>
+                            <a href="/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Changelog</span> / <a href="/tabs/Changelog/v3.2.2.html"  >v3.2.2</a>
                         </div>
                     </div>
-<h1 id="v3-2-0">v3.2.0</h1>
+<embeddedtitle>V3.2.2</embeddedtitle>
 <blockquote>
-<p>Feature version of <a href="/tabs/Changelog/v3.0.0.html">v3.0.0</a>.    </p>
+<p>Patch version of <a href="/tabs/Changelog/v3.2.0.html">v3.2.0</a>.    </p>
 </blockquote>
-<h2 id="added-features">Added features</h2>
+<h2 id="changes">Changes</h2>
 <ul>
-<li><a href="/tabs/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a> has been added to help in getting a first working config for new users.   </li>
-<li>It is now possible to configure vault files to be exported to any path in the html output folder. <a href="/tabs/Configurations/Export vault files to html output.html">Export vault files to html output</a>.   </li>
-<li>The rsync copy method was added. This should be way quicker and be less buggy on MacOS. This is set as the default. If rsync is not present it fallsback to the older shutil method. Read more: <a href="/tabs/Configurations/Copy vault to temp dir.html">Copy vault to temp dir</a>   </li>
-<li>Inline footnotes are now supported. <a href="/tabs/Demonstrations/Implementing Footnotes.html">Implementing Footnotes</a>   </li>
-<li><a href="/tabs/Configurations/Breadcrumbs.html">Breadcrumbs</a> feature added.   </li>
-<li><mark class="formatting_highlight">Highlight</mark> and <span class="formatting_strikethrough">strikethrough</span> formatting has been added. <a href="/tabs/Demonstrations/Getting the basics right.html#formatting">Getting the basics right#Formatting</a>   </li>
-<li>ObisidianHtml now briefly highlights the section that was linked to when following a link.   </li>
-<li>Latex (mathjax) tweaks to offer greater range of support, and the correct fonts are used now. <a href="/tabs/Demonstrations/Implementing Latex.html">Implementing Latex</a>.   </li>
-<li>The <a href="/tabs/Configurations/Tags Page.html">Tags Page</a> now includes folding, so that you get all tags on one page.   </li>
-<li>Version can now be queried consistently using <code>obsidianhtml version</code>   </li>
-<li>Obsidian has a special behavior regarding the <code>tags:</code> frontmatter key, this has been added, and an empty <code>tags:</code> key now also no longer gives an error.   </li>
+<li>Made <code>force_filename_to_lowercase</code> default to true, as markdown links in a vault had the same issue as when converting markdown directly, while working as intended in Obsidian itself.    </li>
 </ul>
 <h2 id="bugfixes">Bugfixes</h2>
 <ul>
-<li><code>\|</code> as can be used when wanting to type <code>|</code> in a table,  no longer leads to butchered table output. Note that any occurence of <code>\|</code> outside of codeblocks/-lines will be replaced with <code>|</code>!   </li>
-<li>Relative and absolute markdown links can be used interchangably on Obsidian, this was not yet the case in obsidianhtml. This has been fixed.   </li>
-<li>There were bugs when <a href="https://github.com/obsidian-html/obsidian-html/issues/327" class="external-link">disabling # create_index_from_dir_structure</a>. This has been fixed. Same for disabling the graph.   </li>
-<li><a href="https://github.com/obsidian-html/obsidian-html/issues/388" class="external-link">Fix disallowed MIME type (“text/plain”) on Windows</a>. This happened when following the instructions in the documentation telling you to run <code>python -m http.server</code>. These instructions have been replaced with <code>obsidianhtml serve</code>. This is also a new tool that uses http.server with extra settings to serve js files as <code>application/javascript</code>.   </li>
-<li>Bugfix for when one <a href="https://github.com/obsidian-html/obsidian-html/issues/332" class="external-link">exports their output into their vault</a> (note: this is not recommended). Underlying bug was an issue in the new note finding code.    </li>
+<li>The change in <a href="/tabs/Changelog/v3.2.1.html">v3.2.1</a> to fix links with parentheses not being parsed correctly created the bug that when having () around a link, like (<a href="/tabs/Changelog/v3.2.1.html">v3.2.1</a>), would cause the trailing <code>)</code> to be included in the link. This has been fixed.   </li>
+<li>Anchor links like <code>[go to chapter](#chapter)</code> would cause a breaking bug because of using <code>link[0]</code> instead of <code>link.startswith()</code>. (Former will give an out of bounds error when string is empty). This was also a piece of code that didn't need to be run for anchor links, this has been corrected as well.</li>
 </ul>
-<h2 id="changes">Changes</h2>
-<ul>
-<li>Running <code>obsidianhtml -i config.yml</code> has been deprecated for <code>obsidianhtml convert -i config.yml</code> to create a better structure for new tooling.   </li>
-<li><code>obsidian help</code> can be called to get the new help text.   </li>
-</ul>
-<h2 id="breaking-changes">Breaking changes</h2>
-<p>Normally a feature version doesn't have breaking changes, but in this case it is for miscelaneous tooling that isn't core to the functionality.   </p>
-<p>The export settings have been changed. The old help text stated:   </p>
-<div class="codehilite"><pre><span></span><code><span class="k">[Obsidian-html]</span><span class="w"></span>
-<span class="na">- Add -i &lt;/path/to/input.yml&gt; to provide config</span><span class="w"></span>
-<span class="na">- Add -v for verbose output</span><span class="w"></span>
-<span class="na">- Add -h to get helptext</span><span class="w"></span>
-<span class="na">- Add -eht &lt;target/path/file.name&gt; to export the html template.</span><span class="w"></span>
-<span class="na">- Add -gc to output all configurable keys and their default values.</span><span class="w"></span>
-</code></pre></div>
-
-<ul>
-<li><code>obsidianhtml -eht</code> has been replaced with <code>obsidianhtml export layout</code>   </li>
-<li><code>obsidianhtml -gc</code> has been replaced with <code>obsidianhtml export default-config</code>   </li>
-</ul>
-<p>Run <code>obsidianhtml export</code> by itself to get its helptext.</p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/Instructions/Obsidianhtml Run.html">obsidianhtml run</a></li>
-	<li><a class="backlink" href="/tabs/Demonstrations/Getting the basics right.html">getting the basics right</a></li>
-	<li><a class="backlink" href="/tabs/Demonstrations/Implementing Footnotes.html">implementing footnotes</a></li>
-	<li><a class="backlink" href="/tabs/Configurations/Copy vault to temp dir.html">copy vault to temp dir</a></li>
-	<li><a class="backlink" href="/tabs/Configurations/Plugins/Embedded note title.html">embedded note title</a></li>
-	<li><a class="backlink" href="/tabs/Configurations/Export vault files to html output.html">export vault files to html output</a></li>
-	<li><a class="backlink" href="/tabs/Instructions/Quickstart.html">quickstart</a></li>
-	<li><a class="backlink" href="/tabs/Changelog/v3.2.2.html">v3.2.2</a></li>
-	<li><a class="backlink" href="/tabs/Changelog/v3.2.1.html">v3.2.1</a></li>
 	<li><a class="backlink" href="/tabs/Changelog/Changelog.html">changelog</a></li>
 </ul>
 </div>
 
 <div class="tags">
-<h2>Tags</h2>
-<ul>
-	<li><a class="backlink" href="/tabs/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
-	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-07-31/index.html">date/2022-07-31</a></li>
-</ul>
+
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A211938157553485732420591926803335766850{level}" class="graph_div"></div>
+    <div id="A97384665871624511826307298575316095666{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B211938157553485732420591926803335766850{level}" level="{level}" note_temp_id="211938157553485732420591926803335766850" onclick="window.ObsHtmlGraph.run(this, '211938157553485732420591926803335766850', 'v3.2.0');">
+        <button class="graph_button graph_show_button" id="B97384665871624511826307298575316095666{level}" level="{level}" note_temp_id="97384665871624511826307298575316095666" onclick="window.ObsHtmlGraph.run(this, '97384665871624511826307298575316095666', 'v3.2.2');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C211938157553485732420591926803335766850{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C97384665871624511826307298575316095666{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
