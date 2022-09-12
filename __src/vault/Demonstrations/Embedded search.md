@@ -56,10 +56,19 @@ If you want your most important usecase to be added first, please make a descrip
 
 
 # Supported syntax at the moment
-## Search only in note name (file)
-This implementation translates obsidians `file:<keyword>` to  `title:<keyword>` under the hood. Title here is the note name, which is either the same as file in Obsidian, or the 
-configured `graph_name`.
+## Search for keyword
+This will search in `["content", "title", "path", "file", "tags"]`
 
+```
+-``` query
+babayaga
+-```
+```
+``` query
+babayaga
+```
+
+## Search only in note name (file)
 ```
 -``` query
 file:babayaga
@@ -69,6 +78,46 @@ file:babayaga
 ``` query
 file:babayaga
 ```
+
+## Search for tag
+For this to work with whoosh we translate `tag:#<tag>` to `tags:<tag>`.
+
+```
+-``` query
+tag:#babayaga
+-```
+```
+
+``` query
+tag:#babayaga
+```
+
+## Search for path
+
+```
+-``` query
+path:babayaga
+-```
+```
+
+``` query
+path:babayaga
+```
+
+
+## Exclude syntax
+In the example above we also got a note where babayaga was in the filename. If we want to find notes where that term is only in the path, but not also in the filename, we can use `-` as an ANDNOT operator.
+
+```
+-``` query
+path:babayaga -file:babayaga
+-```
+```
+
+``` query
+path:babayaga -file:babayaga
+```
+
 
 ## Search for a phrase
 Supported by default, search for an entire phrase, instead of OR-ing keywords together.
@@ -97,3 +146,13 @@ query without quotes
 ```
 
 Note that the current implementation filters out common words (limited to English) such as "a" and "for", so the list in the html output will often be a lot shorter than in Obsidian.
+
+
+--------
+
+Here I link to the test notes so that they are included in the vault.
+
+- [[babayaga in title only]]
+- [[bbyg_in_text]]
+- [[bbyg_in_tags]]
+- [[bbyg in path only]]

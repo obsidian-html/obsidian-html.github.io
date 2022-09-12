@@ -42,6 +42,3 @@ Try this site with different [[Styling#Layouts|layouts]]:
 ## Tips and tricks
 - [[Performance Tuning]]
 - [[Automate website deployment|Automate website deployment]] 
-
-
-[[babayaga]]

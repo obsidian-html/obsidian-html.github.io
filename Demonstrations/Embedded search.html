@@ -411,7 +411,11 @@
 </li>
 <li><a href="#status-of-the-feature" class="anchor-link">Status of the feature</a></li>
 <li><a href="#supported-syntax-at-the-moment" class="anchor-link" class="anchor-link">Supported syntax at the moment</a><ul>
+<li><a href="#search-for-keyword" class="anchor-link">Search for keyword</a></li>
 <li><a href="#search-only-in-note-name-file" class="anchor-link">Search only in note name (file)</a></li>
+<li><a href="#search-for-tag" class="anchor-link">Search for tag</a></li>
+<li><a href="#search-for-path" class="anchor-link">Search for path</a></li>
+<li><a href="#exclude-syntax" class="anchor-link">Exclude syntax</a></li>
 <li><a href="#search-for-a-phrase" class="anchor-link">Search for a phrase</a></li>
 <li><a href="#standard-simple-search" class="anchor-link">Standard simple search</a></li>
 </ul>
@@ -470,6 +474,8 @@ convert automation webserver ssh
 	<li><a href="/Automation/AutomationWindowsSSH.html">Auto push site using Git on Windows</a></li>
 	<li><a href="/Automation/Automate website deployment.html">Automate website deployment</a></li>
 	<li><a href="/Demonstrations/Embedded search.html">Embedded search</a></li>
+	<li><a href="/Automation/AutomationLinuxGit.html">Auto push site using Git on Linux</a></li>
+	<li><a href="/Automation/AutomationWindows.html">Auto push site using Git on Windows</a></li>
 	<li><a href="/Instructions/Usage.html">Usage</a></li>
 	<li><a href="/Instructions/Quickstart.html">Quickstart</a></li>
 	<li><a href="/General Information/About ObsidianHtml.html">About ObsidianHtml</a></li>
@@ -481,8 +487,6 @@ convert automation webserver ssh
 	<li><a href="/index.html">Homepage</a></li>
 	<li><a href="/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a></li>
 	<li><a href="/Configurations/Process All.html">Process All</a></li>
-	<li><a href="/Automation/AutomationLinuxGit.html">Auto push site using Git on Linux</a></li>
-	<li><a href="/Automation/AutomationWindows.html">Auto push site using Git on Windows</a></li>
 	<li><a href="/Configurations/Features.html">Features</a></li>
 	<li><a href="/Demonstrations/Making Code blocks look pretty.html">Code blocks</a></li>
 	<li><a href="/Demonstrations/Implementing Note Inclusions.html">Inclusions</a></li>
@@ -505,16 +509,58 @@ convert automation webserver ssh
 </div>
 </div>
 <h1 id="supported-syntax-at-the-moment">Supported syntax at the moment</h1>
+<h2 id="search-for-keyword">Search for keyword</h2>
+<p>This will search in <code>["content", "title", "path", "file", "tags"]</code>   </p>
+<div class="codehilite"><pre><span></span><code>-``` query
+babayaga
+-```
+</code></pre></div>
+
+<div class="query"><ul>
+	<li><a href="/Resources/test_pages/embedded_search/babayaga in title only.html">babayaga in title only</a></li>
+	<li><a href="/Demonstrations/Embedded search.html">Embedded search</a></li>
+	<li><a href="/Resources/test_pages/embedded_search/bbyg_in_text.html">bbyg_in_text</a></li>
+	<li><a href="/Resources/test_pages/embedded_search/bbyg_in_tags.html">bbyg_in_tags</a></li>
+	<li><a href="/Resources/test_pages/embedded_search/babayaga/bbyg in path only.html">bbyg in path only</a></li>
+</ul></div>
 <h2 id="search-only-in-note-name-file">Search only in note name (file)</h2>
-<p>This implementation translates obsidians <code>file:&lt;keyword&gt;</code> to  <code>title:&lt;keyword&gt;</code> under the hood. Title here is the note name, which is either the same as file in Obsidian, or the  <br />
-configured <code>graph_name</code>.   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
 file:babayaga
 -```
 </code></pre></div>
 
 <div class="query"><ul>
-	<li><a href="/Resources/test_pages/babayaga.html">babayaga</a></li>
+	<li><a href="/Resources/test_pages/embedded_search/babayaga in title only.html">babayaga in title only</a></li>
+</ul></div>
+<h2 id="search-for-tag">Search for tag</h2>
+<p>For this to work with whoosh we translate <code>tag:#&lt;tag&gt;</code> to <code>tags:&lt;tag&gt;</code>.   </p>
+<div class="codehilite"><pre><span></span><code>-``` query
+tag:#babayaga
+-```
+</code></pre></div>
+
+<div class="query"><ul>
+	<li><a href="/Resources/test_pages/embedded_search/bbyg_in_tags.html">bbyg_in_tags</a></li>
+</ul></div>
+<h2 id="search-for-path">Search for path</h2>
+<div class="codehilite"><pre><span></span><code>-``` query
+path:babayaga
+-```
+</code></pre></div>
+
+<div class="query"><ul>
+	<li><a href="/Resources/test_pages/embedded_search/babayaga in title only.html">babayaga in title only</a></li>
+	<li><a href="/Resources/test_pages/embedded_search/babayaga/bbyg in path only.html">bbyg in path only</a></li>
+</ul></div>
+<h2 id="exclude-syntax">Exclude syntax</h2>
+<p>In the example above we also got a note where babayaga was in the filename. If we want to find notes where that term is only in the path, but not also in the filename, we can use <code>-</code> as an ANDNOT operator.   </p>
+<div class="codehilite"><pre><span></span><code>-``` query
+path:babayaga -file:babayaga
+-```
+</code></pre></div>
+
+<div class="query"><ul>
+	<li><a href="/Resources/test_pages/embedded_search/babayaga/bbyg in path only.html">bbyg in path only</a></li>
 </ul></div>
 <h2 id="search-for-a-phrase">Search for a phrase</h2>
 <p>Supported by default, search for an entire phrase, instead of OR-ing keywords together.   </p>
@@ -551,7 +597,15 @@ query without quotes
 	<li><a href="/Instructions/Usage.html">Usage</a></li>
 	<li><a href="/Configurations/RSS Feed.html">RSS Feed</a></li>
 </ul></div>
-<p>Note that the current implementation filters out common words (limited to English) such as "a" and "for", so the list in the html output will often be a lot shorter than in Obsidian.</p>
+<p>Note that the current implementation filters out common words (limited to English) such as "a" and "for", so the list in the html output will often be a lot shorter than in Obsidian.   </p>
+<hr />
+<p>Here I link to the test notes so that they are included in the vault.   </p>
+<ul>
+<li><a href="/Resources/test_pages/embedded_search/babayaga in title only.html">babayaga in title only</a>   </li>
+<li><a href="/Resources/test_pages/embedded_search/bbyg_in_text.html">bbyg_in_text</a>   </li>
+<li><a href="/Resources/test_pages/embedded_search/bbyg_in_tags.html">bbyg_in_tags</a>   </li>
+<li><a href="/Resources/test_pages/embedded_search/babayaga/bbyg in path only.html">bbyg in path only</a></li>
+</ul>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -567,13 +621,13 @@ query without quotes
 
 </div>
 <div class="graph requires_js ">
-    <div id="A90294715891891535635431433555479390722{level}" class="graph_div"></div>
+    <div id="A320187292660662666843551269525896703927{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B90294715891891535635431433555479390722{level}" level="{level}" note_temp_id="90294715891891535635431433555479390722" onclick="window.ObsHtmlGraph.run(this, '90294715891891535635431433555479390722', 'embedded search');">
+        <button class="graph_button graph_show_button" id="B320187292660662666843551269525896703927{level}" level="{level}" note_temp_id="320187292660662666843551269525896703927" onclick="window.ObsHtmlGraph.run(this, '320187292660662666843551269525896703927', 'embedded search');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C90294715891891535635431433555479390722{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C320187292660662666843551269525896703927{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

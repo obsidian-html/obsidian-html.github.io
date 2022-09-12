@@ -373,15 +373,52 @@ convert automation webserver ssh
 </div>
 </div>
 <h1 id="supported-syntax-at-the-moment">Supported syntax at the moment</h1>
+<h2 id="search-for-keyword">Search for keyword</h2>
+<p>This will search in <code>["content", "title", "path", "file", "tags"]</code>   </p>
+<div class="codehilite"><pre><span></span><code>-``` query
+babayaga
+-```
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>babayaga
+</code></pre></div>
+
 <h2 id="search-only-in-note-name-file">Search only in note name (file)</h2>
-<p>This implementation translates obsidians <code>file:&lt;keyword&gt;</code> to  <code>title:&lt;keyword&gt;</code> under the hood. Title here is the note name, which is either the same as file in Obsidian, or the  <br />
-configured <code>graph_name</code>.   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
 file:babayaga
 -```
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code><span class="n">file</span><span class="o">:</span><span class="n">babayaga</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="search-for-tag">Search for tag</h2>
+<p>For this to work with whoosh we translate <code>tag:#&lt;tag&gt;</code> to <code>tags:&lt;tag&gt;</code>.   </p>
+<div class="codehilite"><pre><span></span><code>-``` query
+tag:#babayaga
+-```
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>tag:#babayaga
+</code></pre></div>
+
+<h2 id="search-for-path">Search for path</h2>
+<div class="codehilite"><pre><span></span><code>-``` query
+path:babayaga
+-```
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">path</span><span class="o">:</span><span class="n">babayaga</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="exclude-syntax">Exclude syntax</h2>
+<p>In the example above we also got a note where babayaga was in the filename. If we want to find notes where that term is only in the path, but not also in the filename, we can use <code>-</code> as an ANDNOT operator.   </p>
+<div class="codehilite"><pre><span></span><code>-``` query
+path:babayaga -file:babayaga
+-```
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">path</span><span class="o">:</span><span class="n">babayaga</span><span class="w"> </span><span class="o">-</span><span class="n">file</span><span class="o">:</span><span class="n">babayaga</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="search-for-a-phrase">Search for a phrase</h2>
@@ -404,7 +441,15 @@ query without quotes
 <div class="codehilite"><pre><span></span><code>query without quotes
 </code></pre></div>
 
-<p>Note that the current implementation filters out common words (limited to English) such as "a" and "for", so the list in the html output will often be a lot shorter than in Obsidian.</p>
+<p>Note that the current implementation filters out common words (limited to English) such as "a" and "for", so the list in the html output will often be a lot shorter than in Obsidian.   </p>
+<hr />
+<p>Here I link to the test notes so that they are included in the vault.   </p>
+<ul>
+<li><a href="/tabs/Resources/test_pages/embedded_search/babayaga in title only.html">babayaga in title only</a>   </li>
+<li><a href="/tabs/Resources/test_pages/embedded_search/bbyg_in_text.html">bbyg_in_text</a>   </li>
+<li><a href="/tabs/Resources/test_pages/embedded_search/bbyg_in_tags.html">bbyg_in_tags</a>   </li>
+<li><a href="/tabs/Resources/test_pages/embedded_search/babayaga/bbyg in path only.html">bbyg in path only</a></li>
+</ul>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -420,13 +465,13 @@ query without quotes
 
 </div>
 <div class="graph requires_js ">
-    <div id="A255568964971501843575060226854988048625{level}" class="graph_div"></div>
+    <div id="A264768499043371814513053132267999216322{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B255568964971501843575060226854988048625{level}" level="{level}" note_temp_id="255568964971501843575060226854988048625" onclick="window.ObsHtmlGraph.run(this, '255568964971501843575060226854988048625', 'embedded search');">
+        <button class="graph_button graph_show_button" id="B264768499043371814513053132267999216322{level}" level="{level}" note_temp_id="264768499043371814513053132267999216322" onclick="window.ObsHtmlGraph.run(this, '264768499043371814513053132267999216322', 'embedded search');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C255568964971501843575060226854988048625{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C264768499043371814513053132267999216322{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

@@ -45,7 +45,4 @@ Try this site with different [layouts](./Configurations/Styling/Styling.md#layou
 ## Tips and tricks   
    
 - [Performance Tuning](./Configurations/Performance%20Tuning.md)   
-- [Automate website deployment](./Automation/Automate%20website%20deployment.md)    
-   
-   
-[babayaga](./Resources/test_pages/babayaga.md)
+- [Automate website deployment](./Automation/Automate%20website%20deployment.md)
