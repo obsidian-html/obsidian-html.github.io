@@ -29,9 +29,8 @@ Also make sure to install the latest master branch code: [Install a different ve
 > If you do a git pull, go into the root of the cloned repo and run `pip install .`  at least once after each pull so that changes in markdown extensions are processed.   
    
 ## Search example   
-This code:   
    
-``` 
+```
 -``` query
 convert automation webserver ssh
 -```
@@ -47,7 +46,30 @@ convert automation webserver ssh
 ```
    
    
+We aim to get these result as close as possible to what Obsidian gives .   
    
+### Just links   
+Getting all those matches is nice for yourself, but for other people browsing your sites, perhaps only a list of links would be better, you can do this by writing `query list` instead of the normal `query`.   
+   
+This code:   
+   
+``` 
+-``` query list
+convert automation webserver ssh
+-```
+   
+```
+
+> Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.
+
+Gives this block:
+
+``` query list
+convert automation webserver ssh
+```
+   
+   
+I will use this format in the other examples where we only care which notes are returned, and not what the matches exactly are.   
    
 # Status of the feature   
 Note that at the moment, only the links to the notes are outputted. Search results from within the notes will be added soon, but require more work.   
@@ -67,25 +89,27 @@ If you want your most important usecase to be added first, please make a descrip
 This will search in `["content", "title", "path", "file", "tags"]`   
    
 ```
--``` query
+-``` query list
 babayaga
 -```
    
 ```
-``` query
+
+
+``` query list
 babayaga
 ```
    
    
 ## Search only in note name (file)   
 ```
--``` query
+-``` query list
 file:babayaga
 -```
    
 ```
 
-``` query
+``` query list
 file:babayaga
 ```
    
@@ -94,13 +118,13 @@ file:babayaga
 For this to work with whoosh we translate `tag:#<tag>` to `tags:<tag>`.   
    
 ```
--``` query
+-``` query list
 tag:#babayaga
 -```
    
 ```
 
-``` query
+``` query list
 tag:#babayaga
 ```
    
@@ -108,13 +132,13 @@ tag:#babayaga
 ## Search for path   
    
 ```
--``` query
+-``` query list
 path:babayaga
 -```
    
 ```
 
-``` query
+``` query list
 path:babayaga
 ```
    
@@ -124,13 +148,13 @@ path:babayaga
 In the example above we also got a note where babayaga was in the filename. If we want to find notes where that term is only in the path, but not also in the filename, we can use `-` as an ANDNOT operator.   
    
 ```
--``` query
+-``` query list
 path:babayaga -file:babayaga
 -```
    
 ```
 
-``` query
+``` query list
 path:babayaga -file:babayaga
 ```
    
@@ -140,13 +164,13 @@ path:babayaga -file:babayaga
 Supported by default, search for an entire phrase, instead of OR-ing keywords together.   
    
 ```
--``` query
+-``` query list
 "query with quotes"
 -```
    
 ```
 
-``` query
+``` query list
 "query with quotes"
 ```
    
@@ -155,13 +179,13 @@ Supported by default, search for an entire phrase, instead of OR-ing keywords to
 Compare that result with the query without quotes around it (implicit OR):   
    
 ```
--``` query
+-``` query list
 query without quotes
 -```
    
 ```
 
-``` query
+``` query list
 query without quotes
 ```
    

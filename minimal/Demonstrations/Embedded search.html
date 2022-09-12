@@ -49,7 +49,7 @@
 <div class="callout-content">
 <p>This feature is still in alpha, and needs more development. <br />
 </p>
-<p>User stories, bugs, issues are all discussed here: <a href="https://github.com/obsidian-html/obsidian-html/issues/324" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/324</a> <br />
+<p>User stories, bugs, issues are all discussed here: <a href="https://github.com/obsidian-html/obsidian-html/issues/324" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/324</a> <br />
 </p>
 </div>
 </div>
@@ -76,7 +76,6 @@
 </div>
 </div>
 <h2 id="search-example">Search example</h2>
-<p>This code:   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
 convert automation webserver ssh
 -```
@@ -89,90 +88,104 @@ convert automation webserver ssh
 <div class="codehilite"><pre><span></span><code>convert automation webserver ssh
 </code></pre></div>
 
-<h1 id="status-of-the-feature">Status of the feature</h1>
-<p>Note that at the moment, only the links to the notes are outputted. Search results from within the notes will be added soon, but require more work.   </p>
-<p>The supported queries are also still very basic. See the <a href="#supported-syntax-at-the-moment" class="anchor-link">Supported syntax at the moment</a> for what has been implemented already.   </p>
-<p>Other options are also available out of the box, but not tested yet, and it is not yet clear whether those options align exactly with Obsidians query language. See <a href="https://whoosh.readthedocs.io/en/latest/querylang.html" class="external-link">https://whoosh.readthedocs.io/en/latest/querylang.html</a> for the current implementation. (Minus/plus what is listed below as supported syntax).   </p>
-<p>If you want your most important usecase to be added first, please make a description of it here: <a href="https://github.com/obsidian-html/obsidian-html/issues/324" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/324</a>   </p>
-<div class="callout callout-important active" rasa="1">
-<div class="callout-title">
-<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"></path></svg>
-</div>
-<div class="callout-title-name">Important
-</div>
-</div>
-<div class="callout-content">
-<p>The max search results are 20 notes. This will be changed when we can deduce which notes should REALLY be inserted, and which not. Searching on "a" in Obsidian does not return all notes, so it does the same, but the logic behind it is still unclear. <br />
-</p>
-</div>
-</div>
-<h1 id="supported-syntax-at-the-moment">Supported syntax at the moment</h1>
-<h2 id="search-for-keyword">Search for keyword</h2>
-<p>This will search in <code>["content", "title", "path", "file", "tags"]</code>   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
-babayaga
+<p>We aim to get these result as close as possible to what Obsidian gives .   </p>
+<h3 id="just-links">Just links</h3>
+<p>Getting all those matches is nice for yourself, but for other people browsing your sites, perhaps only a list of links would be better, you can do this by writing <code>query list</code> instead of the normal <code>query</code>.   </p>
+<p>This code:   </p>
+<div class="codehilite"><pre><span></span><code>-``` query list
+convert automation webserver ssh
 -```
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>babayaga
+<blockquote>
+<p>Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.</p>
+</blockquote>
+<p>Gives this block:</p>
+<p>``` query list
+convert automation webserver ssh</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">I</span> <span class="nv">will</span> <span class="nv">use</span> <span class="nv">this</span> <span class="nv">format</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">other</span> <span class="nv">examples</span> <span class="nv">where</span> <span class="nv">we</span> <span class="nv">only</span> <span class="nv">care</span> <span class="nv">which</span> <span class="nv">notes</span> <span class="nv">are</span> <span class="nv">returned</span>, <span class="nv">and</span> <span class="nv">not</span> <span class="nv">what</span> <span class="nv">the</span> <span class="nv">matches</span> <span class="nv">exactly</span> <span class="nv">are</span>.   
+
+# <span class="nv">Status</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">feature</span>   
+<span class="nv">Note</span> <span class="nv">that</span> <span class="nv">at</span> <span class="nv">the</span> <span class="nv">moment</span>, <span class="nv">only</span> <span class="nv">the</span> <span class="nv">links</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">notes</span> <span class="nv">are</span> <span class="nv">outputted</span>. <span class="nv">Search</span> <span class="nv">results</span> <span class="nv">from</span> <span class="nv">within</span> <span class="nv">the</span> <span class="nv">notes</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">added</span> <span class="nv">soon</span>, <span class="nv">but</span> <span class="nv">require</span> <span class="nv">more</span> <span class="nv">work</span>.   
+
+<span class="nv">The</span> <span class="nv">supported</span> <span class="nv">queries</span> <span class="nv">are</span> <span class="nv">also</span> <span class="nv">still</span> <span class="nv">very</span> <span class="nv">basic</span>. <span class="nv">See</span> <span class="nv">the</span> [<span class="nv">Supported</span> <span class="nv">syntax</span> <span class="nv">at</span> <span class="nv">the</span> <span class="nv">moment</span>]<span class="ss">(</span>#<span class="nv">supported</span><span class="o">-</span><span class="nv">syntax</span><span class="o">-</span><span class="nv">at</span><span class="o">-</span><span class="nv">the</span><span class="o">-</span><span class="nv">moment</span><span class="ss">)</span> <span class="k">for</span> <span class="nv">what</span> <span class="nv">has</span> <span class="nv">been</span> <span class="nv">implemented</span> <span class="nv">already</span>.   
+
+<span class="nv">Other</span> <span class="nv">options</span> <span class="nv">are</span> <span class="nv">also</span> <span class="nv">available</span> <span class="nv">out</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">box</span>, <span class="nv">but</span> <span class="nv">not</span> <span class="nv">tested</span> <span class="nv">yet</span>, <span class="nv">and</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">yet</span> <span class="nv">clear</span> <span class="nv">whether</span> <span class="nv">those</span> <span class="nv">options</span> <span class="nv">align</span> <span class="nv">exactly</span> <span class="nv">with</span> <span class="nv">Obsidians</span> <span class="nv">query</span> <span class="nv">language</span>. <span class="nv">See</span> [<span class="nv">https</span>:<span class="o">//</span><span class="nv">whoosh</span>.<span class="nv">readthedocs</span>.<span class="nv">io</span><span class="o">/</span><span class="nv">en</span><span class="o">/</span><span class="nv">latest</span><span class="o">/</span><span class="nv">querylang</span>.<span class="nv">html</span>]<span class="ss">(</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">whoosh</span>.<span class="nv">readthedocs</span>.<span class="nv">io</span><span class="o">/</span><span class="nv">en</span><span class="o">/</span><span class="nv">latest</span><span class="o">/</span><span class="nv">querylang</span>.<span class="nv">html</span><span class="ss">)</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">current</span> <span class="nv">implementation</span>. <span class="ss">(</span><span class="nv">Minus</span><span class="o">/</span><span class="nv">plus</span> <span class="nv">what</span> <span class="nv">is</span> <span class="nv">listed</span> <span class="nv">below</span> <span class="nv">as</span> <span class="nv">supported</span> <span class="nv">syntax</span><span class="ss">)</span>.   
+
+<span class="k">If</span> <span class="nv">you</span> <span class="nv">want</span> <span class="nv">your</span> <span class="nv">most</span> <span class="nv">important</span> <span class="nv">usecase</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">added</span> <span class="nv">first</span>, <span class="nv">please</span> <span class="nv">make</span> <span class="nv">a</span> <span class="nv">description</span> <span class="nv">of</span> <span class="nv">it</span> <span class="nv">here</span>: [<span class="nv">https</span>:<span class="o">//</span><span class="nv">github</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">obsidian</span><span class="o">-</span><span class="nv">html</span><span class="o">/</span><span class="nv">obsidian</span><span class="o">-</span><span class="nv">html</span><span class="o">/</span><span class="nv">issues</span><span class="o">/</span><span class="mi">324</span>]<span class="ss">(</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">github</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">obsidian</span><span class="o">-</span><span class="nv">html</span><span class="o">/</span><span class="nv">obsidian</span><span class="o">-</span><span class="nv">html</span><span class="o">/</span><span class="nv">issues</span><span class="o">/</span><span class="mi">324</span><span class="ss">)</span>   
+
+<span class="o">&gt;</span> [<span class="o">!</span><span class="nv">important</span>]   
+<span class="o">&gt;</span> <span class="nv">The</span> <span class="nv">max</span> <span class="nv">search</span> <span class="nv">results</span> <span class="nv">are</span> <span class="mi">20</span> <span class="nv">notes</span>. <span class="nv">This</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">changed</span> <span class="nv">when</span> <span class="nv">we</span> <span class="nv">can</span> <span class="nv">deduce</span> <span class="nv">which</span> <span class="nv">notes</span> <span class="nv">should</span> <span class="nv">REALLY</span> <span class="nv">be</span> <span class="nv">inserted</span>, <span class="nv">and</span> <span class="nv">which</span> <span class="nv">not</span>. <span class="nv">Searching</span> <span class="nv">on</span> <span class="s2">&quot;</span><span class="s">a</span><span class="s2">&quot;</span> <span class="nv">in</span> <span class="nv">Obsidian</span> <span class="nv">does</span> <span class="nv">not</span> <span class="k">return</span> <span class="nv">all</span> <span class="nv">notes</span>, <span class="nv">so</span> <span class="nv">it</span> <span class="nv">does</span> <span class="nv">the</span> <span class="nv">same</span>, <span class="nv">but</span> <span class="nv">the</span> <span class="nv">logic</span> <span class="nv">behind</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">still</span> <span class="nv">unclear</span>.   
+
+
+# <span class="nv">Supported</span> <span class="nv">syntax</span> <span class="nv">at</span> <span class="nv">the</span> <span class="nv">moment</span>   
+## <span class="nv">Search</span> <span class="k">for</span> <span class="nv">keyword</span>   
+<span class="nv">This</span> <span class="nv">will</span> <span class="nv">search</span> <span class="nv">in</span> `[<span class="s2">&quot;</span><span class="s">content</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">title</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">path</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">file</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">tags</span><span class="s2">&quot;</span>]`   
+</code></pre></div>
+
+<p>-<code>query list
+babayaga
+-</code></p>
+<div class="codehilite"><pre><span></span><code>``` query list
+babayaga
 </code></pre></div>
 
 <h2 id="search-only-in-note-name-file">Search only in note name (file)</h2>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 file:babayaga
 -```
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">file</span><span class="o">:</span><span class="n">babayaga</span><span class="w"></span>
+<p>``` query list
+file:babayaga</p>
+<div class="codehilite"><pre><span></span><code>## <span class="nv">Search</span> <span class="k">for</span> <span class="nv">tag</span>   
+<span class="k">For</span> <span class="nv">this</span> <span class="nv">to</span> <span class="nv">work</span> <span class="nv">with</span> <span class="nv">whoosh</span> <span class="nv">we</span> <span class="nv">translate</span> `<span class="nv">tag</span>:#<span class="o">&lt;</span><span class="nv">tag</span><span class="o">&gt;</span>` <span class="nv">to</span> `<span class="nv">tags</span>:<span class="o">&lt;</span><span class="nv">tag</span><span class="o">&gt;</span>`.   
 </code></pre></div>
 
-<h2 id="search-for-tag">Search for tag</h2>
-<p>For this to work with whoosh we translate <code>tag:#&lt;tag&gt;</code> to <code>tags:&lt;tag&gt;</code>.   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
+<p>-<code>query list
 tag:#babayaga
--```
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>tag:#babayaga
+-</code></p>
+<div class="codehilite"><pre><span></span><code>``` query list
+tag:#babayaga
 </code></pre></div>
 
 <h2 id="search-for-path">Search for path</h2>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 path:babayaga
 -```
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">path</span><span class="o">:</span><span class="n">babayaga</span><span class="w"></span>
+<p>``` query list
+path:babayaga</p>
+<div class="codehilite"><pre><span></span><code>## <span class="nv">Exclude</span> <span class="nv">syntax</span>   
+<span class="nv">In</span> <span class="nv">the</span> <span class="nv">example</span> <span class="nv">above</span> <span class="nv">we</span> <span class="nv">also</span> <span class="nv">got</span> <span class="nv">a</span> <span class="nv">note</span> <span class="nv">where</span> <span class="nv">babayaga</span> <span class="nv">was</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">filename</span>. <span class="k">If</span> <span class="nv">we</span> <span class="nv">want</span> <span class="nv">to</span> <span class="nv">find</span> <span class="nv">notes</span> <span class="nv">where</span> <span class="nv">that</span> <span class="nv">term</span> <span class="nv">is</span> <span class="nv">only</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">path</span>, <span class="nv">but</span> <span class="nv">not</span> <span class="nv">also</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">filename</span>, <span class="nv">we</span> <span class="nv">can</span> <span class="nv">use</span> `<span class="o">-</span>` <span class="nv">as</span> <span class="nv">an</span> <span class="nv">ANDNOT</span> <span class="nv">operator</span>.   
 </code></pre></div>
 
-<h2 id="exclude-syntax">Exclude syntax</h2>
-<p>In the example above we also got a note where babayaga was in the filename. If we want to find notes where that term is only in the path, but not also in the filename, we can use <code>-</code> as an ANDNOT operator.   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
+<p>-<code>query list
 path:babayaga -file:babayaga
--```
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">path</span><span class="o">:</span><span class="n">babayaga</span><span class="w"> </span><span class="o">-</span><span class="n">file</span><span class="o">:</span><span class="n">babayaga</span><span class="w"></span>
+-</code></p>
+<div class="codehilite"><pre><span></span><code>``` query list
+path:babayaga -file:babayaga
 </code></pre></div>
 
 <h2 id="search-for-a-phrase">Search for a phrase</h2>
 <p>Supported by default, search for an entire phrase, instead of OR-ing keywords together.   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 &quot;query with quotes&quot;
 -```
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>&quot;query with quotes&quot;
+<p>``` query list
+"query with quotes"</p>
+<div class="codehilite"><pre><span></span><code>## Standard simple search   
+Compare that result with the query without quotes around it (implicit OR):   
 </code></pre></div>
 
-<h2 id="standard-simple-search">Standard simple search</h2>
-<p>Compare that result with the query without quotes around it (implicit OR):   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
+<p>-<code>query list
 query without quotes
--```
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>query without quotes
+-</code></p>
+<div class="codehilite"><pre><span></span><code>``` query list
+query without quotes
 </code></pre></div>
 
 <p>Note that the current implementation filters out common words (limited to English) such as "a" and "for", so the list in the html output will often be a lot shorter than in Obsidian.   </p>

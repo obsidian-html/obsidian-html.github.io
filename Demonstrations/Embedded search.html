@@ -406,7 +406,10 @@
 <ul>
 <li><a href="#general-information" class="anchor-link">General information</a><ul>
 <li><a href="#enable" class="anchor-link">Enable</a></li>
-<li><a href="#search-example" class="anchor-link">Search example</a></li>
+<li><a href="#search-example" class="anchor-link">Search example</a><ul>
+<li><a href="#just-links" class="anchor-link">Just links</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#status-of-the-feature" class="anchor-link">Status of the feature</a></li>
@@ -459,8 +462,336 @@
 </div>
 </div>
 <h2 id="search-example">Search example</h2>
-<p>This code:   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
+convert automation webserver ssh
+-```
+</code></pre></div>
+
+<blockquote>
+<p>Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.</p>
+</blockquote>
+<p>Gives this block:</p>
+<div class="query">
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Automation/AutomationLinuxSSH.html">Auto push site using SSH on Linux</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				push site to a local <b class="match term0">webserver</b> on linux ↩ this
+			</div>
+			<div class="match-row">
+				nice method if your <b class="match term0">webserver</b> is reachable
+			</div>
+			<div class="match-row">
+				<b class="match term1">ssh</b> from your workstation. otherwise, i advise using
+			</div>
+			<div class="match-row">
+				web/www/devfruits" ↩ # <b class="match term2">convert</b> obsidian to html
+			</div>
+			<div class="match-row">
+				of pushing websites](../<b class="match term3">automation</b>/automate%20website
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Automation/AutomationWindowsSSH.html">Auto push site using Git on Windows</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				push site to a local <b class="match term0">webserver</b> on windows ↩ this
+			</div>
+			<div class="match-row">
+				nice method if your <b class="match term0">webserver</b> is reachable
+			</div>
+			<div class="match-row">
+				<b class="match term1">ssh</b> from your workstation. otherwise, i advise using
+			</div>
+			<div class="match-row">
+				origin = pwd ↩ # <b class="match term2">convert</b> obsidian to html
+			</div>
+			<div class="match-row">
+				privatekeypath user@<b class="match term0">webserver</b> -m "$($env:temp)\_emptydevfruits.sh
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Automation/Automate website deployment.html">Automate website deployment</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				pushing to your <b class="match term0">webserver</b>. ↩ &gt; note that these
+			</div>
+			<div class="match-row">
+				using git (windows)](../<b class="match term3">automation</b>/automationwindows.md
+			</div>
+			<div class="match-row">
+				if your <b class="match term0">webserver</b> is reachable
+			</div>
+			<div class="match-row">
+				auto push to local <b class="match term0">webserver</b> (linux)](../<b class="match term3">automation</b>/automationlinuxssh.md
+			</div>
+			<div class="match-row">
+				auto push to local <b class="match term0">webserver</b> (windows)](../<b class="match term3">automation</b>/automationwindowsssh.md
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Demonstrations/Embedded search.html">Embedded search</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				query ↩ <b class="match term2">convert</b> <b class="match term3">automation</b> <b class="match term0">webserver</b> <b class="match term1">ssh</b> ↩ -``` ↩ ``` ↩ &gt; remove the dashes in
+			</div>
+			<div class="match-row">
+				block: ↩ ``` query ↩ <b class="match term2">convert</b> <b class="match term3">automation</b> <b class="match term0">webserver</b> <b class="match term1">ssh</b> ↩ ``` ↩ we aim to get these result
+			</div>
+			<div class="match-row">
+				query list ↩ <b class="match term2">convert</b> <b class="match term3">automation</b> <b class="match term0">webserver</b> <b class="match term1">ssh</b> ↩ -``` ↩ ``` ↩ &gt; remove the dashes in
+			</div>
+			<div class="match-row">
+				query list ↩ <b class="match term2">convert</b> <b class="match term3">automation</b> <b class="match term0">webserver</b> <b class="match term1">ssh</b> ↩ ``` ↩ i will use this format
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Automation/AutomationLinuxGit.html">Auto push site using Git on Linux</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				readme.md -delete ↩ # <b class="match term2">convert</b> obsidian to html
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Automation/AutomationWindows.html">Auto push site using Git on Windows</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				file | remove-item ↩ } ↩ # <b class="match term2">convert</b> obsidian to html
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Instructions/Usage.html">Usage</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				commands: ↩ run <b class="match term2">convert</b> vault using sensible
+			</div>
+			<div class="match-row">
+				can be used in the <b class="match term2">convert</b> command. ↩ <b class="match term2">convert</b> just <b class="match term2">convert</b> your vault to html
+			</div>
+			<div class="match-row">
+				obsidian run`, the <b class="match term2">convert</b> command will only
+			</div>
+			<div class="match-row">
+				<b class="match term2">convert</b> your vault to md and/or html. ↩ this mode is the
+			</div>
+			<div class="match-row">
+				use `obsidianhtml <b class="match term2">convert</b> -i /target/path/to
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Instructions/Quickstart.html">Quickstart</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				and stop the <b class="match term0">webserver</b>. ↩ if you are happy
+			</div>
+			<div class="match-row">
+				the instructions at [<b class="match term2">convert</b> vault](#<b class="match term2">convert</b>-vault) to just <b class="match term2">convert</b> your vault to html
+			</div>
+			<div class="match-row">
+				the integrated <b class="match term0">webserver</b>. ↩ ## configuration
+			</div>
+			<div class="match-row">
+				vault/entrypoint.md' ↩ ``` ↩ ## <b class="match term2">convert</b> vault ↩ open a terminal
+			</div>
+			<div class="match-row">
+				website without a <b class="match term0">webserver</b> ↩ if you don't want
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/General Information/About ObsidianHtml.html">About ObsidianHtml</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				only a simple http <b class="match term0">webserver</b> is needed to view
+			</div>
+			<div class="match-row">
+				for free. ↩ the http <b class="match term0">webserver</b> is needed for
+			</div>
+			<div class="match-row">
+				better options to <b class="match term2">convert</b> standard markdown
+			</div>
+			<div class="match-row">
+				to <b class="match term2">convert</b> your notes, you need
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Instructions/Tutorials/Tutorial - Installation on Windows.html">Tutorial - Installation on Windows</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				cd example_vault ↩ ``` ↩ ## <b class="match term2">convert</b> ↩ the main mode of
+			</div>
+			<div class="match-row">
+				in that file to <b class="match term2">convert</b> your file to html
+			</div>
+			<div class="match-row">
+				obisidanhtml <b class="match term2">convert</b> ↩ ``` ↩ this should give
+			</div>
+			<div class="match-row">
+				obsidianhtml <b class="match term2">convert</b> ↩ no config provided
+			</div>
+			<div class="match-row">
+				be served by a <b class="match term0">webserver</b>. if you are going
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Configurations/Relative_path_html.html">Relative_path_html</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				conjunction with a <b class="match term0">webserver</b>. for example if
+			</div>
+			<div class="match-row">
+				may be used with a <b class="match term0">webserver</b>, and in those cases
+			</div>
+			<div class="match-row">
+				also work with a <b class="match term0">webserver</b>, but at the moment
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				and stop the <b class="match term0">webserver</b>. ↩ ## about ↩ this is
+			</div>
+			<div class="match-row">
+				running to keep the <b class="match term0">webserver</b> alive. press enter
+			</div>
+			<div class="match-row">
+				process and stop the <b class="match term0">webserver</b>. the <b class="match term0">webserver</b> will print logs
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Instructions/Snippets/Deployment instructions.html">Deployment instructions</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				website without a <b class="match term0">webserver</b> ↩ if you don't want
+			</div>
+			<div class="match-row">
+				to start a local <b class="match term0">webserver</b> everytime someone
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/General Information/Parsing Obsidian notes to proper markdown.html">Parsing Obsidian notes to proper markdown</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				in the process is to <b class="match term2">convert</b> obsidian notes
+			</div>
+			<div class="match-row">
+				md), if you want to <b class="match term2">convert</b> existing markdown
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/index.html">Homepage</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				website deployment](./<b class="match term3">automation</b>/automate%20website
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/General Information/Creating a static html website from markdown files.html">Creating a static html website from markdown files</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				markdown files and <b class="match term2">convert</b> them into a website
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Configurations/Process All.html">Process All</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				tell obsidianhtml to <b class="match term2">convert</b> and include all
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Configurations/Features.html">Features</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				20latex.md) | <b class="match term2">convert</b> mathjax code to
+			</div>
+			<div class="match-row">
+				20html%20output.md) | <b class="match term2">convert</b> mermaid code to
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Demonstrations/Making Code blocks look pretty.html">Code blocks</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				import markdown # <b class="match term2">convert</b> markdown to html
+			</div>
+			<div class="match-row">
+				import urllib.parse # <b class="match term2">convert</b> link characters
+			</div>
+		</div>
+	</div>
+	<div class="match-document">
+		<div class="match-document-title">
+			<a href="/Demonstrations/Implementing Note Inclusions.html">Inclusions</a>
+		</div>
+		<div class="matches">
+			<div class="match-row">
+				but since we first <b class="match term2">convert</b> obsidian notes
+			</div>
+		</div>
+	</div>
+</div>
+<p>We aim to get these result as close as possible to what Obsidian gives .   </p>
+<h3 id="just-links">Just links</h3>
+<p>Getting all those matches is nice for yourself, but for other people browsing your sites, perhaps only a list of links would be better, you can do this by writing <code>query list</code> instead of the normal <code>query</code>.   </p>
+<p>This code:   </p>
+<div class="codehilite"><pre><span></span><code>-``` query list
 convert automation webserver ssh
 -```
 </code></pre></div>
@@ -491,6 +822,7 @@ convert automation webserver ssh
 	<li><a href="/Demonstrations/Making Code blocks look pretty.html">Code blocks</a></li>
 	<li><a href="/Demonstrations/Implementing Note Inclusions.html">Inclusions</a></li>
 </ul></div>
+<p>I will use this format in the other examples where we only care which notes are returned, and not what the matches exactly are.   </p>
 <h1 id="status-of-the-feature">Status of the feature</h1>
 <p>Note that at the moment, only the links to the notes are outputted. Search results from within the notes will be added soon, but require more work.   </p>
 <p>The supported queries are also still very basic. See the <a href="#supported-syntax-at-the-moment" class="anchor-link" class="anchor-link">Supported syntax at the moment</a> for what has been implemented already.   </p>
@@ -511,7 +843,7 @@ convert automation webserver ssh
 <h1 id="supported-syntax-at-the-moment">Supported syntax at the moment</h1>
 <h2 id="search-for-keyword">Search for keyword</h2>
 <p>This will search in <code>["content", "title", "path", "file", "tags"]</code>   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 babayaga
 -```
 </code></pre></div>
@@ -524,7 +856,7 @@ babayaga
 	<li><a href="/Resources/test_pages/embedded_search/babayaga/bbyg in path only.html">bbyg in path only</a></li>
 </ul></div>
 <h2 id="search-only-in-note-name-file">Search only in note name (file)</h2>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 file:babayaga
 -```
 </code></pre></div>
@@ -534,7 +866,7 @@ file:babayaga
 </ul></div>
 <h2 id="search-for-tag">Search for tag</h2>
 <p>For this to work with whoosh we translate <code>tag:#&lt;tag&gt;</code> to <code>tags:&lt;tag&gt;</code>.   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 tag:#babayaga
 -```
 </code></pre></div>
@@ -543,7 +875,7 @@ tag:#babayaga
 	<li><a href="/Resources/test_pages/embedded_search/bbyg_in_tags.html">bbyg_in_tags</a></li>
 </ul></div>
 <h2 id="search-for-path">Search for path</h2>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 path:babayaga
 -```
 </code></pre></div>
@@ -554,7 +886,7 @@ path:babayaga
 </ul></div>
 <h2 id="exclude-syntax">Exclude syntax</h2>
 <p>In the example above we also got a note where babayaga was in the filename. If we want to find notes where that term is only in the path, but not also in the filename, we can use <code>-</code> as an ANDNOT operator.   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 path:babayaga -file:babayaga
 -```
 </code></pre></div>
@@ -564,7 +896,7 @@ path:babayaga -file:babayaga
 </ul></div>
 <h2 id="search-for-a-phrase">Search for a phrase</h2>
 <p>Supported by default, search for an entire phrase, instead of OR-ing keywords together.   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 &quot;query with quotes&quot;
 -```
 </code></pre></div>
@@ -574,7 +906,7 @@ path:babayaga -file:babayaga
 </ul></div>
 <h2 id="standard-simple-search">Standard simple search</h2>
 <p>Compare that result with the query without quotes around it (implicit OR):   </p>
-<div class="codehilite"><pre><span></span><code>-``` query
+<div class="codehilite"><pre><span></span><code>-``` query list
 query without quotes
 -```
 </code></pre></div>
@@ -621,13 +953,13 @@ query without quotes
 
 </div>
 <div class="graph requires_js ">
-    <div id="A320187292660662666843551269525896703927{level}" class="graph_div"></div>
+    <div id="A79360272082176197975363325492746138585{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B320187292660662666843551269525896703927{level}" level="{level}" note_temp_id="320187292660662666843551269525896703927" onclick="window.ObsHtmlGraph.run(this, '320187292660662666843551269525896703927', 'embedded search');">
+        <button class="graph_button graph_show_button" id="B79360272082176197975363325492746138585{level}" level="{level}" note_temp_id="79360272082176197975363325492746138585" onclick="window.ObsHtmlGraph.run(this, '79360272082176197975363325492746138585', 'embedded search');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C320187292660662666843551269525896703927{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C79360272082176197975363325492746138585{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
