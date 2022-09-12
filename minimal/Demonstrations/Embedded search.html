@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/minimal/Demonstrations/Demonstrations.html" style="color: var(--normal-text-color);">Demonstrations</a> / <a href="/minimal/Demonstrations/Embedded search.html" >Embedded search</a>
+                        </div>
+                    </div>
+<embeddedtitle>Embedded search</embeddedtitle>
+<blockquote>
+<p>Added in <a href="/minimal/Changelog/v3.3.0.html">v3.3.0</a>   </p>
+</blockquote>
+<div class="callout callout-warning active" rasa="1">
+<div class="callout-title">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+</div>
+<div class="callout-title-name">Warning
+</div>
+</div>
+<div class="callout-content">
+<p>This feature is still in alpha, and needs more development. <br />
+</p>
+<p>User stories, bugs, issues are all discussed here: <a href="https://github.com/obsidian-html/obsidian-html/issues/324" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/324</a> <br />
+</p>
+</div>
+</div>
+<h2 id="enable">Enable</h2>
+<p>As the feature is still in alpha, it is disabled by default.   </p>
+<p>To enable it, add this to your config:   </p>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">embedded_search</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
+
+<p>Also make sure to install the latest master branch code: <a href="/minimal/Instructions/Install a different version.html">Install a different version</a>.    </p>
+<div class="callout callout-note active" rasa="1">
+<div class="callout-title">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
+</div>
+<div class="callout-title-name">Note
+</div>
+</div>
+<div class="callout-content">
+<p>If you do a git pull, go into the root of the cloned repo and run <code>pip install .</code>  at least once after each pull so that changes in markdown extensions are processed. <br />
+</p>
+</div>
+</div>
+<h2 id="search-example">Search example</h2>
+<p>This code:   </p>
+<div class="codehilite"><pre><span></span><code>-``` query
+convert automation webserver ssh
+-```
+</code></pre></div>
+
+<p>Gives this block:</p>
+<div class="codehilite"><pre><span></span><code>convert automation webserver ssh
+</code></pre></div>
+
+<p>Note that at the moment, only the links to the notes are outputted. Search results from within the notes will be added soon, but require more work.   </p>
+<p>The supported queries are also still very basic. You can search for a single keyword, or for multiple keywords (ANDed toghether).    </p>
+<p>Other options are also available out of the box, but not tested yet, and it is not yet clear whether those options align exactly with Obsidians query language. See <a href="https://whoosh.readthedocs.io/en/latest/querylang.html" class="external-link">https://whoosh.readthedocs.io/en/latest/querylang.html</a> for the current implementation.   </p>
+<p>If you want your most important usecase to be added first, please make a description of it here: <a href="https://github.com/obsidian-html/obsidian-html/issues/324" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/324</a></p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Configurations/Features.html">features</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v3.3.0.html">v3.3.0</a></li>
+</ul>
+</div>
+
+<div class="tags">
+
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

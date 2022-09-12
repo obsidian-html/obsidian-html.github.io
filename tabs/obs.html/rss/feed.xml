@@ -4,8 +4,8 @@
         <link>https://obsidian-html.github.io</link>
         <description>The documentation site of ObsidianHtml, a package used to convert Obsidian notes to proper markdown and static HTML websites.</description>
         <language>en-usen-us</language>
-        <pubDate>Sun, 11 Sep 2022 14:56:58 CET</pubDate>
-        <lastBuildDate>Sun, 31 Jul 2022 00:00:00 CET</lastBuildDate>
+        <pubDate>Mon, 12 Sep 2022 10:44:23 CET</pubDate>
+        <lastBuildDate>Mon, 12 Sep 2022 00:00:00 CET</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>ObsidianHtml</generator>
         <managingEditor>collector@dwrolvink.com</managingEditor>
@@ -35,11 +35,28 @@
             
         </item>
         <item>
+            <title>Changelog/ v3.2.3</title>
+            <link>https://obsidian-html.github.io/Changelog/v3.2.3.html</link>
+            <description>Patch version of v3.2.0.    &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Sun, 11 Sep 2022 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Changelog/v3.2.3.html</guid>
+            
+        </item>
+        <item>
             <title>v1.0.0</title>
             <link>https://obsidian-html.github.io/Changelog/v1.0.0.html</link>
             <description>Version 1.0.0 has been released.   &lt;br/&gt;&lt;br/&gt;The changes related to the prior version can be found here: https://github.com/obsidian-html/obsidian-html/issues/137   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Wed, 16 Feb 2022 00:00:00 CET</pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v1.0.0.html</guid>
+            
+        </item>
+        <item>
+            <title>Changelog/ v3.3.0</title>
+            <link>https://obsidian-html.github.io/Changelog/v3.3.0.html</link>
+            <description>Feature version of v3.0.0.  
+Not published yet!   &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Mon, 12 Sep 2022 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Changelog/v3.3.0.html</guid>
             
         </item>
         <item>
@@ -83,6 +100,14 @@
             
         </item>
         <item>
+            <title>Changelog/ v3.2.2</title>
+            <link>https://obsidian-html.github.io/Changelog/v3.2.2.html</link>
+            <description>Patch version of v3.2.0.    &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Sun, 11 Sep 2022 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Changelog/v3.2.2.html</guid>
+            
+        </item>
+        <item>
             <title>v2.0.2</title>
             <link>https://obsidian-html.github.io/Changelog/v2.0.2.html</link>
             <description>Bugfix version for v2.0.0   &lt;br/&gt;&lt;br/&gt;</description>
@@ -120,6 +145,14 @@
             <description>A new major version already. This time mostly for backward compatability reasons.    &lt;br/&gt;&lt;br/&gt;Upgrading from version 1.x.x to version 2.x.x will neccessitate some config changes if you configured more than the bare minimum and/or if want to keep the same layout as before.   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Sun, 17 Apr 2022 00:00:00 CET</pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v2.0.0.html</guid>
+            
+        </item>
+        <item>
+            <title>Changelog/ v3.2.1</title>
+            <link>https://obsidian-html.github.io/Changelog/v3.2.1.html</link>
+            <description>Patch version of v3.2.0.    &lt;br/&gt;&lt;br/&gt;This could&#x27;ve been a feature version, but I published this mainly to fix major bugs in v3.2.0.   &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Sun, 11 Sep 2022 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Changelog/v3.2.1.html</guid>
             
         </item>
         <item>

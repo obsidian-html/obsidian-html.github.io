@@ -179,6 +179,9 @@ toggles:
     search:
       enabled: True
 
+    embedded_search:
+      enabled: True
+
     dataview:
       enabled: True
       folder: 'obs.html/export' # relative to the vault being processed. this folder should always be in the vault

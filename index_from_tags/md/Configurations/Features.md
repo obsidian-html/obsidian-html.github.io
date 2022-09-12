@@ -43,6 +43,7 @@ These features add functionality from popular obsidian plugins, or extra functio
 | [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md) | Create a homepage based on your directory structure | Enabled, but points to `obs.html/dir_index.html` instead of `index.html` by default. |   
 | [Website navigation menu](../Configurations/Website%20navigation%20menu.md) | Add shortcuts at the top of the page. | Enabled, but empty list |   
 | [Breadcrumbs](../Configurations/Breadcrumbs.md) | Add the path to the note at the top of the note | Disabled, but enabled on this website |   
+| [Embedded search](../Demonstrations/Embedded%20search.md) | Parse embedded search blocks (within query fenced code blocks) | **Disabled** |   
    
 ## Safety   
    
