@@ -10,6 +10,19 @@
 >   
 >User stories, bugs, issues are all discussed here: [https://github.com/obsidian-html/obsidian-html/issues/324](https://github.com/obsidian-html/obsidian-html/issues/324)   
    
+This feature implements the `query` code blocks functionality of Obsidian, with which we can embed search results into the note. See also [https://help.obsidian.md/Plugins/Search](https://help.obsidian.md/Plugins/Search)   
+   
+## Status of the feature   
+Not all search functionality of [obsidian embbeded search](https://help.obsidian.md/Plugins/Search) has been implemented yet. See the [Supported syntax at the moment](#supported-syntax-at-the-moment) for what has been implemented already.   
+   
+If you want your most important usecase to be added first, please make a description of it here: [https://github.com/obsidian-html/obsidian-html/issues/324](https://github.com/obsidian-html/obsidian-html/issues/324)   
+   
+> [!important]   
+> The max search results are 20 notes. This will be changed when we can deduce which notes should REALLY be inserted, and which not. Searching on "a" in Obsidian does not return all notes, so it does the same, but the logic behind it is still unclear.   
+   
+### Whoosh   
+We use Whoosh as a search engine for obsidianhtml.See [https://whoosh.readthedocs.io/en/latest/querylang.html](https://whoosh.readthedocs.io/en/latest/querylang.html) for how that syntax works. A large part of implementing Obsidian's search syntax will be to configure Whoosh correctly. Where needed a user provided query from a note will be rewritten so that whoosh gives the desired result.   
+   
 ## Enable   
 As the feature is still in alpha, it is disabled by default.   
    
@@ -71,32 +84,26 @@ convert automation webserver ssh
    
 I will use this format in the other examples where we only care which notes are returned, and not what the matches exactly are.   
    
-# Status of the feature   
-Note that at the moment, only the links to the notes are outputted. Search results from within the notes will be added soon, but require more work.   
-   
-The supported queries are also still very basic. See the [Supported syntax at the moment](#supported-syntax-at-the-moment) for what has been implemented already.   
-   
-Other options are also available out of the box, but not tested yet, and it is not yet clear whether those options align exactly with Obsidians query language. See [https://whoosh.readthedocs.io/en/latest/querylang.html](https://whoosh.readthedocs.io/en/latest/querylang.html) for the current implementation. (Minus/plus what is listed below as supported syntax).   
-   
-If you want your most important usecase to be added first, please make a description of it here: [https://github.com/obsidian-html/obsidian-html/issues/324](https://github.com/obsidian-html/obsidian-html/issues/324)   
-   
-> [!important]   
-> The max search results are 20 notes. This will be changed when we can deduce which notes should REALLY be inserted, and which not. Searching on "a" in Obsidian does not return all notes, so it does the same, but the logic behind it is still unclear.   
-   
    
 # Supported syntax at the moment   
+## Query versus query list   
+Write `query list` instead of `query` if you want to only print out links to notes (no matches).   
+See also [Search example](#search-example), where the two are compared.   
+   
+I will use `query list` in these examples where seeing the matches/tags is not important.   
+   
 ## Search for keyword   
 This will search in `["content", "title", "path", "file", "tags"]`   
    
 ```
--``` query list
+-``` query
 babayaga
 -```
    
 ```
 
 
-``` query list
+``` query
 babayaga
 ```
    
@@ -118,13 +125,13 @@ file:babayaga
 For this to work with whoosh we translate `tag:#<tag>` to `tags:<tag>`.   
    
 ```
--``` query list
+-``` query
 tag:#babayaga
 -```
    
 ```
 
-``` query list
+``` query
 tag:#babayaga
 ```
    
