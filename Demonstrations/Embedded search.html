@@ -410,9 +410,10 @@
 </ul>
 </li>
 <li><a href="#status-of-the-feature" class="anchor-link">Status of the feature</a></li>
-<li><a href="#supported-syntax-at-the-moment" class="anchor-link">Supported syntax at the moment</a><ul>
+<li><a href="#supported-syntax-at-the-moment" class="anchor-link" class="anchor-link">Supported syntax at the moment</a><ul>
 <li><a href="#search-only-in-note-name-file" class="anchor-link">Search only in note name (file)</a></li>
 <li><a href="#search-for-a-phrase" class="anchor-link">Search for a phrase</a></li>
+<li><a href="#standard-simple-search" class="anchor-link">Standard simple search</a></li>
 </ul>
 </li>
 </ul>
@@ -460,6 +461,9 @@ convert automation webserver ssh
 -```
 </code></pre></div>
 
+<blockquote>
+<p>Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.</p>
+</blockquote>
 <p>Gives this block:</p>
 <div class="query"><ul>
 	<li><a href="/Automation/AutomationLinuxSSH.html">Auto push site using SSH on Linux</a></li>
@@ -483,13 +487,10 @@ convert automation webserver ssh
 	<li><a href="/Demonstrations/Making Code blocks look pretty.html">Code blocks</a></li>
 	<li><a href="/Demonstrations/Implementing Note Inclusions.html">Inclusions</a></li>
 </ul></div>
-<blockquote>
-<p>Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.   </p>
-</blockquote>
 <h1 id="status-of-the-feature">Status of the feature</h1>
 <p>Note that at the moment, only the links to the notes are outputted. Search results from within the notes will be added soon, but require more work.   </p>
-<p>The supported queries are also still very basic. You can search for a single keyword, or for multiple keywords (ANDed toghether).    </p>
-<p>Other options are also available out of the box, but not tested yet, and it is not yet clear whether those options align exactly with Obsidians query language. See <a href="https://whoosh.readthedocs.io/en/latest/querylang.html" class="external-link">https://whoosh.readthedocs.io/en/latest/querylang.html</a> for the current implementation.   </p>
+<p>The supported queries are also still very basic. See the <a href="#supported-syntax-at-the-moment" class="anchor-link" class="anchor-link">Supported syntax at the moment</a> for what has been implemented already.   </p>
+<p>Other options are also available out of the box, but not tested yet, and it is not yet clear whether those options align exactly with Obsidians query language. See <a href="https://whoosh.readthedocs.io/en/latest/querylang.html" class="external-link">https://whoosh.readthedocs.io/en/latest/querylang.html</a> for the current implementation. (Minus/plus what is listed below as supported syntax).   </p>
 <p>If you want your most important usecase to be added first, please make a description of it here: <a href="https://github.com/obsidian-html/obsidian-html/issues/324" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/324</a>   </p>
 <div class="callout callout-important active" rasa="1">
 <div class="callout-title">
@@ -505,6 +506,8 @@ convert automation webserver ssh
 </div>
 <h1 id="supported-syntax-at-the-moment">Supported syntax at the moment</h1>
 <h2 id="search-only-in-note-name-file">Search only in note name (file)</h2>
+<p>This implementation translates obsidians <code>file:&lt;keyword&gt;</code> to  <code>title:&lt;keyword&gt;</code> under the hood. Title here is the note name, which is either the same as file in Obsidian, or the  <br />
+configured <code>graph_name</code>.   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
 file:babayaga
 -```
@@ -514,6 +517,7 @@ file:babayaga
 	<li><a href="/Resources/test_pages/babayaga.html">babayaga</a></li>
 </ul></div>
 <h2 id="search-for-a-phrase">Search for a phrase</h2>
+<p>Supported by default, search for an entire phrase, instead of OR-ing keywords together.   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
 &quot;query with quotes&quot;
 -```
@@ -522,6 +526,7 @@ file:babayaga
 <div class="query"><ul>
 	<li><a href="/Demonstrations/Embedded search.html">Embedded search</a></li>
 </ul></div>
+<h2 id="standard-simple-search">Standard simple search</h2>
 <p>Compare that result with the query without quotes around it (implicit OR):   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
 query without quotes
@@ -562,13 +567,13 @@ query without quotes
 
 </div>
 <div class="graph requires_js ">
-    <div id="A333593182030885168209030545609260776674{level}" class="graph_div"></div>
+    <div id="A90294715891891535635431433555479390722{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B333593182030885168209030545609260776674{level}" level="{level}" note_temp_id="333593182030885168209030545609260776674" onclick="window.ObsHtmlGraph.run(this, '333593182030885168209030545609260776674', 'embedded search');">
+        <button class="graph_button graph_show_button" id="B90294715891891535635431433555479390722{level}" level="{level}" note_temp_id="90294715891891535635431433555479390722" onclick="window.ObsHtmlGraph.run(this, '90294715891891535635431433555479390722', 'embedded search');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C333593182030885168209030545609260776674{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C90294715891891535635431433555479390722{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

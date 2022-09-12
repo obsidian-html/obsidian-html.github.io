@@ -348,17 +348,17 @@ convert automation webserver ssh
 -```
 </code></pre></div>
 
+<blockquote>
+<p>Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.</p>
+</blockquote>
 <p>Gives this block:</p>
 <div class="codehilite"><pre><span></span><code>convert automation webserver ssh
 </code></pre></div>
 
-<blockquote>
-<p>Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.   </p>
-</blockquote>
 <h1 id="status-of-the-feature">Status of the feature</h1>
 <p>Note that at the moment, only the links to the notes are outputted. Search results from within the notes will be added soon, but require more work.   </p>
-<p>The supported queries are also still very basic. You can search for a single keyword, or for multiple keywords (ANDed toghether).    </p>
-<p>Other options are also available out of the box, but not tested yet, and it is not yet clear whether those options align exactly with Obsidians query language. See <a href="https://whoosh.readthedocs.io/en/latest/querylang.html" class="external-link">https://whoosh.readthedocs.io/en/latest/querylang.html</a> for the current implementation.   </p>
+<p>The supported queries are also still very basic. See the <a href="#supported-syntax-at-the-moment" class="anchor-link">Supported syntax at the moment</a> for what has been implemented already.   </p>
+<p>Other options are also available out of the box, but not tested yet, and it is not yet clear whether those options align exactly with Obsidians query language. See <a href="https://whoosh.readthedocs.io/en/latest/querylang.html" class="external-link">https://whoosh.readthedocs.io/en/latest/querylang.html</a> for the current implementation. (Minus/plus what is listed below as supported syntax).   </p>
 <p>If you want your most important usecase to be added first, please make a description of it here: <a href="https://github.com/obsidian-html/obsidian-html/issues/324" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/324</a>   </p>
 <div class="callout callout-important active" rasa="1">
 <div class="callout-title">
@@ -374,6 +374,8 @@ convert automation webserver ssh
 </div>
 <h1 id="supported-syntax-at-the-moment">Supported syntax at the moment</h1>
 <h2 id="search-only-in-note-name-file">Search only in note name (file)</h2>
+<p>This implementation translates obsidians <code>file:&lt;keyword&gt;</code> to  <code>title:&lt;keyword&gt;</code> under the hood. Title here is the note name, which is either the same as file in Obsidian, or the  <br />
+configured <code>graph_name</code>.   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
 file:babayaga
 -```
@@ -383,6 +385,7 @@ file:babayaga
 </code></pre></div>
 
 <h2 id="search-for-a-phrase">Search for a phrase</h2>
+<p>Supported by default, search for an entire phrase, instead of OR-ing keywords together.   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
 &quot;query with quotes&quot;
 -```
@@ -391,6 +394,7 @@ file:babayaga
 <div class="codehilite"><pre><span></span><code>&quot;query with quotes&quot;
 </code></pre></div>
 
+<h2 id="standard-simple-search">Standard simple search</h2>
 <p>Compare that result with the query without quotes around it (implicit OR):   </p>
 <div class="codehilite"><pre><span></span><code>-``` query
 query without quotes
@@ -416,13 +420,13 @@ query without quotes
 
 </div>
 <div class="graph requires_js ">
-    <div id="A182340690251332411843398524508816892459{level}" class="graph_div"></div>
+    <div id="A255568964971501843575060226854988048625{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B182340690251332411843398524508816892459{level}" level="{level}" note_temp_id="182340690251332411843398524508816892459" onclick="window.ObsHtmlGraph.run(this, '182340690251332411843398524508816892459', 'embedded search');">
+        <button class="graph_button graph_show_button" id="B255568964971501843575060226854988048625{level}" level="{level}" note_temp_id="255568964971501843575060226854988048625" onclick="window.ObsHtmlGraph.run(this, '255568964971501843575060226854988048625', 'embedded search');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C182340690251332411843398524508816892459{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C255568964971501843575060226854988048625{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

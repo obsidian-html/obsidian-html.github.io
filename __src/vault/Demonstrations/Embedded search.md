@@ -32,20 +32,22 @@ convert automation webserver ssh
 -```
 ```
 
+> Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.
+
 Gives this block:
 
 ``` query
 convert automation webserver ssh
 ```
 
-> Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.
+
 
 # Status of the feature
 Note that at the moment, only the links to the notes are outputted. Search results from within the notes will be added soon, but require more work.
 
-The supported queries are also still very basic. You can search for a single keyword, or for multiple keywords (ANDed toghether). 
+The supported queries are also still very basic. See the [[#Supported syntax at the moment]] for what has been implemented already.
 
-Other options are also available out of the box, but not tested yet, and it is not yet clear whether those options align exactly with Obsidians query language. See https://whoosh.readthedocs.io/en/latest/querylang.html for the current implementation.
+Other options are also available out of the box, but not tested yet, and it is not yet clear whether those options align exactly with Obsidians query language. See https://whoosh.readthedocs.io/en/latest/querylang.html for the current implementation. (Minus/plus what is listed below as supported syntax).
 
 If you want your most important usecase to be added first, please make a description of it here: https://github.com/obsidian-html/obsidian-html/issues/324
 
@@ -55,6 +57,9 @@ If you want your most important usecase to be added first, please make a descrip
 
 # Supported syntax at the moment
 ## Search only in note name (file)
+This implementation translates obsidians `file:<keyword>` to  `title:<keyword>` under the hood. Title here is the note name, which is either the same as file in Obsidian, or the 
+configured `graph_name`.
+
 ```
 -``` query
 file:babayaga
@@ -66,6 +71,7 @@ file:babayaga
 ```
 
 ## Search for a phrase
+Supported by default, search for an entire phrase, instead of OR-ing keywords together.
 
 ```
 -``` query
@@ -77,6 +83,7 @@ file:babayaga
 "query with quotes"
 ```
 
+## Standard simple search
 Compare that result with the query without quotes around it (implicit OR):
 
 ```
