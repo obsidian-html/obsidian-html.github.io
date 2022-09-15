@@ -33,7 +33,7 @@ If you just want to build your pages yourself entirely, then you can pass in the
 To fetch the default template, you can run the following to export it, so you can make incremental changes:
 
 ``` bash
-obsidianhtml -eht path/to/output/file.html <documentation/tabs/minimal>
+obsidianhtml export layout -o path/to/output/file.html -l documentation  # <documentation/tabs/minimal>
 ```
 
 Use that same output path as the value for html_template_path_str to use it in your runs:
