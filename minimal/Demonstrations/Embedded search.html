@@ -150,15 +150,40 @@ file:babayaga
 
 <p>``` query list
 file:babayaga</p>
-<div class="codehilite"><pre><span></span><code>## <span class="nv">Search</span> <span class="k">for</span> <span class="nv">tag</span>   
-<span class="k">For</span> <span class="nv">this</span> <span class="nv">to</span> <span class="nv">work</span> <span class="nv">with</span> <span class="nv">whoosh</span> <span class="nv">we</span> <span class="nv">translate</span> `<span class="nv">tag</span>:#<span class="o">&lt;</span><span class="nv">tag</span><span class="o">&gt;</span>` <span class="nv">to</span> `<span class="nv">tags</span>:<span class="o">&lt;</span><span class="nv">tag</span><span class="o">&gt;</span>`.   
+<div class="codehilite"><pre><span></span><code>## <span class="nv">Search</span> <span class="k">for</span> <span class="nv">tags</span>   
+<span class="nv">To</span> <span class="nv">search</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">list</span> <span class="nv">of</span> <span class="nv">tags</span>, <span class="nv">and</span> <span class="nv">not</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">note</span> <span class="nv">content</span>, <span class="nv">or</span> <span class="nv">title</span>, <span class="nv">use</span> <span class="nv">this</span> <span class="nv">syntax</span>:   
+</code></pre></div>
+
+<p>tag:<tag></p>
+<div class="codehilite"><pre><span></span><code>Note the absence of a `#`.   
+
+An example:   
 </code></pre></div>
 
 <p>-<code>query
-tag:#babayaga
+tag:babayaga
 -</code></p>
 <div class="codehilite"><pre><span></span><code>``` query
+tag:babayaga
+</code></pre></div>
+
+<h3 id="search-for-a-specific-tag">Search for a specific tag</h3>
+<p>If you are looking for a specific tag, do add the <code>#</code>   </p>
+<p>See how both queries below only return their exact results:   </p>
+<div class="codehilite"><pre><span></span><code>-``` query
 tag:#babayaga
+-```
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>tag:#babayaga
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>-``` query
+tag:#bla/babayaga
+-```
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>tag:#bla/babayaga
 </code></pre></div>
 
 <h2 id="search-for-path">Search for path</h2>

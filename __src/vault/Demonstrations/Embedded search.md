@@ -108,8 +108,31 @@ file:babayaga
 file:babayaga
 ```
 
-## Search for tag
-For this to work with whoosh we translate `tag:#<tag>` to `tags:<tag>`.
+## Search for tags
+To search in the list of tags, and not in the note content, or title, use this syntax:
+
+```
+tag:<tag>
+```
+
+Note the absence of a `#`.
+
+An example:
+
+```
+-``` query
+tag:babayaga
+-```
+```
+
+``` query
+tag:babayaga
+```
+
+### Search for a specific tag
+If you are looking for a specific tag, do add the `#`
+
+See how both queries below only return their exact results:
 
 ```
 -``` query
@@ -120,6 +143,17 @@ tag:#babayaga
 ``` query
 tag:#babayaga
 ```
+
+```
+-``` query
+tag:#bla/babayaga
+-```
+```
+
+``` query
+tag:#bla/babayaga
+```
+ 
 
 ## Search for path
 

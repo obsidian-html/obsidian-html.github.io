@@ -796,6 +796,8 @@ a.inline-tag:hover {
 .tag-box {
     display: flex;
 }
+
+
 .match-row.tag {
     flex: auto;
     background-color: var(--bg-note);
@@ -808,10 +810,21 @@ a.inline-tag:hover {
     max-width: max-content;
     margin: 0.2rem;
 }
+.match-row.keyword {
+    border: 2px solid rgba(255, 255, 0, 0.5);
+}
 
 .match-row .match {
-    background-color: rgba(255,255,0,0.5);
+    border-bottom: 2px solid rgb(255, 255, 0);
+    border-top: 2px solid rgb(255, 255, 0);
 }
+.match-row.keyword {
+    border: 2px solid rgba(255, 255, 0, 0.5);
+}
+.match-row.keyword .match  {
+    border: 0px;
+}
+
 .match-row.tag .match {
     background-color: unset;
 }
