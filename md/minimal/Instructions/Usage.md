@@ -125,6 +125,7 @@ Then open [http://localhost:8000](http://localhost:8000) to view the html site t
 Can't get this to work? Please let us know via [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md).   
    
 ## Deployment configuration   
+
    
 By default the configuration allows for running the website as  [http://localhost:8000](http://localhost:8000),  [https://mywebsite.com/,](https://mywebsite.com/,) [https://my-account.github.io/,](https://my-account.github.io/,) etc.   
    

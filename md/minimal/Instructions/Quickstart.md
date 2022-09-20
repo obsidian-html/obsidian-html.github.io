@@ -52,6 +52,7 @@ Read more: [Obsidianhtml Run](../Instructions/Obsidianhtml%20Run.md)
    
 When this works, or you want more configuration settings out of the box, you can skip this section and continue with the next section.   
    
+
 ### Short instructions   
 Run   
 ``` bash
@@ -125,6 +126,7 @@ obsidianhtml serve --directory output/html --port 8000
 Then open [http://localhost:8000](http://localhost:8000) to view the html site that was created.   
    
 ## Deployment configuration   
+
    
 By default the configuration allows for running the website as  [http://localhost:8000](http://localhost:8000),  [https://mywebsite.com/,](https://mywebsite.com/,) [https://my-account.github.io/,](https://my-account.github.io/,) etc.   
    

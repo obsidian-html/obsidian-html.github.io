@@ -8,7 +8,7 @@ tags:
 ## Prerequisites
 Before starting installation, make sure that you have Python installed (version 3.9 or more recent).
 
-Pip is a package manager, installed along with Python, that we use to install ObsidianHtml and all its dependencies. Often you need to update pip after installing Python to have it work.
+Pip is a package manager, installed along with Python, that we use to install ObsidianHtml and all its dependencies. Often you need to update pip after installing Python to have it work. ^d87747
 
 Do this by executing the following command:
 ``` bash

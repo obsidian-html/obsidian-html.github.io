@@ -376,12 +376,18 @@
 			<li><a class="" href="/index_from_tags/Resources/mp4/chill_frog.mp4"  class="external-link">chill_frog</a></li>
 		</ul>
 	</div>
-	<button id="folder-20" class="dir-button" onclick="toggle_dir(this.id)">test_pages</button>
-	<div id="folder-container-20" class="dir-container requires_js " path="/index_from_tags/Resources/test_pages">
-		<button id="folder-21" class="dir-button" onclick="toggle_dir(this.id)">embedded_search</button>
-		<div id="folder-container-21" class="dir-container requires_js " path="/index_from_tags/Resources/test_pages/embedded_search">
-			<button id="folder-22" class="dir-button" onclick="toggle_dir(this.id)">babayaga</button>
-			<div id="folder-container-22" class="dir-container requires_js " path="/index_from_tags/Resources/test_pages/embedded_search/babayaga">
+	<button id="folder-20" class="dir-button" onclick="toggle_dir(this.id)">pdfs</button>
+	<div id="folder-container-20" class="dir-container requires_js " path="/index_from_tags/Resources/pdfs">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Resources/pdfs/RossettiGoblinMarket.pdf"  class="external-link">RossettiGoblinMarket</a></li>
+		</ul>
+	</div>
+	<button id="folder-21" class="dir-button" onclick="toggle_dir(this.id)">test_pages</button>
+	<div id="folder-container-21" class="dir-container requires_js " path="/index_from_tags/Resources/test_pages">
+		<button id="folder-22" class="dir-button" onclick="toggle_dir(this.id)">embedded_search</button>
+		<div id="folder-container-22" class="dir-container requires_js " path="/index_from_tags/Resources/test_pages/embedded_search">
+			<button id="folder-23" class="dir-button" onclick="toggle_dir(this.id)">babayaga</button>
+			<div id="folder-container-23" class="dir-container requires_js " path="/index_from_tags/Resources/test_pages/embedded_search/babayaga">
 				<ul class="dir-list">
 					<li><a class="" href="/index_from_tags/Resources/test_pages/embedded_search/babayaga/bbyg in path only.html"  >bbyg in path only</a></li>
 				</ul>
@@ -423,6 +429,10 @@
 <li><a href="#an-h3" class="anchor-link">An h3</a></li>
 </ul>
 </li>
+<li><a href="#repeated-hashtag-inclusion" class="anchor-link">Repeated hashtag inclusion</a><ul>
+<li><a href="#video_format_suffixes" class="anchor-link">video_format_suffixes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -438,35 +448,52 @@
 <p>First take a look at what content is in this page: <a href="/index_from_tags/Demonstrations/Test pages/Test Inclusion.html">Test Inclusion</a>.    </p>
 <p>This will be included below by writing  <br />
 <code>![[Test Inclusion]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
-<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+<div class="codehilite"><pre><span></span><code>==---begin inclusion---==
 ![[Test Inclusion]]
-<span class="gs">**---end inclusion---**</span>
+==---end inclusion---==
 </code></pre></div>
 
-<p><strong>---begin inclusion---</strong>   </p>
+<p><mark class="formatting_highlight">---begin inclusion---</mark>   </p>
 <h2 id="test-inclusion">Test Inclusion</h2>
 <blockquote>
 <p>Content</p>
 </blockquote>
-<p><strong>---end inclusion---</strong>   </p>
+<p><mark class="formatting_highlight">---end inclusion---</mark>   </p>
 <h2 id="partial-code-inclusion">Partial code inclusion</h2>
 <p>With partial code inclusion, we can reference a header, and then only that header and the content of that header is included. The content is read until the first header of the same level (h1 --&gt; h1, h2 --&gt; h2, etc), or lower level, is found. So, including a h1 header that has h2 header under it, will include those headers and their content too.   </p>
 <p>First take a look at what content is in this page: <a href="/index_from_tags/Demonstrations/Test pages/Test inclusion 2.html">Test inclusion 2</a>.   </p>
 <p>Let's say that we only want the second (h2) chapter included.  <br />
 This can be done by writing  <br />
 <code>![[Test inclusion 2#Second chapter]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
-<div class="codehilite"><pre><span></span><code><span class="gs">**---begin inclusion---**</span>
+<div class="codehilite"><pre><span></span><code>==---begin inclusion---==
 ![[Test inclusion 2#Second chapter]]
-<span class="gs">**---end inclusion---**</span>
----
+==---end inclusion---==
 </code></pre></div>
 
-<p><strong>---begin inclusion---</strong>   </p>
+<p><mark class="formatting_highlight">---begin inclusion---</mark>   </p>
 <h2 id="second-chapter">Second chapter</h2>
 <p>Content second chapter   </p>
 <h3 id="an-h3">An h3</h3>
 <p>This is still a child of <code>Second chapter</code>   </p>
-<p><strong>---end inclusion---</strong></p>
+<p><mark class="formatting_highlight">---end inclusion---</mark>   </p>
+<h2 id="repeated-hashtag-inclusion">Repeated hashtag inclusion</h2>
+<div class="codehilite"><pre><span></span><code>==---begin inclusion---==
+![[Configuration Options#Operations#video_format_suffixes]]
+==---end inclusion---==
+</code></pre></div>
+
+<p><mark class="formatting_highlight">---begin inclusion---</mark>   </p>
+<h3 id="video_format_suffixes">video_format_suffixes</h3>
+<blockquote>
+<p>Added in <a href="/index_from_tags/Changelog/v1.1.0.html">v1.1.0</a>   </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">video_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Used to convert an inclusion statement to a video html tag.   </p>
+<p>This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   </p>
+<p>Note that if you add it yourself here, the passed in mime-type might be missing. This might or might not be an issue depending on your browser/OS.   </p>
+<p><mark class="formatting_highlight">---end inclusion---</mark>   </p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -486,13 +513,13 @@ This can be done by writing  <br />
 
 </div>
 <div class="graph requires_js ">
-    <div id="A304446521095021889912926613104942832690{level}" class="graph_div"></div>
+    <div id="A316849603457900731816855738182486437468{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B304446521095021889912926613104942832690{level}" level="{level}" note_temp_id="304446521095021889912926613104942832690" onclick="window.ObsHtmlGraph.run(this, '304446521095021889912926613104942832690', 'implementing note inclusions');">
+        <button class="graph_button graph_show_button" id="B316849603457900731816855738182486437468{level}" level="{level}" note_temp_id="316849603457900731816855738182486437468" onclick="window.ObsHtmlGraph.run(this, '316849603457900731816855738182486437468', 'implementing note inclusions');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C304446521095021889912926613104942832690{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C316849603457900731816855738182486437468{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

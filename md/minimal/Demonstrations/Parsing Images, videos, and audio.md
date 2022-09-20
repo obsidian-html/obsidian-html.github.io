@@ -33,7 +33,7 @@ At the moment of writing mp4 and webm's are supported. If you want to use a diff
    
 <video controls><source src="../Resources/mp4/chill_frog.mp4" type="video/mp4">Your browser does not support the video tag.</video>   
    
-# Audio   
+# Audio    
 ##  .wav   
  `![[geese.wav]]`   
     
@@ -48,4 +48,7 @@ At the moment of writing mp4 and webm's are supported. If you want to use a diff
  <audio controls>   
     <source src="../Resources/audio/jazzy.mp3" type="audio/mpeg">   
   Your browser does not support the audio element.   
-</audio> 
+</audio>    
+   
+# Pdfs   
+<embed src="../Resources/pdfs/RossettiGoblinMarket.pdf" width="90%" height="700px">

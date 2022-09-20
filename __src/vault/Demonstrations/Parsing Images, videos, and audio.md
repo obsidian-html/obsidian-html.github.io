@@ -33,8 +33,8 @@ At the moment of writing mp4 and webm's are supported. If you want to use a diff
 
 ![[chill_frog.mp4]]
 
- # Audio
- ##  .wav
+# Audio 
+##  .wav
  `![[geese.wav]]`
  
  ![[geese.wav]]
@@ -43,3 +43,6 @@ At the moment of writing mp4 and webm's are supported. If you want to use a diff
  `![[jazzy.mp3]]`
  
  ![[jazzy.mp3]]
+
+# Pdfs
+![[RossettiGoblinMarket.pdf]]

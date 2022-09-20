@@ -173,7 +173,14 @@ tag:#bla/babayaga
 tag:#bla/babayaga
 ```
    
-    
+## Search for inline tags   
+Unlike normal words, just using `#tag` will search just for `tag`, not `bla/tag`, `tag/bla`, etc.   
+   
+``` query 
+" #babayaga "
+```
+   
+   
    
 ## Search for path   
    
