@@ -473,8 +473,8 @@
 </code></pre></div>
 
 <p>This gives a nice overview of what we can do.   </p>
-<p>For new users, <a href="/index_from_tags/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a> was created. This allows you to only pass in the link to the note that will serve as your homepage. If that succeeds you can immediately browse your generated website. This will also create a config.yml for you, which you can use in <code>obsidian convert</code>.    </p>
-<p>For ObsidianHtml run, see the <a href="/index_from_tags/Instructions/Obsidianhtml Run.html">Obsidianhtml Run</a> page.   </p>
+<p>For new users, <a href="/index_from_tags/Instructions/Obsidianhtml%20Run.html">Obsidianhtml Run</a> was created. This allows you to only pass in the link to the note that will serve as your homepage. If that succeeds you can immediately browse your generated website. This will also create a config.yml for you, which you can use in <code>obsidian convert</code>.    </p>
+<p>For ObsidianHtml run, see the <a href="/index_from_tags/Instructions/Obsidianhtml%20Run.html">Obsidianhtml Run</a> page.   </p>
 <h2 id="basic-conversion-and-required-configurations">Basic conversion and required configurations</h2>
 <p>As opposed to <code>obsidian run</code>, the convert command will only convert your vault to md and/or html.    </p>
 <p>This mode is the recommended mode for creating a publishing workflow, as you don't need to start a development webserver every time that you want to convert your vault.   </p>
@@ -524,7 +524,7 @@
 <div class="codehilite"><pre><span></span><code>obsidianhtml convert -i config.yaml
 </code></pre></div>
 
-<p>You might get a lot of warnings if you use external images, or have a lot of notes linked but not created. This is expected, and such warnings can be turned off, if desired, see <a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a>.    </p>
+<p>You might get a lot of warnings if you use external images, or have a lot of notes linked but not created. This is expected, and such warnings can be turned off, if desired, see <a href="/index_from_tags/Configurations/Configuration%20Options.html">Configuration Options</a>.    </p>
 <div class="callout callout-tip active callout-folded" rasa="1">
 <div class="callout-title" onclick="toggle(this.parentElement)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"></path></svg>
@@ -549,7 +549,7 @@
 </code></pre></div>
 
 <p>Then open <a href="http://localhost:8000" class="external-link" class="external-link">http://localhost:8000</a> to view the html site that was created.   </p>
-<p>Can't get this to work? Please let us know via <a href="/index_from_tags/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a>.   </p>
+<p>Can't get this to work? Please let us know via <a href="/index_from_tags/General%20Information/Report%20Issues%20%26%20Request%20features.html">Report Issues &amp; Request features</a>.   </p>
 <h2 id="deployment-configuration">Deployment configuration</h2>
 <p>By default the configuration allows for running the website as  <a href="http://localhost:8000" class="external-link" class="external-link">http://localhost:8000</a>,  <a href="https://mywebsite.com/," class="external-link">https://mywebsite.com/,</a> <a href="https://my-account.github.io/," class="external-link">https://my-account.github.io/,</a> etc.   </p>
 <p>All those urls have in common that they are in the root of the domain. An example where this is not the case is:  <a href="https://mywebsite.com/subfolder/." class="external-link">https://mywebsite.com/subfolder/.</a>   </p>
@@ -580,7 +580,7 @@
 <h2 id="further-configurations">Further configurations</h2>
 <p>Add the following settings to your config.yaml to control the behavior of obsidianhtml.    </p>
 <p>This section only names the configurations that most often come up when setting up the config for the first time.    </p>
-<p>For a high level overview of interesting configurations see <a href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a>, <a href="/index_from_tags/Configurations/Modes.html">Modes</a> and <a href="/index_from_tags/Configurations/Features.html">Features</a>. For a full list of all options see <a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a>.   </p>
+<p>For a high level overview of interesting configurations see <a href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a>, <a href="/index_from_tags/Configurations/Modes.html">Modes</a> and <a href="/index_from_tags/Configurations/Features.html">Features</a>. For a full list of all options see <a href="/index_from_tags/Configurations/Configuration%20Options.html">Configuration Options</a>.   </p>
 <h3 id="control-output-location">Control output location</h3>
 <p>At the moment the output folder will just be created where ever we call <code>obsidianhtml</code> from, to pin down the output location, use an absolute path (starting with <code>&lt;Driveletter&gt;:/</code> on Windows, or starting with <code>/</code> on Linux/macOs).    </p>
 <p>Relative paths are also allowed.   </p>
@@ -608,12 +608,12 @@
 <h3 id="changing-the-layout">Changing the layout</h3>
 <p>Read more here <a href="/index_from_tags/Configurations/Styling/Styling.html">Styling</a>.   </p>
 <h3 id="html-custom-inclusions">Html Custom Inclusions</h3>
-<p>If you want to edit the style of the website output, you can add in css (and/or javascript) files. Read more here: <a href="/index_from_tags/Configurations/Configuration Options.html#html-custom-inclusions">Html Custom Inclusions</a>.   </p>
+<p>If you want to edit the style of the website output, you can add in css (and/or javascript) files. Read more here: <a href="/index_from_tags/Configurations/Configuration%20Options.html#html-custom-inclusions">Html Custom Inclusions</a>.   </p>
 <h2 id="next-steps">Next steps</h2>
 <ul>
 <li><a href="/index_from_tags/Configurations/Features.html">Features</a>   </li>
-<li><a href="/index_from_tags/Configurations/Configuration Options.html">Configuration Options</a>   </li>
-<li><a href="/index_from_tags/General Information/Report Issues &amp; Request features.html">Report Issues &amp; Request features</a>   </li>
+<li><a href="/index_from_tags/Configurations/Configuration%20Options.html">Configuration Options</a>   </li>
+<li><a href="/index_from_tags/General%20Information/Report%20Issues%20%26%20Request%20features.html">Report Issues &amp; Request features</a>   </li>
 <li><a href="/index_from_tags/not_created.html" class="nonexistent-link">How to resolve common issues</a></li>
 </ul>
 <div class="note-footer">
@@ -634,13 +634,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A215790905036930021145484010954605261613{level}" class="graph_div"></div>
+    <div id="A326015398952014111857439391707079291453{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B215790905036930021145484010954605261613{level}" level="{level}" note_temp_id="215790905036930021145484010954605261613" onclick="window.ObsHtmlGraph.run(this, '215790905036930021145484010954605261613', 'usage');">
+        <button class="graph_button graph_show_button" id="B326015398952014111857439391707079291453{level}" level="{level}" note_temp_id="326015398952014111857439391707079291453" onclick="window.ObsHtmlGraph.run(this, '326015398952014111857439391707079291453', 'usage');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C215790905036930021145484010954605261613{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C326015398952014111857439391707079291453{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

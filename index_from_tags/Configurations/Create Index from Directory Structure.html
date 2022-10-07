@@ -426,9 +426,11 @@
 <li><a href="#disable-the-feature" class="anchor-link">Disable the feature</a></li>
 <li><a href="#disable-the-icon" class="anchor-link">Disable the icon</a></li>
 <li><a href="#exclude-folders-files" class="anchor-link">Exclude folders/files</a><ul>
+<li><a href="#glob-patterns" class="anchor-link">Glob patterns</a></li>
 <li><a href="#overwrite-the-homepage" class="anchor-link">Overwrite the homepage</a></li>
 </ul>
 </li>
+<li><a href="#verbose" class="anchor-link" class="anchor-link">Verbose</a></li>
 </ul>
 </li>
 </ul>
@@ -439,7 +441,7 @@
 <p>If you want to build an index note on the fly, where it just shows the directory structure of the html output, then you can enable this feature.   </p>
 <p>By default this feature is turned on, but it will only create a new page at location <a href="/obs.html/dir_index.html">/obs.html/dir_index.html</a>, which is accessible via the dirtree icon in the top right of the page.   </p>
 <blockquote>
-<p>Note: As opposed to <a href="/index_from_tags/Configurations/Create index from tags.html">Create index from tags</a>, this is not a note selection feature. This is an HTML-only addon that creates a new html page to the HTML output folder, like the <a href="/index_from_tags/Configurations/Tags Page.html">Tags Page</a> feature. <a href="/index_from_tags/Configurations/Create Index from Directory Structure.html#overwrite-the-homepage">Overwriting the homepage</a> is optional, and not the default setting.   </p>
+<p>Note: As opposed to <a href="/index_from_tags/Configurations/Create%20index%20from%20tags.html">Create index from tags</a>, this is not a note selection feature. This is an HTML-only addon that creates a new html page to the HTML output folder, like the <a href="/index_from_tags/Configurations/Tags%20Page.html">Tags Page</a> feature. <a href="/index_from_tags/Configurations/Create%20Index%20from%20Directory%20Structure.html#overwrite-the-homepage">Overwriting the homepage</a> is optional, and not the default setting.   </p>
 </blockquote>
 <h2 id="example">Example</h2>
 <p>You can view an index that is created in this way under <a href="/obs.html/dir_index.html">/obs.html/dir_index.html</a>. This is the default location.    </p>
@@ -462,7 +464,9 @@
 
 <h2 id="exclude-folders-files">Exclude folders/files</h2>
 <p>There is a good chance that you will want to exclude folders and/or files from being shown on the dirtree index page. This is our configuration, for reference:   </p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
@@ -478,9 +482,12 @@
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span><span class="w"></span>
 </code></pre></div>
 
-<p>The defaults for these settings can be found via <a href="/index_from_tags/Configurations/Configuration Options.html#get-all-the-default-settings">Configuration Options#Get all the default settings</a>. At the time of writing these are:   </p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<p>The defaults for these settings can be found via <a href="/index_from_tags/Configurations/Configuration%20Options.html#get-all-the-default-settings">Configuration Options#Get all the default settings</a>. At the time of writing these are:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">verbose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
 <span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
 <span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
@@ -493,9 +500,32 @@
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span><span class="w"></span>
 </code></pre></div>
 
+<h3 id="glob-patterns">Glob patterns</h3>
+<blockquote>
+<p>Added in <a href="/index_from_tags/Changelog/v3.3.0.html">v3.3.0</a>. Note this only applies to this feature, not the general exclude_folders setting!   </p>
+</blockquote>
+<p>Starting with <a href="/index_from_tags/Changelog/v3.3.0.html">v3.3.0</a> you can now use glob pattern in the <code>exclude_subfolders</code> and <code>exclude_files</code> settings.    </p>
+<p>For example, to exclude all folders called <code>Assets</code>, use:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;md&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;obs.html&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;**/Assets&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<blockquote>
+<p>Note that you need to list the default values too, because we are overwriting the default settings by providing a value.   </p>
+</blockquote>
+<p>To troubleshoot your glob pattern, you can <a href="#verbose" class="anchor-link" class="anchor-link">Verbose</a>   </p>
 <h3 id="overwrite-the-homepage">Overwrite the homepage</h3>
 <p>If you want to use the index generated by this feature as your homepage, then a configuration like this might work for you:   </p>
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
@@ -511,13 +541,21 @@
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;index.html&quot;</span><span class="w"></span>
 </code></pre></div>
 
-<p>Note the <code>rel_output_path</code> setting. This can also be set to any subpath of the <a href="/index_from_tags/Configurations/Configuration Options.html#html_output_folder_path_str">html_output_folder</a> that you wish. The parent folders are automatically created when necessary.</p>
+<p>Note the <code>rel_output_path</code> setting. This can also be set to any subpath of the <a href="/index_from_tags/Configurations/Configuration%20Options.html#html_output_folder_path_str">html_output_folder</a> that you wish. The parent folders are automatically created when necessary.    </p>
+<h2 id="verbose">Verbose</h2>
+<p>There is a global verbosity setting that will make this feature print out extra information. This will print out a lot of info though, so you can also just enable verbosity on just this feature by setting:   </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">verbose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+</code></pre></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html">published obsidianhtml version 1.0.0!</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Create Index from Directory Structure.html">create index from directory structure</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v3.3.0.html">v3.3.0</a></li>
 	<li><a class="backlink" href="/index_from_tags/Changelog/v1.0.1.html">v1.0.1</a></li>
 	<li><a class="backlink" href="/index_from_tags/Buglog/File links in dirtree note do not work.html">file links in dirtree note do not work</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">configuration options</a></li>
@@ -536,13 +574,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A123989716308233296015226890788208370927{level}" class="graph_div"></div>
+    <div id="A91439034785780254548521365256397955788{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B123989716308233296015226890788208370927{level}" level="{level}" note_temp_id="123989716308233296015226890788208370927" onclick="window.ObsHtmlGraph.run(this, '123989716308233296015226890788208370927', 'create index from directory structure');">
+        <button class="graph_button graph_show_button" id="B91439034785780254548521365256397955788{level}" level="{level}" note_temp_id="91439034785780254548521365256397955788" onclick="window.ObsHtmlGraph.run(this, '91439034785780254548521365256397955788', 'create index from directory structure');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C123989716308233296015226890788208370927{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C91439034785780254548521365256397955788{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

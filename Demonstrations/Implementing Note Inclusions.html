@@ -330,13 +330,6 @@
 </div>
 <button id="folder-10" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
 <div id="folder-container-10" class="dir-container requires_js " path="/General Information">
-	<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
-	<div id="folder-container-11" class="dir-container requires_js " path="/General Information/Snippets">
-		<ul class="dir-list">
-			<li><a class="" href="/General Information/Snippets/md --> html.html"  >md --> html</a></li>
-			<li><a class="" href="/General Information/Snippets/note --> html.html"  >note --> html</a></li>
-		</ul>
-	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/General Information/About ObsidianHtml.html"  >About ObsidianHtml</a></li>
 		<li><a class="" href="/General Information/Creating a static html website from markdown files.html"  >Creating a static html website from markdown files</a></li>
@@ -345,18 +338,12 @@
 		<li><a class="" href="/General Information/Using the website.html"  >Using the website</a></li>
 	</ul>
 </div>
-<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
-<div id="folder-container-12" class="dir-container requires_js " path="/Instructions">
-	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
-	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Snippets">
-		<ul class="dir-list">
-			<li><a class="" href="/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
-		</ul>
-	</div>
-	<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
-	<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials">
-		<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
-		<div id="folder-container-15" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
+<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
+<div id="folder-container-11" class="dir-container requires_js " path="/Instructions">
+	<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
+	<div id="folder-container-12" class="dir-container requires_js " path="/Instructions/Tutorials">
+		<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
+		<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
 			<ul class="dir-list">
 				<li><a class="" href="/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html"  >Bootstrapping Python on Windows</a></li>
 			</ul>
@@ -374,8 +361,8 @@
 		<li><a class="" href="/Instructions/Usage.html"  >Usage</a></li>
 	</ul>
 </div>
-<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-16" class="dir-container requires_js " path="/Log">
+<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-14" class="dir-container requires_js " path="/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/Log/Published ObsidianHtml version 0.0.9!.html"  >Published ObsidianHtml version 0.0.9!</a></li>
 		<li><a class="" href="/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
@@ -424,7 +411,7 @@
 
 <p>In Obsidian, included content is denoted with a differently colored background. But since we first convert Obsidian notes to markdown, and markdown does not have this capability, we can only include the content inline, so it is not visible that the content comes from another page.   </p>
 <h2 id="full-page-inclusion">Full page inclusion</h2>
-<p>First take a look at what content is in this page: <a href="/Demonstrations/Test pages/Test Inclusion.html">Test Inclusion</a>.    </p>
+<p>First take a look at what content is in this page: <a href="/Demonstrations/Test%20pages/Test%20Inclusion.html">Test Inclusion</a>.    </p>
 <p>This will be included below by writing  <br />
 <code>![[Test Inclusion]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
 <div class="codehilite"><pre><span></span><code>==---begin inclusion---==
@@ -440,7 +427,7 @@
 <p><mark class="formatting_highlight">---end inclusion---</mark>   </p>
 <h2 id="partial-code-inclusion">Partial code inclusion</h2>
 <p>With partial code inclusion, we can reference a header, and then only that header and the content of that header is included. The content is read until the first header of the same level (h1 --&gt; h1, h2 --&gt; h2, etc), or lower level, is found. So, including a h1 header that has h2 header under it, will include those headers and their content too.   </p>
-<p>First take a look at what content is in this page: <a href="/Demonstrations/Test pages/Test inclusion 2.html">Test inclusion 2</a>.   </p>
+<p>First take a look at what content is in this page: <a href="/Demonstrations/Test%20pages/Test%20inclusion%202.html">Test inclusion 2</a>.   </p>
 <p>Let's say that we only want the second (h2) chapter included.  <br />
 This can be done by writing  <br />
 <code>![[Test inclusion 2#Second chapter]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
@@ -491,13 +478,13 @@ This can be done by writing  <br />
 
 </div>
 <div class="graph requires_js ">
-    <div id="A194590741179460900353947844968597533026{level}" class="graph_div"></div>
+    <div id="A113036977223773018421969642176429015201{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B194590741179460900353947844968597533026{level}" level="{level}" note_temp_id="194590741179460900353947844968597533026" onclick="window.ObsHtmlGraph.run(this, '194590741179460900353947844968597533026', 'implementing note inclusions');">
+        <button class="graph_button graph_show_button" id="B113036977223773018421969642176429015201{level}" level="{level}" note_temp_id="113036977223773018421969642176429015201" onclick="window.ObsHtmlGraph.run(this, '113036977223773018421969642176429015201', 'implementing note inclusions');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C194590741179460900353947844968597533026{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C113036977223773018421969642176429015201{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

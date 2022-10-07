@@ -330,13 +330,6 @@
 </div>
 <button id="folder-10" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
 <div id="folder-container-10" class="dir-container requires_js " path="/General Information">
-	<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
-	<div id="folder-container-11" class="dir-container requires_js " path="/General Information/Snippets">
-		<ul class="dir-list">
-			<li><a class="" href="/General Information/Snippets/md --> html.html"  >md --> html</a></li>
-			<li><a class="" href="/General Information/Snippets/note --> html.html"  >note --> html</a></li>
-		</ul>
-	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/General Information/About ObsidianHtml.html"  >About ObsidianHtml</a></li>
 		<li><a class="" href="/General Information/Creating a static html website from markdown files.html"  >Creating a static html website from markdown files</a></li>
@@ -345,18 +338,12 @@
 		<li><a class="" href="/General Information/Using the website.html"  >Using the website</a></li>
 	</ul>
 </div>
-<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
-<div id="folder-container-12" class="dir-container requires_js " path="/Instructions">
-	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
-	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Snippets">
-		<ul class="dir-list">
-			<li><a class="" href="/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
-		</ul>
-	</div>
-	<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
-	<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials">
-		<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
-		<div id="folder-container-15" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
+<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
+<div id="folder-container-11" class="dir-container requires_js " path="/Instructions">
+	<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
+	<div id="folder-container-12" class="dir-container requires_js " path="/Instructions/Tutorials">
+		<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
+		<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
 			<ul class="dir-list">
 				<li><a class="" href="/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html"  >Bootstrapping Python on Windows</a></li>
 			</ul>
@@ -374,8 +361,8 @@
 		<li><a class="" href="/Instructions/Usage.html"  >Usage</a></li>
 	</ul>
 </div>
-<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-16" class="dir-container requires_js " path="/Log">
+<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-14" class="dir-container requires_js " path="/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/Log/Published ObsidianHtml version 0.0.9!.html"  >Published ObsidianHtml version 0.0.9!</a></li>
 		<li><a class="" href="/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
@@ -410,19 +397,19 @@
 </li>
 </ul>
 </div>
-<p>A <em>mode</em> is a term used for certain <a href="/Configurations/Configuration Options.html">configuration settings</a> that alter the note selection and/or the contents of the homepage.   </p>
+<p>A <em>mode</em> is a term used for certain <a href="/Configurations/Configuration%20Options.html">configuration settings</a> that alter the note selection and/or the contents of the homepage.   </p>
 <h2 id="entrypoint-mode">Entrypoint mode</h2>
-<p>This is the default. An obsidian (<a href="/General Information/Parsing Obsidian notes to proper markdown.html">or markdown</a>) note is selected that functions as the homepage. All the notes linked to by the entrypoint node are parsed, and the notes they link to, and so on and so forth.   </p>
+<p>This is the default. An obsidian (<a href="/General%20Information/Parsing%20Obsidian%20notes%20to%20proper%20markdown.html">or markdown</a> note is selected that functions as the homepage. All the notes linked to by the entrypoint node are parsed, and the notes they link to, and so on and so forth.   </p>
 <p>In the end the website will only contain notes that are reachable (directly or indirectly) by the starting entrypoint note.   </p>
-<p>This enables you to only include part of your vault. To be extra secure, you can manually <a href="/Configurations/Configuration Options.html#exclude-subfolders">exclude subfolders</a>, to be sure personal notes will not be shared publicly. Note that this does not apply to note inclusions. When a note is parsed all the note inclusions will always be processed.   </p>
+<p>This enables you to only include part of your vault. To be extra secure, you can manually <a href="/Configurations/Configuration%20Options.html#exclude-subfolders">exclude subfolders</a>, to be sure personal notes will not be shared publicly. Note that this does not apply to note inclusions. When a note is parsed all the note inclusions will always be processed.   </p>
 <h2 id="process-all">Process all</h2>
-<p>This is not so much its own mode, but a modifier for other modes. It enables you to include all files in your vault (sans the <a href="/Configurations/Configuration Options.html#exclude-subfolders">excluded subfolders</a>).    </p>
-<p>Read more <a href="/Configurations/Process All.html">Process All</a>.   </p>
+<p>This is not so much its own mode, but a modifier for other modes. It enables you to include all files in your vault (sans the <a href="/Configurations/Configuration%20Options.html#exclude-subfolders">excluded subfolders</a>).    </p>
+<p>Read more <a href="/Configurations/Process%20All.html">Process All</a>.   </p>
 <h2 id="create-index-from-tags">Create index from tags</h2>
-<p>If you want to dynamically create an index that contains links to notes with certain tags, you can use this mode. Read more: <a href="/Configurations/Create index from tags.html">Create index from tags</a>.   </p>
+<p>If you want to dynamically create an index that contains links to notes with certain tags, you can use this mode. Read more: <a href="/Configurations/Create%20index%20from%20tags.html">Create index from tags</a>.   </p>
 <p>A new note is created that contains links to all the notes with the given tags, and the rest of the process is the same as for the <a href="#entrypoint-mode" class="anchor-link" class="anchor-link">Entrypoint mode</a>.   </p>
 <h2 id="create-index-from-directory-structure">Create index from directory structure</h2>
-<p>If you want to dynamically create an index that contains a folder/filetree based on your html output folder. Read more: <a href="/Configurations/Create Index from Directory Structure.html">Create Index from Directory Structure</a>.   </p>
+<p>If you want to dynamically create an index that contains a folder/filetree based on your html output folder. Read more: <a href="/Configurations/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a>.   </p>
 <h2 id="relative_path_html">Relative_path_html</h2>
 <p>This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).   </p>
 <p>This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.   </p>
@@ -450,13 +437,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A57152457938352537436073805414743918346{level}" class="graph_div"></div>
+    <div id="A231831649499123076587773685933968726764{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B57152457938352537436073805414743918346{level}" level="{level}" note_temp_id="57152457938352537436073805414743918346" onclick="window.ObsHtmlGraph.run(this, '57152457938352537436073805414743918346', 'modes');">
+        <button class="graph_button graph_show_button" id="B231831649499123076587773685933968726764{level}" level="{level}" note_temp_id="231831649499123076587773685933968726764" onclick="window.ObsHtmlGraph.run(this, '231831649499123076587773685933968726764', 'modes');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C57152457938352537436073805414743918346{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C231831649499123076587773685933968726764{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

@@ -250,6 +250,7 @@ toggles:
         - "md"
         - "obs.html"
         - "Resources"
+        - "**/Snippets"
       exclude_files:
         - "favicon.ico"
         - "not_created.html"

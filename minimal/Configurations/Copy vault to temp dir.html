@@ -38,15 +38,15 @@
 <p>We try to not have bugs, but sometimes we just can't help ourselves. I think everyone would agree that the only thing that we should guarantee is that we don't touch your vault files. To help assure that, ObsidianHtml will make a copy of your entire vault to a temporary directory and work from out of that folder.    </p>
 <p>This is the default behavior,  but an optional setting, and if you have severe file storage problems, or an enormous vault that takes very long to copy, then you can turn this setting off. Though we advise you to make a backup yourself the first couple of times that you use ObsidianHtml, or when you update ObsidianHtml to a new version.    </p>
 <blockquote>
-<p>This setting should be enabled for the option <a href="/minimal/Configurations/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
+<p>This setting should be enabled for the option <a href="/minimal/Configurations/Create%20index%20from%20tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
 </blockquote>
-<p>The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please <a href="/minimal/General Information/Report Issues &amp; Request features.html">report it as an issue</a>.   </p>
-<p>See config options: <a href="/minimal/Configurations/Configuration Options.html#copy-vault-to-tempdir">Configuration Options#Copy Vault to Tempdir</a>   </p>
+<p>The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please <a href="/minimal/General%20Information/Report%20Issues%20%26%20Request%20features.html">report it as an issue</a>.   </p>
+<p>See config options: <a href="/minimal/Configurations/Configuration%20Options.html#copy-vault-to-tempdir">Configuration Options#Copy Vault to Tempdir</a>   </p>
 <h2 id="exclude-subfolders">Exclude subfolders</h2>
 <blockquote>
 <p>New in <a href="/minimal/Changelog/v3.2.0.html">v3.2.0</a>   </p>
 </blockquote>
-<p>The copy method will exclude the subfolders set under <a href="/minimal/Configurations/Configuration Options.html#exclude-subfolders">exclude_subfolders</a>.   </p>
+<p>The copy method will exclude the subfolders set under <a href="/minimal/Configurations/Configuration%20Options.html#exclude-subfolders">exclude_subfolders</a>.   </p>
 <h2 id="copy-methods">Copy methods</h2>
 <h3 id="history">History</h3>
 <p>We started out with a simple <code>distutils.dir_util.copy_tree()</code> call, which is kind of a defacto standard in Python if you go by stackoverflow. This turned out to give errors in macos, so the function was copied into our code and edited to work on macos without errors. This function uses <code>shutil.copy()</code> calls in a recursive fashion to copy over all your files to a temporary directory.   </p>
@@ -73,7 +73,7 @@
 <span class="nt">copy_vault_to_tempdir_follow_copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
 
-<p>Note that this defaults to False and is not affected by the <a href="/minimal/Configurations/Configuration Options.html#verbose_printout">global verbosity setting</a>.</p>
+<p>Note that this defaults to False and is not affected by the <a href="/minimal/Configurations/Configuration%20Options.html#verbose_printout">global verbosity setting</a>.</p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>

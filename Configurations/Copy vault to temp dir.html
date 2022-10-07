@@ -330,13 +330,6 @@
 </div>
 <button id="folder-10" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
 <div id="folder-container-10" class="dir-container requires_js " path="/General Information">
-	<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
-	<div id="folder-container-11" class="dir-container requires_js " path="/General Information/Snippets">
-		<ul class="dir-list">
-			<li><a class="" href="/General Information/Snippets/md --> html.html"  >md --> html</a></li>
-			<li><a class="" href="/General Information/Snippets/note --> html.html"  >note --> html</a></li>
-		</ul>
-	</div>
 	<ul class="dir-list">
 		<li><a class="" href="/General Information/About ObsidianHtml.html"  >About ObsidianHtml</a></li>
 		<li><a class="" href="/General Information/Creating a static html website from markdown files.html"  >Creating a static html website from markdown files</a></li>
@@ -345,18 +338,12 @@
 		<li><a class="" href="/General Information/Using the website.html"  >Using the website</a></li>
 	</ul>
 </div>
-<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
-<div id="folder-container-12" class="dir-container requires_js " path="/Instructions">
-	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
-	<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Snippets">
-		<ul class="dir-list">
-			<li><a class="" href="/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
-		</ul>
-	</div>
-	<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
-	<div id="folder-container-14" class="dir-container requires_js " path="/Instructions/Tutorials">
-		<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
-		<div id="folder-container-15" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
+<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
+<div id="folder-container-11" class="dir-container requires_js " path="/Instructions">
+	<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
+	<div id="folder-container-12" class="dir-container requires_js " path="/Instructions/Tutorials">
+		<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
+		<div id="folder-container-13" class="dir-container requires_js " path="/Instructions/Tutorials/Specifics">
 			<ul class="dir-list">
 				<li><a class="" href="/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html"  >Bootstrapping Python on Windows</a></li>
 			</ul>
@@ -374,8 +361,8 @@
 		<li><a class="" href="/Instructions/Usage.html"  >Usage</a></li>
 	</ul>
 </div>
-<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
-<div id="folder-container-16" class="dir-container requires_js " path="/Log">
+<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-14" class="dir-container requires_js " path="/Log">
 	<ul class="dir-list">
 		<li><a class="" href="/Log/Published ObsidianHtml version 0.0.9!.html"  >Published ObsidianHtml version 0.0.9!</a></li>
 		<li><a class="" href="/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
@@ -415,15 +402,15 @@
 <p>We try to not have bugs, but sometimes we just can't help ourselves. I think everyone would agree that the only thing that we should guarantee is that we don't touch your vault files. To help assure that, ObsidianHtml will make a copy of your entire vault to a temporary directory and work from out of that folder.    </p>
 <p>This is the default behavior,  but an optional setting, and if you have severe file storage problems, or an enormous vault that takes very long to copy, then you can turn this setting off. Though we advise you to make a backup yourself the first couple of times that you use ObsidianHtml, or when you update ObsidianHtml to a new version.    </p>
 <blockquote>
-<p>This setting should be enabled for the option <a href="/Configurations/Create index from tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
+<p>This setting should be enabled for the option <a href="/Configurations/Create%20index%20from%20tags.html">Create index from tags</a> to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    </p>
 </blockquote>
-<p>The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please <a href="/General Information/Report Issues &amp; Request features.html">report it as an issue</a>.   </p>
-<p>See config options: <a href="/Configurations/Configuration Options.html#copy-vault-to-tempdir">Configuration Options#Copy Vault to Tempdir</a>   </p>
+<p>The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please <a href="/General%20Information/Report%20Issues%20%26%20Request%20features.html">report it as an issue</a>.   </p>
+<p>See config options: <a href="/Configurations/Configuration%20Options.html#copy-vault-to-tempdir">Configuration Options#Copy Vault to Tempdir</a>   </p>
 <h2 id="exclude-subfolders">Exclude subfolders</h2>
 <blockquote>
 <p>New in <a href="/Changelog/v3.2.0.html">v3.2.0</a>   </p>
 </blockquote>
-<p>The copy method will exclude the subfolders set under <a href="/Configurations/Configuration Options.html#exclude-subfolders">exclude_subfolders</a>.   </p>
+<p>The copy method will exclude the subfolders set under <a href="/Configurations/Configuration%20Options.html#exclude-subfolders">exclude_subfolders</a>.   </p>
 <h2 id="copy-methods">Copy methods</h2>
 <h3 id="history">History</h3>
 <p>We started out with a simple <code>distutils.dir_util.copy_tree()</code> call, which is kind of a defacto standard in Python if you go by stackoverflow. This turned out to give errors in macos, so the function was copied into our code and edited to work on macos without errors. This function uses <code>shutil.copy()</code> calls in a recursive fashion to copy over all your files to a temporary directory.   </p>
@@ -450,7 +437,7 @@
 <span class="nt">copy_vault_to_tempdir_follow_copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
 
-<p>Note that this defaults to False and is not affected by the <a href="/Configurations/Configuration Options.html#verbose_printout">global verbosity setting</a>.</p>
+<p>Note that this defaults to False and is not affected by the <a href="/Configurations/Configuration%20Options.html#verbose_printout">global verbosity setting</a>.</p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -472,13 +459,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A121338231297576319820973220324110007533{level}" class="graph_div"></div>
+    <div id="A9767947937575292303382067569000892174{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B121338231297576319820973220324110007533{level}" level="{level}" note_temp_id="121338231297576319820973220324110007533" onclick="window.ObsHtmlGraph.run(this, '121338231297576319820973220324110007533', 'copy vault to temp dir');">
+        <button class="graph_button graph_show_button" id="B9767947937575292303382067569000892174{level}" level="{level}" note_temp_id="9767947937575292303382067569000892174" onclick="window.ObsHtmlGraph.run(this, '9767947937575292303382067569000892174', 'copy vault to temp dir');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C121338231297576319820973220324110007533{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C9767947937575292303382067569000892174{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
