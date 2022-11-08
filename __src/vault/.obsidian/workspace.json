@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Changelog/v3.3.0.md",
+                "file": "Changelog/Changelog.md",
                 "mode": "source",
                 "source": false
               }
@@ -101,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Changelog/v3.3.0.md",
+                "file": "Changelog/Changelog.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,8 +135,8 @@
   },
   "active": "52d6da884967edb7",
   "lastOpenFiles": [
-    "Changelog/Changelog.md",
     "Changelog/v3.3.0.md",
+    "Changelog/Changelog.md",
     "Changelog/v3.2.0.md",
     "Configurations/Plugins/Embedded note title.md",
     "Configurations/Configuration Options.md",
