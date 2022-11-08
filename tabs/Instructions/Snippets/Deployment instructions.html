@@ -305,10 +305,15 @@
 <p>All those urls have in common that they are in the root of the domain. An example where this is not the case is:  <a href="https://mywebsite.com/subfolder/." class="external-link">https://mywebsite.com/subfolder/.</a>   </p>
 <h4 id="deploying-to-a-subfolder">Deploying to a subfolder</h4>
 <p>To make your website work for <a href="https://mywebsite.com/subfolder/" class="external-link">https://mywebsite.com/subfolder/</a> you should add this setting:   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span><span class="w"></span>
 <span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span><span class="w"></span>
 <span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/subfolder&#39;</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>This will add <code>/subfolder</code> to every link in the html output.   </p>
 <div class="callout callout-note active" rasa="1">
@@ -326,7 +331,7 @@
 <h4 id="viewing-your-website-without-a-webserver">Viewing your website without a webserver</h4>
 <p>If you don't want to deploy a website on the world wide web, nor want to start a local webserver everytime someone wants to view your website, you can configure Obsidianhtml such that you can just open the index.html in your browser directly from your filesystem.   </p>
 <p>Note that this will break the graph view and the search function, so these should be disabled.    </p>
-<p>For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: <a href="/tabs/Configurations/Relative_path_html.html">Relative_path_html</a></p>
+<p>For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: <a href="/tabs/Configurations/Modes/Relative_path_html.html">Relative_path_html</a></p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -345,13 +350,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A141300178181481852089396955169736456006{level}" class="graph_div"></div>
+    <div id="A202738740839667604662725648879329204187{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B141300178181481852089396955169736456006{level}" level="{level}" note_temp_id="141300178181481852089396955169736456006" onclick="window.ObsHtmlGraph.run(this, '141300178181481852089396955169736456006', 'deployment instructions');">
+        <button class="graph_button graph_show_button" id="B202738740839667604662725648879329204187{level}" level="{level}" note_temp_id="202738740839667604662725648879329204187" onclick="window.ObsHtmlGraph.run(this, '202738740839667604662725648879329204187', 'deployment instructions');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C141300178181481852089396955169736456006{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C202738740839667604662725648879329204187{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

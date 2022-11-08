@@ -37,12 +37,15 @@ Try this site with different [layouts](./Configurations/Styling/Styling.md#layou
 - **[Quickstart](./Instructions/Quickstart.md)**   
 - [Installation](./Instructions/Installation.md)   
 - [Usage](./Instructions/Usage.md)   
-- [Modes](./Configurations/Modes.md)   
+- [Modes](./Configurations/Modes/Modes.md)   
 - [Styling](./Configurations/Styling/Styling.md)   
-- [Features](./Configurations/Features.md)   
+- [Features](./Configurations/Features/Features.md)   
 - [Configuration Options](./Configurations/Configuration%20Options.md)   
    
 ## Tips and tricks   
    
-- [Performance Tuning](./Configurations/Performance%20Tuning.md)   
-- [Automate website deployment](./Automation/Automate%20website%20deployment.md)
+- [Performance Tuning](./Configurations/Tweaking/Performance%20Tuning.md)   
+- [Automate website deployment](./Automation/Automate%20website%20deployment.md)    
+   
+   
+[RossettiGoblinMarket.pdf](./Resources/pdfs/RossettiGoblinMarket.pdf)

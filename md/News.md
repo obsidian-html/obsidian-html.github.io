@@ -5,7 +5,7 @@ tags:
 ---
    
 # News   
-The articles linked on this page are included in our [RSS Feed](./Configurations/RSS%20Feed.md), and are meant to highlight specific events regarding ObsidianHtml.    
+The articles linked on this page are included in our [RSS Feed](./Configurations/Features/RSS%20Feed.md), and are meant to highlight specific events regarding ObsidianHtml.    
    
 Not every version release is news worthy in itself. The [Changelog](./Changelog/Changelog.md) lists all new versions, and is also included in our RSS feed.   
    

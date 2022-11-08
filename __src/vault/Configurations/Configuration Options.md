@@ -27,6 +27,9 @@ We will now go through all the settings in more-or-less the same order as the ou
 ## Where has this setting gone?
 ObsidianHtml is evolving a little bit each new version. A setting might become obsolete or replaced by a new feature with its own configurations. You can find all the deprecated/removed settings here: [[Deprecated Configurations]].
 
+## Note settings
+To change the behavior of obsidianhtml specifically for one tag, see [[Note settings]].
+
 ## Configurations
 ### Paths
 | config | Short description |
@@ -70,6 +73,7 @@ ObsidianHtml is evolving a little bit each new version. A setting might become o
 | [[Configuration Options#relative_path_html\|relative_path_html]] | Compile html links relatively or with absolute paths |
 | [[Configuration Options#external_blank\|external_blank]] | Control whether external links will open in a new tab or not |
 | [[Configuration Options#preserve_inline_tags\|preserve_inline_tags]] | Control whether inline tags will be removed from the note |
+| [[Configuration Options#strict line breaks \| strict line breaks]] |  Act like normal markdown with regards to line breaks | 
 
 ### Feature settings
 | config | Short description |
@@ -375,7 +379,15 @@ Read more: [[Relative_path_html]]
 ``` yaml
 toggles:
   # Whether external http anchor links should have a target of "_blank"
-  external_blank: False  
+  external_blank: False
+```
+
+### strict line breaks
+> New in [[v3.3.0]]
+``` yaml
+toggles:
+  # When true, Obsidianhtml will not add three spaces at the end of every line
+  strict_line_breaks: False
 ```
 
 ## Features

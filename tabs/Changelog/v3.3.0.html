@@ -302,24 +302,35 @@
                     </div>
 <embeddedtitle>V3.3.0</embeddedtitle>
 <blockquote>
-<p>Feature version of <a href="/tabs/Changelog/v3.0.0.html">v3.0.0</a>.  <br />
-<strong>Not published yet!</strong>   </p>
+<p>Feature version of <a href="/tabs/Changelog/v3.0.0.html">v3.0.0</a>.    </p>
 </blockquote>
 <h2 id="added-features">Added features</h2>
 <ul>
 <li>A first MVP of <a href="/tabs/Demonstrations/Embedded%20search.html">Embedded search</a> was added   </li>
-<li>Glob pattern support added to <a href="/tabs/Configurations/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a> feature.   </li>
+<li>Glob pattern support added to <a href="/tabs/Configurations/Modes/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a> feature.   </li>
+<li>Added subheader selection for <a href="/tabs/Configurations/Features/Include%20notes.html">Include notes</a>   </li>
+<li>Added configuration setting <a href="/tabs/Configurations/Configuration%20Options.html#strict-line-breaks-">strict line breaks</a>   </li>
+<li>Image scaling has been added properly this time.   </li>
+<li>First version of support for ad-cite code blocks.   </li>
 </ul>
 <h2 id="changes">Changes</h2>
 <ul>
-<li>The setting <code>force_filename_to_lowercase</code>  would make graph labels lowercase, this has been changed so it doesn't affect graph labels. For your own graphers, make sure to use <code>node['name']</code> instead of <code>node['id']</code>.</li>
+<li>The setting <code>force_filename_to_lowercase</code>  would make graph labels lowercase, this has been changed so it doesn't affect graph labels. For your own graphers, make sure to use <code>node['name']</code> instead of <code>node['id']</code>.   </li>
+<li>If you would specify a header in <a href="/tabs/Configurations/Features/Include%20notes.html">Include notes</a>, and it would not exist, obsidianhtml would fail on purpose. This conflicts with how Obsidian responds, which is with an error notification in the note itself. Obsidianhtml now does the same.   </li>
+<li>Code blocks are now wrapped in a div with class <code>lang-{whatever is after the three backticks}</code>, e.g. <code>lang-python</code>. This should make it easier to apply language specific css changes.   </li>
+</ul>
+<h2 id="bugfixes">Bugfixes</h2>
+<ul>
+<li>Fixed pdf inclusion. See also <a href="https://github.com/obsidian-html/obsidian-html/issues/421" class="external-link">421</a></li>
 </ul>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/Configurations/Create Index from Directory Structure.html">create index from directory structure</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Modes/Create Index from Directory Structure.html">create index from directory structure</a></li>
 	<li><a class="backlink" href="/tabs/Demonstrations/Embedded search.html">embedded search</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/tabs/Changelog/Changelog.html">changelog</a></li>
 </ul>
 </div>
 
@@ -333,13 +344,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A37293139244847861866461423741762545621{level}" class="graph_div"></div>
+    <div id="A56676501830811036443238630248598195925{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B37293139244847861866461423741762545621{level}" level="{level}" note_temp_id="37293139244847861866461423741762545621" onclick="window.ObsHtmlGraph.run(this, '37293139244847861866461423741762545621', 'v3.3.0');">
+        <button class="graph_button graph_show_button" id="B56676501830811036443238630248598195925{level}" level="{level}" note_temp_id="56676501830811036443238630248598195925" onclick="window.ObsHtmlGraph.run(this, '56676501830811036443238630248598195925', 'v3.3.0');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C37293139244847861866461423741762545621{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C56676501830811036443238630248598195925{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

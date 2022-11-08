@@ -24,7 +24,14 @@ tags:
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ObsidianOregon.jpg/480px-ObsidianOregon.jpg)
 
 ## Resizing large images
+`![[wide-image.jpg]]`
+
 ![[wide-image.jpg]]
+
+`![[wide-image.jpg|300]]`
+
+![[wide-image.jpg|300]]
+
 
 # Videos
 At the moment of writing mp4 and webm's are supported. If you want to use a different type, contact us via [[Report Issues & Request features]].

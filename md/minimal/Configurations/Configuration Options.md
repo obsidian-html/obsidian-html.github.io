@@ -5,9 +5,9 @@ tags:
 ---
    
 # Configuration Options   
-This page goes through all the configuration options and will refer to features. For a toplevel view of these features, see [Features](../Configurations/Features.md).   
+This page goes through all the configuration options and will refer to features. For a toplevel view of these features, see [Features](../Configurations/Features/Features.md).   
    
-Certain settings change the flow of how notes are selected and presented on the homepage. You can find a glossary on those in [Modes](../Configurations/Modes.md).   
+Certain settings change the flow of how notes are selected and presented on the homepage. You can find a glossary on those in [Modes](../Configurations/Modes/Modes.md).   
    
 ## Get all the default settings   
 Run:   
@@ -27,6 +27,9 @@ We will now go through all the settings in more-or-less the same order as the ou
    
 ## Where has this setting gone?   
 ObsidianHtml is evolving a little bit each new version. A setting might become obsolete or replaced by a new feature with its own configurations. You can find all the deprecated/removed settings here: [Deprecated Configurations](../Configurations/Deprecated%20Configurations/Deprecated%20Configurations.md).   
+   
+## Note settings   
+To change the behavior of obsidianhtml specifically for one tag, see [Note settings](../Configurations/Note%20settings/Note%20settings.md).   
    
 ## Configurations   
 ### Paths   
@@ -61,7 +64,7 @@ ObsidianHtml is evolving a little bit each new version. A setting might become o
 | :------ | :--------------- |   
 | [Compile Md](../Configurations/Configuration%20Options.md#compile-md) | Used to skip the obsidian --> markdown compilation step |   
 | [Compile Html](../Configurations/Configuration%20Options.md#compile-html) | Used to skip the markdown --> html compilation step |   
-| [Process all](../Configurations/Configuration%20Options.md#process-all) | Include all notes. Read more: [Process All](../Configurations/Process%20All.md) |   
+| [Process all](../Configurations/Configuration%20Options.md#process-all) | Include all notes. Read more: [Process All](../Configurations/Modes/Process%20All.md) |   
 | [verbose_printout](../Configurations/Configuration%20Options.md#verbose_printout) | Used for debugging, show in detail what is going on during processing. |   
 | [Allow Duplicate Filenames in Root](../Configurations/Configuration%20Options.md#allow-duplicate-filenames-in-root) | By default ObsidianHtml doesn't allow multiple files with the same filename, but when compile_md: False, this can be turned off. |   
 | [Warn on Skipped Image](../Configurations/Configuration%20Options.md#warn-on-skipped-image) | By default ObsidianHtml warns on images that could not be found locally, with this setting you can turn this off. |   
@@ -71,17 +74,18 @@ ObsidianHtml is evolving a little bit each new version. A setting might become o
 | [relative_path_html](../Configurations/Configuration%20Options.md#relative_path_html) | Compile html links relatively or with absolute paths |   
 | [external_blank](../Configurations/Configuration%20Options.md#external_blank) | Control whether external links will open in a new tab or not |   
 | [preserve_inline_tags](../Configurations/Configuration%20Options.md#preserve_inline_tags) | Control whether inline tags will be removed from the note |   
+| [ strict line breaks](../Configurations/Configuration%20Options.md#strict-line-breaks-) |  Act like normal markdown with regards to line breaks |    
    
 ### Feature settings   
 | config | Short description |   
 | :------ | :--------------- |   
 | [Styling](../Configurations/Configuration%20Options.md#styling) | Configure the layout and layout setting. Read more [Styling](../Configurations/Styling/Styling.md) |   
-| [Graph](../Configurations/Configuration%20Options.md#graph) | Configure the graph view. Read more [Graph view](../Configurations/Graph%20view.md) |   
+| [Graph](../Configurations/Configuration%20Options.md#graph) | Configure the graph view. Read more [Graph view](../Configurations/Features/Graph%20view.md) |   
 | [Create Index From Tags](../Configurations/Configuration%20Options.md#create-index-from-tags) | Configure ObsidianHtml to create an index.md / .html based on matching notes on tags.|   
 | [Create Index From Directory Structure](../Configurations/Configuration%20Options.md#create-index-from-directory-structure) | Overwrite the index.html file with an index that lists all the folders and files in a tree structure. |   
 | [Backlinks](../Configurations/Configuration%20Options.md#backlinks) | Turn backlinks on or off. |   
-| [RSS Feed](../Configurations/RSS%20Feed.md) | Compile (a selection of) your notes into an RSS Feed. |   
-| [Folder Notes](../Configurations/Folder%20Notes.md) | Attach a note to a folder. |   
+| [RSS Feed](../Configurations/Features/RSS%20Feed.md) | Compile (a selection of) your notes into an RSS Feed. |   
+| [Folder Notes](../Configurations/Features/Folder%20Notes.md) | Attach a note to a folder. |   
 | [Simple feature toggles](../Configurations/Configuration%20Options.md#simple-feature-toggles) | Ability to disable various components |   
    
    
@@ -174,9 +178,9 @@ copy_vault_to_tempdir_follow_copy: false
 ```
    
    
-Read more: [Copy vault to temp dir](../Configurations/Copy%20vault%20to%20temp%20dir.md)   
+Read more: [Copy vault to temp dir](../Configurations/Modes/Copy%20vault%20to%20temp%20dir.md)   
    
-> This setting should be enabled for the option [Create index from tags](../Configurations/Create%20index%20from%20tags.md) to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    
+> This setting should be enabled for the option [Create index from tags](../Configurations/Modes/Create%20index%20from%20tags.md) to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    
    
 ### included_file_suffixes   
 > Added in [v1.0.0](../Changelog/v1.0.0.md)   
@@ -243,7 +247,7 @@ navbar_links: []
 ```
    
    
-Read more: [Website navigation menu](../Configurations/Website%20navigation%20menu.md)   
+Read more: [Website navigation menu](../Configurations/Features/Website%20navigation%20menu.md)   
    
 ### Html Template Path Str   
 ``` yaml
@@ -322,9 +326,9 @@ toggles:
    
 The normal behavior of ObsidianHtml is to take an entrypoint note, convert it, and then do the same for all the links on the page, and so on and so forth.   
    
-To include all notes in your vault in the output, set this value to true. The notes that can not be reached through the index.html can be found via the [Graph view](../Configurations/Graph%20view.md) or the [Tags Page](../Configurations/Tags%20Page.md).   
+To include all notes in your vault in the output, set this value to true. The notes that can not be reached through the index.html can be found via the [Graph view](../Configurations/Features/Graph%20view.md) or the [Tags Page](../Configurations/Features/Tags%20Page.md).   
    
-See also [Process All](../Configurations/Process%20All.md).   
+See also [Process All](../Configurations/Modes/Process%20All.md).   
    
 ### verbose_printout   
 ``` yaml
@@ -397,13 +401,22 @@ toggles:
 ```
    
    
-Read more: [Relative_path_html](../Configurations/Relative_path_html.md)   
+Read more: [Relative_path_html](../Configurations/Modes/Relative_path_html.md)   
    
 ## external_blank   
 ``` yaml
 toggles:
   # Whether external http anchor links should have a target of "_blank"
-  external_blank: False  
+  external_blank: False
+```
+   
+   
+### strict line breaks   
+> New in [v3.3.0](../Changelog/v3.3.0.md)   
+``` yaml
+toggles:
+  # When true, Obsidianhtml will not add three spaces at the end of every line
+  strict_line_breaks: False
 ```
    
    
@@ -437,7 +450,7 @@ toggles
 ```
    
    
-Read more: [Graph view](../Configurations/Graph%20view.md)   
+Read more: [Graph view](../Configurations/Features/Graph%20view.md)   
    
 ### Create Index From Tags   
 ``` yaml
@@ -464,7 +477,7 @@ toggles
 ```
    
    
-Read more: [Create index from tags](../Configurations/Create%20index%20from%20tags.md)   
+Read more: [Create index from tags](../Configurations/Modes/Create%20index%20from%20tags.md)   
    
 ### Create Index From Directory Structure   
 ``` yaml
@@ -484,7 +497,7 @@ toggles
 ```
    
    
-Read more: [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md)   
+Read more: [Create Index from Directory Structure](../Configurations/Modes/Create%20Index%20from%20Directory%20Structure.md)   
    
 ### Backlinks   
 ``` yaml
@@ -496,7 +509,7 @@ toggles
 ```
    
    
-Read more: [Backlinks](../Configurations/Backlinks.md)   
+Read more: [Backlinks](../Configurations/Features/Backlinks.md)   
    
 ### Simple feature toggles   
 ``` yaml

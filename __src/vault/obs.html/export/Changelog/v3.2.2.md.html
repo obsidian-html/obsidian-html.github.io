@@ -1,0 +1,58 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">v3.2.2</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/changelog
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>09<span class="token punctuation">-</span><span class="token number">11</span>
+<span class="token key atrule">version_type</span><span class="token punctuation">:</span> patch</code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/changelog">#type/changelog</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-09-11">#date/2022-09-11</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <blockquote>
+    <p>Patch version of <a data-href="v3.2.0" href="v3.2.0" class="internal-link" target="_blank" rel="noopener">v3.2.0</a>. </p>
+  </blockquote>
+</div>
+<div>
+  <h2 data-heading="Changes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Changes
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>Made <code>force_filename_to_lowercase</code> default to true, as markdown links in a vault had the same issue as when converting markdown directly, while working as intended in Obsidian itself.
+    </li>
+  </ul>
+</div>
+<div>
+  <h2 data-heading="Bugfixes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Bugfixes
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>The change in <a data-href="v3.2.1" href="v3.2.1" class="internal-link" target="_blank" rel="noopener">v3.2.1</a> to fix links with parentheses not being parsed correctly created the bug that when having () around a link, like (<a data-href="v3.2.1" href="v3.2.1" class="internal-link" target="_blank" rel="noopener">v3.2.1</a>), would cause the trailing <code>)</code> to be included in the link. This has been fixed.
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div>Anchor links like <code>[go to chapter](#chapter)</code> would cause a breaking bug because of using <code>link[0]</code> instead of <code>link.startswith()</code>. (Former will give an out of bounds error when string is empty). This was also a piece of code that didn't need to be run for anchor links, this has been corrected as well.
+    </li>
+  </ul>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

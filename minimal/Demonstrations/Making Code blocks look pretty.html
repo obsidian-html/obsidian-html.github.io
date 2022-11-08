@@ -38,6 +38,8 @@
 <p>This is built into python-markdown, and enabled by default. <br />
 Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created.   </p>
 <h2 id="python">Python</h2>
+<div class="lang-python">
+
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>                  <span class="c1"># commandline arguments</span>
 <span class="kn">import</span> <span class="nn">shutil</span>               <span class="c1"># used to remove a non-empty directory, copy files</span>
 <span class="kn">import</span> <span class="nn">re</span>                   <span class="c1"># regex string finding/replacing</span>
@@ -56,6 +58,11 @@ Any codeblock or codeline is excempt from modification because they get cut out 
 <span class="k">if</span> <span class="n">root_folder</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">:</span>
  <span class="n">root_folder</span> <span class="o">=</span> <span class="n">root_folder</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-python">
 
 <div class="codehilite"><pre><span></span><code><span class="c1"># -- CLIENT SETUP --------------------------------------------------------------------</span>
 <span class="c1"># ====================================================================================</span>
@@ -80,7 +87,12 @@ Any codeblock or codeline is excempt from modification because they get cut out 
         <span class="k">return</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="powershell">Powershell</h2>
+<div class="lang-powershell">
+
 <div class="codehilite"><pre><span></span><code><span class="k">Function</span> <span class="nb">Add-Link</span> <span class="p">{</span>
     <span class="k">param</span><span class="p">(</span>
         <span class="nv">$Link</span><span class="p">,</span> 
@@ -101,7 +113,12 @@ Any codeblock or codeline is excempt from modification because they get cut out 
 <span class="p">}</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="yaml">YAML</h2>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="c1"># This is a basic workflow to help you get started with Actions</span><span class="w"></span>
 
@@ -142,7 +159,12 @@ Any codeblock or codeline is excempt from modification because they get cut out 
 <span class="w">          </span><span class="no">pwd</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="bash">Bash</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>    <span class="c1"># Set rights</span>
     <span class="c1"># ---------------------------</span>
     <span class="c1"># Create www-data group, and add main user to it</span>
@@ -167,6 +189,9 @@ Any codeblock or codeline is excempt from modification because they get cut out 
         sudo <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> &gt; /etc/nginx/sites-available/default
     <span class="k">fi</span>    
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>

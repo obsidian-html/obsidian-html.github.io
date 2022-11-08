@@ -41,22 +41,42 @@
 <p>Full installation instructions: <a href="/minimal/Instructions/Installation.html">Installation</a>   </p>
 </blockquote>
 <p>First we need to <a href="https://wiki.python.org/moin/BeginnersGuide/Download" class="external-link">Install python 3</a>. If you already have it installed, check the version:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>python --version
 </code></pre></div>
 
+
+</div>
+
 <p>If you are running a version below 3.9 then you need to upgrade.   </p>
 <p>After a clean install of Python, you need to upgrade pip (the python package manager that we use to install ObsidianHtml):   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>pip install --upgrade pip
 </code></pre></div>
 
+
+</div>
+
 <p>When running on Windows,  also run:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>pip install --pre pythonnet
 </code></pre></div>
 
+
+</div>
+
 <p>For more information: <a href="/minimal/Instructions/Installation.html#on-windows">Installation#On Windows</a>.   </p>
 <p>Now we can install ObsidianHtml:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>pip install obsidianhtml
 </code></pre></div>
+
+
+</div>
 
 <h2 id="run">Run</h2>
 <blockquote>
@@ -67,14 +87,21 @@
 <p>When this works, or you want more configuration settings out of the box, you can skip this section and continue with the next section.   </p>
 <h3 id="short-instructions">Short instructions</h3>
 <p>Run   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md
 </code></pre></div>
+
+
+</div>
 
 <p>Then follow the instructions in the terminal. If all is well it will spit out some information and then tell you to open <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a> in your browser. Do so and admire your new website.   </p>
 <p>When done return to the terminal and press enter to exit obsidianhtml and stop the webserver.   </p>
 <p>If you are happy with the result, you can take the path to your generated config yaml in the steps below as a starting point. Follow the instructions at <a href="#convert-vault" class="anchor-link">Convert vault</a> to just convert your vault to html (and or markdown) and forgo running the integrated webserver.   </p>
 <h2 id="configuration">Configuration</h2>
 <p>Pick a folder where you don't mind a folder being created. Then create a file in this folder named <code>config.yaml</code>, and fill it with this content (and fill in the values):   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
 <span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
 <span class="nt">obsidian_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault&#39;</span><span class="w"> </span>
@@ -85,10 +112,18 @@
 <span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault/entrypoint.md&#39;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="convert-vault">Convert vault</h2>
 <p>Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>obsidianhtml convert -i config.yaml
 </code></pre></div>
+
+
+</div>
 
 <p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.   </p>
 <div class="callout callout-caution active callout-folded" rasa="1">
@@ -106,6 +141,8 @@
 </div>
 </div>
 <p>If you place your config in your vault, then go a folder up and run <code>obsidianhtml -i &lt;vault folder name&gt;/config.yaml</code>. Alternatively, add the following settings to your config.yml to control the output location (adjust the paths to make sense for your environment):   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
 <span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
 <span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
@@ -123,9 +160,17 @@
 <span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/Username/Documents/Website/html&#39;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="test-website">Test website</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>obsidianhtml serve --directory output/html --port <span class="m">8000</span>
 </code></pre></div>
+
+
+</div>
 
 <p>Then open <a href="http://localhost:8000" class="external-link" class="external-link">http://localhost:8000</a> to view the html site that was created.   </p>
 <h2 id="deployment-configuration">Deployment configuration</h2>
@@ -133,10 +178,15 @@
 <p>All those urls have in common that they are in the root of the domain. An example where this is not the case is:  <a href="https://mywebsite.com/subfolder/." class="external-link">https://mywebsite.com/subfolder/.</a>   </p>
 <h4 id="deploying-to-a-subfolder">Deploying to a subfolder</h4>
 <p>To make your website work for <a href="https://mywebsite.com/subfolder/" class="external-link">https://mywebsite.com/subfolder/</a> you should add this setting:   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span><span class="w"></span>
 <span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span><span class="w"></span>
 <span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/subfolder&#39;</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>This will add <code>/subfolder</code> to every link in the html output.   </p>
 <div class="callout callout-note active" rasa="1">
@@ -154,11 +204,11 @@
 <h4 id="viewing-your-website-without-a-webserver">Viewing your website without a webserver</h4>
 <p>If you don't want to deploy a website on the world wide web, nor want to start a local webserver everytime someone wants to view your website, you can configure Obsidianhtml such that you can just open the index.html in your browser directly from your filesystem.   </p>
 <p>Note that this will break the graph view and the search function, so these should be disabled.    </p>
-<p>For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: <a href="/minimal/Configurations/Relative_path_html.html">Relative_path_html</a></p>
+<p>For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: <a href="/minimal/Configurations/Modes/Relative_path_html.html">Relative_path_html</a></p>
 <h1 id="next-steps">Next steps</h1>
 <ul>
 <li>Read the full notes on <a href="/minimal/Instructions/Installation.html">Installation</a> and <a href="/minimal/Instructions/Usage.html">Usage</a> if you want to know more about these steps.   </li>
-<li>If the conversion works, but you want to change the behavior, check out <a href="/minimal/Configurations/Features.html">Features</a>, <a href="/minimal/Configurations/Modes.html">Modes</a>, and finally <a href="/minimal/Configurations/Configuration%20Options.html">Configuration Options</a></li>
+<li>If the conversion works, but you want to change the behavior, check out <a href="/minimal/Configurations/Features/Features.html">Features</a>, <a href="/minimal/Configurations/Modes/Modes.html">Modes</a>, and finally <a href="/minimal/Configurations/Configuration%20Options.html">Configuration Options</a></li>
 </ul>
 <div class="note-footer">
 <div class="backlinks">

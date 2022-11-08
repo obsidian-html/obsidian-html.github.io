@@ -152,10 +152,10 @@ If you don't want to deploy a website on the world wide web, nor want to start a
    
 Note that this will break the graph view and the search function, so these should be disabled.    
    
-For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: [Relative_path_html](../Configurations/Relative_path_html.md)
+For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: [Relative_path_html](../Configurations/Modes/Relative_path_html.md)
    
    
 # Next steps   
    
 - Read the full notes on [Installation](../Instructions/Installation.md) and [Usage](../Instructions/Usage.md) if you want to know more about these steps.   
-- If the conversion works, but you want to change the behavior, check out [Features](../Configurations/Features.md), [Modes](../Configurations/Modes.md), and finally [Configuration Options](../Configurations/Configuration%20Options.md)
+- If the conversion works, but you want to change the behavior, check out [Features](../Configurations/Features/Features.md), [Modes](../Configurations/Modes/Modes.md), and finally [Configuration Options](../Configurations/Configuration%20Options.md)

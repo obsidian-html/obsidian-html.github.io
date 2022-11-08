@@ -41,10 +41,18 @@ html_url_prefix: ''
 # Note that this file must contain at least "{content}" somewhere in the page.
 html_template_path_str: ''
 
+
 # Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html
-html_custom_inclusions: []
-html_custom_footer_inclusions:
-  - '<script>console.log("hello")</script>'
+# html_custom_footer_inclusions:
+#   - '<script>console.log("hello")</script>'
+
+# html_custom_inclusions:
+#   - '<link rel="stylesheet" href="/obs.html/static/wrap_code_blocks.css" />'
+
+# file_exports: 
+#   - encoding: utf-8
+#     src: /home/dorus/git/obsidian-html/examples/custom-css/wrap_code_blocks.css
+#     dst: obs.html/static/wrap_code_blocks.css
 
 # file_exports:
 #   - encoding: binary
@@ -66,6 +74,17 @@ exclude_subfolders:
   - "__src"
   - "md"
   - "obs.html" 
+
+
+# Number of links a note can be removed from the entrypoint note
+# -1 for no max depth
+# 0 means only the entrypoint note is processed
+# 1 means only direct children are processed (and the entrypoint of course)
+# and so forth. 
+# - DOES NOT APPLY TO INCLUSIONS! Leaf notes with inclusions will just process those inclusions.
+# - Will not have effect if process_all is True
+max_note_depth: -1
+
 
 # Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect the vault data. 
 # Should be fine to turn off if copying the vault takes too long / disk space is too limited.
@@ -241,6 +260,7 @@ toggles:
 
     create_index_from_dir_structure:
       enabled: True
+      verbose: False
       rel_output_path: 'dirtree.html'
       styling: 
         show_icon: True

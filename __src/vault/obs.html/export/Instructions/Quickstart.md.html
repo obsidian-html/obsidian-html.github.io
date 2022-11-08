@@ -1,11 +1,14 @@
 <div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Quickstart</div>
+</div>
 <div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
 <span class="token punctuation">-</span> type/instruction
 <span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>02<span class="token punctuation">-</span><span class="token number">21</span></code><button class="copy-code-button">Copy</button></pre>
   <div class="frontmatter-container">
     <div class="frontmatter-container-header">
-      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="6" height="6">
-          <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
         </svg></div>Metadata
     </div>
     <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
@@ -15,8 +18,8 @@
 </div>
 <div>
   <h1 data-heading="Quickstart">
-    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
-        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
       </svg></div>Quickstart
   </h1>
 </div>
@@ -25,8 +28,8 @@
 </div>
 <div>
   <h2 data-heading="Installation">
-    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
-        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
       </svg></div>Installation
   </h2>
 </div>
@@ -50,66 +53,4 @@
 <div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">pip <span class="token function">install</span> --upgrade pip
 </code><button class="copy-code-button">Copy</button></pre>
 </div>
-<div>
-  <p>Now we can install ObsidianHtml:</p>
-</div>
-<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">pip <span class="token function">install</span> obsidianhtml
-</code><button class="copy-code-button">Copy</button></pre>
-</div>
-<div>
-  <h2 data-heading="Configuration">
-    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
-        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
-      </svg></div>Configuration
-  </h2>
-</div>
-<div>
-  <p>Pick a folder where you don't mind a folder being created. Then create a file in this folder named <code>config.yaml</code>, and fill it with this content (and fill in the values):</p>
-</div>
-<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token comment"># The first folder that contains all obsidian files</span>
-<span class="token comment"># Use full path or relative path, but don't use ~/</span>
-<span class="token key atrule">obsidian_folder_path_str</span><span class="token punctuation">:</span> <span class="token string">'/path/to/your/vault'</span> 
-
-<span class="token comment"># The note that will be used as the index.html </span>
-<span class="token comment"># should be in obsidian_folder_path_str</span>
-<span class="token comment"># Use full path or relative path, but don't use ~/</span>
-<span class="token key atrule">obsidian_entrypoint_path_str</span><span class="token punctuation">:</span> <span class="token string">'/path/to/your/vault/entrypoint.md'</span>
-</code><button class="copy-code-button">Copy</button></pre>
-</div>
-<div>
-  <h2 data-heading="Run">
-    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
-        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
-      </svg></div>Run
-  </h2>
-</div>
-<div>
-  <p>Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:</p>
-</div>
-<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">obsidianhtml -i config.yaml
-</code><button class="copy-code-button">Copy</button></pre>
-</div>
-<div>
-  <p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.</p>
-</div>
-<div>
-  <div data-callout-metadata="" data-callout-fold="-" data-callout="caution" class="callout is-collapsible is-collapsed">
-    <div class="callout-title">
-      <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-alert-triangle">
-          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path>
-          <line x1="12" y1="9" x2="12" y2="13"></line>
-          <line x1="12" y1="17" x2="12.01" y2="17"></line>
-        </svg></div>
-      <div class="callout-title-inner">Caution: don't run this command <strong>in</strong> your vault!</div>
-      <div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg></div>
-    </div>
-    <div class="callout-content" style="display: none;">
-      <p><strong>Do not</strong> run this command in your vault, as it will create the output in your vault, which will cause a DuplicateFileName error on subsequent runs! </p>
-    </div>
-  </div>
-</div>
-<div>
-  <p>If you place your config in your vault, then go a folder up and run <code>obsidianhtml -i &lt;vault folder name&gt;/config.yaml</code>. Alternatively, add the following settings to your config.yml to control the output location (adjust the paths to make sense for your environment):</p>
-</div>
+<div></div>

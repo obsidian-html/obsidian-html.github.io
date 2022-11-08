@@ -21,4 +21,4 @@
 - [demonstrations/implementing note inclusions](./Demonstrations/Implementing%20Note%20Inclusions.md)   
 - [demonstrations/implementing footnotes](./Demonstrations/Implementing%20Footnotes.md)   
 - [demonstrations/getting the basics right](./Demonstrations/Getting%20the%20basics%20right.md)   
-- [configurations/tags page](./Configurations/Tags%20Page.md)
+- [configurations/features/tags page](./Configurations/Features/Tags%20Page.md)

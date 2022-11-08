@@ -151,7 +151,7 @@ If you don't want to deploy a website on the world wide web, nor want to start a
    
 Note that this will break the graph view and the search function, so these should be disabled.    
    
-For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: [Relative_path_html](../Configurations/Relative_path_html.md)
+For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: [Relative_path_html](../Configurations/Modes/Relative_path_html.md)
    
    
 ## Further configurations   
@@ -159,7 +159,7 @@ Add the following settings to your config.yaml to control the behavior of obsidi
    
 This section only names the configurations that most often come up when setting up the config for the first time.    
    
-For a high level overview of interesting configurations see [Styling](../Configurations/Styling/Styling.md), [Modes](../Configurations/Modes.md) and [Features](../Configurations/Features.md). For a full list of all options see [Configuration Options](../Configurations/Configuration%20Options.md).   
+For a high level overview of interesting configurations see [Styling](../Configurations/Styling/Styling.md), [Modes](../Configurations/Modes/Modes.md) and [Features](../Configurations/Features/Features.md). For a full list of all options see [Configuration Options](../Configurations/Configuration%20Options.md).   
    
 ### Control output location   
 At the moment the output folder will just be created where ever we call `obsidianhtml` from, to pin down the output location, use an absolute path (starting with `<Driveletter>:/` on Windows, or starting with `/` on Linux/macOs).    
@@ -197,7 +197,7 @@ If you want to edit the style of the website output, you can add in css (and/or 
    
 ## Next steps   
    
-- [Features](../Configurations/Features.md)   
+- [Features](../Configurations/Features/Features.md)   
 - [Configuration Options](../Configurations/Configuration%20Options.md)   
 - [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md)   
 - [How to resolve common issues](/not_created.md)

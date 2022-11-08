@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <span style="color: #666;">Tweaking</span> / <a href="/minimal/Configurations/Tweaking/Performance Tuning.html" >Performance Tuning</a>
+                        </div>
+                    </div>
+<h1 id="performance-tuning">Performance Tuning</h1>
+<blockquote>
+<p>This page assumes that you are on <a href="/minimal/Changelog/v2.3.0.html">v2.3.0</a> or later.   </p>
+</blockquote>
+<p>More and more features are added to ObsidianHtml with every release. We like to present the full package of what ObsidianHtml is capable of straight out of the box, instead of relying on people discovering what they can enable by themselves, but the cost in terms of memory usage for the client reading your website is starting to add up.    </p>
+<p>For most people this won't be an issue, but for those still on dial-up connections, or for the purists who don't get why some html should take up 20mb of ram, it is good to know that there are some things that can be tuned.   </p>
+<h2 id="quick-method">Quick method</h2>
+<h3 id="minimal-layout">Minimal layout</h3>
+<p>See if you can live with the minimal layout. This layout has most things cut away that are not necessary to view/navigate your site. Read more: <a href="/minimal/Configurations/Styling/Styling.html#minimal">Styling#Minimal</a>.   </p>
+<p>The next steps will also work with the other layouts though.   </p>
+<h2 id="disable-all-optional-features-and-only-turn-back-on-those-that-you-miss">Disable all optional features, and only turn back on those that you miss</h2>
+<p>Add the following block to your config yaml to disable all optional features.   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># big css/js files to download + data to download </span><span class="w"></span>
+<span class="w">    </span><span class="c1"># and read in that scales with the size of the site.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># big css/js files to download.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mermaid_diagrams</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">    </span><span class="nt">math_latex</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># small, css based features.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">code_highlight</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">    </span><span class="nt">callouts</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+
+</div>
+
+<p>Personally, I would not bother with disabling the bottom two features, as the memory impact is negligable, unless you don't have  any code blocks / callouts in your vault.</p>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Changelog/v2.3.0.html">v2.3.0</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Styling/Styling.html">styling</a></li>
+	<li><a class="backlink" href="/minimal/index.html">index</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-05-08/index.html">date/2022-05-08</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

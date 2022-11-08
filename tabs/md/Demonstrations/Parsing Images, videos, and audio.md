@@ -7,7 +7,7 @@ tags:
 # Images   
 ## Obsidian type image links    
 `![[Resources/img/obsidian-html-logo-sq.png|300]]`   
-![](../Resources/img/obsidian-html-logo.png)   
+<img src="../Resources/img/obsidian-html-logo.png"  width="300">   
    
 `![[obsidian-html-logo-sq.png]]`   
 ![](../Resources/img/obsidian-html-logo-sq.png)    
@@ -24,7 +24,14 @@ tags:
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ObsidianOregon.jpg/480px-ObsidianOregon.jpg)   
    
 ## Resizing large images   
+`![[wide-image.jpg]]`   
+   
 ![](../Resources/img/wide-image.jpg)   
+   
+`![[wide-image.jpg|300]]`   
+   
+<img src="../Resources/img/wide-image.jpg"  width="300">   
+   
    
 # Videos   
 At the moment of writing mp4 and webm's are supported. If you want to use a different type, contact us via [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md).   

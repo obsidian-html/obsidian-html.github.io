@@ -9,10 +9,10 @@ tags:
 > This functionality has been added in version [v2.1.0](../../Changelog/v2.1.0.md) and rewritten in [v3.0.0](../../Changelog/v3.0.0.md).   
 > It is still in beta, so let us know if you are having issues with it or want added functionality: [Report Issues & Request features](../../General%20Information/Report%20Issues%20%26%20Request%20features.md).   
    
-See also [Graph view](../../Configurations/Graph%20view.md).   
+See also [Graph view](../../Configurations/Features/Graph%20view.md).   
    
 ## Passing in a custom template   
-If we look at the [configuration for graph view](../../Configurations/Graph%20view.md), then we see the 'templates' key:   
+If we look at the [configuration for graph view](../../Configurations/Features/Graph%20view.md), then we see the 'templates' key:   
    
 ``` yaml
 toggles:

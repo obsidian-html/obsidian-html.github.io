@@ -28,4 +28,4 @@ If you don't want to deploy a website on the world wide web, nor want to start a
    
 Note that this will break the graph view and the search function, so these should be disabled.    
    
-For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: [Relative_path_html](../../Configurations/Relative_path_html.md)
+For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: [Relative_path_html](../../Configurations/Modes/Relative_path_html.md)

@@ -30,3 +30,9 @@ https://bla.com
 `[bla](https://bla.com)` a 
 `[bla](https://bla.com)`
 `[bla](bla.md)`
+
+
+| table | table |
+| ------- | -------- |
+| ![[md --> html]] | ![[note --> html]] |
+

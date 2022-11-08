@@ -72,6 +72,8 @@ navbar_links:
   - name: News
     link: News.html    
 
+
+
 toggles:
   # Opt-in/-out of Obsidian->Md conversion, set to False when using proper markdown as input
   compile_md: True

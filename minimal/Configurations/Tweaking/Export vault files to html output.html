@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <span style="color: #666;">Tweaking</span> / <a href="/minimal/Configurations/Tweaking/Export vault files to html output.html" >Export vault files to html output</a>
+                        </div>
+                    </div>
+<h1 id="export-vault-files-to-html-output">Export vault files to html output</h1>
+<blockquote>
+<p>New in <a href="/minimal/Changelog/v3.2.0.html">v3.2.0</a>   </p>
+</blockquote>
+<h2 id="configuration">Configuration</h2>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">file_exports</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">binary</span><span class="w"></span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resources/Includes/favicon.ico</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dst</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">favicon.ico</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf-8</span><span class="w"></span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resources/Includes/christmas_snowflakes.js</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dst</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obs.html/static/christmas_snowflakes.js</span><span class="w"></span>
+</code></pre></div>
+
+
+</div>
+
+<p>This will export the files in the vault to the html_output_folder.   </p>
+<h3 id="paths">Paths</h3>
+<p>Source paths are relative to the vault path (as configured in <code>obsidian_folder_path_str</code>). When <code>copy_vault_to_tempdir</code> is enabled, this will be a temporary directory with the same contents as the folder configured on <code>obsidian_folder_path_str</code>.   </p>
+<p>Dest paths are relative to the folder  <code>html_output_folder_path_str</code>.   </p>
+<p>You can go outside of these folder if you wish by providing absolute paths:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code><span class="n">file_exports</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">encoding</span><span class="p">:</span><span class="w"> </span><span class="n">binary</span><span class="w"></span>
+<span class="w">    </span><span class="n">src</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">favicon</span><span class="o">.</span><span class="n">ico</span><span class="w"></span>
+<span class="w">    </span><span class="n">dst</span><span class="p">:</span><span class="w"> </span><span class="n">favicon</span><span class="o">.</span><span class="n">ico</span><span class="w"></span>
+</code></pre></div>
+
+
+</div>
+
+<h3 id="encoding">Encoding</h3>
+<p>The default encoding of <code>utf-8</code> can be omitted:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">file_exports</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resources/Includes/christmas_snowflakes.js</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dst</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obs.html/static/christmas_snowflakes.js</span><span class="w"></span>
+</code></pre></div>
+
+
+</div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Configurations/Features/Features.html">features</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v3.2.0.html">v3.2.0</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-07-31/index.html">date/2022-07-31</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

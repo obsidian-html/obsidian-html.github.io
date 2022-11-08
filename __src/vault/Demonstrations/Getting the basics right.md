@@ -16,6 +16,22 @@ One enter
 translates to
 a new line, just like in Obsidian!
 
+## Horizontal divider
+```
+This is a
+
+---
+
+Horizontal divider
+```
+
+This is a
+
+---
+
+Horizontal divider
+
+
 ## Formatting
 ### Highlighting
 > New in [[v3.2.0]]

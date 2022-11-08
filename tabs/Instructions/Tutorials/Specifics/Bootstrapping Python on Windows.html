@@ -310,24 +310,44 @@
 <li>Change the extension of the downloaded file to <code>.zip</code> and unzip the archive so that you get a folder like <code>C:\Users\User\Downloads\python-3.10.7</code>.   </li>
 <li>Open a terminal (powershell), and run the following command to test functionality. Make sure to change the path so that it is correct for your situation (and do so for all the following commands):   </li>
 </ul>
+<div class="lang-powershell">
+
 <div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">User</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">python</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">7</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-version</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="ensure-pip-and-install-virtualenv">Ensure pip and install virtualenv</h2>
 <p>Pip will be preinstalled in this package, but will not function correctly. This is resolved by running ensure pip:   </p>
+<div class="lang-powershell">
+
 <div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">User</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">python</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">7</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">ensurepip</span>
 </code></pre></div>
 
+
+</div>
+
 <p>As we are going to create a virtual environment, we need to use pip to install the virtualenv package.   </p>
+<div class="lang-powershell">
+
 <div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">User</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">python</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">7</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="create-virtualenv">Create virtualenv</h2>
 <p>We are now going to create a virtualenv. This will result in a new folder in the folder that we are in currently, so use <code>cd</code> to move to a folder where you want this to be created.    </p>
 <p>Later, we are also going to download an example vault to test obsidianhtml, and it can be nice to have the two folders next to eachother, so consider moving to a folder at a place where you keep your git projects.   </p>
 <p>The following command will create a folder called <code>obsenv</code>:   </p>
+<div class="lang-powershell">
+
 <div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">User</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">python</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">7</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">obsenv</span>
 </code></pre></div>
+
+
+</div>
 
 <p>Wait patiently for it to finish.    </p>
 <h2 id="enter-virtual-env-and-install-obsidianhtml">Enter virtual env and Install obsidianhtml</h2>
@@ -347,13 +367,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A94411019610562577287735665494566700453{level}" class="graph_div"></div>
+    <div id="A265538279595720959605855174248274712973{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B94411019610562577287735665494566700453{level}" level="{level}" note_temp_id="94411019610562577287735665494566700453" onclick="window.ObsHtmlGraph.run(this, '94411019610562577287735665494566700453', 'bootstrapping python on windows');">
+        <button class="graph_button graph_show_button" id="B265538279595720959605855174248274712973{level}" level="{level}" note_temp_id="265538279595720959605855174248274712973" onclick="window.ObsHtmlGraph.run(this, '265538279595720959605855174248274712973', 'bootstrapping python on windows');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C94411019610562577287735665494566700453{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C265538279595720959605855174248274712973{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

@@ -1,4 +1,5 @@
 ---
+my-title: Inline phrases
 tags:
 - type/test_page
 - date/2022-06-07
@@ -40,3 +41,9 @@ from "/"
 where graph_name != null
 sort graph_name asc
 ```
+   
+   
+# `= this.my-title`   
+   
+   
+Bla

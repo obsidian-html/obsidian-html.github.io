@@ -37,19 +37,29 @@
 <h1 id="note-inclusions">Note inclusions</h1>
 <p>Note inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    </p>
 <p>It uses the same link syntax as images:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
 <span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="err">#</span><span class="n">only</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">chapter</span><span class="p">]]</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>In Obsidian, included content is denoted with a differently colored background. But since we first convert Obsidian notes to markdown, and markdown does not have this capability, we can only include the content inline, so it is not visible that the content comes from another page.   </p>
 <h2 id="full-page-inclusion">Full page inclusion</h2>
 <p>First take a look at what content is in this page: <a href="/minimal/Demonstrations/Test%20pages/Test%20Inclusion.html">Test Inclusion</a>.    </p>
 <p>This will be included below by writing  <br />
 <code>![[Test Inclusion]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="lang-md">
+
 <div class="codehilite"><pre><span></span><code>==---begin inclusion---==
 ![[Test Inclusion]]
 ==---end inclusion---==
 </code></pre></div>
+
+
+</div>
 
 <p><mark class="formatting_highlight">---begin inclusion---</mark>   </p>
 <h2 id="test-inclusion">Test Inclusion</h2>
@@ -63,10 +73,15 @@
 <p>Let's say that we only want the second (h2) chapter included.  <br />
 This can be done by writing  <br />
 <code>![[Test inclusion 2#Second chapter]]</code>. To make it clear where the included content begins and ends, we will write:   </p>
+<div class="lang-md">
+
 <div class="codehilite"><pre><span></span><code>==---begin inclusion---==
 ![[Test inclusion 2#Second chapter]]
 ==---end inclusion---==
 </code></pre></div>
+
+
+</div>
 
 <p><mark class="formatting_highlight">---begin inclusion---</mark>   </p>
 <h2 id="second-chapter">Second chapter</h2>
@@ -75,18 +90,28 @@ This can be done by writing  <br />
 <p>This is still a child of <code>Second chapter</code>   </p>
 <p><mark class="formatting_highlight">---end inclusion---</mark>   </p>
 <h2 id="repeated-hashtag-inclusion">Repeated hashtag inclusion</h2>
+<div class="lang-md">
+
 <div class="codehilite"><pre><span></span><code>==---begin inclusion---==
 ![[Configuration Options#Operations#video_format_suffixes]]
 ==---end inclusion---==
 </code></pre></div>
+
+
+</div>
 
 <p><mark class="formatting_highlight">---begin inclusion---</mark>   </p>
 <h3 id="video_format_suffixes">video_format_suffixes</h3>
 <blockquote>
 <p>Added in <a href="/minimal/Changelog/v1.1.0.html">v1.1.0</a>   </p>
 </blockquote>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">video_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>Used to convert an inclusion statement to a video html tag.   </p>
 <p>This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   </p>

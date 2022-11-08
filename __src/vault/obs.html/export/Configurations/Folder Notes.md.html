@@ -1,0 +1,89 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Folder Notes</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/template
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>08<span class="token punctuation">-</span><span class="token number">28</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/template">#type/template</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-08-28">#date/2022-08-28</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Folder Notes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Folder Notes
+  </h1>
+</div>
+<div>
+  <p>If you like to organize your notes into a lot of separate folders, then folder notes might be something for you.</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">toggles</span><span class="token punctuation">:</span>
+  <span class="token key atrule">features</span><span class="token punctuation">:</span>
+    <span class="token key atrule">folder_notes</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">True</span>
+      <span class="token key atrule">placement</span><span class="token punctuation">:</span> <span class="token string">'outside folder'</span>   <span class="token comment"># 'inside folder' , 'outside folder' </span>
+      <span class="token key atrule">naming</span><span class="token punctuation">:</span> <span class="token string">'folder name'</span>           <span class="token comment"># 'folder name', 'index', 'aurkibidea', 'etc'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h2 data-heading="Example">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Example
+  </h2>
+</div>
+<div>
+  <p>On this site, the folders <code>Changelog</code>, <code>Styling</code>, and <code>Demonstrations</code> have an associated folder note. This results in the little triangle on the left. When clicking the folder, instead of opening the folder in the navigation, the associated note is opened.</p>
+</div>
+<div>
+  <h2 data-heading="Important notices">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Important notices
+  </h2>
+</div>
+<div>
+  <div data-callout-metadata="" data-callout-fold="" data-callout="attention" class="callout">
+    <div class="callout-title">
+      <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg></div>
+      <div class="callout-title-inner">Make sure folder notes are included in output</div>
+    </div>
+    <div class="callout-content">
+      <p>Folder notes are not included by default unless <a data-href="Process All" href="Process All" class="internal-link" target="_blank" rel="noopener">Process All</a> is enabled. </p>
+      <p>When this setting is disabled, as is default, make sure that there is a link-chain from your entrypoint to each folder note that you want to end up in your html output.</p>
+      <p>So for example:<br>
+        index.md --&gt; mocs.md --&gt; folder1/index.md, folder2/index.md, etc</p>
+    </div>
+  </div>
+</div>
+<div>
+  <h2 data-heading="Inside/outside">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Inside/outside
+  </h2>
+</div>
+<div>
+  <p>You can set your files like this:</p>
+</div>
+<div><pre><code>│   Changelog
+│   ├── Changelog.md
+│   └── v1.0.0.md
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>In that case you should set <code>placement: 'inside folder'</code></p>
+</div>

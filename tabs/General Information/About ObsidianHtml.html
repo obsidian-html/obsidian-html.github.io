@@ -305,7 +305,7 @@
 <p>ObsidianHtml is an application that can be used to export Obsidian notes to standard markdown and an html based website.    </p>
 <p>In fact, this website that you are currently on is directly compiled out of a <a href="https://github.com/obsidian-html/obsidian-html.github.io/tree/main/__src/vault" class="external-link">vault</a>. The compiled markdown can be <a href="https://github.com/obsidian-html/obsidian-html.github.io/blob/main/md/index.md" class="external-link">found here</a>.   </p>
 <p>The html website output is fully static. Only a simple http webserver is needed to view the website locally, and it can be pushed to static site host platforms like gitpages and cloudflare pages for free.    </p>
-<p>The http webserver is needed for features that do client-side javascript calls, but if you turn those off you can even browse the html website via the filesystem (<a href="/tabs/Configurations/Relative_path_html.html">with the correct settings</a>.    </p>
+<p>The http webserver is needed for features that do client-side javascript calls, but if you turn those off you can even browse the html website via the filesystem (<a href="/tabs/Configurations/Modes/Relative_path_html.html">with the correct settings</a>.    </p>
 <div class="callout callout-important note active callout-folded" rasa="1">
 <div class="callout-title" onclick="toggle(this.parentElement)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
@@ -329,7 +329,7 @@ Anyways: <strong>This is not that package</strong>. <br />
 <p>The Obsidian notes will be converted to standard markdown output. Then, optionally, html output is created based on the standard markdown.   </p>
 <p>It is also possible to input existing standard markdown to just use the markdown to html functionality. Though truth be told, the main usecase is converting an obsidian vault directly to html. The other usecases are kind of stuck in beta due to lack of interest by users and myself. There are also better options to convert standard markdown to html, such as <a href="https://gohugo.io/about/what-is-hugo/" class="external-link">Hugo</a> and <a href="https://www.mkdocs.org/" class="external-link">MKDocs</a>.   </p>
 <p>To convert your notes, you need to point to your notes folder, and to one note that will serve as the index.html page.   </p>
-<p>By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, <a href="/tabs/Configurations/Modes.html">there are other modes available</a>.   </p>
+<p>By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, <a href="/tabs/Configurations/Modes/Modes.html">there are other modes available</a>.   </p>
 <div class="callout callout-example active" rasa="1">
 <div class="callout-title">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
@@ -344,14 +344,18 @@ Anyways: <strong>This is not that package</strong>. <br />
 </div>
 <h2 id="compatibility">Compatibility</h2>
 <ul>
+<li>Python version 3.9.14 or higher is required   </li>
 <li>This application is extensively tested on Linux, regularly tested by users on OSX, and basically never tested on (but intended to be compatible with) Windows.   </li>
-<li>The website output is developed and fully tested on Firefox, and occasionally on Chrome, but supported for all modern browsers.   </li>
-<li>Python version 3.9 or higher is required   </li>
-<li>Make sure that the <code>python</code> command points to <code>python3</code>, and not a python2 version.   </li>
+<li>
+<p>The website output is developed and fully tested on Firefox, and occasionally on Chrome, but supported for all modern browsers.   </p>
+</li>
+<li>
+<p>Make sure that the <code>python</code> command points to <code>python3</code>, and not a python2 version.   </p>
+</li>
 </ul>
 <p>One thing to take note of is that ObsidianHtml will write a folder to your html output named obs.html, if you have a directory in the root of your vault with the same name (however unlikely that is...) there might be issues with the html output.   </p>
 <h2 id="next-up">Next up</h2>
-<p>Take a look at all the <a href="/tabs/Configurations/Features.html">high level features</a> that can be enabled/disabled, or read about all the <a href="/tabs/Configurations/Configuration%20Options.html">configuration options</a>. Or maybe jump directly to <a href="/tabs/Instructions/Installation.html">Installation</a>.</p>
+<p>Take a look at all the <a href="/tabs/Configurations/Features/Features.html">high level features</a> that can be enabled/disabled, or read about all the <a href="/tabs/Configurations/Configuration%20Options.html">configuration options</a>. Or maybe jump directly to <a href="/tabs/Instructions/Installation.html">Installation</a>.</p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -370,13 +374,13 @@ Anyways: <strong>This is not that package</strong>. <br />
 
 </div>
 <div class="graph requires_js ">
-    <div id="A98227993589899639313735896674332491239{level}" class="graph_div"></div>
+    <div id="A40498986465531349256504974940360938576{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B98227993589899639313735896674332491239{level}" level="{level}" note_temp_id="98227993589899639313735896674332491239" onclick="window.ObsHtmlGraph.run(this, '98227993589899639313735896674332491239', 'about obsidianhtml');">
+        <button class="graph_button graph_show_button" id="B40498986465531349256504974940360938576{level}" level="{level}" note_temp_id="40498986465531349256504974940360938576" onclick="window.ObsHtmlGraph.run(this, '40498986465531349256504974940360938576', 'about obsidianhtml');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C98227993589899639313735896674332491239{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C40498986465531349256504974940360938576{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

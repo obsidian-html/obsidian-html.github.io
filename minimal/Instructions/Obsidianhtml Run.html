@@ -55,16 +55,26 @@ command.   </p>
 <h2 id="quickstart">Quickstart</h2>
 <h3 id="short-instructions">Short instructions</h3>
 <p>Run   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md
 </code></pre></div>
+
+
+</div>
 
 <p>Then follow the instructions in the terminal. If all is well it will spit out some information and then tell you to open <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a> in your browser. Do so and admire your new website.   </p>
 <p>When done return to the terminal and press enter to exit obsidianhtml and stop the webserver.   </p>
 <h2 id="about">About</h2>
 <p>This is a very opinionated mode, which allows us to do a lot of checking of input, and more importantly: compute sensible defaults. This will give you the highest chance of getting a working config right off the bat.   </p>
 <p>In the basis you run obsidianhtml run by only providing the path to your note. We advice you to use an absolute path for this.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>obsidianhtml run -f /home/user/git/obsidian-html.github.io/__src/vault/ObsidianHtml.md
 </code></pre></div>
+
+
+</div>
 
 <p>This will then do the following:   </p>
 <ul>
@@ -83,6 +93,8 @@ command.   </p>
 <p>Read more on this subject: <a href="/minimal/Instructions/Snippets/Deployment%20instructions.html#deploying-to-a-subfolder">Deployment instructions#Deploying to a subfolder</a>.   </p>
 <p>Add the <code>--subfolder test</code> setting to get a working config for publishing to e.g. <a href="http://mywebsite.com/test" class="external-link">http://mywebsite.com/test</a>    </p>
 <p>Example:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># for http://mywebsite.com/test</span>
 obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder <span class="nb">test</span>
 
@@ -90,10 +102,18 @@ obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder <span 
 obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder sites/test
 </code></pre></div>
 
+
+</div>
+
 <h3 id="more-options">More options</h3>
 <p>Run    </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>obsidianhtml <span class="nb">help</span>
 </code></pre></div>
+
+
+</div>
 
 <p>For more information on the run command.</p>
 <div class="note-footer">

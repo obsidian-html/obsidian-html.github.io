@@ -1,0 +1,149 @@
+{
+  "main": {
+    "id": "df5d93e6fbaec4b4",
+    "type": "split",
+    "children": [
+      {
+        "id": "290ec1416d2e2ef3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "52d6da884967edb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Changelog/v3.3.0.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "07f98c88576d9d33",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Configurations/Note settings/Note settings.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c572195dbb3146db",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Configurations/Configuration Options.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "388abee5402b644c",
+    "type": "split",
+    "children": [
+      {
+        "id": "3f14daa7149e9338",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2edad886b0e204c6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "45d4a52455829a3b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "graph_name",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 416.5
+  },
+  "right": {
+    "id": "73a9949fefb08150",
+    "type": "split",
+    "children": [
+      {
+        "id": "f10f50d81f1314a0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ad113f84453ecdb2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Changelog/v3.3.0.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "f27b2f5302436246",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "52d6da884967edb7",
+  "lastOpenFiles": [
+    "Changelog/Changelog.md",
+    "Changelog/v3.3.0.md",
+    "Changelog/v3.2.0.md",
+    "Configurations/Plugins/Embedded note title.md",
+    "Configurations/Configuration Options.md",
+    "Configurations/Features/Website navigation menu.md",
+    "Configurations/Features/Tags Page.md",
+    "Configurations/Modes/Relative_path_html.md",
+    "Configurations/Modes/Copy vault to temp dir.md",
+    "Configurations/Tweaking/Export vault files to html output.md"
+  ]
+}

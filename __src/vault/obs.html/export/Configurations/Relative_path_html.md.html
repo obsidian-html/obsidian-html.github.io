@@ -1,11 +1,14 @@
 <div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Relative_path_html</div>
+</div>
 <div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
 <span class="token punctuation">-</span> type/configuration
 <span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>03<span class="token punctuation">-</span><span class="token number">15</span></code><button class="copy-code-button">Copy</button></pre>
   <div class="frontmatter-container">
     <div class="frontmatter-container-header">
-      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="6" height="6">
-          <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
         </svg></div>Metadata
     </div>
     <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
@@ -15,8 +18,8 @@
 </div>
 <div>
   <h1 data-heading="Relative_path_html">
-    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg viewBox="0 0 100 100" class="right-triangle" width="8" height="8">
-        <path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path>
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
       </svg></div>Relative_path_html
   </h1>
 </div>
@@ -36,8 +39,11 @@
 </div>
 <div>
   <blockquote>
-    <p>In versions <a data-href="v1.2.1" href="v1.2.1" class="internal-link" target="_blank" rel="noopener">v1.2.1</a> and <a data-href="v1.2.0" href="v1.2.0" class="internal-link" target="_blank" rel="noopener">v1.2.0</a>, this setting will enable <a data-href="NoTabs Mode" href="NoTabs Mode" class="internal-link" target="_blank" rel="noopener">NoTabs Mode</a> and disable <a data-href="Graph view" href="Graph view" class="internal-link" target="_blank" rel="noopener">Graph view</a>. This was turned off from version <a data-href="v1.2.2" href="v1.2.2" class="internal-link" target="_blank" rel="noopener">v1.2.2</a> onwards, as the relative_path_html setting may be used with a webserver, and in those cases the tabs and graph view will work. If you intend to use the files directly from your filesystem, be sure to select a layout that is not <code>tabs</code> and disable the Graph view. (JS file fetching is not allowed via the filesystem, so these functions have to be disabled for the site to work at all in this mode.)</p>
+    <p>In versions <a data-href="v1.2.1" href="v1.2.1" class="internal-link" target="_blank" rel="noopener">v1.2.1</a> and <a data-href="v1.2.0" href="v1.2.0" class="internal-link" target="_blank" rel="noopener">v1.2.0</a>, this setting will enable <a data-href="NoTabs Mode" href="NoTabs Mode" class="internal-link" target="_blank" rel="noopener">NoTabs Mode</a> and disable <a data-href="Graph view" href="Graph view" class="internal-link" target="_blank" rel="noopener">Graph view</a>. This was turned off from version <a data-href="v1.2.2" href="v1.2.2" class="internal-link" target="_blank" rel="noopener">v1.2.2</a> onwards, as the relative_path_html setting may be used with a webserver, and in those cases the tabs and graph view will work. </p>
   </blockquote>
+</div>
+<div>
+  <p>If you intend to use the files directly from your filesystem, be sure to select a layout that is not <code>tabs</code> and disable the Graph view and search features. (JS file fetching is not allowed via the filesystem, so these functions have to be disabled for the site to work at all in this mode.)</p>
 </div>
 <div>
   <p>To enable this mode, add the following to your config.yml:</p>
@@ -47,5 +53,21 @@
 </code><button class="copy-code-button">Copy</button></pre>
 </div>
 <div>
+  <p>And here is the code to disable graph view and the search feature:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">toggles</span><span class="token punctuation">:</span>
+  <span class="token key atrule">features</span><span class="token punctuation">:</span>
+    <span class="token key atrule">styling</span><span class="token punctuation">:</span> 
+      <span class="token key atrule">layout</span><span class="token punctuation">:</span> documentation <span class="token comment"># set to documentation or minimal, not tabs</span>
+    <span class="token key atrule">graph</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">False</span> 
+    <span class="token key atrule">search</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">False</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
   <p>Testing showed that this setting will also work with a webserver, but at the moment this is not a main feature, so regression testing is absent and a general your-mileage-may-vary warning applies. If you find issues with this settings, be sure to visit <a data-href="Report Issues &amp; Request features" href="Report Issues &amp; Request features" class="internal-link" target="_blank" rel="noopener">Report Issues &amp; Request features</a> so that we can mature this mode.</p>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
 </div>

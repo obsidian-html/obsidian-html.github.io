@@ -1,0 +1,107 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">v3.0.0</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/changelog
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>05<span class="token punctuation">-</span><span class="token number">28</span>
+<span class="token key atrule">version_type</span><span class="token punctuation">:</span> major</code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/changelog">#type/changelog</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-05-28">#date/2022-05-28</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="v3.0.0">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>v3.0.0
+  </h1>
+</div>
+<div>
+  <h2 data-heading="Breaking changes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Breaking changes
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>The no_tabs layout has been removed because this layout is functionally the same as the documentation layout now that we have introduced the folding panels.
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div>The custom grapher system has been rewritten to make use of javascript modules. Any custom grapher code will have to be rewritten as well. See <a data-href="Writing a custom graph view template" href="Writing a custom graph view template" class="internal-link" target="_blank" rel="noopener">Writing a custom graph view template</a> for more information.
+    </li>
+  </ul>
+</div>
+<div>
+  <h2 data-heading="New features">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>New features
+  </h2>
+</div>
+<div>
+  <h3 data-heading="Duplicate filenames now supported">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Duplicate filenames now supported
+  </h3>
+</div>
+<div>
+  <p>Files are now addressed based on full path, instead of filename. This arised from new insights on how Obsidian filepath parsing works. Starting with this version it is thus possible to have, for example, a notes.md file in every folder. </p>
+</div>
+<div>
+  <p>This does require that you turn on <a data-href="Configuration Options#Allow Duplicate Filenames in Root" href="Configuration Options#Allow Duplicate Filenames in Root" class="internal-link" target="_blank" rel="noopener">Configuration Options &gt; Allow Duplicate Filenames in Root</a>.</p>
+</div>
+<div>
+  <h3 data-heading="Graph toggling">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Graph toggling
+  </h3>
+</div>
+<div>
+  <p>The user can now choose which grapher they want to use. The choice is persisted in localStorage. The custom grapher system has been rewritten to make use of javascript modules. Any custom grapher code will have to be rewritten.</p>
+</div>
+<div>
+  <h2 data-heading="Full collapsible directory tree in side pane">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Full collapsible directory tree in side pane
+  </h2>
+</div>
+<div>
+  <p>The dir tree in the left pane now shows the entire directory. It is now compiled in the python step, instead of via javascript, and the current page is highlighted + the necessary folders are opened on load to make the current page visible.</p>
+</div>
+<div>
+  <h2 data-heading="Collapsible side panes in documentation view">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Collapsible side panes in documentation view
+  </h2>
+</div>
+<div>
+  <p>The whole of the left and right panes are collapsible to make more space for reading. The panes are folded open/closed based on screen width <em>until</em> a user toggles a pane, from that moment on the choice is persisted in localStorage and this choice is then used going forward.</p>
+</div>
+<div>
+  <h2 data-heading="Refactors / tweaks">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Refactors / tweaks
+  </h2>
+</div>
+<div>
+  <h3 data-heading="Modularizing of javascript code">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Modularizing of javascript code
+  </h3>
+</div>

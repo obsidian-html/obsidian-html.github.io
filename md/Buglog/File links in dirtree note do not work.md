@@ -8,7 +8,7 @@ tags:
 > Fixed in [v1.1.0](../Changelog/v1.1.0.md)   
    
 ### Issue   
-Using the feature [Create Index from Directory Structure](../Configurations/Create%20Index%20from%20Directory%20Structure.md), you can navigate your notes by the folder structure on disk.    
+Using the feature [Create Index from Directory Structure](../Configurations/Modes/Create%20Index%20from%20Directory%20Structure.md), you can navigate your notes by the folder structure on disk.    
    
 This works great, but if you have a non-md link, the javascript gets confused.   
    

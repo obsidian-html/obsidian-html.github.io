@@ -11,7 +11,7 @@ var CONFIGURED_HTML_URL_PREFIX = "/index_from_tags";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '188859248736763405242000916479335952142'                       // used to check whether the localStorage data is stale
+var gzip_hash = '246158312832490289349835219998301183749'                       // used to check whether the localStorage data is stale
 
 
 // Onloads
@@ -326,7 +326,8 @@ function SetContainer(container) {
 function SetHeaders(container) {
     let els = container.childNodes;
     for (let i = 0; i < els.length; i++) {
-        if (typeof els[i].tagName === 'undefined' || els[i].tagName[0] != 'H') {
+        // Only apply this code block to h1, h2, etc
+        if (typeof els[i].tagName === 'undefined' || els[i].tagName[0] != 'H' || els[i].tagName == 'HR' ) {
             continue;
         }
 

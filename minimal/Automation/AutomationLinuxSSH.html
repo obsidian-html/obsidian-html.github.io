@@ -36,6 +36,8 @@
                     </div>
 <h1 id="auto-push-site-to-a-local-webserver-on-linux">Auto push site to a local webserver on Linux</h1>
 <p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using th <a href="/minimal/Automation/AutomationLinuxGit.html">Git method</a> or something along those lines.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># Config</span>
 <span class="nv">obsidian_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html&quot;</span>
 <span class="nv">output_folder</span><span class="o">=</span><span class="s2">&quot;/home/user/git/obsidian-html/local_output&quot;</span>
@@ -63,6 +65,9 @@ ssh <span class="nv">$target</span> rm -rf <span class="s2">&quot;</span><span c
 <span class="c1"># Upload new files</span>
 scp -r <span class="s2">&quot;</span><span class="nv">$output_folder</span><span class="s2">/html/*&quot;</span> <span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/&quot;</span>
 </code></pre></div>
+
+
+</div>
 
 <p><a href="/minimal/Automation/Automate%20website%20deployment.html">Other ways of pushing websites</a></p>
 <div class="note-footer">

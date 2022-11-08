@@ -340,11 +340,16 @@
 <h2 id="enable">Enable</h2>
 <p>As the feature is still in alpha, it is disabled by default.   </p>
 <p>To enable it, add this to your config:   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">embedded_search</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>Also make sure to install the latest master branch code: <a href="/tabs/Instructions/Install%20a%20different%20version.html">Install a different version</a>.    </p>
 <div class="callout callout-note active" rasa="1">
@@ -360,34 +365,55 @@
 </div>
 </div>
 <h2 id="search-example">Search example</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>-``` query
 convert automation webserver ssh
 -```
 </code></pre></div>
 
+
+</div>
+
 <blockquote>
 <p>Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.</p>
 </blockquote>
 <p>Gives this block:</p>
+<div class="lang-query">
+
 <div class="codehilite"><pre><span></span><code>convert automation webserver ssh
 </code></pre></div>
+
+
+</div>
 
 <p>We aim to get these result as close as possible to what Obsidian gives .   </p>
 <h3 id="just-links">Just links</h3>
 <p>Getting all those matches is nice for yourself, but for other people browsing your sites, perhaps only a list of links would be better, you can do this by writing <code>query list</code> instead of the normal <code>query</code>.   </p>
 <p>This code:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>-``` query list
 convert automation webserver ssh
 -```
 </code></pre></div>
 
+
+</div>
+
 <blockquote>
 <p>Remove the dashes in front of the backticks, they are only there to avoid the query being processed in the example code.</p>
 </blockquote>
 <p>Gives this block:</p>
-<p>``` query list
-convert automation webserver ssh</p>
-<div class="codehilite"><pre><span></span><code><span class="n">I</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">examples</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">care</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">notes</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">returned</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">exactly</span><span class="w"> </span><span class="n">are</span><span class="p">.</span><span class="w">   </span>
+<div class="lang-query list">
+``` query list
+convert automation webserver ssh
+
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span><span class="w"></span>
+
+
+
+<span class="n">I</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">examples</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">care</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">notes</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">returned</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">exactly</span><span class="w"> </span><span class="n">are</span><span class="p">.</span><span class="w">   </span>
 
 
 <span class="cp"># Supported syntax at the moment   </span>
@@ -399,102 +425,218 @@ convert automation webserver ssh</p>
 
 <span class="cp">## Search for keyword   </span>
 <span class="n">This</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">search</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="err">`</span><span class="p">[</span><span class="s">&quot;content&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;path&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;file&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tags&quot;</span><span class="p">]</span><span class="err">`</span><span class="w">   </span>
+
+<span class="o">&lt;</span><span class="n">div</span><span class="w"> </span><span class="k">class</span><span class="o">=</span><span class="s">&quot;lang-general&quot;</span><span class="o">&gt;</span><span class="w"></span>
 </code></pre></div>
 
-<p>-<code>query
+
+-``` query
 babayaga
--</code></p>
-<div class="codehilite"><pre><span></span><code>``` query
+-```
+
+
+
+<div class="codehilite"><pre><span></span><code>&lt;/div&gt;
+
+
+&lt;div class=&quot;lang-query&quot;&gt;
+``` query
 babayaga
 </code></pre></div>
+
+
+</div>
 
 <h2 id="search-only-in-note-name-file">Search only in note name (file)</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>-``` query list
 file:babayaga
 -```
 </code></pre></div>
 
-<p>``` query list
-file:babayaga</p>
-<div class="codehilite"><pre><span></span><code>## <span class="nv">Search</span> <span class="k">for</span> <span class="nv">tags</span>   
+
+</div>
+
+<div class="lang-query list">
+``` query list
+file:babayaga
+
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;/</span><span class="nv">div</span><span class="o">&gt;</span>
+
+
+
+## <span class="nv">Search</span> <span class="k">for</span> <span class="nv">tags</span>   
 <span class="nv">To</span> <span class="nv">search</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">list</span> <span class="nv">of</span> <span class="nv">tags</span>, <span class="nv">and</span> <span class="nv">not</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">note</span> <span class="nv">content</span>, <span class="nv">or</span> <span class="nv">title</span>, <span class="nv">use</span> <span class="nv">this</span> <span class="nv">syntax</span>:   
+
+<span class="o">&lt;</span><span class="nv">div</span> <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">lang-general</span><span class="s2">&quot;</span><span class="o">&gt;</span>
 </code></pre></div>
 
-<p>tag:<tag></p>
-<div class="codehilite"><pre><span></span><code>Note the absence of a `#`.   
+
+tag:<tag>
+
+<div class="codehilite"><pre><span></span><code>&lt;/div&gt;
+
+
+
+Note the absence of a `#`.   
 
 An example:   
+
+&lt;div class=&quot;lang-general&quot;&gt;
 </code></pre></div>
 
-<p>-<code>query
+
+-``` query
 tag:babayaga
--</code></p>
-<div class="codehilite"><pre><span></span><code>``` query
+-```
+
+
+
+<div class="codehilite"><pre><span></span><code>&lt;/div&gt;
+
+&lt;div class=&quot;lang-query&quot;&gt;
+``` query
 tag:babayaga
 </code></pre></div>
+
+
+</div>
 
 <h3 id="search-for-a-specific-tag">Search for a specific tag</h3>
 <p>If you are looking for a specific tag, do add the <code>#</code>   </p>
 <p>See how both queries below only return their exact results:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>-``` query
 tag:#babayaga
 -```
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-query">
+
 <div class="codehilite"><pre><span></span><code>tag:#babayaga
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code>-``` query
 tag:#bla/babayaga
 -```
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-query">
+
 <div class="codehilite"><pre><span></span><code>tag:#bla/babayaga
 </code></pre></div>
 
+
+</div>
+
 <h2 id="search-for-inline-tags">Search for inline tags</h2>
 <p>Unlike normal words, just using <code>#tag</code> will search just for <code>tag</code>, not <code>bla/tag</code>, <code>tag/bla</code>, etc.   </p>
+<div class="lang-query">
+
 <div class="codehilite"><pre><span></span><code>&quot; #babayaga &quot;
 </code></pre></div>
 
+
+</div>
+
 <h2 id="search-for-path">Search for path</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>-``` query list
 path:babayaga
 -```
 </code></pre></div>
 
-<p>``` query list
-path:babayaga</p>
-<div class="codehilite"><pre><span></span><code>## <span class="nv">Exclude</span> <span class="nv">syntax</span>   
+
+</div>
+
+<div class="lang-query list">
+``` query list
+path:babayaga
+
+<div class="codehilite"><pre><span></span><code><span class="o">&lt;/</span><span class="nv">div</span><span class="o">&gt;</span>
+
+
+
+
+## <span class="nv">Exclude</span> <span class="nv">syntax</span>   
 <span class="nv">In</span> <span class="nv">the</span> <span class="nv">example</span> <span class="nv">above</span> <span class="nv">we</span> <span class="nv">also</span> <span class="nv">got</span> <span class="nv">a</span> <span class="nv">note</span> <span class="nv">where</span> <span class="nv">babayaga</span> <span class="nv">was</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">filename</span>. <span class="k">If</span> <span class="nv">we</span> <span class="nv">want</span> <span class="nv">to</span> <span class="nv">find</span> <span class="nv">notes</span> <span class="nv">where</span> <span class="nv">that</span> <span class="nv">term</span> <span class="nv">is</span> <span class="nv">only</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">path</span>, <span class="nv">but</span> <span class="nv">not</span> <span class="nv">also</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">filename</span>, <span class="nv">we</span> <span class="nv">can</span> <span class="nv">use</span> `<span class="o">-</span>` <span class="nv">as</span> <span class="nv">an</span> <span class="nv">ANDNOT</span> <span class="nv">operator</span>.   
+
+<span class="o">&lt;</span><span class="nv">div</span> <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">lang-general</span><span class="s2">&quot;</span><span class="o">&gt;</span>
 </code></pre></div>
 
-<p>-<code>query list
+
+-``` query list
 path:babayaga -file:babayaga
--</code></p>
-<div class="codehilite"><pre><span></span><code>``` query list
+-```
+
+
+
+<div class="codehilite"><pre><span></span><code>&lt;/div&gt;
+
+&lt;div class=&quot;lang-query list&quot;&gt;
+``` query list
 path:babayaga -file:babayaga
 </code></pre></div>
+
+
+</div>
 
 <h2 id="search-for-a-phrase">Search for a phrase</h2>
 <p>Supported by default, search for an entire phrase, instead of OR-ing keywords together.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>-``` query list
 &quot;query with quotes&quot;
 -```
 </code></pre></div>
 
-<p>``` query list
-"query with quotes"</p>
-<div class="codehilite"><pre><span></span><code>## Standard simple search   
+
+</div>
+
+<div class="lang-query list">
+``` query list
+"query with quotes"
+
+<div class="codehilite"><pre><span></span><code>&lt;/div&gt;
+
+
+
+## Standard simple search   
 Compare that result with the query without quotes around it (implicit OR):   
+
+&lt;div class=&quot;lang-general&quot;&gt;
 </code></pre></div>
 
-<p>-<code>query list
+
+-``` query list
 query without quotes
--</code></p>
-<div class="codehilite"><pre><span></span><code>``` query list
+-```
+
+
+
+<div class="codehilite"><pre><span></span><code>&lt;/div&gt;
+
+&lt;div class=&quot;lang-query list&quot;&gt;
+``` query list
 query without quotes
 </code></pre></div>
+
+
+</div>
 
 <p>Note that the current implementation filters out common words (limited to English) such as "a" and "for", so the list in the html output will often be a lot shorter than in Obsidian.   </p>
 <hr />
@@ -510,7 +652,7 @@ query without quotes
 <h2>Backlinks</h2>
 <ul>
 	<li><a class="backlink" href="/tabs/Changelog/v3.3.0.html">v3.3.0</a></li>
-	<li><a class="backlink" href="/tabs/Configurations/Features.html">features</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Features/Features.html">features</a></li>
 </ul>
 </div>
 
@@ -520,13 +662,13 @@ query without quotes
 
 </div>
 <div class="graph requires_js ">
-    <div id="A54956723525906578457359762887402173261{level}" class="graph_div"></div>
+    <div id="A33465139894080747536211364232023895346{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B54956723525906578457359762887402173261{level}" level="{level}" note_temp_id="54956723525906578457359762887402173261" onclick="window.ObsHtmlGraph.run(this, '54956723525906578457359762887402173261', 'embedded search');">
+        <button class="graph_button graph_show_button" id="B33465139894080747536211364232023895346{level}" level="{level}" note_temp_id="33465139894080747536211364232023895346" onclick="window.ObsHtmlGraph.run(this, '33465139894080747536211364232023895346', 'embedded search');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C54956723525906578457359762887402173261{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C33465139894080747536211364232023895346{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

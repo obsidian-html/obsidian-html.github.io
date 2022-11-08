@@ -12,7 +12,7 @@ In fact, this website that you are currently on is directly compiled out of a [v
    
 The html website output is fully static. Only a simple http webserver is needed to view the website locally, and it can be pushed to static site host platforms like gitpages and cloudflare pages for free.    
    
-The http webserver is needed for features that do client-side javascript calls, but if you turn those off you can even browse the html website via the filesystem ([with the correct settings](../Configurations/Relative_path_html.md)).    
+The http webserver is needed for features that do client-side javascript calls, but if you turn those off you can even browse the html website via the filesystem ([with the correct settings](../Configurations/Modes/Relative_path_html.md)).    
    
 > [!Important note]- Notice: this is not the kmaasrud/obsidian-html package!   
 >   
@@ -30,19 +30,21 @@ It is also possible to input existing standard markdown to just use the markdown
    
 To convert your notes, you need to point to your notes folder, and to one note that will serve as the index.html page.   
    
-By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, [there are other modes available](../Configurations/Modes.md).   
+By default only notes that are found by following links recursively starting with the entrypoint will be converted. But if you want to work differently, [there are other modes available](../Configurations/Modes/Modes.md).   
    
 > [!example]   
 > See [Demonstrations](../Demonstrations/Demonstrations.md) for a nice demo of the first part.   
    
 ## Compatibility   
    
+- Python version 3.9.14 or higher is required   
 - This application is extensively tested on Linux, regularly tested by users on OSX, and basically never tested on (but intended to be compatible with) Windows.   
 - The website output is developed and fully tested on Firefox, and occasionally on Chrome, but supported for all modern browsers.   
-- Python version 3.9 or higher is required   
+   
+   
 - Make sure that the `python` command points to `python3`, and not a python2 version.   
    
 One thing to take note of is that ObsidianHtml will write a folder to your html output named obs.html, if you have a directory in the root of your vault with the same name (however unlikely that is...) there might be issues with the html output.   
    
 ## Next up   
-Take a look at all the [high level features](../Configurations/Features.md) that can be enabled/disabled, or read about all the [configuration options](../Configurations/Configuration%20Options.md). Or maybe jump directly to [Installation](../Instructions/Installation.md).
+Take a look at all the [high level features](../Configurations/Features/Features.md) that can be enabled/disabled, or read about all the [configuration options](../Configurations/Configuration%20Options.md). Or maybe jump directly to [Installation](../Instructions/Installation.md).

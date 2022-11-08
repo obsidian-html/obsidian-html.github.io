@@ -37,7 +37,7 @@ The tabs layout is for people who use the smart note taking / zettelkasten metho
    
 The minimal template has been added to cut away any "frivolous" features that aren't strictly necessary to view/navigate your site. It removes the menu, graph view, and search.   
    
-Read more here about optimizing your website for low-bandwidth clients: [Performance Tuning](../../Configurations/Performance%20Tuning.md).   
+Read more here about optimizing your website for low-bandwidth clients: [Performance Tuning](../../Configurations/Tweaking/Performance%20Tuning.md).   
    
 ### Which to choose?   
 Documentation is set to the default, as I use it for this website, and thus it will be better tested and more stable. (Not to say that the other modes are unstable, though).    

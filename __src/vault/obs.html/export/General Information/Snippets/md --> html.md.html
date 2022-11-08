@@ -1,0 +1,47 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">md --&gt; html</div>
+</div>
+<div>
+  <p>A conversion in which we take a markdown wiki as input, instead of it being the result of a vault being converted to markdown (<a data-href="note --> html" href="note --> html" class="internal-link" target="_blank" rel="noopener">note --&gt; html</a>).</p>
+</div>
+<div>
+  <p>When you add this setting, obsidianhtml will work in this manner:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">toggles</span><span class="token punctuation">:</span>
+  <span class="token comment"># Opt-in/-out of Obsidian-&gt;Md conversion, set to False when using proper markdown as input</span>
+  <span class="token key atrule">compile_md</span><span class="token punctuation">:</span> <span class="token boolean important">False</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>When you do, make sure that the following settings are correct:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token comment"># Input and output path of markdown files</span>
+<span class="token comment"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="token comment"># Use full path or relative path, but don't use ~/</span>
+<span class="token key atrule">md_folder_path_str</span><span class="token punctuation">:</span>  <span class="token string">'path/to/md'</span>
+
+<span class="token comment"># Markdown entrypoint path</span>
+<span class="token comment"># This has to be md_folder_path_str + '/index.md' when toggles/compile_md == True</span>
+<span class="token comment"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="token comment"># Use full path or relative path, but don't use ~/</span>
+<span class="token key atrule">md_entrypoint_path_str</span><span class="token punctuation">:</span> <span class="token string">'path/to/md/index.md'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>You might also be interested in:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token comment"># Used to strip the http url hostpart of a link to get a relative link</span>
+<span class="token comment"># e.g. for value "https://git.com/user/repo/-/wikis/mywiki/" then:</span>
+<span class="token comment">#   "https://git.com/user/repo/-/wikis/mywiki/folder/markdown.md" --&gt; /folder/markdown.md</span>
+<span class="token key atrule">md_source_host_urls</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token key atrule">toggles</span><span class="token punctuation">:</span>
+  <span class="token comment"># gitlab is case insensitive, this setting should be true when converting a wiki from that source</span>
+  <span class="token comment"># note that this does not impact the output, Hello.md will be written to Hello.html</span>
+  <span class="token key atrule">force_filename_to_lowercase</span><span class="token punctuation">:</span> <span class="token boolean important">False</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

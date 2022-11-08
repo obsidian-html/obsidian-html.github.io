@@ -39,11 +39,16 @@
 <p>This page discusses the built-in styling options. If you want to use custom code, go to <a href="/minimal/Configurations/Styling/Edit%20HTML%2C%20CSS%2C%20JS.html">Edit HTML, CSS, JS</a>.   </p>
 </blockquote>
 <h2 id="layouts">Layouts</h2>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
 <span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w"> </span><span class="c1"># documentation, tabs, minimal</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>For the layout you can choose between <code>documentation</code>, <code>minimal</code>, and <code>tabs</code>     </p>
 <p>The layout will influence the structure of the pages that are generated. There is a short description below for each layout.    </p>
@@ -62,23 +67,30 @@
 <p>New in <a href="/minimal/Changelog/v2.3.0.html">v2.3.0</a>   </p>
 </blockquote>
 <p>The minimal template has been added to cut away any "frivolous" features that aren't strictly necessary to view/navigate your site. It removes the menu, graph view, and search.   </p>
-<p>Read more here about optimizing your website for low-bandwidth clients: <a href="/minimal/Configurations/Performance%20Tuning.html">Performance Tuning</a>.   </p>
+<p>Read more here about optimizing your website for low-bandwidth clients: <a href="/minimal/Configurations/Tweaking/Performance%20Tuning.html">Performance Tuning</a>.   </p>
 <h3 id="which-to-choose">Which to choose?</h3>
 <p>Documentation is set to the default, as I use it for this website, and thus it will be better tested and more stable. (Not to say that the other modes are unstable, though).    </p>
 <p>Personally I like to start off with a very loose structure, and thus use tabs mode. When my vault gets to a certain size, I apply a folder structure, and at that point it could be interesting to move over to the documentation layout.    </p>
 <p>If your expected users have low bandwidth, or if your are a web 1.0 purist, then the minimal template might be for you.   </p>
 <p>In the end there is just the personal preference, so try them out and see which you like best.   </p>
 <h2 id="accent-color">Accent color</h2>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
 <span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#414cfd&#39;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>This is used to give some color here and there. It is one color that is reused here and there by giving it some extra transparency, making it a bit lighter.   </p>
 <p>Try to use a very bold, slightly dark color, so that the lighter color used in the quotes and scrollbars is still decently visible.   </p>
 <p>For anything more involved you currently have to <a href="/minimal/Configurations/Styling/Edit%20HTML%2C%20CSS%2C%20JS.html">edit the css by hand</a>.   </p>
 <h2 id="table-of-contents">Table of Contents</h2>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
@@ -87,16 +99,24 @@
 <span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>You can add <code>[TOC]</code> to your note to add in a table of contents (toc) in that location.    </p>
 <p>If you want a toc for every note, you can skip this in Obsidian (which doesn't support this at the time of writing, at least not out of the box), and just set <code>add_toc</code> to True. This will add <code>[TOC]</code> to the top of every note just before compiling the html.    </p>
 <p>This looks a bit weird though, as there is no header, just a list at the top of the note. It is best to also enable <code>toc_pane</code> if you are in the documentation or no_tabs layout. This will add the toc in a separate box on the right of the note.    </p>
 <p>In the documentation layout there are two "panes", one for the content view, and one for the table of contents. By default the toc is on the right and the content view on the left. If you want to flip this over you should set <code>flip_panes: True</code> (which is what I did for this website).   </p>
 <h2 id="max-note-width">Max note width</h2>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
 <span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">52rem</span><span class="w"> </span><span class="c1"># not supported for layout: tabs</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>This determines the max width of the content div.    </p>
 <p>This is not supported for the tabs layout as there the width of the notes is more or less tied to the well-being of the tab automation.   </p>
@@ -107,8 +127,8 @@
 <ul>
 	<li><a class="backlink" href="/minimal/Configurations/Deprecated Configurations/NoTabs Mode.html">notabs mode</a></li>
 	<li><a class="backlink" href="/minimal/Configurations/Styling/Tabs Layout.html">tabs layout</a></li>
-	<li><a class="backlink" href="/minimal/Configurations/Performance Tuning.html">performance tuning</a></li>
-	<li><a class="backlink" href="/minimal/Configurations/Features.html">features</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Tweaking/Performance Tuning.html">performance tuning</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Features/Features.html">features</a></li>
 	<li><a class="backlink" href="/minimal/Configurations/Configuration Options.html">configuration options</a></li>
 	<li><a class="backlink" href="/minimal/Changelog/v2.0.0.html">v2.0.0</a></li>
 	<li><a class="backlink" href="/minimal/Instructions/Usage.html">usage</a></li>

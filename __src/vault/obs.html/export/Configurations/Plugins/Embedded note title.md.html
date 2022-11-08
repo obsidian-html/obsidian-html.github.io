@@ -1,0 +1,42 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Embedded note title</div>
+</div>
+<div>
+  <blockquote>
+    <p>New in <a data-href="v3.2.0" href="v3.2.0" class="internal-link" target="_blank" rel="noopener">v3.2.0</a></p>
+  </blockquote>
+</div>
+<div>
+  <p>Support for the <a aria-label-position="top" aria-label="https://github.com/mgmeyers/obsidian-embedded-note-titles" rel="noopener" class="external-link" href="https://github.com/mgmeyers/obsidian-embedded-note-titles" target="_blank">embedded note title plugin</a> is enabled by default.</p>
+</div>
+<div>
+  <p>If necessary it can be disabled through this setting:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">toggles</span><span class="token punctuation">:</span>
+  <span class="token key atrule">features</span><span class="token punctuation">:</span>
+    <span class="token key atrule">embedded_note_titles</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">False</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>When this feature is enabled it will look whether folder <code>{obsidian_folder_path_str}/.obsidian/plugins/obsidian-embedded-note-titles</code> exists. </p>
+</div>
+<div>
+  <p>If it does not the feature is disabled anyways, and we continue as normal.</p>
+</div>
+<div>
+  <p>If that folder does exist, obsidianhtml will try to load in the data.json in that folder to load in the plugin settings. If you have never configured the plugin this file will not exist. </p>
+</div>
+<div>
+  <p>Based on the plugin settings it will then add <code>&lt;embeddedtitle&gt;{title.capitalize()}&lt;/embeddedtitle&gt;</code> at the top of each note, unless the settings tell it not to.</p>
+</div>
+<div>
+  <p>At time of writing all the settings should be implemented except for "daily note title format".</p>
+</div>
+<div>
+  <p><span alt="Pasted image 20220905184629.png" src="Pasted image 20220905184629.png" class="internal-embed image-embed is-loaded"><img alt="Pasted image 20220905184629.png" src="app://local/home/dorus/git/obsidian-html.github.io/__src/vault/Resources/img/Pasted%20image%2020220905184629.png?1662396389220"></span></p>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

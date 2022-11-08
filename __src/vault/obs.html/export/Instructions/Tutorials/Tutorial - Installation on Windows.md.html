@@ -1,0 +1,80 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Tutorial - Installation on Windows</div>
+</div>
+<div>
+  <p>Working with Python on Windows can sometimes be a headache.</p>
+</div>
+<div>
+  <p>This page goes through all the steps to install obsidianhtml on a Windows machine. We will use a virtual environment for this so that you don't pollute your environment.</p>
+</div>
+<div>
+  <p>You can skip this step. You don't need to create a virtualenvironment for obsidianhtml to work on Windows if you have functional Python/Pip installations on the right versions. But if you are having issues with Python, or are following <a data-href="Bootstrapping Python on Windows" href="Bootstrapping Python on Windows" class="internal-link" target="_blank" rel="noopener">Bootstrapping Python on Windows</a>, then using a venv is a plus.</p>
+</div>
+<div>
+  <h2 data-heading="Installing and or upgrading python">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Installing and or upgrading python
+  </h2>
+</div>
+<div>
+  <p>To install python go to <a rel="noopener" class="external-link" href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a> and click on the big yellow download button. A default installation will do.</p>
+</div>
+<div>
+  <div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout">
+    <div class="callout-title">
+      <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+          <line x1="18" y1="2" x2="22" y2="6"></line>
+          <path d="M7.5 20.5 19 9l-4-4L3.5 16.5 2 22z"></path>
+        </svg></div>
+      <div class="callout-title-inner">Note</div>
+    </div>
+    <div class="callout-content">
+      <p>If you are on a system where you are not allowed to install python, follow these instructions: <a data-href="Bootstrapping Python on Windows" href="Bootstrapping Python on Windows" class="internal-link" target="_blank" rel="noopener">Bootstrapping Python on Windows</a></p>
+    </div>
+  </div>
+</div>
+<div>
+  <p>If you already have python installed, run <code>python --version</code> and check that your version is at least 3.9. If not, you will need to upgrade. Follow standard instructions on upgrating python for Windows. (Google)</p>
+</div>
+<div>
+  <h2 data-heading="Create a virtual environment">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Create a virtual environment
+  </h2>
+</div>
+<div>
+  <h3 data-heading="Prerequisites">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Prerequisites
+  </h3>
+</div>
+<div>
+  <p>To enter a virtual env, we need to install the virtualenv package using pip. If you have both installed already, you can skip to the next section.</p>
+</div>
+<div>
+  <p>Open powershell and run the following commands:</p>
+</div>
+<div><pre class="language-powershell" tabindex="0"><code class="language-powershell is-loaded">python <span class="token operator">-</span>m ensurepip
+python <span class="token operator">-</span>m pip install virtualenv
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h3 data-heading="Create virtualenv">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Create virtualenv
+  </h3>
+</div>
+<div>
+  <p>Next we can create a virtualenv. This will appear as a regular folder in the folder where you run the following commands. So move to a location where you don't mind a folder being created. </p>
+</div>
+<div>
+  <p>Later in this tutorial we will download the example vault, so it might be good to move to a location where you keep your git projects, so they are close together.</p>
+</div>
+<div><pre class="language-powershell" tabindex="0"><code class="language-powershell is-loaded">python <span class="token operator">-</span>m venv obsenv
+</code><button class="copy-code-button">Copy</button></pre>
+</div>

@@ -307,14 +307,14 @@
 <h2 id="added-features">Added features</h2>
 <ul>
 <li><a href="/tabs/Instructions/Obsidianhtml%20Run.html">Obsidianhtml Run</a> has been added to help in getting a first working config for new users.   </li>
-<li>It is now possible to configure vault files to be exported to any path in the html output folder. <a href="/tabs/Configurations/Export%20vault%20files%20to%20html%20output.html">Export vault files to html output</a>.   </li>
-<li>The rsync copy method was added. This should be way quicker and be less buggy on MacOS. This is set as the default. If rsync is not present it fallsback to the older shutil method. Read more: <a href="/tabs/Configurations/Copy%20vault%20to%20temp%20dir.html">Copy vault to temp dir</a>   </li>
+<li>It is now possible to configure vault files to be exported to any path in the html output folder. <a href="/tabs/Configurations/Tweaking/Export%20vault%20files%20to%20html%20output.html">Export vault files to html output</a>.   </li>
+<li>The rsync copy method was added. This should be way quicker and be less buggy on MacOS. This is set as the default. If rsync is not present it fallsback to the older shutil method. Read more: <a href="/tabs/Configurations/Modes/Copy%20vault%20to%20temp%20dir.html">Copy vault to temp dir</a>   </li>
 <li>Inline footnotes are now supported. <a href="/tabs/Demonstrations/Implementing%20Footnotes.html">Implementing Footnotes</a>   </li>
-<li><a href="/tabs/Configurations/Breadcrumbs.html">Breadcrumbs</a> feature added.   </li>
+<li><a href="/tabs/Configurations/Features/Breadcrumbs.html">Breadcrumbs</a> feature added.   </li>
 <li><mark class="formatting_highlight">Highlight</mark> and <span class="formatting_strikethrough">strikethrough</span> formatting has been added. <a href="/tabs/Demonstrations/Getting%20the%20basics%20right.html#formatting">Getting the basics right#Formatting</a>   </li>
 <li>ObisidianHtml now briefly highlights the section that was linked to when following a link.   </li>
 <li>Latex (mathjax) tweaks to offer greater range of support, and the correct fonts are used now. <a href="/tabs/Demonstrations/Implementing%20Latex.html">Implementing Latex</a>.   </li>
-<li>The <a href="/tabs/Configurations/Tags%20Page.html">Tags Page</a> now includes folding, so that you get all tags on one page.   </li>
+<li>The <a href="/tabs/Configurations/Features/Tags%20Page.html">Tags Page</a> now includes folding, so that you get all tags on one page.   </li>
 <li>Version can now be queried consistently using <code>obsidianhtml version</code>   </li>
 <li>Obsidian has a special behavior regarding the <code>tags:</code> frontmatter key, this has been added, and an empty <code>tags:</code> key now also no longer gives an error.   </li>
 </ul>
@@ -334,6 +334,8 @@
 <h2 id="breaking-changes">Breaking changes</h2>
 <p>Normally a feature version doesn't have breaking changes, but in this case it is for miscelaneous tooling that isn't core to the functionality.   </p>
 <p>The export settings have been changed. The old help text stated:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">[Obsidian-html]</span><span class="w"></span>
 <span class="na">- Add -i &lt;/path/to/input.yml&gt; to provide config</span><span class="w"></span>
 <span class="na">- Add -v for verbose output</span><span class="w"></span>
@@ -341,6 +343,9 @@
 <span class="na">- Add -eht &lt;target/path/file.name&gt; to export the html template.</span><span class="w"></span>
 <span class="na">- Add -gc to output all configurable keys and their default values.</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li><code>obsidianhtml -eht</code> has been replaced with <code>obsidianhtml export layout</code>   </li>
@@ -353,10 +358,10 @@
 <ul>
 	<li><a class="backlink" href="/tabs/Instructions/Obsidianhtml Run.html">obsidianhtml run</a></li>
 	<li><a class="backlink" href="/tabs/Demonstrations/Getting the basics right.html">getting the basics right</a></li>
-	<li><a class="backlink" href="/tabs/Configurations/Copy vault to temp dir.html">copy vault to temp dir</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Modes/Copy vault to temp dir.html">copy vault to temp dir</a></li>
 	<li><a class="backlink" href="/tabs/Demonstrations/Implementing Footnotes.html">implementing footnotes</a></li>
 	<li><a class="backlink" href="/tabs/Configurations/Plugins/Embedded note title.html">embedded note title</a></li>
-	<li><a class="backlink" href="/tabs/Configurations/Export vault files to html output.html">export vault files to html output</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Tweaking/Export vault files to html output.html">export vault files to html output</a></li>
 	<li><a class="backlink" href="/tabs/Instructions/Quickstart.html">quickstart</a></li>
 	<li><a class="backlink" href="/tabs/Changelog/v3.2.3.html">v3.2.3</a></li>
 	<li><a class="backlink" href="/tabs/Changelog/v3.2.2.html">v3.2.2</a></li>
@@ -375,13 +380,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A323006919466616064871025208359717815114{level}" class="graph_div"></div>
+    <div id="A233816681759244971884400188385889504627{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B323006919466616064871025208359717815114{level}" level="{level}" note_temp_id="323006919466616064871025208359717815114" onclick="window.ObsHtmlGraph.run(this, '323006919466616064871025208359717815114', 'v3.2.0');">
+        <button class="graph_button graph_show_button" id="B233816681759244971884400188385889504627{level}" level="{level}" note_temp_id="233816681759244971884400188385889504627" onclick="window.ObsHtmlGraph.run(this, '233816681759244971884400188385889504627', 'v3.2.0');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C323006919466616064871025208359717815114{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C233816681759244971884400188385889504627{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
