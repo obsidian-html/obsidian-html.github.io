@@ -45,16 +45,4 @@ Try this site with different [layouts](./Configurations/Styling/Styling.md#layou
 ## Tips and tricks   
    
 - [Performance Tuning](./Configurations/Tweaking/Performance%20Tuning.md)   
-- [Automate website deployment](./Automation/Automate%20website%20deployment.md)    
-   
-   
-[test md link dot rel](./test.pdf)   
-[test md link relative to root](./test.pdf)   
-[test.pdf](./test.pdf)   
-   
-[in folder test md link dot rel](./Resources/pdfs/test2.pdf)   
-[test md link relative to root](./Resources/pdfs/test2.pdf)   
-[test2.pdf](./Resources/pdfs/test2.pdf)   
-   
-   
-[Demonstrations](./Demonstrations/Demonstrations.md)
+- [Automate website deployment](./Automation/Automate%20website%20deployment.md)
