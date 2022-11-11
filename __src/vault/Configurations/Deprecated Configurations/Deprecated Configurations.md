@@ -6,4 +6,4 @@ You will be notified, as ObsidianHtml will not run when removed settings are con
 - [[NoTabs Mode]]
 
 ## Deprecated
-None.
+- [[obsidian_folder_path_str]]

@@ -44,4 +44,13 @@ Try this site with different [[Styling#Layouts|layouts]]:
 - [[Automate website deployment|Automate website deployment]] 
 
 
-[[RossettiGoblinMarket.pdf]]
+[test md link dot rel](./test.pdf)
+[test md link relative to root](test.pdf)
+[[test.pdf]]
+
+[in folder test md link dot rel](./Resources/pdfs/test2.pdf)
+[test md link relative to root](Resources/pdfs/test2.pdf)
+[[test2.pdf]]
+
+
+[[Demonstrations]]

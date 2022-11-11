@@ -52,4 +52,6 @@ At the moment of writing mp4 and webm's are supported. If you want to use a diff
  ![[jazzy.mp3]]
 
 # Pdfs
+`![[RossettiGoblinMarket.pdf]]`
+
 ![[RossettiGoblinMarket.pdf]]

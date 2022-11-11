@@ -58,4 +58,6 @@ At the moment of writing mp4 and webm's are supported. If you want to use a diff
 </audio>    
    
 # Pdfs   
+`![[RossettiGoblinMarket.pdf]]`   
+   
 <embed src="../Resources/pdfs/RossettiGoblinMarket.pdf" width="90%" height="700px">

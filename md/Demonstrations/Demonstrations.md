@@ -18,4 +18,13 @@ tags:
 - [Implementing Latex](../Demonstrations/Implementing%20Latex.md)   
 - [Implementing Dataview](../Demonstrations/Implementing%20Dataview.md)   
 - [Implementing inline tags](../Demonstrations/Implementing%20inline%20tags.md)   
-- [Removing obisidian comments](../Demonstrations/Removing%20obisidian%20comments.md)
+- [Removing obisidian comments](../Demonstrations/Removing%20obisidian%20comments.md)   
+   
+   
+[test md link dot rel](../test.pdf)   
+[test md link relative to root](../test.pdf)   
+[test.pdf](../test.pdf)   
+   
+[in folder test md link dot rel](../Resources/pdfs/test2.pdf)   
+[test md link relative to root](../Resources/pdfs/test2.pdf)   
+[test2.pdf](../Resources/pdfs/test2.pdf)
