@@ -61,20 +61,32 @@ html_template_path_str: ''
 #   - src: Resources/Includes/test.md
 #     dst: test.md
 
+# When not an empty list, this setting will restrict the subfolders
+# of the vault that will be included. This allows you to ensure that 
+# only those folders are included in the output. Links pointing to notes
+# outside of the included folders will be treated as non-existent.
+# Note that the obsidian_entrypoint_path_str needs to be in one of these folders.
+# Paths should be relative to the vault root.
+# Note: Only applies to vault --> md --> html conversion, not for md --> html
+# included_folders:
+#   - Configurations
+#   - Demonstrations/Test pages
 
 # Exclude subfolders
-# These are relative to obsidian_folder_path_str
-# To exclude a folder two levels deep, use level1/level2
+# The paths are relative to obsidian_folder_path_str
+# - Start with slash to target specific folder: /subfolder
+# - Target any folder with name "subfolder": subfolder
+# Glob patterns supported for copy_vault_to_tempdir_method: shutil, shutil_walk, and for rsync for as far as rsync supports it natively
+#   When turning off copy_vault_to_tempdir, glob patterns are fully supported.
+# Rules are case sensitive if your filesystem is.
 exclude_subfolders:
-  - ".obsidian"
-  - "testexclude/testexclude2"
-  - ".trash"
-  - ".DS_Store"
-  - ".git"
-  - "__src"
-  - "md"
+  - "/.obsidian"
+  - "/.trash"
+  - "/.DS_Store"
+  - "/.git"
+  - "/__src"
+  - "/md"
   - "obs.html" 
-
 
 # Number of links a note can be removed from the entrypoint note
 # -1 for no max depth
@@ -109,7 +121,7 @@ navbar_links:
   - name: Quickstart
     link: Instructions/Quickstart.html
   - name: Features
-    link: Configurations/Features.html
+    link: Configurations/Features/Features.html
   - name: Configurations
     link: Configurations/Configuration Options.html
   - name: Styling
