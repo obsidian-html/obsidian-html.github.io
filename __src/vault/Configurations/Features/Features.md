@@ -11,8 +11,8 @@ tags:
 
 ## Note selection features
 - [[Process All]]
+- [[Filtering notes]] (inclusion / exclusion of files and or folders)
 - [[Create index from tags]]
-- [[Configuration Options#Exclude Subfolders|Excluding vault subfolders]]
 
 ## Basics
 | Feature | Short description | Default |

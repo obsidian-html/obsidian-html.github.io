@@ -13,8 +13,8 @@ tags:
 ## Note selection features   
    
 - [Process All](../../Configurations/Modes/Process%20All.md)   
+- [Filtering notes](../../Configurations/Modes/Filtering%20notes.md) (inclusion / exclusion of files and or folders)   
 - [Create index from tags](../../Configurations/Modes/Create%20index%20from%20tags.md)   
-- [Excluding vault subfolders](../../Configurations/Configuration%20Options.md#exclude-subfolders)   
    
 ## Basics   
 | Feature | Short description | Default |   

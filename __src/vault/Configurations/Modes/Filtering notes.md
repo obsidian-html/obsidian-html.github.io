@@ -5,12 +5,12 @@ If you don't want to export your entire vault, then there are options to set inc
 This is controlled by these settings:
 
 - `included_folders`
-- `exclude_subfolders`
+- `exclude_glob`
 
 By default, `included_folders` is set to an empty list, and consequently ignored. 
 When setting values only the files in the configured folders will be added to the file tree, and thus nothing outside of those folders is exported.
 
-If you want to export all folders, **except** for one or multiple folders, then you should set `exclude_subfolders`. 
+If you want to export all folders, **except** for one or multiple folders, then you should set `exclude_glob`. 
 
 You can also combine both settings. This will start with finding all the files in **only** the included folders, and then not adding any files that are excluded.
 
