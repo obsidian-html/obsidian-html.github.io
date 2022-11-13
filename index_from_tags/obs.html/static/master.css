@@ -21,7 +21,7 @@
     --callout-color: rgb(46, 51, 56);
     --callout-alpha: 0.1;
     --header-bg: #f6f7f8;
-    --code-hightlight-color: 200, 119, 255;
+    --code-hightlight-color: 157, 12, 255;
     --homelink-color: #2d68b1;
     scrollbar-width: thin;
 }
@@ -2012,7 +2012,6 @@ span.tag {
     --color-accent3: #626262;
     --divider-color: #b9b9b9;
     --header-bg: #f6f7f8;
-    --code-hightlight-color: 200, 119, 255;
     --homelink-color: #000000;
     --dir-tree-color: var(--color-accent);
     --marker-color: var(--divider-color);
@@ -2059,7 +2058,6 @@ span.tag {
     --callout-bg: white;
     --callout-alpha: 0;
     --header-bg: #FFFFFF;
-    --code-hightlight-color: 200, 119, 255;
     --homelink-color: #2d68b1;
     --dir-tree-color: var(--color-accent);
     --marker-color: var(--divider-color);

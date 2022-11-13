@@ -19,6 +19,9 @@ This is not so much its own mode, but a modifier for other modes. It enables you
    
 Read more [Process All](../../Configurations/Modes/Process%20All.md).   
    
+## Filtering notes   
+To only include certain folders, or exclude specific folders, look here: [Filtering notes](../../Configurations/Modes/Filtering%20notes.md).   
+   
 ## Create index from tags   
 If you want to dynamically create an index that contains links to notes with certain tags, you can use this mode. Read more: [Create index from tags](../../Configurations/Modes/Create%20index%20from%20tags.md).   
    

@@ -7,3 +7,4 @@ You will be notified, as ObsidianHtml will not run when removed settings are con
 
 ## Deprecated
 - [[obsidian_folder_path_str]]
+- [[exclude_subfolders]]

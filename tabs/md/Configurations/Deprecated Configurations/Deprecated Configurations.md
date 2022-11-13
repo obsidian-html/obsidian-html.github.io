@@ -12,4 +12,5 @@ You will be notified, as ObsidianHtml will not run when removed settings are con
    
 ## Deprecated   
    
-- [obsidian_folder_path_str](../../Configurations/Deprecated%20Configurations/obsidian_folder_path_str.md)
+- [obsidian_folder_path_str](../../Configurations/Deprecated%20Configurations/obsidian_folder_path_str.md)   
+- [exclude_subfolders](../../Configurations/Deprecated%20Configurations/exclude_subfolders.md)
