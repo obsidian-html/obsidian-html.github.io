@@ -563,13 +563,13 @@ convert automation webserver ssh
 				nice method if your <b class="match term0">webserver</b> is reachable
 			</div>
 			<div class="match-row">
+				<b class="match term1">ssh</b> from your workstation. otherwise, i advise using
+			</div>
+			<div class="match-row">
 				the [git method](../<b class="match term2">automation</b>/automationwindows.md
 			</div>
 			<div class="match-row">
 				origin = pwd ↩ # <b class="match term3">convert</b> obsidian to html
-			</div>
-			<div class="match-row">
-				of pushing websites](../<b class="match term2">automation</b>/automate%20website
 			</div>
 			<div class="tag-box">
 				<div class="match-row tag">
@@ -587,13 +587,13 @@ convert automation webserver ssh
 				<b class="match term4">Automation</b>/Automate website deployment.html
 			</div>
 			<div class="match-row">
+				a process on your <b class="match term0">webserver</b> that periodically
+			</div>
+			<div class="match-row">
 				using git (linux)](../<b class="match term2">automation</b>/automationlinuxgit.md
 			</div>
 			<div class="match-row">
 				using git (windows)](../<b class="match term2">automation</b>/automationwindows.md
-			</div>
-			<div class="match-row">
-				directly to a local <b class="match term0">webserver</b> ↩ this is a nice
 			</div>
 			<div class="match-row">
 				auto push to local <b class="match term0">webserver</b> (linux)](../<b class="match term2">automation</b>/automationlinuxssh.md
@@ -669,7 +669,7 @@ convert automation webserver ssh
 		</div>
 		<div class="matches">
 			<div class="match-row">
-				and run a local <b class="match term0">webserver</b> to serve it for
+				commands: ↩ run <b class="match term3">convert</b> vault using sensible
 			</div>
 			<div class="match-row">
 				can be used in the <b class="match term3">convert</b> command. ↩ <b class="match term3">convert</b> just <b class="match term3">convert</b> your vault to html
@@ -681,7 +681,7 @@ convert automation webserver ssh
 				obsidian run`, the <b class="match term3">convert</b> command will only
 			</div>
 			<div class="match-row">
-				you want to <b class="match term3">convert</b> your vault. ↩ when
+				start a development <b class="match term0">webserver</b> every time that
 			</div>
 		</div>
 	</div>
@@ -741,10 +741,10 @@ convert automation webserver ssh
 				in that file to <b class="match term3">convert</b> your file to html
 			</div>
 			<div class="match-row">
-				obisidanhtml <b class="match term3">convert</b> ↩ ``` ↩ this should give
+				obsidianhtml <b class="match term3">convert</b> ↩ no config provided
 			</div>
 			<div class="match-row">
-				be served by a <b class="match term0">webserver</b>. if you are going
+				will start a local <b class="match term0">webserver</b> at port 8000, using
 			</div>
 		</div>
 	</div>
@@ -1385,10 +1385,10 @@ query without quotes
                         return ['left', 'right'][Number(header.classList.contains('right_pane_fold_header'))]
                 }
                 function save_panel_folding_state(header, active){
-                        localStorage.setItem('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
+                        ls_set('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
                 }
                 function load_panel_folding_state(panel_name){
-                        val = localStorage.getItem('pane_folding_state_'+panel_name)
+                        val = ls_get('pane_folding_state_'+panel_name)
                         if (!val){ return {'exists': false, 'value': null}}
                         return {'exists': true, 'value': Boolean(Number(val))}
                 }

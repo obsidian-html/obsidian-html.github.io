@@ -317,7 +317,13 @@
 <span class="w">    </span><span class="c1"># Include code to build the graph view per page </span><span class="w"></span>
 <span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page (default: True)</span><span class="w"></span>
-<span class="w">      </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w">            </span><span class="c1"># &quot;2d&quot;, &quot;3d&quot;, or path to own code</span><span class="w"></span>
+<span class="w">      </span><span class="nt">templates</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;3d&gt;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
@@ -379,13 +385,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A1502212562700930543913328801071245520{level}" class="graph_div"></div>
+    <div id="A260060949438311290892981577122654519062{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B1502212562700930543913328801071245520{level}" level="{level}" note_temp_id="1502212562700930543913328801071245520" onclick="window.ObsHtmlGraph.run(this, '1502212562700930543913328801071245520', 'graph view');">
+        <button class="graph_button graph_show_button" id="B260060949438311290892981577122654519062{level}" level="{level}" note_temp_id="260060949438311290892981577122654519062" onclick="window.ObsHtmlGraph.run(this, '260060949438311290892981577122654519062', 'graph view');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C1502212562700930543913328801071245520{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C260060949438311290892981577122654519062{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

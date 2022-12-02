@@ -25,7 +25,13 @@ toggles:
     # Include code to build the graph view per page 
     graph:
       enabled: True           # Include code to build the graph view per page (default: True)
-      template: 3d            # "2d", "3d", or path to own code
+      templates:
+        - id: 2d
+          name: 2d
+          path: builtin<2d>
+        - id: 3d
+          name: 3d
+          path: builtin<3d>
       styling:
         show_icon: True
 ```

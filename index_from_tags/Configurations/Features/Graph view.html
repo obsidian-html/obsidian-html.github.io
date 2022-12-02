@@ -473,7 +473,13 @@
 <span class="w">    </span><span class="c1"># Include code to build the graph view per page </span><span class="w"></span>
 <span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page (default: True)</span><span class="w"></span>
-<span class="w">      </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w">            </span><span class="c1"># &quot;2d&quot;, &quot;3d&quot;, or path to own code</span><span class="w"></span>
+<span class="w">      </span><span class="nt">templates</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;3d&gt;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 </code></pre></div>
@@ -534,13 +540,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A317950836462379534043597905077043264835{level}" class="graph_div"></div>
+    <div id="A122260995598984662007668247345710369205{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B317950836462379534043597905077043264835{level}" level="{level}" note_temp_id="317950836462379534043597905077043264835" onclick="window.ObsHtmlGraph.run(this, '317950836462379534043597905077043264835', 'graph view');">
+        <button class="graph_button graph_show_button" id="B122260995598984662007668247345710369205{level}" level="{level}" note_temp_id="122260995598984662007668247345710369205" onclick="window.ObsHtmlGraph.run(this, '122260995598984662007668247345710369205', 'graph view');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C317950836462379534043597905077043264835{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C122260995598984662007668247345710369205{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -637,10 +643,10 @@
                         return ['left', 'right'][Number(header.classList.contains('right_pane_fold_header'))]
                 }
                 function save_panel_folding_state(header, active){
-                        localStorage.setItem('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
+                        ls_set('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
                 }
                 function load_panel_folding_state(panel_name){
-                        val = localStorage.getItem('pane_folding_state_'+panel_name)
+                        val = ls_get('pane_folding_state_'+panel_name)
                         if (!val){ return {'exists': false, 'value': null}}
                         return {'exists': true, 'value': Boolean(Number(val))}
                 }
