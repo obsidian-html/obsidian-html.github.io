@@ -284,5 +284,7 @@ toggles:
         - "Resources"
         - "**/Snippets"
       exclude_files:
+        - ".gitignore"
         - "favicon.ico"
         - "not_created.html"
+      homepage_label: "Home"
