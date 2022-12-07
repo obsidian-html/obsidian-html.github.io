@@ -12,7 +12,7 @@ If you want to clone the git code, make changes, and then run your own custom co
 ## Install master branch
 Run the following command in your terminal. This should remove the installed version and replace it with the version that is under development.
 
-```python
+```shell
 pip uninstall obsidianhtml
 pip install git+https://github.com/obsidian-html/obsidian-html.git
 ```
