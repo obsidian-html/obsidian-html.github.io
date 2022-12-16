@@ -145,4 +145,8 @@ Continue the block with a `>`, like so:
 > This is a quote block   
    
 > [!cite]-    
-> This is a cite block
+> This is a cite block   
+   
+# Single line call-outs   
+   
+> [!warning] This is a warning. barba

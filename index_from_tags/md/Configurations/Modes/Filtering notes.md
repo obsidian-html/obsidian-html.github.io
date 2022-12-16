@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
    
 > This instruction is valid from version [v3.4.0](../../Changelog/v3.4.0.md) onwards.    

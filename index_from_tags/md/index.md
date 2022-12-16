@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
    
 # ObsidianHtml/index_from_tags   

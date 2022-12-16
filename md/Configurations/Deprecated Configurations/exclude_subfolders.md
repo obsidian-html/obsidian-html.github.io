@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
    
 > Deprecated starting with [v3.4.0](../../Changelog/v3.4.0.md)   

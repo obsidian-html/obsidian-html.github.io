@@ -1,8 +1,3 @@
-# The first folder that contains all obsidian files
-# Can be absent when toggles/compile_md == False
-# Use full path or relative path, but don't use ~/
-obsidian_folder_path_str: '../obsidian-html.github.io/__src/vault/' 
-
 # The note that will be used as the index.html 
 # should be in obsidian_folder_path_str
 # Can be absent when toggles/compile_md == False
@@ -106,6 +101,7 @@ toggles:
     # !  Will only work for process_all: True at the moment.
     create_index_from_tags:
       enabled: True
+      verbose: True
       tags:
         - type/automation
         - feature/parsing_markdown

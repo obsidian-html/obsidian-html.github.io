@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
    
 A conversion in which we take a markdown wiki as input, instead of it being the result of a vault being converted to markdown ([note --> html](../../General%20Information/Snippets/note%20--%3E%20html.md)).   

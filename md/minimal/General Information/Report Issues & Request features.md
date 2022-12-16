@@ -1,7 +1,7 @@
 ---
 tags:
-- type/general_information
 - date/2022-02-12
+- type/general_information
 ---
    
 #  Request features   

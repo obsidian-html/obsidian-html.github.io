@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
    
 From version >3.3.0, this value is deprecated.   

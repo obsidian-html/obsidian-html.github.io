@@ -1,8 +1,8 @@
 ---
 graph_name: Basics
 tags:
-- feature/parsing_markdown
 - date/2022-02-04
+- feature/parsing_markdown
 ---
    
 # Basics   

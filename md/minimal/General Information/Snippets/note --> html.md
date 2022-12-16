@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
    
 Default way that obisidianhtml works. We take a vault as input, then compile proper markdown, and then compile the html from that compiled markdown.   

@@ -1,7 +1,7 @@
 ---
 tags:
-- type/configuration
 - type/styling
+- type/configuration
 - date/2022-04-17
 ---
    
