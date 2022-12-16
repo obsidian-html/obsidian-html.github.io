@@ -60,6 +60,16 @@ Continue the block with a `>`, like so:
 >
 > It has two paragraphs.
 
+
+## Single line call-outs
+```
+> [!warning] This is just a warning. No content
+```
+
+> [!warning] This is just a warning. No content
+
+
+
 ## Types
 - Instead of `[!note]` you can use any other name
 - If a type is not known it will get the styling of the note callout type (unless you have added your own css).
@@ -141,8 +151,3 @@ Continue the block with a `>`, like so:
 
 > [!cite]- 
 > This is a cite block
-
-# Single line call-outs
-
-> [!warning] This is a warning. barba
-

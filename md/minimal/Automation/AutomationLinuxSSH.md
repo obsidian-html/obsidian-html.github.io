@@ -1,8 +1,8 @@
 ---
 graph_name: Auto push site using SSH on Linux
 tags:
-- type/automation
 - date/2022-02-04
+- type/automation
 ---
    
 # Auto push site to a local webserver on Linux   

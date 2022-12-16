@@ -11,7 +11,7 @@ var CONFIGURED_HTML_URL_PREFIX = "/tabs";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 0;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '190115423391057691485291903444974620581'                       // used to check whether the localStorage data is stale
+var gzip_hash = '171670769784148995277694784745800293154'                       // used to check whether the localStorage data is stale
 
 // global cache
 var fn_cache_ls_available = null;

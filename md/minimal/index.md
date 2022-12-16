@@ -1,8 +1,8 @@
 ---
 graph_name: Homepage
 tags:
-- test
 - type/moc
+- test
 ---
    
 # ObsidianHtml   

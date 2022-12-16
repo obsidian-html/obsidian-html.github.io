@@ -1,8 +1,8 @@
 ---
 tags:
-- date/2022-04-26
 - feature/html_output
 - type/configuration
+- date/2022-04-26
 ---
    
 # Implementing Call-outs   
@@ -63,6 +63,17 @@ Continue the block with a `>`, like so:
 > This is a note block.   
 >   
 > It has two paragraphs.   
+   
+   
+## Single line call-outs   
+```
+> [!warning] This is just a warning. No content
+```
+   
+   
+> [!warning] This is just a warning. No content   
+   
+   
    
 ## Types   
    
@@ -145,8 +156,4 @@ Continue the block with a `>`, like so:
 > This is a quote block   
    
 > [!cite]-    
-> This is a cite block   
-   
-# Single line call-outs   
-   
-> [!warning] This is a warning. barba
+> This is a cite block
