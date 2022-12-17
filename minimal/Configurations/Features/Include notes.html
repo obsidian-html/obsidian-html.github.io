@@ -28,22 +28,35 @@
     <body>
         <div class="container">
             
-                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
-                        <div style="flex:1;display: none;"></div>
-                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
-                            <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/minimal/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/minimal/Configurations/Features/Include notes.html" >Include notes</a>
-                        </div>
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/minimal/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/minimal/Configurations/Features/Include notes.html" >Include notes</a>
                     </div>
+                </div>
 <embeddedtitle>Include notes</embeddedtitle>
 <p>The normal obsidian code inclusion syntax of <code>![[note]]</code> works as intended.   </p>
 <p>The only difference is that the code is pasted inline, so it is not visible that the text is included. This paragraph comes from a different note, for example.</p>
 <h2 id="include-specific-header">Include specific header</h2>
 <p>If you want to only include the text under a header called 'header', then you can use <code>![[note#header]]</code>.   </p>
-<p>If you need specificity in selecting a subheader, you can type <code>![[note#header#subheader]]</code> instead of <code>![[note#subheader]]</code> when needed.</p>
+<p>If you need specificity in selecting a subheader, you can type <code>![[note#header#subheader]]</code> instead of <code>![[note#subheader]]</code> when needed.   </p>
+<h2 id="show-hide-inclusion-in-the-graph-view">Show/hide inclusion in the graph view</h2>
+<p>By default, inclusions are shown in the graph view as a dotted line. To disable this (i.e. stop showing inclusions in the graph view), set the following value:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
+	<li><a class="backlink" href="/minimal/Configurations/Features/Graph view.html">graph view</a></li>
 	<li><a class="backlink" href="/minimal/Changelog/v3.3.0.html">v3.3.0</a></li>
 	<li><a class="backlink" href="/minimal/Configurations/Features/Features.html">features</a></li>
 </ul>

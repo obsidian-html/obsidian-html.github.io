@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-08-28
 - type/template
+- date/2022-08-28
 ---
    
 # Folder Notes   

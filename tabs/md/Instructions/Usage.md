@@ -1,4 +1,7 @@
 ---
+obs.html.data:
+  inclusion_references:
+  - instructions/snippets/deployment instructions.md
 tags:
 - date/2022-02-12
 - type/instruction

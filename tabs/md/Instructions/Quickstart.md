@@ -1,4 +1,8 @@
 ---
+obs.html.data:
+  inclusion_references:
+  - instructions/obsidianhtml run.md
+  - instructions/snippets/deployment instructions.md
 tags:
 - date/2022-02-21
 - type/instruction

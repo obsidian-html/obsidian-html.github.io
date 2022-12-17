@@ -204,6 +204,7 @@ toggles:
         - id: 3d
           name: 3d
           path: builtin<3d>
+      show_inclusions_in_graph: False
         # - id: custom
         #   name: custom
         #   path: ../obsidian-html.github.io/__src/custom_grapher.js

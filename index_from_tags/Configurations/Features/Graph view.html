@@ -309,6 +309,7 @@
 	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">Test pages</button>
 	<div id="folder-container-13" class="dir-container requires_js " path="/index_from_tags/Demonstrations/Test pages">
 		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/Demonstrate inclusion.html"  >Demonstrate inclusion</a></li>
 			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/Long long page.html"  >Long long page</a></li>
 			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/Simple Obsidian-type Link.html"  >Simple Obsidian-type Link</a></li>
 			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/Test Inclusion.html"  >Test Inclusion</a></li>
@@ -438,12 +439,12 @@
                         </div>
                         <div class="container">
                                 
-                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
-                        <div style="flex:1;display: none;"></div>
-                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
-                            <a href="/index_from_tags/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/index_from_tags/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/index_from_tags/Configurations/Features/Graph view.html" >Graph view</a>
-                        </div>
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/index_from_tags/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/index_from_tags/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/index_from_tags/Configurations/Features/Graph view.html" >Graph view</a>
                     </div>
+                </div>
 <h1 id="graph-view">Graph view</h1>
 <div class="toc">
 <ul>
@@ -451,6 +452,7 @@
 <li><a href="#configure-graph-view" class="anchor-link">Configure graph view</a><ul>
 <li><a href="#custom-template" class="anchor-link">(Custom) Template</a></li>
 <li><a href="#overwrite-the-name-of-a-note-in-the-graph-view" class="anchor-link">Overwrite the name of a note in the graph view</a></li>
+<li><a href="#show-hide-inclusion-in-the-graph-view" class="anchor-link">Show/hide inclusion in the graph view</a></li>
 </ul>
 </li>
 </ul>
@@ -473,6 +475,7 @@
 <span class="w">    </span><span class="c1"># Include code to build the graph view per page </span><span class="w"></span>
 <span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page (default: True)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
 <span class="w">      </span><span class="nt">templates</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
@@ -511,8 +514,20 @@
 </div>
 
 <blockquote>
-<p>Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.</p>
+<p>Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.   </p>
 </blockquote>
+<h3 id="show-hide-inclusion-in-the-graph-view">Show/hide inclusion in the graph view</h3>
+<p>By default, <a href="/index_from_tags/Configurations/Features/Include%20notes.html">inclusions</a> are shown in the graph view as a dotted line. To disable this (i.e. stop showing inclusions in the graph view), set the following value:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -531,22 +546,22 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/obs.html/tags/feature/html_output/index.html">feature/html_output</a></li>
 	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-05/index.html">date/2022-02-05</a></li>
-	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/feature/html_output/index.html">feature/html_output</a></li>
 	<li><a class="backlink" href="/index_from_tags/obs.html/tags/feature/graph_view/index.html">feature/graph_view</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A122260995598984662007668247345710369205{level}" class="graph_div"></div>
+    <div id="A41332537335160803465005684020101928715{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B122260995598984662007668247345710369205{level}" level="{level}" note_temp_id="122260995598984662007668247345710369205" onclick="window.ObsHtmlGraph.run(this, '122260995598984662007668247345710369205', 'graph view');">
+        <button class="graph_button graph_show_button" id="B41332537335160803465005684020101928715{level}" level="{level}" note_temp_id="41332537335160803465005684020101928715" onclick="window.ObsHtmlGraph.run(this, '41332537335160803465005684020101928715', 'graph view');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C122260995598984662007668247345710369205{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C41332537335160803465005684020101928715{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

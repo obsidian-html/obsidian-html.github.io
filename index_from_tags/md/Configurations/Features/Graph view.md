@@ -1,10 +1,10 @@
 ---
 graph_name: Graph View
 tags:
-- feature/html_output
 - date/2022-02-05
-- type/configuration
+- feature/html_output
 - feature/graph_view
+- type/configuration
 ---
    
 # Graph view   
@@ -26,6 +26,7 @@ toggles:
     # Include code to build the graph view per page 
     graph:
       enabled: True           # Include code to build the graph view per page (default: True)
+      show_inclusions_in_graph: True
       templates:
         - id: 2d
           name: 2d
@@ -63,4 +64,15 @@ tags:
 ```
    
    
-> Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.
+> Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.   
+   
+   
+### Show/hide inclusion in the graph view   
+By default, [inclusions](../../Configurations/Features/Include%20notes.md) are shown in the graph view as a dotted line. To disable this (i.e. stop showing inclusions in the graph view), set the following value:   
+   
+``` yaml
+toggles:
+  features:
+    graph:
+      show_inclusions_in_graph: False
+```
