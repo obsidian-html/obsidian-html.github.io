@@ -11,7 +11,7 @@ var CONFIGURED_HTML_URL_PREFIX = "";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '210455177358524958440503919009221798504'                       // used to check whether the localStorage data is stale
+var gzip_hash = '197940179845169161215027315435991595223'                       // used to check whether the localStorage data is stale
 
 // global cache
 var fn_cache_ls_available = null;
@@ -258,7 +258,7 @@ function LoadTableOfContents(container_div)
             if (toc_pane && no_tab_mode) {
                 let tpd = document.getElementById(toc_pane_div);
                 tpd.display = 'block';
-                tpd.innerHTML = '<span class="toc-header">Table of contents</span>' + collection[0].innerHTML;
+                tpd.innerHTML = '<span class="toc-header">Table of contents</span>' + '<div class="toc-contents">' + collection[0].innerHTML + '</div>';
             }
             else {
                 toc.style.display = 'block';

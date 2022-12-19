@@ -208,7 +208,7 @@
                         <div id="left_pane" class="left_pane active">
                                 <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
                                 <div id="left_pane_content" class="left_pane_content">
-                                        <button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
+                                        <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
 <div id="folder-container-1" class="dir-container requires_js " path="/Automation">
 	<ul class="dir-list">
 		<li><a class="" href="/Automation/Automate website deployment.html"  >Automate website deployment</a></li>
@@ -349,6 +349,7 @@
 		<li><a class="" href="/Demonstrations/Making lists work the same.html"  >Making lists work the same</a></li>
 		<li><a class="" href="/Demonstrations/Parsing Images, videos, and audio.html"  >Parsing Images, videos, and audio</a></li>
 		<li><a class="" href="/Demonstrations/Removing obisidian comments.html"  >Removing obisidian comments</a></li>
+		<li><a class="" href="/Demonstrations/Sites using ObsidianHtml.html"  >Sites using ObsidianHtml</a></li>
 	</ul>
 </div>
 <button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
@@ -396,7 +397,7 @@
 	<li><a class="" href="/News.html"  >News</a></li>
 	<li><a class="" href="/index.html"  >Home</a></li>
 </ul>
-
+</div>
                                 </div>
                         </div>
                         <div class="container">
@@ -563,13 +564,13 @@ convert automation webserver ssh
 				nice method if your <b class="match term0">webserver</b> is reachable
 			</div>
 			<div class="match-row">
-				<b class="match term1">ssh</b> from your workstation. otherwise, i advise using
-			</div>
-			<div class="match-row">
 				the [git method](../<b class="match term2">automation</b>/automationwindows.md
 			</div>
 			<div class="match-row">
 				origin = pwd ↩ # <b class="match term3">convert</b> obsidian to html
+			</div>
+			<div class="match-row">
+				privatekeypath user@<b class="match term0">webserver</b> -m "$($env:temp)\_emptydevfruits.sh
 			</div>
 			<div class="tag-box">
 				<div class="match-row tag">
@@ -593,7 +594,7 @@ convert automation webserver ssh
 				a process on your <b class="match term0">webserver</b> that periodically
 			</div>
 			<div class="match-row">
-				using git (windows)](../<b class="match term2">automation</b>/automationwindows.md
+				if your <b class="match term0">webserver</b> is reachable
 			</div>
 			<div class="match-row">
 				auto push to local <b class="match term0">webserver</b> (linux)](../<b class="match term2">automation</b>/automationlinuxssh.md
@@ -678,10 +679,10 @@ convert automation webserver ssh
 				can be used in the <b class="match term3">convert</b> command. ↩ <b class="match term3">convert</b> just <b class="match term3">convert</b> your vault to html
 			</div>
 			<div class="match-row">
-				you want to <b class="match term3">convert</b> your vault. ↩ when
+				obsidian run`, the <b class="match term3">convert</b> command will only
 			</div>
 			<div class="match-row">
-				use `obsidianhtml <b class="match term3">convert</b> -i /target/path/to
+				you want to <b class="match term3">convert</b> your vault. ↩ when
 			</div>
 		</div>
 	</div>
@@ -738,13 +739,13 @@ convert automation webserver ssh
 				is `<b class="match term3">convert</b>`. this command will
 			</div>
 			<div class="match-row">
+				in that file to <b class="match term3">convert</b> your file to html
+			</div>
+			<div class="match-row">
 				obisidanhtml <b class="match term3">convert</b> ↩ ``` ↩ this should give
 			</div>
 			<div class="match-row">
-				obsidianhtml <b class="match term3">convert</b> ↩ no config provided
-			</div>
-			<div class="match-row">
-				be served by a <b class="match term0">webserver</b>. if you are going
+				will start a local <b class="match term0">webserver</b> at port 8000, using
 			</div>
 		</div>
 	</div>

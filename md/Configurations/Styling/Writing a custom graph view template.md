@@ -1,8 +1,8 @@
 ---
 tags:
 - date/2022-04-24
-- type/instruction
 - type/styling
+- type/instruction
 ---
    
 # Writing a custom graph view template   

@@ -1,7 +1,7 @@
 ---
 tags:
-- type/general_information
 - date/2022-02-12
+- type/general_information
 ---
    
 # About ObsidianHtml   
@@ -45,6 +45,10 @@ By default only notes that are found by following links recursively starting wit
 - Make sure that the `python` command points to `python3`, and not a python2 version.   
    
 One thing to take note of is that ObsidianHtml will write a folder to your html output named obs.html, if you have a directory in the root of your vault with the same name (however unlikely that is...) there might be issues with the html output.   
+   
+## Examples   
+Want to see what others built using ObsidianHtml? Check out some of the websites here: [Sites using ObsidianHtml](../Demonstrations/Sites%20using%20ObsidianHtml.md).   
+   
    
 ## Next up   
 Take a look at all the [high level features](../Configurations/Features/Features.md) that can be enabled/disabled, or read about all the [configuration options](../Configurations/Configuration%20Options.md). Or maybe jump directly to [Installation](../Instructions/Installation.md).

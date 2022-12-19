@@ -2,8 +2,8 @@
 graph_name: Mermaid Diagrams
 tags:
 - feature/html_output
-- feature/diagrams
 - date/2022-02-04
+- feature/diagrams
 ---
    
 Mermaid diagram code is converted into an actual diagram in the HTML output.   

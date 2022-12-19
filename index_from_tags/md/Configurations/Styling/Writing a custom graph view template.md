@@ -1,7 +1,7 @@
 ---
 tags:
-- type/styling
 - date/2022-04-24
+- type/styling
 - type/instruction
 ---
    

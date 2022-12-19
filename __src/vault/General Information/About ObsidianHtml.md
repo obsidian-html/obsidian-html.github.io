@@ -44,5 +44,9 @@ By default only notes that are found by following links recursively starting wit
 
 One thing to take note of is that ObsidianHtml will write a folder to your html output named obs.html, if you have a directory in the root of your vault with the same name (however unlikely that is...) there might be issues with the html output.
 
+## Examples
+Want to see what others built using ObsidianHtml? Check out some of the websites here: [[Sites using ObsidianHtml]].
+
+
 ## Next up
 Take a look at all the [[Features|high level features]] that can be enabled/disabled, or read about all the [[Configuration Options|configuration options]]. Or maybe jump directly to [[Installation]].

@@ -1,9 +1,9 @@
 ---
 graph_name: Code blocks
 tags:
+- date/2022-02-04
 - type/styling
 - feature/html_output
-- date/2022-02-04
 ---
    
 # Code blocks   
