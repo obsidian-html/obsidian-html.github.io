@@ -1,5 +1,7 @@
 ---
 graph_name: Homepage
+obs.html.tags:
+- no_tag_footer
 tags:
 - type/moc
 - test

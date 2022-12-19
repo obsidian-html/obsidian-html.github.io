@@ -11,7 +11,7 @@ var CONFIGURED_HTML_URL_PREFIX = "/index_from_tags";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '122555323068750774875125569127610321450'                       // used to check whether the localStorage data is stale
+var gzip_hash = '324665719001718941949906675233982458964'                       // used to check whether the localStorage data is stale
 
 // global cache
 var fn_cache_ls_available = null;

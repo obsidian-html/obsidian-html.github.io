@@ -1,8 +1,8 @@
 ---
 tags:
 - date/2022-07-30
-- type/test_page
 - inline-tag
+- type/test_page
 - inline-tag
 ---
    

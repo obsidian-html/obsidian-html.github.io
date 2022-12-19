@@ -13,6 +13,14 @@ obs.html.tags:
 - leaf_note
 ```
 
+### no_tags_footer
+This setting will make it so that no tags footer is placed at the bottom of the note. See also [[Tags Page#Tags list in note]]
+
+``` yaml
+obs.html.tags:
+- no_tags_footer
+```
+
 ## graph_name
 See [[Graph view#Overwrite the name of a note in the graph view | graph_name]]. This will overwrite the name that the note shows up as in the graph view.
 

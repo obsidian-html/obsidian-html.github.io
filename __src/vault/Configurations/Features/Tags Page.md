@@ -31,6 +31,8 @@ This is the default setting, and will create an html page at under `<sitename>/o
 ### Tags list in note
 The `show_in_note_footer` setting above determines whether the tags will be listed at the bottom of each note as well. Note that you have to create the tags_page for this function to work, at the tags will be links pointing to their respective tag pages.
 
+To disable the tags footer for certain notes, check out [[Note settings#no_tags_footer]]
+
 ## Note on slashes
 If you use slashes in your tags, these will be split into different pages (like a tree view).
 E.g. adding the following frontyaml at the top of this note:

@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-07-31
 - type/configuration
+- date/2022-07-31
 ---
    
 # Export vault files to html output   

@@ -1,8 +1,8 @@
 ---
 tags:
 - type/configuration
-- date/2022-04-26
 - feature/html_output
+- date/2022-04-26
 ---
    
 # Implementing Call-outs   

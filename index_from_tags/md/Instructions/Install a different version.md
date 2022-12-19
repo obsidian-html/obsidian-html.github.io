@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-05-06
 - type/instruction
+- date/2022-05-06
 ---
    
 # Install a different version   

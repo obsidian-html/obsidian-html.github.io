@@ -7,8 +7,8 @@ obs.html.data:
   - configurations/configuration options.md
   - instructions/installation.md
 tags:
-- date/2022-02-04
 - feature/parsing_markdown
+- date/2022-02-04
 ---
    
 # Note inclusions   
