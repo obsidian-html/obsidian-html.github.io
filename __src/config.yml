@@ -175,11 +175,9 @@ toggles:
   
   features:
     styling: 
-      layout: documentation # documentation, tabs, no_tabs
+      layout: documentation # documentation, tabs, no_tabs, minimal
       max_note_width: 70rem # not supported for layout: tabs
-      add_toc: True    # add "[TOC]" (Table of Contents) when missing
-      toc_pane: True   # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
-      flip_panes: False # switch right and left pane around. (does nothing unless in documentation layout.)
+      header_template: full               # <full, minimal> currently only supported for documentation layout
       accent_color: '65, 76, 253'
       loading_bg_color: '22, 22, 22'
 
@@ -229,11 +227,17 @@ toggles:
     # !! Enabling this feature will overwrite obsidian_entrypoint_path_str and md_entrypoint_path_str
     # !  Will only work for process_all: True at the moment.
     create_index_from_tags:
-      enabled: False
-      tags:
-        - type/test_page/test_tag
+      enabled: True
+      verbose: False
+      rel_output_path: 'obs.html/tag_index.md'
+      homepage_label: "index"
+      use_as_homepage: False
       add_links_in_graph_tree: True # The index.md will be created, and thus will be without links, this setting will create links to the notes that are matched.
-
+      tags:
+        - type/automation
+        - feature/parsing_markdown
+      styling:
+        include_folder_in_link: False
 
     rss:
       enabled: True
@@ -289,3 +293,15 @@ toggles:
         - "favicon.ico"
         - "not_created.html"
       homepage_label: "Home"
+
+    side_pane:             # only valid for documentation layout
+      left_pane:
+        enabled: True
+        contents: dir_tree #html_page       # <toc, tag_tree, dir_tree> relevant features should be enabled and configured see docs
+        width: 'max-content'
+        #content_args:
+          #rel_path: 'index.html'
+          #div_selector: '.container' # . for class, # for id
+      right_pane:
+        enabled: True
+        contents: toc # <toc, tag_tree, dir_tree> relevant features should be enabled and configured see docs

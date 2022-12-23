@@ -2,16 +2,15 @@
 // ----------------------------------------------------------------------------
 // Globals (filled in by backend)
 var no_tab_mode = 0;
-var toc_pane = 0;
 var mermaid_enabled = 1;
-var toc_pane_div = "right_pane_content";
-var content_pane_div = "left_pane_content";
+var toc_pane_div = "";
+var dir_index_pane_div = "";
 var html_url_prefix = "/tabs";
 var CONFIGURED_HTML_URL_PREFIX = "/tabs";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 0;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '47594129227524568324827541830182476798'                       // used to check whether the localStorage data is stale
+var gzip_hash = '201534379040724436766945733450648044728'                       // used to check whether the localStorage data is stale
 
 // global cache
 var fn_cache_ls_available = null;
@@ -233,6 +232,9 @@ function load_page() {
         SetContainer(FirstContainer);
     }
 
+    // also init side panes if present
+    SetSidePanes();
+
     // Open the path on loading the page
     // This is everything after ?path=
     if (tab_mode) {
@@ -255,7 +257,7 @@ function LoadTableOfContents(container_div)
         let toc = collection[0];
         if (toc.getElementsByTagName('li').length > 1) {
 
-            if (toc_pane && no_tab_mode) {
+            if (toc_pane_div && no_tab_mode) {
                 let tpd = document.getElementById(toc_pane_div);
                 tpd.display = 'block';
                 tpd.innerHTML = '<span class="toc-header">Table of contents</span>' + '<div class="toc-contents">' + collection[0].innerHTML + '</div>';
@@ -267,6 +269,17 @@ function LoadTableOfContents(container_div)
         }
     }
 
+}
+
+function SetSidePanes() {
+    let lp = document.getElementById('left_pane_content');
+    if (lp){
+        SetContainer(lp)
+    }
+    let rp = document.getElementById('right_pane_content');
+    if (rp){
+        SetContainer(rp)
+    }
 }
 
 function SetContainer(container) {

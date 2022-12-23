@@ -106,13 +106,13 @@
 
         <div id="page_holder" class="flex_col">
                 <div id="header" class="header">
-                        <div id="header_flex" class="flex_row">
-                                <a href="/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
-                                <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
-                                        ≡
-                                </div>
-                                <div id="navbar" class="navbar requires_js">
-                                        <a class="navbar-link" href="/index.html" title="Home">Home</a>
+    <div id="header_flex" class="flex_row">
+            <a href="/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+            <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
+                    ≡
+            </div>
+            <div id="navbar" class="navbar requires_js">
+                    <a class="navbar-link" href="/index.html" title="Home">Home</a>
 <a class="navbar-link" href="/General Information/About ObsidianHtml.html" title="About">About</a>
 <a class="navbar-link" href="/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
 <a class="navbar-link" href="/Configurations/Features/Features.html" title="Features">Features</a>
@@ -120,8 +120,8 @@
 <a class="navbar-link" href="/Configurations/Styling/Styling.html" title="Styling">Styling</a>
 <a class="navbar-link" href="/Configurations/Modes/Modes.html" title="Modes">Modes</a>
 <a class="navbar-link" href="/News.html" title="News">News</a>
-                                        <div class="icon-tray">
-                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+                    <div class="icon-tray">
+                            <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
     T
 </div>
 <script>
@@ -152,7 +152,7 @@
         }
     }
 </script>
-                                                        <div onclick="openSearch()" class="theme-button requires_js">
+                                    <div onclick="openSearch()" class="theme-button requires_js">
                 <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
@@ -167,34 +167,34 @@
                         }
                 }
         </script>
-                                                        <div class="graph_header_div requires_js">
+                                    <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=implementing links & link awareness" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
-                                                        <div >
+                                    <div >
             <a id="dirtree_link" class="system-link" href="/dirtree.html" title="View directory tree">
                     <img src = "/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
             </a>
         </div>
-                                                <div>
+                            <div>
     <a href="/obs.html/tags/index.html" title="Open tag view">
             <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
     </a>
 </div>
-                                                        <div>
+                                    <div>
             <a id="rss_link" class="system-link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
                     <img src = "/obs.html/static/rss.svg" alt="RSS Feed link"/>
             </a>
         </div>
-                                        </div>
-                                        <div style="display: flex; flex-direction:column">
-                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
-                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
-                                        </div>
-                                </div>
-                        </div>
-                        <div class="popup" id="theme-popup">
+                    </div>
+                    <div style="display: flex; flex-direction:column">
+                        <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
+                        <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
+                    </div>
+            </div>
+    </div>
+    <div class="popup" id="theme-popup">
     <label for="cars">Theme </label>
 
     <select name="theme" id="theme" onchange="set_theme(this.value)">
@@ -203,12 +203,12 @@
       <option value="obs-dark">obsidian-dark</option>
     </select> 
 </div>
-                </div>
+</div>
                 <div class="flex_row">
                         <div id="left_pane" class="left_pane active">
-                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
-                                <div id="left_pane_content" class="left_pane_content">
-                                        <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
+    <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+    <div id="left_pane_content" class="left_pane_content">
+            <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
 <div id="folder-container-1" class="dir-container requires_js " path="/Automation">
 	<ul class="dir-list">
 		<li><a class="" href="/Automation/Automate website deployment.html"  >Automate website deployment</a></li>
@@ -276,6 +276,7 @@
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph view</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
+			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
 			<li><a class="" href="/Configurations/Features/Website navigation menu.html"  >Website navigation menu</a></li>
 		</ul>
@@ -398,8 +399,8 @@
 	<li><a class="" href="/index.html"  >Home</a></li>
 </ul>
 </div>
-                                </div>
-                        </div>
+    </div>
+</div>
                         <div class="container">
                                 
                 <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
@@ -408,18 +409,7 @@
                         <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/Demonstrations/Demonstrations.html" style="color: var(--normal-text-color);">Demonstrations</a> / <a href="/Demonstrations/Implementing links & link awareness.html" >Implementing links & link awareness</a>
                     </div>
                 </div>
-<h1 id="links">Links</h1>
-<div class="toc">
-<ul>
-<li><a href="#links" class="anchor-link">Links</a><ul>
-<li><a href="#obsidian-type-links" class="anchor-link">Obsidian type links</a></li>
-<li><a href="#proper-markdown-links" class="anchor-link" class="anchor-link">Proper markdown links</a></li>
-<li><a href="#link-awareness" class="anchor-link">Link awareness</a></li>
-<li><a href="#link-to-non-markdown-files" class="anchor-link">Link to non-markdown files</a></li>
-</ul>
-</li>
-</ul>
-</div>
+<div class="content"><h1 id="links">Links</h1>
 <h2 id="obsidian-type-links">Obsidian type links</h2>
 <p><code>[[Simple Obsidian-type Link]]</code> translates to: <br />
 <a href="/Demonstrations/Test%20pages/Simple%20Obsidian-type%20Link.html">Simple Obsidian-type Link</a>   </p>
@@ -428,7 +418,7 @@
 <p>Linking to specific chapters <code>[[Long long page#Chapter of interest]]</code> <br />
 <a href="/Demonstrations/Test%20pages/Long%20long%20page.html#chapter-of-interest">Long long page#Chapter of interest</a>   </p>
 <p>Linking to another header on the same page: <code>[[#Proper markdown links]]</code> <br />
-<a href="#proper-markdown-links" class="anchor-link" class="anchor-link">Proper markdown links</a>   </p>
+<a href="#proper-markdown-links" class="anchor-link">Proper markdown links</a>   </p>
 <h2 id="proper-markdown-links">Proper markdown links</h2>
 <p>There is a setting that forces Obsidian to use proper markdown notation. So this is also supported:   </p>
 <p><code>[Proper markdown link](proper%20markdown)</code> <br />
@@ -451,32 +441,34 @@
 </code></pre></div>
 
 
-</div>
+</div></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
+	<li><a class="backlink" href="/obs.html/tag_index.html">index</a></li>
 	<li><a class="backlink" href="/Demonstrations/Demonstrations.html">demonstrations</a></li>
+	<li><a class="backlink" href="/obs.html/tag_index.html">tag_index</a></li>
 </ul>
 </div>
 
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
 	<li><a class="backlink" href="/obs.html/tags/feature/parsing_markdown/index.html">feature/parsing_markdown</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A193099506306273509481411501826744081781{level}" class="graph_div"></div>
+    <div id="A6930926949913200813991673655335338522{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B193099506306273509481411501826744081781{level}" level="{level}" note_temp_id="193099506306273509481411501826744081781" onclick="window.ObsHtmlGraph.run(this, '193099506306273509481411501826744081781', 'implementing links & link awareness');">
+        <button class="graph_button graph_show_button" id="B6930926949913200813991673655335338522{level}" level="{level}" note_temp_id="6930926949913200813991673655335338522" onclick="window.ObsHtmlGraph.run(this, '6930926949913200813991673655335338522', 'implementing links & link awareness');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C193099506306273509481411501826744081781{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C6930926949913200813991673655335338522{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -499,11 +491,11 @@
                         <div class="container_filler">
                         </div>
                         <div id="right_pane" class="right_pane active">
-                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
-                                <div id="right_pane_content" class="right_pane_content">
-                                        
-                                </div>
-                        </div>
+    <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+    <div id="right_pane_content" class="right_pane_content">
+            
+    </div>
+</div>
                 </div>
         </div>
 

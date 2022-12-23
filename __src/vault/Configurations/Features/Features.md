@@ -32,6 +32,7 @@ These features implement standard Obsidian behavior in the html output.
 | [[Implementing Latex\|Mathjax support]] | Convert mathjax code to formulas | Enabled |
 | [[Implementing Mermaid diagrams in HTML output\|Mermaid diagrams]] | Convert mermaid code to diagrams | Enabled |
 | [[Styling]] | Enable user to switch between light and dark mode / Choose a different layout. | Enabled |
+| [[Side panes]] | *Only for Documentation layout*. Configure side panes and their content. | Enabled |
 | [[Styling#Table of Contents\|Table of Contents]] | Add TOC to side-pane instead of in note / add TOC to notes when missing | Enabled |
 | [[Tags Page]] | Add a list of tags under each note. Nb: the default preserve_inline_tags setting will create polluted md output! | Enabled |
 

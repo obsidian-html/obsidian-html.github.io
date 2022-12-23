@@ -106,15 +106,15 @@
 
         <div id="page_holder" class="flex_col">
                 <div id="header" class="header">
-                        <div id="header_flex" class="flex_row">
-                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
-                                <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
-                                        ≡
-                                </div>
-                                <div id="navbar" class="navbar requires_js">
-                                        
-                                        <div class="icon-tray">
-                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+    <div id="header_flex" class="flex_row">
+            <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+            <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
+                    ≡
+            </div>
+            <div id="navbar" class="navbar requires_js">
+                    
+                    <div class="icon-tray">
+                            <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
     T
 </div>
 <script>
@@ -145,7 +145,7 @@
         }
     }
 </script>
-                                                        <div onclick="openSearch()" class="theme-button requires_js">
+                                    <div onclick="openSearch()" class="theme-button requires_js">
                 <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
@@ -160,30 +160,30 @@
                         }
                 }
         </script>
-                                                        <div class="graph_header_div requires_js">
+                                    <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=v3.4.0" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
-                                                        <div >
+                                    <div >
             <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
             </a>
         </div>
-                                                <div>
+                            <div>
     <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
             <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
     </a>
 </div>
-                                                
-                                        </div>
-                                        <div style="display: flex; flex-direction:column">
-                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
-                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
-                                        </div>
-                                </div>
-                        </div>
-                        <div class="popup" id="theme-popup">
+                            
+                    </div>
+                    <div style="display: flex; flex-direction:column">
+                        <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
+                        <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
+                    </div>
+            </div>
+    </div>
+    <div class="popup" id="theme-popup">
     <label for="cars">Theme </label>
 
     <select name="theme" id="theme" onchange="set_theme(this.value)">
@@ -192,12 +192,12 @@
       <option value="obs-dark">obsidian-dark</option>
     </select> 
 </div>
-                </div>
+</div>
                 <div class="flex_row">
                         <div id="left_pane" class="left_pane active">
-                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
-                                <div id="left_pane_content" class="left_pane_content">
-                                        <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
+    <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+    <div id="left_pane_content" class="left_pane_content">
+            <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
 <div id="folder-container-1" class="dir-container requires_js " path="/index_from_tags/Automation">
 	<ul class="dir-list">
 		<li><a class="" href="/index_from_tags/Automation/Automate website deployment.html"  >Automate website deployment</a></li>
@@ -256,6 +256,7 @@
 			<li><a class="" href="/index_from_tags/Configurations/Features/Graph view.html"  >Graph view</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Include notes.html"  >Include notes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Website navigation menu.html"  >Website navigation menu</a></li>
 		</ul>
@@ -435,8 +436,8 @@
 	<li><a class="" href="/index_from_tags/index.html"  >index</a></li>
 </ul>
 </div>
-                                </div>
-                        </div>
+    </div>
+</div>
                         <div class="container">
                                 
                 <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
@@ -446,29 +447,30 @@
                     </div>
                 </div>
 <embeddedtitle>V3.4.0</embeddedtitle>
-<blockquote>
+<div class="content"><blockquote>
 <p>Feature version of <a href="/index_from_tags/Changelog/v3.0.0.html">v3.0.0</a>.  <br />
 Not published yet   </p>
 </blockquote>
 <h1 id="added">Added</h1>
-<div class="toc">
-<ul>
-<li><a href="#added" class="anchor-link">Added</a></li>
-<li><a href="#changes" class="anchor-link">Changes</a></li>
-</ul>
-</div>
 <ul>
 <li><code>included_folders</code> now allows a user to select the folders from the vault to include, the rest is "excluded".    </li>
-<li><code>exclude_subfolders</code>  now also supports glob patterns. This affects both the copying step to the temporary folder, and the file tree generator (for when copying to temp dir is turned off).   </li>
+<li>
+<p><code>exclude_subfolders</code>  now also supports glob patterns. This affects both the copying step to the temporary folder, and the file tree generator (for when copying to temp dir is turned off).   </p>
+</li>
+<li>
+<p><a href="/index_from_tags/Configurations/Features/Side%20panes.html">Side panes</a> feature   </p>
+</li>
 </ul>
 <h1 id="changes">Changes</h1>
 <ul>
-<li>Enabling glob support required that values in <code>exclude_subfolders</code>  now should start with a slash when excluding a specific folder. Excluding any folder with the given name, the starting slash should be dropped.</li>
-</ul>
+<li>Enabling glob support required that values in <code>exclude_subfolders</code>  now should start with a slash when excluding a specific folder. Excluding any folder with the given name, the starting slash should be dropped.   </li>
+<li>Alterations in <a href="/index_from_tags/Configurations/Modes/Create%20index%20from%20tags.html">Create index from tags</a></li>
+</ul></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Features/Side panes.html">side panes</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Deprecated Configurations/exclude_subfolders.html">exclude_subfolders</a></li>
 	<li><a class="backlink" href="/index_from_tags/Configurations/Modes/Filtering notes.html">filtering notes</a></li>
 </ul>
@@ -477,20 +479,20 @@ Not published yet   </p>
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-10-12/index.html">date/2022-10-12</a></li>
 	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-10-12/index.html">date/2022-10-12</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A302534090172598942019786701046416654531{level}" class="graph_div"></div>
+    <div id="A72288996693902129856172286041950782993{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B302534090172598942019786701046416654531{level}" level="{level}" note_temp_id="302534090172598942019786701046416654531" onclick="window.ObsHtmlGraph.run(this, '302534090172598942019786701046416654531', 'v3.4.0');">
+        <button class="graph_button graph_show_button" id="B72288996693902129856172286041950782993{level}" level="{level}" note_temp_id="72288996693902129856172286041950782993" onclick="window.ObsHtmlGraph.run(this, '72288996693902129856172286041950782993', 'v3.4.0');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C302534090172598942019786701046416654531{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C72288996693902129856172286041950782993{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -513,11 +515,11 @@ Not published yet   </p>
                         <div class="container_filler">
                         </div>
                         <div id="right_pane" class="right_pane active">
-                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
-                                <div id="right_pane_content" class="right_pane_content">
-                                        
-                                </div>
-                        </div>
+    <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+    <div id="right_pane_content" class="right_pane_content">
+            
+    </div>
+</div>
                 </div>
         </div>
 

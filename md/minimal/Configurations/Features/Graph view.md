@@ -1,10 +1,10 @@
 ---
 graph_name: Graph View
 tags:
-- feature/graph_view
 - date/2022-02-05
-- feature/html_output
 - type/configuration
+- feature/graph_view
+- feature/html_output
 ---
    
 # Graph view   

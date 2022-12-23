@@ -27,6 +27,17 @@ obs.html.tags:
 ```
    
    
+### dont_add_toc   
+This setting will negate the global setting of `toggles/features/table_of_contents/add_toc_when_missing`   
+   
+``` yaml
+obs.html.tags:
+- dont_add_toc
+```
+   
+   
+   
+   
 ## graph_name   
 See [ graph_name](../../Configurations/Features/Graph%20view.md#overwrite-the-name-of-a-note-in-the-graph-view-). This will overwrite the name that the note shows up as in the graph view.   
    

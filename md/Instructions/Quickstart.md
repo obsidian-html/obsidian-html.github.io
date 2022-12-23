@@ -1,7 +1,7 @@
 ---
 tags:
-- type/instruction
 - date/2022-02-21
+- type/instruction
 ---
    
 # Quickstart   

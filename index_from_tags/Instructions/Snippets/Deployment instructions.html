@@ -106,15 +106,15 @@
 
         <div id="page_holder" class="flex_col">
                 <div id="header" class="header">
-                        <div id="header_flex" class="flex_row">
-                                <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
-                                <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
-                                        ≡
-                                </div>
-                                <div id="navbar" class="navbar requires_js">
-                                        
-                                        <div class="icon-tray">
-                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+    <div id="header_flex" class="flex_row">
+            <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+            <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
+                    ≡
+            </div>
+            <div id="navbar" class="navbar requires_js">
+                    
+                    <div class="icon-tray">
+                            <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
     T
 </div>
 <script>
@@ -145,7 +145,7 @@
         }
     }
 </script>
-                                                        <div onclick="openSearch()" class="theme-button requires_js">
+                                    <div onclick="openSearch()" class="theme-button requires_js">
                 <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
@@ -160,30 +160,30 @@
                         }
                 }
         </script>
-                                                        <div class="graph_header_div requires_js">
+                                    <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=deployment instructions" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
-                                                        <div >
+                                    <div >
             <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
                     <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
             </a>
         </div>
-                                                <div>
+                            <div>
     <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
             <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
     </a>
 </div>
-                                                
-                                        </div>
-                                        <div style="display: flex; flex-direction:column">
-                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
-                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
-                                        </div>
-                                </div>
-                        </div>
-                        <div class="popup" id="theme-popup">
+                            
+                    </div>
+                    <div style="display: flex; flex-direction:column">
+                        <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
+                        <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
+                    </div>
+            </div>
+    </div>
+    <div class="popup" id="theme-popup">
     <label for="cars">Theme </label>
 
     <select name="theme" id="theme" onchange="set_theme(this.value)">
@@ -192,12 +192,12 @@
       <option value="obs-dark">obsidian-dark</option>
     </select> 
 </div>
-                </div>
+</div>
                 <div class="flex_row">
                         <div id="left_pane" class="left_pane active">
-                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
-                                <div id="left_pane_content" class="left_pane_content">
-                                        <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
+    <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+    <div id="left_pane_content" class="left_pane_content">
+            <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
 <div id="folder-container-1" class="dir-container requires_js " path="/index_from_tags/Automation">
 	<ul class="dir-list">
 		<li><a class="" href="/index_from_tags/Automation/Automate website deployment.html"  >Automate website deployment</a></li>
@@ -256,6 +256,7 @@
 			<li><a class="" href="/index_from_tags/Configurations/Features/Graph view.html"  >Graph view</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Include notes.html"  >Include notes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Website navigation menu.html"  >Website navigation menu</a></li>
 		</ul>
@@ -435,8 +436,8 @@
 	<li><a class="" href="/index_from_tags/index.html"  >index</a></li>
 </ul>
 </div>
-                                </div>
-                        </div>
+    </div>
+</div>
                         <div class="container">
                                 
                 <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
@@ -446,13 +447,7 @@
                     </div>
                 </div>
 <embeddedtitle>Deployment instructions</embeddedtitle>
-<div class="toc">
-<ul>
-<li><a href="#deploying-to-a-subfolder" class="anchor-link">Deploying to a subfolder</a></li>
-<li><a href="#viewing-your-website-without-a-webserver" class="anchor-link">Viewing your website without a webserver</a></li>
-</ul>
-</div>
-<p>By default the configuration allows for running the website as  <a href="http://localhost:8000" class="external-link">http://localhost:8000</a>,  <a href="https://mywebsite.com/," class="external-link">https://mywebsite.com/,</a> <a href="https://my-account.github.io/," class="external-link">https://my-account.github.io/,</a> etc.   </p>
+<div class="content"><p>By default the configuration allows for running the website as  <a href="http://localhost:8000" class="external-link">http://localhost:8000</a>,  <a href="https://mywebsite.com/," class="external-link">https://mywebsite.com/,</a> <a href="https://my-account.github.io/," class="external-link">https://my-account.github.io/,</a> etc.   </p>
 <p>All those urls have in common that they are in the root of the domain. An example where this is not the case is:  <a href="https://mywebsite.com/subfolder/." class="external-link">https://mywebsite.com/subfolder/.</a>   </p>
 <h4 id="deploying-to-a-subfolder">Deploying to a subfolder</h4>
 <p>To make your website work for <a href="https://mywebsite.com/subfolder/" class="external-link">https://mywebsite.com/subfolder/</a> you should add this setting:   </p>
@@ -482,7 +477,7 @@
 <h4 id="viewing-your-website-without-a-webserver">Viewing your website without a webserver</h4>
 <p>If you don't want to deploy a website on the world wide web, nor want to start a local webserver everytime someone wants to view your website, you can configure Obsidianhtml such that you can just open the index.html in your browser directly from your filesystem.   </p>
 <p>Note that this will break the graph view and the search function, so these should be disabled.    </p>
-<p>For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: <a href="/index_from_tags/Configurations/Modes/Relative_path_html.html">Relative_path_html</a></p>
+<p>For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: <a href="/index_from_tags/Configurations/Modes/Relative_path_html.html">Relative_path_html</a></p></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -495,20 +490,20 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-09-04/index.html">date/2022-09-04</a></li>
 	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-09-04/index.html">date/2022-09-04</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A323834823248121916525223282588147257589{level}" class="graph_div"></div>
+    <div id="A290162392017732422661758914848205301131{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B323834823248121916525223282588147257589{level}" level="{level}" note_temp_id="323834823248121916525223282588147257589" onclick="window.ObsHtmlGraph.run(this, '323834823248121916525223282588147257589', 'deployment instructions');">
+        <button class="graph_button graph_show_button" id="B290162392017732422661758914848205301131{level}" level="{level}" note_temp_id="290162392017732422661758914848205301131" onclick="window.ObsHtmlGraph.run(this, '290162392017732422661758914848205301131', 'deployment instructions');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C323834823248121916525223282588147257589{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C290162392017732422661758914848205301131{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -531,11 +526,11 @@
                         <div class="container_filler">
                         </div>
                         <div id="right_pane" class="right_pane active">
-                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
-                                <div id="right_pane_content" class="right_pane_content">
-                                        
-                                </div>
-                        </div>
+    <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+    <div id="right_pane_content" class="right_pane_content">
+            
+    </div>
+</div>
                 </div>
         </div>
 

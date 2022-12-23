@@ -6,6 +6,8 @@
     text-rendering: optimizeLegibility;
     --accent-color: 65, 76, 253;
     --loading-bg-color: 255, 255, 255;
+    --left-pane-active-width: 16rem;
+    --right-pane-active-width: 16rem;
     --normal-text-color: 51, 51, 51;
     --bg-color: #f2f3f5a6;
     --bg-note: #ffffff;
@@ -35,6 +37,14 @@ body {
 
 .header {
     padding-bottom: 1rem;
+}
+.header.minimal-header {
+    padding-bottom: 0rem;
+}
+
+#left_pane_fold_header,
+#right_pane_fold_header {
+    cursor: pointer;
 }
 
 @font-face {
@@ -164,18 +174,18 @@ blockquote p {
 
 .left_pane.active {
     min-width: 15rem;
-    width: 15rem;
+    width: var(--left-pane-active-width);
 }
 
 .right_pane.active {
     min-width: max-content;
+    width: var(--right-pane-active-width)
 }
 
 .left_pane,
 .right_pane {
     width: 2rem;
     min-width: 2rem;
-    cursor: pointer;
 }
 
 .right_pane {
@@ -254,6 +264,10 @@ blockquote p {
     width: calc(100vw - 21rem);
     margin-bottom: -0.5rem;
 }
+.minimal-header .navbar {
+    flex-direction: row-reverse;
+    width: calc(100vw - 2rem);
+}
 
 .navbar-button {
     display: none;
@@ -271,6 +285,7 @@ blockquote p {
     margin-left: -0.7rem;
     margin-top: 1rem;
 }
+
 
 
 /* ---------------------------------------- Table troubles ---------------------------------------- */
@@ -489,6 +504,23 @@ a.navbar-link:hover {
     margin-left: -1.5rem;
 }
 
+.tags-pane-content {
+    margin: 1rem;
+    max-width: 20vw;
+}
+.tags-pane-content h2 {
+    border: 0px;
+    font-size: medium;
+    padding: 0px;
+    margin: 0px;
+}
+.tags-pane-content ul {
+    padding-left: 0.8rem;
+}
+
+.side-pane-container {
+    padding: 0.8rem;
+}
 
 h3 {
     font-size: 13pt;
@@ -1475,7 +1507,7 @@ span.linenos.special {
 .callout-folded .callout-content {
     display: none;
 }
-.active .callout-content {
+.callout.active .callout-content {
     display: block
 }
 .callout-title-fold {
@@ -1496,6 +1528,13 @@ span.linenos.special {
     border-radius: 0.1rem 0 0 0.1rem;
     color: var(--callout-color);
 }
+.left_pane_content .callout {
+    background-color: var(--bg-note);
+}
+.right_pane_content .callout {
+    background-color: var(--bg-note);
+}
+
 .callout.active {
     padding-bottom: 0.1rem;
 }
@@ -1793,6 +1832,11 @@ span.linenos.special {
     padding-bottom: 0.3rem;
 }
 
+.theme-obs-light .header.minimal-header,
+.theme-obs-dark .header.minimal-header {
+    padding-top: 0.4rem;
+}
+
 .theme-obs-light #homelink,
 .theme-obs-light #homelink:visited,
 .theme-obs-light #homelink:link,
@@ -1875,6 +1919,11 @@ span.linenos.special {
     background-color: unset;
     color: unset;
     margin-top: -1rem;
+}
+
+.theme-obs-dark .minimal-header .navbar-button,
+.theme-obs-dark .minimal-header .navbar-button {
+    margin-top: 1rem;
 }
 
 .theme-obs-dark .navbar-link .theme-obs-light .navbar-link {

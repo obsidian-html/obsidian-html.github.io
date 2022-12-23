@@ -102,6 +102,7 @@ toggles:
     create_index_from_tags:
       enabled: True
       verbose: True
+      use_as_homepage: True
       tags:
         - type/automation
         - feature/parsing_markdown

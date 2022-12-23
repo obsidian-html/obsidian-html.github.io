@@ -35,7 +35,7 @@
                     </div>
                 </div>
 <embeddedtitle>V3.2.2</embeddedtitle>
-<blockquote>
+<div class="content"><blockquote>
 <p>Patch version of <a href="/minimal/Changelog/v3.2.0.html">v3.2.0</a>.    </p>
 </blockquote>
 <h2 id="changes">Changes</h2>
@@ -46,7 +46,7 @@
 <ul>
 <li>The change in <a href="/minimal/Changelog/v3.2.1.html">v3.2.1</a> to fix links with parentheses not being parsed correctly created the bug that when having () around a link, like (<a href="/minimal/Changelog/v3.2.1.html">v3.2.1</a>), would cause the trailing <code>)</code> to be included in the link. This has been fixed.   </li>
 <li>Anchor links like <code>[go to chapter](#chapter)</code> would cause a breaking bug because of using <code>link[0]</code> instead of <code>link.startswith()</code>. (Former will give an out of bounds error when string is empty). This was also a piece of code that didn't need to be run for anchor links, this has been corrected as well.</li>
-</ul>
+</ul></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>

@@ -35,7 +35,7 @@
                     </div>
                 </div>
 <embeddedtitle>V3.2.1</embeddedtitle>
-<blockquote>
+<div class="content"><blockquote>
 <p>Patch version of <a href="/minimal/Changelog/v3.2.0.html">v3.2.0</a>.    </p>
 </blockquote>
 <p>This could've been a feature version, but I published this mainly to fix major bugs in <a href="/minimal/Changelog/v3.2.0.html">v3.2.0</a>.   </p>
@@ -74,7 +74,7 @@
 <li>The warning module import was removed in the last version by mistake. This would cause a crash if it would warn about an external image not being imported.   </li>
 <li><code>obsidian serve</code> would give <code>FileNotFoundError: [Errno 2] No such file or directory</code> errors after a rerun of <code>obsidian convert</code> (because the folder it was hosting would've been temporarily removed). <a href="https://github.com/obsidian-html/obsidian-html/issues/398" class="external-link">This was fixed</a>.   </li>
 <li>A valid md link of <code>[test](this_is_a_(long)_link.md)</code> was being parsed as <code>this_is_a_(long</code> instead of <code>this_is_a_(long)_link.md</code>. Fixed by requiring no spaces in link, which is conform spec.</li>
-</ul>
+</ul></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>

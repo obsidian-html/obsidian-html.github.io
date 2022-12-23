@@ -15,7 +15,7 @@ toggles:
       layout: documentation # documentation, tabs, minimal
 ```
 
-For the layout you can choose between `documentation`, `minimal`, and `tabs`  
+For the layout you can choose between `documentation`,  `minimal`, and `tabs`  
 
 The layout will influence the structure of the pages that are generated. There is a short description below for each layout. 
 
@@ -25,7 +25,7 @@ To get an actual impression, check out this same site with the different layouts
 - [documentation](https://obsidian-html.github.io/) (the default)
 
 ### Documentation
-The documentation layout is used for this site. This layout is suited for people who like to establish a well thought out folder structure, and for − as the name says − documentation vaults such as this one. It is the only layout that supports the content view, which is a list of notes that share the same folder.
+The documentation layout is used for this site. This layout is suited for people who like to establish a well thought out folder structure, and for − as the name says − documentation vaults such as this one. It is the only layout that supports [[Side panes]].
 
 ### Tabs
 The tabs layout is for people who use the smart note taking / zettelkasten methods, where dense linkage is prefered over giving a strict structure from the get-go. It allows to have multiple notes open at one time, and to scroll back and forth, following a thread of related notes. Tabs has some added navigation options to mediate in the infinite scrolling of notes. Read more on that [[Tabs Layout|here]].

@@ -2,6 +2,7 @@
 graph_name: Homepage
 obs.html.tags:
 - no_tag_footer
+- dont_add_toc
 tags:
 - type/moc
 - test
@@ -44,7 +45,4 @@ Try this site with different [[Styling#Layouts|layouts]]:
 ## Tips and tricks
 - [[Performance Tuning]]
 - [[Automate website deployment|Automate website deployment]] 
-
-
-
 
