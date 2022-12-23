@@ -1,7 +1,7 @@
 ---
 tags:
-- type/bug_report
 - date/2022-03-11
+- type/bug_report
 ---
    
 # Spaces in front of headers allowed by Obsidian but not by ObsidianHtml   

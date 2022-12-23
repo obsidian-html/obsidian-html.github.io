@@ -414,6 +414,37 @@
 <p>Added in <a href="/Changelog/v3.3.0.html">v3.3.0</a>   </p>
 </blockquote>
 <h1 id="general-information">General information</h1>
+<div class="toc">
+<ul>
+<li><a href="#general-information" class="anchor-link">General information</a><ul>
+<li><a href="#status-of-the-feature" class="anchor-link">Status of the feature</a><ul>
+<li><a href="#whoosh" class="anchor-link">Whoosh</a></li>
+</ul>
+</li>
+<li><a href="#enable" class="anchor-link">Enable</a></li>
+<li><a href="#search-example" class="anchor-link" class="anchor-link">Search example</a><ul>
+<li><a href="#just-links" class="anchor-link">Just links</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#supported-syntax-at-the-moment" class="anchor-link" class="anchor-link">Supported syntax at the moment</a><ul>
+<li><a href="#query-versus-query-list" class="anchor-link">Query versus query list</a></li>
+<li><a href="#search-for-keyword" class="anchor-link">Search for keyword</a></li>
+<li><a href="#search-only-in-note-name-file" class="anchor-link">Search only in note name (file)</a></li>
+<li><a href="#search-for-tags" class="anchor-link">Search for tags</a><ul>
+<li><a href="#search-for-a-specific-tag" class="anchor-link">Search for a specific tag</a></li>
+</ul>
+</li>
+<li><a href="#search-for-inline-tags" class="anchor-link">Search for inline tags</a></li>
+<li><a href="#search-for-path" class="anchor-link">Search for path</a></li>
+<li><a href="#exclude-syntax" class="anchor-link">Exclude syntax</a></li>
+<li><a href="#search-for-a-phrase" class="anchor-link">Search for a phrase</a></li>
+<li><a href="#standard-simple-search" class="anchor-link">Standard simple search</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="callout callout-warning active" rasa="1">
 <div class="callout-title">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
@@ -430,7 +461,7 @@
 </div>
 <p>This feature implements the <code>query</code> code blocks functionality of Obsidian, with which we can embed search results into the note. See also <a href="https://help.obsidian.md/Plugins/Search" class="external-link" class="external-link">https://help.obsidian.md/Plugins/Search</a>   </p>
 <h2 id="status-of-the-feature">Status of the feature</h2>
-<p>Not all search functionality of <a href="https://help.obsidian.md/Plugins/Search" class="external-link" class="external-link">obsidian embbeded search</a> has been implemented yet. See the <a href="#supported-syntax-at-the-moment" class="anchor-link">Supported syntax at the moment</a> for what has been implemented already.   </p>
+<p>Not all search functionality of <a href="https://help.obsidian.md/Plugins/Search" class="external-link" class="external-link">obsidian embbeded search</a> has been implemented yet. See the <a href="#supported-syntax-at-the-moment" class="anchor-link" class="anchor-link">Supported syntax at the moment</a> for what has been implemented already.   </p>
 <p>If you want your most important usecase to be added first, please make a description of it here: <a href="https://github.com/obsidian-html/obsidian-html/issues/324" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/324</a>   </p>
 <div class="callout callout-important active" rasa="1">
 <div class="callout-title">
@@ -531,6 +562,9 @@ convert automation webserver ssh
 				nice method if your <b class="match term0">webserver</b> is reachable
 			</div>
 			<div class="match-row">
+				<b class="match term1">ssh</b> from your workstation. otherwise, i advise using
+			</div>
+			<div class="match-row">
 				the [git method](../<b class="match term2">automation</b>/automationwindows.md
 			</div>
 			<div class="match-row">
@@ -538,9 +572,6 @@ convert automation webserver ssh
 			</div>
 			<div class="match-row">
 				privatekeypath user@<b class="match term0">webserver</b> -m "$($env:temp)\_emptydevfruits.sh
-			</div>
-			<div class="match-row">
-				of pushing websites](../<b class="match term2">automation</b>/automate%20website
 			</div>
 			<div class="tag-box">
 				<div class="match-row tag">
@@ -561,10 +592,10 @@ convert automation webserver ssh
 				pushing to your <b class="match term0">webserver</b>. ↩ &gt; note that these
 			</div>
 			<div class="match-row">
-				using git (windows)](../<b class="match term2">automation</b>/automationwindows.md
+				a process on your <b class="match term0">webserver</b> that periodically
 			</div>
 			<div class="match-row">
-				<b class="match term1">ssh</b> from your workstation. otherwise, i advise using
+				using git (windows)](../<b class="match term2">automation</b>/automationwindows.md
 			</div>
 			<div class="match-row">
 				auto push to local <b class="match term0">webserver</b> (linux)](../<b class="match term2">automation</b>/automationlinuxssh.md
@@ -640,16 +671,16 @@ convert automation webserver ssh
 		</div>
 		<div class="matches">
 			<div class="match-row">
-				commands: ↩ run <b class="match term3">convert</b> vault using sensible
+				and run a local <b class="match term0">webserver</b> to serve it for
 			</div>
 			<div class="match-row">
 				can be used in the <b class="match term3">convert</b> command. ↩ <b class="match term3">convert</b> just <b class="match term3">convert</b> your vault to html
 			</div>
 			<div class="match-row">
-				can use in `obsidian <b class="match term3">convert</b>`. ↩ for obsidianhtml
+				obsidian run`, the <b class="match term3">convert</b> command will only
 			</div>
 			<div class="match-row">
-				obsidian run`, the <b class="match term3">convert</b> command will only
+				<b class="match term3">convert</b> your vault to md and/or html. ↩ this mode is the
 			</div>
 			<div class="match-row">
 				you want to <b class="match term3">convert</b> your vault. ↩ when
@@ -690,13 +721,13 @@ convert automation webserver ssh
 				<b class="match term2">automation</b>/automationwindowsssh.md) ↩ - [automationwindows
 			</div>
 			<div class="match-row">
+				<b class="match term2">automation</b>/automationwindows.md) ↩ - [automationlinuxssh
+			</div>
+			<div class="match-row">
 				<b class="match term2">automation</b>/automationlinuxssh.md) ↩ - [automationlinuxgit
 			</div>
 			<div class="match-row">
 				<b class="match term2">automation</b>/automationlinuxgit.md) ↩ - [automate website
-			</div>
-			<div class="match-row">
-				deployment](../<b class="match term2">automation</b>/automate%20website
 			</div>
 		</div>
 	</div>
@@ -725,10 +756,10 @@ convert automation webserver ssh
 		</div>
 		<div class="matches">
 			<div class="match-row">
-				is `<b class="match term3">convert</b>`. this command will
+				cd example_vault ↩ ``` ↩ ## <b class="match term3">convert</b> ↩ the main mode of
 			</div>
 			<div class="match-row">
-				in that file to <b class="match term3">convert</b> your file to html
+				is `<b class="match term3">convert</b>`. this command will
 			</div>
 			<div class="match-row">
 				obisidanhtml <b class="match term3">convert</b> ↩ ``` ↩ this should give
@@ -900,7 +931,7 @@ convert automation webserver ssh
 <h1 id="supported-syntax-at-the-moment">Supported syntax at the moment</h1>
 <h2 id="query-versus-query-list">Query versus query list</h2>
 <p>Write <code>query list</code> instead of <code>query</code> if you want to only print out links to notes (no matches). <br />
-See also <a href="#search-example" class="anchor-link">Search example</a>, where the two are compared.   </p>
+See also <a href="#search-example" class="anchor-link" class="anchor-link">Search example</a>, where the two are compared.   </p>
 <p>I will use <code>query list</code> in these examples where seeing the matches/tags is not important.   </p>
 <h2 id="search-for-keyword">Search for keyword</h2>
 <p>This will search in <code>["content", "title", "path", "file", "tags"]</code>   </p>
@@ -974,10 +1005,10 @@ babayaga
 		<div class="matches">
 			<div class="tag-box">
 				<div class="match-row tag">
-					<a href="/obs.html/tags/bla/babayaga/index.html">bla/<b class="match term0">babayaga</b></a>
+					<a href="/obs.html/tags/babayaga/index.html"><b class="match term0">babayaga</b></a>
 				</div>
 				<div class="match-row tag">
-					<a href="/obs.html/tags/babayaga/index.html"><b class="match term0">babayaga</b></a>
+					<a href="/obs.html/tags/bla/babayaga/index.html">bla/<b class="match term0">babayaga</b></a>
 				</div>
 			</div>
 			<div class="tag-box">
@@ -1054,10 +1085,10 @@ tag:babayaga
 		<div class="matches">
 			<div class="tag-box">
 				<div class="match-row tag">
-					<a href="/obs.html/tags/bla/babayaga/index.html">bla/<b class="match term0">babayaga</b></a>
+					<a href="/obs.html/tags/babayaga/index.html"><b class="match term0">babayaga</b></a>
 				</div>
 				<div class="match-row tag">
-					<a href="/obs.html/tags/babayaga/index.html"><b class="match term0">babayaga</b></a>
+					<a href="/obs.html/tags/bla/babayaga/index.html">bla/<b class="match term0">babayaga</b></a>
 				</div>
 			</div>
 		</div>
@@ -1183,10 +1214,10 @@ tag:#bla/babayaga
 		<div class="matches">
 			<div class="tag-box">
 				<div class="match-row tag">
-					<a href="/obs.html/tags/bla/babayaga/index.html">bla/<b class="match term0">babayaga</b></a>
+					<a href="/obs.html/tags/babayaga/index.html"><b class="match term0">babayaga</b></a>
 				</div>
 				<div class="match-row tag">
-					<a href="/obs.html/tags/babayaga/index.html"><b class="match term0">babayaga</b></a>
+					<a href="/obs.html/tags/bla/babayaga/index.html">bla/<b class="match term0">babayaga</b></a>
 				</div>
 			</div>
 		</div>
@@ -1304,13 +1335,13 @@ query without quotes
 
 </div>
 <div class="graph requires_js ">
-    <div id="A78464275627960330952386321618908666303{level}" class="graph_div"></div>
+    <div id="A90458010180665210180651039584003405245{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B78464275627960330952386321618908666303{level}" level="{level}" note_temp_id="78464275627960330952386321618908666303" onclick="window.ObsHtmlGraph.run(this, '78464275627960330952386321618908666303', 'embedded search');">
+        <button class="graph_button graph_show_button" id="B90458010180665210180651039584003405245{level}" level="{level}" note_temp_id="90458010180665210180651039584003405245" onclick="window.ObsHtmlGraph.run(this, '90458010180665210180651039584003405245', 'embedded search');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C78464275627960330952386321618908666303{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C90458010180665210180651039584003405245{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

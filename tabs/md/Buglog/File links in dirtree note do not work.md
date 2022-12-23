@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-03-11
 - type/bug_report
+- date/2022-03-11
 ---
    
 # File links in dirtree note do not work   
