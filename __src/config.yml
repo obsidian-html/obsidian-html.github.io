@@ -210,7 +210,7 @@ toggles:
       enabled: True
 
     embedded_search:
-      enabled: True
+      enabled: False
 
     dataview:
       enabled: True

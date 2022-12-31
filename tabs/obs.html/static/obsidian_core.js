@@ -10,7 +10,7 @@ var CONFIGURED_HTML_URL_PREFIX = "/tabs";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 0;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '77138239602540968737938797481693231024'                       // used to check whether the localStorage data is stale
+var gzip_hash = '86260274215604230878336701504409743192'                       // used to check whether the localStorage data is stale
 
 // global cache
 var fn_cache_ls_available = null;
@@ -169,11 +169,10 @@ function load_page() {
                 l.onclick = function () {
                     // remove current url from the link
                     let current_url = document.URL
-                    console.log(current_url);
                     current_url = decodeURI(current_url.replace(window.location.protocol + '//', '').replace(window.location.host, ''))
                     current_url = current_url.split('#')[0];
 
-                    let link = this.getAttribute("href")
+                    let link = decodeURI(this.getAttribute("href"))
                     link = link.replace(current_url, '')
 
                     // if we are left with something like: '#blabla' then we have an anchor link
@@ -183,15 +182,13 @@ function load_page() {
                         window.location.href = link;
                         return false;
                     }
-
+                    
                     // we scroll to the anchor
                     // we do this manually because scrolling divs suck
                     let levelcont = document.getElementsByClassName("container")[0];
                     var el = levelcont.querySelectorAll(link.replaceAll(':', '\\:'))[0];
-
                     if (el) {
                         getParentContainer(el).scrollTop = el.offsetTop - rem(6);
-
                         el.classList.add('fade-it');
                         setTimeout(function() {
                             el.classList.remove('fade-it');
@@ -208,10 +205,10 @@ function load_page() {
     // scroll to div
     if (window.location.hash.length > 2 && window.location.hash[1] == '!') {
         let link = '#' + window.location.hash.substring(2, window.location.hash.length)
-        let levelcont = document.getElementsByClassName("container")[0];
+        let levelcont = document.getElementsByClassName("container")[0].getElementsByClassName('content')[0];
         var el = levelcont.querySelectorAll(link)[0];
         if (el) {
-            el.parentElement.scrollTop = el.offsetTop - rem(6);
+            el.parentElement.parentElement.scrollTop = el.offsetTop - rem(6);
         }
     }
 
@@ -220,7 +217,7 @@ function load_page() {
     if (tab_mode && window.location.hash != '') {
         let el = document.getElementById(window.location.hash.substr(2));
         if (el) {
-            el.parentElement.scrollTop = el.offsetTop - rem(6);
+            el.parentElement.parentElement.scrollTop = el.offsetTop - rem(6);
         }
     }
 
@@ -340,7 +337,13 @@ function SetContainer(container) {
 
 // Adds link icon to headers and creates the anchor link to the header.
 function SetHeaders(container) {
+    let content = container.getElementsByClassName('content')
     let els = container.childNodes;
+    console.log(content)
+    if (content.length > 0){
+        content = content[0]
+        els = content.childNodes;
+    }
     for (let i = 0; i < els.length; i++) {
         // Only apply this code block to h1, h2, etc
         if (typeof els[i].tagName === 'undefined' || els[i].tagName[0] != 'H' || els[i].tagName == 'HR' ) {
