@@ -2,12 +2,12 @@
 rss:
   description: An index page of all releases of ObsidianHtml since v1.0.0.
 tags:
-- date/2022-02-16
 - type/moc
+- date/2022-02-16
 ---
    
-# Change Log   
    
+- [v3.4.0](../Changelog/v3.4.0.md)   
 - [v3.3.0](../Changelog/v3.3.0.md)   
 - [v3.2.3](../Changelog/v3.2.3.md)   
 - [v3.2.2](../Changelog/v3.2.2.md)   

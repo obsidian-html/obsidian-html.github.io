@@ -1,8 +1,8 @@
 ---
 tags:
+- feature/parsing_markdown
 - type/general_information
 - date/2022-02-12
-- feature/parsing_markdown
 ---
    
 # Parsing Obsidian notes to proper markdown   

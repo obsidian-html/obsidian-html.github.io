@@ -1,13 +1,12 @@
 ---
 graph_name: Graph View
 tags:
-- feature/graph_view
-- feature/html_output
 - type/configuration
+- feature/graph_view
 - date/2022-02-05
+- feature/html_output
 ---
    
-# Graph view   
 Click on the button at the bottom of a note to view the graph for the current note. Click on the graph icon in the menu to go to a full page graph view.   
    
 In the graph view, clicking on a note will open that note. In the full page view clicking on a note will highlight it, so that you can quickly go through your notes and seeing clearly which are connected to which. Use rightclick in the full page view to open a note.   

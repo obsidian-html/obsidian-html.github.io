@@ -4,7 +4,6 @@ tags:
 - date/2022-03-15
 ---
 
-# NoTabs Mode
 > New in version [[v1.2.0]]
 > **Removed in version [[v2.0.0]]**
 

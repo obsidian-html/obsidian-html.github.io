@@ -1,8 +1,8 @@
 ---
 graph_name: Code blocks
 tags:
-- date/2022-02-04
 - type/styling
+- date/2022-02-04
 - feature/html_output
 ---
    

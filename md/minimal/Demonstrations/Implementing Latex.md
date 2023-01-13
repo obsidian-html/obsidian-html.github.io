@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-05-05
 - type/test_page
+- date/2022-05-05
 ---
    
 # Implementing Latex   
@@ -32,11 +32,11 @@ $$
 ```
    
    
-$$   
-\begin   
-{vmatrix}a & b \\ c & d   
-\end   
-{vmatrix}=ad-bc   
+$$
+\begin
+{vmatrix}a & b \\ c & d
+\end
+{vmatrix}=ad-bc
 $$   
 ## Centernot   
 ``` latex
@@ -48,11 +48,11 @@ $$
 $$
 ```
    
-$$   
-\begin{array}{c}   
-  A \not\longrightarrow B\\   
-  A \centernot\longrightarrow B   
-\end{array}   
+$$
+\begin{array}{c}
+  A \not\longrightarrow B\\
+  A \centernot\longrightarrow B
+\end{array}
 $$   
    
 ## Double centered block   
@@ -66,10 +66,9 @@ $$
 ```
    
    
+$$
+\text{block 1}
 $$   
-\text{block 1}   
-$$    
-   
-$$   
-\text{block 2}   
+$$
+\text{block 2}
 $$

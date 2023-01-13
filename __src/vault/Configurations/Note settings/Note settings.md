@@ -29,6 +29,14 @@ obs.html.tags:
 - dont_add_toc
 ```
 
+### dont_add_embedded_title
+This setting will negate the global setting of `toggles/features/table_of_contents/add_toc_when_missing`
+
+``` yaml
+obs.html.tags:
+- dont_add_embedded_title
+```
+
 
 
 ## graph_name

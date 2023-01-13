@@ -4,7 +4,6 @@ tags:
 - date/2022-02-12
 ---
    
-# Features   
 ## High level   
    
 - [Parsing Obsidian notes to proper markdown](../../General%20Information/Parsing%20Obsidian%20notes%20to%20proper%20markdown.md)   
@@ -43,7 +42,7 @@ These features add functionality from popular obsidian plugins, or extra functio
    
 | Feature | Short description | Default |   
 | ------- | ----------------- | ------- |   
-| [Embedded note title](../../Configurations/Plugins/Embedded%20note%20title.md) | Have h1 headers be added to your notes so you have more levels to work with | Enabled |   
+| [Embedded note title](../../Configurations/Features/Embedded%20note%20title.md) | Have h1 headers be added to your notes so you have more levels to work with | Enabled |   
 | [Folder Notes](../../Configurations/Features/Folder%20Notes.md) | Open a note when you click on a directory | Enabled |   
 | [RSS Feed](../../Configurations/Features/RSS%20Feed.md) | Output an rss feed. | **Disabled** |   
 | [Create Index from Directory Structure](../../Configurations/Modes/Create%20Index%20from%20Directory%20Structure.md) | Create a homepage based on your directory structure | Enabled, but points to `obs.html/dir_index.html` instead of `index.html` by default. |   

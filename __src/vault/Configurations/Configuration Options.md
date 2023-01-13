@@ -86,7 +86,7 @@ To change the behavior of obsidianhtml specifically for one tag, see [[Note sett
 | [[RSS Feed]] | Compile (a selection of) your notes into an RSS Feed. |
 | [[Folder Notes]] | Attach a note to a folder. |
 | [[Configuration Options#Simple feature toggles\|Simple feature toggles]] | Ability to disable various components |
-
+| [[Embedded note title]] | Add an h1 header automatically |
 
 ## Paths
 ### obsidian_folder_path_str

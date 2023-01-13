@@ -8,6 +8,7 @@ Below are a couple websites that use ObsidianHtml.
    
 | Name | Url | Type | Description |   
 | -- | -- | -- | -- |   
+| Notkesto | [https://notes.psycake.subspace.club](https://notes.psycake.subspace.club) | Knowlegde base | Personal collection of notes. Mostly geared toward mathematics. |   
 | Helpful math notes | [https://mathnotes.mhdser.com/](https://mathnotes.mhdser.com/) | Knowlegde base | A collection of helpful notes and info on key topics within undergraduate math courses.|   
 | Geyserland Bikepacking Adventures | [http://geyserlandbikepackingadventures.nz/](http://geyserlandbikepackingadventures.nz/) | Website | Geyserland Bikepacking Adventures promotes bikepacking in the Rotorua region |   
 | Cyber-Samadhi | [https://zubayrrr.github.io/](https://zubayrrr.github.io/) | Personal wiki | This is [my](https://zubayrrr.github.io/archive/about.html) \[zubayrrr's\] personal wiki, a commonplace book, a [digital garden](https://zubayrrr.github.io/archive/Digital%20Garden.html), a [Second Brain](https://zubayrrr.github.io/archive/Second%20Brain.html); notes by me, for me. |   

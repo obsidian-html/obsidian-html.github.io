@@ -1,10 +1,9 @@
 ---
 tags:
-- date/2022-03-15
 - type/configuration
+- date/2022-03-15
 ---
    
-# NoTabs Mode   
 > New in version [v1.2.0](../../Changelog/v1.2.0.md)   
 > **Removed in version [v2.0.0](../../Changelog/v2.0.0.md)**   
    

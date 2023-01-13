@@ -297,18 +297,34 @@
                 <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
                     <div style="flex:1;display: none;"></div>
                     <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
-                        <a href="/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <span style="color: #666;">Plugins</span> / <a href="/tabs/Configurations/Plugins/Embedded note title.html" >Embedded note title</a>
+                        <a href="/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/tabs/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/tabs/Configurations/Features/Embedded note title.html" >Embedded note title</a>
                     </div>
                 </div>
 <embeddedtitle>Embedded note title</embeddedtitle>
 <div class="content"><div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#change-note" class="anchor-link">Change note</a></li>
+<li><a href="#configuration" class="anchor-link">Configuration</a><ul>
+<li><a href="#global-disable" class="anchor-link">Global disable</a></li>
+<li><a href="#disable-on-specific-note" class="anchor-link">Disable on specific note</a></li>
+<li><a href="#disable-if-note-already-has-a-title" class="anchor-link">Disable if note already has a title</a></li>
+</ul>
+</li>
+</ul>
 </div>
 <blockquote>
-<p>New in <a href="/tabs/Changelog/v3.2.0.html">v3.2.0</a>   </p>
+<p>New in <a href="/tabs/Changelog/v3.2.0.html">v3.2.0</a> <br />
+Changed in <a href="/tabs/Changelog/v3.4.0.html">v3.4.0</a>   </p>
 </blockquote>
-<p>Support for the <a href="https://github.com/mgmeyers/obsidian-embedded-note-titles" class="external-link">embedded note title plugin</a> is enabled by default.   </p>
-<p>If necessary it can be disabled through this setting:   </p>
+<h2 id="change-note">Change note</h2>
+<p>In between version 3.2.0 and 3.4.0 Obsidian has added built-in support for embedded titles. <br />
+Because of this, embedded titles will be enabled by default.    </p>
+<p>Configuration options that were available in <a href="/tabs/Changelog/v3.2.0.html">v3.2.0</a> have been stripped because the interaction between the built-in note titles and the plugin have become too complex.    </p>
+<p>At the moment you are limited to either enabling or disabling adding of titles,  and hiding the embedded title if the first element of a note is an h1 header.    </p>
+<p>If you want more configuration options than is available out of the box, please see <a href="/tabs/General%20Information/Report%20Issues%20%26%20Request%20features.html">Report Issues &amp; Request features</a> to request it. We will add the options then to the <code>toggles/features/embedded_note_titles</code> section, instead of reading out the plugin settings as was the case before <a href="/tabs/Changelog/v3.4.0.html">v3.4.0</a>.   </p>
+<h2 id="configuration">Configuration</h2>
+<h3 id="global-disable">Global disable</h3>
+<p>To disable adding titles all together, set this setting:   </p>
 <div class="lang-yaml">
 
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
@@ -320,16 +336,26 @@
 
 </div>
 
-<p>When this feature is enabled it will look whether folder <code>{obsidian_folder_path_str}/.obsidian/plugins/obsidian-embedded-note-titles</code> exists.    </p>
-<p>If it does not the feature is disabled anyways, and we continue as normal.   </p>
-<p>If that folder does exist, obsidianhtml will try to load in the data.json in that folder to load in the plugin settings. If you have never configured the plugin this file will not exist.    </p>
-<p>Based on the plugin settings it will then add <code>&lt;embeddedtitle&gt;{title.capitalize()}&lt;/embeddedtitle&gt;</code> at the top of each note, unless the settings tell it not to.   </p>
-<p>At time of writing all the settings should be implemented except for "daily note title format".   </p>
-<p><img alt="" src="/tabs/Resources/img/Pasted%20image%2020220905184629.png" /></p></div>
+<h3 id="disable-on-specific-note">Disable on specific note</h3>
+<p>To disable adding a title in a specific note, see <a href="/tabs/Configurations/Note%20settings/Note%20settings.html#dont_add_embedded_title">Note settings#dont_add_embedded_title</a>.   </p>
+<h3 id="disable-if-note-already-has-a-title">Disable if note already has a title</h3>
+<p>By default, no title will be added if the first element of the note is an h1 header. To ignore this rule, set this:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">embedded_note_titles</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">      </span><span class="nt">hide_on_h1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+</code></pre></div>
+
+
+</div></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
+	<li><a class="backlink" href="/tabs/Configurations/Configuration Options.html">configuration options</a></li>
 	<li><a class="backlink" href="/tabs/Configurations/Features/Features.html">features</a></li>
 </ul>
 </div>
@@ -340,13 +366,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A208827696479106120234766252334657789757{level}" class="graph_div"></div>
+    <div id="A65341451102101502234438877587533962828{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B208827696479106120234766252334657789757{level}" level="{level}" note_temp_id="208827696479106120234766252334657789757" onclick="window.ObsHtmlGraph.run(this, '208827696479106120234766252334657789757', 'embedded note title');">
+        <button class="graph_button graph_show_button" id="B65341451102101502234438877587533962828{level}" level="{level}" note_temp_id="65341451102101502234438877587533962828" onclick="window.ObsHtmlGraph.run(this, '65341451102101502234438877587533962828', 'embedded note title');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C208827696479106120234766252334657789757{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C65341451102101502234438877587533962828{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

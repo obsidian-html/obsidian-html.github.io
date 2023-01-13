@@ -6,8 +6,8 @@ tags:
 - type/moc
 ---
    
-# Change Log   
    
+- [v3.4.0](../Changelog/v3.4.0.md)   
 - [v3.3.0](../Changelog/v3.3.0.md)   
 - [v3.2.3](../Changelog/v3.2.3.md)   
 - [v3.2.2](../Changelog/v3.2.2.md)   

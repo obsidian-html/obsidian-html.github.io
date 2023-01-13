@@ -4,7 +4,6 @@ tags:
 - date/2022-02-12
 ---
 
-# Features
 ## High level
 - [[Parsing Obsidian notes to proper markdown]]
 - [[Creating a static html website from markdown files]]

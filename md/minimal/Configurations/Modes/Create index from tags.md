@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-02-13
 - feature/dynamic_index
+- date/2022-02-13
 ---
    
 # Create index from tags   

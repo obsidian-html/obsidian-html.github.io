@@ -4,7 +4,6 @@ tags:
 - date/2022-02-17
 ---
 
-# RSS Feed
 > New in [[v1.0.0]]
 
 ## Introduction

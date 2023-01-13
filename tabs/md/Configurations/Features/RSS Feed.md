@@ -4,7 +4,6 @@ tags:
 - feature/rss
 ---
    
-# RSS Feed   
 > New in [v1.0.0](../../Changelog/v1.0.0.md)   
    
 ## Introduction   

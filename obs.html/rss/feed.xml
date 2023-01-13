@@ -4,7 +4,7 @@
         <link>https://obsidian-html.github.io</link>
         <description>The documentation site of ObsidianHtml, a package used to convert Obsidian notes to proper markdown and static HTML websites.</description>
         <language>en-usen-us</language>
-        <pubDate>Sat, 31 Dec 2022 14:44:38 CET</pubDate>
+        <pubDate>Fri, 13 Jan 2023 17:27:28 CET</pubDate>
         <lastBuildDate>Wed, 12 Oct 2022 00:00:00 CET</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>ObsidianHtml</generator>
@@ -43,7 +43,7 @@
             
         </item>
         <item>
-            <title>v1.0.0</title>
+            <title>Changelog/ v1.0.0</title>
             <link>https://obsidian-html.github.io/Changelog/v1.0.0.html</link>
             <description>Version 1.0.0 has been released.   &lt;br/&gt;&lt;br/&gt;The changes related to the prior version can be found here: https://github.com/obsidian-html/obsidian-html/issues/137   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Wed, 16 Feb 2022 00:00:00 CET</pubDate>
@@ -115,7 +115,7 @@
             
         </item>
         <item>
-            <title>v1.2.0</title>
+            <title>Changelog/ v1.2.0</title>
             <link>https://obsidian-html.github.io/Changelog/v1.2.0.html</link>
             <description>Feature version of v1.0.0.   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Tue, 15 Mar 2022 00:00:00 CET</pubDate>
@@ -123,7 +123,7 @@
             
         </item>
         <item>
-            <title>v1.0.1</title>
+            <title>Changelog/ v1.0.1</title>
             <link>https://obsidian-html.github.io/Changelog/v1.0.1.html</link>
             <description>Patch version of v1.0.0.   &lt;br/&gt;&lt;br/&gt;It is permitted when using Create Index from Directory Structure to overwrite the index.html.    &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Tue, 22 Feb 2022 00:00:00 CET</pubDate>
@@ -131,7 +131,7 @@
             
         </item>
         <item>
-            <title>v1.0.2</title>
+            <title>Changelog/ v1.0.2</title>
             <link>https://obsidian-html.github.io/Changelog/v1.0.2.html</link>
             <description>Patch version of v1.0.0.   &lt;br/&gt;&lt;br/&gt;Note: Pypi docs claim there are config changes in this release, but this was reverted. (I can&#x27;t update the pypi docs without releasing a new version). No config changes in this release!   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Thu, 10 Mar 2022 00:00:00 CET</pubDate>
@@ -141,8 +141,8 @@
         <item>
             <title>Added</title>
             <link>https://obsidian-html.github.io/Changelog/v3.4.0.html</link>
-            <description>Feature version of v3.0.0.  
-Not published yet   &lt;br/&gt;&lt;br/&gt;exclude_subfolders  now also supports glob patterns. This affects both the copying step to the temporary folder, and the file tree generator (for when copying to temp dir is turned off).   &lt;br/&gt;&lt;br/&gt;</description>
+            <description>Feature version of v3.0.0.    &lt;br/&gt;&lt;br/&gt;This page is incomplete! Will update when time allows. 
+&lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Wed, 12 Oct 2022 00:00:00 CET</pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v3.4.0.html</guid>
             
@@ -164,7 +164,7 @@ Not published yet   &lt;br/&gt;&lt;br/&gt;exclude_subfolders  now also supports 
             
         </item>
         <item>
-            <title>v1.2.1</title>
+            <title>Changelog/ v1.2.1</title>
             <link>https://obsidian-html.github.io/Changelog/v1.2.1.html</link>
             <description>bugfix for v1.2.0   &lt;br/&gt;&lt;br/&gt;In the rewrites the usecase of converting proper markdown directly to html was broken. Not sure if anyone uses it, but it is something that I listed prominently as a feature, so this warrants its own release (and maybe a regression test soon...)&lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Tue, 22 Mar 2022 00:00:00 CET</pubDate>
@@ -172,7 +172,7 @@ Not published yet   &lt;br/&gt;&lt;br/&gt;exclude_subfolders  now also supports 
             
         </item>
         <item>
-            <title>v1.1.0</title>
+            <title>Changelog/ v1.1.0</title>
             <link>https://obsidian-html.github.io/Changelog/v1.1.0.html</link>
             <description>Feature version of v1.0.0.   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Fri, 11 Mar 2022 00:00:00 CET</pubDate>

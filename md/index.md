@@ -2,9 +2,10 @@
 graph_name: Homepage
 obs.html.tags:
 - no_tag_footer
+- dont_add_embedded_title
 tags:
-- type/moc
 - test
+- type/moc
 ---
    
 # ObsidianHtml   

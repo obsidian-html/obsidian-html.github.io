@@ -1,13 +1,13 @@
 ---
 tags:
-- feature/parsing_markdown
 - date/2022-02-04
+- feature/parsing_markdown
 ---
    
 # Images   
 ## Obsidian type image links    
 `![[Resources/img/obsidian-html-logo-sq.png|300]]`   
-<img src="../Resources/img/obsidian-html-logo.png"  width="300">   
+![](../Resources/img/obsidian-html-logo.png)   
    
 `![[obsidian-html-logo-sq.png]]`   
 ![](../Resources/img/obsidian-html-logo-sq.png)    
@@ -16,7 +16,7 @@ tags:
 ![](../Resources/img/obsidian-html-logo.png)   
    
 `![200](obsidian-html-logo.png)`   
-![200](../Resources/img/obsidian-html-logo.png)   
+<img src="../Resources/img/obsidian-html-logo.png"  width="200" />   
    
 ## External images   
 `![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ObsidianOregon.jpg/480px-ObsidianOregon.jpg)`   
@@ -30,7 +30,7 @@ tags:
    
 `![[wide-image.jpg|300]]`   
    
-<img src="../Resources/img/wide-image.jpg"  width="300">   
+![](../Resources/img/wide-image.jpg)   
    
    
 # Videos   
