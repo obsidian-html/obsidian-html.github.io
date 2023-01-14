@@ -1,7 +1,7 @@
 ---
 tags:
-- feature/rss
 - date/2022-02-17
+- feature/rss
 ---
    
 > New in [v1.0.0](../../Changelog/v1.0.0.md)   

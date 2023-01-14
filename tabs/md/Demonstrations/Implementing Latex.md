@@ -1,7 +1,7 @@
 ---
 tags:
-- type/test_page
 - date/2022-05-05
+- type/test_page
 ---
    
 # Implementing Latex   

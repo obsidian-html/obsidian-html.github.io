@@ -7,7 +7,7 @@
                 <meta charset="UTF-8" />
                 <meta name="node_id" content="v3.4.0">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <link rel="shortcut icon" href="/favicon.ico" />
+                <link rel="shortcut icon" href="/tabs/favicon.ico" />
 
                 <!-- Set title -->
                 <title>ObsidianHtml/Tabs-Mode</title>
@@ -304,38 +304,77 @@
 <div class="content"><blockquote>
 <p>Feature version of <a href="/tabs/Changelog/v3.0.0.html">v3.0.0</a>.    </p>
 </blockquote>
-<div class="callout callout-warning active" rasa="1">
-<div class="callout-title">
-<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-</div>
-<div class="callout-title-name">Warning
-</div>
-</div>
-<div class="callout-content">
-<p>This page is incomplete! Will update when time allows. <br />
-</p>
-</div>
-</div>
 <h1 id="added">Added</h1>
 <div class="toc">
 <ul>
 <li><a href="#added" class="anchor-link">Added</a></li>
+<li><a href="#features" class="anchor-link">Features</a></li>
+<li><a href="#bugfixes" class="anchor-link">Bugfixes</a></li>
 <li><a href="#changes" class="anchor-link">Changes</a></li>
 </ul>
 </div>
 <ul>
-<li><code>included_folders</code> now allows a user to select the folders from the vault to include, the rest is "excluded".    </li>
+<li><code>included_folders</code> now allows a user to select the folders from the vault to include, the rest is "excluded". See also <a href="https://github.com/obsidian-html/obsidian-html/issues/451" class="external-link">#451</a>.   </li>
+<li><code>exclude_subfolders</code>  now also supports glob patterns. This affects both the copying step to the temporary folder, and the file tree generator (for when copying to temp dir is turned off).   </li>
+<li>Image titles can now be added alongside scaling, use for example:   </li>
+</ul>
+<div class="lang-md">
+
+<div class="codehilite"><pre><span></span><code>  ![<span class="nt">cat|100</span>](<span class="na">200w.gif</span>)
+  ![[200w.gif|cat|100]]
+</code></pre></div>
+
+
+</div>
+
+<ul>
 <li>
-<p><code>exclude_subfolders</code>  now also supports glob patterns. This affects both the copying step to the temporary folder, and the file tree generator (for when copying to temp dir is turned off).   </p>
+<p>Inclusions are now shown in the graph view with dotted edges. See also <a href="https://github.com/obsidian-html/obsidian-html/issues/425" class="external-link">#425</a>.   </p>
+<ul>
+<li>Can be turned off with: <br />
+<code>yaml   
+  graph:   
+    show_inclusions_in_graph: False</code>   </li>
+</ul>
 </li>
 <li>
-<p><a href="/tabs/Configurations/Features/Side%20panes.html">Side panes</a> feature   </p>
+<p><a href="/tabs/Configurations/Note%20settings/Note%20settings.html">Note settings</a> expanded, have a browse there.   </p>
 </li>
+<li>Added <code>homepage_label</code> to <a href="/tabs/Configurations/Modes/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a> to overwrite the <code>index</code> list item to e.g. <code>My homepage</code>.   </li>
+<li>All localStorage calls are now wrapped to fail gracefully to allow a visitor to disable javascript if the compiled website is properly configured. See <a href="https://github.com/obsidian-html/obsidian-html/issues/352" class="external-link">#352</a>.   </li>
+<li>Folders with an associated <a href="/tabs/Configurations/Features/Folder%20Notes.html">folder note</a> can now also be closed in the dirtree pane created by <a href="/tabs/Configurations/Modes/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a>. See <a href="https://github.com/obsidian-html/obsidian-html/issues/469" class="external-link">#469</a>.   </li>
+</ul>
+<h1 id="features">Features</h1>
+<ul>
+<li><a href="/tabs/Configurations/Features/Side%20panes.html">Side panes</a> feature was added. For this, the <a href="/tabs/Configurations/Modes/Create%20index%20from%20tags.html">Create index from tags</a> feature was modernized to be able to properly provide content for either side pane.   </li>
+</ul>
+<h1 id="bugfixes">Bugfixes</h1>
+<ul>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/532" class="external-link">Obsidian links not parsed correctly when parentheses are present without a space</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/536" class="external-link">Empty embed links cause a crash</a>.    <ul>
+<li>Changed this so it just creates an empty img tag.   </li>
+</ul>
+</li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/474" class="external-link">ImportError: cannot import name 'UnescapeTreeprocessor' from 'markdown.treeprocessors'</a>.    <ul>
+<li>Added minimum requirement for markdown in setup.cfg.   </li>
+</ul>
+</li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/512" class="external-link">Inline tags and code blocks not working in footnotes</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/515" class="external-link">Imagescaling regression</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/511" class="external-link">Table column borders are missing every other column</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/521" class="external-link">General latex parsing bug</a>   <ul>
+<li>Latex was not properly treated as a code block, resulting in a whole family of potential bugs where obsidianhtml would edit the latex code block before it could be parsed by python-markdown/latex.js   </li>
+</ul>
+</li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/488" class="external-link">Single-line callouts don't work</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/496" class="external-link">Scrollbar missing in contents pane</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/465" class="external-link">Bug where includable files were not copied to html output</a>   </li>
 </ul>
 <h1 id="changes">Changes</h1>
 <ul>
-<li>Enabling glob support required that values in <code>exclude_subfolders</code>  now should start with a slash when excluding a specific folder. Excluding any folder with the given name, the starting slash should be dropped.   </li>
-<li>Alterations in <a href="/tabs/Configurations/Modes/Create%20index%20from%20tags.html">Create index from tags</a></li>
+<li>Alterations in <a href="/tabs/Configurations/Modes/Create%20index%20from%20tags.html">Create index from tags</a>   </li>
+<li>Alterations in <a href="/tabs/Configurations/Features/Embedded%20note%20title.html">Embedded note title</a> to accomodate changes in Obsidian   </li>
+<li>Enabling glob support required that values in <code>exclude_subfolders</code>  now should start with a slash when excluding a specific folder. Excluding any folder with the given name, the starting slash should be dropped.</li>
 </ul></div>
 <div class="note-footer">
 <div class="backlinks">
@@ -343,8 +382,9 @@
 <ul>
 	<li><a class="backlink" href="/tabs/Configurations/Modes/Filtering notes.html">filtering notes</a></li>
 	<li><a class="backlink" href="/tabs/Configurations/Features/Side panes.html">side panes</a></li>
-	<li><a class="backlink" href="/tabs/Configurations/Deprecated Configurations/exclude_subfolders.html">exclude_subfolders</a></li>
 	<li><a class="backlink" href="/tabs/Configurations/Features/Embedded note title.html">embedded note title</a></li>
+	<li><a class="backlink" href="/tabs/Configurations/Deprecated Configurations/exclude_subfolders.html">exclude_subfolders</a></li>
+	<li><a class="backlink" href="/tabs/Changelog/v3.4.1.html">v3.4.1</a></li>
 	<li><a class="backlink" href="/tabs/Changelog/Changelog.html">changelog</a></li>
 </ul>
 </div>
@@ -352,20 +392,20 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
 	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-10-12/index.html">date/2022-10-12</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A165066604504759275223083219363532006200{level}" class="graph_div"></div>
+    <div id="A176264258635804283489718206569591763569{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B165066604504759275223083219363532006200{level}" level="{level}" note_temp_id="165066604504759275223083219363532006200" onclick="window.ObsHtmlGraph.run(this, '165066604504759275223083219363532006200', 'v3.4.0');">
+        <button class="graph_button graph_show_button" id="B176264258635804283489718206569591763569{level}" level="{level}" note_temp_id="176264258635804283489718206569591763569" onclick="window.ObsHtmlGraph.run(this, '176264258635804283489718206569591763569', 'v3.4.0');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C165066604504759275223083219363532006200{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C176264258635804283489718206569591763569{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
