@@ -1,8 +1,8 @@
 ---
 tags:
 - date/2022-02-04
-- feature/html_output
 - type/styling
+- feature/html_output
 ---
    
 # Using the website   

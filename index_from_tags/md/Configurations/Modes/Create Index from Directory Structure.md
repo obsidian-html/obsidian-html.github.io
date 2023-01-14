@@ -1,7 +1,7 @@
 ---
 tags:
-- type/configuration
 - date/2022-02-20
+- type/configuration
 ---
    
 # Create Index from Directory Structure   

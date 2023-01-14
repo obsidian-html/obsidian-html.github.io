@@ -1,7 +1,7 @@
 ---
 tags:
-- type/news
 - date/2022-02-14
+- type/news
 ---
    
 # Published ObsidianHtml version 0.0.9!   

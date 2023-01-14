@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-08-28
 - type/template
+- date/2022-08-28
 ---
    
 If you like to organize your notes into a lot of separate folders,  then folder notes might be something for you.   

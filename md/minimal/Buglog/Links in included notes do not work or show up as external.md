@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-03-11
 - type/bug_report
+- date/2022-03-11
 ---
    
 # Links in included notes do not work / show up as external   

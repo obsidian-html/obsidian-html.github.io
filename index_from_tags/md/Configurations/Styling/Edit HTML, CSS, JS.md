@@ -1,8 +1,8 @@
 ---
 tags:
-- type/configuration
 - date/2022-04-17
 - type/styling
+- type/configuration
 ---
    
 # Edit HTML, CSS, JS   
