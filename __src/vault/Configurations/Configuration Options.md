@@ -73,7 +73,7 @@ To change the behavior of obsidianhtml specifically for one tag, see [[Note sett
 | [[Configuration Options#relative_path_html\|relative_path_html]] | Compile html links relatively or with absolute paths |
 | [[Configuration Options#external_blank\|external_blank]] | Control whether external links will open in a new tab or not |
 | [[Configuration Options#preserve_inline_tags\|preserve_inline_tags]] | Control whether inline tags will be removed from the note |
-| [[Configuration Options#strict line breaks \| strict line breaks]] |  Act like normal markdown with regards to line breaks | 
+| [[Configuration Options#strict line breaks\|strict line breaks]] |  Act like normal markdown with regards to line breaks | 
 
 ### Feature settings
 | config | Short description |

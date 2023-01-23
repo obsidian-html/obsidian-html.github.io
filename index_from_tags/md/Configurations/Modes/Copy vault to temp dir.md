@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-02-13
 - feature/safety
+- date/2022-02-13
 ---
    
 # Copy vault to temp dir   

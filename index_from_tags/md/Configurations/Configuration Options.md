@@ -1,7 +1,7 @@
 ---
 tags:
-- type/configuration
 - date/2022-02-12
+- type/configuration
 ---
    
 # Configuration Options   
@@ -74,7 +74,7 @@ To change the behavior of obsidianhtml specifically for one tag, see [Note setti
 | [relative_path_html](../Configurations/Configuration%20Options.md#relative_path_html) | Compile html links relatively or with absolute paths |   
 | [external_blank](../Configurations/Configuration%20Options.md#external_blank) | Control whether external links will open in a new tab or not |   
 | [preserve_inline_tags](../Configurations/Configuration%20Options.md#preserve_inline_tags) | Control whether inline tags will be removed from the note |   
-| [ strict line breaks](../Configurations/Configuration%20Options.md#strict-line-breaks-) |  Act like normal markdown with regards to line breaks |    
+| [strict line breaks](../Configurations/Configuration%20Options.md#strict-line-breaks) |  Act like normal markdown with regards to line breaks |    
    
 ### Feature settings   
 | config | Short description |   

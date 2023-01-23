@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-02-12
 - feature/parsing_markdown
+- date/2022-02-12
 - type/general_information
 ---
    

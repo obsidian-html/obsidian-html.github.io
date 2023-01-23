@@ -2,9 +2,9 @@
 graph_name: Graph View
 tags:
 - feature/graph_view
-- date/2022-02-05
 - type/configuration
 - feature/html_output
+- date/2022-02-05
 ---
    
 Click on the button at the bottom of a note to view the graph for the current note. Click on the graph icon in the menu to go to a full page graph view.   

@@ -1,8 +1,8 @@
 ---
 tags:
-- randomothertag
-- bla/babayaga
 - babayaga
+- bla/babayaga
+- randomothertag
 ---
    
 See tags list.

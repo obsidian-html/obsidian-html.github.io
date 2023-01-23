@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-02-15
 - type/moc
+- date/2022-02-15
 ---
    
 # News   
