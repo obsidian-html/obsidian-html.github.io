@@ -146,19 +146,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=automationlinuxssh" title="Open fullpage Graph">
@@ -198,7 +208,7 @@
     <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
     <div id="left_pane_content" class="left_pane_content">
             <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
-<div id="folder-container-1" class="dir-container requires_js active" path="/index_from_tags/Automation">
+<div id="folder-container-1" class="dir-container requires_js " path="/index_from_tags/Automation">
 	<ul class="dir-list">
 		<li><a class="" href="/index_from_tags/Automation/Automate website deployment.html"  >Automate website deployment</a></li>
 		<li><a class="" href="/index_from_tags/Automation/AutomationLinuxGit.html"  >Auto push site using Git on Linux</a></li>
@@ -256,6 +266,7 @@
 			<li><a class="" href="/index_from_tags/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -454,22 +465,22 @@
 <span class="nv">web_folder</span><span class="o">=</span><span class="s2">&quot;/home/web/www/devfruits&quot;</span>
 
 <span class="c1"># Convert Obsidian to HTML</span>
-<span class="nb">cd</span> <span class="nv">$obsidian_folder</span>
-python -m obsidianhtml -i <span class="nv">$config_file</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$obsidian_folder</span>
+python<span class="w"> </span>-m<span class="w"> </span>obsidianhtml<span class="w"> </span>-i<span class="w"> </span><span class="nv">$config_file</span>
 
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Python script failed. Exited.&quot;</span>
-    <span class="nb">cd</span> <span class="nv">$origin</span>
-    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Python script failed. Exited.&quot;</span>
+<span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$origin</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">else</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Successfully created html code&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Successfully created html code&quot;</span>
 <span class="k">fi</span>
 
 <span class="c1"># Remove previous files</span>
-ssh <span class="nv">$target</span> rm -rf <span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/*&quot;</span>
+ssh<span class="w"> </span><span class="nv">$target</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/*&quot;</span>
 
 <span class="c1"># Upload new files</span>
-scp -r <span class="s2">&quot;</span><span class="nv">$output_folder</span><span class="s2">/html/*&quot;</span> <span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/&quot;</span>
+scp<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output_folder</span><span class="s2">/html/*&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$web_folder</span><span class="s2">/&quot;</span>
 </code></pre></div>
 
 
@@ -488,20 +499,20 @@ scp -r <span class="s2">&quot;</span><span class="nv">$output_folder</span><span
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
 	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/automation/index.html">type/automation</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A294195377373633706743984995479710266837{level}" class="graph_div"></div>
+    <div id="A202341949784928519138023684179662347645{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B294195377373633706743984995479710266837{level}" level="{level}" note_temp_id="294195377373633706743984995479710266837" onclick="window.ObsHtmlGraph.run(this, '294195377373633706743984995479710266837', 'automationlinuxssh');">
+        <button class="graph_button graph_show_button" id="B202341949784928519138023684179662347645{level}" level="{level}" note_temp_id="202341949784928519138023684179662347645" onclick="window.ObsHtmlGraph.run(this, '202341949784928519138023684179662347645', 'automationlinuxssh');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C294195377373633706743984995479710266837{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C202341949784928519138023684179662347645{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

@@ -148,19 +148,29 @@
     }
 </script>
                                                         <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                                         <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=implementing note inclusions" title="Open fullpage Graph">
@@ -243,19 +253,29 @@
     }
 </script>
                                                         <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                                         <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=implementing note inclusions" title="Open fullpage Graph">
@@ -323,8 +343,8 @@
 <p>It uses the same link syntax as images:   </p>
 <div class="lang-general">
 
-<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span><span class="w"></span>
-<span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="err">#</span><span class="n">only</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">chapter</span><span class="p">]]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="p">]]</span>
+<span class="o">!</span><span class="p">[[</span><span class="n">my</span><span class="w"> </span><span class="n">note</span><span class="err">#</span><span class="n">only</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">chapter</span><span class="p">]]</span>
 </code></pre></div>
 
 
@@ -391,7 +411,7 @@ This can be done by writing  <br />
 </blockquote>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">video_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">video_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 
@@ -419,13 +439,13 @@ This can be done by writing  <br />
 
 </div>
 <div class="graph requires_js ">
-    <div id="A238673039627696069681376660687235306530{level}" class="graph_div"></div>
+    <div id="A222335830475696437793346120153388666565{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B238673039627696069681376660687235306530{level}" level="{level}" note_temp_id="238673039627696069681376660687235306530" onclick="window.ObsHtmlGraph.run(this, '238673039627696069681376660687235306530', 'implementing note inclusions');">
+        <button class="graph_button graph_show_button" id="B222335830475696437793346120153388666565{level}" level="{level}" note_temp_id="222335830475696437793346120153388666565" onclick="window.ObsHtmlGraph.run(this, '222335830475696437793346120153388666565', 'implementing note inclusions');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C238673039627696069681376660687235306530{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C222335830475696437793346120153388666565{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

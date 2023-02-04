@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=implementing latex" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -434,10 +445,10 @@ I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><
 <h2 id="centered-block-latex-double">Centered block latex (double $)</h2>
 <div class="lang-latex">
 
-<div class="codehilite"><pre><span></span><code><span class="sb">$$</span><span class="nb"></span>
-<span class="nv">\begin</span><span class="nb"></span>
+<div class="codehilite"><pre><span></span><code><span class="sb">$$</span>
+<span class="nv">\begin</span>
 <span class="nb">{vmatrix}a &amp; b </span><span class="nv">\\</span><span class="nb"> c &amp; d</span>
-<span class="nv">\end</span><span class="nb"></span>
+<span class="nv">\end</span>
 <span class="nb">{vmatrix}</span><span class="o">=</span><span class="nb">ad</span><span class="o">-</span><span class="nb">bc</span>
 <span class="s">$$</span>
 </code></pre></div>
@@ -454,9 +465,9 @@ I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><
 <h2 id="centernot">Centernot</h2>
 <div class="lang-latex">
 
-<div class="codehilite"><pre><span></span><code><span class="sb">$$</span><span class="nb"></span>
+<div class="codehilite"><pre><span></span><code><span class="sb">$$</span>
 <span class="nv">\begin</span><span class="nb">{array}{c}</span>
-<span class="nb">  A </span><span class="nv">\not\longrightarrow</span><span class="nb"> B</span><span class="nv">\\</span><span class="nb"></span>
+<span class="nb">  A </span><span class="nv">\not\longrightarrow</span><span class="nb"> B</span><span class="nv">\\</span>
 <span class="nb">  A </span><span class="nv">\centernot\longrightarrow</span><span class="nb"> B</span>
 <span class="nv">\end</span><span class="nb">{array}</span>
 <span class="s">$$</span>
@@ -474,10 +485,10 @@ I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><
 <h2 id="double-centered-block">Double centered block</h2>
 <div class="lang-latex">
 
-<div class="codehilite"><pre><span></span><code><span class="sb">$$</span><span class="nb"></span>
+<div class="codehilite"><pre><span></span><code><span class="sb">$$</span>
 <span class="nv">\text</span><span class="nb">{block </span><span class="m">1</span><span class="nb">}</span>
 <span class="s">$$</span>
-<span class="sb">$$</span><span class="nb"></span>
+<span class="sb">$$</span>
 <span class="nv">\text</span><span class="nb">{block </span><span class="m">2</span><span class="nb">}</span>
 <span class="s">$$</span>
 </code></pre></div>
@@ -512,13 +523,13 @@ $$
 
 </div>
 <div class="graph requires_js ">
-    <div id="A299402448305176212789928834857613780619{level}" class="graph_div"></div>
+    <div id="A310563166766537336065927942715251317595{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B299402448305176212789928834857613780619{level}" level="{level}" note_temp_id="299402448305176212789928834857613780619" onclick="window.ObsHtmlGraph.run(this, '299402448305176212789928834857613780619', 'implementing latex');">
+        <button class="graph_button graph_show_button" id="B310563166766537336065927942715251317595{level}" level="{level}" note_temp_id="310563166766537336065927942715251317595" onclick="window.ObsHtmlGraph.run(this, '310563166766537336065927942715251317595', 'implementing latex');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C299402448305176212789928834857613780619{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C310563166766537336065927942715251317595{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

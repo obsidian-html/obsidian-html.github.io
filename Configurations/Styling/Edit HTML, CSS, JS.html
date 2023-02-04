@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=edit html, css, js" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -423,8 +434,8 @@
 <h2 id="add-extra-css-js-files">Add extra css/js files</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span><span class="w"></span>
-<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span>
+<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 </code></pre></div>
 
 
@@ -433,9 +444,9 @@
 <p>Every note gets turned into its own contained html page. If you want to provide an extra css file, or javascript file, then you can add, e.g., the following into the setting, to avoid having to edit every single page after compilation:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;/custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;/christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">html_custom_inclusions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;/custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;/christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span>
 </code></pre></div>
 
 
@@ -449,7 +460,7 @@
 <p>To fetch the default template, you can run the following to export it, so you can make incremental changes:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml <span class="nb">export</span> layout -o path/to/output/file.html -l documentation  <span class="c1"># &lt;documentation/tabs/minimal&gt;</span>
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span><span class="nb">export</span><span class="w"> </span>layout<span class="w"> </span>-o<span class="w"> </span>path/to/output/file.html<span class="w"> </span>-l<span class="w"> </span>documentation<span class="w">  </span><span class="c1"># &lt;documentation/tabs/minimal&gt;</span>
 </code></pre></div>
 
 
@@ -458,9 +469,9 @@
 <p>Use that same output path as the value for html_template_path_str to use it in your runs:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span><span class="w"></span>
-<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span><span class="w"></span>
-<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span>
+<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span>
+<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
 </code></pre></div>
 
 
@@ -479,20 +490,20 @@
 <h2>Tags</h2>
 <ul>
 	<li><a class="backlink" href="/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
-	<li><a class="backlink" href="/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
 	<li><a class="backlink" href="/obs.html/tags/type/styling/index.html">type/styling</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A215915455602809843587757521562501337631{level}" class="graph_div"></div>
+    <div id="A298935873085966102210884785839388094960{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B215915455602809843587757521562501337631{level}" level="{level}" note_temp_id="215915455602809843587757521562501337631" onclick="window.ObsHtmlGraph.run(this, '215915455602809843587757521562501337631', 'edit html, css, js');">
+        <button class="graph_button graph_show_button" id="B298935873085966102210884785839388094960{level}" level="{level}" note_temp_id="298935873085966102210884785839388094960" onclick="window.ObsHtmlGraph.run(this, '298935873085966102210884785839388094960', 'edit html, css, js');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C215915455602809843587757521562501337631{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C298935873085966102210884785839388094960{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

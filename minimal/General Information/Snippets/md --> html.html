@@ -39,9 +39,9 @@
 <p>When you add this setting, obsidianhtml will work in this manner:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Opt-in/-out of Obsidian-&gt;Md conversion, set to False when using proper markdown as input</span><span class="w"></span>
-<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Opt-in/-out of Obsidian-&gt;Md conversion, set to False when using proper markdown as input</span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -50,16 +50,16 @@
 <p>When you do, make sure that the following settings are correct:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;path/to/md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;path/to/md&#39;</span>
 
-<span class="c1"># Markdown entrypoint path</span><span class="w"></span>
-<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;path/to/md/index.md&#39;</span><span class="w"></span>
+<span class="c1"># Markdown entrypoint path</span>
+<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;path/to/md/index.md&#39;</span>
 </code></pre></div>
 
 
@@ -68,15 +68,15 @@
 <p>You might also be interested in:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Used to strip the http url hostpart of a link to get a relative link</span><span class="w"></span>
-<span class="c1"># e.g. for value &quot;https://git.com/user/repo/-/wikis/mywiki/&quot; then:</span><span class="w"></span>
-<span class="c1">#   &quot;https://git.com/user/repo/-/wikis/mywiki/folder/markdown.md&quot; --&gt; /folder/markdown.md</span><span class="w"></span>
-<span class="nt">md_source_host_urls</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Used to strip the http url hostpart of a link to get a relative link</span>
+<span class="c1"># e.g. for value &quot;https://git.com/user/repo/-/wikis/mywiki/&quot; then:</span>
+<span class="c1">#   &quot;https://git.com/user/repo/-/wikis/mywiki/folder/markdown.md&quot; --&gt; /folder/markdown.md</span>
+<span class="nt">md_source_host_urls</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 
-<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># gitlab is case insensitive, this setting should be true when converting a wiki from that source</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># note that this does not impact the output, Hello.md will be written to Hello.html</span><span class="w"></span>
-<span class="w">  </span><span class="nt">force_filename_to_lowercase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># gitlab is case insensitive, this setting should be true when converting a wiki from that source</span>
+<span class="w">  </span><span class="c1"># note that this does not impact the output, Hello.md will be written to Hello.html</span>
+<span class="w">  </span><span class="nt">force_filename_to_lowercase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 

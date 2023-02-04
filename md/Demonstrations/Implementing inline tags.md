@@ -1,7 +1,6 @@
 ---
 tags:
 - type/test_page
-- inline-tag
 - date/2022-07-30
 - inline-tag
 ---

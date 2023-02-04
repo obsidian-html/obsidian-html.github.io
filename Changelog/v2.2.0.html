@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=v2.2.0" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -428,10 +439,10 @@
 <p>To disable the search, add this to your config.yml:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -461,20 +472,20 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/obs.html/tags/date/2022-05-07/index.html">date/2022-05-07</a></li>
 	<li><a class="backlink" href="/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-05-07/index.html">date/2022-05-07</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A189507631202011166835761619146372993701{level}" class="graph_div"></div>
+    <div id="A150093340441383589189122397704801492533{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B189507631202011166835761619146372993701{level}" level="{level}" note_temp_id="189507631202011166835761619146372993701" onclick="window.ObsHtmlGraph.run(this, '189507631202011166835761619146372993701', 'v2.2.0');">
+        <button class="graph_button graph_show_button" id="B150093340441383589189122397704801492533{level}" level="{level}" note_temp_id="150093340441383589189122397704801492533" onclick="window.ObsHtmlGraph.run(this, '150093340441383589189122397704801492533', 'v2.2.0');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C189507631202011166835761619146372993701{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C150093340441383589189122397704801492533{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

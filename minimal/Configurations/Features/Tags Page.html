@@ -39,9 +39,9 @@
 <p>Inline tags are preserved by default, but this will create polluted markdown output. You can disable this feature by setting:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Will preserve inline tags. This will give polluted markdown output</span><span class="w"></span>
-<span class="w">    </span><span class="nt">preserve_inline_tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Will preserve inline tags. This will give polluted markdown output</span>
+<span class="w">    </span><span class="nt">preserve_inline_tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -51,13 +51,13 @@
 <h2 id="tags-page">Tags page</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">tags_page</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">        </span><span class="nt">show_in_note_footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tags_page</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">show_in_note_footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -72,11 +72,11 @@
 E.g. adding the following frontyaml at the top of this note:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">feature/parsing_markdown</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-02-04</span><span class="w"></span>
-<span class="nn">---</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">tags</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">feature/parsing_markdown</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-02-04</span>
+<span class="nn">---</span>
 </code></pre></div>
 
 
@@ -100,8 +100,8 @@ E.g. adding the following frontyaml at the top of this note:   </p>
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
 	<li><a class="backlink" href="/minimal/obs.html/tags/feature/parsing_markdown/index.html">feature/parsing_markdown</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
 </ul>
 </div>
 

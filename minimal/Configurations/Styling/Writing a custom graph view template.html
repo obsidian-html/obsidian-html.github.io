@@ -44,17 +44,17 @@ It is still in beta, so let us know if you are having issues with it or want add
 <p>If we look at the <a href="/minimal/Configurations/Features/Graph%20view.html">configuration for graph view</a>, then we see the 'templates' key:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"> </span>
-<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span>
-<span class="w">      </span><span class="nt">templates</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;3d&gt;</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">templates</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;3d&gt;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span>
 </code></pre></div>
 
 
@@ -64,15 +64,15 @@ It is still in beta, so let us know if you are having issues with it or want add
 <p>When passing in a custom template, <code>path</code> should be either relative to the working directory that you run the obsidianhtml command from, or absolute, e.g.:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">graph</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span>
-<span class="w">      </span><span class="nt">templates</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span><span class="w"></span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span><span class="w"></span>
-<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../obsidian-html.github.io/__src/custom_grapher.js</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">templates</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../obsidian-html.github.io/__src/custom_grapher.js</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span>
 </code></pre></div>
 
 
@@ -85,15 +85,15 @@ It is still in beta, so let us know if you are having issues with it or want add
 <p>This makes the bare minimal functional code for a custom grapher to be this:   </p>
 <div class="lang-js">
 
-<div class="codehilite"><pre><span></span><code><span class="kd">function</span> <span class="nx">run</span><span class="p">(</span><span class="nx">args</span><span class="p">){</span>
-    <span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;still not very functional&#39;</span><span class="p">;</span>
-    <span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">run</span><span class="p">(</span><span class="nx">args</span><span class="p">){</span>
+<span class="w">    </span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;still not very functional&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// because this code is loaded as a module, we need this export statement</span>
 <span class="c1">// in order to be able to call run(args) from elsewhere in the code.</span>
-<span class="k">export</span> <span class="p">{</span> 
-    <span class="nx">run</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">run</span>
 <span class="p">};</span>
 </code></pre></div>
 
@@ -105,35 +105,35 @@ It is still in beta, so let us know if you are having issues with it or want add
 <p>First, a slightly more functional example. This one will actually draw a graph this time.   </p>
 <div class="lang-js">
 
-<div class="codehilite"><pre><span></span><code><span class="kd">function</span> <span class="nx">run</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">){</span>
-        <span class="nx">load_script_on_demand</span><span class="p">(</span>
-            <span class="s1">&#39;//unpkg.com/force-graph&#39;</span><span class="p">,</span> <span class="nx">initGraph</span><span class="p">,</span> <span class="p">[</span><span class="nx">args</span><span class="p">]</span>
-        <span class="p">)</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
-    <span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">run</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">false</span><span class="p">){</span>
+<span class="w">        </span><span class="nx">load_script_on_demand</span><span class="p">(</span>
+<span class="w">            </span><span class="s1">&#39;//unpkg.com/force-graph&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">initGraph</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">args</span><span class="p">]</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="p">;</span>
 
-    <span class="c1">// Load data then start graph</span>
-    <span class="nx">fetch</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">g</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graphs</span><span class="p">[</span><span class="nx">args</span><span class="p">.</span><span class="nx">uid</span><span class="p">];</span>
-        <span class="nx">g</span><span class="p">.</span><span class="nx">graph</span> <span class="o">=</span> <span class="nx">ForceGraph</span><span class="p">()</span>
-            <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">graphData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">nodeLabel</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
-    <span class="p">});</span>
+<span class="w">    </span><span class="c1">// Load data then start graph</span>
+<span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graphs</span><span class="p">[</span><span class="nx">args</span><span class="p">.</span><span class="nx">uid</span><span class="p">];</span>
+<span class="w">        </span><span class="nx">g</span><span class="p">.</span><span class="nx">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ForceGraph</span><span class="p">()</span>
+<span class="w">            </span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">graphData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">nodeLabel</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+<span class="w">    </span><span class="p">});</span>
 <span class="p">}</span>
 
-<span class="k">export</span> <span class="p">{</span> 
-    <span class="nx">run</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">run</span>
 <span class="p">};</span>
 </code></pre></div>
 
@@ -150,16 +150,16 @@ It is still in beta, so let us know if you are having issues with it or want add
 <p>Note the args variable, this is a hashtable containing information that is needed for most graph packages to initialize. At the time of writing the following values are passed in:   </p>
 <div class="lang-js">
 
-<div class="codehilite"><pre><span></span><code> <span class="k">return</span> <span class="p">{</span>
-       <span class="s1">&#39;graph_container&#39;</span><span class="o">:</span> <span class="nx">cont</span><span class="p">,</span> 
-       <span class="s1">&#39;width&#39;</span><span class="o">:</span> <span class="nx">width</span><span class="p">,</span> 
-       <span class="s1">&#39;height&#39;</span><span class="o">:</span> <span class="nx">height</span><span class="p">,</span> 
-       <span class="s1">&#39;current_node_id&#39;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span> 
-       <span class="s1">&#39;data&#39;</span><span class="o">:</span> <span class="nx">data</span><span class="p">,</span> 
-       <span class="s1">&#39;node&#39;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> 
-       <span class="s1">&#39;link&#39;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-       <span class="s1">&#39;coalesce_force&#39;</span><span class="o">:</span> <span class="s1">&#39;{coalesce_force}&#39;</span>
-    <span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="s1">&#39;graph_container&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">cont</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="s1">&#39;width&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="s1">&#39;height&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">height</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="s1">&#39;current_node_id&#39;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="s1">&#39;data&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="s1">&#39;node&#39;</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="s1">&#39;link&#39;</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">       </span><span class="s1">&#39;coalesce_force&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;{coalesce_force}&#39;</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 
 
@@ -179,12 +179,12 @@ It is still in beta, so let us know if you are having issues with it or want add
 <p>Add this block right below the <code>.height(args.height)</code> line:   </p>
 <div class="lang-js">
 
-<div class="codehilite"><pre><span></span><code>            <span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
-                   <span class="k">return</span> <span class="s1">&#39;#ff0000&#39;</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span>
-             <span class="p">});</span>
+<div class="codehilite"><pre><span></span><code><span class="w">            </span><span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
+<span class="w">                   </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;#ff0000&#39;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;#546bdd&#39;</span>
+<span class="w">             </span><span class="p">});</span>
 </code></pre></div>
 
 
@@ -196,9 +196,9 @@ It is still in beta, so let us know if you are having issues with it or want add
 <p>In the list of <code>.&lt;command&gt;()</code> lines, add the following block:   </p>
 <div class="lang-js">
 
-<div class="codehilite"><pre><span></span><code>            <span class="p">.</span><span class="nx">onNodeRightClick</span><span class="p">(</span><span class="nx">node</span> <span class="p">=&gt;</span> <span class="p">{</span>
-                <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
-            <span class="p">})</span>
+<div class="codehilite"><pre><span></span><code><span class="w">            </span><span class="p">.</span><span class="nx">onNodeRightClick</span><span class="p">(</span><span class="nx">node</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+<span class="w">            </span><span class="p">})</span>
 </code></pre></div>
 
 
@@ -207,12 +207,12 @@ It is still in beta, so let us know if you are having issues with it or want add
 <p>This will change the value of the global <code>current_node_id</code> when right clicking on a node, which we can then use to color our nodes:   </p>
 <div class="lang-js">
 
-<div class="codehilite"><pre><span></span><code>            <span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-               <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
-                   <span class="k">return</span> <span class="s1">&#39;#ff0000&#39;</span>
-               <span class="p">}</span>
-               <span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span>
-            <span class="p">})</span>
+<div class="codehilite"><pre><span></span><code><span class="w">            </span><span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
+<span class="w">                   </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;#ff0000&#39;</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">               </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;#546bdd&#39;</span>
+<span class="w">            </span><span class="p">})</span>
 </code></pre></div>
 
 
@@ -223,8 +223,8 @@ It is still in beta, so let us know if you are having issues with it or want add
 <p>To do this, simply add this line at the start of your function (after creating <code>g</code>):   </p>
 <div class="lang-js">
 
-<div class="codehilite"><pre><span></span><code>    <span class="c1">// load starting node into global current_node_id</span>
-    <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="c1">// load starting node into global current_node_id</span>
+<span class="w">    </span><span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span>
 </code></pre></div>
 
 
@@ -234,53 +234,53 @@ It is still in beta, so let us know if you are having issues with it or want add
 <div class="lang-js">
 
 <div class="codehilite"><pre><span></span><code><span class="c1">// This function is called by obshtml when it wants to open the graph</span>
-<span class="kd">function</span> <span class="nx">run</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">){</span>
-        <span class="c1">// load the dependency and when done run initGraph(args)</span>
-        <span class="nx">load_script_on_demand</span><span class="p">(</span>
-            <span class="s1">&#39;//unpkg.com/force-graph&#39;</span><span class="p">,</span> <span class="nx">initGraph</span><span class="p">,</span> <span class="p">[</span><span class="nx">args</span><span class="p">]</span>
-        <span class="p">)</span>
-        <span class="c1">// tell obshtml that the dependencies have been loaded, so that they will not be loaded again a next time</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// just run directly</span>
-        <span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
-    <span class="p">}</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">run</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">false</span><span class="p">){</span>
+<span class="w">        </span><span class="c1">// load the dependency and when done run initGraph(args)</span>
+<span class="w">        </span><span class="nx">load_script_on_demand</span><span class="p">(</span>
+<span class="w">            </span><span class="s1">&#39;//unpkg.com/force-graph&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">initGraph</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">args</span><span class="p">]</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">        </span><span class="c1">// tell obshtml that the dependencies have been loaded, so that they will not be loaded again a next time</span>
+<span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graph_dependencies_loaded</span><span class="p">[</span><span class="s1">&#39;custom&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// just run directly</span>
+<span class="w">        </span><span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// open div right before loading the graph to avoid opening an empty div</span>
-    <span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">initGraph</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// open div right before loading the graph to avoid opening an empty div</span>
+<span class="w">    </span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="p">;</span>
 
-    <span class="c1">// Load data then start graph</span>
-    <span class="nx">fetch</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">g</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graphs</span><span class="p">[</span><span class="nx">args</span><span class="p">.</span><span class="nx">uid</span><span class="p">];</span>
+<span class="w">    </span><span class="c1">// Load data then start graph</span>
+<span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">data</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">ObsHtmlGraph</span><span class="p">.</span><span class="nx">graphs</span><span class="p">[</span><span class="nx">args</span><span class="p">.</span><span class="nx">uid</span><span class="p">];</span>
 
-        <span class="c1">// load starting node into global current_node_id</span>
-        <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span>
+<span class="w">        </span><span class="c1">// load starting node into global current_node_id</span>
+<span class="w">        </span><span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">args</span><span class="p">.</span><span class="nx">current_node_id</span>
 
-        <span class="nx">g</span><span class="p">.</span><span class="nx">graph</span> <span class="o">=</span> <span class="nx">ForceGraph</span><span class="p">()</span>
-            <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">graphData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">nodeLabel</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
-                    <span class="k">return</span> <span class="s1">&#39;#ff0000&#39;</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="s1">&#39;#546bdd&#39;</span>
-             <span class="p">})</span>
-             <span class="p">.</span><span class="nx">onNodeRightClick</span><span class="p">(</span><span class="nx">node</span> <span class="p">=&gt;</span> <span class="p">{</span>
-                <span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
-            <span class="p">});</span>
-    <span class="p">});</span>
+<span class="w">        </span><span class="nx">g</span><span class="p">.</span><span class="nx">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ForceGraph</span><span class="p">()</span>
+<span class="w">            </span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">graph_container</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">graphData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">nodeLabel</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">width</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">height</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">nodeColor</span><span class="p">((</span><span class="nx">node</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="p">){</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;#ff0000&#39;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;#546bdd&#39;</span>
+<span class="w">             </span><span class="p">})</span>
+<span class="w">             </span><span class="p">.</span><span class="nx">onNodeRightClick</span><span class="p">(</span><span class="nx">node</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">g</span><span class="p">.</span><span class="nx">current_node_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">    </span><span class="p">});</span>
 <span class="p">}</span>
 
 <span class="c1">// export the run() method so that it can be called by obshtml</span>
-<span class="k">export</span> <span class="p">{</span> 
-    <span class="nx">run</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">run</span>
 <span class="p">};</span>
 </code></pre></div>
 
@@ -319,9 +319,9 @@ It is still in beta, so let us know if you are having issues with it or want add
 <div class="tags">
 <h2>Tags</h2>
 <ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
 	<li><a class="backlink" href="/minimal/obs.html/tags/type/styling/index.html">type/styling</a></li>
 	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-04-24/index.html">date/2022-04-24</a></li>
-	<li><a class="backlink" href="/minimal/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
 </ul>
 </div>
 

@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=copy vault to temp dir" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -443,11 +454,11 @@
 <p>The default setting is as follows:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Determines the function to use to copy your vault over to the tempdir.</span><span class="w"></span>
-<span class="c1"># `default` will try to use rsync if it is installed, and otherwise use `shutil`</span><span class="w"></span>
-<span class="c1"># `rsync` will do the same, but give a warning when it falls back to shutil</span><span class="w"></span>
-<span class="c1"># `shutil` will just use shutil to copy. Use this when rsync is installed but is giving problems.</span><span class="w"></span>
-<span class="nt">copy_vault_to_tempdir_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Determines the function to use to copy your vault over to the tempdir.</span>
+<span class="c1"># `default` will try to use rsync if it is installed, and otherwise use `shutil`</span>
+<span class="c1"># `rsync` will do the same, but give a warning when it falls back to shutil</span>
+<span class="c1"># `shutil` will just use shutil to copy. Use this when rsync is installed but is giving problems.</span>
+<span class="nt">copy_vault_to_tempdir_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 </code></pre></div>
 
 
@@ -461,8 +472,8 @@
 <p>You can enable the copy method to print out the files it copies by setting this setting:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Enable to print the files being copied</span><span class="w"></span>
-<span class="nt">copy_vault_to_tempdir_follow_copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Enable to print the files being copied</span>
+<span class="nt">copy_vault_to_tempdir_follow_copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -490,13 +501,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A100311231815383536433276777747881702780{level}" class="graph_div"></div>
+    <div id="A116980646459870804686330337581133423211{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B100311231815383536433276777747881702780{level}" level="{level}" note_temp_id="100311231815383536433276777747881702780" onclick="window.ObsHtmlGraph.run(this, '100311231815383536433276777747881702780', 'copy vault to temp dir');">
+        <button class="graph_button graph_show_button" id="B116980646459870804686330337581133423211{level}" level="{level}" note_temp_id="116980646459870804686330337581133423211" onclick="window.ObsHtmlGraph.run(this, '116980646459870804686330337581133423211', 'copy vault to temp dir');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C100311231815383536433276777747881702780{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C116980646459870804686330337581133423211{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

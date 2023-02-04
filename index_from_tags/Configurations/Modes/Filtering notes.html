@@ -146,19 +146,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=filtering notes" title="Open fullpage Graph">
@@ -236,7 +246,7 @@
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
-<div id="folder-container-4" class="dir-container requires_js active" path="/index_from_tags/Configurations">
+<div id="folder-container-4" class="dir-container requires_js " path="/index_from_tags/Configurations">
 	<button id="folder-5" class="dir-button" onclick="toggle_dir(this.id)">Deprecated Configurations</button>
 	<div id="folder-container-5" class="dir-container requires_js " path="/index_from_tags/Configurations/Deprecated Configurations">
 		<ul class="dir-list">
@@ -256,6 +266,7 @@
 			<li><a class="" href="/index_from_tags/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -263,7 +274,7 @@
 		</ul>
 	</div>
 	<button id="folder-7" class="dir-button" onclick="toggle_dir(this.id)">Modes</button>
-	<div id="folder-container-7" class="dir-container requires_js active" path="/index_from_tags/Configurations/Modes">
+	<div id="folder-container-7" class="dir-container requires_js " path="/index_from_tags/Configurations/Modes">
 		<ul class="dir-list">
 			<li><a class="" href="/index_from_tags/Configurations/Modes/Copy vault to temp dir.html"  >Copy vault to temp dir</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Modes/Create Index from Directory Structure.html"  >Create Index from Directory Structure</a></li>
@@ -464,9 +475,9 @@ When setting values only the files in the configured folders will be added to th
 </ul>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">included_folders</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_folder</span><span class="w"> </span><span class="c1"># wrong!</span><span class="w"></span>
-<span class="nt">included_folders</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_folder</span><span class="w">               </span><span class="c1"># correct</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">included_folders</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_folder</span><span class="w"> </span><span class="c1"># wrong!</span>
+<span class="nt">included_folders</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_folder</span><span class="w">               </span><span class="c1"># correct</span>
 </code></pre></div>
 
 
@@ -481,10 +492,10 @@ When setting values only the files in the configured folders will be added to th
 </ul>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">exclude_glob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w"> </span><span class="c1"># wrong!</span><span class="w"></span>
-<span class="nt">exclude_glob</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/private_notes</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w">                 </span><span class="c1"># correct</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">exclude_glob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w"> </span><span class="c1"># wrong!</span>
+<span class="nt">exclude_glob</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/private_notes</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w">                 </span><span class="c1"># correct</span>
 </code></pre></div>
 
 
@@ -516,11 +527,11 @@ When setting values only the files in the configured folders will be added to th
 <h2 id="include-only-folder-a">Include only folder /a</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/a/a_note.md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/a/a_note.md&#39;</span>
 
-<span class="nt">included_folders</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
+<span class="nt">included_folders</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
 </code></pre></div>
 
 
@@ -546,11 +557,11 @@ When setting values only the files in the configured folders will be added to th
 <h2 id="include-everything-except-for-b-i-e-exclude-b">Include everything except for /b (i.e. exclude /b)</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span>
 
-<span class="nt">exclude_glob</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/b</span><span class="w"></span>
+<span class="nt">exclude_glob</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/b</span>
 </code></pre></div>
 
 
@@ -576,11 +587,11 @@ When setting values only the files in the configured folders will be added to th
 <h2 id="exclude-all-stuff-folders">Exclude all <code>stuff</code> folders</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span>
 
-<span class="nt">exclude_glob</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w"></span>
+<span class="nt">exclude_glob</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span>
 </code></pre></div>
 
 
@@ -605,11 +616,11 @@ When setting values only the files in the configured folders will be added to th
 <h2 id="exclude-all-pdf-files">Exclude all *.pdf files</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span>
 
-<span class="nt">exclude_glob</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="err">*</span><span class="l l-Scalar l-Scalar-Plain">.pdf</span><span class="w"></span>
+<span class="nt">exclude_glob</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="err">*</span><span class="l l-Scalar l-Scalar-Plain">.pdf</span>
 </code></pre></div>
 
 
@@ -649,13 +660,13 @@ When setting values only the files in the configured folders will be added to th
 
 </div>
 <div class="graph requires_js ">
-    <div id="A258463486728926786264038997688835634802{level}" class="graph_div"></div>
+    <div id="A256523152874505232615303533409555215885{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B258463486728926786264038997688835634802{level}" level="{level}" note_temp_id="258463486728926786264038997688835634802" onclick="window.ObsHtmlGraph.run(this, '258463486728926786264038997688835634802', 'filtering notes');">
+        <button class="graph_button graph_show_button" id="B256523152874505232615303533409555215885{level}" level="{level}" note_temp_id="256523152874505232615303533409555215885" onclick="window.ObsHtmlGraph.run(this, '256523152874505232615303533409555215885', 'filtering notes');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C258463486728926786264038997688835634802{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C256523152874505232615303533409555215885{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

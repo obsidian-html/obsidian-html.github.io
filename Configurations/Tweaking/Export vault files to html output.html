@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=export vault files to html output" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -424,13 +435,13 @@
 <h2 id="configuration">Configuration</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">file_exports</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">binary</span><span class="w"></span>
-<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resources/Includes/favicon.ico</span><span class="w"></span>
-<span class="w">    </span><span class="nt">dst</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">favicon.ico</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf-8</span><span class="w"></span>
-<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resources/Includes/christmas_snowflakes.js</span><span class="w"></span>
-<span class="w">    </span><span class="nt">dst</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obs.html/static/christmas_snowflakes.js</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">file_exports</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">binary</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resources/Includes/favicon.ico</span>
+<span class="w">    </span><span class="nt">dst</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">favicon.ico</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf-8</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resources/Includes/christmas_snowflakes.js</span>
+<span class="w">    </span><span class="nt">dst</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obs.html/static/christmas_snowflakes.js</span>
 </code></pre></div>
 
 
@@ -443,10 +454,10 @@
 <p>You can go outside of these folder if you wish by providing absolute paths:   </p>
 <div class="lang-general">
 
-<div class="codehilite"><pre><span></span><code><span class="n">file_exports</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">encoding</span><span class="p">:</span><span class="w"> </span><span class="n">binary</span><span class="w"></span>
-<span class="w">    </span><span class="n">src</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">favicon</span><span class="o">.</span><span class="n">ico</span><span class="w"></span>
-<span class="w">    </span><span class="n">dst</span><span class="p">:</span><span class="w"> </span><span class="n">favicon</span><span class="o">.</span><span class="n">ico</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="n">file_exports</span><span class="p">:</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">encoding</span><span class="p">:</span><span class="w"> </span><span class="n">binary</span>
+<span class="w">    </span><span class="n">src</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">favicon</span><span class="o">.</span><span class="n">ico</span>
+<span class="w">    </span><span class="n">dst</span><span class="p">:</span><span class="w"> </span><span class="n">favicon</span><span class="o">.</span><span class="n">ico</span>
 </code></pre></div>
 
 
@@ -456,9 +467,9 @@
 <p>The default encoding of <code>utf-8</code> can be omitted:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">file_exports</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resources/Includes/christmas_snowflakes.js</span><span class="w"></span>
-<span class="w">    </span><span class="nt">dst</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obs.html/static/christmas_snowflakes.js</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">file_exports</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resources/Includes/christmas_snowflakes.js</span>
+<span class="w">    </span><span class="nt">dst</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obs.html/static/christmas_snowflakes.js</span>
 </code></pre></div>
 
 
@@ -482,13 +493,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A147200786054824251606709386004030898786{level}" class="graph_div"></div>
+    <div id="A90883885757608593932712354349893195770{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B147200786054824251606709386004030898786{level}" level="{level}" note_temp_id="147200786054824251606709386004030898786" onclick="window.ObsHtmlGraph.run(this, '147200786054824251606709386004030898786', 'export vault files to html output');">
+        <button class="graph_button graph_show_button" id="B90883885757608593932712354349893195770{level}" level="{level}" note_temp_id="90883885757608593932712354349893195770" onclick="window.ObsHtmlGraph.run(this, '90883885757608593932712354349893195770', 'export vault files to html output');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C147200786054824251606709386004030898786{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C90883885757608593932712354349893195770{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

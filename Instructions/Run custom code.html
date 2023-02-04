@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=run custom code" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -419,17 +430,17 @@
 <div class="codehilite"><pre><span></span><code><span class="c1"># Get the code</span>
 <span class="c1"># Note that the master branch is work in progress! Code might be broken. </span>
 <span class="c1"># Move into a release branch if you want fully tested code instead.</span>
-git clone git@github.com:obsidian-html/obsidian-html.git
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:obsidian-html/obsidian-html.git
 
 <span class="c1"># Move into folder</span>
-<span class="nb">cd</span> obsidian-html
+<span class="nb">cd</span><span class="w"> </span>obsidian-html
 
 <span class="c1"># Install all the dependencies of the package, and the package itself.</span>
 <span class="c1"># You only need to do this once.</span>
-pip install .
+pip<span class="w"> </span>install<span class="w"> </span>.
 
 <span class="c1"># Run ObsidianHtml from code (so not via the package)</span>
-python -m obsidianhtml -i /path/to/config.yml
+python<span class="w"> </span>-m<span class="w"> </span>obsidianhtml<span class="w"> </span>-i<span class="w"> </span>/path/to/config.yml
 </code></pre></div>
 
 
@@ -446,20 +457,20 @@ python -m obsidianhtml -i /path/to/config.yml
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
 	<li><a class="backlink" href="/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A169501342903329112116480212027472735430{level}" class="graph_div"></div>
+    <div id="A316322470814134917659407650792327781249{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B169501342903329112116480212027472735430{level}" level="{level}" note_temp_id="169501342903329112116480212027472735430" onclick="window.ObsHtmlGraph.run(this, '169501342903329112116480212027472735430', 'run custom code');">
+        <button class="graph_button graph_show_button" id="B316322470814134917659407650792327781249{level}" level="{level}" note_temp_id="316322470814134917659407650792327781249" onclick="window.ObsHtmlGraph.run(this, '316322470814134917659407650792327781249', 'run custom code');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C169501342903329112116480212027472735430{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C316322470814134917659407650792327781249{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

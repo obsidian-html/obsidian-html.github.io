@@ -2,7 +2,6 @@
 obs.html.data:
   inclusion_references:
   - demonstrations/test pages/demonstrate inclusion.md
-tags: []
 ---
    
 The normal obsidian code inclusion syntax of `![[note]]` works as intended.   

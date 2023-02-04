@@ -46,41 +46,41 @@
 <p>The default configuration is shown below.   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">rss</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">      </span><span class="nt">host_root</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://localhost:8000/&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">rss</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">      </span><span class="nt">host_root</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://localhost:8000/&#39;</span>
 <span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
-<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">      </span><span class="nt">channel</span><span class="p">:</span><span class="w"> </span>
-<span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Notes&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="nt">website_link</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;https://your</span><span class="nv"> </span><span class="s">website.com&gt;&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;your</span><span class="nv"> </span><span class="s">description&gt;&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="nt">language_code</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;en-us&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="nt">managing_editor</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;n/a&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="nt">web_master</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;n/a&#39;</span><span class="w"></span>
-<span class="w">      </span><span class="nt">items</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Notes&#39;</span>
+<span class="w">        </span><span class="nt">website_link</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;https://your</span><span class="nv"> </span><span class="s">website.com&gt;&#39;</span>
+<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;your</span><span class="nv"> </span><span class="s">description&gt;&#39;</span>
+<span class="w">        </span><span class="nt">language_code</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;en-us&#39;</span>
+<span class="w">        </span><span class="nt">managing_editor</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;n/a&#39;</span>
+<span class="w">        </span><span class="nt">web_master</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;n/a&#39;</span>
+<span class="w">      </span><span class="nt">items</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span>
-<span class="w">          </span><span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
-<span class="w">          </span><span class="nt">exclude_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
-<span class="w">          </span><span class="nt">include_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
-<span class="w">          </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;.git&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;obs.html&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">          </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;not_created.html&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="nt">selectors</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;rss:description&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-paragraphs&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;&lt;br/&gt;&lt;br/&gt;&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-header&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">          </span><span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">          </span><span class="nt">exclude_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">          </span><span class="nt">include_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">          </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;.git&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;obs.html&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;not_created.html&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">description</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">selectors</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;rss:description&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-paragraphs&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;&lt;br/&gt;&lt;br/&gt;&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-header&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span>
 <span class="w">          </span><span class="nt">selectors</span><span class="p">:</span><span class="w"> </span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;rss:title&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-header&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;path&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;parent&#39;</span><span class="p p-Indicator">,</span><span class="nv">1</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="s">&#39;/</span><span class="nv"> </span><span class="s">&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;stem&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;rss:title&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-header&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;path&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;parent&#39;</span><span class="p p-Indicator">,</span><span class="nv">1</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="s">&#39;/</span><span class="nv"> </span><span class="s">&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;stem&#39;</span><span class="p p-Indicator">]]</span>
 <span class="w">        </span><span class="nt">publish_date</span><span class="p">:</span><span class="w"> </span>
 <span class="w">          </span><span class="nt">selectors</span><span class="p">:</span><span class="w"> </span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;rss:publish_date&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml_strip&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;date/&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
-<span class="w">          </span><span class="nt">iso_formatted</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">          </span><span class="nt">format_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;rss:publish_date&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml_strip&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;date/&#39;</span><span class="p p-Indicator">]]</span>
+<span class="w">          </span><span class="nt">iso_formatted</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">          </span><span class="nt">format_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
 </code></pre></div>
 
 
@@ -105,15 +105,15 @@
 <p>Also make sure that the notes that you include have a publish date set in the frontmatter yaml. E.g.:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="c1"># Will be matched first</span><span class="w"></span>
-<span class="nt">rss</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">publish_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-04</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="c1"># Will be matched first</span>
+<span class="nt">rss</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">publish_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022-03-04</span>
 
-<span class="c1"># Matched second, if first is absent</span><span class="w"></span>
-<span class="c1"># I have this one in my template, so it exists everywhere</span><span class="w"></span>
-<span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-03-04</span><span class="w"></span>
+<span class="c1"># Matched second, if first is absent</span>
+<span class="c1"># I have this one in my template, so it exists everywhere</span>
+<span class="nt">tags</span><span class="p">:</span>
+<span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-03-04</span>
 </code></pre></div>
 
 
@@ -141,11 +141,11 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <h3 id="selector">Selector</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;type/news&#39;</span><span class="p p-Indicator">]]]</span><span class="w"></span>
-<span class="nt">exclude_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
-<span class="nt">include_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
-<span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;.git&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;obs.html&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="nt">exclude_files</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;not_created.html&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;type/news&#39;</span><span class="p p-Indicator">]]]</span>
+<span class="nt">exclude_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">include_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;.git&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;obs.html&#39;</span><span class="p p-Indicator">]</span>
+<span class="nt">exclude_files</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;not_created.html&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 
@@ -163,11 +163,11 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 </ul>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># will select any notes that have &quot;news: &quot; in the frontmatter</span><span class="w"></span>
-<span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;news&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;&#39;</span><span class="p p-Indicator">]]]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># will select any notes that have &quot;news: &quot; in the frontmatter</span>
+<span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;news&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;&#39;</span><span class="p p-Indicator">]]]</span>
 
-<span class="c1"># will select any notes that have any tag that starts with &#39;news/&#39;</span><span class="w"></span>
-<span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;news/&#39;</span><span class="p p-Indicator">]]]</span><span class="w"></span>
+<span class="c1"># will select any notes that have any tag that starts with &#39;news/&#39;</span>
+<span class="nt">match_keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;news/&#39;</span><span class="p p-Indicator">]]]</span>
 </code></pre></div>
 
 
@@ -220,10 +220,10 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 
 <div class="codehilite"><pre><span></span><code><span class="nt">publish_date</span><span class="p">:</span><span class="w"> </span>
 <span class="w">  </span><span class="nt">selectors</span><span class="p">:</span><span class="w"> </span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;rss:publish_date&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml_strip&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;date/&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
-<span class="w">  </span><span class="nt">iso_formatted</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">  </span><span class="nt">format_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%Y-%m-%d&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;rss:publish_date&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;yaml_strip&#39;</span><span class="p p-Indicator">,</span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,[</span><span class="s">&#39;date/&#39;</span><span class="p p-Indicator">]]</span>
+<span class="w">  </span><span class="nt">iso_formatted</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">  </span><span class="nt">format_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%Y-%m-%d&#39;</span>
 </code></pre></div>
 
 
@@ -238,23 +238,23 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 </ul>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># passing one selector </span><span class="w"></span>
-<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># passing one selector </span>
+<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">]]</span>
 
-<span class="c1"># passing two selectors</span><span class="w"></span>
-<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;selector2&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg2&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<span class="c1"># passing two selectors</span>
+<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;selector2&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg2&#39;</span><span class="p p-Indicator">]]</span>
 
-<span class="c1"># same as above, but using expanded notation</span><span class="w"></span>
-<span class="nt">selectors</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;selector2&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg2&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="c1"># same as above, but using expanded notation</span>
+<span class="nt">selectors</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;selector2&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg2&#39;</span><span class="p p-Indicator">]</span>
 
-<span class="c1"># passing no selectors (where applicable)</span><span class="w"></span>
-<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<span class="c1"># passing no selectors (where applicable)</span>
+<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 
-<span class="c1"># wrong, passing selector without surrounding list</span><span class="w"></span>
-<span class="c1"># will cause an error</span><span class="w"></span>
-<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="c1"># wrong, passing selector without surrounding list</span>
+<span class="c1"># will cause an error</span>
+<span class="nt">selectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;selector1&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;arg1&#39;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 
@@ -268,13 +268,13 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <p>This selector allows us to match items on the presence of either a key, or a list value under a key. It also allows us to set a string value for e.g. the description or title, based on the value of a key (or a list item under a key).   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># select notes that have the rss_desc key in the yaml frontmatter</span><span class="w"></span>
-<span class="c1"># return the value of the key</span><span class="w"></span>
-<span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;rss_desc&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># select notes that have the rss_desc key in the yaml frontmatter</span>
+<span class="c1"># return the value of the key</span>
+<span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;rss_desc&#39;</span><span class="p p-Indicator">]</span>
 
-<span class="c1"># select notes that have a list element in the list under the key tags</span><span class="w"></span>
-<span class="c1"># that starts with &#39;type/news&#39;, return the list element</span><span class="w"></span>
-<span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;type/news&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="c1"># select notes that have a list element in the list under the key tags</span>
+<span class="c1"># that starts with &#39;type/news&#39;, return the list element</span>
+<span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;type/news&#39;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 
@@ -293,10 +293,10 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <p>Let's say you have this frontmatter:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="nt">rss</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;My</span><span class="nv"> </span><span class="s">custom</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">note&#39;</span><span class="w"></span>
-<span class="nn">---</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">rss</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;My</span><span class="nv"> </span><span class="s">custom</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">note&#39;</span>
+<span class="nn">---</span>
 </code></pre></div>
 
 
@@ -305,7 +305,7 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <p>then the yaml selector for this looks like this:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;rss:title&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">[</span><span class="s">&#39;yaml&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;rss:title&#39;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 
@@ -315,8 +315,8 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <p>If you want to get the string value of a list item, for example the tag <code>date/&lt;date&gt;</code>, given:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-01-24</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">tags</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-01-24</span>
 </code></pre></div>
 
 
@@ -326,7 +326,7 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <p>This can be done by renaming the selector function from <code>yaml</code> to <code>yaml_strip</code>. The function will work the same as described in this section, the only change is that it will strip the prefix off of matched list values.   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">[</span><span class="s">&#39;yaml_strip&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;date/&#39;</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">[</span><span class="s">&#39;yaml_strip&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;tags&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;date/&#39;</span><span class="p p-Indicator">]]</span>
 </code></pre></div>
 
 
@@ -336,9 +336,9 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <p>Parses the html, finds all paragraph elements, and then returns a string that is the innerHtml of the first paragraph, plus how many extra are selected.   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># return the innerHtml of the first and the second paragraph on the page,</span><span class="w"></span>
-<span class="c1"># as a string, separated by two line breaks</span><span class="w"></span>
-<span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-paragraphs&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;&lt;br/&gt;&lt;br/&gt;&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># return the innerHtml of the first and the second paragraph on the page,</span>
+<span class="c1"># as a string, separated by two line breaks</span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-paragraphs&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;&lt;br/&gt;&lt;br/&gt;&#39;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 
@@ -348,8 +348,8 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 <h2 id="first-header">first-header</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Get the first H1 header, and return the inner html</span><span class="w"></span>
-<span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-header&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Get the first H1 header, and return the inner html</span>
+<span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;first-header&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 

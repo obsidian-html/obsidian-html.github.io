@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=obsidianhtml run" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -442,7 +453,7 @@ command.   </p>
 <p>Run   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span>run<span class="w"> </span>-f<span class="w"> </span>/absolute/path/to/your/entrypoint_note.md
 </code></pre></div>
 
 
@@ -455,7 +466,7 @@ command.   </p>
 <p>In the basis you run obsidianhtml run by only providing the path to your note. We advice you to use an absolute path for this.   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml run -f /home/user/git/obsidian-html.github.io/__src/vault/ObsidianHtml.md
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span>run<span class="w"> </span>-f<span class="w"> </span>/home/user/git/obsidian-html.github.io/__src/vault/ObsidianHtml.md
 </code></pre></div>
 
 
@@ -481,10 +492,10 @@ command.   </p>
 <div class="lang-bash">
 
 <div class="codehilite"><pre><span></span><code><span class="c1"># for http://mywebsite.com/test</span>
-obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder <span class="nb">test</span>
+obsidianhtml<span class="w"> </span>run<span class="w"> </span>-f<span class="w"> </span>/absolute/path/to/your/entrypoint_note.md<span class="w"> </span>--subfolder<span class="w"> </span><span class="nb">test</span>
 
 <span class="c1"># for http://mywebsite.com/sites/test</span>
-obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder sites/test
+obsidianhtml<span class="w"> </span>run<span class="w"> </span>-f<span class="w"> </span>/absolute/path/to/your/entrypoint_note.md<span class="w"> </span>--subfolder<span class="w"> </span>sites/test
 </code></pre></div>
 
 
@@ -494,7 +505,7 @@ obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder sites/
 <p>Run    </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml <span class="nb">help</span>
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span><span class="nb">help</span>
 </code></pre></div>
 
 
@@ -518,13 +529,13 @@ obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md --subfolder sites/
 
 </div>
 <div class="graph requires_js ">
-    <div id="A335928967133983335149357402914307561962{level}" class="graph_div"></div>
+    <div id="A265300243101942389954337468533752758837{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B335928967133983335149357402914307561962{level}" level="{level}" note_temp_id="335928967133983335149357402914307561962" onclick="window.ObsHtmlGraph.run(this, '335928967133983335149357402914307561962', 'obsidianhtml run');">
+        <button class="graph_button graph_show_button" id="B265300243101942389954337468533752758837{level}" level="{level}" note_temp_id="265300243101942389954337468533752758837" onclick="window.ObsHtmlGraph.run(this, '265300243101942389954337468533752758837', 'obsidianhtml run');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C335928967133983335149357402914307561962{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C265300243101942389954337468533752758837{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

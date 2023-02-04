@@ -41,7 +41,7 @@
 <p>Run:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml <span class="nb">export</span> default-config
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span><span class="nb">export</span><span class="w"> </span>default-config
 </code></pre></div>
 
 
@@ -265,10 +265,10 @@
 <h3 id="obsidian_folder_path_str">obsidian_folder_path_str</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
-<span class="c1"># Can be absent when toggles/compile_md == False</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">obsidian_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;REQUIRED_INPUT&gt;&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span>
+<span class="c1"># Can be absent when toggles/compile_md == False</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">obsidian_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;REQUIRED_INPUT&gt;&#39;</span>
 </code></pre></div>
 
 
@@ -278,11 +278,11 @@
 <h3 id="obsidian_entrypoint_path_str">obsidian_entrypoint_path_str</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># The note that will be used as the index.html </span><span class="w"></span>
-<span class="c1"># should be in obsidian_folder_path_str</span><span class="w"></span>
-<span class="c1"># Can be absent when toggles/compile_md == False</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;REQUIRED_INPUT&gt;&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The note that will be used as the index.html </span>
+<span class="c1"># should be in obsidian_folder_path_str</span>
+<span class="c1"># Can be absent when toggles/compile_md == False</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;REQUIRED_INPUT&gt;&#39;</span>
 </code></pre></div>
 
 
@@ -292,10 +292,10 @@
 <h3 id="md_folder_path_str">md_folder_path_str</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;output/md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;output/md&#39;</span>
 </code></pre></div>
 
 
@@ -304,11 +304,11 @@
 <h3 id="md_entrypoint_path_str">md_entrypoint_path_str</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Markdown entrypoint path</span><span class="w"></span>
-<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;output/md/index.md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Markdown entrypoint path</span>
+<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;output/md/index.md&#39;</span>
 </code></pre></div>
 
 
@@ -317,10 +317,10 @@
 <h3 id="html_output_folder_path_str">html_output_folder_path_str</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Output path of HTML files</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;output/html&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Output path of HTML files</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;output/html&#39;</span>
 </code></pre></div>
 
 
@@ -330,14 +330,14 @@
 <h3 id="exclude-subfolders">Exclude Subfolders</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Exclude subfolders</span><span class="w"></span>
-<span class="c1"># These are relative to obsidian_folder_path_str</span><span class="w"></span>
-<span class="c1"># To exclude a folder two levels deep, use level1/level2</span><span class="w"></span>
-<span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.obsidian&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.trash&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.DS_Store&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Exclude subfolders</span>
+<span class="c1"># These are relative to obsidian_folder_path_str</span>
+<span class="c1"># To exclude a folder two levels deep, use level1/level2</span>
+<span class="nt">exclude_subfolders</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.obsidian&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.trash&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.DS_Store&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span>
 </code></pre></div>
 
 
@@ -348,19 +348,19 @@
 <h3 id="copy-vault-to-tempdir">Copy Vault to Tempdir</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect the vault data. </span><span class="w"></span>
-<span class="c1"># Should be fine to turn off if copying the vault takes too long / disk space is too limited.</span><span class="w"></span>
-<span class="c1"># The tempdir is automatically removed on exit of the program.</span><span class="w"></span>
-<span class="nt">copy_vault_to_tempdir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect the vault data. </span>
+<span class="c1"># Should be fine to turn off if copying the vault takes too long / disk space is too limited.</span>
+<span class="c1"># The tempdir is automatically removed on exit of the program.</span>
+<span class="nt">copy_vault_to_tempdir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 
-<span class="c1"># Determines the function to use to copy your vault over to the tempdir.</span><span class="w"></span>
-<span class="c1"># `default` will try to use rsync if it is installed, and otherwise use `shutil`</span><span class="w"></span>
-<span class="c1"># `rsync` will do the same, but give a warning when it falls back to shutil</span><span class="w"></span>
-<span class="c1"># `shutil` will just use shutil to copy. Use this when rsync is installed but is giving problems.</span><span class="w"></span>
-<span class="nt">copy_vault_to_tempdir_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
+<span class="c1"># Determines the function to use to copy your vault over to the tempdir.</span>
+<span class="c1"># `default` will try to use rsync if it is installed, and otherwise use `shutil`</span>
+<span class="c1"># `rsync` will do the same, but give a warning when it falls back to shutil</span>
+<span class="c1"># `shutil` will just use shutil to copy. Use this when rsync is installed but is giving problems.</span>
+<span class="nt">copy_vault_to_tempdir_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 
-<span class="c1"># Enable to print the files being copied</span><span class="w"></span>
-<span class="nt">copy_vault_to_tempdir_follow_copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="c1"># Enable to print the files being copied</span>
+<span class="nt">copy_vault_to_tempdir_follow_copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 
 
@@ -376,7 +376,7 @@
 </blockquote>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">included_file_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;jpg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;jpeg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;gif&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;png&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;bmp&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;pdf&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp3&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;wav&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">included_file_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;jpg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;jpeg&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;gif&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;png&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;bmp&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;pdf&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp3&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;wav&#39;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 
@@ -390,7 +390,7 @@
 </blockquote>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">video_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">video_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;mp4&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;webm&#39;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 
@@ -405,7 +405,7 @@
 </blockquote>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">audio_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;wav&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp3&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">audio_format_suffixes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;wav&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mp3&#39;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 
 
@@ -416,9 +416,9 @@
 <h3 id="site-name">Site name</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Will be inputted into the Html template as page title</span><span class="w"></span>
-<span class="c1"># Not used anywhere else atm.</span><span class="w"></span>
-<span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Obsidian-Html/Notes&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Will be inputted into the Html template as page title</span>
+<span class="c1"># Not used anywhere else atm.</span>
+<span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Obsidian-Html/Notes&#39;</span>
 </code></pre></div>
 
 
@@ -427,9 +427,9 @@
 <h3 id="html-url-prefix">Html Url Prefix</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span><span class="w"></span>
-<span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span><span class="w"></span>
-<span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span>
+<span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span>
+<span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
 </code></pre></div>
 
 
@@ -443,7 +443,7 @@
 </blockquote>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 </code></pre></div>
 
 
@@ -453,9 +453,9 @@
 <h3 id="html-template-path-str">Html Template Path Str</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span><span class="w"></span>
-<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span><span class="w"></span>
-<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span>
+<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span>
+<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
 </code></pre></div>
 
 
@@ -465,8 +465,8 @@
 <h3 id="html-custom-inclusions">Html Custom Inclusions</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span><span class="w"></span>
-<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span>
+<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 </code></pre></div>
 
 
@@ -477,12 +477,12 @@
 <p>These are the first second level settings. If you have multiple settings, make sure to combine them. So not like this:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># wrong</span><span class="w"></span>
-<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># wrong</span>
+<span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 
-<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -491,10 +491,10 @@
 <p>But like this:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># good</span><span class="w"></span>
-<span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># good</span>
+<span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -504,9 +504,9 @@
 <h3 id="compile-md">Compile Md</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Opt-in/-out of Obsidian-&gt;Md conversion, set to False when using proper markdown as input</span><span class="w"></span>
-<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Opt-in/-out of Obsidian-&gt;Md conversion, set to False when using proper markdown as input</span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -520,9 +520,9 @@
 <h3 id="compile-html">Compile Html</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Opt-in/-out of Md-&gt;Html conversion, set to False when only wanting to get proper markdown from Obsidian</span><span class="w"></span>
-<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Opt-in/-out of Md-&gt;Html conversion, set to False when only wanting to get proper markdown from Obsidian</span>
+<span class="w">  </span><span class="nt">compile_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -532,10 +532,10 @@
 <h3 id="process-all">Process all</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># If this is false only the entrypoint and all its links (recursively) are processed</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># if true all the notes will be processed</span><span class="w"></span>
-<span class="w">  </span><span class="nt">process_all</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># If this is false only the entrypoint and all its links (recursively) are processed</span>
+<span class="w">  </span><span class="c1"># if true all the notes will be processed</span>
+<span class="w">  </span><span class="nt">process_all</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -547,9 +547,9 @@
 <h3 id="verbose_printout">verbose_printout</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Can be overwritten ad-hoc by using &quot;obsidianhtml -i config.yml -v&quot; (the -v option)</span><span class="w"></span>
-<span class="w">  </span><span class="nt">verbose_printout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Can be overwritten ad-hoc by using &quot;obsidianhtml -i config.yml -v&quot; (the -v option)</span>
+<span class="w">  </span><span class="nt">verbose_printout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -558,10 +558,10 @@
 <h3 id="allow-duplicate-filenames-in-root">Allow Duplicate Filenames in Root</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># This option should be False for Obsidian-&gt;Md, but can be True when compile_md == False</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Setting it to True will cause an error when two files with the same file name are found anywhere in the input folder</span><span class="w"></span>
-<span class="w">  </span><span class="nt">allow_duplicate_filenames_in_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># This option should be False for Obsidian-&gt;Md, but can be True when compile_md == False</span>
+<span class="w">  </span><span class="c1"># Setting it to True will cause an error when two files with the same file name are found anywhere in the input folder</span>
+<span class="w">  </span><span class="nt">allow_duplicate_filenames_in_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -571,10 +571,10 @@
 <h3 id="warn-on-skipped-image">Warn on Skipped Image</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Sometimes linked images that should be local (based on the path) cannot be found.</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Toggle this to False to disable warnings if that happens.</span><span class="w"></span>
-<span class="w">  </span><span class="nt">warn_on_skipped_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Sometimes linked images that should be local (based on the path) cannot be found.</span>
+<span class="w">  </span><span class="c1"># Toggle this to False to disable warnings if that happens.</span>
+<span class="w">  </span><span class="nt">warn_on_skipped_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -585,9 +585,9 @@
 <h3 id="no_clean">no_clean</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># This will skip emptying output folders, if you want to implement this yourself</span><span class="w"></span>
-<span class="w">  </span><span class="nt">no_clean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># This will skip emptying output folders, if you want to implement this yourself</span>
+<span class="w">  </span><span class="nt">no_clean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -601,9 +601,9 @@
 </blockquote>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># This will skip emptying output folders, if you want to implement this yourself</span><span class="w"></span>
-<span class="w">  </span><span class="nt">no_tabs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># This will skip emptying output folders, if you want to implement this yourself</span>
+<span class="w">  </span><span class="nt">no_tabs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -613,9 +613,9 @@
 <h3 id="relative_path_md">relative_path_md</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Whether the markdown interpreter assumes relative path when no / at the beginning of a link</span><span class="w"></span>
-<span class="w">  </span><span class="nt">relative_path_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Whether the markdown interpreter assumes relative path when no / at the beginning of a link</span>
+<span class="w">  </span><span class="nt">relative_path_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -627,9 +627,9 @@
 </blockquote>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Whether the html links are made relative, instead of absolute.</span><span class="w"></span>
-<span class="w">  </span><span class="nt">relative_path_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Whether the html links are made relative, instead of absolute.</span>
+<span class="w">  </span><span class="nt">relative_path_html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -639,9 +639,9 @@
 <h2 id="external_blank">external_blank</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Whether external http anchor links should have a target of &quot;_blank&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">external_blank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Whether external http anchor links should have a target of &quot;_blank&quot;</span>
+<span class="w">  </span><span class="nt">external_blank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -653,9 +653,9 @@
 </blockquote>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># When true, Obsidianhtml will not add three spaces at the end of every line</span><span class="w"></span>
-<span class="w">  </span><span class="nt">strict_line_breaks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># When true, Obsidianhtml will not add three spaces at the end of every line</span>
+<span class="w">  </span><span class="nt">strict_line_breaks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -668,15 +668,15 @@
 </blockquote>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w">               </span><span class="c1"># documentation, tabs, minimal</span><span class="w"></span>
-<span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">120rem</span><span class="w">              </span><span class="c1"># not supported for layout: tabs</span><span class="w"></span>
-<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                       </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span><span class="w"></span>
-<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                      </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span><span class="w"></span>
-<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">                   </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span><span class="w"></span>
-<span class="w">      </span><span class="nt">add_dir_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                  </span><span class="c1"># show directory contents in one of the panes (only documentation layout). create_index_from_tags needs to be enabled for &lt;v3.2.0</span><span class="w"></span>
-<span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;65,</span><span class="nv"> </span><span class="s">76,</span><span class="nv"> </span><span class="s">253&#39;</span><span class="w"></span>
-<span class="w">      </span><span class="nt">loading_bg_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;255,</span><span class="nv"> </span><span class="s">255,</span><span class="nv"> </span><span class="s">255&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w">               </span><span class="c1"># documentation, tabs, minimal</span>
+<span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">120rem</span><span class="w">              </span><span class="c1"># not supported for layout: tabs</span>
+<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                       </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span>
+<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                      </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span>
+<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w">                   </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span>
+<span class="w">      </span><span class="nt">add_dir_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">                  </span><span class="c1"># show directory contents in one of the panes (only documentation layout). create_index_from_tags needs to be enabled for &lt;v3.2.0</span>
+<span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;65,</span><span class="nv"> </span><span class="s">76,</span><span class="nv"> </span><span class="s">253&#39;</span>
+<span class="w">      </span><span class="nt">loading_bg_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;255,</span><span class="nv"> </span><span class="s">255,</span><span class="nv"> </span><span class="s">255&#39;</span>
 </code></pre></div>
 
 
@@ -686,12 +686,12 @@
 <h3 id="graph">Graph</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Include code to build the graph view per page </span><span class="w"></span>
-<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page</span><span class="w"></span>
-<span class="w">      </span><span class="nt">coalesce_force</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;-100&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="c1"># Include code to build the graph view per page </span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page</span>
+<span class="w">      </span><span class="nt">coalesce_force</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;-100&#39;</span>
 </code></pre></div>
 
 
@@ -701,26 +701,26 @@
 <h3 id="create-index-from-tags">Create Index From Tags</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Create an index.md with links to notes that have one of the given tags.</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># This index.md will serve as the entrypoint.</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># !! Enabling this feature will overwrite obsidian_entrypoint_path_str </span><span class="w"></span>
-<span class="w">    </span><span class="c1"># and md_entrypoint_path_str</span><span class="w"></span>
-<span class="w">    </span><span class="nt">create_index_from_tags</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">      </span><span class="nt">add_links_in_graph_tree</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
-<span class="w">      </span><span class="nt">sort</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;none&#39;</span><span class="w">          </span><span class="c1"># &lt;key_value, creation_time, modified_time, none&gt;</span><span class="w"></span>
-<span class="w">                                </span><span class="c1"># ! created_time not available on Linux!</span><span class="w"></span>
-<span class="w">        </span><span class="nt">key_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">            </span><span class="c1"># empty for top level, use &#39;:&#39; to go down </span><span class="w"></span>
-<span class="w">                                </span><span class="c1"># multiple levels</span><span class="w"></span>
-<span class="w">        </span><span class="nt">value_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">        </span><span class="c1"># in case of multiple values under key_path, </span><span class="w"></span>
-<span class="w">                                </span><span class="c1"># match on this prefix, and then remove prefix</span><span class="w"></span>
-<span class="w">        </span><span class="nt">reverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">          </span><span class="c1"># false/true reverses output</span><span class="w"></span>
-<span class="w">        </span><span class="nt">none_on_bottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">    </span><span class="c1"># will put notes at the bottom that do not have </span><span class="w"></span>
-<span class="w">                                </span><span class="c1"># the sort key, otherwise at the top</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="c1"># Create an index.md with links to notes that have one of the given tags.</span>
+<span class="w">    </span><span class="c1"># This index.md will serve as the entrypoint.</span>
+<span class="w">    </span><span class="c1"># !! Enabling this feature will overwrite obsidian_entrypoint_path_str </span>
+<span class="w">    </span><span class="c1"># and md_entrypoint_path_str</span>
+<span class="w">    </span><span class="nt">create_index_from_tags</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">      </span><span class="nt">add_links_in_graph_tree</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">      </span><span class="nt">sort</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;none&#39;</span><span class="w">          </span><span class="c1"># &lt;key_value, creation_time, modified_time, none&gt;</span>
+<span class="w">                                </span><span class="c1"># ! created_time not available on Linux!</span>
+<span class="w">        </span><span class="nt">key_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">            </span><span class="c1"># empty for top level, use &#39;:&#39; to go down </span>
+<span class="w">                                </span><span class="c1"># multiple levels</span>
+<span class="w">        </span><span class="nt">value_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">        </span><span class="c1"># in case of multiple values under key_path, </span>
+<span class="w">                                </span><span class="c1"># match on this prefix, and then remove prefix</span>
+<span class="w">        </span><span class="nt">reverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">          </span><span class="c1"># false/true reverses output</span>
+<span class="w">        </span><span class="nt">none_on_bottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">    </span><span class="c1"># will put notes at the bottom that do not have </span>
+<span class="w">                                </span><span class="c1"># the sort key, otherwise at the top</span>
 </code></pre></div>
 
 
@@ -730,19 +730,19 @@
 <h3 id="create-index-from-directory-structure">Create Index From Directory Structure</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;md&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;obs.html&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="nt">exclude_files</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;index.html&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;favicon.ico&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">      </span><span class="nt">exclude_subfolders</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.git&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;__src&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;md&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;obs.html&quot;</span>
+<span class="w">      </span><span class="nt">exclude_files</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;index.html&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;favicon.ico&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not_created.html&quot;</span>
 </code></pre></div>
 
 
@@ -752,11 +752,11 @@
 <h3 id="backlinks">Backlinks</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Show backlinks at the bottom of each note</span><span class="w"></span>
-<span class="w">    </span><span class="nt">backlinks</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="c1"># Show backlinks at the bottom of each note</span>
+<span class="w">    </span><span class="nt">backlinks</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -766,31 +766,31 @@
 <h3 id="simple-feature-toggles">Simple feature toggles</h3>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">code_highlight</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">mermaid_diagrams</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">callouts</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">math_latex</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">backlinks</span><span class="p">:</span><span class="w">                  </span><span class="c1"># Show backlinks at the bottom of each note</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">tags_page</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">        </span><span class="nt">show_in_note_footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">eraser</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">    </span><span class="nt">breadcrumbs</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">toggles</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="nt">code_highlight</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">mermaid_diagrams</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">callouts</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">math_latex</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">backlinks</span><span class="p">:</span><span class="w">                  </span><span class="c1"># Show backlinks at the bottom of each note</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">tags_page</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">show_in_note_footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">eraser</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">breadcrumbs</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 

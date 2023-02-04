@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=making code blocks look pretty" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -501,44 +512,44 @@ Any codeblock or codeline is excempt from modification because they get cut out 
 <h2 id="yaml">YAML</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="c1"># This is a basic workflow to help you get started with Actions</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="c1"># This is a basic workflow to help you get started with Actions</span>
 
-<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span>
 
-<span class="c1"># Controls when the action will run. </span><span class="w"></span>
-<span class="nt">on</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Triggers the workflow on push or pull request events but only for the main branch</span><span class="w"></span>
-<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="c1"># Controls when the action will run. </span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Triggers the workflow on push or pull request events but only for the main branch</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span>
 
-<span class="w">  </span><span class="c1"># Allows you to run this workflow manually from the Actions tab</span><span class="w"></span>
-<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Allows you to run this workflow manually from the Actions tab</span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
 
-<span class="c1"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span><span class="w"></span>
-<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># This workflow contains a single job called &quot;build&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># The type of runner that the job will run on</span><span class="w"></span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">self-hosted</span><span class="w"></span>
+<span class="c1"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># This workflow contains a single job called &quot;build&quot;</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># The type of runner that the job will run on</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">self-hosted</span>
 
-<span class="w">    </span><span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span><span class="w"></span>
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="c1"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
 
-<span class="w">      </span><span class="c1"># Runs a single command using the runners shell</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run a one-line script</span><span class="w"></span>
-<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo Hello, world!</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># Runs a single command using the runners shell</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run a one-line script</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo Hello, world!</span>
 
-<span class="w">      </span><span class="c1"># Runs a set of commands using the runners shell</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run a multi-line script</span><span class="w"></span>
-<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">          </span><span class="no">echo &quot;$HOSTNAME&quot;</span><span class="w"></span>
-<span class="w">          </span><span class="no">touch /home/github/testttttt</span><span class="w"></span>
-<span class="w">          </span><span class="no">pwd</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># Runs a set of commands using the runners shell</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run a multi-line script</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">echo &quot;$HOSTNAME&quot;</span>
+<span class="w">          </span><span class="no">touch /home/github/testttttt</span>
+<span class="w">          </span><span class="no">pwd</span>
 </code></pre></div>
 
 
@@ -547,29 +558,29 @@ Any codeblock or codeline is excempt from modification because they get cut out 
 <h2 id="bash">Bash</h2>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>    <span class="c1"># Set rights</span>
-    <span class="c1"># ---------------------------</span>
-    <span class="c1"># Create www-data group, and add main user to it</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$setWWWData</span> -eq <span class="m">1</span> <span class="o">]]</span><span class="p">;</span>
-    <span class="k">then</span>
-        sudo groupadd www-data
-        sudo usermod <span class="nv">$mainUser</span> -a -G www-data
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="c1"># Set rights</span>
+<span class="w">    </span><span class="c1"># ---------------------------</span>
+<span class="w">    </span><span class="c1"># Create www-data group, and add main user to it</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$setWWWData</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">        </span>sudo<span class="w"> </span>groupadd<span class="w"> </span>www-data
+<span class="w">        </span>sudo<span class="w"> </span>usermod<span class="w"> </span><span class="nv">$mainUser</span><span class="w"> </span>-a<span class="w"> </span>-G<span class="w"> </span>www-data
 
-        <span class="c1"># Give www-data rights to everything in /var/www/</span>
-        sudo chown -R :www-data /var/www/
-    <span class="k">fi</span>
+<span class="w">        </span><span class="c1"># Give www-data rights to everything in /var/www/</span>
+<span class="w">        </span>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>:www-data<span class="w"> </span>/var/www/
+<span class="w">    </span><span class="k">fi</span>
 
-    <span class="c1"># Empty default site block</span>
-    <span class="c1"># ---------------------------</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$distro</span> -eq <span class="nv">$MANJARO</span> <span class="o">]]</span><span class="p">;</span>
-    <span class="k">then</span>
-        sudo touch /etc/nginx/sites-available/default
+<span class="w">    </span><span class="c1"># Empty default site block</span>
+<span class="w">    </span><span class="c1"># ---------------------------</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$distro</span><span class="w"> </span>-eq<span class="w"> </span><span class="nv">$MANJARO</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">        </span>sudo<span class="w"> </span>touch<span class="w"> </span>/etc/nginx/sites-available/default
 
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$distro</span> -eq <span class="nv">$UBUNTU</span> <span class="o">]]</span><span class="p">;</span>
-    <span class="k">then</span>
-        sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/_default_factory
-        sudo <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> &gt; /etc/nginx/sites-available/default
-    <span class="k">fi</span>    
+<span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$distro</span><span class="w"> </span>-eq<span class="w"> </span><span class="nv">$UBUNTU</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">        </span>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/nginx/sites-available/default<span class="w"> </span>/etc/nginx/sites-available/_default_factory
+<span class="w">        </span>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/nginx/sites-available/default
+<span class="w">    </span><span class="k">fi</span><span class="w">    </span>
 </code></pre></div>
 
 
@@ -585,21 +596,21 @@ Any codeblock or codeline is excempt from modification because they get cut out 
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
 	<li><a class="backlink" href="/obs.html/tags/feature/html_output/index.html">feature/html_output</a></li>
 	<li><a class="backlink" href="/obs.html/tags/type/styling/index.html">type/styling</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A235986869487504577409021750170888980688{level}" class="graph_div"></div>
+    <div id="A305937433336928307586253040680188073559{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B235986869487504577409021750170888980688{level}" level="{level}" note_temp_id="235986869487504577409021750170888980688" onclick="window.ObsHtmlGraph.run(this, '235986869487504577409021750170888980688', 'making code blocks look pretty');">
+        <button class="graph_button graph_show_button" id="B305937433336928307586253040680188073559{level}" level="{level}" note_temp_id="305937433336928307586253040680188073559" onclick="window.ObsHtmlGraph.run(this, '305937433336928307586253040680188073559', 'making code blocks look pretty');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C235986869487504577409021750170888980688{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C305937433336928307586253040680188073559{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

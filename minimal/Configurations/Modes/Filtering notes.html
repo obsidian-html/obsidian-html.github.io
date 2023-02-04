@@ -58,9 +58,9 @@ When setting values only the files in the configured folders will be added to th
 </ul>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">included_folders</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_folder</span><span class="w"> </span><span class="c1"># wrong!</span><span class="w"></span>
-<span class="nt">included_folders</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_folder</span><span class="w">               </span><span class="c1"># correct</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">included_folders</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_folder</span><span class="w"> </span><span class="c1"># wrong!</span>
+<span class="nt">included_folders</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_folder</span><span class="w">               </span><span class="c1"># correct</span>
 </code></pre></div>
 
 
@@ -75,10 +75,10 @@ When setting values only the files in the configured folders will be added to th
 </ul>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">exclude_glob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w"> </span><span class="c1"># wrong!</span><span class="w"></span>
-<span class="nt">exclude_glob</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/private_notes</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w">                 </span><span class="c1"># correct</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">exclude_glob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w"> </span><span class="c1"># wrong!</span>
+<span class="nt">exclude_glob</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/private_notes</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w">                 </span><span class="c1"># correct</span>
 </code></pre></div>
 
 
@@ -110,11 +110,11 @@ When setting values only the files in the configured folders will be added to th
 <h2 id="include-only-folder-a">Include only folder /a</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/a/a_note.md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/a/a_note.md&#39;</span>
 
-<span class="nt">included_folders</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
+<span class="nt">included_folders</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
 </code></pre></div>
 
 
@@ -140,11 +140,11 @@ When setting values only the files in the configured folders will be added to th
 <h2 id="include-everything-except-for-b-i-e-exclude-b">Include everything except for /b (i.e. exclude /b)</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span>
 
-<span class="nt">exclude_glob</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/b</span><span class="w"></span>
+<span class="nt">exclude_glob</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/b</span>
 </code></pre></div>
 
 
@@ -170,11 +170,11 @@ When setting values only the files in the configured folders will be added to th
 <h2 id="exclude-all-stuff-folders">Exclude all <code>stuff</code> folders</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span>
 
-<span class="nt">exclude_glob</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span><span class="w"></span>
+<span class="nt">exclude_glob</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stuff</span>
 </code></pre></div>
 
 
@@ -199,11 +199,11 @@ When setting values only the files in the configured folders will be added to th
 <h2 id="exclude-all-pdf-files">Exclude all *.pdf files</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># we need to set the entrypoint to a note in the /a folder</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/vault/home.md&#39;</span>
 
-<span class="nt">exclude_glob</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="err">*</span><span class="l l-Scalar l-Scalar-Plain">.pdf</span><span class="w"></span>
+<span class="nt">exclude_glob</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="err">*</span><span class="l l-Scalar l-Scalar-Plain">.pdf</span>
 </code></pre></div>
 
 

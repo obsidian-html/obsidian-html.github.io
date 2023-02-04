@@ -148,19 +148,29 @@
     }
 </script>
                                                         <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                                         <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=removing obisidian comments" title="Open fullpage Graph">
@@ -243,19 +253,29 @@
     }
 </script>
                                                         <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                                         <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=removing obisidian comments" title="Open fullpage Graph">
@@ -317,10 +337,10 @@
 <p>If you don't want the behavior as defined below, you can turn this off by setting the following key in your config yml:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">eraser</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">eraser</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -329,18 +349,18 @@
 <h2 id="behavior">Behavior</h2>
 <div class="lang-general">
 
-<div class="codehilite"><pre><span></span><code><span class="n">Obisidian</span><span class="w"> </span><span class="s">has</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">comment</span><span class="w"> </span><span class="s">system:</span><span class="w"> </span><span class="s">everything</span><span class="w"> </span><span class="s">between</span><span class="w"> </span><span class="s">%%</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">comment</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">will</span><span class="w"> </span><span class="s">not</span><span class="w"> </span><span class="s">be</span><span class="w"> </span><span class="s">shown</span><span class="w"> </span><span class="s">in</span><span class="w"> </span><span class="s">view</span><span class="w"> </span><span class="s">mode</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="n">Obisidian</span><span class="w"> </span><span class="s">has</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">comment</span><span class="w"> </span><span class="s">system:</span><span class="w"> </span><span class="s">everything</span><span class="w"> </span><span class="s">between</span><span class="w"> </span><span class="s">%%</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">comment</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">will</span><span class="w"> </span><span class="s">not</span><span class="w"> </span><span class="s">be</span><span class="w"> </span><span class="s">shown</span><span class="w"> </span><span class="s">in</span><span class="w"> </span><span class="s">view</span><span class="w"> </span><span class="s">mode</span>
 
-<span class="n">Text</span><span class="w"></span>
-<span class="s">%%</span><span class="w"></span>
-<span class="n">comment</span><span class="w"> </span><span class="s">block</span><span class="w"></span>
-<span class="c">%%</span><span class="w"></span>
-<span class="n">Text</span><span class="w"></span>
+<span class="n">Text</span>
+<span class="s">%%</span>
+<span class="n">comment</span><span class="w"> </span><span class="s">block</span>
+<span class="c">%%</span>
+<span class="n">Text</span>
 
-<span class="s">Text</span><span class="w"> </span><span class="s">%%</span><span class="w"> </span><span class="s">inline</span><span class="w"> </span><span class="s">comment</span><span class="w"> </span><span class="s">%%</span><span class="w"> </span><span class="s">text</span><span class="w"></span>
+<span class="s">Text</span><span class="w"> </span><span class="s">%%</span><span class="w"> </span><span class="s">inline</span><span class="w"> </span><span class="s">comment</span><span class="w"> </span><span class="s">%%</span><span class="w"> </span><span class="s">text</span>
 
-<span class="o">-</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="n">removes</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="n">comments</span><span class="p">.</span><span class="w"></span>
-<span class="o">-</span><span class="w"> </span>`<span class="c">%%` in codelines/-blocks are ignored.</span><span class="w"></span>
+<span class="o">-</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="n">removes</span><span class="w"> </span><span class="n">these</span><span class="w"> </span><span class="n">comments</span><span class="p">.</span>
+<span class="o">-</span><span class="w"> </span>`<span class="c">%%` in codelines/-blocks are ignored.</span>
 </code></pre></div>
 
 
@@ -366,20 +386,20 @@ Text   </p>
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-07-31/index.html">date/2022-07-31</a></li>
 	<li><a class="backlink" href="/tabs/obs.html/tags/feature/parsing_markdown/index.html">feature/parsing_markdown</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-07-31/index.html">date/2022-07-31</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A56896814225883629228727004478635767706{level}" class="graph_div"></div>
+    <div id="A196234099006057747362562310446397639117{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B56896814225883629228727004478635767706{level}" level="{level}" note_temp_id="56896814225883629228727004478635767706" onclick="window.ObsHtmlGraph.run(this, '56896814225883629228727004478635767706', 'removing obisidian comments');">
+        <button class="graph_button graph_show_button" id="B196234099006057747362562310446397639117{level}" level="{level}" note_temp_id="196234099006057747362562310446397639117" onclick="window.ObsHtmlGraph.run(this, '196234099006057747362562310446397639117', 'removing obisidian comments');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C56896814225883629228727004478635767706{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C196234099006057747362562310446397639117{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

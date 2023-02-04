@@ -46,21 +46,21 @@
 <h2 id="configure-graph-view">Configure graph view</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># Include code to build the graph view per page </span><span class="w"></span>
-<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page (default: True)</span><span class="w"></span>
-<span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">      </span><span class="nt">templates</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span><span class="w"></span>
-<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;3d&gt;</span><span class="w"></span>
-<span class="w">      </span><span class="nt">styling</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Include code to build the graph view per page </span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page (default: True)</span>
+<span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">templates</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;3d&gt;</span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -78,12 +78,12 @@
 <p>E.g:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
-<span class="nt">graph_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Links</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">graph_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Links</span>
 <span class="nt">tags</span><span class="p">:</span><span class="w"> </span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type/parsing_markdown</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-02-04</span><span class="w"></span>
-<span class="nn">---</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type/parsing_markdown</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-02-04</span>
+<span class="nn">---</span>
 </code></pre></div>
 
 
@@ -96,10 +96,10 @@
 <p>By default, <a href="/minimal/Configurations/Features/Include%20notes.html">inclusions</a> are shown in the graph view as a dotted line. To disable this (i.e. stop showing inclusions in the graph view), set the following value:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -123,10 +123,10 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/minimal/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
-	<li><a class="backlink" href="/minimal/obs.html/tags/feature/graph_view/index.html">feature/graph_view</a></li>
 	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-02-05/index.html">date/2022-02-05</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
 	<li><a class="backlink" href="/minimal/obs.html/tags/feature/html_output/index.html">feature/html_output</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/feature/graph_view/index.html">feature/graph_view</a></li>
 </ul>
 </div>
 

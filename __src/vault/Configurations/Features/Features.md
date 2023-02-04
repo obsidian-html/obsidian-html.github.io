@@ -51,6 +51,13 @@ These features add functionality from popular obsidian plugins, or extra functio
 ## Safety
 - [[Copy vault to temp dir]]
 
+## Post processing
+Transformations to the generated markdown output. This step is done at the very end which means that these post processing transformations have no effect on the html output (if you do the entire conversion step in one go, that is)! Read more here: [[Markdown post processing]]
+
+| Feature | Short description | Default |
+| ------- | ----------------- | ------- |
+| [[Markdown post processing#md_markdown_callouts\|md_markdown_callouts]] | Convert callouts from obsidian syntax to py block syntax | Disabled |
+
 ## Extensability
 - [[Configuration Options#Html Custom Inclusions|Custom stylesheet/javascript inclusions]]
 - [[Configuration Options#Html Template Path Str|Use custom HTML template]]

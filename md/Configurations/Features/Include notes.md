@@ -1,5 +1,5 @@
 ---
-tags: []
+{}
 ---
    
 The normal obsidian code inclusion syntax of `![[note]]` works as intended.   

@@ -146,19 +146,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=install a different version" title="Open fullpage Graph">
@@ -256,6 +266,7 @@
 			<li><a class="" href="/index_from_tags/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -341,7 +352,7 @@
 	</ul>
 </div>
 <button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
-<div id="folder-container-14" class="dir-container requires_js active" path="/index_from_tags/Instructions">
+<div id="folder-container-14" class="dir-container requires_js " path="/index_from_tags/Instructions">
 	<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
 	<div id="folder-container-15" class="dir-container requires_js " path="/index_from_tags/Instructions/Snippets">
 		<ul class="dir-list">
@@ -447,8 +458,8 @@
 <p>Run the following command in your terminal. This should remove the installed version and replace it with the version that is under development.   </p>
 <div class="lang-shell">
 
-<div class="codehilite"><pre><span></span><code>pip uninstall obsidianhtml
-pip install git+https://github.com/obsidian-html/obsidian-html.git
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>uninstall<span class="w"> </span>obsidianhtml
+pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/obsidian-html/obsidian-html.git
 </code></pre></div>
 
 
@@ -458,8 +469,8 @@ pip install git+https://github.com/obsidian-html/obsidian-html.git
 <p>Append the command above with <code>@branch_name</code>, for example:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>pip uninstall obsidianhtml
-pip install git+https://github.com/obsidian-html/obsidian-html.git@shutil_test
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>uninstall<span class="w"> </span>obsidianhtml
+pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/obsidian-html/obsidian-html.git@shutil_test
 </code></pre></div>
 
 
@@ -468,8 +479,8 @@ pip install git+https://github.com/obsidian-html/obsidian-html.git@shutil_test
 <p>We often add a test string so you can double check that you are running the correct code. In the above example (which will probably not exist anymore when you read this), running <code>obsidianhtml --test</code> will give:   </p>
 <div class="lang-general">
 
-<div class="codehilite"><pre><span></span><code>$ obsidianhtml --test                                                                                                                                   
-<span class="nb">test</span> <span class="m">3</span>.2.0 shutil <span class="nb">test</span>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>obsidianhtml<span class="w"> </span>--test<span class="w">                                                                                                                                   </span>
+<span class="nb">test</span><span class="w"> </span><span class="m">3</span>.2.0<span class="w"> </span>shutil<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 
 
@@ -487,20 +498,20 @@ pip install git+https://github.com/obsidian-html/obsidian-html.git@shutil_test
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-05-06/index.html">date/2022-05-06</a></li>
 	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-05-06/index.html">date/2022-05-06</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A111713820272356852356281366496726637741{level}" class="graph_div"></div>
+    <div id="A223942503020859456413419059263744146765{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B111713820272356852356281366496726637741{level}" level="{level}" note_temp_id="111713820272356852356281366496726637741" onclick="window.ObsHtmlGraph.run(this, '111713820272356852356281366496726637741', 'install a different version');">
+        <button class="graph_button graph_show_button" id="B223942503020859456413419059263744146765{level}" level="{level}" note_temp_id="223942503020859456413419059263744146765" onclick="window.ObsHtmlGraph.run(this, '223942503020859456413419059263744146765', 'install a different version');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C111713820272356852356281366496726637741{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C223942503020859456413419059263744146765{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

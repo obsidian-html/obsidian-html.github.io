@@ -148,19 +148,29 @@
     }
 </script>
                                                         <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                                         <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=performance tuning" title="Open fullpage Graph">
@@ -243,19 +253,29 @@
     }
 </script>
                                                         <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                                         <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=performance tuning" title="Open fullpage Graph">
@@ -326,26 +346,26 @@
 <p>Add the following block to your config yaml to disable all optional features.   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># big css/js files to download + data to download </span><span class="w"></span>
-<span class="w">    </span><span class="c1"># and read in that scales with the size of the site.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">graph</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># big css/js files to download + data to download </span>
+<span class="w">    </span><span class="c1"># and read in that scales with the size of the site.</span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 
-<span class="w">    </span><span class="c1"># big css/js files to download.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">mermaid_diagrams</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">    </span><span class="nt">math_latex</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># big css/js files to download.</span>
+<span class="w">    </span><span class="nt">mermaid_diagrams</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">math_latex</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 
-<span class="w">    </span><span class="c1"># small, css based features.</span><span class="w"></span>
-<span class="w">    </span><span class="nt">code_highlight</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
-<span class="w">    </span><span class="nt">callouts</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># small, css based features.</span>
+<span class="w">    </span><span class="nt">code_highlight</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">callouts</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 
 
@@ -372,13 +392,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A339391821800786989147584406066345114435{level}" class="graph_div"></div>
+    <div id="A25181503540588033200657189396251402835{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B339391821800786989147584406066345114435{level}" level="{level}" note_temp_id="339391821800786989147584406066345114435" onclick="window.ObsHtmlGraph.run(this, '339391821800786989147584406066345114435', 'performance tuning');">
+        <button class="graph_button graph_show_button" id="B25181503540588033200657189396251402835{level}" level="{level}" note_temp_id="25181503540588033200657189396251402835" onclick="window.ObsHtmlGraph.run(this, '25181503540588033200657189396251402835', 'performance tuning');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C339391821800786989147584406066345114435{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C25181503540588033200657189396251402835{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

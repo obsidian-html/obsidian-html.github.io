@@ -1,5 +1,5 @@
 ---
-tags: []
+{}
 ---
    
 You can set certain values in the [frontmatter](https://help.obsidian.md/Advanced+topics/YAML+front+matter) of a note, which obsidianhtml will respond to.   

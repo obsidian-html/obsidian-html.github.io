@@ -1,5 +1,5 @@
 ---
-tags: []
+{}
 ---
    
 ## type/automation   

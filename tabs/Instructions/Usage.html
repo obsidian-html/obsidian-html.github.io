@@ -148,19 +148,29 @@
     }
 </script>
                                                         <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                                         <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=usage" title="Open fullpage Graph">
@@ -243,19 +253,29 @@
     }
 </script>
                                                         <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                                         <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/tabs/obs.html/graph/index.html?node=usage" title="Open fullpage Graph">
@@ -329,7 +349,7 @@
 <p>After <a href="/tabs/Instructions/Installation.html">Installation</a>, we can run obsidian via the commandline like so:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml <span class="nb">help</span>
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span><span class="nb">help</span>
 </code></pre></div>
 
 
@@ -338,27 +358,27 @@
 <p>That will give us the following output:   </p>
 <div class="lang-init">
 
-<div class="codehilite"><pre><span></span><code><span class="n">obsidianhtml</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">3.2.0</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="n">obsidianhtml</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">3.2.0</span>
 
-<span class="nl">Usage</span><span class="p">:</span><span class="w"> </span><span class="n">obsidianhtml</span><span class="w"> </span><span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">arguments</span><span class="p">...]</span><span class="w"> </span><span class="p">[</span><span class="n">command</span><span class="w"> </span><span class="n">options</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">global</span><span class="w"> </span><span class="n">options</span><span class="p">]</span><span class="w"></span>
+<span class="nl">Usage</span><span class="p">:</span><span class="w"> </span><span class="n">obsidianhtml</span><span class="w"> </span><span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">arguments</span><span class="p">...]</span><span class="w"> </span><span class="p">[</span><span class="n">command</span><span class="w"> </span><span class="n">options</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">global</span><span class="w"> </span><span class="n">options</span><span class="p">]</span>
 
-<span class="nl">Commands</span><span class="p">:</span><span class="w"></span>
+<span class="nl">Commands</span><span class="p">:</span>
 <span class="w">        </span><span class="n">run</span><span class="w">             </span><span class="n">Convert</span><span class="w"> </span><span class="n">vault</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">sensible</span><span class="w"> </span><span class="n">defaults</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">local</span><span class="w"> </span><span class="n">webserver</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">serve</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>
 <span class="w">                        </span><span class="n">development</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">testing</span><span class="w"> </span><span class="n">purposes</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="n">Very</span><span class="w"> </span><span class="n">opinionated</span><span class="p">).</span><span class="w"> </span>
-<span class="w">                        </span><span class="n">The</span><span class="w"> </span><span class="n">generated</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">yml</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">convert</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="w"></span>
+<span class="w">                        </span><span class="n">The</span><span class="w"> </span><span class="n">generated</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">yml</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">convert</span><span class="w"> </span><span class="n">command</span><span class="p">.</span>
 
 <span class="w">        </span><span class="n">convert</span><span class="w">         </span><span class="n">Just</span><span class="w"> </span><span class="n">convert</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">vault</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">markdown</span><span class="p">.</span><span class="w"> </span>
-<span class="w">                        </span><span class="n">Will</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">provided</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">exactly</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">provided</span><span class="p">.</span><span class="w"></span>
+<span class="w">                        </span><span class="n">Will</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">provided</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">exactly</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">provided</span><span class="p">.</span>
 
-<span class="w">        </span><span class="n">export</span><span class="w">          </span><span class="n">Used</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">export</span><span class="w"> </span><span class="n">packaged</span><span class="w"> </span><span class="n">resources</span><span class="w"></span>
-<span class="w">        </span><span class="n">version</span><span class="w">         </span><span class="n">Print</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="n">cleanly</span><span class="w"></span>
-<span class="w">        </span><span class="n">help</span><span class="w">            </span><span class="n">Show</span><span class="w"> </span><span class="n">help</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="n">export</span><span class="w">          </span><span class="n">Used</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">export</span><span class="w"> </span><span class="n">packaged</span><span class="w"> </span><span class="n">resources</span>
+<span class="w">        </span><span class="n">version</span><span class="w">         </span><span class="n">Print</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="n">cleanly</span>
+<span class="w">        </span><span class="n">help</span><span class="w">            </span><span class="n">Show</span><span class="w"> </span><span class="n">help</span><span class="p">.</span>
 
-<span class="n">Global</span><span class="w"> </span><span class="n">options</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="o">--</span><span class="n">help</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w">      </span><span class="n">Show</span><span class="w"> </span><span class="n">help</span><span class="w"></span>
-<span class="w">        </span><span class="o">-</span><span class="n">v</span><span class="w">              </span><span class="n">Set</span><span class="w"> </span><span class="n">Verbose</span><span class="w"> </span><span class="n">mode</span><span class="w"></span>
+<span class="n">Global</span><span class="w"> </span><span class="n">options</span><span class="o">:</span>
+<span class="w">        </span><span class="o">--</span><span class="n">help</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w">      </span><span class="n">Show</span><span class="w"> </span><span class="n">help</span>
+<span class="w">        </span><span class="o">-</span><span class="n">v</span><span class="w">              </span><span class="n">Set</span><span class="w"> </span><span class="n">Verbose</span><span class="w"> </span><span class="n">mode</span>
 
-<span class="p">(....)</span><span class="w"></span>
+<span class="p">(....)</span>
 </code></pre></div>
 
 
@@ -398,14 +418,14 @@
 <p>So we need to input a config file. The minimum config that you need to have obsidianhtml work is the following:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
 <span class="nt">obsidian_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault&#39;</span><span class="w"> </span>
 
-<span class="c1"># The note that will be used as the index.html </span><span class="w"></span>
-<span class="c1"># should be in obsidian_folder_path_str</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault/entrypoint.md&#39;</span><span class="w"></span>
+<span class="c1"># The note that will be used as the index.html </span>
+<span class="c1"># should be in obsidian_folder_path_str</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault/entrypoint.md&#39;</span>
 </code></pre></div>
 
 
@@ -430,7 +450,7 @@
 (Make sure that you give the correct path to your config file!)   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml convert -i config.yaml
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span>convert<span class="w"> </span>-i<span class="w"> </span>config.yaml
 </code></pre></div>
 
 
@@ -459,7 +479,7 @@
 <p>Run:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml serve --directory output/html --port <span class="m">8000</span>
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span>serve<span class="w"> </span>--directory<span class="w"> </span>output/html<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </code></pre></div>
 
 
@@ -474,9 +494,9 @@
 <p>To make your website work for <a href="https://mywebsite.com/subfolder/" class="external-link">https://mywebsite.com/subfolder/</a> you should add this setting:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span><span class="w"></span>
-<span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span><span class="w"></span>
-<span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/subfolder&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span>
+<span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span>
+<span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/subfolder&#39;</span>
 </code></pre></div>
 
 
@@ -512,21 +532,21 @@
 </ul>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;C:/Users/&lt;Username&gt;/Documents/Website/md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;C:/Users/&lt;Username&gt;/Documents/Website/md&#39;</span>
 
-<span class="c1"># Markdown entrypoint path</span><span class="w"></span>
-<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/&lt;Username&gt;/Documents/Website/md/index.md&#39;</span><span class="w"></span>
+<span class="c1"># Markdown entrypoint path</span>
+<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/&lt;Username&gt;/Documents/Website/md/index.md&#39;</span>
 
-<span class="c1"># Output path of HTML files</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/&lt;Username&gt;/Documents/Website/html&#39;</span><span class="w"></span>
+<span class="c1"># Output path of HTML files</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/&lt;Username&gt;/Documents/Website/html&#39;</span>
 </code></pre></div>
 
 
@@ -556,20 +576,20 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
 	<li><a class="backlink" href="/tabs/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
+	<li><a class="backlink" href="/tabs/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A151840551984995603795595681175356506608{level}" class="graph_div"></div>
+    <div id="A634154843245618411956412693180899007{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B151840551984995603795595681175356506608{level}" level="{level}" note_temp_id="151840551984995603795595681175356506608" onclick="window.ObsHtmlGraph.run(this, '151840551984995603795595681175356506608', 'usage');">
+        <button class="graph_button graph_show_button" id="B634154843245618411956412693180899007{level}" level="{level}" note_temp_id="634154843245618411956412693180899007" onclick="window.ObsHtmlGraph.run(this, '634154843245618411956412693180899007', 'usage');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C151840551984995603795595681175356506608{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C634154843245618411956412693180899007{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

@@ -45,17 +45,17 @@
 <p>This is the default config for the side panes:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">side_pane</span><span class="p">:</span><span class="w">             </span><span class="c1"># only valid for documentation layout</span><span class="w"></span>
-<span class="w">      </span><span class="nt">left_pane</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span><span class="w"></span>
-<span class="w">        </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dir_tree</span><span class="w"> </span><span class="c1"># &lt;toc, tag_tree, dir_tree&gt; </span><span class="w"></span>
-<span class="w">      </span><span class="nt">right_pane</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span><span class="w"></span>
-<span class="w">        </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toc</span><span class="w">      </span><span class="c1"># &lt;toc, tag_tree, dir_tree&gt; </span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">side_pane</span><span class="p">:</span><span class="w">             </span><span class="c1"># only valid for documentation layout</span>
+<span class="w">      </span><span class="nt">left_pane</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span>
+<span class="w">        </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dir_tree</span><span class="w"> </span><span class="c1"># &lt;toc, tag_tree, dir_tree&gt; </span>
+<span class="w">      </span><span class="nt">right_pane</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span>
+<span class="w">        </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toc</span><span class="w">      </span><span class="c1"># &lt;toc, tag_tree, dir_tree&gt; </span>
 </code></pre></div>
 
 
@@ -68,10 +68,10 @@
 <p>If you don't want to add a table of contents to every note in Obsidian, you can set this setting to add a toc when missing:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">table_of_contents</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">add_toc_when_missing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">table_of_contents</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">add_toc_when_missing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -82,11 +82,11 @@
 <p>So when selecting this source, make sure that feature is enabled and configured. Below is a minimal configuration.   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">create_index_from_dir_structure</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/dir_index.html&#39;</span>
 </code></pre></div>
 
 
@@ -97,14 +97,14 @@
 <p>So when selecting this source, make sure that feature is enabled and configured. Below is an example configuration. Set the  <code>tags</code> value to something that makes sense for your vault.   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">create_index_from_tags</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/tag_index.html&#39;</span><span class="w"></span>
-<span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type/automation</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">feature/parsing_markdown</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">create_index_from_tags</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">rel_output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;obs.html/tag_index.html&#39;</span>
+<span class="w">      </span><span class="nt">tags</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type/automation</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">feature/parsing_markdown</span>
 </code></pre></div>
 
 
@@ -117,19 +117,19 @@ This can be useful if you want total control of the content of a side-pane.   </
 <div class="lang-yaml">
 
 <div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nt">side_pane</span><span class="p">:</span><span class="w">             </span>
-<span class="w">      </span><span class="nt">left_pane</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span><span class="w"></span>
+<span class="w">      </span><span class="nt">left_pane</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span>
 <span class="w">        </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dir_tree</span><span class="w">  </span>
-<span class="w">      </span><span class="nt">right_pane</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
-<span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span><span class="w"></span>
+<span class="w">      </span><span class="nt">right_pane</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span>
 <span class="w">        </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">html_page</span><span class="w">      </span>
 <span class="w">        </span><span class="nt">content_args</span><span class="p">:</span><span class="w">   </span>
-<span class="w">          </span><span class="nt">rel_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span><span class="w"></span>
-<span class="w">          </span><span class="nt">div_selector</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.content&#39;</span><span class="w"></span>
-<span class="w">          </span><span class="nt">strip_sub_divs</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.toc&#39;</span><span class="w"></span>
+<span class="w">          </span><span class="nt">rel_path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;index.html&#39;</span>
+<span class="w">          </span><span class="nt">div_selector</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;.content&#39;</span>
+<span class="w">          </span><span class="nt">strip_sub_divs</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.toc&#39;</span>
 </code></pre></div>
 
 

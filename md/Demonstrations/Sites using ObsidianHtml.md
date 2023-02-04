@@ -1,5 +1,5 @@
 ---
-tags: []
+{}
 ---
    
 Below are a couple websites that use ObsidianHtml.    

@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=quickstart" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -435,7 +446,7 @@
 <p>First we need to <a href="https://wiki.python.org/moin/BeginnersGuide/Download" class="external-link">Install python 3</a>. If you already have it installed, check the version:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>python --version
+<div class="codehilite"><pre><span></span><code>python<span class="w"> </span>--version
 </code></pre></div>
 
 
@@ -445,7 +456,7 @@
 <p>After a clean install of Python, you need to upgrade pip (the python package manager that we use to install ObsidianHtml):   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>pip install --upgrade pip
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 </code></pre></div>
 
 
@@ -454,7 +465,7 @@
 <p>When running on Windows,  also run:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>pip install --pre pythonnet
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--pre<span class="w"> </span>pythonnet
 </code></pre></div>
 
 
@@ -464,7 +475,7 @@
 <p>Now we can install ObsidianHtml:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>pip install obsidianhtml
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>obsidianhtml
 </code></pre></div>
 
 
@@ -481,7 +492,7 @@
 <p>Run   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml run -f /absolute/path/to/your/entrypoint_note.md
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span>run<span class="w"> </span>-f<span class="w"> </span>/absolute/path/to/your/entrypoint_note.md
 </code></pre></div>
 
 
@@ -494,14 +505,14 @@
 <p>Pick a folder where you don't mind a folder being created. Then create a file in this folder named <code>config.yaml</code>, and fill it with this content (and fill in the values):   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># The first folder that contains all obsidian files</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
 <span class="nt">obsidian_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault&#39;</span><span class="w"> </span>
 
-<span class="c1"># The note that will be used as the index.html </span><span class="w"></span>
-<span class="c1"># should be in obsidian_folder_path_str</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault/entrypoint.md&#39;</span><span class="w"></span>
+<span class="c1"># The note that will be used as the index.html </span>
+<span class="c1"># should be in obsidian_folder_path_str</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">obsidian_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/your/vault/entrypoint.md&#39;</span>
 </code></pre></div>
 
 
@@ -511,7 +522,7 @@
 <p>Open a terminal (on Windows use Powershell) in the aforementioned folder, and run this command:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml convert -i config.yaml
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span>convert<span class="w"> </span>-i<span class="w"> </span>config.yaml
 </code></pre></div>
 
 
@@ -535,21 +546,21 @@
 <p>If you place your config in your vault, then go a folder up and run <code>obsidianhtml -i &lt;vault folder name&gt;/config.yaml</code>. Alternatively, add the following settings to your config.yml to control the output location (adjust the paths to make sense for your environment):   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;C:/Users/Username/Documents/Website/md&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Input and output path of markdown files</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">md_folder_path_str</span><span class="p">:</span><span class="w">  </span><span class="s">&#39;C:/Users/Username/Documents/Website/md&#39;</span>
 
-<span class="c1"># Markdown entrypoint path</span><span class="w"></span>
-<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/Username/Documents/Website/md/index.md&#39;</span><span class="w"></span>
+<span class="c1"># Markdown entrypoint path</span>
+<span class="c1"># This has to be md_folder_path_str + &#39;/index.md&#39; when toggles/compile_md == True</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">md_entrypoint_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/Username/Documents/Website/md/index.md&#39;</span>
 
-<span class="c1"># Output path of HTML files</span><span class="w"></span>
-<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span><span class="w"></span>
-<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span><span class="w"></span>
-<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/Username/Documents/Website/html&#39;</span><span class="w"></span>
+<span class="c1"># Output path of HTML files</span>
+<span class="c1"># This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)</span>
+<span class="c1"># Use full path or relative path, but don&#39;t use ~/</span>
+<span class="nt">html_output_folder_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:/Users/Username/Documents/Website/html&#39;</span>
 </code></pre></div>
 
 
@@ -558,7 +569,7 @@
 <h2 id="test-website">Test website</h2>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml serve --directory output/html --port <span class="m">8000</span>
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span>serve<span class="w"> </span>--directory<span class="w"> </span>output/html<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
 </code></pre></div>
 
 
@@ -572,9 +583,9 @@
 <p>To make your website work for <a href="https://mywebsite.com/subfolder/" class="external-link">https://mywebsite.com/subfolder/</a> you should add this setting:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span><span class="w"></span>
-<span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span><span class="w"></span>
-<span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/subfolder&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/</span>
+<span class="c1"># use &#39;/html_prefix&#39; (prepend slash, no slash at the end)</span>
+<span class="nt">html_url_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/subfolder&#39;</span>
 </code></pre></div>
 
 
@@ -613,20 +624,20 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/obs.html/tags/date/2022-02-21/index.html">date/2022-02-21</a></li>
 	<li><a class="backlink" href="/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-02-21/index.html">date/2022-02-21</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A272887536001146020856770232142102412738{level}" class="graph_div"></div>
+    <div id="A199479532037078618136431370731802742570{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B272887536001146020856770232142102412738{level}" level="{level}" note_temp_id="272887536001146020856770232142102412738" onclick="window.ObsHtmlGraph.run(this, '272887536001146020856770232142102412738', 'quickstart');">
+        <button class="graph_button graph_show_button" id="B199479532037078618136431370731802742570{level}" level="{level}" note_temp_id="199479532037078618136431370731802742570" onclick="window.ObsHtmlGraph.run(this, '199479532037078618136431370731802742570', 'quickstart');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C272887536001146020856770232142102412738{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C199479532037078618136431370731802742570{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

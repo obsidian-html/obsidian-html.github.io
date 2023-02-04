@@ -43,8 +43,8 @@
 <h2 id="add-extra-css-js-files">Add extra css/js files</h2>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span><span class="w"></span>
-<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html</span>
+<span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 </code></pre></div>
 
 
@@ -53,9 +53,9 @@
 <p>Every note gets turned into its own contained html page. If you want to provide an extra css file, or javascript file, then you can add, e.g., the following into the setting, to avoid having to edit every single page after compilation:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">html_custom_inclusions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;/custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;/christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">html_custom_inclusions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;link</span><span class="nv"> </span><span class="s">rel=&quot;stylesheet&quot;</span><span class="nv"> </span><span class="s">href=&quot;/custom.css&quot;</span><span class="nv"> </span><span class="s">/&gt;&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;script</span><span class="nv"> </span><span class="s">src=&quot;/christmas_snowflakes.js&quot;&gt;&lt;/script&gt;&#39;</span>
 </code></pre></div>
 
 
@@ -69,7 +69,7 @@
 <p>To fetch the default template, you can run the following to export it, so you can make incremental changes:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>obsidianhtml <span class="nb">export</span> layout -o path/to/output/file.html -l documentation  <span class="c1"># &lt;documentation/tabs/minimal&gt;</span>
+<div class="codehilite"><pre><span></span><code>obsidianhtml<span class="w"> </span><span class="nb">export</span><span class="w"> </span>layout<span class="w"> </span>-o<span class="w"> </span>path/to/output/file.html<span class="w"> </span>-l<span class="w"> </span>documentation<span class="w">  </span><span class="c1"># &lt;documentation/tabs/minimal&gt;</span>
 </code></pre></div>
 
 
@@ -78,9 +78,9 @@
 <p>Use that same output path as the value for html_template_path_str to use it in your runs:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span><span class="w"></span>
-<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span><span class="w"></span>
-<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Provide the fullpath to a template file to use instead of standard template. </span>
+<span class="c1"># Note that this file must contain at least &quot;{content}&quot; somewhere in the page.</span>
+<span class="nt">html_template_path_str</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
 </code></pre></div>
 
 
@@ -98,8 +98,8 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/minimal/obs.html/tags/type/styling/index.html">type/styling</a></li>
 	<li><a class="backlink" href="/minimal/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/styling/index.html">type/styling</a></li>
 	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
 </ul>
 </div>

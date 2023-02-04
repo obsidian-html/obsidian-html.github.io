@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-02-12
 - type/configuration
+- date/2022-02-12
 ---
    
 ## High level   
@@ -53,6 +53,13 @@ These features add functionality from popular obsidian plugins, or extra functio
 ## Safety   
    
 - [Copy vault to temp dir](../../Configurations/Modes/Copy%20vault%20to%20temp%20dir.md)   
+   
+## Post processing   
+Transformations to the generated markdown output. This step is done at the very end which means that these post processing transformations have no effect on the html output (if you do the entire conversion step in one go, that is)! Read more here: [Markdown post processing](../../Configurations/Features/Markdown%20post%20processing.md)   
+   
+| Feature | Short description | Default |   
+| ------- | ----------------- | ------- |   
+| [md_markdown_callouts](../../Configurations/Features/Markdown%20post%20processing.md#md_markdown_callouts) | Convert callouts from obsidian syntax to py block syntax | Disabled |   
    
 ## Extensability   
    

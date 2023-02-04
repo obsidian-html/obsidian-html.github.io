@@ -1,5 +1,5 @@
 ---
-tags: []
+{}
 ---
    
 > New in [v3.4.0](../../Changelog/v3.4.0.md)   

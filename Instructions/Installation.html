@@ -153,19 +153,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=installation" title="Open fullpage Graph">
@@ -277,6 +287,7 @@
 			<li><a class="" href="/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -430,7 +441,7 @@
 <p>Do this by executing the following command:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>pip install --upgrade pip
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 </code></pre></div>
 
 
@@ -443,7 +454,7 @@
 <p>Windows needs pythonnet to be installed. You should be able to do this by running this command:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>pip install --pre pythonnet
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--pre<span class="w"> </span>pythonnet
 </code></pre></div>
 
 
@@ -459,7 +470,7 @@
 <h3 id="latest-published-version">Latest published version</h3>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>pip install obsidianhtml
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>obsidianhtml
 </code></pre></div>
 
 
@@ -468,7 +479,7 @@
 <h3 id="most-recent-build">Most recent build</h3>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>pip install git+https://github.com/obsidian-html/obsidian-html
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/obsidian-html/obsidian-html
 </code></pre></div>
 
 
@@ -480,7 +491,7 @@
 <p>To uninstall, run:   </p>
 <div class="lang-bash">
 
-<div class="codehilite"><pre><span></span><code>pip uninstall obsidianhtml
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>uninstall<span class="w"> </span>obsidianhtml
 </code></pre></div>
 
 
@@ -500,20 +511,20 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
 	<li><a class="backlink" href="/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
+	<li><a class="backlink" href="/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A179483313080188890983900969307965548824{level}" class="graph_div"></div>
+    <div id="A167843676821740677019222146001333633712{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B179483313080188890983900969307965548824{level}" level="{level}" note_temp_id="179483313080188890983900969307965548824" onclick="window.ObsHtmlGraph.run(this, '179483313080188890983900969307965548824', 'installation');">
+        <button class="graph_button graph_show_button" id="B167843676821740677019222146001333633712{level}" level="{level}" note_temp_id="167843676821740677019222146001333633712" onclick="window.ObsHtmlGraph.run(this, '167843676821740677019222146001333633712', 'installation');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C179483313080188890983900969307965548824{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C167843676821740677019222146001333633712{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

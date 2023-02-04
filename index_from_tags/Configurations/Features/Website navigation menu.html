@@ -146,19 +146,29 @@
     }
 </script>
                                     <div onclick="openSearch()" class="theme-button requires_js">
-                <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+            <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
         </div>
         <script>
-                function openSearch(){
-                        // toggle search popup and continue with extra code if it is enabled this time
-                        if (toggle_id('search-master-div')){
-                                // clear input and put focus on it so that we can start typing immediately
-                                let ss = document.getElementById('search_string');
-                                ss.value = '';
-                                ss.focus()
-                                ss.select()
-                        }
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
                 }
+            }
         </script>
                                     <div class="graph_header_div requires_js">
             <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=website navigation menu" title="Open fullpage Graph">
@@ -236,7 +246,7 @@
 	</ul>
 </div>
 <button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
-<div id="folder-container-4" class="dir-container requires_js active" path="/index_from_tags/Configurations">
+<div id="folder-container-4" class="dir-container requires_js " path="/index_from_tags/Configurations">
 	<button id="folder-5" class="dir-button" onclick="toggle_dir(this.id)">Deprecated Configurations</button>
 	<div id="folder-container-5" class="dir-container requires_js " path="/index_from_tags/Configurations/Deprecated Configurations">
 		<ul class="dir-list">
@@ -247,7 +257,7 @@
 		</ul>
 	</div>
 	<button id="folder-6" class="dir-button" onclick="toggle_dir(this.id)">Features</button>
-	<div id="folder-container-6" class="dir-container requires_js active" path="/index_from_tags/Configurations/Features">
+	<div id="folder-container-6" class="dir-container requires_js " path="/index_from_tags/Configurations/Features">
 		<ul class="dir-list">
 			<li><a class="" href="/index_from_tags/Configurations/Features/Backlinks.html"  >Backlinks</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Breadcrumbs.html"  >Breadcrumbs</a></li>
@@ -256,6 +266,7 @@
 			<li><a class="" href="/index_from_tags/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Graph view.html"  >Graph View</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Side panes.html"  >Side panes</a></li>
 			<li><a class="" href="/index_from_tags/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
@@ -456,22 +467,22 @@
 <p>This is the config used for this website:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Home</span><span class="w"></span>
-<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.html</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">About</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Home</span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.html</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">About</span>
 <span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General Information/About ObsidianHtml.html</span><span class="w">  </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Quickstart</span><span class="w"></span>
-<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Instructions/Quickstart.html</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Styling</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Quickstart</span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Instructions/Quickstart.html</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Styling</span>
 <span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Styling/Styling.html</span><span class="w">    </span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Modes</span><span class="w"></span>
-<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Modes.html</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Features</span><span class="w"></span>
-<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Features.html</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations</span><span class="w"></span>
-<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Configuration Options.html</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Modes</span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Modes.html</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Features</span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Features.html</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations</span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurations/Configuration Options.html</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News</span>
 <span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">News.html</span><span class="w">    </span>
 </code></pre></div>
 
@@ -486,11 +497,11 @@
 <p>If you want to link to a different website, then you should add <code>type: external</code> to the link item, e.g.   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Home</span><span class="w"></span>
-<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.html</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Code</span><span class="w"></span>
-<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/obsidian-html/obsidian-html</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nt">navbar_links</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Home</span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.html</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Code</span>
+<span class="w">    </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/obsidian-html/obsidian-html</span>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external</span><span class="w">    </span>
 </code></pre></div>
 
@@ -517,13 +528,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A323868391366806511300346762633090895220{level}" class="graph_div"></div>
+    <div id="A139894069870689780573172483592584612123{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B323868391366806511300346762633090895220{level}" level="{level}" note_temp_id="323868391366806511300346762633090895220" onclick="window.ObsHtmlGraph.run(this, '323868391366806511300346762633090895220', 'website navigation menu');">
+        <button class="graph_button graph_show_button" id="B139894069870689780573172483592584612123{level}" level="{level}" note_temp_id="139894069870689780573172483592584612123" onclick="window.ObsHtmlGraph.run(this, '139894069870689780573172483592584612123', 'website navigation menu');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C323868391366806511300346762633090895220{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C139894069870689780573172483592584612123{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

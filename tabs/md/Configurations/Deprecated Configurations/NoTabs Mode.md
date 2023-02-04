@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-03-15
 - type/configuration
+- date/2022-03-15
 ---
    
 > New in version [v1.2.0](../../Changelog/v1.2.0.md)   
