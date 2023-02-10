@@ -27,7 +27,7 @@ The way the link rewrite works is thus:
 - Make all letters lowercase
 - Replace all special chars that are not allowed (anything that is not: `a-zA-Z0-9\s-/\.`) with a space
 - Collapse multiple spaces into 1
-	- e.g. `"a  b" → "a b"`
+	- e.g. `"a     b" → "a b"`
 - Spaces at the beginning and end are stripped
 - Replace spaces with a dash
 
