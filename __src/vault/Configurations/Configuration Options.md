@@ -390,6 +390,15 @@ toggles:
   strict_line_breaks: False
 ```
 
+### slugify_html_links
+> New in [[v3.5.0]]
+``` yaml
+toggles:
+  slugify_html_links: False
+```
+
+Read more: [[Slugify html links]]
+
 ## Features
 ### Styling
 > Added in [[v2.0.0]]

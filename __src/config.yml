@@ -145,6 +145,8 @@ toggles:
   # if true all the notes will be processed
   process_all: False
 
+  slugify_html_links: True
+
   # Can be overwritten ad-hoc by using "obsidianhtml -i config.yml -v" (the -v option)
   verbose_printout: False
   debug_filetree_keys: False
@@ -213,7 +215,7 @@ toggles:
       enabled: False
 
     dataview:
-      enabled: True
+      enabled: False
       folder: 'obs.html/export' # relative to the vault being processed. this folder should always be in the vault
 
     folder_notes:
@@ -274,6 +276,7 @@ toggles:
             - ['yaml_strip','tags',['date/']]
           iso_formatted: True
           format_string: '' #'%Y-%m-%d'
+          default_value: '1999-12-31'
 
     create_index_from_dir_structure:
       enabled: True

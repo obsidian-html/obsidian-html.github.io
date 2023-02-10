@@ -53,7 +53,10 @@
         </head>
 
 <body class="theme-obs-light">
-        <div id="antiflash"></div>
+        <div id="antiflash" style="display: none;"></div>
+        <script>
+                document.getElementById('antiflash').style.display = 'block';
+        </script>
         <div id="search-master-div">
     <div id="search-slab" king_ramses="return the slaaab">
             <div id="search-controls">
@@ -110,10 +113,10 @@
                                         <a class="navbar-link" href="/tabs/index.html" title="Home">Home</a>
 <a class="navbar-link" href="/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
 <a class="navbar-link" href="/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
-<a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
-<a class="navbar-link" href="/tabs/Configurations/Modes.html" title="Modes">Modes</a>
-<a class="navbar-link" href="/tabs/Configurations/Features.html" title="Features">Features</a>
+<a class="navbar-link" href="/tabs/Configurations/Features/Features.html" title="Features">Features</a>
 <a class="navbar-link" href="/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/tabs/Configurations/Modes/Modes.html" title="Modes">Modes</a>
 <a class="navbar-link" href="/tabs/News.html" title="News">News</a>
                                         <div class="icon-tray">
                                                 <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
@@ -215,10 +218,10 @@
                                         <a class="navbar-link" href="/tabs/index.html" title="Home">Home</a>
 <a class="navbar-link" href="/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
 <a class="navbar-link" href="/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
-<a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
-<a class="navbar-link" href="/tabs/Configurations/Modes.html" title="Modes">Modes</a>
-<a class="navbar-link" href="/tabs/Configurations/Features.html" title="Features">Features</a>
+<a class="navbar-link" href="/tabs/Configurations/Features/Features.html" title="Features">Features</a>
 <a class="navbar-link" href="/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/tabs/Configurations/Modes/Modes.html" title="Modes">Modes</a>
 <a class="navbar-link" href="/tabs/News.html" title="News">News</a>
                                         <div class="icon-tray">
                                                 <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
@@ -320,8 +323,8 @@
                         <a href="/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/tabs/Configurations/Styling/Styling.html" style="color: var(--normal-text-color);">Styling</a> / <a href="/tabs/Configurations/Styling/Writing a custom graph view template.html" >Writing a custom graph view template</a>
                     </div>
                 </div>
-<div class="content"><h1 id="writing-a-custom-graph-view-template">Writing a custom graph view template</h1>
-<div class="toc">
+<embeddedtitle>Writing a custom graph view template</embeddedtitle>
+<div class="content"><div class="toc">
 <ul>
 <li><a href="#writing-a-custom-graph-view-template" class="anchor-link">Writing a custom graph view template</a><ul>
 <li><a href="#passing-in-a-custom-template" class="anchor-link">Passing in a custom template</a></li>
@@ -338,6 +341,7 @@
 </li>
 </ul>
 </div>
+<h1 id="writing-a-custom-graph-view-template">Writing a custom graph view template</h1>
 <blockquote>
 <p>This functionality has been added in version <a href="/tabs/Changelog/v2.1.0.html">v2.1.0</a> and rewritten in <a href="/tabs/Changelog/v3.0.0.html">v3.0.0</a>. <br />
 It is still in beta, so let us know if you are having issues with it or want added functionality: <a href="/tabs/General%20Information/Report%20Issues%20%26%20Request%20features.html">Report Issues &amp; Request features</a>.   </p>
@@ -630,13 +634,13 @@ It is still in beta, so let us know if you are having issues with it or want add
 
 </div>
 <div class="graph requires_js ">
-    <div id="A40856251977104980754464149789493673394{level}" class="graph_div"></div>
+    <div id="A328140983421435124242744359284801642700{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B40856251977104980754464149789493673394{level}" level="{level}" note_temp_id="40856251977104980754464149789493673394" onclick="window.ObsHtmlGraph.run(this, '40856251977104980754464149789493673394', 'writing a custom graph view template');">
+        <button class="graph_button graph_show_button" id="B328140983421435124242744359284801642700{level}" level="{level}" note_temp_id="328140983421435124242744359284801642700" onclick="window.ObsHtmlGraph.run(this, '328140983421435124242744359284801642700', 'writing a custom graph view template');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C40856251977104980754464149789493673394{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C328140983421435124242744359284801642700{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

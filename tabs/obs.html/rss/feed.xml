@@ -3,9 +3,9 @@
         <title>ObsidianHtml/Documentation</title>
         <link>https://obsidian-html.github.io</link>
         <description>The documentation site of ObsidianHtml, a package used to convert Obsidian notes to proper markdown and static HTML websites.</description>
-        <language>en-usen-us</language>
-        <pubDate>Sat, 04 Feb 2023 01:45:27 CET</pubDate>
-        <lastBuildDate>Sat, 14 Jan 2023 00:00:00 CET</lastBuildDate>
+        <language>en-us</language>
+        <pubDate>Fri, 10 Feb 2023 14:04:07 CET</pubDate>
+        <lastBuildDate>Fri, 10 Feb 2023 00:00:00 CET</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>ObsidianHtml</generator>
         <managingEditor>collector@dwrolvink.com</managingEditor>
@@ -38,7 +38,7 @@
             <title>Changelog/ v3.2.3</title>
             <link>https://obsidian-html.github.io/Changelog/v3.2.3.html</link>
             <description>Patch version of v3.2.0.    &lt;br/&gt;&lt;br/&gt;</description>
-            <pubDate>Sun, 11 Sep 2022 00:00:00 CET</pubDate>
+            <pubDate></pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v3.2.3.html</guid>
             
         </item>
@@ -224,6 +224,14 @@
             <description>bugfix for v1.2.0   &lt;br/&gt;&lt;br/&gt;Bugfix for a little bug where a halting error occurs when toggles/verbose_printout is true, due to a faulty concatenation in a print statement somewhere. See also.   &lt;br/&gt;&lt;br/&gt;</description>
             <pubDate>Thu, 31 Mar 2022 00:00:00 CET</pubDate>
             <guid>https://obsidian-html.github.io/Changelog/v1.2.2.html</guid>
+            
+        </item>
+        <item>
+            <title>Features added</title>
+            <link>https://obsidian-html.github.io/Changelog/v3.5.0.html</link>
+            <description>Not out yet! To try out, install the master branch, see Install a different version   &lt;br/&gt;&lt;br/&gt;Feature version of v3.0.0.    &lt;br/&gt;&lt;br/&gt;</description>
+            <pubDate>Fri, 10 Feb 2023 00:00:00 CET</pubDate>
+            <guid>https://obsidian-html.github.io/Changelog/v3.5.0.html</guid>
             
         </item>
         <item>

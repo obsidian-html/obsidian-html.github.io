@@ -36,6 +36,7 @@ These features implement standard Obsidian behavior in the html output.
 | [Side panes](../../Configurations/Features/Side%20panes.md) | *Only for Documentation layout*. Configure side panes and their content. | Enabled |   
 | [Table of Contents](../../Configurations/Styling/Styling.md#table-of-contents) | Add TOC to side-pane instead of in note / add TOC to notes when missing | Enabled |   
 | [Tags Page](../../Configurations/Features/Tags%20Page.md) | Add a list of tags under each note. Nb: the default preserve_inline_tags setting will create polluted md output! | Enabled |   
+| [Slugify html links](../../Configurations/Features/Slugify%20html%20links.md) | Have better readable/shareable links by slugifying the html paths | **Disabled** |   
    
 ### Extras   
 These features add functionality from popular obsidian plugins, or extra functionality that make sense for websites (such as an RSS feed).   

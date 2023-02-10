@@ -53,7 +53,10 @@
         </head>
 
 <body class="theme-obs-light">
-        <div id="antiflash"></div>
+        <div id="antiflash" style="display: none;"></div>
+        <script>
+                document.getElementById('antiflash').style.display = 'block';
+        </script>
         <div id="search-master-div">
     <div id="search-slab" king_ramses="return the slaaab">
             <div id="search-controls">
@@ -110,10 +113,10 @@
                                         <a class="navbar-link" href="/tabs/index.html" title="Home">Home</a>
 <a class="navbar-link" href="/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
 <a class="navbar-link" href="/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
-<a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
-<a class="navbar-link" href="/tabs/Configurations/Modes.html" title="Modes">Modes</a>
-<a class="navbar-link" href="/tabs/Configurations/Features.html" title="Features">Features</a>
+<a class="navbar-link" href="/tabs/Configurations/Features/Features.html" title="Features">Features</a>
 <a class="navbar-link" href="/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/tabs/Configurations/Modes/Modes.html" title="Modes">Modes</a>
 <a class="navbar-link" href="/tabs/News.html" title="News">News</a>
                                         <div class="icon-tray">
                                                 <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
@@ -215,10 +218,10 @@
                                         <a class="navbar-link" href="/tabs/index.html" title="Home">Home</a>
 <a class="navbar-link" href="/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
 <a class="navbar-link" href="/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
-<a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
-<a class="navbar-link" href="/tabs/Configurations/Modes.html" title="Modes">Modes</a>
-<a class="navbar-link" href="/tabs/Configurations/Features.html" title="Features">Features</a>
+<a class="navbar-link" href="/tabs/Configurations/Features/Features.html" title="Features">Features</a>
 <a class="navbar-link" href="/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/tabs/Configurations/Modes/Modes.html" title="Modes">Modes</a>
 <a class="navbar-link" href="/tabs/News.html" title="News">News</a>
                                         <div class="icon-tray">
                                                 <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
@@ -320,12 +323,13 @@
                         <a href="/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">General Information</span> / <a href="/tabs/General Information/Parsing Obsidian notes to proper markdown.html" >Parsing Obsidian notes to proper markdown</a>
                     </div>
                 </div>
-<div class="content"><h1 id="parsing-obsidian-notes-to-proper-markdown">Parsing Obsidian notes to proper markdown</h1>
-<div class="toc">
+<embeddedtitle>Parsing obsidian notes to proper markdown</embeddedtitle>
+<div class="content"><div class="toc">
 <ul>
 <li><a href="#parsing-obsidian-notes-to-proper-markdown" class="anchor-link">Parsing Obsidian notes to proper markdown</a></li>
 </ul>
 </div>
+<h1 id="parsing-obsidian-notes-to-proper-markdown">Parsing Obsidian notes to proper markdown</h1>
 <p>The first step in the process is to convert obsidian notes to proper markdown files.   </p>
 <p>This is mainly done as a separate step so that we can use <a href="https://python-markdown.github.io/" class="external-link">python-markdown</a> to do most of the html generation for us in the <a href="/tabs/General%20Information/Creating%20a%20static%20html%20website%20from%20markdown%20files.html">next step</a>. But a nice side effect is that you can also use this package to <em>just</em> generate markdown.   </p>
 <p>There are a lot of little details that go into converting Obsidian notes to proper markdown. See the <a href="/tabs/Demonstrations/Demonstrations.html">demonstration page</a> for all the little things that <em>should just work</em> for this package to be worth its salt.   </p>
@@ -352,13 +356,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A327241056487546904848954820070245299342{level}" class="graph_div"></div>
+    <div id="A294791880752394199059254907735262127583{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B327241056487546904848954820070245299342{level}" level="{level}" note_temp_id="327241056487546904848954820070245299342" onclick="window.ObsHtmlGraph.run(this, '327241056487546904848954820070245299342', 'parsing obsidian notes to proper markdown');">
+        <button class="graph_button graph_show_button" id="B294791880752394199059254907735262127583{level}" level="{level}" note_temp_id="294791880752394199059254907735262127583" onclick="window.ObsHtmlGraph.run(this, '294791880752394199059254907735262127583', 'parsing obsidian notes to proper markdown');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C327241056487546904848954820070245299342{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C294791880752394199059254907735262127583{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

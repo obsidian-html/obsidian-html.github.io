@@ -420,6 +420,16 @@ toggles:
 ```
    
    
+### slugify_html_links   
+> New in [v3.5.0](../Changelog/v3.5.0.md)   
+``` yaml
+toggles:
+  slugify_html_links: False
+```
+   
+   
+Read more: [Slugify html links](../Configurations/Features/Slugify%20html%20links.md)   
+   
 ## Features   
 ### Styling   
 > Added in [v2.0.0](../Changelog/v2.0.0.md)   

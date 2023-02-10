@@ -10,7 +10,7 @@ var CONFIGURED_HTML_URL_PREFIX = "";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '222559978605629915368770607604442344680'                       // used to check whether the localStorage data is stale
+var gzip_hash = '10303368921647233370942739183704312125'                       // used to check whether the localStorage data is stale
 
 // global cache
 var fn_cache_ls_available = null;
@@ -165,7 +165,6 @@ function load_page() {
         for (let i = 0; i < links.length; i++) {
             let l = links[i];
             if (l.getAttribute("href").includes('#')) {
-
                 l.onclick = function () {
                     // remove current url from the link
                     let current_url = document.URL

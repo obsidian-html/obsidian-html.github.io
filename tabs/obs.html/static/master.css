@@ -1953,7 +1953,7 @@ span.linenos.special {
 /*  ----------------------------------------- /CALLOUTS ------------------------------------------------ */
 
 
-@layer layout {
+
     #header #homelink,
     #header #homelink:visited,
     #header #homelink:link,
@@ -2014,6 +2014,7 @@ span.linenos.special {
     @media (max-width: 800px) {
         .container {
             width: calc(100vw - 4rem);
+            padding: 2rem;
         }
         .container:after {
             content: "\a\a\a\a\a";
@@ -2053,17 +2054,6 @@ span.linenos.special {
     h1, h2, h3, h4, h5, embeddedtitle {
         scroll-margin-top: 4rem;
     }
-    h1,
-    embeddedtitle {
-        font-size: 28px;
-        line-height: 34px;
-        margin-top: 0px;
-        margin-bottom: 16px;
-        color: inherit;
-        font-weight: 600;
-        border-bottom: 1px solid #d6d5df;
-        padding-bottom: 0.2rem;
-    }
     h1:not(:first-child) {
         margin-top: 2rem;
     }
@@ -2074,10 +2064,6 @@ span.linenos.special {
         font-weight: 600;
         padding-bottom: 0.2rem;
         margin-top: 2rem;
-    }
-    h1 + h2,
-    embeddedtitle + h2 {
-        margin-top: 1rem;
     }
     h2 + p {
         margin-top: 0rem;
@@ -2199,6 +2185,10 @@ span.linenos.special {
         .header {
             padding: 0px;
         }
+        .icon-tray {
+            position: initial;
+            margin: auto;
+        }
         .navbar-button {
             display: block;
             margin: auto;
@@ -2215,7 +2205,7 @@ span.linenos.special {
             padding-bottom: 0rem;        
         }
     }
-}
+
 
 
 /*  ----------------------------------------- THEME ------------------------------------------------ */
