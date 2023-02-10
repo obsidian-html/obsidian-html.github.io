@@ -4,7 +4,6 @@ tags:
 - date/2022-02-20
 ---
 
-# Create Index from Directory Structure
 > New in [[v1.0.0]]
 
 If you want to build an index note on the fly, where it just shows the directory structure of the html output, then you can enable this feature.

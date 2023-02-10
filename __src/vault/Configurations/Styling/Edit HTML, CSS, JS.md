@@ -5,7 +5,6 @@ tags:
 - date/2022-04-17
 ---
 
-# Edit HTML, CSS, JS
 There are currently two ways to edit the html code used to build your website:
 
 - Add extra css/js files to the header of a standard template.

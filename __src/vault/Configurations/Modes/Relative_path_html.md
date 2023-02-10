@@ -4,7 +4,6 @@ tags:
 - date/2022-03-15
 ---
 
-# Relative_path_html
 > New in [[v1.2.0]]
 
 This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).

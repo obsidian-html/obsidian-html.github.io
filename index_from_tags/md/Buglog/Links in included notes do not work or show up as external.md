@@ -4,7 +4,6 @@ tags:
 - date/2022-03-11
 ---
    
-# Links in included notes do not work / show up as external   
 > Applies to versions: [v1.0.2](../Changelog/v1.0.2.md) and earlier   
 > Fixed in version [v1.1.0](../Changelog/v1.1.0.md)   
    

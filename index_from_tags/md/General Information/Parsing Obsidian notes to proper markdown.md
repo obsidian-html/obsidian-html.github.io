@@ -5,9 +5,7 @@ tags:
 - date/2022-02-12
 ---
    
-# Parsing Obsidian notes to proper markdown   
 The first step in the process is to convert obsidian notes to proper markdown files.   
-   
    
 This is mainly done as a separate step so that we can use [python-markdown](https://python-markdown.github.io/) to do most of the html generation for us in the [next step](../General%20Information/Creating%20a%20static%20html%20website%20from%20markdown%20files.md). But a nice side effect is that you can also use this package to *just* generate markdown.   
    

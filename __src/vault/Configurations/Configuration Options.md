@@ -4,7 +4,6 @@ tags:
 - date/2022-02-12
 ---
 
-# Configuration Options
 This page goes through all the configuration options and will refer to features. For a toplevel view of these features, see [[Features]].
 
 Certain settings change the flow of how notes are selected and presented on the homepage. You can find a glossary on those in [[Modes]].

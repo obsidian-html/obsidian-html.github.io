@@ -5,7 +5,6 @@ tags:
 - date/2022-02-04
 ---
 
-# Automate website deployment
 If you have a website hosted based on an obsidian project like I do, it can be useful to create some scripting to automate pushing to your webserver.
 
 > Note that these scripts are a starting point, and may not comply to the most up to date security considerations or other best practices!

@@ -4,7 +4,6 @@ tags:
 - date/2022-02-15
 ---
 
-# News
 The articles linked on this page are included in our [[RSS Feed]], and are meant to highlight specific events regarding ObsidianHtml. 
 
 Not every version release is news worthy in itself. The [[Changelog]] lists all new versions, and is also included in our RSS feed.

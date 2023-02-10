@@ -5,7 +5,6 @@ tags:
 - date/2022-02-04
 ---
    
-# Using the website   
 The following features have been built in to the [various html templates](../Configurations/Styling/Styling.md#layouts).    
    
 ## Finding notes   

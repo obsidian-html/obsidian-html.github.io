@@ -5,7 +5,6 @@ tags:
 - date/2022-04-24
 ---
 
-# Writing a custom graph view template
 > This functionality has been added in version [[v2.1.0]] and rewritten in [[v3.0.0]].
 > It is still in beta, so let us know if you are having issues with it or want added functionality: [[Report Issues & Request features]].
 

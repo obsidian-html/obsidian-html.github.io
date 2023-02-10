@@ -4,7 +4,6 @@ tags:
 - date/2022-02-15
 ---
    
-# Working on an RSS feed for ObsidianHtml   
 No self-publishing system should go without an RSS feed.   
    
 That's why we are working on a new feature that will generate an RSS feed for you automatically when you push your website.   

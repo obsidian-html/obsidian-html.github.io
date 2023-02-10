@@ -4,7 +4,6 @@ tags:
 - date/2022-07-31
 ---
 
-# Removing obisidian comments
 > New in [[v3.1.0]]
 
 ## Configure

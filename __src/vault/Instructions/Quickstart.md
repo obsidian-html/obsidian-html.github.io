@@ -4,7 +4,6 @@ tags:
 - date/2022-02-21
 ---
 
-# Quickstart
 This page is a very short summary of installation, usage, and configuration options.
 
 ## Installation

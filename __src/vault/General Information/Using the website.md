@@ -5,7 +5,6 @@ tags:
 - date/2022-02-04
 ---
 
-# Using the website
 The following features have been built in to the [[Styling#Layouts|various html templates]]. 
 
 ## Finding notes

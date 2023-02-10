@@ -4,7 +4,6 @@ tags:
 - date/2022-02-12
 ---
    
-# About ObsidianHtml   
 ## Description   
 ObsidianHtml is an application that can be used to export Obsidian notes to standard markdown and an html based website.    
    

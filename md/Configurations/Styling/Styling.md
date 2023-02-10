@@ -4,7 +4,6 @@ tags:
 - date/2022-04-17
 ---
    
-# Styling   
 > This page discusses the built-in styling options. If you want to use custom code, go to [Edit HTML, CSS, JS](../../Configurations/Styling/Edit%20HTML%2C%20CSS%2C%20JS.md).   
    
 ## Layouts   

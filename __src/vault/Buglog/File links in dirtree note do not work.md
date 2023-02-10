@@ -4,7 +4,6 @@ tags:
 - date/2022-03-11
 ---
 
-# File links in dirtree note do not work
 > Fixed in [[v1.1.0]]
 
 ### Issue

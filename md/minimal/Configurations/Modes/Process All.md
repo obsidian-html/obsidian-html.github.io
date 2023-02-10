@@ -4,7 +4,6 @@ tags:
 - date/2022-02-06
 ---
    
-# Process all   
 ## Crawling versus converting all nodes   
 This package was written with the idea that [you give one note that will serve as the homepage](../../Configurations/Modes/Modes.md#entrypoint-mode). Then all the notes that are linked directly or indirectly by that first note are processed, ignoring what else might still be in your vault.   
    

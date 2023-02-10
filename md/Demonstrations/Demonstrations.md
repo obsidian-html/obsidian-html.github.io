@@ -4,7 +4,6 @@ tags:
 - date/2022-02-12
 ---
    
-# Demonstration of Obisidian integration   
    
 - [Getting the basics right](../Demonstrations/Getting%20the%20basics%20right.md)   
 - [Making lists work the same](../Demonstrations/Making%20lists%20work%20the%20same.md)   

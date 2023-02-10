@@ -5,7 +5,6 @@ tags:
 - date/2022-06-07
 ---
 
-# Implementing Dataview
 
 > This feature is still in alpha, [join us on github](https://github.com/obsidian-html/obsidian-html/issues/271) if you want to know more. 
 

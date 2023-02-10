@@ -7,7 +7,6 @@ tags:
 - date/2022-02-12
 ---
    
-# Usage   
 ## Introduction   
 After [Installation](../Instructions/Installation.md), we can run obsidian via the commandline like so:   
    

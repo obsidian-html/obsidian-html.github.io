@@ -3,7 +3,6 @@ tags:
 - type/test_page
 ---
 
-# Test Page
 One page with multiple elements to quickly test the code building this website.
 
 [[Devfruits Notes]]

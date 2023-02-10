@@ -4,7 +4,6 @@ tags:
 - date/2022-03-11
 ---
    
-# Spaces in front of headers allowed by Obsidian but not by ObsidianHtml   
 > Fixed in [v1.1.0](../Changelog/v1.1.0.md)   
    
 It's possible in Obsidian to have a space in front of a header tag and still have it display as a header:   

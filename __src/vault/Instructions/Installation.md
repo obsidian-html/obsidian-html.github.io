@@ -4,7 +4,6 @@ tags:
 - date/2022-02-12
 ---
 
-# Installation
 ## Prerequisites
 Before starting installation, make sure that you have Python installed (version 3.9 or more recent).
 

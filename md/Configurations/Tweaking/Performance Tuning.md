@@ -4,7 +4,6 @@ tags:
 - date/2022-05-08
 ---
    
-# Performance Tuning   
 > This page assumes that you are on [v2.3.0](../../Changelog/v2.3.0.md) or later.   
    
 More and more features are added to ObsidianHtml with every release. We like to present the full package of what ObsidianHtml is capable of straight out of the box, instead of relying on people discovering what they can enable by themselves, but the cost in terms of memory usage for the client reading your website is starting to add up.    

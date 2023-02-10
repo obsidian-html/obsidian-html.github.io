@@ -4,7 +4,6 @@ tags:
 - date/2022-02-12
 ---
    
-# Run custom code   
 These steps describe how to install the requirements and use obsidianhtml from the code, instead of installing it as a package.    
    
 This way you can quickly test changes and/or customize the code to your liking.   

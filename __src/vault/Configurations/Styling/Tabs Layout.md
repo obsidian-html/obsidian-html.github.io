@@ -4,7 +4,6 @@ tags:
 - date/2022-04-17
 ---
 
-# Tabs Layout
 When the [[Styling#Layouts|styling layout setting]] is set to `tabs`, the html output uses a tab system, where each internal link opens a new note on the right of the parent note. 
 
 You can view this site in tabs layout [here](https://obsidian-html.github.io/tabs/).

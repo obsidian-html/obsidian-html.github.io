@@ -4,7 +4,6 @@ tags:
 - date/2022-03-11
 ---
 
-# Links in included notes do not work / show up as external
 > Applies to versions: [[v1.0.2]] and earlier
 > Fixed in version [[v1.1.0]]
 

@@ -4,7 +4,6 @@ tags:
 - date/2022-02-14
 ---
 
-# Modes
 A *mode* is a term used for certain [[Configuration Options|configuration settings]] that alter the note selection and/or the contents of the homepage.
 
 ## Entrypoint mode

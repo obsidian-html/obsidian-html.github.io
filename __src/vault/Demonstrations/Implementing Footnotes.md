@@ -4,7 +4,6 @@ tags:
 - date/2022-08-26
 ---
 
-# Implementing Footnotes
 Footnotes are baked in to python-markdown, only that extension lacks inline footnotes.
 These have been added in [[v3.2.0]].
 
