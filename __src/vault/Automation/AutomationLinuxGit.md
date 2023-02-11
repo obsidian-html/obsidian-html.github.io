@@ -4,7 +4,6 @@ tags:
 - type/automation
 - date/2022-02-04
 ---
-
 # Auto push site using Git on Linux
 
 ``` bash

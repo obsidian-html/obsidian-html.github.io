@@ -480,61 +480,11 @@
                 <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
                     <div style="flex:1;display: none;"></div>
                     <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
-                        <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">configurations</span> / <a href="/configurations/features/features.html" style="color: var(--normal-text-color);">features</a> / <span style="color: #666;">rss-feed</span>
+                        <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">configurations</span> / <a href="/configurations/features/features.html" style="color: var(--normal-text-color);">features</a> / <a href="/configurations/features/rss-feed.html" >rss-feed</a>
                     </div>
                 </div>
-<embeddedtitle>Rss feed</embeddedtitle>
-<div class="content"><div class="toc">
-<ul>
-<li><a href="#introduction" class="anchor-link">Introduction</a></li>
-<li><a href="#configuration" class="anchor-link">Configuration</a><ul>
-<li><a href="#introduction_1" class="anchor-link">Introduction</a></li>
-</ul>
-</li>
-<li><a href="#top-level-configuration" class="anchor-link">Top level configuration</a><ul>
-<li><a href="#enabled" class="anchor-link">Enabled</a></li>
-<li><a href="#host-root" class="anchor-link">Host Root</a></li>
-</ul>
-</li>
-<li><a href="#styling-configuration" class="anchor-link">Styling configuration</a><ul>
-<li><a href="#show_icon" class="anchor-link">show_icon</a></li>
-</ul>
-</li>
-<li><a href="#channel-configuration" class="anchor-link">Channel configuration</a></li>
-<li><a href="#items-configuration" class="anchor-link">Items configuration</a><ul>
-<li><a href="#selector" class="anchor-link">Selector</a><ul>
-<li><a href="#match-keys" class="anchor-link" class="anchor-link" class="anchor-link">Match keys</a></li>
-<li><a href="#exclude_keys" class="anchor-link">exclude_keys</a></li>
-<li><a href="#include_subfolders" class="anchor-link" class="anchor-link" class="anchor-link">include_subfolders</a></li>
-<li><a href="#exclude_subfolders" class="anchor-link" class="anchor-link">exclude_subfolders</a></li>
-<li><a href="#exclude_files" class="anchor-link">exclude_files</a></li>
-</ul>
-</li>
-<li><a href="#description-title" class="anchor-link">Description/Title</a><ul>
-<li><a href="#selectors" class="anchor-link">selectors</a></li>
-</ul>
-</li>
-<li><a href="#publish_date" class="anchor-link">Publish_date</a><ul>
-<li><a href="#selectors_1" class="anchor-link">Selectors</a></li>
-<li><a href="#iso_formatted" class="anchor-link">iso_formatted</a></li>
-<li><a href="#format_string" class="anchor-link">format_string</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a><ul>
-<li><a href="#yaml" class="anchor-link" class="anchor-link">yaml</a><ul>
-<li><a href="#tree-navigation" class="anchor-link">Tree navigation</a></li>
-<li><a href="#yaml_strip" class="anchor-link">yaml_strip</a></li>
-</ul>
-</li>
-<li><a href="#first-paragraphs" class="anchor-link">first-paragraphs</a></li>
-<li><a href="#first-header" class="anchor-link">first-header</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<blockquote>
+<embeddedtitle>RSS Feed</embeddedtitle>
+<div class="content"><blockquote>
 <p>New in <a href="/changelog/v1.0.0.html">v1.0.0</a>   </p>
 </blockquote>
 <h2 id="introduction">Introduction</h2>
@@ -600,7 +550,7 @@
 <li>rss/channel/managing_editor    </li>
 <li>rss/channel/web_master   </li>
 </ul>
-<p>You might also want to look into <a href="#match-keys" class="anchor-link" class="anchor-link" class="anchor-link">Match keys</a> and <a href="#include_subfolders" class="anchor-link" class="anchor-link" class="anchor-link">include_subfolders</a> for your first configuration settings.   </p>
+<p>You might also want to look into <a href="#match-keys" class="anchor-link" class="anchor-link">Match keys</a> and <a href="#include_subfolders" class="anchor-link" class="anchor-link">include_subfolders</a> for your first configuration settings.   </p>
 <p>Also make sure that the notes that you include have a publish date set in the frontmatter yaml. E.g.:   </p>
 <div class="lang-yaml">
 
@@ -652,12 +602,12 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 
 <h4 id="match-keys">Match keys</h4>
 <blockquote>
-<p>This value accepts lists of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </p>
+<p>This value accepts lists of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </p>
 </blockquote>
 <p>This setting allows you to only include notes that have a certain key in the frontmatter yaml.   </p>
 <ul>
 <li>This is a list of lists. Each element in the main list is a selector. The first value in the selector list is the function name.    </li>
-<li>At the moment only the <a href="#yaml" class="anchor-link" class="anchor-link">yaml</a> function is implemented for this setting.   </li>
+<li>At the moment only the <a href="#yaml" class="anchor-link">yaml</a> function is implemented for this setting.   </li>
 <li>If any of the given functions return true, then the item is selected.   </li>
 </ul>
 <div class="lang-yaml">
@@ -674,10 +624,10 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 
 <h4 id="exclude_keys">exclude_keys</h4>
 <blockquote>
-<p>This value accepts lists of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </p>
+<p>This value accepts lists of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </p>
 </blockquote>
 <ul>
-<li>Same as <a href="#match-keys" class="anchor-link" class="anchor-link" class="anchor-link">Match keys</a>, but will exclude notes   </li>
+<li>Same as <a href="#match-keys" class="anchor-link" class="anchor-link">Match keys</a>, but will exclude notes   </li>
 <li>If a note matches on both match_key and exclude_key, the note will not be included.   </li>
 </ul>
 <h4 id="include_subfolders">include_subfolders</h4>
@@ -688,23 +638,23 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 </ul>
 <h4 id="exclude_subfolders">exclude_subfolders</h4>
 <ul>
-<li>Same as <a href="#include_subfolders" class="anchor-link" class="anchor-link" class="anchor-link">include_subfolders</a> but in reverse   </li>
+<li>Same as <a href="#include_subfolders" class="anchor-link" class="anchor-link">include_subfolders</a> but in reverse   </li>
 <li>If the same folder is in both include_subfolders and exclude_subfolders, then it won't be parsed.   </li>
 </ul>
 <h4 id="exclude_files">exclude_files</h4>
 <ul>
-<li>Same as <a href="#exclude_subfolders" class="anchor-link" class="anchor-link">exclude_subfolders</a>, but for filenames   </li>
+<li>Same as <a href="#exclude_subfolders" class="anchor-link">exclude_subfolders</a>, but for filenames   </li>
 <li><strong>Note</strong>: this should be filenames, not file paths!   </li>
 </ul>
 <h3 id="description-title">Description/Title</h3>
 <h4 id="selectors">selectors</h4>
 <ul>
-<li>List of any number of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </li>
+<li>List of any number of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </li>
 </ul>
 <h3 id="publish_date">Publish_date</h3>
 <h4 id="selectors_1">Selectors</h4>
 <ul>
-<li>List of any number of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </li>
+<li>List of any number of <a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a>   </li>
 </ul>
 <h4 id="iso_formatted">iso_formatted</h4>
 <p>Whether the string that is selected is iso formatted. This information is used to parse the date into a dateobject, in order to get to the correct RSS date string.   </p>
@@ -876,13 +826,13 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 
 </div>
 <div class="graph requires_js ">
-    <div id="A82861053092568315332823034735732918535{level}" class="graph_div"></div>
+    <div id="A253544980657700813885578224405117538216{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B82861053092568315332823034735732918535{level}" level="{level}" note_temp_id="82861053092568315332823034735732918535" onclick="window.ObsHtmlGraph.run(this, '82861053092568315332823034735732918535', 'rss feed');">
+        <button class="graph_button graph_show_button" id="B253544980657700813885578224405117538216{level}" level="{level}" note_temp_id="253544980657700813885578224405117538216" onclick="window.ObsHtmlGraph.run(this, '253544980657700813885578224405117538216', 'rss feed');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C82861053092568315332823034735732918535{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C253544980657700813885578224405117538216{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

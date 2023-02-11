@@ -126,8 +126,8 @@
 </div>
 
 <p>This will create the folder <code>output</code> in your current folder, containing <code>output/md</code> and <code>output/html</code> for the proper markdown and the html website respectively.   </p>
-<div class="callout callout-caution active callout-folded" rasa="1">
-<div class="callout-title" onclick="toggle(this.parentElement)">
+<div class="callout callout-caution active callout-folded inactive" rasa="1">
+<div class="callout-title " onclick="toggle_callout(this.parentElement)">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
 </div>
 <div class="callout-title-name">Caution: don't run this command <strong>in</strong> your vault! <br />
@@ -136,8 +136,7 @@
 </div>
 </div>
 <div class="callout-content">
-<p><strong>Do not</strong> run this command in your vault, as it will create the output in your vault, which can confuse Obsidian and causes issues in ObsidianHtml in later runs! <br />
-</p>
+<p><strong>Do not</strong> run this command in your vault, as it will create the output in your vault, which can confuse Obsidian and causes issues in ObsidianHtml in later runs!   </p>
 </div>
 </div>
 <p>If you place your config in your vault, then go a folder up and run <code>obsidianhtml -i &lt;vault folder name&gt;/config.yaml</code>. Alternatively, add the following settings to your config.yml to control the output location (adjust the paths to make sense for your environment):   </p>
@@ -190,15 +189,14 @@
 
 <p>This will add <code>/subfolder</code> to every link in the html output.   </p>
 <div class="callout callout-note active" rasa="1">
-<div class="callout-title">
+<div class="callout-title ">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
 </div>
 <div class="callout-title-name">Note
 </div>
 </div>
 <div class="callout-content">
-<p>When you use this setting,  testing locally will give issues. Be sure to put your html output in a folder called <code>subfolder</code> (in this example), then go to the folder in which this folder is located and run <code>python -m http.server</code> then go to <a href="http://localhost:8000/subfolder" class="external-link">http://localhost:8000/subfolder</a> instead of <a href="http://localhost:8000/" class="external-link">http://localhost:8000/</a> <br />
-</p>
+<p>When you use this setting,  testing locally will give issues. Be sure to put your html output in a folder called <code>subfolder</code> (in this example), then go to the folder in which this folder is located and run <code>python -m http.server</code> then go to <a href="http://localhost:8000/subfolder" class="external-link">http://localhost:8000/subfolder</a> instead of <a href="http://localhost:8000/" class="external-link">http://localhost:8000/</a>   </p>
 </div>
 </div>
 <h4 id="viewing-your-website-without-a-webserver">Viewing your website without a webserver</h4>
