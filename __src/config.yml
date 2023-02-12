@@ -300,7 +300,7 @@ toggles:
       homepage_label: "Home"
 
     table_of_contents:
-      add_toc_when_missing: False          # add "[TOC]" (Table of Contents) when missing
+      add_toc_when_missing: True          # add "[TOC]" (Table of Contents) when missing
 
     side_pane:             # only valid for documentation layout
       left_pane:
