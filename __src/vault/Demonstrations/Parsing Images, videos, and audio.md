@@ -18,6 +18,10 @@ tags:
 `![200](obsidian-html-logo.png)`
 ![200](obsidian-html-logo.png)
 
+## Alt text and size
+`![[Resources/img/obsidian-html-logo-sq.png|alt|100]]`
+![[Resources/img/obsidian-html-logo-sq.png||alt|100]]
+
 ## External images
 `![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ObsidianOregon.jpg/480px-ObsidianOregon.jpg)`
 

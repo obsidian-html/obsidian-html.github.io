@@ -35,6 +35,7 @@ These features implement standard Obsidian behavior in the html output.
 | [[Styling#Table of Contents\|Table of Contents]] | Add TOC to side-pane instead of in note / add TOC to notes when missing | Enabled |
 | [[Tags Page]] | Add a list of tags under each note. Nb: the default preserve_inline_tags setting will create polluted md output! | Enabled |
 | [[Slugify html links]] | Have better readable/shareable links by slugifying the html paths | **Disabled** |
+| [[Configuration Options#img_alt_text_use_figure\|Add Figcaptions]] | Create a [`<figcaption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption) for the image when an alt text is set. | Enabled |
 
 ### Extras
 These features add functionality from popular obsidian plugins, or extra functionality that make sense for websites (such as an RSS feed).

@@ -145,6 +145,8 @@ toggles:
   # if true all the notes will be processed
   process_all: False
 
+  img_alt_text_use_figure: True
+
   slugify_html_links: True
 
   # Can be overwritten ad-hoc by using "obsidianhtml -i config.yml -v" (the -v option)

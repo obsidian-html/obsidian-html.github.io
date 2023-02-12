@@ -7,7 +7,7 @@ tags:
 # Images   
 ## Obsidian type image links    
 `![[Resources/img/obsidian-html-logo-sq.png|300]]`   
-<img src="../Resources/img/obsidian-html-logo.png"  width="300" alt="" title="" />   
+<img src="../Resources/img/obsidian-html-logo.png" width="300" alt="" title="" />   
    
 `![[obsidian-html-logo-sq.png]]`   
 ![](../Resources/img/obsidian-html-logo-sq.png)    
@@ -16,7 +16,15 @@ tags:
 ![](../Resources/img/obsidian-html-logo.png)   
    
 `![200](obsidian-html-logo.png)`   
-<img src="../Resources/img/obsidian-html-logo.png"  width="200" alt="" title="" />   
+<img src="../Resources/img/obsidian-html-logo.png" width="200" alt="" title="" />   
+   
+## Alt text and size   
+`![[Resources/img/obsidian-html-logo-sq.png|alt|100]]`   
+<figure>   
+  <img src="../Resources/img/obsidian-html-logo-sq.png" width="100" alt="alt" title="alt" />   
+  <figcaption>alt</figcaption>   
+</figure>   
+   
    
 ## External images   
 `![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ObsidianOregon.jpg/480px-ObsidianOregon.jpg)`   
@@ -30,7 +38,7 @@ tags:
    
 `![[wide-image.jpg|300]]`   
    
-<img src="../Resources/img/wide-image.jpg"  width="300" alt="" title="" />   
+<img src="../Resources/img/wide-image.jpg" width="300" alt="" title="" />   
    
    
 # Videos   

@@ -402,7 +402,7 @@ toggles:
    
 Read more: [Relative_path_html](../Configurations/Modes/Relative_path_html.md)   
    
-## external_blank   
+### external_blank   
 ``` yaml
 toggles:
   # Whether external http anchor links should have a target of "_blank"
@@ -428,6 +428,17 @@ toggles:
    
    
 Read more: [Slugify html links](../Configurations/Features/Slugify%20html%20links.md)   
+   
+### img_alt_text_use_figure   
+> New in [v3.5.0](../Changelog/v3.5.0.md)   
+``` yaml
+toggles:
+  img_alt_text_use_figure: True
+```
+   
+   
+This setting will create a [`<figcaption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption) for the image when an alt text is set. If you want the default Obsidian behavior (without any plugins), you can turn this off.   
+   
    
 ## Features   
 ### Styling   
