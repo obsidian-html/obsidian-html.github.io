@@ -24,6 +24,7 @@ tags:
    
 - [About ObsidianHtml](./General%20Information/About%20ObsidianHtml.md)   
 - [Report Issues & Request features](./General%20Information/Report%20Issues%20%26%20Request%20features.md)   
+- [Contributing to Obsidianhtml](./Developer%20Documentation/Contributing%20to%20Obsidianhtml.md)   
 - [How to navigate this site](./General%20Information/Using%20the%20website.md)   
 - [News](./News.md)   
 - [Changelog](./Changelog/Changelog.md)   

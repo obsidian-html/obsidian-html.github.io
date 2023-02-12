@@ -23,6 +23,7 @@ tags:
 ## General information
 - [[About ObsidianHtml]]
 - [[Report Issues & Request features]]
+- [[Contributing to Obsidianhtml]]
 - [[Using the website|How to navigate this site]]
 - [[News]]
 - [[Changelog]]

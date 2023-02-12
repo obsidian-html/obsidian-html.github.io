@@ -10,7 +10,7 @@ var CONFIGURED_HTML_URL_PREFIX = "/tabs";
 var RELATIVE_PATHS = 0;
 var documentation_mode = 0;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '110672249388972337366618072501785473080'                       // used to check whether the localStorage data is stale
+var gzip_hash = '257018941495430813657352899820643359721'                       // used to check whether the localStorage data is stale
 
 // global cache
 var fn_cache_ls_available = null;
@@ -257,11 +257,15 @@ function LoadTableOfContents(container_div)
                 let tpd = document.getElementById(toc_pane_div);
                 tpd.display = 'block';
                 tpd.innerHTML = '<span class="toc-header">Table of contents</span>' + '<div class="toc-contents">' + collection[0].innerHTML + '</div>';
+                toc.remove();
             }
             else {
                 toc.style.display = 'block';
                 toc.innerHTML = '<h3>Table of Contents</h1>\n' + toc.innerHTML
             }
+        }
+        else{
+            toc.remove();
         }
     }
 
