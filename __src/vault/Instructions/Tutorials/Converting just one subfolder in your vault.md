@@ -5,7 +5,11 @@ You could use the [[Configuration Options#Include subfolders|included_folders]] 
 The best way to go about exporting just one subfolder, and everything under it is as follows:
 
 - Make sure that all the notes and resources used/linked to in that folder are located somewhere under that folder.
-- Add a folder named `.obsdian` in the root of the folder that you want to use as your "vault"
+- Add a folder named `.obsdian` in the root of the folder that you want to use as your "vault" 
+>[!info]-
+>Obsidian desktop/mobile does not look into subdirectories for `.obsidian`, so this should not have any affect on your usage of Obsidian.   
+> 
+>Obsidianhtml can look in the `.obsidian` folder for configuration files to inform its own configuration whenever value `auto` (or similar) is configured. You can always change these settings to an explicit value in obsidianhtml, so you never have to make edits in this folder for the configuration of obsidianhtml.
 - Create a note that serves as an entrypoint (homepage) in your folder
 - Point to that note in [[Obsidianhtml Run]] or better yet, configure `obsidian_entrypoint_path_str` with the path to that note in your config.yml, and use that to run `obsidianhtml convert -i path/to/your/config.yml`
 

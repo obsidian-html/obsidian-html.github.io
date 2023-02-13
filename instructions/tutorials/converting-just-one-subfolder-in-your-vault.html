@@ -499,8 +499,26 @@
 <p>The best way to go about exporting just one subfolder, and everything under it is as follows:   </p>
 <ul>
 <li>Make sure that all the notes and resources used/linked to in that folder are located somewhere under that folder.   </li>
-<li>Add a folder named <code>.obsdian</code> in the root of the folder that you want to use as your "vault"   </li>
-<li>Create a note that serves as an entrypoint (homepage) in your folder   </li>
+<li>
+<p>Add a folder named <code>.obsdian</code> in the root of the folder that you want to use as your "vault"    </p>
+<div class="callout callout-info active callout-folded inactive" rasa="1">
+<div class="callout-title " onclick="toggle_callout(this.parentElement)">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+</div>
+<div class="callout-title-name">Info
+</div>
+<div class="callout-title-fold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ChevronDown"><polyline points="6 9 12 15 18 9"></polyline>
+</div>
+</div>
+<div class="callout-content">
+<p>Obsidian desktop/mobile does not look into subdirectories for <code>.obsidian</code>, so this should not have any affect on your usage of Obsidian.</p>
+<p>Obsidianhtml can look in the <code>.obsidian</code> folder for configuration files to inform its own configuration whenever value <code>auto</code> (or similar) is configured. You can always change these settings to an explicit value in obsidianhtml, so you never have to make edits in this folder for the configuration of obsidianhtml.</p>
+</div>
+</div>
+</li>
+<li>
+<p>Create a note that serves as an entrypoint (homepage) in your folder   </p>
+</li>
 <li>Point to that note in <a href="/instructions/obsidianhtml-run.html">Obsidianhtml Run</a> or better yet, configure <code>obsidian_entrypoint_path_str</code> with the path to that note in your config.yml, and use that to run <code>obsidianhtml convert -i path/to/your/config.yml</code>   </li>
 </ul>
 <p>Note that <a href="/configurations/configuration-options.html#process-all">process_all</a> will apply only to the one subfolder (and all its contents) in which you placed the <code>.obsidian</code> folder.</p></div>
@@ -519,13 +537,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A176028269989647524668504008019142684113{level}" class="graph_div"></div>
+    <div id="A285279311073264794650946586497895451418{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B176028269989647524668504008019142684113{level}" level="{level}" note_temp_id="176028269989647524668504008019142684113" onclick="window.ObsHtmlGraph.run(this, '176028269989647524668504008019142684113', 'converting just one subfolder in your vault');">
+        <button class="graph_button graph_show_button" id="B285279311073264794650946586497895451418{level}" level="{level}" note_temp_id="285279311073264794650946586497895451418" onclick="window.ObsHtmlGraph.run(this, '285279311073264794650946586497895451418', 'converting just one subfolder in your vault');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C176028269989647524668504008019142684113{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C285279311073264794650946586497895451418{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
