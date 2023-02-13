@@ -152,6 +152,18 @@ ObsidianHtml will go through the entire vault and build a file tree. To have thi
 
 This setting will make the file tree builder ignore those folders. If you have personal notes in certain folders that you don't want to have end up on a website, you can add those here too.
 
+### Include subfolders
+``` yaml
+# When not an empty list, this setting will restrict the subfolders
+# of the vault that will be included. This allows you to ensure that
+# only those folders are included in the output. Links pointing to notes
+# outside of the included folders will be treated as non-existent.
+# Note that the obsidian_entrypoint_path_str needs to be in one of these folders.
+# Paths should be relative to the vault root.
+included_folders: []
+```
+See also [[Converting just one subfolder in your vault]] if you want to export just one subfolder as if it is your entire vault.
+
 ### Copy Vault to Tempdir
 ``` yaml
 # Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect the vault data. 

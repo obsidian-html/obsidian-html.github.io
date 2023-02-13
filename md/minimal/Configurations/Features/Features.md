@@ -14,6 +14,7 @@ tags:
 - [Process All](../../Configurations/Modes/Process%20All.md)   
 - [Filtering notes](../../Configurations/Modes/Filtering%20notes.md) (inclusion / exclusion of files and or folders)   
 - [Create index from tags](../../Configurations/Modes/Create%20index%20from%20tags.md)   
+- [Converting just one subfolder in your vault](../../Instructions/Tutorials/Converting%20just%20one%20subfolder%20in%20your%20vault.md)   
    
 ## Basics   
 | Feature | Short description | Default |   

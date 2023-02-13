@@ -12,6 +12,7 @@ tags:
 - [[Process All]]
 - [[Filtering notes]] (inclusion / exclusion of files and or folders)
 - [[Create index from tags]]
+- [[Converting just one subfolder in your vault]]
 
 ## Basics
 | Feature | Short description | Default |

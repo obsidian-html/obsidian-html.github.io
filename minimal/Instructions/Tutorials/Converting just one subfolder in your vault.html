@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Instructions</span> / <span style="color: #666;">Tutorials</span> / <a href="/minimal/Instructions/Tutorials/Converting just one subfolder in your vault.html" >Converting just one subfolder in your vault</a>
+                    </div>
+                </div>
+<embeddedtitle>Converting just one subfolder in your vault</embeddedtitle>
+<div class="content"><p>Some users want to export only a subfolder of their vault.   </p>
+<p>You could use the <a href="/minimal/Configurations/Configuration%20Options.html#include-subfolders">included_folders</a> setting to only include that one subfolder, but that will give unwanted paths for the <a href="/minimal/Configurations/Modes/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a> feature (i.e that will show the full paths where probably you don't want that).   </p>
+<p>The best way to go about exporting just one subfolder, and everything under it is as follows:   </p>
+<ul>
+<li>Make sure that all the notes and resources used/linked to in that folder are located somewhere under that folder.   </li>
+<li>Add a folder named <code>.obsdian</code> in the root of the folder that you want to use as your "vault"   </li>
+<li>Create a note that serves as an entrypoint (homepage) in your folder   </li>
+<li>Point to that note in <a href="/minimal/Instructions/Obsidianhtml%20Run.html">Obsidianhtml Run</a> or better yet, configure <code>obsidian_entrypoint_path_str</code> with the path to that note in your config.yml, and use that to run <code>obsidianhtml convert -i path/to/your/config.yml</code>   </li>
+</ul>
+<p>Note that <a href="/minimal/Configurations/Configuration%20Options.html#process-all">process_all</a> will apply only to the one subfolder (and all its contents) in which you placed the <code>.obsidian</code> folder.</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Features/Features.html">features</a></li>
+</ul>
+</div>
+
+<div class="tags">
+
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

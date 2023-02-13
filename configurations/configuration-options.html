@@ -402,6 +402,7 @@
 			</ul>
 		</div>
 		<ul class="dir-list">
+			<li><a class="" href="/instructions/tutorials/converting-just-one-subfolder-in-your-vault.html"  >Converting just one subfolder in your vault</a></li>
 			<li><a class="" href="/instructions/tutorials/tutorial-installation-on-windows.html"  >Tutorial - Installation on Windows</a></li>
 		</ul>
 	</div>
@@ -513,6 +514,7 @@
 </li>
 <li><a href="#operations" class="anchor-link">Operations</a><ul>
 <li><a href="#exclude-subfolders" class="anchor-link">Exclude Subfolders</a></li>
+<li><a href="#include-subfolders" class="anchor-link">Include subfolders</a></li>
 <li><a href="#copy-vault-to-tempdir" class="anchor-link">Copy Vault to Tempdir</a></li>
 <li><a href="#included_file_suffixes" class="anchor-link">included_file_suffixes</a></li>
 <li><a href="#video_format_suffixes" class="anchor-link">video_format_suffixes</a></li>
@@ -865,6 +867,22 @@
 
 <p>ObsidianHtml will go through the entire vault and build a file tree. To have this work, we can't have duplicate file names. Of course, this is normally not an issue because this is also not allowed in Obsidian. However, there are some hidden folders in every vault that can share filenames with your notes. Aside from that, we don't need to parse those folders anyways.   </p>
 <p>This setting will make the file tree builder ignore those folders. If you have personal notes in certain folders that you don't want to have end up on a website, you can add those here too.   </p>
+<h3 id="include-subfolders">Include subfolders</h3>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># When not an empty list, this setting will restrict the subfolders</span>
+<span class="c1"># of the vault that will be included. This allows you to ensure that</span>
+<span class="c1"># only those folders are included in the output. Links pointing to notes</span>
+<span class="c1"># outside of the included folders will be treated as non-existent.</span>
+<span class="c1"># Note that the obsidian_entrypoint_path_str needs to be in one of these folders.</span>
+<span class="c1"># Paths should be relative to the vault root.</span>
+<span class="nt">included_folders</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</code></pre></div>
+
+
+</div>
+
+<p>See also <a href="/instructions/tutorials/converting-just-one-subfolder-in-your-vault.html">Converting just one subfolder in your vault</a> if you want to export just one subfolder as if it is your entire vault.   </p>
 <h3 id="copy-vault-to-tempdir">Copy Vault to Tempdir</h3>
 <div class="lang-yaml">
 
@@ -1361,6 +1379,7 @@
 	<li><a class="backlink" href="/configurations/modes/modes.html">modes</a></li>
 	<li><a class="backlink" href="/changelog/v1.2.2.html">v1.2.2</a></li>
 	<li><a class="backlink" href="/configurations/modes/process-all.html">process all</a></li>
+	<li><a class="backlink" href="/instructions/tutorials/converting-just-one-subfolder-in-your-vault.html">converting just one subfolder in your vault</a></li>
 	<li><a class="backlink" href="/configurations/features/features.html">features</a></li>
 	<li><a class="backlink" href="/configurations/features/slugify-html-links.html">slugify html links</a></li>
 	<li><a class="backlink" href="/configurations/deprecated-configurations/obsidian_folder_path_str.html">obsidian_folder_path_str</a></li>
@@ -1383,13 +1402,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A203201243822221047318388557117811673854{level}" class="graph_div"></div>
+    <div id="A172531756884249754485344979287931652817{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B203201243822221047318388557117811673854{level}" level="{level}" note_temp_id="203201243822221047318388557117811673854" onclick="window.ObsHtmlGraph.run(this, '203201243822221047318388557117811673854', 'configuration options');">
+        <button class="graph_button graph_show_button" id="B172531756884249754485344979287931652817{level}" level="{level}" note_temp_id="172531756884249754485344979287931652817" onclick="window.ObsHtmlGraph.run(this, '172531756884249754485344979287931652817', 'configuration options');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C203201243822221047318388557117811673854{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C172531756884249754485344979287931652817{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
