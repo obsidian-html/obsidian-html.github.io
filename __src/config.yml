@@ -305,11 +305,16 @@ toggles:
     side_pane:             # only valid for documentation layout
       left_pane:
         enabled: True
-        contents: dir_tree #html_page       # <toc, tag_tree, dir_tree> relevant features should be enabled and configured see docs
+        contents: dir_tree #tag_tree #html_page       # <toc, tag_tree, dir_tree> relevant features should be enabled and configured see docs
         width: 'max-content'
-        #content_args:
-          #rel_path: 'index.html'
-          #div_selector: '.container' # . for class, # for id
+        content_args:
+          rel_path: 'index.html'
+          div_selector: '.container' # . for class, # for id
+          strip_tags:
+            - 'babayaga'
+            - 'bla'
+            - 'randomothertag'
+          
       right_pane:
         enabled: True
         contents: toc # <toc, tag_tree, dir_tree> relevant features should be enabled and configured see docs
