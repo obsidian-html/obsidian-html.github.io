@@ -72,4 +72,6 @@ jobs:
           MESSAGE: "Build: ({sha}) {msg}" # The commit message
 ```
 
-Now, go to your repository settings > Pages > Build and Deployment and 
+Now, go to your repository settings > Pages > Build and Deployment. Choose 'Deploy from a branch' as source, and select gh-pages as the branch.
+
+From now, on every push to GitHub, the workflow will create the HTML pages and publish them.
