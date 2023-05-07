@@ -35,7 +35,7 @@ Enter the following below configuration for the workflow. If your main branch is
 
 This workflow also uses the development edition of Obsidian HTML, if you want to stick to the stable version, change `pip install git+https://github.com/obsidian-html/obsidian-html` to `pip install obsidian-html` under the Install dependencies and run build job.
 
-```
+```yaml
 name: Publish to gh-pages branch
 
 on:
