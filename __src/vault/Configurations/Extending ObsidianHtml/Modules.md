@@ -17,7 +17,7 @@ At the beginning, one folder is chosen that will contain all the in- and output 
 **All** the in- and outputs will be written to that one folder. Subfolders are allowed, so one can choose to write to `html_output_folder/obs.html/module_data/md/...`  and `html_output_folder/obs.html/module_data/html/...` to discern similar outputs at different phases of the compilation.
 
 ## Module structure
-A module is any class that implements the `obsidianhtml.modules.ObsidianHtmlModule` abstract base class, e.g.:
+A module is any class that extends the `obsidianhtml.modules.ObsidianHtmlModule` abstract base class, e.g.:
 
 ``` python
 from obsidianhtml.modules import ObsidianHtmlModule
@@ -27,66 +27,24 @@ class MyModule(ObsidianHtmlModule):
 
 ## Instantiating of the module
 The module will be instantiated by ObsidianHtml with the following input:
-- The parameter `module_data_folder_abs_path_posix_str` will be passed in, which, as the name implies, is the absolute path in the form of a posix string pointing to the folder that was chosen to hold all the in- and outputs for the various modules.
+- The parameter `module_data_folder` will be passed in, which is the absolute path in the form of a posix string pointing to the folder that was chosen to hold all the in- and outputs for the various modules.
 - `module_name` will be passed in. This is the name that you give in the `modules` list (see below), and can be considered a dog-tag, or alias. Not be confused with `ObsidianHtmlModule.module_class_name`, which will also be set, and which is the module class's name as defined in the python code (alias for `self.__class__.__name__`).
+- `persistent` (bool) will be passed in, denoting on whether the module object will be stored for later retrieval, or be a one-use instance.
 
-All other input should be read from the module data folder. The sys args are of course also available to the module, so these can be used as input as well.
+All other input should be read from the module data folder.
 
 ### Overwriting the abstract base class's `__init__` method
 You shouldn't, really. Though perhaps there is some very special reason that you need to alter the init method. 
 
 When overwriting this method, be sure to follow the same input scheme, and to call the ABC's init function:
 ``` python
-def __init__(self, module_data_folder_abs_path_posix_str):
+def __init__(self, **kwargs):
     # my custom code
     self.my_custom_attr = 'placeholder'
     
     # invoke parent's init method 
-    super().__init__(module_data_folder_abs_path_posix_str)
+    super().__init__(**kwargs)
 ```
-
-## Using custom modules
-The toplevel key called `modules` will contain, in order, all the modules that will be executed. You can find this list in the default config file.
-
-``` yaml
-modules:
-  - type: built-in
-    name: setup
-  - type: built-in
-    name: put_config
-  - type: custom
-    path: '/path/to/module/file.py'
-    name: my_module
-    class: MyModule
-  - type: custom
-    path: '/path/to/module/file.py'
-    name: my_module
-    method: run2
-```
-
-To add your own module, use `type: custom` and add then the **path** to the file containing your module. 
-The **name** parameter is used mostly for logging purposes in the case of custom modules.
-
-When all that you give is the name and the path, ObsidianHtml will try to import and run the function `export_module()` from the given file.
-
-This would work like so:
-
-``` python
-from obsidianhtml.modules import ObsidianHtmlModule
-class MyModule(ObsidianHtmlModule):
-	pass
-	
-def export_module(**kwargs):
-  return MyModule(**kwargs)
-```
-
-> Note that the code above will not work as the required functions and properties are not implemented.
-
-The `**kwargs` parameter is there for future development options. Currently there is only one input that will be given, see [[#Instantiating of the module]]. Currently no other arguments are given (nor planned to be given) to the export_module function. 
-
-When the **class** key is set, ObsidianHtml will not import and run `export_module()`  but just directly import and then instantiate the class itself. This can be useful if you want to combine multiple classes in one file.
-
-The last key for now is **method**. When empty, the value will be `run`. 
 
 ## Required methods
 ### run()
@@ -136,25 +94,12 @@ ModuleB used config.json; created [tags.json, nodes.json] and altered [config.js
 
 Such a log will surely prove invaluable for following all the cross-interactions between modules and their input/outputs.
 
-## State of resources
-Resources are the files that can be required or provided. 
-
-We keep track of them in a dict. The path of the resource relative to the module_data folder is the key. The value is an instance of the `ResourceListing` dataclass. 
-
-If a resource is not in the dict it is seen as "absent", even if the resource is present in the folder, somehow.
-
-If a module fails, all the resources that it states it provides are marked as failed too, even if they were previously absent.  Failed resources are denoted as such with the state: `"failed"`.
-
-Modules will not be run if the required resources are absent or in `"failed"` state.
-
-Succesfully created resources are denoted as `"present"`.
-
+# Persistence
 ## Run the same module multiple times
-For every item in the `module` list, a new object will be created, even when the same module is listed multiple times. So the object of the first run is not the same as the object of the second run. This means that you cannot persist state within the object between runs.
+For every item in the `module` list, a new object will be created, even when the same module is listed multiple times. So the object of the first run is not the same as the object of the second run. This means that you cannot persist state within the object between runs (unless persistence is explicitly set).
 
-It still can be useful though to have multiple run() methods combined into one module, for when one kind of functionality needs to be split up over various stages.
-
-You can explicitly set the **method**  to have two separate functions for the first and the n-th run:
+To reuse a module object it has to have `persistent: True` on the first call, and on the second call.
+Take this example:
 
 ``` python
 from obsidianhtml.modules import ObsidianHtmlModule
@@ -166,10 +111,10 @@ class MyModule(ObsidianHtmlModule):
     def provides(self):
         return ()
         
-	def run(self, module_data_folder_abs_path_posix_str):
+	def run(self):
 		self.hi_there = "hi from the second run"
 		print("hi from the first run")
-	def run2(self, module_data_folder_abs_path_posix_str):
+	def run2(self):
 		print(self.hi_there)
 	
 def export_module(**kwargs):
@@ -183,10 +128,12 @@ modules:
   - type: custom
     path: '/path/to/module/file.py'
     name: my_module
+    persistent: True
   - type: custom
     path: '/path/to/module/file.py'
     name: my_module
     method: run2
+    persistent: True
 ```
 
 Should give:
@@ -196,6 +143,7 @@ hi from the first run
 hi from the second run
 ```
 
+If you don't set `persistent: True` on the first invocation, the module will not be stored, and thus not retrievable in the second run. If you don't set it at the second run, the module system will create a new module object, as that is the default behavior.
 
 # Metamodules
 These modules apply to the running of other modules. They do not apply to themselves or other metamodules.
@@ -203,15 +151,76 @@ These modules apply to the running of other modules. They do not apply to themse
 They can be either run before running a module, think of a checker module; or after a module, for example a logger. For metamodules that should be run before every module, use `ObsidianHtmlPreModule`, and use `ObsidianHtmlPostModule` for the other case.
 
 Metamodules currently work similar to normal modules, except for:
-- They only have the `provides` property, not the requires and alters properties.
-- `ObsidianHtmlPreModule` will get the following extra inputs to their run method:
-	- `module`: the module object that was just run
-	- `result`: the value that was returned by the module object's run method
 - `ObsidianHtmlPostModule` will get the following extra inputs to their run method:
 	- `module`: the module object that was just run
 	- `result`: the value that was returned by the module object's run method
 
+To be implemented:
+```
+- `ObsidianHtmlPreModule` will get the following extra inputs to their run method:
+	- `module`: the module object that will be run
+```
 
-# Persistence
-By default a module will be instantiated every time is it listed in the modules / meta_modules list. You can override this by setting `ObsidianHtmlModule.persistent = True`. This is especially useful for metamodules that need to keep state, as otherwise you'd need to read+write data for every module in the list.
 
+# Writing modules & requirements
+## Accessing config values
+You can use `self.gc()` "get config" method to load a key from the config yaml:
+``` python
+class MyCustomModule(ObsidianHtmlModule):
+	# <provides, requires, alters blocks> ...
+	def run(self):
+		if self.gc("toggles/compile_md"):
+			print("do stuff")
+```
+
+Notice here the slashes, which are used to navigate the config tree elements, e.g.:
+``` yaml
+toggles:
+  compile_md: true
+```
+
+## Reading and writing modfiles
+
+Any file written into the `module_data_folder` is called a `modfile`. To read such a file from within your own module, see the following examples:
+
+``` python
+class MyCustomModule(ObsidianHtmlModule):
+
+	# <provides, requires, alters blocks> ...
+
+	def run(self):
+		# write simple file to module_data_folder/test.md
+		self.modfile("test.md", "hi there").write()
+
+		# convert to json
+		self.modfile("test.json", ['this is', 'a list']).to_json().write()
+
+	def run2(self):
+		# retrieve contents with .text()
+		print(self.modfile("test.md").read().text())
+
+		# convert contents and retrieve them with .from_json() and .from_yaml()
+		print(self.modfile("test.json").read().from_json()
+```
+
+The object returned by `self.modfile()` will do checking upon accessing the modfiles. If a modfile is read but not listed under `self.requires`, then this will lead to an error, and similarly for writing a file.
+
+>[!attention]
+> Any modules that are added in PR's that read/write modfiles with other means than `self.modfile().*.write()` and `self.modfile().read()` will be rejected.
+
+
+## Integration functions
+The module system is here to replace an older system.
+When you write custom modules, you very likely don't need to integrate with the old (`pb`) system. So you can ignore these functions, as long as you implement them (to satisfy the requirements):
+
+``` python
+class MyCustomModule(ObsidianHtmlModule):
+	# <provides, requires, alters blocks> ...
+	# <run methods> ...
+    def integrate_load(self, pb):
+        pass
+    def integrate_save(self, pb):
+		pass
+```
+
+The requirement here is pretty clear, you will get an error if you don't implement these.

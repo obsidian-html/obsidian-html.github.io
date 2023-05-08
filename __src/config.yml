@@ -41,6 +41,16 @@ site_name: 'ObsidianHtml/Documentation'
 # Note that this file must contain at least "{content}" somewhere in the page.
 html_template_path_str: ''
 
+# mod system:
+# =====================================================================
+verbosity: "debug"
+
+meta_modules_post:
+  - type: built-in
+    name: resource_logger
+    persistent: True
+
+# =====================================================================
 
 # Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html
 # html_custom_footer_inclusions:
@@ -79,14 +89,14 @@ html_template_path_str: ''
 # Glob patterns supported for copy_vault_to_tempdir_method: shutil, shutil_walk, and for rsync for as far as rsync supports it natively
 #   When turning off copy_vault_to_tempdir, glob patterns are fully supported.
 # Rules are case sensitive if your filesystem is.
-exclude_subfolders:
+exclude_glob:
   - "/.obsidian"
   - "/.trash"
   - "/.DS_Store"
   - "/.git"
   - "/__src"
   - "/md"
-  - "obs.html" 
+  - "obs.html"   
 
 # Number of links a note can be removed from the entrypoint note
 # -1 for no max depth
@@ -291,8 +301,8 @@ toggles:
         - "__src"
         - "md"
         - "obs.html"
-        - "Resources"
-        - "**/Snippets"
+        - "resources"
+        - "**/snippets"
       exclude_files:
         - ".gitignore"
         - "favicon.ico"

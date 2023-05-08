@@ -24,7 +24,7 @@ html_custom_inclusions:
   - '<script src="/christmas_snowflakes.js"></script>'
 ```
 
-> **N.b.** you'll have to place the mentioned files into the output yourself, and at the correct location; in this case directly in the html output folder. (Unless they are located in your vault and [[Configuration Options#Process all|process_all]]: True).
+> **N.b.** you'll have to ensure the mentioned files are placed into the html output folder at the correct location; in this case directly in the html output folder. Possible ways to do this are: using [[Configuration Options#Process all|process_all]]: True, using the [[Export vault files to html output]] feature, or by writing your own script that runs right after you run obsidianhtml.
 
 ## Custom template
 If you just want to build your pages yourself entirely, then you can pass in the path to your own template file. Note that you need to have at least `{content}` somewhere in the page. 
