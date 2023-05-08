@@ -1,10 +1,19 @@
-> This feature is still in development. Whatever is written here should be read as a statement of intent, (i.e. architecture to be implemented) not the current state!
-
+>[!warning]
+>The module system currently is still in **alpha**. Any part of the system might still change until further notice, so keep that in mind before diving into the module system.
 
 ## Introduction
-Modules are the proposed way to keep the complexity of ever increasing amounts of features in check. It is my intent to rewrite every chunk of functionality as a module, which will have a clearly defined function, interface, input and output, and thus will be able to be swapped out by a different module that provides the same output but that produces it in a different way.
+Modules are the proposed way [[Moving to a Module system|to keep the complexity of ever increasing amounts of features in check]]. It is my intent to rewrite every chunk of functionality as a module, which will have a clearly defined function, interface, input and output, and thus will be able to be swapped out by a different module that provides the same output but that produces it in a different way.
 
 Built-in modules will also be required to include testing functions.
+
+## Examples
+The module system is currently already in use (in the master branch code) for internal functions of ObsidianHtml.
+
+You can find all the modules, and the code to manage them, in this folder:
+- https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules
+
+The builtin folder contains a number of modules that are currently used:
+- https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin
 
 ## Inputs and outputs
 All the inputs and outputs will be in the form of files. The default format should be pretty printed json, to be able to interoperate with different languages.
