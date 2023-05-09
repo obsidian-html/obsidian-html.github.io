@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Changelog/Changelog.md",
+                "file": "Automation/Automate website deployment.md",
                 "mode": "source",
                 "source": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Changelog/Changelog.md",
+                "file": "Automation/Automate website deployment.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -167,8 +167,8 @@
   },
   "active": "33b8ab98fad380b3",
   "lastOpenFiles": [
-    "ObsidianHtml.md",
     "Changelog/Changelog.md",
+    "ObsidianHtml.md",
     "Configurations/Extending ObsidianHtml/Modules.md",
     "obs.html/tag_index.md",
     "Log/Moving to a Module system.md",

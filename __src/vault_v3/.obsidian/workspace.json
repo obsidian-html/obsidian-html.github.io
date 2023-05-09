@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Automation/AutomationWindowsSSH.md",
+                "file": "Automation/Automate website deployment.md",
                 "mode": "source",
                 "source": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Automation/AutomationWindowsSSH.md",
+                "file": "Automation/Automate website deployment.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -167,6 +167,8 @@
   },
   "active": "33b8ab98fad380b3",
   "lastOpenFiles": [
+    "Automation/Using github pages.md",
+    "Automation/AutomationWindowsSSH.md",
     "Automation/AutomationWindows.md",
     "Automation/AutomationLinuxSSH.md",
     "Automation/AutomationLinuxGit.md",
@@ -190,8 +192,6 @@
     "Configurations/Modes/Create index from tags.md",
     "Configurations/Modes/Create Index from Directory Structure.md",
     "Configurations/Modes/Copy vault to temp dir.md",
-    "Configurations/Features/Website navigation menu.md",
-    "Configurations/Features/Tags Page.md",
-    "Configurations/Features/Slugify html links.md"
+    "Configurations/Features/Website navigation menu.md"
   ]
 }

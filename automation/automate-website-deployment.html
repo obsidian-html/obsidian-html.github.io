@@ -437,6 +437,7 @@
 <ul>
 <li><a href="#using-a-git-repo-as-an-intermediate" class="anchor-link">Using a git repo as an intermediate</a></li>
 <li><a href="#pushing-directly-to-a-local-webserver" class="anchor-link">Pushing directly to a local webserver</a></li>
+<li><a href="#using-github-pages" class="anchor-link">Using Github Pages</a></li>
 </ul>
 </div>
 <blockquote>
@@ -458,8 +459,55 @@
 <p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the Git method or something along those lines.   </p>
 <ul>
 <li><a href="/automation/automationlinuxssh.html">Auto push to local webserver (Linux)</a>   </li>
-<li><a href="/automation/automationwindowsssh.html">Auto push to local webserver (Windows)</a></li>
-</ul></div>
+<li><a href="/automation/automationwindowsssh.html">Auto push to local webserver (Windows)</a>   </li>
+</ul>
+<h2 id="using-github-pages">Using Github Pages</h2>
+<p>Use either Obsidian Git plugin or the method mentioned above to sync your vault to GitHub. <br />
+Create a new branch, e.g. gh-pages for storing the HTML files.   </p>
+<p>Go to actions, and create a workflow. We will use this workflow to generate HTML files using ObsidianHTML and publish them to your gh-pages branch. Name the file something suitable like generate.yml.   </p>
+<p>Enter the following below configuration for the workflow. If your main branch is master or something else, make the right adjustments. If your are using a different branch name for publishing, then make change that too under the Publish to Github Pages job.   </p>
+<p>This workflow also uses the development edition of Obsidian HTML, if you want to stick to the stable version, change <code>pip install git+https://github.com/obsidian-html/obsidian-html</code> to <code>pip install obsidian-html</code> under the Install dependencies and run build job.   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish to gh-pages branch</span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Push</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout main</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clone-path</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies and run build</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">cd ${{ github.workspace }}</span>
+<span class="w">          </span><span class="no">pip install --upgrade pip</span>
+<span class="w">          </span><span class="no">pip install git+https://github.com/obsidian-html/obsidian-html</span>
+<span class="w">          </span><span class="no">obsidianhtml convert -i clone-path/config.yaml -v</span>
+<span class="w">          </span><span class="no">touch html/.nojekyll</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish to Github Pages</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s0/git-publish-subdir-action@develop</span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">REPO</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">self</span>
+<span class="w">          </span><span class="nt">BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gh-pages</span><span class="w"> </span><span class="c1"># The branch name where you want to push the assets</span>
+<span class="w">          </span><span class="nt">FOLDER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">html</span><span class="w"> </span><span class="c1"># The directory where your assets are generated</span>
+<span class="w">          </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span><span class="w"> </span><span class="c1"># GitHub will automatically add this - you don&#39;t need to bother getting a token</span>
+<span class="w">          </span><span class="nt">MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Build:</span><span class="nv"> </span><span class="s">({sha})</span><span class="nv"> </span><span class="s">{msg}&quot;</span><span class="w"> </span><span class="c1"># The commit message</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Now, go to your repository settings &gt; Pages &gt; Build and Deployment. Choose 'Deploy from a branch' as source, and select gh-pages as the branch.   </p>
+<p>From now, on every push to GitHub, the workflow will create the HTML pages and publish them.</p></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -481,13 +529,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A278376741788888822581635826747299697434{level}" class="graph_div"></div>
+    <div id="A285291907374761170492545942994548864405{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B278376741788888822581635826747299697434{level}" level="{level}" note_temp_id="278376741788888822581635826747299697434" onclick="window.ObsHtmlGraph.run(this, '278376741788888822581635826747299697434', 'automate website deployment');">
+        <button class="graph_button graph_show_button" id="B285291907374761170492545942994548864405{level}" level="{level}" note_temp_id="285291907374761170492545942994548864405" onclick="window.ObsHtmlGraph.run(this, '285291907374761170492545942994548864405', 'automate website deployment');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C278376741788888822581635826747299697434{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C285291907374761170492545942994548864405{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
