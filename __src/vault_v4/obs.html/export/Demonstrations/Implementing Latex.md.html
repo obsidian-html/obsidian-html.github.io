@@ -1,0 +1,170 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Implementing Latex</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/test_page
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>05<span class="token punctuation">-</span><span class="token number">05</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/test_page">#type/test_page</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-05-05">#date/2022-05-05</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Implementing Latex">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Implementing Latex
+  </h1>
+</div>
+<div>
+  <p>At the moment only the math based latex is enabled. (It's hard to find what Obsidian supports other than the math based latex.)</p>
+</div>
+<div>
+  <h2 data-heading="Inline Latex (single $)">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Inline Latex (single $)
+  </h2>
+</div>
+<div><pre class="language-latex" tabindex="0"><code class="language-latex is-loaded">A nice equation for testing is <span class="token equation string">$<span class="token equation-command regex">\int</span>_0^{2<span class="token equation-command regex">\pi</span>} d<span class="token equation-command regex">\theta</span> x+e^{-i<span class="token equation-command regex">\theta</span>}$</span>
+
+I can also use symbols like <span class="token equation string">$<span class="token equation-command regex">\pi</span>$</span> inside of a line.
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>A nice equation for testing is <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML" style="position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msubsup><mjx-mo class="mjx-sop"><mjx-c class="mjx-c222B TEX-S1"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.341em; margin-left: -0.138em;"><mjx-texatom size="s" texclass="ORD" style="margin-left: 0.276em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70B TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-spacer style="margin-top: 0.395em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msubsup><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mo data-mjx-texclass="OP">∫</mo><mn>0</mn><mrow data-mjx-texclass="ORD"><mn>2</mn><mi>π</mi></mrow></msubsup><mi>d</mi><mi>θ</mi><mi>x</mi><mo>+</mo><msup><mi>e</mi><mrow data-mjx-texclass="ORD"><mo>−</mo><mi>i</mi><mi>θ</mi></mrow></msup></math></mjx-assistive-mml></mjx-container></span></p>
+</div>
+<div>
+  <p>I can also use symbols like <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML" style="position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>π</mi></math></mjx-assistive-mml></mjx-container></span> inside of a line.</p>
+</div>
+<div>
+  <h2 data-heading="Centered block latex (double $)">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Centered block latex (double $)
+  </h2>
+</div>
+<div><pre class="language-latex" tabindex="0"><code class="language-latex is-loaded"><span class="token equation string">$$
+<span class="token equation-command regex">\begin</span>
+{vmatrix}a &amp; b <span class="token equation-command regex">\\</span> c &amp; d
+<span class="token equation-command regex">\end</span>
+{vmatrix}=ad-bc
+$$</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <div class="math math-block is-loaded">
+    <mjx-container class="MathJax" jax="CHTML" display="true" style="position: relative;">
+      <mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;">
+        <mjx-mrow>
+          <mjx-mo class="mjx-n">
+            <mjx-stretchy-v class="mjx-c7C" style="height: 2.4em; vertical-align: -0.95em;">
+              <mjx-ext>
+                <mjx-c></mjx-c>
+              </mjx-ext>
+              <mjx-mark></mjx-mark>
+            </mjx-stretchy-v>
+          </mjx-mo>
+          <mjx-mtable style="min-width: 2.049em;">
+            <mjx-table>
+              <mjx-itable>
+                <mjx-mtr>
+                  <mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;">
+                    <mjx-mi class="mjx-i">
+                      <mjx-c class="mjx-c1D44E TEX-I"></mjx-c>
+                    </mjx-mi>
+                    <mjx-tstrut></mjx-tstrut>
+                  </mjx-mtd>
+                  <mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;">
+                    <mjx-mi class="mjx-i">
+                      <mjx-c class="mjx-c1D44F TEX-I"></mjx-c>
+                    </mjx-mi>
+                    <mjx-tstrut></mjx-tstrut>
+                  </mjx-mtd>
+                </mjx-mtr>
+                <mjx-mtr>
+                  <mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;">
+                    <mjx-mi class="mjx-i">
+                      <mjx-c class="mjx-c1D450 TEX-I"></mjx-c>
+                    </mjx-mi>
+                    <mjx-tstrut></mjx-tstrut>
+                  </mjx-mtd>
+                  <mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;">
+                    <mjx-mi class="mjx-i">
+                      <mjx-c class="mjx-c1D451 TEX-I"></mjx-c>
+                    </mjx-mi>
+                    <mjx-tstrut></mjx-tstrut>
+                  </mjx-mtd>
+                </mjx-mtr>
+              </mjx-itable>
+            </mjx-table>
+          </mjx-mtable>
+          <mjx-mo class="mjx-n">
+            <mjx-stretchy-v class="mjx-c7C" style="height: 2.4em; vertical-align: -0.95em;">
+              <mjx-ext>
+                <mjx-c></mjx-c>
+              </mjx-ext>
+              <mjx-mark></mjx-mark>
+            </mjx-stretchy-v>
+          </mjx-mo>
+        </mjx-mrow>
+        <mjx-mo class="mjx-n" space="4">
+          <mjx-c class="mjx-c3D"></mjx-c>
+        </mjx-mo>
+        <mjx-mi class="mjx-i" space="4">
+          <mjx-c class="mjx-c1D44E TEX-I"></mjx-c>
+        </mjx-mi>
+        <mjx-mi class="mjx-i">
+          <mjx-c class="mjx-c1D451 TEX-I"></mjx-c>
+        </mjx-mi>
+        <mjx-mo class="mjx-n" space="3">
+          <mjx-c class="mjx-c2212"></mjx-c>
+        </mjx-mo>
+        <mjx-mi class="mjx-i" space="3">
+          <mjx-c class="mjx-c1D44F TEX-I"></mjx-c>
+        </mjx-mi>
+        <mjx-mi class="mjx-i">
+          <mjx-c class="mjx-c1D450 TEX-I"></mjx-c>
+        </mjx-mi>
+      </mjx-math>
+      <mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN">|</mo>
+            <mtable columnspacing="1em" rowspacing="4pt">
+              <mtr>
+                <mtd>
+                  <mi>a</mi>
+                </mtd>
+                <mtd>
+                  <mi>b</mi>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>c</mi>
+                </mtd>
+                <mtd>
+                  <mi>d</mi>
+                </mtd>
+              </mtr>
+            </mtable>
+            <mo data-mjx-texclass="CLOSE">|</mo>
+          </mrow>
+          <mo>=</mo>
+          <mi>a</mi>
+          <mi>d</mi>
+          <mo>−</mo>
+          <mi>b</mi>
+          <mi>c</mi>
+        </math></mjx-assistive-mml>
+    </mjx-container>
+  </div>
+</div>
+<div></div>

@@ -1,0 +1,101 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">v2.2.0</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/changelog
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>05<span class="token punctuation">-</span><span class="token number">07</span>
+<span class="token key atrule">version_type</span><span class="token punctuation">:</span> minor</code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/changelog">#type/changelog</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-05-07">#date/2022-05-07</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="v2.2.0">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>v2.2.0
+  </h1>
+</div>
+<div>
+  <blockquote>
+    <p>Feature version of <a data-href="v2.0.0" href="v2.0.0" class="internal-link" target="_blank" rel="noopener">v2.0.0</a></p>
+  </blockquote>
+</div>
+<div>
+  <h2 data-heading="Search">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Search
+  </h2>
+</div>
+<div>
+  <blockquote>
+    <p>New in this version</p>
+  </blockquote>
+</div>
+<div>
+  <p>Search has been added. Click on the looking glass icon in the icon tray to open search.</p>
+</div>
+<div>
+  <p>The search will be expanded upon in the next versions, but for now the search works well enough to be enabled by default.</p>
+</div>
+<div>
+  <p>To disable the search, add this to your config.yml:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">toggles</span><span class="token punctuation">:</span>
+  <span class="token key atrule">features</span><span class="token punctuation">:</span>
+    <span class="token key atrule">search</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">False</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h2 data-heading="Mathjax">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Mathjax
+  </h2>
+</div>
+<div>
+  <blockquote>
+    <p>New in this version</p>
+  </blockquote>
+</div>
+<div>
+  <p>A subset of Latex has been added that can render mathematical equations in a pretty way. Read more here: <a data-href="Implementing Latex" href="Implementing Latex" class="internal-link" target="_blank" rel="noopener">Implementing Latex</a></p>
+</div>
+<div>
+  <h2 data-heading="Bugfixes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Bugfixes
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>The <code>max_note_width</code> setting did not do anything because callouts.css included a width setting that it shouldn't have, this has been corrected.
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div>
+      <div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Regex bug for image links fixed
+      <ul class="has-list-bullet">
+        <li data-line="2">
+          <div class="list-bullet"></div>For code like <code>![](link) some text (with parentheses on the same line)</code>, the regex would match everything until the last <code>)</code>. This was wrong obviously, so this was fixed.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

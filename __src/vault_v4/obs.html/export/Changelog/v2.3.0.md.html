@@ -1,0 +1,102 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">v2.3.0</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/changelog
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>05<span class="token punctuation">-</span><span class="token number">08</span>
+<span class="token key atrule">version_type</span><span class="token punctuation">:</span> minor</code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/changelog">#type/changelog</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-05-08">#date/2022-05-08</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="v2.3.0">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>v2.3.0
+  </h1>
+</div>
+<div>
+  <blockquote>
+    <p>Feature version of <a data-href="v2.0.0" href="v2.0.0" class="internal-link" target="_blank" rel="noopener">v2.0.0</a></p>
+  </blockquote>
+</div>
+<div>
+  <h2 data-heading="Themes &amp; Theme selection">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Themes &amp; Theme selection
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>The standard theme has been renamed to "light" and two more themes have been added, which aim to mimic the look and feel of obsidian's default light and dark themes. You can select the theme you want by clicking the <code>T</code> in the icon tray.
+    </li>
+  </ul>
+</div>
+<div>
+  <h2 data-heading="Minimal template">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Minimal template
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>The minimal template has been added to allow for lighter weight websites. For this to work well, all the little features should be able to be turned on/off at will. These settings have been added. Read more: <a data-href="Performance Tuning" href="Performance Tuning" class="internal-link" target="_blank" rel="noopener">Performance Tuning</a>.
+    </li>
+  </ul>
+</div>
+<div>
+  <h2 data-heading="Life cycle">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Life cycle
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>Upgraded to mermaid 9.0.1. (from unknown version) and corrected the missing source map which gave an error when opening developer tools.
+    </li>
+  </ul>
+</div>
+<div>
+  <h2 data-heading="Refactor">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Refactor
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>The number of css files has been growing, and there was a lot of duplication and conflicts going on during development. The general code has been moved to global_main.css and features get their own css file too. Ongoing project.
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div>A lot of tiny/big css bugs have been discovered, fixed, newly created, discovered... it should be better now than before, hopefully.
+    </li>
+    <li data-line="2">
+      <div class="list-bullet"></div>The css files are now all packaged into 1 file upon export to html for a (tiny) performance boost when loading the page.
+    </li>
+    <li data-line="3">
+      <div class="list-bullet"></div>The obsidian.js file has been split into obsidian_core_header.js and obsidian_core_footer.js and all specific code has been moved into files that can be included/excluded at will.
+    </li>
+    <li data-line="4">
+      <div class="list-bullet"></div>The search data is now gzipped after compilation, and the client now unzips it. The unzip overhead is hopefully small enough compared with the benefits of downloading a considerably smaller data file over the wire, to justify this change.
+    </li>
+  </ul>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

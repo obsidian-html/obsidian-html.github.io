@@ -1,0 +1,76 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Writing a custom graph view template</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/instruction
+<span class="token punctuation">-</span> type/styling
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>04<span class="token punctuation">-</span><span class="token number">24</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/instruction">#type/instruction</a><a class="tag" target="_blank" rel="noopener" href="#type/styling">#type/styling</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-04-24">#date/2022-04-24</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Writing a custom graph view template">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Writing a custom graph view template
+  </h1>
+</div>
+<div>
+  <blockquote>
+    <p>This functionality has been added in version <a data-href="v2.1.0" href="v2.1.0" class="internal-link" target="_blank" rel="noopener">v2.1.0</a> and rewritten in <a data-href="v3.0.0" href="v3.0.0" class="internal-link" target="_blank" rel="noopener">v3.0.0</a>.<br>
+      It is still in beta, so let us know if you are having issues with it or want added functionality: <a data-href="Report Issues &amp; Request features" href="Report Issues &amp; Request features" class="internal-link" target="_blank" rel="noopener">Report Issues &amp; Request features</a>.</p>
+  </blockquote>
+</div>
+<div>
+  <p>See also <a data-href="Graph view" href="Graph view" class="internal-link" target="_blank" rel="noopener">Graph view</a>.</p>
+</div>
+<div>
+  <h2 data-heading="Passing in a custom template">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Passing in a custom template
+  </h2>
+</div>
+<div>
+  <p>If we look at the <a aria-label-position="top" aria-label="Graph view" data-href="Graph view" href="Graph view" class="internal-link" target="_blank" rel="noopener">configuration for graph view</a>, then we see the 'templates' key:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">toggles</span><span class="token punctuation">:</span>
+  <span class="token key atrule">features</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">graph</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">True</span> 
+      <span class="token key atrule">templates</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> 3d
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> 3d
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> builtin&lt;3d<span class="token punctuation">&gt;</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> 2d
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> 2d
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> builtin&lt;2d<span class="token punctuation">&gt;</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>The built-in templates can be found here:<a aria-label-position="top" aria-label="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.js" rel="noopener" class="external-link" href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_2d.js" target="_blank">2d</a> or <a aria-label-position="top" aria-label="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_3d.js" rel="noopener" class="external-link" href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/src/graph/default_grapher_3d.js" target="_blank">3d</a>. </p>
+</div>
+<div>
+  <p>When passing in a custom template, <code>path</code> should be either relative to the working directory that you run the obsidianhtml command from, or absolute, e.g.:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded">    <span class="token key atrule">graph</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">True</span>           
+      <span class="token key atrule">templates</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> custom
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> custom
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> ../obsidian<span class="token punctuation">-</span>html.github.io/__src/custom_grapher.js
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> 2d
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> 2d
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> builtin&lt;2d<span class="token punctuation">&gt;</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div></div>

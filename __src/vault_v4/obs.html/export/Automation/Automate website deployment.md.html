@@ -1,0 +1,83 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Automate website deployment</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">graph_name</span><span class="token punctuation">:</span> Automate website deployment 
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/automation
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>02<span class="token punctuation">-</span><span class="token number">04</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/automation">#type/automation</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-02-04">#date/2022-02-04</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Automate website deployment">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Automate website deployment
+  </h1>
+</div>
+<div>
+  <p>If you have a website hosted based on an obsidian project like I do, it can be useful to create some scripting to automate pushing to your webserver.</p>
+</div>
+<div>
+  <blockquote>
+    <p>Note that these scripts are a starting point, and may not comply to the most up to date security considerations or other best practices!</p>
+  </blockquote>
+</div>
+<div>
+  <h2 data-heading="Using a git repo as an intermediate">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Using a git repo as an intermediate
+  </h2>
+</div>
+<div>
+  <p>The scripts below empty an <em>existing</em> git repo folder, skipping the <code>README.md</code> file and <code>.git</code> directory. The script will then generate the html code an put it in your repo, commit and push. </p>
+</div>
+<div>
+  <p>This will update your git repo with the updated code for your website. This is all the script does. </p>
+</div>
+<div>
+  <p>As a next step, configure a process on your webserver that periodically pulls the git repo, or configure a pipeline to start running on a git push to get this git code deployed on your server. </p>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div><a aria-label-position="top" aria-label="AutomationLinuxGit" data-href="AutomationLinuxGit" href="AutomationLinuxGit" class="internal-link" target="_blank" rel="noopener">Auto push using git (Linux)</a>
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div><a aria-label-position="top" aria-label="AutomationWindows" data-href="AutomationWindows" href="AutomationWindows" class="internal-link" target="_blank" rel="noopener">Auto push using git (Windows)</a>
+    </li>
+  </ul>
+</div>
+<div>
+  <h2 data-heading="Pushing directly to a local webserver">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Pushing directly to a local webserver
+  </h2>
+</div>
+<div>
+  <p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the Git method or something along those lines.</p>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div><a aria-label-position="top" aria-label="AutomationLinuxSSH" data-href="AutomationLinuxSSH" href="AutomationLinuxSSH" class="internal-link" target="_blank" rel="noopener">Auto push to local webserver (Linux)</a>
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div><a aria-label-position="top" aria-label="AutomationWindowsSSH" data-href="AutomationWindowsSSH" href="AutomationWindowsSSH" class="internal-link" target="_blank" rel="noopener">Auto push to local webserver (Windows)</a>
+    </li>
+  </ul>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

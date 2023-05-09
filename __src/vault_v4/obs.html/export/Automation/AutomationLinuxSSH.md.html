@@ -1,0 +1,63 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">AutomationLinuxSSH</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">graph_name</span><span class="token punctuation">:</span> Auto push site using SSH on Linux
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/automation
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>02<span class="token punctuation">-</span><span class="token number">04</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/automation">#type/automation</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-02-04">#date/2022-02-04</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Auto push site to a local webserver on Linux">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Auto push site to a local webserver on Linux
+  </h1>
+</div>
+<div>
+  <p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using th <a aria-label-position="top" aria-label="AutomationLinuxGit" data-href="AutomationLinuxGit" href="AutomationLinuxGit" class="internal-link" target="_blank" rel="noopener">Git method</a> or something along those lines.</p>
+</div>
+<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token comment"># Config</span>
+<span class="token assign-left variable">obsidian_folder</span><span class="token operator">=</span><span class="token string">"/home/user/git/obsidian-html"</span>
+<span class="token assign-left variable">output_folder</span><span class="token operator">=</span><span class="token string">"/home/user/git/obsidian-html/local_output"</span>
+
+<span class="token assign-left variable">config_file</span><span class="token operator">=</span><span class="token string">"/home/user/git/obsidian-html/local_configs/devfruits.yml"</span>
+
+<span class="token assign-left variable">target</span><span class="token operator">=</span><span class="token string">"user@webserver"</span>
+<span class="token assign-left variable">web_folder</span><span class="token operator">=</span><span class="token string">"/home/web/www/devfruits"</span>
+
+<span class="token comment"># Convert Obsidian to HTML</span>
+<span class="token builtin class-name">cd</span> <span class="token variable">$obsidian_folder</span>
+python -m obsidianhtml -i <span class="token variable">$config_file</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -ne <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">"Python script failed. Exited."</span>
+	<span class="token builtin class-name">cd</span> <span class="token variable">$origin</span>
+	<span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword">else</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">"Successfully created html code"</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment"># Remove previous files</span>
+<span class="token function">ssh</span> <span class="token variable">$target</span> <span class="token function">rm</span> -rf <span class="token string">"<span class="token variable">$web_folder</span>/*"</span>
+
+<span class="token comment"># Upload new files</span>
+<span class="token function">scp</span> -r <span class="token string">"<span class="token variable">$output_folder</span>/html/*"</span> <span class="token string">"<span class="token variable">$web_folder</span>/"</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p><a aria-label-position="top" aria-label="Automate website deployment" data-href="Automate website deployment" href="Automate website deployment" class="internal-link" target="_blank" rel="noopener">Other ways of pushing websites</a></p>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

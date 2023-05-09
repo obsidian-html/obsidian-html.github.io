@@ -1,0 +1,86 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">v3.2.1</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/changelog
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>09<span class="token punctuation">-</span><span class="token number">11</span>
+<span class="token key atrule">version_type</span><span class="token punctuation">:</span> patch</code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/changelog">#type/changelog</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-09-11">#date/2022-09-11</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <blockquote>
+    <p>Patch version of <a data-href="v3.2.0" href="v3.2.0" class="internal-link" target="_blank" rel="noopener">v3.2.0</a>. </p>
+  </blockquote>
+</div>
+<div>
+  <p>This could've been a feature version, but I published this mainly to fix major bugs in <a data-href="v3.2.0" href="v3.2.0" class="internal-link" target="_blank" rel="noopener">v3.2.0</a>.</p>
+</div>
+<div>
+  <h2 data-heading="Added features">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Added features
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>We make more use of retries. When a file is not found it will be looked for again by either prepending a '/' or by removing it. When copying included files over, we no longer try to deduce whether we should add '.md', we just try to find the file with and without the added suffix.
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div>Added <code>md_source_host_urls</code> to remove prefixes from urls. This is only usefull for <a data-href="md --> html" href="md --> html" class="internal-link" target="_blank" rel="noopener">md --&gt; html</a> conversion.
+    </li>
+  </ul>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token comment"># Used to strip the http url hostpart of a link to get a relative link</span>
+<span class="token comment"># e.g. for value "https://git.com/user/repo/-/wikis/mywiki/" then:</span>
+<span class="token comment">#   "https://git.com/user/repo/-/wikis/mywiki/folder/markdown.md" --&gt; /folder/markdown.md</span>
+<span class="token key atrule">md_source_host_urls</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>Added <code>toggles/force_filename_to_lowercase</code> to make sure that markdown files with capitals are found.
+    </li>
+  </ul>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">toggles</span><span class="token punctuation">:</span>
+  <span class="token comment"># gitlab is case insensitive, this setting should be true when converting a wiki from that source</span>
+  <span class="token comment"># note that this does not impact the output, Hello.md will be written to Hello.html</span>
+  <span class="token key atrule">force_filename_to_lowercase</span><span class="token punctuation">:</span> <span class="token boolean important">False</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h2 data-heading="Bugfixes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Bugfixes
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>The warning module import was removed in the last version by mistake. This would cause a crash if it would warn about an external image not being imported.
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div><code>obsidian serve</code> would give <code>FileNotFoundError: [Errno 2] No such file or directory</code> errors after a rerun of <code>obsidian convert</code> (because the folder it was hosting would've been temporarily removed). <a aria-label-position="top" aria-label="https://github.com/obsidian-html/obsidian-html/issues/398" rel="noopener" class="external-link" href="https://github.com/obsidian-html/obsidian-html/issues/398" target="_blank">This was fixed</a>.
+    </li>
+    <li data-line="2">
+      <div class="list-bullet"></div>A valid md link of <code>[test](this_is_a_(long)_link.md)</code> was being parsed as <code>this_is_a_(long</code> instead of <code>this_is_a_(long)_link.md</code>. Fixed by requiring no spaces in link, which is conform spec.
+    </li>
+  </ul>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

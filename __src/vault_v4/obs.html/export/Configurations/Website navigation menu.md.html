@@ -1,0 +1,87 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Website navigation menu</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/configuration
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>04<span class="token punctuation">-</span><span class="token number">17</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/configuration">#type/configuration</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-04-17">#date/2022-04-17</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Website navigation menu">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Website navigation menu
+  </h1>
+</div>
+<div>
+  <blockquote>
+    <p>New in <a data-href="v2.0.0" href="v2.0.0" class="internal-link" target="_blank" rel="noopener">v2.0.0</a></p>
+  </blockquote>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">navbar_links</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>You can set this configuration to add links to notes at the top of the page. </p>
+</div>
+<div>
+  <p>This is the config used for this website:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">navbar_links</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Home
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> index.html
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> About
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> General Information/About ObsidianHtml.html  
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Quickstart
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> Instructions/Quickstart.html
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Styling
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> Configurations/Styling/Styling.html    
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Modes
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> Configurations/Modes.html
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Features
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> Configurations/Features.html
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Configurations
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> Configurations/Configuration Options.html
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> News
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> News.html    
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>Make sure to use the full relative path to the note as measured from your webroot (so exclude the <a aria-label-position="top" aria-label="Configuration Options > Html Url Prefix" data-href="Configuration Options#Html Url Prefix" href="Configuration Options#Html Url Prefix" class="internal-link" target="_blank" rel="noopener">prefix</a>).</p>
+</div>
+<div>
+  <h2 data-heading="External links in the website navigation menu">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>External links in the website navigation menu
+  </h2>
+</div>
+<div>
+  <blockquote>
+    <p>New in <a data-href="v3.1.0" href="v3.1.0" class="internal-link" target="_blank" rel="noopener">v3.1.0</a></p>
+  </blockquote>
+</div>
+<div>
+  <p>If you want to link to a different website, then you should add <code>type: external</code> to the link item, e.g.</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">navbar_links</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Home
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> index.html
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Code
+    <span class="token key atrule">link</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/obsidian<span class="token punctuation">-</span>html/obsidian<span class="token punctuation">-</span>html
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> external    
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

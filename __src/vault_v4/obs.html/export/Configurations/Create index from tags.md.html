@@ -1,0 +1,82 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Create index from tags</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> feature/dynamic_index
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>02<span class="token punctuation">-</span><span class="token number">13</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#feature/dynamic_index">#feature/dynamic_index</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-02-13">#date/2022-02-13</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Create index from tags">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Create index from tags
+  </h1>
+</div>
+<div>
+  <p>If you want to build an index note on the fly, based on selected tags, you can use this feature.</p>
+</div>
+<div>
+  <p>The basic outline is this:</p>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>Select the tags on which you want to match notes, each tag will get its own header
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div>Select the sort order, for which order you want the notes to appear under each header
+    </li>
+    <li data-line="2">
+      <div class="list-bullet"></div>Select the placement of the notes that were matched on the selected tags, but did not have a value for the criterium that you selected for the sort (on top or on bottom).
+    </li>
+  </ul>
+</div>
+<div>
+  <p>To enable this setting, <a data-href="Copy vault to temp dir" href="Copy vault to temp dir" class="internal-link" target="_blank" rel="noopener">Copy vault to temp dir</a> must be <strong>enabled</strong>. This is because for this feature to work, it has to create a note in the <a aria-label-position="top" aria-label="Configuration Options > obsidian_folder_path_str" data-href="Configuration Options#obsidian_folder_path_str" href="Configuration Options#obsidian_folder_path_str" class="internal-link" target="_blank" rel="noopener">obsidian_folder_path</a>, and this path will be the user's actual vault when copy vault to temp dir is disabled.</p>
+</div>
+<div>
+  <h2 data-heading="Example">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Example
+  </h2>
+</div>
+<div>
+  <p>You can view an index that is created in this way under <a class="internal-link is-unresolved" data-href="/index_from_tags" href="/index_from_tags" target="_blank" rel="noopener">/index_from_tags</a>. </p>
+</div>
+<div>
+  <blockquote>
+    <p>Fun fact: we co-published this version of the website next to the main website using the <a data-href="Configuration Options#Html Url Prefix" href="Configuration Options#Html Url Prefix" class="internal-link" target="_blank" rel="noopener">Configuration Options &gt; Html Url Prefix</a> setting!</p>
+  </blockquote>
+</div>
+<div>
+  <h2 data-heading="Minimal configuration">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Minimal configuration
+  </h2>
+</div>
+<div>
+  <p>Don't be intimidated by the configuration settings for this feature, in it's minimal form, this would be enough to enable it:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded">toggles
+  <span class="token key atrule">features</span><span class="token punctuation">:</span>
+    <span class="token key atrule">create_index_from_tags</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">True</span>
+      <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>my_tag<span class="token punctuation">,</span> my_other_tag<span class="token punctuation">]</span>
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

@@ -1,0 +1,89 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Export vault files to html output</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/configuration
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>07<span class="token punctuation">-</span><span class="token number">31</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/configuration">#type/configuration</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-07-31">#date/2022-07-31</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Export vault files to html output">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Export vault files to html output
+  </h1>
+</div>
+<div>
+  <blockquote>
+    <p>New in <a data-href="v3.2.0" href="v3.2.0" class="internal-link" target="_blank" rel="noopener">v3.2.0</a></p>
+  </blockquote>
+</div>
+<div>
+  <h2 data-heading="Configuration">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Configuration
+  </h2>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">file_exports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">encoding</span><span class="token punctuation">:</span> binary
+    <span class="token key atrule">src</span><span class="token punctuation">:</span> Resources/Includes/favicon.ico
+    <span class="token key atrule">dst</span><span class="token punctuation">:</span> favicon.ico
+  <span class="token punctuation">-</span> <span class="token key atrule">encoding</span><span class="token punctuation">:</span> utf<span class="token punctuation">-</span><span class="token number">8</span>
+    <span class="token key atrule">src</span><span class="token punctuation">:</span> Resources/Includes/christmas_snowflakes.js
+    <span class="token key atrule">dst</span><span class="token punctuation">:</span> obs.html/static/christmas_snowflakes.js
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>This will export the files in the vault to the html_output_folder.</p>
+</div>
+<div>
+  <h3 data-heading="Paths">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Paths
+  </h3>
+</div>
+<div>
+  <p>Source paths are relative to the vault path (as configured in <code>obsidian_folder_path_str</code>). When <code>copy_vault_to_tempdir</code> is enabled, this will be a temporary directory with the same contents as the folder configured on <code>obsidian_folder_path_str</code>.</p>
+</div>
+<div>
+  <p>Dest paths are relative to the folder <code>html_output_folder_path_str</code>.</p>
+</div>
+<div>
+  <p>You can go outside of these folder if you wish by providing absolute paths:</p>
+</div>
+<div><pre><code>file_exports:
+  - encoding: binary
+    src: /home/username/Downloads/favicon.ico
+    dst: favicon.ico
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h3 data-heading="Encoding">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Encoding
+  </h3>
+</div>
+<div>
+  <p>The default encoding of <code>utf-8</code> can be omitted:</p>
+</div>
+<div><pre class="language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">file_exports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">src</span><span class="token punctuation">:</span> Resources/Includes/christmas_snowflakes.js
+    <span class="token key atrule">dst</span><span class="token punctuation">:</span> obs.html/static/christmas_snowflakes.js
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

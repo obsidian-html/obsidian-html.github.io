@@ -1,0 +1,75 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Implementing Footnotes</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> feature/parsing_markdown
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>08<span class="token punctuation">-</span><span class="token number">26</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#feature/parsing_markdown">#feature/parsing_markdown</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-08-26">#date/2022-08-26</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Implementing Footnotes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Implementing Footnotes
+  </h1>
+</div>
+<div>
+  <p>Footnotes are baked in to python-markdown, only that extension lacks inline footnotes.<br>
+    These have been added in <a data-href="v3.2.0" href="v3.2.0" class="internal-link" target="_blank" rel="noopener">v3.2.0</a>.</p>
+</div>
+<div>
+  <h2 data-heading="Normal footnotes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Normal footnotes
+  </h2>
+</div>
+<div><pre class="language-md" tabindex="0"><code class="language-md is-loaded">Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+
+<span class="token url-reference url"><span class="token punctuation">[</span><span class="token variable">^1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> meaningful!</span>
+<span class="token url-reference url"><span class="token punctuation">[</span><span class="token variable">^bignote</span><span class="token punctuation">]</span><span class="token punctuation">:</span> Here's</span> one with multiple paragraphs and code.
+	Indent paragraphs to include them in the footnote.
+    <span class="token code-snippet code keyword">`{ my code }`</span>
+    Add as many paragraphs as you like.
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>Here's a simple footnote,<sup data-footnote-id="fnref-1-7d0826599ce8680f" class="footnote-ref" id="fnref-1-7d0826599ce8680f"><a href="#fn-1-7d0826599ce8680f" class="footnote-link" target="_blank" rel="noopener">[1]</a></sup> and here's a longer one.<sup data-footnote-id="fnref-2-7d0826599ce8680f" class="footnote-ref" id="fnref-2-7d0826599ce8680f"><a href="#fn-2-7d0826599ce8680f" class="footnote-link" target="_blank" rel="noopener">[2]</a></sup></p>
+</div>
+<div></div>
+<div></div>
+<div>
+  <h2 data-heading="Some long text">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Some long text
+  </h2>
+</div>
+<div>
+  <p>I've added some text here to have scrolling happen.<br>
+    You can ignore this.</p>
+</div>
+<div>
+  <blockquote>
+    <p>Mauris tincidunt semper nibh non mollis. Nunc gravida vehicula porttitor. Phasellus finibus diam non est semper cursus. Ut molestie purus vitae consequat pellentesque. Sed mattis felis at risus convallis consequat. Nunc luctus massa vel sem vulputate, vitae pellentesque mauris tincidunt. Pellentesque fringilla eu leo in dignissim. Maecenas nec sapien leo. Nullam eget ullamcorper lorem, quis viverra tortor. Proin sit amet consequat eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ornare, est vitae varius ultrices, nisi ipsum pharetra nisi, a tempor metus neque quis erat. Curabitur tempus sem vel est ultricies convallis. Quisque elementum vulputate purus, eget euismod lorem feugiat in.</p>
+    <p>Vivamus vehicula, ex at pharetra venenatis, purus lorem vestibulum mi, vel suscipit tortor risus non diam. Donec at lobortis lectus. Fusce congue ipsum eget consectetur elementum. Curabitur malesuada pretium eros, ut rhoncus magna. Aenean eu sodales ligula. Cras pulvinar augue nec ipsum consequat volutpat. Phasellus ultricies mauris in nisi mattis, ut tempor magna iaculis. Etiam quis scelerisque justo, blandit blandit justo. Quisque at ante at orci lobortis pretium at a erat. Proin semper pharetra sapien nec mattis. Sed ac elementum lectus, in vehicula quam. Duis sit amet bibendum neque. Morbi venenatis justo dui, varius gravida nibh egestas a. Etiam luctus erat sed feugiat iaculis.</p>
+    <p>Sed ut ipsum sit amet tellus dapibus pellentesque. Ut sem quam, ultrices in interdum sit amet, sollicitudin nec diam. Aenean sit amet vulputate metus, pharetra venenatis eros. Duis tincidunt quam turpis. Nunc et arcu elit. Nunc vitae purus ut dui tincidunt maximus. In eget tortor eu nibh venenatis fermentum. Aliquam convallis condimentum elementum. Vivamus vel risus egestas, porttitor dui non, volutpat tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </blockquote>
+</div>
+<div>
+  <h2 data-heading="Inline footnotes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Inline footnotes
+  </h2>
+</div>

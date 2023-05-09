@@ -1,0 +1,92 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">AutomationWindows</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">graph_name</span><span class="token punctuation">:</span> Auto push site using Git on Windows
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/automation
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>02<span class="token punctuation">-</span><span class="token number">04</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/automation">#type/automation</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-02-04">#date/2022-02-04</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Auto push site using Git on Windows">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Auto push site using Git on Windows
+  </h1>
+</div>
+<div>
+  <blockquote>
+    <p>I did not feel like rewriting this script. This is just here as a reference. Be sure to update all the hardcode values for something that makes sense for your environment.</p>
+  </blockquote>
+</div>
+<div><pre class="language-powershell" tabindex="0"><code class="language-powershell is-loaded"><span class="token keyword">Function</span> <span class="token function">Publish-ObsidianExample</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">param</span><span class="token punctuation">(</span>
+		<span class="token namespace">[switch]</span><span class="token variable">$NoPush</span>
+	<span class="token punctuation">)</span>
+	
+	<span class="token variable">$origin</span> = <span class="token function">pwd</span>
+	
+	<span class="token comment"># Remove all files in repo except .git/ and README.md</span>
+	cd <span class="token string">'C:\Users\Installer\Documents\git\obsidian-html.github.io'</span>
+	
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-not</span> $?<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">Write-Error</span> <span class="token string">"Could not cd to target dir. Excited"</span>
+		cd <span class="token variable">$origin</span>
+		<span class="token keyword">return</span> <span class="token boolean">$false</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment"># remove all dirs except for .git</span>
+	<span class="token variable">$dirs</span> = <span class="token function">Get-ChildItem</span> <span class="token operator">-</span>Directory
+	<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$dir</span> in <span class="token variable">$dirs</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$dir</span><span class="token punctuation">.</span>Name <span class="token operator">-eq</span> <span class="token string">'.git'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">continue</span>
+		<span class="token punctuation">}</span>
+		<span class="token variable">$dir</span> <span class="token punctuation">|</span> <span class="token function">Remove-Item</span> <span class="token operator">-</span>Recurse <span class="token operator">-</span>Force
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment"># remove all files in root except for README.md</span>
+	<span class="token variable">$files</span> = <span class="token function">Get-ChildItem</span> <span class="token operator">-</span>File
+	<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$file</span> in <span class="token variable">$files</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$file</span><span class="token punctuation">.</span>Name <span class="token operator">-eq</span> <span class="token string">'README.md'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">continue</span>
+		<span class="token punctuation">}</span>
+		<span class="token variable">$file</span> <span class="token punctuation">|</span> <span class="token function">Remove-Item</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment"># Convert Obsidian to HTML</span>
+	cd <span class="token string">"C:\Users\Installer\Documents\git\obsidian-html"</span>
+	python <span class="token operator">-</span>m obsidianhtml <span class="token operator">-</span>i <span class="token string">"C:\Users\Installer\Documents\ObsidianServer\configs\obsidian_example.yml"</span>
+	
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-not</span> $?<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">Write-Error</span> <span class="token string">"Python script failed. Exited."</span>
+		cd <span class="token variable">$origin</span>
+		<span class="token keyword">return</span> <span class="token boolean">$false</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment"># Git push</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$NoPush</span> <span class="token operator">-eq</span> <span class="token boolean">$false</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		cd <span class="token string">'C:\Users\Installer\Documents\git\obsidian-html.github.io'</span>
+		git add <span class="token punctuation">.</span> <span class="token operator">--</span>all
+		git commit <span class="token operator">-</span>m <span class="token string">"autopush"</span>
+		git push
+	<span class="token punctuation">}</span>
+	
+	cd <span class="token variable">$origin</span>
+<span class="token punctuation">}</span>
+
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

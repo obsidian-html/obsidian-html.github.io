@@ -1,0 +1,74 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Bootstrapping Python on Windows</div>
+</div>
+<div>
+  <p>On some systems, you might have permissions to run python, and to install to your homedir, but standard python installations are prohibited by system policies.</p>
+</div>
+<div>
+  <p>In that case you can manually install python by just downloading the package and using it to create a virtual environment.</p>
+</div>
+<div>
+  <p>These instructions are listed on this page.</p>
+</div>
+<div>
+  <h2 data-heading="Get package">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Get package
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div>Go to <a rel="noopener" class="external-link" href="https://www.nuget.org/packages/python" target="_blank">https://www.nuget.org/packages/python</a> and click download package.
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div>Change the extension of the downloaded file to <code>.zip</code> and unzip the archive so that you get a folder like <code>C:\Users\User\Downloads\python-3.10.7</code>.
+    </li>
+    <li data-line="2">
+      <div class="list-bullet"></div>Open a terminal (powershell), and run the following command to test functionality. Make sure to change the path so that it is correct for your situation (and do so for all the following commands):
+    </li>
+  </ul>
+</div>
+<div><pre class="language-powershell" tabindex="0"><code class="language-powershell is-loaded">C:\Users\User\Downloads\python-3<span class="token punctuation">.</span>10<span class="token punctuation">.</span>7\python<span class="token punctuation">.</span>exe <span class="token operator">--</span>version
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h2 data-heading="Ensure pip and install virtualenv">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Ensure pip and install virtualenv
+  </h2>
+</div>
+<div>
+  <p>Pip will be preinstalled in this package, but will not function correctly. This is resolved by running ensure pip:</p>
+</div>
+<div><pre class="language-powershell" tabindex="0"><code class="language-powershell is-loaded">C:\Users\User\Downloads\python-3<span class="token punctuation">.</span>10<span class="token punctuation">.</span>7\python<span class="token punctuation">.</span>exe <span class="token operator">-</span>m ensurepip
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <p>As we are going to create a virtual environment, we need to use pip to install the virtualenv package.</p>
+</div>
+<div><pre class="language-powershell" tabindex="0"><code class="language-powershell is-loaded">C:\Users\User\Downloads\python-3<span class="token punctuation">.</span>10<span class="token punctuation">.</span>7\python<span class="token punctuation">.</span>exe <span class="token operator">-</span>m pip install virtualenv
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h2 data-heading="Create virtualenv">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Create virtualenv
+  </h2>
+</div>
+<div>
+  <p>We are now going to create a virtualenv. This will result in a new folder in the folder that we are in currently, so use <code>cd</code> to move to a folder where you want this to be created. </p>
+</div>
+<div>
+  <p>Later, we are also going to download an example vault to test obsidianhtml, and it can be nice to have the two folders next to eachother, so consider moving to a folder at a place where you keep your git projects.</p>
+</div>
+<div>
+  <p>The following command will create a folder called <code>obsenv</code>:</p>
+</div>
+<div><pre class="language-powershell" tabindex="0"><code class="language-powershell is-loaded">C:\Users\User\Downloads\python-3<span class="token punctuation">.</span>10<span class="token punctuation">.</span>7\python<span class="token punctuation">.</span>exe <span class="token operator">-</span>m venv obsenv
+</code><button class="copy-code-button">Copy</button></pre>
+</div>

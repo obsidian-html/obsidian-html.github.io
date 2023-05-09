@@ -1,0 +1,87 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Links in included notes do not work or show up as external</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/bug_report
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>03<span class="token punctuation">-</span><span class="token number">11</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/bug_report">#type/bug_report</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-03-11">#date/2022-03-11</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Links in included notes do not work / show up as external">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Links in included notes do not work / show up as external
+  </h1>
+</div>
+<div>
+  <blockquote>
+    <p>Applies to versions: <a data-href="v1.0.2" href="v1.0.2" class="internal-link" target="_blank" rel="noopener">v1.0.2</a> and earlier<br>
+      Fixed in version <a data-href="v1.1.0" href="v1.1.0" class="internal-link" target="_blank" rel="noopener">v1.1.0</a></p>
+  </blockquote>
+</div>
+<div>
+  <h3 data-heading="Issue">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Issue
+  </h3>
+</div>
+<div>
+  <p>If a note contains a link, and this note is included in another note, that is at a different folder depth, then the relative links in the markdown output are not corrected.</p>
+</div>
+<div>
+  <h3 data-heading="tl;dr">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>tl;dr
+  </h3>
+</div>
+<div>
+  <p>Just upgrade to <a data-href="v1.1.0" href="v1.1.0" class="internal-link" target="_blank" rel="noopener">v1.1.0</a>, it is fixed there</p>
+</div>
+<div>
+  <h3 data-heading="Workaround for earlier versions">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Workaround for earlier versions
+  </h3>
+</div>
+<div>
+  <p>The workaround should be to set relative_path_md to false, forcing absolute paths in the markdown output. But this workaround did not work for version <a data-href="v1.0.1" href="v1.0.1" class="internal-link" target="_blank" rel="noopener">v1.0.1</a> and lower due to a bug, this workaround is valid only for version <a data-href="v1.0.2" href="v1.0.2" class="internal-link" target="_blank" rel="noopener">v1.0.2</a>.</p>
+</div>
+<div>
+  <p>Though succesful in avoiding this bug, this setting would make the markdown output not navigable in certain markdown readers, such as gitlab and vs code preview mode.</p>
+</div>
+<div>
+  <h3 data-heading="Fix">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Fix
+  </h3>
+</div>
+<div>
+  <p>This issue is fixed starting from version <a data-href="v1.1.0" href="v1.1.0" class="internal-link" target="_blank" rel="noopener">v1.1.0</a>, as there the code for getting the included note code is aware of the page depth of the calling note, allowing for the links to be generated correctly from the get go.</p>
+</div>
+<div>
+  <h3 data-heading="DoD">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>DoD
+  </h3>
+</div>
+<div>
+  <p>A regression test has been added for this usecase.</p>
+</div>
+<div>
+  <div class="embedded-backlinks" style="display: none;"></div>
+</div>

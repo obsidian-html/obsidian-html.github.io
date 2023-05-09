@@ -1,0 +1,108 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">v3.2.0</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/changelog
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>07<span class="token punctuation">-</span><span class="token number">31</span>
+<span class="token key atrule">version_type</span><span class="token punctuation">:</span> minor</code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/changelog">#type/changelog</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-07-31">#date/2022-07-31</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="v3.2.0">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>v3.2.0
+  </h1>
+</div>
+<div>
+  <blockquote>
+    <p>Feature version of <a data-href="v3.0.0" href="v3.0.0" class="internal-link" target="_blank" rel="noopener">v3.0.0</a>. </p>
+  </blockquote>
+</div>
+<div>
+  <h2 data-heading="Added features">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Added features
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div><a data-href="Obsidianhtml Run" href="Obsidianhtml Run" class="internal-link" target="_blank" rel="noopener">Obsidianhtml Run</a> has been added to help in getting a first working config for new users.
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div>It is now possible to configure vault files to be exported to any path in the html output folder. <a data-href="Export vault files to html output" href="Export vault files to html output" class="internal-link" target="_blank" rel="noopener">Export vault files to html output</a>.
+    </li>
+    <li data-line="2">
+      <div class="list-bullet"></div>The rsync copy method was added. This should be way quicker and be less buggy on MacOS. This is set as the default. If rsync is not present it fallsback to the older shutil method. Read more: <a data-href="Copy vault to temp dir" href="Copy vault to temp dir" class="internal-link" target="_blank" rel="noopener">Copy vault to temp dir</a>
+    </li>
+    <li data-line="3">
+      <div class="list-bullet"></div>Inline footnotes are now supported. <a data-href="Implementing Footnotes" href="Implementing Footnotes" class="internal-link" target="_blank" rel="noopener">Implementing Footnotes</a>
+    </li>
+    <li data-line="4">
+      <div class="list-bullet"></div><a data-href="Breadcrumbs" href="Breadcrumbs" class="internal-link" target="_blank" rel="noopener">Breadcrumbs</a> feature added.
+    </li>
+    <li data-line="5">
+      <div class="list-bullet"></div><mark>Highlight</mark> and <del>strikethrough</del> formatting has been added. <a data-href="Getting the basics right#Formatting" href="Getting the basics right#Formatting" class="internal-link" target="_blank" rel="noopener">Getting the basics right &gt; Formatting</a>
+    </li>
+    <li data-line="6">
+      <div class="list-bullet"></div>ObisidianHtml now briefly highlights the section that was linked to when following a link.
+    </li>
+    <li data-line="7">
+      <div class="list-bullet"></div>Latex (mathjax) tweaks to offer greater range of support, and the correct fonts are used now. <a data-href="Implementing Latex" href="Implementing Latex" class="internal-link" target="_blank" rel="noopener">Implementing Latex</a>.
+    </li>
+    <li data-line="8">
+      <div class="list-bullet"></div>The <a data-href="Tags Page" href="Tags Page" class="internal-link" target="_blank" rel="noopener">Tags Page</a> now includes folding, so that you get all tags on one page.
+    </li>
+    <li data-line="9">
+      <div class="list-bullet"></div>Version can now be queried consistently using <code>obsidianhtml version</code>
+    </li>
+    <li data-line="10">
+      <div class="list-bullet"></div>Obsidian has a special behavior regarding the <code>tags:</code> frontmatter key, this has been added, and an empty <code>tags:</code> key now also no longer gives an error.
+    </li>
+  </ul>
+</div>
+<div>
+  <h2 data-heading="Bugfixes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Bugfixes
+  </h2>
+</div>
+<div>
+  <ul class="has-list-bullet">
+    <li data-line="0">
+      <div class="list-bullet"></div><code>\|</code> as can be used when wanting to type <code>|</code> in a table, no longer leads to butchered table output. Note that any occurence of <code>\|</code> outside of codeblocks/-lines will be replaced with <code>|</code>!
+    </li>
+    <li data-line="1">
+      <div class="list-bullet"></div>Relative and absolute markdown links can be used interchangably on Obsidian, this was not yet the case in obsidianhtml. This has been fixed.
+    </li>
+    <li data-line="2">
+      <div class="list-bullet"></div>There were bugs when <a aria-label-position="top" aria-label="https://github.com/obsidian-html/obsidian-html/issues/327" rel="noopener" class="external-link" href="https://github.com/obsidian-html/obsidian-html/issues/327" target="_blank">disabling # create_index_from_dir_structure</a>. This has been fixed. Same for disabling the graph.
+    </li>
+    <li data-line="3">
+      <div class="list-bullet"></div><a aria-label-position="top" aria-label="https://github.com/obsidian-html/obsidian-html/issues/388" rel="noopener" class="external-link" href="https://github.com/obsidian-html/obsidian-html/issues/388" target="_blank">Fix disallowed MIME type (“text/plain”) on Windows</a>. This happened when following the instructions in the documentation telling you to run <code>python -m http.server</code>. These instructions have been replaced with <code>obsidianhtml serve</code>. This is also a new tool that uses http.server with extra settings to serve js files as <code>application/javascript</code>.
+    </li>
+    <li data-line="4">
+      <div class="list-bullet"></div>Bugfix for when one <a aria-label-position="top" aria-label="https://github.com/obsidian-html/obsidian-html/issues/332" rel="noopener" class="external-link" href="https://github.com/obsidian-html/obsidian-html/issues/332" target="_blank">exports their output into their vault</a> (note: this is not recommended). Underlying bug was an issue in the new note finding code.
+    </li>
+  </ul>
+</div>
+<div>
+  <h2 data-heading="Changes">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Changes
+  </h2>
+</div>

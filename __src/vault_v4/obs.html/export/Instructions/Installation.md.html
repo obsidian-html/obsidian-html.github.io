@@ -1,0 +1,100 @@
+<div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+<div>
+  <div class="inline-title" contenteditable="true" spellcheck="false" tabindex="-1" enterkeyhint="done">Installation</div>
+</div>
+<div><pre class="frontmatter language-yaml" tabindex="0"><code class="language-yaml is-loaded"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> type/instruction
+<span class="token punctuation">-</span> date/2022<span class="token punctuation">-</span>02<span class="token punctuation">-</span><span class="token number">12</span></code><button class="copy-code-button">Copy</button></pre>
+  <div class="frontmatter-container">
+    <div class="frontmatter-container-header">
+      <div class="frontmatter-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <path d="M3 8L12 17L21 8"></path>
+        </svg></div>Metadata
+    </div>
+    <div class="frontmatter-section mod-tags"><span class="frontmatter-section-label">Tags</span>
+      <div class="frontmatter-section-tags"><a class="tag" target="_blank" rel="noopener" href="#type/instruction">#type/instruction</a><a class="tag" target="_blank" rel="noopener" href="#date/2022-02-12">#date/2022-02-12</a></div>
+    </div>
+  </div>
+</div>
+<div>
+  <h1 data-heading="Installation">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Installation
+  </h1>
+</div>
+<div>
+  <h2 data-heading="Prerequisites">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Prerequisites
+  </h2>
+</div>
+<div>
+  <p>Before starting installation, make sure that you have Python installed (version 3.9 or more recent).</p>
+</div>
+<div>
+  <p>Pip is a package manager, installed along with Python, that we use to install ObsidianHtml and all its dependencies. Often you need to update pip after installing Python to have it work. </p>
+</div>
+<div>
+  <p>Do this by executing the following command:</p>
+</div>
+<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">pip <span class="token function">install</span> --upgrade pip
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h3 data-heading="On Windows">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>On Windows
+  </h3>
+</div>
+<div>
+  <blockquote>
+    <p>Windows can require some extra attention to get started. Read <a data-href="Tutorial - Installation on Windows" href="Tutorial - Installation on Windows" class="internal-link" target="_blank" rel="noopener">Tutorial - Installation on Windows</a> for a deep dive.</p>
+  </blockquote>
+</div>
+<div>
+  <p>Windows needs pythonnet to be installed. You should be able to do this by running this command:</p>
+</div>
+<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">pip <span class="token function">install</span> --pre pythonnet
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <blockquote>
+    <p>In the future the <code>--pre</code> might become obsolete.</p>
+  </blockquote>
+</div>
+<div>
+  <p>If this doesn't work consult <a rel="noopener" class="external-link" href="https://stackoverflow.com/questions/67418533/how-to-fix-error-during-pythonnet-installation/67418773#67418773" target="_blank">https://stackoverflow.com/questions/67418533/how-to-fix-error-during-pythonnet-installation/67418773#67418773</a> <strong>and</strong> please let us know: <a data-href="Report Issues &amp; Request features" href="Report Issues &amp; Request features" class="internal-link" target="_blank" rel="noopener">Report Issues &amp; Request features</a> so that we can improve this instruction.</p>
+</div>
+<div>
+  <h2 data-heading="Installation">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Installation
+  </h2>
+</div>
+<div>
+  <p>You can choose to install ObsidianHtml via the official PyPi package, or opt to use the latest build. </p>
+</div>
+<div>
+  <p>The latest build will have more features / bugs fixed, but will often also have more new bugs. We advice to use the latest published version, and only opt for the most recent version if you run into problems. </p>
+</div>
+<div>
+  <h3 data-heading="Latest published version">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Latest published version
+  </h3>
+</div>
+<div><pre class="language-bash" tabindex="0"><code class="language-bash is-loaded">pip <span class="token function">install</span> obsidianhtml
+</code><button class="copy-code-button">Copy</button></pre>
+</div>
+<div>
+  <h3 data-heading="Most recent build">
+    <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+        <path d="M3 8L12 17L21 8"></path>
+      </svg></div>Most recent build
+  </h3>
+</div>
