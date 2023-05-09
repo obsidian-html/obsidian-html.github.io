@@ -32,7 +32,7 @@ The documentation layout is used for this site. This layout is suited for people
 The tabs layout is for people who use the smart note taking / zettelkasten methods, where dense linkage is prefered over giving a strict structure from the get-go. It allows to have multiple notes open at one time, and to scroll back and forth, following a thread of related notes. Tabs has some added navigation options to mediate in the infinite scrolling of notes. Read more on that [here](../../Configurations/Styling/Tabs%20Layout.md).   
    
 ### Minimal   
-> New in [v2.3.0](../../Changelog/v2.3.0.md)   
+> New in [v2.3.0](/not_created.md)   
    
 The minimal template has been added to cut away any "frivolous" features that aren't strictly necessary to view/navigate your site. It removes the menu, graph view, and search.   
    

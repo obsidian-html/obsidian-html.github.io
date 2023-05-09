@@ -4,7 +4,7 @@ tags:
 - date/2022-07-31
 ---
    
-> New in [v3.2.0](../../Changelog/v3.2.0.md)   
+> New in [v3.2.0](/not_created.md)   
    
 ## Configuration   
 ``` yaml

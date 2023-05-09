@@ -2,7 +2,7 @@
 {}
 ---
    
-> New in [v3.4.0](../../Changelog/v3.4.0.md)   
+> New in [v3.4.0](/not_created.md)   
    
 > Only supported in [Documentation Layout](../../Configurations/Styling/Styling.md#documentation)!   
    

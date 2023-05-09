@@ -27,4 +27,4 @@ For the bugfixes, and other minor changes, see here: [https://github.com/obsidia
    
 ## Patches   
    
-- [v1.0.1](../Changelog/v1.0.1.md)
+- [v1.0.1](/not_created.md)

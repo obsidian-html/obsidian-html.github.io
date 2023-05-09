@@ -4,7 +4,7 @@ tags:
 - date/2022-02-20
 ---
    
-> New in [v1.0.0](../../Changelog/v1.0.0.md)   
+> New in [v1.0.0](/not_created.md)   
    
 If you want to build an index note on the fly, where it just shows the directory structure of the html output, then you can enable this feature.   
    
@@ -83,9 +83,9 @@ toggles:
    
    
 ### Glob patterns   
-> Added in [v3.3.0](../../Changelog/v3.3.0.md). Note this only applies to this feature, not the general exclude_folders setting!   
+> Added in [v3.3.0](/not_created.md). Note this only applies to this feature, not the general exclude_folders setting!   
    
-Starting with [v3.3.0](../../Changelog/v3.3.0.md) you can now use glob pattern in the `exclude_subfolders` and `exclude_files` settings.    
+Starting with [v3.3.0](/not_created.md) you can now use glob pattern in the `exclude_subfolders` and `exclude_files` settings.    
    
 For example, to exclude all folders called `Assets`, use:   
    

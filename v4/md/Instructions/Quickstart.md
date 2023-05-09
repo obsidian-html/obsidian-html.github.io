@@ -43,7 +43,7 @@ pip install obsidianhtml
    
    
 ## Run   
-> New in [v3.2.0](../Changelog/v3.2.0.md).    
+> New in [v3.2.0](/not_created.md).    
    
 To hit the ground running you can use `obsidianhtml run`. This way you only have to provide the path to a note that will serve as your homepage. (Parts of) the rest of your vault will be included by following the links on your entrypoint note. The vault is then converted to html and the website is hosted on [http://localhost:8888](http://localhost:8888)   
    

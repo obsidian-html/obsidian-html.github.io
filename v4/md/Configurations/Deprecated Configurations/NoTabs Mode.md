@@ -4,8 +4,8 @@ tags:
 - date/2022-03-15
 ---
    
-> New in version [v1.2.0](../../Changelog/v1.2.0.md)   
-> **Removed in version [v2.0.0](../../Changelog/v2.0.0.md)**   
+> New in version [v1.2.0](/not_created.md)   
+> **Removed in version [v2.0.0](/not_created.md)**   
    
 This setting has been removed:   
 ``` yaml

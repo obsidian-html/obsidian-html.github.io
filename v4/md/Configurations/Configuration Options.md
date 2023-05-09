@@ -195,7 +195,7 @@ Read more: [Copy vault to temp dir](../Configurations/Modes/Copy%20vault%20to%20
 > This setting should be enabled for the option [Create index from tags](../Configurations/Modes/Create%20index%20from%20tags.md) to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off.    
    
 ### included_file_suffixes   
-> Added in [v1.0.0](../Changelog/v1.0.0.md)   
+> Added in [v1.0.0](/not_created.md)   
    
 ``` yaml
 included_file_suffixes: ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'pdf', 'mp4', 'webm', 'mp3', 'wav']
@@ -207,7 +207,7 @@ ObsidianHtml needs to be able to discern between included notes and included fil
 This is a configurable setting because we might've missed certain suffixes of files that are includable. If you find any that you miss, please let us know, so we can add them in the new version. In the mean time you can add them for your own setup via this setting.   
    
 ### video_format_suffixes   
-> Added in [v1.1.0](../Changelog/v1.1.0.md)   
+> Added in [v1.1.0](/not_created.md)   
    
 ``` yaml
 video_format_suffixes: ['mp4', 'webm']
@@ -221,7 +221,7 @@ This is a configurable setting because we might've missed certain suffixes of fi
 Note that if you add it yourself here, the passed in mime-type might be missing. This might or might not be an issue depending on your browser/OS.   
    
 ### audio_format_suffixes   
-> Added in [v1.1.0](../Changelog/v1.1.0.md)   
+> Added in [v1.1.0](/not_created.md)   
    
 ``` yaml
 audio_format_suffixes: ['wav', 'mp3']
@@ -253,7 +253,7 @@ The comments in the yaml above explain this feature pretty well.
 Extra note though: when setting this value, make sure to also edit the `html_output_folder_path_str` setting, to end with the same prefix, if you want to be able test locally.   
    
 ### Navbar_links   
-> Added in [v2.0.0](../Changelog/v2.0.0.md)   
+> Added in [v2.0.0](/not_created.md)   
 ``` yaml
 navbar_links: []
 ```
@@ -385,8 +385,8 @@ toggles:
 This refers to the markdown and html output folders. If you want to output html directly into a git repo, then by default it will remove the `.git` directory. To avoid this, you can write your own cleanup script to remove the previous output before running.    
    
 ### no_tabs   
-> New in version [v1.2.0](../Changelog/v1.2.0.md)   
-> **Removed** in version [v2.0.0](../Changelog/v2.0.0.md)   
+> New in version [v1.2.0](/not_created.md)   
+> **Removed** in version [v2.0.0](/not_created.md)   
 ``` yaml
 toggles:
   # This will skip emptying output folders, if you want to implement this yourself
@@ -405,7 +405,7 @@ toggles:
    
    
 ### relative_path_html   
-> New in [v1.2.0](../Changelog/v1.2.0.md)   
+> New in [v1.2.0](/not_created.md)   
 ``` yaml
 toggles:
   # Whether the html links are made relative, instead of absolute.
@@ -424,7 +424,7 @@ toggles:
    
    
 ### strict line breaks   
-> New in [v3.3.0](../Changelog/v3.3.0.md)   
+> New in [v3.3.0](/not_created.md)   
 ``` yaml
 toggles:
   # When true, Obsidianhtml will not add three spaces at the end of every line
@@ -433,7 +433,7 @@ toggles:
    
    
 ### slugify_html_links   
-> New in [v3.5.0](../Changelog/v3.5.0.md)   
+> New in [v3.5.0](/not_created.md)   
 ``` yaml
 toggles:
   slugify_html_links: False
@@ -443,7 +443,7 @@ toggles:
 Read more: [Slugify html links](../Configurations/Features/Slugify%20html%20links.md)   
    
 ### img_alt_text_use_figure   
-> New in [v3.5.0](../Changelog/v3.5.0.md)   
+> New in [v3.5.0](/not_created.md)   
 ``` yaml
 toggles:
   img_alt_text_use_figure: True
@@ -455,7 +455,7 @@ This setting will create a [`<figcaption>`](https://developer.mozilla.org/en-US/
    
 ## Features   
 ### Styling   
-> Added in [v2.0.0](../Changelog/v2.0.0.md)   
+> Added in [v2.0.0](/not_created.md)   
 ``` yaml
   features:
       layout: documentation               # documentation, tabs, minimal

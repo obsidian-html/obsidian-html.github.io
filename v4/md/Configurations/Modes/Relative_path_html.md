@@ -4,7 +4,7 @@ tags:
 - date/2022-03-15
 ---
    
-> New in [v1.2.0](../../Changelog/v1.2.0.md)   
+> New in [v1.2.0](/not_created.md)   
    
 This setting will allow you to compile the website in a way that can be browsed directly from your filesystem (i.e. without running an http server).   
    
@@ -12,7 +12,7 @@ This can be useful if you want a basic website for personal use, and don't want 
    
 In some edgecases, you might want to use relative_path_html in conjunction with a webserver. For example if you add in custom integrations that require relative html paths.    
    
-> In versions [v1.2.1](../../Changelog/v1.2.1.md) and [v1.2.0](../../Changelog/v1.2.0.md), this setting will enable [NoTabs Mode](../../Configurations/Deprecated%20Configurations/NoTabs%20Mode.md) and disable [Graph view](../../Configurations/Features/Graph%20view.md). This was turned off from version [v1.2.2](../../Changelog/v1.2.2.md) onwards, as the relative_path_html setting may be used with a webserver, and in those cases the tabs and graph view will work.    
+> In versions [v1.2.1](/not_created.md) and [v1.2.0](/not_created.md), this setting will enable [NoTabs Mode](../../Configurations/Deprecated%20Configurations/NoTabs%20Mode.md) and disable [Graph view](../../Configurations/Features/Graph%20view.md). This was turned off from version [v1.2.2](/not_created.md) onwards, as the relative_path_html setting may be used with a webserver, and in those cases the tabs and graph view will work.    
    
 If you intend to use the files directly from your filesystem, be sure to select a layout that is not `tabs` and disable the Graph view and search features. (JS file fetching is not allowed via the filesystem, so these functions have to be disabled for the site to work at all in this mode.)   
    

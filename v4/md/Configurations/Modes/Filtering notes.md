@@ -2,7 +2,7 @@
 {}
 ---
    
-> This instruction is valid from version [v3.4.0](../../Changelog/v3.4.0.md) onwards.    
+> This instruction is valid from version [v3.4.0](/not_created.md) onwards.    
    
 # Introduction   
 If you don't want to export your entire vault, then there are options to set inclusion and or exclusion.   

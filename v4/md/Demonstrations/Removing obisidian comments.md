@@ -4,7 +4,7 @@ tags:
 - date/2022-07-31
 ---
    
-> New in [v3.1.0](../Changelog/v3.1.0.md)   
+> New in [v3.1.0](/not_created.md)   
    
 ## Configure   
 If you don't want the behavior as defined below, you can turn this off by setting the following key in your config yml:   

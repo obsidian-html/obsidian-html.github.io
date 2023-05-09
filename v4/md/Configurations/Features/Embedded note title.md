@@ -2,18 +2,18 @@
 {}
 ---
    
-> New in [v3.2.0](../../Changelog/v3.2.0.md)   
-> Changed in [v3.4.0](../../Changelog/v3.4.0.md)   
+> New in [v3.2.0](/not_created.md)   
+> Changed in [v3.4.0](/not_created.md)   
    
 ## Change note   
 In between version 3.2.0 and 3.4.0 Obsidian has added built-in support for embedded titles.   
 Because of this, embedded titles will be enabled by default.    
    
-Configuration options that were available in [v3.2.0](../../Changelog/v3.2.0.md) have been stripped because the interaction between the built-in note titles and the plugin have become too complex.    
+Configuration options that were available in [v3.2.0](/not_created.md) have been stripped because the interaction between the built-in note titles and the plugin have become too complex.    
    
 At the moment you are limited to either enabling or disabling adding of titles,  and hiding the embedded title if the first element of a note is an h1 header.    
    
-If you want more configuration options than is available out of the box, please see [Report Issues & Request features](../../General%20Information/Report%20Issues%20%26%20Request%20features.md) to request it. We will add the options then to the `toggles/features/embedded_note_titles` section, instead of reading out the plugin settings as was the case before [v3.4.0](../../Changelog/v3.4.0.md).   
+If you want more configuration options than is available out of the box, please see [Report Issues & Request features](../../General%20Information/Report%20Issues%20%26%20Request%20features.md) to request it. We will add the options then to the `toggles/features/embedded_note_titles` section, instead of reading out the plugin settings as was the case before [v3.4.0](/not_created.md).   
    
 ## Configuration   
 ### Global disable   

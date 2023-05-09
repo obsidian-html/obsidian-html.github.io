@@ -75,7 +75,7 @@ This is still a child of `Second chapter`
 ==---begin inclusion---==   
 
 ### video_format_suffixes   
-> Added in [v1.1.0](../Changelog/v1.1.0.md)   
+> Added in [v1.1.0](/not_created.md)   
    
 ``` yaml
 video_format_suffixes: ['mp4', 'webm']

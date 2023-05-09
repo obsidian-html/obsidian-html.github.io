@@ -4,7 +4,7 @@ tags:
 - date/2022-04-17
 ---
    
-> New in [v2.0.0](../../Changelog/v2.0.0.md)   
+> New in [v2.0.0](/not_created.md)   
    
 ``` yaml
 navbar_links: []  
@@ -39,7 +39,7 @@ navbar_links:
 Make sure to use the full relative path to the note as measured from your webroot (so exclude the [prefix](../../Configurations/Configuration%20Options.md#html-url-prefix)).   
    
 ## External links in the website navigation menu   
-> New in [v3.1.0](../../Changelog/v3.1.0.md)   
+> New in [v3.1.0](/not_created.md)   
    
 If you want to link to a different website, then you should add `type: external` to the link item, e.g.   
    

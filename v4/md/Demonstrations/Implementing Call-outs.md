@@ -5,7 +5,7 @@ tags:
 - date/2022-04-26
 ---
    
-> Added in [v2.1.0](../Changelog/v2.1.0.md)   
+> Added in [v2.1.0](/not_created.md)   
    
 Call-outs are a way to have a bit more flavor than the standard blockquote. They can also fold in, allowing you to tuck away long-winded examples to a collapsible section.   
    

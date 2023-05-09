@@ -4,7 +4,7 @@ tags:
 - date/2022-02-17
 ---
    
-> New in [v1.0.0](../../Changelog/v1.0.0.md)   
+> New in [v1.0.0](/not_created.md)   
    
 ## Introduction   
 The RSS feed feature creates [an RSS feed](https://meganesulli.com/blog/how-rss-works/) out of (a selection of) your notes. You can find our RSS feed by clicking the feed button in the topright of the screen.   

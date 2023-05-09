@@ -37,7 +37,7 @@ Horizontal divider
    
 ## Formatting   
 ### Highlighting   
-> New in [v3.2.0](../Changelog/v3.2.0.md)   
+> New in [v3.2.0](/not_created.md)   
    
 ```md
 Use two equal signs to ==highlight text==.
@@ -46,7 +46,7 @@ Use two equal signs to ==highlight text==.
 Use two equal signs to ==highlight text==.   
    
 ### Strikethrough   
-> New in [v3.2.0](../Changelog/v3.2.0.md)   
+> New in [v3.2.0](/not_created.md)   
    
 ```md
 Any word wrapped with two tildes (like ~~this~~) will appear crossed out.

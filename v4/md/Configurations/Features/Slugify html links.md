@@ -2,7 +2,7 @@
 {}
 ---
    
->New in [v3.5.0](../../Changelog/v3.5.0.md)   
+>New in [v3.5.0](/not_created.md)   
    
 If you have a lot of capital letters, spaces, and other special characters in your note names, then the html links that are generated can be a bit hard on the eyes.   
    
