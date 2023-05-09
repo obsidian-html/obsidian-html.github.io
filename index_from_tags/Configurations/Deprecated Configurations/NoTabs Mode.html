@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="notabs mode">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/index_from_tags/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/index_from_tags</title>
+
+                <!-- Includes -->
+                
+<script src="/index_from_tags/obs.html/static/obsidian_core.js"></script>
+<script src="/index_from_tags/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/index_from_tags/obs.html/static/master.css" />
+<script src="/index_from_tags/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script>
+  MathJax = {
+    loader: {
+      load: [
+        '[tex]/action',
+        'output/chtml',
+        '[tex]/centernot'
+      ]
+    },
+    tex: {
+      inlineMath: [ ["\\(","\\)"] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: {'[+]': ['centernot']}
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script src="/index_from_tags/obs.html/static/flexsearch.bundle.js"></script>
+<script src="/index_from_tags/obs.html/static/pako.js"></script>
+<script src="/index_from_tags/obs.html/static/search.js"></script>
+<script src="/index_from_tags/obs.html/static/dirtree.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'notabs mode';
+                        const HTML_URL_PREFIX = '/index_from_tags';
+                        const PAGE_DEPTH = 2;
+                </script>
+        </head>
+
+<body class="theme-obs-light">
+        <div id="antiflash" style="display: none;"></div>
+        <script>
+                document.getElementById('antiflash').style.display = 'block';
+        </script>
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction">
+                                <b>esc</b> to dismiss
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle_id('search-master-div');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            toggle_id('search-master-div');
+            return false;
+        } 
+    }, true);
+
+    function click_list_link(element){
+        element.parentElement.getElementsByTagName('a')[0].click()
+    }
+</script>
+
+        <div id="page_holder" class="flex_col">
+                <div id="header" class="header">
+    <div id="header_flex" class="flex_row">
+            <a href="/index_from_tags/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/index_from_tags</a>
+            <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
+                    ≡
+            </div>
+            <div id="navbar" class="navbar requires_js">
+                    
+                    <div class="icon-tray">
+                            <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+    T
+</div>
+<script>
+    function toggle_theme_popup(el){
+        // make theme button show that it's active by adding the .active class
+        toggle(el);
+
+        // show the theme selector
+        toggle_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
+        }
+    }
+</script>
+                                    <div onclick="openSearch()" class="theme-button requires_js">
+            <img src = "/index_from_tags/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+        </div>
+        <script>
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
+                }
+            }
+        </script>
+                                    <div class="graph_header_div requires_js">
+            <a id="graph_link" class="system-link" href="/index_from_tags/obs.html/graph/index.html?node=notabs mode" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/index_from_tags/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
+            </a>
+        </div>
+                                    <div >
+            <a id="dirtree_link" class="system-link" href="/index_from_tags/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/index_from_tags/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                            <div>
+    <a href="/index_from_tags/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/index_from_tags/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                            
+                    </div>
+                    <div style="display: flex; flex-direction:column">
+                        <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
+                        <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
+                    </div>
+            </div>
+    </div>
+    <div class="popup" id="theme-popup">
+    <label for="cars">Theme </label>
+
+    <select name="theme" id="theme" onchange="set_theme(this.value)">
+      <option value="light">light</option>
+      <option value="obs-light" selected="selected">obsidian-light</option>
+      <option value="obs-dark">obsidian-dark</option>
+    </select> 
+</div>
+</div>
+                <div class="flex_row">
+                        <div id="left_pane" class="left_pane active">
+    <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+    <div id="left_pane_content" class="left_pane_content">
+            <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">Automation</button>
+<div id="folder-container-1" class="dir-container requires_js " path="/index_from_tags/Automation">
+	<ul class="dir-list">
+		<li><a class="" href="/index_from_tags/Automation/Automate website deployment.html"  >Automate website deployment</a></li>
+		<li><a class="" href="/index_from_tags/Automation/AutomationLinuxGit.html"  >Auto push site using Git on Linux</a></li>
+		<li><a class="" href="/index_from_tags/Automation/AutomationLinuxSSH.html"  >Auto push site using SSH on Linux</a></li>
+		<li><a class="" href="/index_from_tags/Automation/AutomationWindows.html"  >Auto push site using Git on Windows</a></li>
+		<li><a class="" href="/index_from_tags/Automation/AutomationWindowsSSH.html"  >Auto push site using Git on Windows</a></li>
+	</ul>
+</div>
+<button id="folder-2" class="dir-button" onclick="toggle_dir(this.id)">Buglog</button>
+<div id="folder-container-2" class="dir-container requires_js " path="/index_from_tags/Buglog">
+	<ul class="dir-list">
+		<li><a class="" href="/index_from_tags/Buglog/File links in dirtree note do not work.html"  >File links in dirtree note do not work</a></li>
+		<li><a class="" href="/index_from_tags/Buglog/Links in included notes do not work or show up as external.html"  >Links in included notes do not work or show up as external</a></li>
+		<li><a class="" href="/index_from_tags/Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.html"  >Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a></li>
+	</ul>
+</div>
+<button id="folder-3" class="dir-button" onclick="toggle_dir(this.id)">Changelog</button>
+<div id="folder-container-3" class="dir-container requires_js " path="/index_from_tags/Changelog">
+	<ul class="dir-list">
+		<li><a class="" href="/index_from_tags/Changelog/v1.0.0.html"  >v1.0.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v1.0.1.html"  >v1.0.1</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v1.0.2.html"  >v1.0.2</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v1.1.0.html"  >v1.1.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v1.2.0.html"  >v1.2.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v1.2.1.html"  >v1.2.1</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v1.2.2.html"  >v1.2.2</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v2.0.0.html"  >v2.0.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v2.1.0.html"  >v2.1.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v2.3.0.html"  >v2.3.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v3.0.0.html"  >v3.0.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v3.1.0.html"  >v3.1.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v3.2.0.html"  >v3.2.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v3.3.0.html"  >v3.3.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v3.4.0.html"  >v3.4.0</a></li>
+		<li><a class="" href="/index_from_tags/Changelog/v3.5.0.html"  >v3.5.0</a></li>
+	</ul>
+</div>
+<button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">Configurations</button>
+<div id="folder-container-4" class="dir-container requires_js active" path="/index_from_tags/Configurations">
+	<button id="folder-5" class="dir-button" onclick="toggle_dir(this.id)">Deprecated Configurations</button>
+	<div id="folder-container-5" class="dir-container requires_js active" path="/index_from_tags/Configurations/Deprecated Configurations">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Configurations/Deprecated Configurations/Deprecated Configurations.html"  >Deprecated Configurations</a></li>
+			<li><a class="active" href="/index_from_tags/Configurations/Deprecated Configurations/NoTabs Mode.html"  >NoTabs Mode</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Deprecated Configurations/exclude_subfolders.html"  >exclude_subfolders</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Deprecated Configurations/obsidian_folder_path_str.html"  >obsidian_folder_path_str</a></li>
+		</ul>
+	</div>
+	<button id="folder-6" class="dir-button" onclick="toggle_dir(this.id)">Features</button>
+	<div id="folder-container-6" class="dir-container requires_js " path="/index_from_tags/Configurations/Features">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Configurations/Features/Backlinks.html"  >Backlinks</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Breadcrumbs.html"  >Breadcrumbs</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Embedded note title.html"  >Embedded note title</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Features.html"  >Features</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Folder Notes.html"  >Folder Notes</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Graph view.html"  >Graph View</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Include notes.html"  >Include notes</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Markdown post processing.html"  >Markdown post processing</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/RSS Feed.html"  >RSS Feed</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Side panes.html"  >Side panes</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Slugify html links.html"  >Slugify html links</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Tags Page.html"  >Tags Page</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Features/Website navigation menu.html"  >Website navigation menu</a></li>
+		</ul>
+	</div>
+	<button id="folder-7" class="dir-button" onclick="toggle_dir(this.id)">Modes</button>
+	<div id="folder-container-7" class="dir-container requires_js " path="/index_from_tags/Configurations/Modes">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Configurations/Modes/Copy vault to temp dir.html"  >Copy vault to temp dir</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Modes/Create Index from Directory Structure.html"  >Create Index from Directory Structure</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Modes/Create index from tags.html"  >Create index from tags</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Modes/Filtering notes.html"  >Filtering notes</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Modes/Modes.html"  >Modes</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Modes/Process All.html"  >Process All</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Modes/Relative_path_html.html"  >Relative_path_html</a></li>
+		</ul>
+	</div>
+	<button id="folder-8" class="dir-button" onclick="toggle_dir(this.id)">Note settings</button>
+	<div id="folder-container-8" class="dir-container requires_js " path="/index_from_tags/Configurations/Note settings">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Configurations/Note settings/Note settings.html"  >Note settings</a></li>
+		</ul>
+	</div>
+	<button id="folder-9" class="dir-button" onclick="toggle_dir(this.id)">Styling</button>
+	<div id="folder-container-9" class="dir-container requires_js " path="/index_from_tags/Configurations/Styling">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Configurations/Styling/Edit HTML, CSS, JS.html"  >Edit HTML, CSS, JS</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Styling/Styling.html"  >Styling</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Styling/Tabs Layout.html"  >Tabs Layout</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Styling/Writing a custom graph view template.html"  >Writing a custom graph view template</a></li>
+		</ul>
+	</div>
+	<button id="folder-10" class="dir-button" onclick="toggle_dir(this.id)">Tweaking</button>
+	<div id="folder-container-10" class="dir-container requires_js " path="/index_from_tags/Configurations/Tweaking">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Configurations/Tweaking/Export vault files to html output.html"  >Export vault files to html output</a></li>
+			<li><a class="" href="/index_from_tags/Configurations/Tweaking/Performance Tuning.html"  >Performance Tuning</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a class="" href="/index_from_tags/Configurations/Configuration Options.html"  >Configuration Options</a></li>
+	</ul>
+</div>
+<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">Demonstrations</button>
+<div id="folder-container-11" class="dir-container requires_js " path="/index_from_tags/Demonstrations">
+	<button id="folder-12" class="dir-button" onclick="toggle_dir(this.id)">Test pages</button>
+	<div id="folder-container-12" class="dir-container requires_js " path="/index_from_tags/Demonstrations/Test pages">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/Demonstrate inclusion.html"  >Demonstrate inclusion</a></li>
+			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/Long long page.html"  >Long long page</a></li>
+			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/Simple Obsidian-type Link.html"  >Simple Obsidian-type Link</a></li>
+			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/Test Inclusion.html"  >Test Inclusion</a></li>
+			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/Test inclusion 2.html"  >Test inclusion 2</a></li>
+			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/proper markdown.html"  >proper markdown</a></li>
+			<li><a class="" href="/index_from_tags/Demonstrations/Test pages/textfile.txt"  class="external-link">textfile</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a class="" href="/index_from_tags/Demonstrations/Demonstrations.html"  >Demonstrations</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Embedded search.html"  >Embedded search</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Getting the basics right.html"  >Basics</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Call-outs.html"  >Implementing Call-outs</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Dataview.html"  >Implementing Dataview</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Footnotes.html"  >Implementing Footnotes</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Latex.html"  >Implementing Latex</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Mermaid diagrams in HTML output.html"  >Mermaid Diagrams</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Implementing Note Inclusions.html"  >Inclusions</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Implementing inline tags.html"  >Implementing inline tags</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Implementing links & link awareness.html"  >Links</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Making Code blocks look pretty.html"  >Code blocks</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Making lists work the same.html"  >Links</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Parsing Images, videos, and audio.html"  >Parsing Images, videos, and audio</a></li>
+		<li><a class="" href="/index_from_tags/Demonstrations/Removing obisidian comments.html"  >Removing obisidian comments</a></li>
+	</ul>
+</div>
+<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">General Information</button>
+<div id="folder-container-13" class="dir-container requires_js " path="/index_from_tags/General Information">
+	<ul class="dir-list">
+		<li><a class="" href="/index_from_tags/General Information/Creating a static html website from markdown files.html"  >Creating a static html website from markdown files</a></li>
+		<li><a class="" href="/index_from_tags/General Information/Parsing Obsidian notes to proper markdown.html"  >Parsing Obsidian notes to proper markdown</a></li>
+		<li><a class="" href="/index_from_tags/General Information/Report Issues & Request features.html"  >Report Issues & Request features</a></li>
+	</ul>
+</div>
+<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">Instructions</button>
+<div id="folder-container-14" class="dir-container requires_js " path="/index_from_tags/Instructions">
+	<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">Snippets</button>
+	<div id="folder-container-15" class="dir-container requires_js " path="/index_from_tags/Instructions/Snippets">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Instructions/Snippets/Deployment instructions.html"  >Deployment instructions</a></li>
+		</ul>
+	</div>
+	<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">Tutorials</button>
+	<div id="folder-container-16" class="dir-container requires_js " path="/index_from_tags/Instructions/Tutorials">
+		<button id="folder-17" class="dir-button" onclick="toggle_dir(this.id)">Specifics</button>
+		<div id="folder-container-17" class="dir-container requires_js " path="/index_from_tags/Instructions/Tutorials/Specifics">
+			<ul class="dir-list">
+				<li><a class="" href="/index_from_tags/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html"  >Bootstrapping Python on Windows</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Instructions/Tutorials/Converting just one subfolder in your vault.html"  >Converting just one subfolder in your vault</a></li>
+			<li><a class="" href="/index_from_tags/Instructions/Tutorials/Tutorial - Installation on Windows.html"  >Tutorial - Installation on Windows</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a class="" href="/index_from_tags/Instructions/Install a different version.html"  >Install a different version</a></li>
+		<li><a class="" href="/index_from_tags/Instructions/Installation.html"  >Installation</a></li>
+		<li><a class="" href="/index_from_tags/Instructions/Obsidianhtml Run.html"  >Obsidianhtml Run</a></li>
+		<li><a class="" href="/index_from_tags/Instructions/Run custom code.html"  >Run custom code</a></li>
+		<li><a class="" href="/index_from_tags/Instructions/Usage.html"  >Usage</a></li>
+	</ul>
+</div>
+<button id="folder-18" class="dir-button" onclick="toggle_dir(this.id)">Log</button>
+<div id="folder-container-18" class="dir-container requires_js " path="/index_from_tags/Log">
+	<ul class="dir-list">
+		<li><a class="" href="/index_from_tags/Log/Published ObsidianHtml version 1.0.0!.html"  >Published ObsidianHtml version 1.0.0!</a></li>
+	</ul>
+</div>
+<button id="folder-19" class="dir-button" onclick="toggle_dir(this.id)">Resources</button>
+<div id="folder-container-19" class="dir-container requires_js " path="/index_from_tags/Resources">
+	<button id="folder-20" class="dir-button" onclick="toggle_dir(this.id)">audio</button>
+	<div id="folder-container-20" class="dir-container requires_js " path="/index_from_tags/Resources/audio">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Resources/audio/geese.wav"  class="external-link">geese</a></li>
+			<li><a class="" href="/index_from_tags/Resources/audio/jazzy.mp3"  class="external-link">jazzy</a></li>
+		</ul>
+	</div>
+	<button id="folder-21" class="dir-button" onclick="toggle_dir(this.id)">img</button>
+	<div id="folder-container-21" class="dir-container requires_js " path="/index_from_tags/Resources/img">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Resources/img/Pasted image 20220909145416.png"  class="external-link">Pasted image 20220909145416</a></li>
+			<li><a class="" href="/index_from_tags/Resources/img/obsidian-html-logo.png"  class="external-link">obsidian-html-logo</a></li>
+			<li><a class="" href="/index_from_tags/Resources/img/obsidian-html-logo-sq.png"  class="external-link">obsidian-html-logo-sq</a></li>
+			<li><a class="" href="/index_from_tags/Resources/img/wide-image.jpg"  class="external-link">wide-image</a></li>
+		</ul>
+	</div>
+	<button id="folder-22" class="dir-button" onclick="toggle_dir(this.id)">mp4</button>
+	<div id="folder-container-22" class="dir-container requires_js " path="/index_from_tags/Resources/mp4">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Resources/mp4/chill_frog.mp4"  class="external-link">chill_frog</a></li>
+		</ul>
+	</div>
+	<button id="folder-23" class="dir-button" onclick="toggle_dir(this.id)">pdfs</button>
+	<div id="folder-container-23" class="dir-container requires_js " path="/index_from_tags/Resources/pdfs">
+		<ul class="dir-list">
+			<li><a class="" href="/index_from_tags/Resources/pdfs/RossettiGoblinMarket.pdf"  class="external-link">RossettiGoblinMarket</a></li>
+		</ul>
+	</div>
+	<button id="folder-24" class="dir-button" onclick="toggle_dir(this.id)">test_pages</button>
+	<div id="folder-container-24" class="dir-container requires_js " path="/index_from_tags/Resources/test_pages">
+		<button id="folder-25" class="dir-button" onclick="toggle_dir(this.id)">embedded_search</button>
+		<div id="folder-container-25" class="dir-container requires_js " path="/index_from_tags/Resources/test_pages/embedded_search">
+			<button id="folder-26" class="dir-button" onclick="toggle_dir(this.id)">babayaga</button>
+			<div id="folder-container-26" class="dir-container requires_js " path="/index_from_tags/Resources/test_pages/embedded_search/babayaga">
+				<ul class="dir-list">
+					<li><a class="" href="/index_from_tags/Resources/test_pages/embedded_search/babayaga/bbyg in path only.html"  >bbyg in path only</a></li>
+				</ul>
+			</div>
+			<ul class="dir-list">
+				<li><a class="" href="/index_from_tags/Resources/test_pages/embedded_search/babayaga in title only.html"  >babayaga in title only</a></li>
+				<li><a class="" href="/index_from_tags/Resources/test_pages/embedded_search/bbyg_in_tags.html"  >bbyg_in_tags</a></li>
+				<li><a class="" href="/index_from_tags/Resources/test_pages/embedded_search/bbyg_in_text.html"  >bbyg_in_text</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+		</ul>
+	</div>
+	<ul class="dir-list">
+	</ul>
+</div>
+<ul class="dir-list">
+	<li><a class="" href="/index_from_tags/index.html"  >index</a></li>
+</ul>
+</div>
+    </div>
+</div>
+                        <div class="container">
+                                
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/index_from_tags/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/index_from_tags/Configurations/Deprecated Configurations/Deprecated Configurations.html" style="color: var(--normal-text-color);">Deprecated Configurations</a> / <a href="/index_from_tags/Configurations/Deprecated Configurations/NoTabs Mode.html" >NoTabs Mode</a>
+                    </div>
+                </div>
+<embeddedtitle>NoTabs Mode</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/index_from_tags/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+<p>New in version <a href="/index_from_tags/Changelog/v1.2.0.html">v1.2.0</a> <br />
+<strong>Removed in version <a href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></strong>   </p>
+</blockquote>
+<p>This setting has been removed:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">no_tabs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</code></pre></div>
+
+
+</div>
+
+<p>In favor of the new layout setting. Read more here: <a href="/index_from_tags/Configurations/Styling/Styling.html#layouts">Styling#Layouts</a>.   </p>
+<p>In short, use:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span>
+</code></pre></div>
+
+
+</div>
+
+<p>To opt out of tabbing. (Opting out is also not longer needed because documentation is now the default layout).</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v1.2.0.html">v1.2.0</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Modes/Relative_path_html.html">relative_path_html</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v1.2.2.html">v1.2.2</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Deprecated Configurations/Deprecated Configurations.html">deprecated configurations</a></li>
+	<li><a class="backlink" href="/index_from_tags/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/index_from_tags/Changelog/v2.0.0.html">v2.0.0</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/index_from_tags/obs.html/tags/date/2022-03-15/index.html">date/2022-03-15</a></li>
+</ul>
+</div>
+
+</div>
+<div class="graph requires_js ">
+    <div id="A253534399912378651185821347708420076054{level}" class="graph_div"></div>
+    
+    <div class="graph-button-row" style="display:flex;">
+        <button class="graph_button graph_show_button" id="B253534399912378651185821347708420076054{level}" level="{level}" note_temp_id="253534399912378651185821347708420076054" onclick="window.ObsHtmlGraph.run(this, '253534399912378651185821347708420076054', 'notabs mode');">
+            Show Graph
+        </button>
+        <button class="graph_button graph_type_button" id="C253534399912378651185821347708420076054{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+            2D
+        </button>
+    </div>
+</div>
+
+<script type="module">
+    if (window.ObsHtmlGraph == undefined){
+        import('/index_from_tags/obs.html/static/graph.js').then((Module) => {
+            window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
+        })
+    }
+</script>
+
+
+
+
+                                <!-- end content -->
+                        </div>
+                        <div class="container_filler">
+                        </div>
+                        <div id="right_pane" class="right_pane active">
+    <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+    <div id="right_pane_content" class="right_pane_content">
+            
+    </div>
+</div>
+                </div>
+        </div>
+
+        <script>
+                function handle_toggle_side_bar(e){
+                        let header;
+                        let pane; 
+                        let target = e.target
+
+                        // switch out the navbar button click for a header click
+                        if (target.id == 'left_pane_toggle_nav'){
+                                target = document.getElementById('left_pane_fold_header')
+                        }
+                        else if (target.id == 'right_pane_toggle_nav'){
+                                target = document.getElementById('right_pane_fold_header')
+                        }
+
+                        // get header and pane
+                        if (target.classList.contains('fold_header')) {
+                                header = target;
+                                pane = target.parentElement;
+                        }
+                        else {
+                                pane = target;
+                                header = target.getElementsByClassName('fold_header')[0];
+                        }
+                        toggle_side_bar(pane, header, true)
+                        e.stopPropagation();
+                }
+                function handle_toggle_side_bar_button(e){
+                        document.getElementById('menu_toggle_button').click()
+                        handle_toggle_side_bar(e);
+                }
+
+                function toggle_side_bar(pane, header, save) {
+                        let active = (pane.classList.contains('active'))
+                        if (active){
+                                disable_side_bar(pane, header, save);
+                        }
+                        else {
+                                enable_side_bar(pane, header, save);
+                        }
+                }
+                function enable_side_bar(pane, header, save){
+                        pane.classList.add('active');
+                        pane.removeEventListener('click', handle_toggle_side_bar);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, true) }
+                }
+                function disable_side_bar(pane, header, save){
+                        pane.classList.remove('active');
+                        pane.addEventListener('click', handle_toggle_side_bar);
+                        header.removeEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, false) }
+                }
+                function set_correct_header_symbol(header){
+                        let pane = header.parentElement;
+                        let symbol = [['>', '<'],['<', '>']]
+                        symbol = symbol[Number(header.classList.contains('right_pane_fold_header'))][Number(pane.classList.contains('active'))];
+                        console.log(symbol);
+                        header.innerHTML = symbol
+                        return header;
+                }
+                function panel_folding_get_panel_name(header){
+                        return ['left', 'right'][Number(header.classList.contains('right_pane_fold_header'))]
+                }
+                function save_panel_folding_state(header, active){
+                        ls_set('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
+                }
+                function load_panel_folding_state(panel_name){
+                        val = ls_get('pane_folding_state_'+panel_name)
+                        if (!val){ return {'exists': false, 'value': null}}
+                        return {'exists': true, 'value': Boolean(Number(val))}
+                }
+                function set_pane_folding_start(left_header, right_header){
+                        // small screen = closed
+                        let right_pane_enabled = true;
+                        let left_pane_enabled = true;
+                        let w = window.visualViewport.width
+                        if (w < 1000){
+                                left_pane_enabled = false
+                        }
+                        if (w < 800){
+                                right_pane_enabled = false
+                        }
+
+                        // get saved values if present
+                        let rval = load_panel_folding_state('right')
+                        if (rval['exists']){
+                                right_pane_enabled = rval['value']
+                        }
+                        let lval = load_panel_folding_state('left')
+                        if (lval['exists']){
+                                left_pane_enabled = lval['value']
+                        }
+
+                        // default = enabled, so we only need to disable
+                        if (!left_pane_enabled){
+                                disable_side_bar(document.getElementById('left_pane'), document.getElementById('left_pane_fold_header'))
+                        }
+                        if (!right_pane_enabled){
+                                disable_side_bar(document.getElementById('right_pane'), document.getElementById('right_pane_fold_header'))
+                        }
+                }
+
+                function init_pane_folding(header){
+                        set_correct_header_symbol(header);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                }
+                
+                
+                set_pane_folding_start()
+                init_pane_folding(document.getElementById('left_pane_fold_header'));
+                init_pane_folding(document.getElementById('right_pane_fold_header'));
+
+                document.getElementById('left_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+                document.getElementById('right_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+        </script>
+
+        <script src="/index_from_tags/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+        
+
+
+
+
+</body>
+</html>

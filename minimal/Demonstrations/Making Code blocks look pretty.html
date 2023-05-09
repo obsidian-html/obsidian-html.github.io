@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/minimal/Demonstrations/Demonstrations.html" style="color: var(--normal-text-color);">Demonstrations</a> / <a href="/minimal/Demonstrations/Making Code blocks look pretty.html" >Making Code blocks look pretty</a>
+                    </div>
+                </div>
+<embeddedtitle>Code blocks</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<h1 id="code-blocks">Code blocks</h1>
+<p>This is built into python-markdown, and enabled by default. <br />
+Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created.   </p>
+<h2 id="python">Python</h2>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>                  <span class="c1"># commandline arguments</span>
+<span class="kn">import</span> <span class="nn">shutil</span>               <span class="c1"># used to remove a non-empty directory, copy files</span>
+<span class="kn">import</span> <span class="nn">re</span>                   <span class="c1"># regex string finding/replacing</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>    <span class="c1"># </span>
+<span class="kn">import</span> <span class="nn">frontmatter</span>          <span class="c1"># remove yaml frontmatter from md files</span>
+<span class="kn">import</span> <span class="nn">markdown</span>             <span class="c1"># convert markdown to html</span>
+<span class="kn">import</span> <span class="nn">urllib.parse</span>         <span class="c1"># convert link characters like %</span>
+
+<span class="c1"># python run.py &#39;C:\Users\Installer\OneDrive\Obsidian\Notes&#39; &#39;C:\Users\Installer\OneDrive\Obsidian\Notes\Work.md&#39;</span>
+
+<span class="c1"># Input</span>
+<span class="c1"># ------------------------------------------</span>
+<span class="n">root_folder</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># first folder that contains all markdown files</span>
+<span class="n">entrypoint</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>    <span class="c1"># The note that will be used as the index.html</span>
+
+<span class="k">if</span> <span class="n">root_folder</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">:</span>
+ <span class="n">root_folder</span> <span class="o">=</span> <span class="n">root_folder</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># -- CLIENT SETUP --------------------------------------------------------------------</span>
+<span class="c1"># ====================================================================================</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">TOKEN</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;DISCORD_TOKEN&#39;</span><span class="p">)</span>
+
+<span class="n">intents</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Intents</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
+<span class="n">intents</span><span class="o">.</span><span class="n">members</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">intents</span><span class="o">=</span><span class="n">intents</span><span class="p">)</span>   
+
+<span class="c1"># -- MESSAGE EVENT -------------------------------------------------------------------</span>
+<span class="c1"># ====================================================================================</span>
+<span class="nd">@client</span><span class="o">.</span><span class="n">event</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="c1"># Init</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="c1"># current date and time</span>
+    <span class="n">date_time</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y, %H:%M:%S&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Don&#39;t respond to self to avoid endless loops</span>
+    <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">author</span> <span class="o">==</span> <span class="n">client</span><span class="o">.</span><span class="n">user</span><span class="p">:</span>
+        <span class="k">return</span>
+</code></pre></div>
+
+
+</div>
+
+<h2 id="powershell">Powershell</h2>
+<div class="lang-powershell">
+
+<div class="codehilite"><pre><span></span><code><span class="k">Function</span> <span class="nb">Add-Link</span> <span class="p">{</span>
+    <span class="k">param</span><span class="p">(</span>
+        <span class="nv">$Link</span><span class="p">,</span> 
+        <span class="nv">$Title</span><span class="p">,</span>
+        <span class="nv">$Description</span><span class="p">,</span>
+        <span class="nv">$Category</span> <span class="p">=</span> <span class="s1">&#39;misc&#39;</span><span class="p">,</span>
+        <span class="nv">$PrivateKeyPath</span> <span class="p">=</span> <span class="nv">$script:PrivateKeyPath</span>        
+    <span class="p">)</span>
+
+    <span class="c"># Compile script to be run on the linux host</span>
+    <span class="nv">$script</span> <span class="p">=</span> <span class="s2">&quot;cd /home/user/www/devfruits/links</span><span class="se">`n</span><span class="s2">&quot;</span>
+    <span class="nv">$script</span> <span class="p">+=</span> <span class="s2">&quot;python3 add.py &#39;$Category&#39; &#39;$Link&#39; &#39;$Title&#39; &#39;$Description&#39;</span><span class="se">`n</span><span class="s2">&quot;</span>
+    <span class="nv">$script</span> <span class="p">+=</span> <span class="s2">&quot;python3 publish.py&quot;</span>
+    <span class="no">[System.IO.File]</span><span class="p">::</span><span class="n">WriteAllLines</span><span class="p">(</span><span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:TEMP</span><span class="p">)</span><span class="s2">\_addlink.sh&quot;</span><span class="p">,</span> <span class="nv">$script</span><span class="p">)</span>
+
+    <span class="c"># Run script</span>
+    <span class="n">plink</span> <span class="n">-batch</span> <span class="n">-i</span> <span class="nv">$PrivateKeyPath</span> <span class="n">user</span><span class="nv">@web002</span> <span class="n">-m</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:TEMP</span><span class="p">)</span><span class="s2">\_addlink.sh&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+</div>
+
+<h2 id="yaml">YAML</h2>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="c1"># This is a basic workflow to help you get started with Actions</span>
+
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span>
+
+<span class="c1"># Controls when the action will run. </span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Triggers the workflow on push or pull request events but only for the main branch</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="c1"># Allows you to run this workflow manually from the Actions tab</span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
+
+<span class="c1"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># This workflow contains a single job called &quot;build&quot;</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># The type of runner that the job will run on</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">self-hosted</span>
+
+<span class="w">    </span><span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+
+<span class="w">      </span><span class="c1"># Runs a single command using the runners shell</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run a one-line script</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo Hello, world!</span>
+
+<span class="w">      </span><span class="c1"># Runs a set of commands using the runners shell</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run a multi-line script</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">echo &quot;$HOSTNAME&quot;</span>
+<span class="w">          </span><span class="no">touch /home/github/testttttt</span>
+<span class="w">          </span><span class="no">pwd</span>
+</code></pre></div>
+
+
+</div>
+
+<h2 id="bash">Bash</h2>
+<div class="lang-bash">
+
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="c1"># Set rights</span>
+<span class="w">    </span><span class="c1"># ---------------------------</span>
+<span class="w">    </span><span class="c1"># Create www-data group, and add main user to it</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$setWWWData</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">        </span>sudo<span class="w"> </span>groupadd<span class="w"> </span>www-data
+<span class="w">        </span>sudo<span class="w"> </span>usermod<span class="w"> </span><span class="nv">$mainUser</span><span class="w"> </span>-a<span class="w"> </span>-G<span class="w"> </span>www-data
+
+<span class="w">        </span><span class="c1"># Give www-data rights to everything in /var/www/</span>
+<span class="w">        </span>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>:www-data<span class="w"> </span>/var/www/
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="c1"># Empty default site block</span>
+<span class="w">    </span><span class="c1"># ---------------------------</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$distro</span><span class="w"> </span>-eq<span class="w"> </span><span class="nv">$MANJARO</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">        </span>sudo<span class="w"> </span>touch<span class="w"> </span>/etc/nginx/sites-available/default
+
+<span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$distro</span><span class="w"> </span>-eq<span class="w"> </span><span class="nv">$UBUNTU</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">        </span>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/nginx/sites-available/default<span class="w"> </span>/etc/nginx/sites-available/_default_factory
+<span class="w">        </span>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/nginx/sites-available/default
+<span class="w">    </span><span class="k">fi</span><span class="w">    </span>
+</code></pre></div>
+
+
+</div></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Demonstrations/Demonstrations.html">demonstrations</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/feature/html_output/index.html">feature/html_output</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/styling/index.html">type/styling</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

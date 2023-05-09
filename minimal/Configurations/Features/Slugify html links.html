@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/minimal/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/minimal/Configurations/Features/Slugify html links.html" >Slugify html links</a>
+                    </div>
+                </div>
+<embeddedtitle>Slugify html links</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+<p>New in <a href="/minimal/Changelog/v3.5.0.html">v3.5.0</a>   </p>
+</blockquote>
+<p>If you have a lot of capital letters, spaces, and other special characters in your note names, then the html links that are generated can be a bit hard on the eyes.   </p>
+<p>For this purpose, you can enable the setting <code>toggles/slugify_html_links</code>.   </p>
+<p>By default this setting is off. Setting this to true will make better readable links as it will replace all the spaces and special characters with dashes, and make everything lowercase.    </p>
+<h2 id="important-notes-before-you-enable">Important notes before you enable</h2>
+<ul>
+<li>Enabling this feature might cause different notes to <strong>end up with the same file name</strong>, see also <a href="#possibility-for-clobbering" class="anchor-link">Possibility for clobbering</a>.   </li>
+<li>Enabling this feature will have an impact on the folder names of the <a href="/minimal/Configurations/Modes/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a> feature, i.e. they will be slugified too. This does not happen for the notes themself.   </li>
+<li>Since enabling this feature will change the links of the pages and paths of the html output files, you might have to reconfigure some settings   <ul>
+<li>The <a href="/minimal/Configurations/Configuration%20Options.html#navbar_links">Configuration Options#Navbar_links</a> setting will automatically convert the links set there to their slugified forms, so these will not have to be reconfigured.   </li>
+</ul>
+</li>
+</ul>
+<h1 id="enable">Enable</h1>
+<p>Add this to your config yaml:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">slugify_html_links</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</code></pre></div>
+
+
+</div>
+
+<h1 id="possibility-for-clobbering">Possibility for clobbering</h1>
+<p>The way the link rewrite works is thus:   </p>
+<ul>
+<li>Replace non ascii letters with their ascii counter parts   <ul>
+<li>e.g. <code>žlutý → zluty</code>   </li>
+</ul>
+</li>
+<li>Make all letters lowercase   </li>
+<li>Replace all special chars that are not allowed (anything that is not: <code>a-zA-Z0-9\s-/\.</code>) with a space   </li>
+<li>Collapse multiple spaces into 1   <ul>
+<li>e.g. <code>"a     b" → "a b"</code>   </li>
+</ul>
+</li>
+<li>Spaces at the beginning and end are stripped   </li>
+<li>Replace spaces with a dash   </li>
+</ul>
+<p>It should be clear that it is possible to have two notes in Obsidian with very similar paths that will end up with the same paths through this rewrite. This will cause undefined behavior, but most probably the note that is processed later will overwrite the earlier note.   </p>
+<p>A kind of use that would have many issues with this, is naming notes like so:   </p>
+<ul>
+<li><code>📚 Why ObsidianHtml is buggy but still great</code>   </li>
+<li><code>✒️ Why ObsidianHtml is buggy but still great</code>   </li>
+</ul>
+<p>Where an emoticon is used to differentiate between a source note, a seedling note, etc. Because all of these will be converted into:   </p>
+<ul>
+<li><code>why-obsidianhtml-is-buggy-but-still-great</code>   </li>
+</ul>
+<p>So if you manage your vault in this way, this feature is not recommended in its current form.</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Features/Features.html">features</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v3.5.0.html">v3.5.0</a></li>
+</ul>
+</div>
+
+<div class="tags">
+
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

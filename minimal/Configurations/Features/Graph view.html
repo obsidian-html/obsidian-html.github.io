@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/minimal/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/minimal/Configurations/Features/Graph view.html" >Graph view</a>
+                    </div>
+                </div>
+<embeddedtitle>Graph View</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<p>Click on the button at the bottom of a note to view the graph for the current note. Click on the graph icon in the menu to go to a full page graph view.   </p>
+<p>In the graph view, clicking on a note will open that note. In the full page view clicking on a note will highlight it, so that you can quickly go through your notes and seeing clearly which are connected to which. Use rightclick in the full page view to open a note.   </p>
+<p>The graph view works based on a template. <a href="/minimal/Configurations/Styling/Writing%20a%20custom%20graph%20view%20template.html">Your own template can be added in</a> when you want to customize the look and/or functionality of the graph view. Or you can <a href="#template" class="anchor-link">Template</a>.   </p>
+<p>To be added in the future:   </p>
+<ul>
+<li><strong>Pruning</strong>: Do not show notes that are not connected directly nor indirectly to the current note. Only show all notes in a site-wide view.   </li>
+<li>Using the text in the first H1 as a graph_name.   </li>
+</ul>
+<h2 id="configure-graph-view">Configure graph view</h2>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Include code to build the graph view per page </span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">           </span><span class="c1"># Include code to build the graph view per page (default: True)</span>
+<span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">templates</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;2d&gt;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">builtin&lt;3d&gt;</span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</code></pre></div>
+
+
+</div>
+
+<h3 id="custom-template">(Custom) Template</h3>
+<p>There are two default graph view templates that can be used out of the box: 2d and 3d.    </p>
+<p>Note that the 2d version shows the name of the notes that are connected to the current note, the 3d version only shows it on mouseover, which might be an issue for mobile/tablet users.   </p>
+<p>If you want to pass in your own custom template, change this value to anything other than 2d/3d, and it will be parsed as a path to the template.    </p>
+<p>Read more: <a href="/minimal/Configurations/Styling/Writing%20a%20custom%20graph%20view%20template.html">Writing a custom graph view template</a>.   </p>
+<h3 id="overwrite-the-name-of-a-note-in-the-graph-view">Overwrite the name of a note in the graph view</h3>
+<ul>
+<li>In your frontmatter, set <code>graph_name: My new note name</code>   </li>
+</ul>
+<p>E.g:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">graph_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Links</span>
+<span class="nt">tags</span><span class="p">:</span><span class="w"> </span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type/parsing_markdown</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-02-04</span>
+<span class="nn">---</span>
+</code></pre></div>
+
+
+</div>
+
+<blockquote>
+<p>Note: do not use "" around the graph_name value, the frontmatter module doesn't like that.   </p>
+</blockquote>
+<h3 id="show-hide-inclusion-in-the-graph-view">Show/hide inclusion in the graph view</h3>
+<p>By default, <a href="/minimal/Configurations/Features/Include%20notes.html">inclusions</a> are shown in the graph view as a dotted line. To disable this (i.e. stop showing inclusions in the graph view), set the following value:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">graph</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+
+
+</div></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/General Information/Creating a static html website from markdown files.html">creating a static html website from markdown files</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Note settings/Note settings.html">note settings</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Modes/Process All.html">process all</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Modes/Relative_path_html.html">relative_path_html</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v1.2.2.html">v1.2.2</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Features/Features.html">features</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Styling/Writing a custom graph view template.html">writing a custom graph view template</a></li>
+	<li><a class="backlink" href="/minimal/General Information/Using the website.html">using the website</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-02-05/index.html">date/2022-02-05</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/feature/html_output/index.html">feature/html_output</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/feature/graph_view/index.html">feature/graph_view</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

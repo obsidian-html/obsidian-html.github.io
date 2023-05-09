@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 3;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Instructions</span> / <span style="color: #666;">Tutorials</span> / <span style="color: #666;">Specifics</span> / <a href="/minimal/Instructions/Tutorials/Specifics/Bootstrapping Python on Windows.html" >Bootstrapping Python on Windows</a>
+                    </div>
+                </div>
+<embeddedtitle>Bootstrapping Python on Windows</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<p>On some systems, you might have permissions to run python, and to install to your homedir, but standard python installations are prohibited by system policies.   </p>
+<p>In that case you can manually install python by just downloading the package and using it to create a virtual environment.   </p>
+<p>These instructions are listed on this page.   </p>
+<h2 id="get-package">Get package</h2>
+<ul>
+<li>Go to <a href="https://www.nuget.org/packages/python" class="external-link">https://www.nuget.org/packages/python</a> and click download package.   </li>
+<li>Change the extension of the downloaded file to <code>.zip</code> and unzip the archive so that you get a folder like <code>C:\Users\User\Downloads\python-3.10.7</code>.   </li>
+<li>Open a terminal (powershell), and run the following command to test functionality. Make sure to change the path so that it is correct for your situation (and do so for all the following commands):   </li>
+</ul>
+<div class="lang-powershell">
+
+<div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">User</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">python</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">7</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-version</span>
+</code></pre></div>
+
+
+</div>
+
+<h2 id="ensure-pip-and-install-virtualenv">Ensure pip and install virtualenv</h2>
+<p>Pip will be preinstalled in this package, but will not function correctly. This is resolved by running ensure pip:   </p>
+<div class="lang-powershell">
+
+<div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">User</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">python</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">7</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">ensurepip</span>
+</code></pre></div>
+
+
+</div>
+
+<p>As we are going to create a virtual environment, we need to use pip to install the virtualenv package.   </p>
+<div class="lang-powershell">
+
+<div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">User</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">python</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">7</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
+</code></pre></div>
+
+
+</div>
+
+<h2 id="create-virtualenv">Create virtualenv</h2>
+<p>We are now going to create a virtualenv. This will result in a new folder in the folder that we are in currently, so use <code>cd</code> to move to a folder where you want this to be created.    </p>
+<p>Later, we are also going to download an example vault to test obsidianhtml, and it can be nice to have the two folders next to eachother, so consider moving to a folder at a place where you keep your git projects.   </p>
+<p>The following command will create a folder called <code>obsenv</code>:   </p>
+<div class="lang-powershell">
+
+<div class="codehilite"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">User</span><span class="p">\</span><span class="n">Downloads</span><span class="p">\</span><span class="n">python</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">7</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">obsenv</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Wait patiently for it to finish.    </p>
+<h2 id="enter-virtual-env-and-install-obsidianhtml">Enter virtual env and Install obsidianhtml</h2>
+<p>The rest of the instruction will now be the same as when you installed python the normal way. Go back to <a href="/minimal/Instructions/Tutorials/Tutorial%20-%20Installation%20on%20Windows.html">Tutorial - Installation on Windows</a> and continue with the <code>Enter virtualenv</code> section.   </p>
+<p>Note that when you enter the venv, you will no longer have to use the long path to the python.exe, as the venv will load the path to its own python executable.</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Instructions/Tutorials/Tutorial - Installation on Windows.html">tutorial - installation on windows</a></li>
+</ul>
+</div>
+
+<div class="tags">
+
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>
