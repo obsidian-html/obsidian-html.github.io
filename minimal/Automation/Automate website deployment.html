@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Automation</span> / <a href="/minimal/Automation/Automate website deployment.html" >Automate website deployment</a>
+                    </div>
+                </div>
+<embeddedtitle>Automate website deployment</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<p>If you have a website hosted based on an obsidian project like I do, it can be useful to create some scripting to automate pushing to your webserver.   </p>
+<blockquote>
+<p>Note that these scripts are a starting point, and may not comply to the most up to date security considerations or other best practices!   </p>
+</blockquote>
+<h2 id="using-a-git-repo-as-an-intermediate">Using a git repo as an intermediate</h2>
+<p>The scripts below empty an <em>existing</em> git repo folder, skipping the <code>README.md</code> file and <code>.git</code> directory. The script will then generate the html code an put it in your repo, commit and push.    </p>
+<p>This will update your git repo with the updated code for your website. This is all the script does.    </p>
+<p>As a next step, configure a process on your webserver that periodically pulls the git repo, or configure a pipeline to start running on a git push to get this git code deployed on your server.    </p>
+<ul>
+<li><a href="/minimal/Automation/AutomationLinuxGit.html">Auto push using git (Linux)</a>   </li>
+<li><a href="/minimal/Automation/AutomationWindows.html">Auto push using git (Windows)</a>   </li>
+</ul>
+<h2 id="pushing-directly-to-a-local-webserver">Pushing directly to a local webserver</h2>
+<p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the Git method or something along those lines.   </p>
+<ul>
+<li><a href="/minimal/Automation/AutomationLinuxSSH.html">Auto push to local webserver (Linux)</a>   </li>
+<li><a href="/minimal/Automation/AutomationWindowsSSH.html">Auto push to local webserver (Windows)</a>   </li>
+</ul>
+<h2 id="using-github-pages">Using Github Pages</h2>
+<p>Use either Obsidian Git plugin or the method mentioned above to sync your vault to GitHub. <br />
+Create a new branch, e.g. gh-pages for storing the HTML files.   </p>
+<p>Go to actions, and create a workflow. We will use this workflow to generate HTML files using ObsidianHTML and publish them to your gh-pages branch. Name the file something suitable like generate.yml.   </p>
+<p>Enter the following below configuration for the workflow. If your main branch is master or something else, make the right adjustments. If your are using a different branch name for publishing, then make change that too under the Publish to Github Pages job.   </p>
+<p>This workflow also uses the development edition of Obsidian HTML, if you want to stick to the stable version, change <code>pip install git+https://github.com/obsidian-html/obsidian-html</code> to <code>pip install obsidian-html</code> under the Install dependencies and run build job.   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish to gh-pages branch</span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Push</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout main</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clone-path</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies and run build</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">cd ${{ github.workspace }}</span>
+<span class="w">          </span><span class="no">pip install --upgrade pip</span>
+<span class="w">          </span><span class="no">pip install git+https://github.com/obsidian-html/obsidian-html</span>
+<span class="w">          </span><span class="no">obsidianhtml convert -i clone-path/config.yaml -v</span>
+<span class="w">          </span><span class="no">touch html/.nojekyll</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish to Github Pages</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s0/git-publish-subdir-action@develop</span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">REPO</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">self</span>
+<span class="w">          </span><span class="nt">BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gh-pages</span><span class="w"> </span><span class="c1"># The branch name where you want to push the assets</span>
+<span class="w">          </span><span class="nt">FOLDER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">html</span><span class="w"> </span><span class="c1"># The directory where your assets are generated</span>
+<span class="w">          </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span><span class="w"> </span><span class="c1"># GitHub will automatically add this - you don&#39;t need to bother getting a token</span>
+<span class="w">          </span><span class="nt">MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Build:</span><span class="nv"> </span><span class="s">({sha})</span><span class="nv"> </span><span class="s">{msg}&quot;</span><span class="w"> </span><span class="c1"># The commit message</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Now, go to your repository settings &gt; Pages &gt; Build and Deployment. Choose 'Deploy from a branch' as source, and select gh-pages as the branch.   </p>
+<p>From now, on every push to GitHub, the workflow will create the HTML pages and publish them.</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/index.html">index</a></li>
+	<li><a class="backlink" href="/minimal/Automation/AutomationLinuxSSH.html">automationlinuxssh</a></li>
+	<li><a class="backlink" href="/minimal/Automation/AutomationWindowsSSH.html">automationwindowsssh</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/automation/index.html">type/automation</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

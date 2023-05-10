@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Automation</span> / <a href="/minimal/Automation/AutomationWindowsSSH.html" >AutomationWindowsSSH</a>
+                    </div>
+                </div>
+<embeddedtitle>Auto push site using Git on Windows</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<h1 id="auto-push-site-to-a-local-webserver-on-windows">Auto push site to a local webserver on Windows</h1>
+<p>This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the <a href="/minimal/Automation/AutomationWindows.html">Git method</a> or something along those lines.   </p>
+<blockquote>
+<p>I did not feel like rewriting this script. This is just here as a reference. Be sure to update all the hardcode values for something that makes sense for your environment.   </p>
+</blockquote>
+<div class="lang-powershell">
+
+<div class="codehilite"><pre><span></span><code><span class="k">Function</span> <span class="nb">Publish-Obsidian</span> <span class="p">{</span>
+
+    <span class="k">param</span><span class="p">(</span>
+        <span class="nv">$PrivateKeyPath</span> <span class="p">=</span> <span class="nv">$script:PrivateKeyPath</span>
+        <span class="nv">$ConfigFilePath</span> <span class="p">=</span> <span class="s2">&quot;C:\Users\Installer\Documents\ObsidianServer\configs\devfruits.yml&quot;</span>
+    <span class="p">)</span>
+
+
+    <span class="nv">$origin</span> <span class="p">=</span> <span class="nb">pwd</span>
+
+    <span class="c"># Convert Obsidian to HTML</span>
+    <span class="nb">cd </span><span class="s2">&quot;C:\Users\Installer\Documents\git\obsidian-html&quot;</span>
+    <span class="n">python</span> <span class="n">-m</span> <span class="n">obsidianhtml</span> <span class="n">-i</span> <span class="nv">$ConfigFilePath</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">$?){</span>
+        <span class="nb">Write-Error</span> <span class="s2">&quot;Python script failed. Exited.&quot;</span>
+        <span class="nb">cd </span><span class="nv">$origin</span>
+        <span class="k">return</span> <span class="nv">$false</span>
+    <span class="p">}</span>
+
+    <span class="c"># Delete files on the server</span>
+    <span class="no">[System.IO.File]</span><span class="p">::</span><span class="n">WriteAllLines</span><span class="p">(</span><span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:TEMP</span><span class="p">)</span><span class="s2">\_emptydevfruits.sh&quot;</span><span class="p">,</span> <span class="s2">&quot;rm -rf /home/web/www/devfruits/*&quot;</span><span class="p">)</span>
+    <span class="n">plink</span> <span class="n">-batch</span> <span class="n">-i</span> <span class="nv">$PrivateKeyPath</span> <span class="n">user</span><span class="nv">@webserver</span> <span class="n">-m</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:TEMP</span><span class="p">)</span><span class="s2">\_emptydevfruits.sh&quot;</span>
+
+    <span class="c"># Upload new files</span>
+    <span class="n">pscp</span> <span class="n">-r</span> <span class="n">-i</span> <span class="nv">$PrivateKeyPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Installer</span><span class="p">\</span><span class="n">Documents</span><span class="p">\</span><span class="n">ObsidianServer</span><span class="p">\</span><span class="n">LocalDevfruits</span><span class="p">\</span><span class="n">output</span><span class="p">\</span><span class="n">html</span><span class="p">\*</span> <span class="n">user</span><span class="nv">@webserver</span><span class="p">:/</span><span class="n">home</span><span class="p">/</span><span class="n">web</span><span class="p">/</span><span class="n">www</span><span class="p">/</span><span class="n">devfruits</span><span class="p">/</span>
+
+    <span class="nb">cd </span><span class="nv">$origin</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+</div>
+
+<p><a href="/minimal/Automation/Automate%20website%20deployment.html">Other ways of pushing websites</a></p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Automation/Automate website deployment.html">automate website deployment</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/automation/index.html">type/automation</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

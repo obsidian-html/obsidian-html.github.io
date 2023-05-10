@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/minimal/Changelog/Changelog.html" style="color: var(--normal-text-color);">Changelog</a> / <a href="/minimal/Changelog/v3.3.0.html" >v3.3.0</a>
+                    </div>
+                </div>
+<embeddedtitle>v3.3.0</embeddedtitle>
+<div class="content"><blockquote>
+<p>Feature version of <a href="/minimal/Changelog/v3.0.0.html">v3.0.0</a>.    </p>
+</blockquote>
+<h2 id="added-features">Added features</h2>
+<ul>
+<li>A first MVP of <a href="/minimal/Demonstrations/Embedded%20search.html">Embedded search</a> was added   </li>
+<li>Glob pattern support added to <a href="/minimal/Configurations/Modes/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a> feature.   </li>
+<li>Added subheader selection for <a href="/minimal/Configurations/Features/Include%20notes.html">Include notes</a>   </li>
+<li>Added configuration setting <a href="/minimal/Configurations/Configuration%20Options.html#strict-line-breaks-">strict line breaks</a>   </li>
+<li>Image scaling has been added properly this time.   </li>
+<li>First version of support for ad-cite code blocks.   </li>
+</ul>
+<h2 id="changes">Changes</h2>
+<ul>
+<li>The setting <code>force_filename_to_lowercase</code>  would make graph labels lowercase, this has been changed so it doesn't affect graph labels. For your own graphers, make sure to use <code>node['name']</code> instead of <code>node['id']</code>.   </li>
+<li>If you would specify a header in <a href="/minimal/Configurations/Features/Include%20notes.html">Include notes</a>, and it would not exist, obsidianhtml would fail on purpose. This conflicts with how Obsidian responds, which is with an error notification in the note itself. Obsidianhtml now does the same.   </li>
+<li>Code blocks are now wrapped in a div with class <code>lang-{whatever is after the three backticks}</code>, e.g. <code>lang-python</code>. This should make it easier to apply language specific css changes.   </li>
+</ul>
+<h2 id="bugfixes">Bugfixes</h2>
+<ul>
+<li>Fixed pdf inclusion. See also <a href="https://github.com/obsidian-html/obsidian-html/issues/421" class="external-link">421</a></li>
+</ul></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Configurations/Modes/Create Index from Directory Structure.html">create index from directory structure</a></li>
+	<li><a class="backlink" href="/minimal/Demonstrations/Embedded search.html">embedded search</a></li>
+	<li><a class="backlink" href="/minimal/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/Changelog.html">changelog</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-09-12/index.html">date/2022-09-12</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

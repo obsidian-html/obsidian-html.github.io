@@ -19,7 +19,7 @@ You can find all the modules, and the code to manage them, in this folder:
    
 The builtin folder contains a number of modules that are currently used:   
    
-- [https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules](https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules)/builtin   
+- [https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin](https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin)   
    
 # High level design   
    

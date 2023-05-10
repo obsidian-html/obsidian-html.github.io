@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Buglog</span> / <a href="/minimal/Buglog/Links in included notes do not work or show up as external.html" >Links in included notes do not work or show up as external</a>
+                    </div>
+                </div>
+<embeddedtitle>Links in included notes do not work or show up as external</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+<p>Applies to versions: <a href="/minimal/Changelog/v1.0.2.html">v1.0.2</a> and earlier <br />
+Fixed in version <a href="/minimal/Changelog/v1.1.0.html">v1.1.0</a>   </p>
+</blockquote>
+<h3 id="issue">Issue</h3>
+<p>If a note contains a link, and this note is included in another note, that is at a different folder depth, then the relative links in the markdown output are not corrected.   </p>
+<h3 id="tl-dr">tl;dr</h3>
+<p>Just upgrade to <a href="/minimal/Changelog/v1.1.0.html">v1.1.0</a>, it is fixed there   </p>
+<h3 id="workaround-for-earlier-versions">Workaround for earlier versions</h3>
+<p>The workaround should be to set relative_path_md to false, forcing absolute paths in the markdown output. But this workaround did not work for version <a href="/minimal/Changelog/v1.0.1.html">v1.0.1</a> and lower due to a bug, this workaround is valid only for version <a href="/minimal/Changelog/v1.0.2.html">v1.0.2</a>.   </p>
+<p>Though succesful in avoiding this bug, this setting would make the markdown output not navigable in certain markdown readers, such as gitlab and vs code preview mode.   </p>
+<h3 id="fix">Fix</h3>
+<p>This issue is fixed starting from version <a href="/minimal/Changelog/v1.1.0.html">v1.1.0</a>, as there the code for getting the included note code is aware of the page depth of the calling note, allowing for the links to be generated correctly from the get go.   </p>
+<h3 id="dod">DoD</h3>
+<p>A regression test has been added for this usecase.</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Changelog/v1.1.0.html">v1.1.0</a></li>
+	<li><a class="backlink" href="/minimal/Changelog/v1.0.2.html">v1.0.2</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/bug_report/index.html">type/bug_report</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-03-11/index.html">date/2022-03-11</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

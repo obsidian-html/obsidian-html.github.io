@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/minimal/obs.html/static/master.css" />
+<script src="/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Buglog</span> / <a href="/minimal/Buglog/Spaces in front of headers allowed by Obsidian but not by ObsidianHtml.html" >Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a>
+                    </div>
+                </div>
+<embeddedtitle>Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+<p>Fixed in <a href="/minimal/Changelog/v1.1.0.html">v1.1.0</a>   </p>
+</blockquote>
+<p>It's possible in Obsidian to have a space in front of a header tag and still have it display as a header:   </p>
+<div class="lang-md">
+
+<div class="codehilite"><pre><span></span><code><span class="gh"># is an h1 header</span>
+ # is an h1 header too
+</code></pre></div>
+
+
+</div>
+
+<p>This is not allowed in proper markdown though. So this leads to the headers not being recognized by python-markdown.   </p>
+<p>This is technically a user error, but it happened to me, and with the new auto-format feature in edit mode, typo's like this are very hard to spot.    </p>
+<p>It's not nice if people use this package and are in the dark as to why their headers are not being rendered.   <br />
+Besides, if obsidian implements something, obsidianhtml should implement it too, even if it basically means allowing the user to have random spaces in front of their headers. ^131340   </p>
+<p>It's pretty doable to remove these spaces in these cases and only in these cases. The regex in the code is just <code>(^\ [\ ]*)(?=#)</code> (one or more spaces from the beginning of the line immediately followed by a <code>#</code> are removed).</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/Changelog/v1.1.0.html">v1.1.0</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/minimal/obs.html/tags/type/bug_report/index.html">type/bug_report</a></li>
+	<li><a class="backlink" href="/minimal/obs.html/tags/date/2022-03-11/index.html">date/2022-03-11</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

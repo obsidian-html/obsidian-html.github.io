@@ -34,13 +34,6 @@ tags:
 - [News](./News.md)   
 - [Changelog](./Changelog/Changelog.md)   
    
-Try this site with different [layouts](./Configurations/Styling/Styling.md#layouts):   
-> use ctrl+click when in tabs mode!   
-   
-- [minimal](/minimal/index.html)   
-- [tabs](/tabs/index.html)   
-- [documentation](/index.html) (default).   
-   
 ## Usage & Capabilities   
    
 - **[Quickstart](./Instructions/Quickstart.md)**   
