@@ -9,20 +9,8 @@ This page goes through all the configuration options and will refer to features.
 Certain settings change the flow of how notes are selected and presented on the homepage. You can find a glossary on those in [Modes](../Configurations/Modes/Modes.md).   
    
 ## Get all the default settings   
-Run:   
    
-``` bash
-obsidianhtml export default-config
-```
-    
-   
-To view the defaults_config.yaml that is used by ObsidianHtml.    
-   
-> Tip: run `obsidianhtml export default-config -o config.yml` to get a config file with all possible inputs.    
-   
-Note that the inputs that need to be filled in always are marked with `'<REQUIRED_INPUT>'`.   
-   
-We will now go through all the settings in more-or-less the same order as the output of that command.   
+- [Inspect default config](../Instructions/Inspect%20default%20config.md)   
    
 ## Where has this setting gone?   
 ObsidianHtml is evolving a little bit each new version. A setting might become obsolete or replaced by a new feature with its own configurations. You can find all the deprecated/removed settings here: [Deprecated Configurations](../Configurations/Deprecated%20Configurations/Deprecated%20Configurations.md).   

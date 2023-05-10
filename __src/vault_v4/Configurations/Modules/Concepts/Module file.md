@@ -1,0 +1,1 @@
+Module files are files that are created in the [[Module data folder]] directory, and are the primary method in which modules can provide/read data to and from ObsidianHtml and other modules.
