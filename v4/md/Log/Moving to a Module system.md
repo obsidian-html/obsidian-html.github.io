@@ -24,7 +24,7 @@ Thus I decided to bite the bullet and merge the module system into the master br
    
 Read more on the module system here:   
    
-- [Module Documentation](../Configurations/Extending%20ObsidianHtml/Module%20Documentation.md)   
+- [Module Design](../Configurations/Modules/Developer%20Documentation/Module%20Design.md)   
    
 # Version 4.0.0   
 As the module system is a huge change, it makes sense to combine this with publishing version 4 of ObsidianHtml. This will mean that any settings that are currently giving a "deprecated" warning, will be deleted, and a change in your config.yml / scripting will be necessary.

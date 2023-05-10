@@ -6,7 +6,7 @@
 >The module system currently is still in **alpha**. Any part of the system might still change until further notice, so keep that in mind before diving into the module system.   
    
 ## Introduction   
-Modules are the proposed way [to keep the complexity of ever increasing amounts of features in check](../../Log/Moving%20to%20a%20Module%20system.md). It is my intent to rewrite every chunk of functionality as a module, which will have a clearly defined function, interface, input and output, and thus will be able to be swapped out by a different module that provides the same output but that produces it in a different way.   
+Modules are the proposed way [to keep the complexity of ever increasing amounts of features in check](../../../Log/Moving%20to%20a%20Module%20system.md). It is my intent to rewrite every chunk of functionality as a module, which will have a clearly defined function, interface, input and output, and thus will be able to be swapped out by a different module that provides the same output but that produces it in a different way.   
    
 Built-in modules will also be required to include testing functions.   
    
@@ -108,7 +108,7 @@ module_config:
    
    
 >[!note]   
-> Currently, only the `value` value is copied from the config.yml into the `module.mod_config` object. `description` is mostly for documentation purposes. If you require more keys to be copied over, please [contact us](../../General%20Information/Report%20Issues%20%26%20Request%20features.md) to get it added.   
+> Currently, only the `value` value is copied from the config.yml into the `module.mod_config` object. `description` is mostly for documentation purposes. If you require more keys to be copied over, please [contact us](../../../General%20Information/Report%20Issues%20%26%20Request%20features.md) to get it added.   
    
 The key `prepare_output_folders` should match with the value for `name` as used in the module_list dict:   
 ``` yaml

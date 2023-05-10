@@ -6,5 +6,6 @@
 - [[Resource Logger]]
 
 ## Module Developer Documentation
-- [[Module Documentation]]
+- [[Module Design]]
+- [[Creating a custom Module]]
 

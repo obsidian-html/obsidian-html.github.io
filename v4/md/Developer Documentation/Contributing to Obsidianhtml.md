@@ -9,7 +9,7 @@ When writing code I ask you to keep in mind the code standards as described belo
 # Developer documentations   
    
 - [Install a different version](../Instructions/Install%20a%20different%20version.md)   
-- [Module Documentation](../Configurations/Extending%20ObsidianHtml/Module%20Documentation.md)   
+- [Module Design](../Configurations/Modules/Developer%20Documentation/Module%20Design.md)   
    
 # Standards   
 ## Code preparation prior to creating PR's   

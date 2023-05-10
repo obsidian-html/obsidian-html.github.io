@@ -18,7 +18,7 @@ Thus I decided to bite the bullet and merge the module system into the master br
 >The module system should be a **contract** between ObsidianHtml as a system, and the modules that are written for it. The module system currently is still in alpha. Any part of the system might still change until further notice, so keep that in mind before diving into the module system.
 
 Read more on the module system here:
-- [[Module Documentation]]
+- [[Module Design]]
 
 # Version 4.0.0
 As the module system is a huge change, it makes sense to combine this with publishing version 4 of ObsidianHtml. This will mean that any settings that are currently giving a "deprecated" warning, will be deleted, and a change in your config.yml / scripting will be necessary.

@@ -4,7 +4,7 @@ When writing code I ask you to keep in mind the code standards as described belo
 
 # Developer documentations
 - [[Install a different version]]
-- [[Module Documentation]]
+- [[Module Design]]
 
 # Standards
 ## Code preparation prior to creating PR's
