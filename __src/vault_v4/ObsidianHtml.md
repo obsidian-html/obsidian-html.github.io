@@ -47,6 +47,7 @@ Try this site with different [[Styling#Layouts|layouts]]:
 - [[Styling]]
 - [[Features]]
 - [[Configuration Options]]
+- [[Modules]]
 
 ## Tips and tricks
 - [[Performance Tuning]]

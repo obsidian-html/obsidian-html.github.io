@@ -50,6 +50,7 @@ Try this site with different [layouts](./Configurations/Styling/Styling.md#layou
 - [Styling](./Configurations/Styling/Styling.md)   
 - [Features](./Configurations/Features/Features.md)   
 - [Configuration Options](./Configurations/Configuration%20Options.md)   
+- [Modules](./Configurations/Modules/Modules.md)   
    
 ## Tips and tricks   
    
