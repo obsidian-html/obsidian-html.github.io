@@ -15,10 +15,12 @@ toggles:
     side_pane:             # only valid for documentation layout
       left_pane:
         enabled: True
+        close_if_empty: False
 	    width: 16rem
         contents: dir_tree # <toc, tag_tree, dir_tree> 
       right_pane:
         enabled: True
+        close_if_empty: True
         width: 16rem
         contents: toc      # <toc, tag_tree, dir_tree> 
 ```
@@ -35,8 +37,12 @@ If you don't want to add a table of contents to every note in Obsidian, you can 
 toggles:
   features:
     table_of_contents:
-      add_toc_when_missing: True
+      add_toc_when_missing: True    # add "[TOC]" (Table of Contents) when missing
+      only_show_for_multiple_headers: True   # if there is only one header, don't show the TOC
 ```
+
+See also [[Styling#Table of Contents]]
+
 
 ### dir_tree
 When selecting dir_tree, the output of [[Create Index from Directory Structure]] is added to the pane.

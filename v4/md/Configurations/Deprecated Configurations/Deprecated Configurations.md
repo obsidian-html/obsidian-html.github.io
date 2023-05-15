@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Deprecated Configurations   
    
 This folder contains all the settings that are no longer valid in the latest release.   
    

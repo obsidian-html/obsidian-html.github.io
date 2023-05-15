@@ -3,6 +3,7 @@ tags:
 - type/news
 - date/2022-02-15
 ---
+# Working on an RSS feed for ObsidianHtml   
    
 No self-publishing system should go without an RSS feed.   
    

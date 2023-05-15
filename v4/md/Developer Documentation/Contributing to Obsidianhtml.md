@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Contributing to Obsidianhtml   
    
 This is as easy as creating a pull request (PR) in github. Google or ask in [Discussions](https://github.com/obsidian-html/obsidian-html/discussions) on how best to do this if you are not sure.   
    

@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Stashing   
    
 Stashing is a standardized way to store information in an ObsidianHtmlModule object for later usage. This is useful as the storing/retrieval of information from the module can be logged. This standardization also gives options later in development to hook other mechanisms to these actions.   
    

@@ -13,8 +13,7 @@
                 <title>ObsidianHtml/Documentation</title>
 
                 <!-- Includes -->
-                
-<script src="/v4/obs.html/static/obsidian_core.js"></script>
+                <script src="/v4/obs.html/static/obsidian_core.js"></script>
 <script src="/v4/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/v4/obs.html/static/master.css" />
 <script src="/v4/obs.html/static/mermaid.9.0.1.min.js"></script>
@@ -43,6 +42,8 @@
 <script src="/v4/obs.html/static/pako.js"></script>
 <script src="/v4/obs.html/static/search.js"></script>
 <script src="/v4/obs.html/static/dirtree.js"></script>
+
+
 
 
                 <!-- Onload tweaks -->
@@ -426,9 +427,10 @@
                         <a href="/v4/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">configurations</span> / <a href="/v4/configurations/styling/styling.html" >styling</a>
                     </div>
                 </div>
-<embeddedtitle>Styling</embeddedtitle>
-<div class="content"><div class="toc">
+<div class="content"><h1 id="styling">Styling</h1>
+<div class="toc">
 <ul>
+<li><a href="#styling" class="anchor-link">Styling</a><ul>
 <li><a href="#layouts" class="anchor-link">Layouts</a><ul>
 <li><a href="#documentation" class="anchor-link">Documentation</a></li>
 <li><a href="#tabs" class="anchor-link">Tabs</a></li>
@@ -439,6 +441,8 @@
 <li><a href="#accent-color" class="anchor-link">Accent color</a></li>
 <li><a href="#table-of-contents" class="anchor-link">Table of Contents</a></li>
 <li><a href="#max-note-width" class="anchor-link">Max note width</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <blockquote>
@@ -499,19 +503,18 @@
 
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
-<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">    </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span>
-<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">   </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span>
-<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span>
+<span class="w">    </span><span class="nt">table_of_contents</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">add_toc_when_missing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">    </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span>
+<span class="w">      </span><span class="nt">only_show_for_multiple_headers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">   </span><span class="c1"># if there is only one header, don&#39;t show the TOC</span>
 </code></pre></div>
 
 
 </div>
 
 <p>You can add <code>[TOC]</code> to your note to add in a table of contents (toc) in that location.    </p>
-<p>If you want a toc for every note, you can skip this in Obsidian (which doesn't support this at the time of writing, at least not out of the box), and just set <code>add_toc</code> to True. This will add <code>[TOC]</code> to the top of every note just before compiling the html.    </p>
-<p>This looks a bit weird though, as there is no header, just a list at the top of the note. It is best to also enable <code>toc_pane</code> if you are in the documentation or no_tabs layout. This will add the toc in a separate box on the right of the note.    </p>
-<p>In the documentation layout there are two "panes", one for the content view, and one for the table of contents. By default the toc is on the right and the content view on the left. If you want to flip this over you should set <code>flip_panes: True</code> (which is what I did for this website).   </p>
+<p>If you want a toc for every note, you can skip this in Obsidian (which doesn't support this at the time of writing, at least not out of the box), and just set <code>add_toc_when_missing</code> to True. This will add <code>[TOC]</code> to the top of every note just before compiling the html.    </p>
+<p>See also <a href="/v4/configurations/features/side-panes.html">Side panes</a>, for taking the TOC out of the note, and putting it into one of the side-panes (on by default). There you can configure what content you want in each side pane.   </p>
+<p>By default, no TOC is added when there is only one header, as that is kind of pointless then. If you don't like the look of an emtpy side pane, consider setting <code>only_show_for_multiple_headers</code> to false.   </p>
 <h2 id="max-note-width">Max note width</h2>
 <div class="lang-yaml">
 
@@ -553,13 +556,17 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A280368889194275028997061142206988593778{level}" class="graph_div"></div>
+    <div id="A324361343867851694558749412761335506986{level}" class="graph_div"></div>
+
+    <div class="graph-instructions" id="D324361343867851694558749412761335506986{level}">
+        Left-click: follow link, Right-click: select node, Scroll: zoom
+    </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B280368889194275028997061142206988593778{level}" level="{level}" note_temp_id="280368889194275028997061142206988593778" onclick="window.ObsHtmlGraph.run(this, '280368889194275028997061142206988593778', 'styling');">
+        <button class="graph_button graph_show_button" id="B324361343867851694558749412761335506986{level}" level="{level}" note_temp_id="324361343867851694558749412761335506986" onclick="window.ObsHtmlGraph.run(this, '324361343867851694558749412761335506986', 'styling');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C280368889194275028997061142206988593778{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C324361343867851694558749412761335506986{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

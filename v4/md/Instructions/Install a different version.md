@@ -3,6 +3,7 @@ tags:
 - type/instruction
 - date/2022-05-06
 ---
+# Install a different version   
    
 When you make a feature request or a bug report, often you'll be asked to check if the latest changes made to the code solve your issues.  These changes won't be in a release yet, so you'll have to install them in a slightly different way.   
    

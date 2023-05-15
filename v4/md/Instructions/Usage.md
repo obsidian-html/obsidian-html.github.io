@@ -3,6 +3,7 @@ tags:
 - type/instruction
 - date/2022-02-12
 ---
+# Usage   
    
 ## Introduction   
 After [Installation](../Instructions/Installation.md), we can run obsidian via the commandline like so:   
@@ -125,6 +126,7 @@ Can't get this to work? Please let us know via [Report Issues & Request features
    
 ## Deployment configuration   
 
+# Deployment instructions   
    
 By default the configuration allows for running the website as  [http://localhost:8000](http://localhost:8000),  [https://mywebsite.com/,](https://mywebsite.com/,) [https://my-account.github.io/,](https://my-account.github.io/,) etc.   
    

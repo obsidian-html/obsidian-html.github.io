@@ -13,8 +13,7 @@
                 <title>ObsidianHtml/Documentation</title>
 
                 <!-- Includes -->
-                
-<script src="/v4/obs.html/static/obsidian_core.js"></script>
+                <script src="/v4/obs.html/static/obsidian_core.js"></script>
 <script src="/v4/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/v4/obs.html/static/master.css" />
 <script src="/v4/obs.html/static/mermaid.9.0.1.min.js"></script>
@@ -43,6 +42,8 @@
 <script src="/v4/obs.html/static/pako.js"></script>
 <script src="/v4/obs.html/static/search.js"></script>
 <script src="/v4/obs.html/static/dirtree.js"></script>
+
+
 
 
                 <!-- Onload tweaks -->
@@ -426,9 +427,10 @@
                         <a href="/v4/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">configurations</span> / <a href="/v4/configurations/features/features.html" style="color: var(--normal-text-color);">features</a> / <a href="/v4/configurations/features/side-panes.html" >side-panes</a>
                     </div>
                 </div>
-<embeddedtitle>Side panes</embeddedtitle>
-<div class="content"><div class="toc">
+<div class="content"><h1 id="side-panes">Side panes</h1>
+<div class="toc">
 <ul>
+<li><a href="#side-panes" class="anchor-link">Side panes</a><ul>
 <li><a href="#config" class="anchor-link">Config</a><ul>
 <li><a href="#toc" class="anchor-link">toc</a></li>
 <li><a href="#dir_tree" class="anchor-link">dir_tree</a></li>
@@ -443,6 +445,8 @@
 </ul>
 </li>
 <li><a href="#known-limits" class="anchor-link">Known limits</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <blockquote>
@@ -460,10 +464,12 @@
 <span class="w">    </span><span class="nt">side_pane</span><span class="p">:</span><span class="w">             </span><span class="c1"># only valid for documentation layout</span>
 <span class="w">      </span><span class="nt">left_pane</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">close_if_empty</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span>
 <span class="w">        </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dir_tree</span><span class="w"> </span><span class="c1"># &lt;toc, tag_tree, dir_tree&gt; </span>
 <span class="w">      </span><span class="nt">right_pane</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">close_if_empty</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 <span class="w">        </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16rem</span>
 <span class="w">        </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toc</span><span class="w">      </span><span class="c1"># &lt;toc, tag_tree, dir_tree&gt; </span>
 </code></pre></div>
@@ -481,12 +487,14 @@
 <div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">table_of_contents</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">add_toc_when_missing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">add_toc_when_missing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">    </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span>
+<span class="w">      </span><span class="nt">only_show_for_multiple_headers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">   </span><span class="c1"># if there is only one header, don&#39;t show the TOC</span>
 </code></pre></div>
 
 
 </div>
 
+<p>See also <a href="/v4/configurations/styling/styling.html#table-of-contents">Styling#Table of Contents</a>   </p>
 <h3 id="dir_tree">dir_tree</h3>
 <p>When selecting dir_tree, the output of <a href="/v4/configurations/modes/create-index-from-directory-structure.html">Create Index from Directory Structure</a> is added to the pane.   </p>
 <p>So when selecting this source, make sure that feature is enabled and configured. Below is a minimal configuration.   </p>
@@ -580,13 +588,17 @@ This can be useful if you want total control of the content of a side-pane.   </
 
 </div>
 <div class="graph requires_js ">
-    <div id="A82129995753217751454677090162627049564{level}" class="graph_div"></div>
+    <div id="A113007197198642158769250489421380375015{level}" class="graph_div"></div>
+
+    <div class="graph-instructions" id="D113007197198642158769250489421380375015{level}">
+        Left-click: follow link, Right-click: select node, Scroll: zoom
+    </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B82129995753217751454677090162627049564{level}" level="{level}" note_temp_id="82129995753217751454677090162627049564" onclick="window.ObsHtmlGraph.run(this, '82129995753217751454677090162627049564', 'side panes');">
+        <button class="graph_button graph_show_button" id="B113007197198642158769250489421380375015{level}" level="{level}" note_temp_id="113007197198642158769250489421380375015" onclick="window.ObsHtmlGraph.run(this, '113007197198642158769250489421380375015', 'side panes');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C82129995753217751454677090162627049564{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C113007197198642158769250489421380375015{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

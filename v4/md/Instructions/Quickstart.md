@@ -3,6 +3,7 @@ tags:
 - type/instruction
 - date/2022-02-21
 ---
+# Quickstart   
    
 This page is a very short summary of installation, usage, and configuration options.   
    
@@ -126,6 +127,7 @@ Then open [http://localhost:8000](http://localhost:8000) to view the html site t
    
 ## Deployment configuration   
 
+# Deployment instructions   
    
 By default the configuration allows for running the website as  [http://localhost:8000](http://localhost:8000),  [https://mywebsite.com/,](https://mywebsite.com/,) [https://my-account.github.io/,](https://my-account.github.io/,) etc.   
    

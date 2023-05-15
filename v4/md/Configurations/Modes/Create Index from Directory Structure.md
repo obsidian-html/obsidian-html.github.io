@@ -3,6 +3,7 @@ tags:
 - type/configuration
 - date/2022-02-20
 ---
+# Create Index from Directory Structure   
    
 > New in [v1.0.0](/not_created.md)   
    

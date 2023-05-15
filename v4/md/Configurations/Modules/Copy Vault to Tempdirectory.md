@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Copy Vault to Tempdirectory   
    
 > [View code](https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/modules/builtin/copy_vault_to_tempdirectory.py)   
    

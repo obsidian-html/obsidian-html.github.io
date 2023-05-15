@@ -3,6 +3,7 @@ tags:
 - type/configuration
 - date/2022-04-17
 ---
+# Website navigation menu   
    
 > New in [v2.0.0](/not_created.md)   
    

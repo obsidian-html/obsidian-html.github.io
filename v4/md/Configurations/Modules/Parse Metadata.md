@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Parse Metadata   
    
 > [View code](https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/modules/builtin/parse_metadata.py)   
    

@@ -34,7 +34,7 @@ html_template_path_str: ''
 
 # mod system:
 # =====================================================================
-verbosity: "debug"
+#verbosity: "debug"
 
 module_config:
   # filter_on_metadata:

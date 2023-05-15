@@ -3,6 +3,7 @@ tags:
 - feature/parsing_markdown
 - date/2022-02-04
 ---
+# Parsing Images, videos, and audio   
    
 > This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    
@@ -27,6 +28,14 @@ tags:
   <img src="../Resources/img/obsidian-html-logo-sq.png" width="100" alt="alt" title="alt" />   
   <figcaption>alt</figcaption>   
 </figure>   
+   
+   
+`![alt|100](Resources/img/obsidian-html-logo-sq.png)`   
+<figure>   
+  <img src="../Resources/img/obsidian-html-logo-sq.png" width="100" alt="alt" title="alt" />   
+  <figcaption>alt</figcaption>   
+</figure>   
+   
    
    
 ## External images   

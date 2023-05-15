@@ -13,8 +13,7 @@
                 <title>ObsidianHtml/Tabs-Mode</title>
 
                 <!-- Includes -->
-                
-<script src="/tabs/obs.html/static/obsidian_core.js"></script>
+                <script src="/tabs/obs.html/static/obsidian_core.js"></script>
 <script src="/tabs/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/tabs/obs.html/static/master.css" />
 <script src="/tabs/obs.html/static/mermaid.9.0.1.min.js"></script>
@@ -43,6 +42,8 @@
 <script src="/tabs/obs.html/static/pako.js"></script>
 <script src="/tabs/obs.html/static/search.js"></script>
 <script src="/tabs/obs.html/static/dirtree.js"></script>
+
+
 
 
                 <!-- Onload tweaks -->
@@ -323,13 +324,10 @@
                         <a href="/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/tabs/Demonstrations/Demonstrations.html" style="color: var(--normal-text-color);">Demonstrations</a> / <a href="/tabs/Demonstrations/Parsing Images, videos, and audio.html" >Parsing Images, videos, and audio</a>
                     </div>
                 </div>
-<embeddedtitle>Parsing Images, videos, and audio</embeddedtitle>
-<div class="content"><blockquote>
-<p>This is the documentation for <a href="/tabs/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
-</blockquote>
-<h1 id="images">Images</h1>
+<div class="content"><h1 id="parsing-images-videos-and-audio">Parsing Images, videos, and audio</h1>
 <div class="toc">
 <ul>
+<li><a href="#parsing-images-videos-and-audio" class="anchor-link">Parsing Images, videos, and audio</a></li>
 <li><a href="#images" class="anchor-link">Images</a><ul>
 <li><a href="#obsidian-type-image-links" class="anchor-link">Obsidian type image links</a></li>
 <li><a href="#proper-markdown-image-links" class="anchor-link">Proper markdown image links</a></li>
@@ -347,6 +345,10 @@
 <li><a href="#pdfs" class="anchor-link">Pdfs</a></li>
 </ul>
 </div>
+<blockquote>
+<p>This is the documentation for <a href="/tabs/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<h1 id="images">Images</h1>
 <h2 id="obsidian-type-image-links">Obsidian type image links</h2>
 <p><code>![[Resources/img/obsidian-html-logo-sq.png|300]]</code> <br />
 <img src="/tabs/Resources/img/obsidian-html-logo.png" width="300" alt="" title="" />   </p>
@@ -359,6 +361,12 @@
 <img src="/tabs/Resources/img/obsidian-html-logo.png" width="200" alt="" title="" />   </p>
 <h2 id="alt-text-and-size">Alt text and size</h2>
 <p><code>![[Resources/img/obsidian-html-logo-sq.png|alt|100]]</code>   </p>
+<figure>   
+  <img src="/tabs/Resources/img/obsidian-html-logo-sq.png" width="100" alt="alt" title="alt" />   
+  <figcaption>alt</figcaption>   
+</figure>
+
+<p><code>![alt|100](Resources/img/obsidian-html-logo-sq.png)</code>   </p>
 <figure>   
   <img src="/tabs/Resources/img/obsidian-html-logo-sq.png" width="100" alt="alt" title="alt" />   
   <figcaption>alt</figcaption>   
@@ -411,13 +419,17 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A75772169550286987837658108838119526873{level}" class="graph_div"></div>
+    <div id="A177865106009460793356825031366810358653{level}" class="graph_div"></div>
+
+    <div class="graph-instructions" id="D177865106009460793356825031366810358653{level}">
+        Left-click: follow link, Right-click: select node, Scroll: zoom
+    </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B75772169550286987837658108838119526873{level}" level="{level}" note_temp_id="75772169550286987837658108838119526873" onclick="window.ObsHtmlGraph.run(this, '75772169550286987837658108838119526873', 'parsing images, videos, and audio');">
+        <button class="graph_button graph_show_button" id="B177865106009460793356825031366810358653{level}" level="{level}" note_temp_id="177865106009460793356825031366810358653" onclick="window.ObsHtmlGraph.run(this, '177865106009460793356825031366810358653', 'parsing images, videos, and audio');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C75772169550286987837658108838119526873{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C177865106009460793356825031366810358653{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

@@ -13,8 +13,7 @@
                 <title>ObsidianHtml/Documentation</title>
 
                 <!-- Includes -->
-                
-<script src="/v4/obs.html/static/obsidian_core.js"></script>
+                <script src="/v4/obs.html/static/obsidian_core.js"></script>
 <script src="/v4/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/v4/obs.html/static/master.css" />
 <script src="/v4/obs.html/static/mermaid.9.0.1.min.js"></script>
@@ -43,6 +42,8 @@
 <script src="/v4/obs.html/static/pako.js"></script>
 <script src="/v4/obs.html/static/search.js"></script>
 <script src="/v4/obs.html/static/dirtree.js"></script>
+
+
 
 
                 <!-- Onload tweaks -->
@@ -432,6 +433,9 @@
 <li><a href="#changes" class="anchor-link">Changes</a><ul>
 <li><a href="#breaking-changes" class="anchor-link">Breaking changes</a><ul>
 <li><a href="#it-is-no-longer-allowed-to-run-obsidianhtml-without-command" class="anchor-link">It is no longer allowed to run obsidianhtml without command</a></li>
+</ul>
+</li>
+<li><a href="#obsidianhtml-run-is-removed" class="anchor-link">obsidianhtml run is removed</a><ul>
 <li><a href="#exclude_subfolders-is-removed-as-a-setting" class="anchor-link">exclude_subfolders is removed as a setting</a></li>
 </ul>
 </li>
@@ -442,6 +446,9 @@
 <h2 id="breaking-changes">Breaking changes</h2>
 <h3 id="it-is-no-longer-allowed-to-run-obsidianhtml-without-command">It is no longer allowed to run <code>obsidianhtml</code> without command</h3>
 <p>Previously (with deprecation warning), not passing in a command would have the CLI assume that you meant <code>convert</code>. Starting from this version, the CLI will exit if not explicitly stated what you want to do.   </p>
+<h2 id="obsidianhtml-run-is-removed"><code>obsidianhtml run</code> is removed</h2>
+<p><code>obsidianhtml run</code> was meant as an easy way for beginners to get an export setup, and to immediately view it in their browser. The better approach though would be to run <code>obsidianhtml convert</code> to export your vault to html, and then in a different terminal run a webserver, such as with <code>obsidianhtml serve</code>.    </p>
+<p>The <code>-f</code>, <code>-o</code>, and <code>--subfolder</code> toggles from <code>obsidianhtml run</code> have been ported over to <code>obsidianhtml convert</code>, to easily get started without a <code>config.yml</code>.   </p>
 <h3 id="exclude_subfolders-is-removed-as-a-setting">exclude_subfolders is removed as a setting</h3></div>
 <div class="note-footer">
 <div class="backlinks">
@@ -458,13 +465,17 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A215681260131320709074132950094291203532{level}" class="graph_div"></div>
+    <div id="A262424973422832409767250033916054011901{level}" class="graph_div"></div>
+
+    <div class="graph-instructions" id="D262424973422832409767250033916054011901{level}">
+        Left-click: follow link, Right-click: select node, Scroll: zoom
+    </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B215681260131320709074132950094291203532{level}" level="{level}" note_temp_id="215681260131320709074132950094291203532" onclick="window.ObsHtmlGraph.run(this, '215681260131320709074132950094291203532', 'v4.0.0');">
+        <button class="graph_button graph_show_button" id="B262424973422832409767250033916054011901{level}" level="{level}" note_temp_id="262424973422832409767250033916054011901" onclick="window.ObsHtmlGraph.run(this, '262424973422832409767250033916054011901', 'v4.0.0');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C215681260131320709074132950094291203532{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C262424973422832409767250033916054011901{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

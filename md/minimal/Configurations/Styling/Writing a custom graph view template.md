@@ -4,6 +4,7 @@ tags:
 - type/styling
 - date/2022-04-24
 ---
+# Writing a custom graph view template   
    
 > This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    

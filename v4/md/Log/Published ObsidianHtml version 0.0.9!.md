@@ -3,6 +3,7 @@ tags:
 - type/news
 - date/2022-02-14
 ---
+# Published ObsidianHtml version 0.0.9!   
    
 Lots of new features, like: graph view, backlinks, index from tags, image scaling, temporary vault copy.    
    

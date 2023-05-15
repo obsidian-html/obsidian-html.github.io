@@ -3,6 +3,7 @@ tags:
 - type/configuration
 - date/2022-07-31
 ---
+# Export vault files to html output   
    
 > New in [v3.2.0](/not_created.md)   
    

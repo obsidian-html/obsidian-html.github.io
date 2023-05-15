@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Built-in versus External modules   
    
 Built-in modules are packaged with ObsidianHtml, this allows us to easily define them, and load components from ObsidianHtml.    
    

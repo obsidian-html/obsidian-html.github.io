@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Embedded note title   
    
 > New in [v3.2.0](/not_created.md)   
 > Changed in [v3.4.0](/not_created.md)   

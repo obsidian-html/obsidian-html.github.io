@@ -4,6 +4,7 @@ tags:
 - date/2022-07-30
 - inline-tag
 ---
+# Implementing inline tags   
    
 > New in [v3.1.0](/not_created.md)   
    

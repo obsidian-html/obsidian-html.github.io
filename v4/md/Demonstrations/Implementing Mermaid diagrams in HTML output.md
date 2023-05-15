@@ -5,6 +5,7 @@ tags:
 - feature/diagrams
 - date/2022-02-04
 ---
+# Mermaid Diagrams   
    
 Mermaid diagram code is converted into an actual diagram in the HTML output.   
    

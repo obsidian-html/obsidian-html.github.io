@@ -4,6 +4,7 @@ tags:
 - type/general_information
 - date/2022-02-12
 ---
+# Parsing Obsidian notes to proper markdown   
    
 > This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    

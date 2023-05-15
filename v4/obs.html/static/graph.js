@@ -158,6 +158,7 @@ function run(button, ntid, pinned_node)
     if (button.innerHTML == 'Hide Graph'){
         button.innerHTML = 'Show Graph';
         cont.style.display = "none";
+        document.getElementById('D'+uid).classList.remove('fadein');
         remove_graph(uid, cont, true);
         return;
     }
@@ -168,7 +169,9 @@ function run(button, ntid, pinned_node)
     // Init graph
     if (!graphs[uid].active){
         enable_graph(uid)
-    } 
+    } else {
+        document.getElementById('D'+uid).classList.add('fadein');
+    }
 }
 
 function enable_graph(uid){
@@ -214,6 +217,12 @@ function switch_graph_type(button){
 
     // toggle button
     let grapher_listing = _toggle_graph_type_button(button);
+
+    // disable help (only show for 2d)
+    let graph_instructions = document.getElementById('D'+uid);
+    if (graph_instructions != null) {
+        graph_instructions.classList.remove('fadein');
+    }
 
     // update info with new grapher choice
     let graph = set_grapher(grapher_listing, uid)

@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Inspect default config   
    
 The default config as defined on this site might differ from the default config in your version of Obsidian. This can be because you are using an older version, or because the documentation has become outdated.   
    

@@ -3,6 +3,7 @@ tags:
 - type/configuration
 - date/2022-04-17
 ---
+# Styling   
    
 > This page discusses the built-in styling options. If you want to use custom code, go to [Edit HTML, CSS, JS](../../Configurations/Styling/Edit%20HTML%2C%20CSS%2C%20JS.md).   
    
@@ -66,20 +67,21 @@ For anything more involved you currently have to [edit the css by hand](../../Co
 ``` yaml
 toggles:
   features:
-    styling: 
-      add_toc: True    # add "[TOC]" (Table of Contents) when missing
-      toc_pane: True   # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
-      flip_panes: False # switch right and left pane around. (does nothing unless in documentation layout.)
+    table_of_contents: 
+      add_toc_when_missing: True    # add "[TOC]" (Table of Contents) when missing
+      only_show_for_multiple_headers: True   # if there is only one header, don't show the TOC
 ```
    
    
 You can add `[TOC]` to your note to add in a table of contents (toc) in that location.    
    
-If you want a toc for every note, you can skip this in Obsidian (which doesn't support this at the time of writing, at least not out of the box), and just set `add_toc` to True. This will add `[TOC]` to the top of every note just before compiling the html.    
+If you want a toc for every note, you can skip this in Obsidian (which doesn't support this at the time of writing, at least not out of the box), and just set `add_toc_when_missing` to True. This will add `[TOC]` to the top of every note just before compiling the html.    
    
-This looks a bit weird though, as there is no header, just a list at the top of the note. It is best to also enable `toc_pane` if you are in the documentation or no_tabs layout. This will add the toc in a separate box on the right of the note.    
+See also [Side panes](../../Configurations/Features/Side%20panes.md), for taking the TOC out of the note, and putting it into one of the side-panes (on by default). There you can configure what content you want in each side pane.   
    
-In the documentation layout there are two "panes", one for the content view, and one for the table of contents. By default the toc is on the right and the content view on the left. If you want to flip this over you should set `flip_panes: True` (which is what I did for this website).   
+By default, no TOC is added when there is only one header, as that is kind of pointless then. If you don't like the look of an emtpy side pane, consider setting `only_show_for_multiple_headers` to false.   
+   
+   
    
 ## Max note width   
 ``` yaml

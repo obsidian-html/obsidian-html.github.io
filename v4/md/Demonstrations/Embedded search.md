@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Embedded search   
    
 > Added in [v3.3.0](/not_created.md)   
    

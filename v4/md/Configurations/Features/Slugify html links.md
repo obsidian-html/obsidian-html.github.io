@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Slugify html links   
    
 >New in [v3.5.0](/not_created.md)   
    

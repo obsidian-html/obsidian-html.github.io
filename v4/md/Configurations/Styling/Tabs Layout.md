@@ -3,6 +3,7 @@ tags:
 - type/styling
 - date/2022-04-17
 ---
+# Tabs Layout   
    
 When the [styling layout setting](../../Configurations/Styling/Styling.md#layouts) is set to `tabs`, the html output uses a tab system, where each internal link opens a new note on the right of the parent note.    
    

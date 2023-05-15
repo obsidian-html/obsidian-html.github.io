@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Filtering notes   
    
 > This instruction is valid from version [v3.4.0](/not_created.md) onwards.    
    

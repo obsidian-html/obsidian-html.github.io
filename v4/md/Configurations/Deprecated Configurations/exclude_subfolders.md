@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# exclude_subfolders   
    
 > Deprecated starting with [v3.4.0](/not_created.md)   
    

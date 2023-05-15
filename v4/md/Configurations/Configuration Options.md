@@ -3,6 +3,7 @@ tags:
 - type/configuration
 - date/2022-02-12
 ---
+# Configuration Options   
    
 This page goes through all the configuration options and will refer to features. For a toplevel view of these features, see [Features](../Configurations/Features/Features.md).   
    

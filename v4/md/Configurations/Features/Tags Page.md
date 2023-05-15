@@ -3,6 +3,7 @@ tags:
 - feature/parsing_markdown
 - date/2022-02-04
 ---
+# Tags Page   
    
 ## Preserve inline tags   
 Inline tags are preserved by default, but this will create polluted markdown output. You can disable this feature by setting:   

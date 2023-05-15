@@ -3,6 +3,7 @@ tags:
 - type/news
 - date/2022-02-20
 ---
+# Published ObsidianHtml version 1.0.0!   
    
 The first major version of ObsidianHtml! 🎉   
    

@@ -1,6 +1,7 @@
 ---
 {}
 ---
+# Resource Logger   
    
 > [View code](https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/modules/builtin/resource_logger.py)   
    
