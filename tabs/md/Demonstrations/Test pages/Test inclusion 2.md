@@ -2,7 +2,6 @@
 tags:
 - type/test_page
 ---
-# Test inclusion 2   
    
 First chapter   
    

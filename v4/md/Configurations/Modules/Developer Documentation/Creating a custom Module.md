@@ -51,8 +51,8 @@ class CustomModule(ObsidianHtmlModule):
    
 We will now first concern ourselves with getting the module up and running, for more information on the boilerplate code, see:   
    
-- (1) [Module Design#Required properties](../../../Configurations/Modules/Developer%20Documentation/Module%20Design.md#required-properties)    
-- (2) [Module Design#Required methods](../../../Configurations/Modules/Developer%20Documentation/Module%20Design.md#required-methods)   
+- (1) [Module Design](../../../Configurations/Modules/Developer%20Documentation/Module%20Design.md#required-properties)    
+- (2) [Module Design](../../../Configurations/Modules/Developer%20Documentation/Module%20Design.md#required-methods)   
    
 You can also look at the code of the parent class here, which might be elucidating:   
    
@@ -186,7 +186,7 @@ We can write to the [Module data folder](../../../Configurations/Modules/Concept
    
 Read more on reading and writing modfiles here:   
    
-- [Module Design#Reading and writing modfiles](../../../Configurations/Modules/Developer%20Documentation/Module%20Design.md#reading-and-writing-modfiles)   
+- [Module Design](../../../Configurations/Modules/Developer%20Documentation/Module%20Design.md#reading-and-writing-modfiles)   
    
 Change the `run` method to the following:   
    

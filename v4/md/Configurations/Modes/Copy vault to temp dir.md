@@ -13,7 +13,7 @@ This is the default behavior,  but an optional setting, and if you have severe f
    
 The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please [report it as an issue](../../General%20Information/Report%20Issues%20%26%20Request%20features.md).   
    
-See config options: [Configuration Options#Copy Vault to Tempdir](../../Configurations/Configuration%20Options.md#copy-vault-to-tempdir)   
+See config options: [Configuration Options](../../Configurations/Configuration%20Options.md#copy-vault-to-tempdir)   
    
 ## Exclude subfolders   
 > New in [v3.2.0](/not_created.md)   

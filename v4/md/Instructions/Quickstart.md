@@ -33,7 +33,7 @@ When running on Windows,  also run:
 pip install --pre pythonnet
 ```
    
-For more information: [Installation#On Windows](../Instructions/Installation.md#on-windows).   
+For more information: [Installation](../Instructions/Installation.md#on-windows).   
    
    
 Now we can install ObsidianHtml:   

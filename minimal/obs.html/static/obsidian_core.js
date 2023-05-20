@@ -7,9 +7,6 @@ var toc_pane_div = "";
 var dir_index_pane_div = "";
 var html_url_prefix = "/minimal";
 var CONFIGURED_HTML_URL_PREFIX = "/minimal";
-var CONFIG_ONLY_SHOW_FOR_MULTIPLE_HEADERS = 1;
-var CONFIG_CLOSE_RIGHT_PANE_IF_EMPTY = 1;
-var CONFIG_CLOSE_LEFT_PANE_IF_EMPTY = 0;
 var RELATIVE_PATHS = 0;
 var documentation_mode = 0;
 var tab_mode = !no_tab_mode;
@@ -254,7 +251,7 @@ function LoadTableOfContents(container_div)
     let collection = container_div.getElementsByClassName('toc')
     if (collection.length > 0) {
         let toc = collection[0];
-        if (!CONFIG_ONLY_SHOW_FOR_MULTIPLE_HEADERS || toc.getElementsByTagName('li').length > 1) {
+        if (toc.getElementsByTagName('li').length > 1) {
 
             if (toc_pane_div && no_tab_mode) {
                 let tpd = document.getElementById(toc_pane_div);
@@ -275,35 +272,13 @@ function LoadTableOfContents(container_div)
 }
 
 function SetSidePanes() {
-    let lp = document.getElementById('left_pane');
-    let lpc = document.getElementById('left_pane_content');
+    let lp = document.getElementById('left_pane_content');
     if (lp){
-        if (CONFIG_CLOSE_LEFT_PANE_IF_EMPTY){
-            CloseSidePaneIfEmpty(lp, lpc);
-        }
+        SetContainer(lp)
     }
-    if (lpc){
-        SetContainer(lpc)
-    }
-
-    let rp = document.getElementById('right_pane');
-    let rpc = document.getElementById('right_pane_content');
+    let rp = document.getElementById('right_pane_content');
     if (rp){
-        if (CONFIG_CLOSE_RIGHT_PANE_IF_EMPTY){
-            CloseSidePaneIfEmpty(rp, rpc);
-        }
-    }
-    if (rpc){
-        SetContainer(rpc)
-    }
-}
-
-function CloseSidePaneIfEmpty(pane_div, pane_content_div) {
-    if (!pane_content_div){
-        pane_div.classList.remove("active");
-    } 
-    if (pane_content_div && pane_content_div.innerHTML.trim() == ""){
-        pane_div.classList.remove("active");
+        SetContainer(rp)
     }
 }
 
@@ -358,11 +333,6 @@ function SetContainer(container) {
         graph_type_button[0].id = graph_type_button[0].id.replace('{level}', container.level)
     }
 
-    let graph_instructions = container.querySelectorAll(".graph-instructions");
-    if (graph_instructions.length == 1) {
-        graph_instructions[0].id = graph_instructions[0].id.replace('{level}', container.level)
-    }
-
     if (window.ObsHtmlGraph){
         window.ObsHtmlGraph.arm_page(container)
     }
@@ -372,6 +342,7 @@ function SetContainer(container) {
 function SetHeaders(container) {
     let content = container.getElementsByClassName('content')
     let els = container.childNodes;
+    console.log(content)
     if (content.length > 0){
         content = content[0]
         els = content.childNodes;

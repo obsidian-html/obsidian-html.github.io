@@ -13,7 +13,7 @@ For most people this won't be an issue, but for those still on dial-up connectio
    
 ## Quick method   
 ### Minimal layout   
-See if you can live with the minimal layout. This layout has most things cut away that are not necessary to view/navigate your site. Read more: [Styling#Minimal](../../Configurations/Styling/Styling.md#minimal).   
+See if you can live with the minimal layout. This layout has most things cut away that are not necessary to view/navigate your site. Read more: [Styling](../../Configurations/Styling/Styling.md#minimal).   
    
 The next steps will also work with the other layouts though.   
    

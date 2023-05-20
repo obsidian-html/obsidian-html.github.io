@@ -29,7 +29,7 @@ toggles:
    
    
 ### Disable on specific note   
-To disable adding a title in a specific note, see [Note settings#dont_add_embedded_title](../../Configurations/Note%20settings/Note%20settings.md#dont_add_embedded_title).   
+To disable adding a title in a specific note, see [Note settings](../../Configurations/Note%20settings/Note%20settings.md#dont_add_embedded_title).   
    
 ### Disable if note already has a title   
 By default, no title will be added if the first element of the note is an h1 header. To ignore this rule, set this:   

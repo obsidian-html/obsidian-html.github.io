@@ -136,7 +136,6 @@ Note the args variable, this is a hashtable containing information that is neede
 ```
    
    
-   
 - graph_container: the object returned by calling `document.getElementById('<id-of-the-div-where-the-graph-should-be-drawn>')`   
 - width/height: the width and height of the container above   
 - current_node_id: the page is aware of which node id belongs to the page, this can be used to highlight the correct node for the page when loading the graph.   

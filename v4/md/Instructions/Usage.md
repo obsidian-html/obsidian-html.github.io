@@ -167,7 +167,6 @@ At the moment the output folder will just be created where ever we call `obsidia
    
 Relative paths are also allowed.   
    
-   
 - Make sure that the `md_entrypoint_path_str` is located in `md_folder_path_str`.   
 - The example paths below are for Windows, for Linux, and example would be `/home/<username>/Documents/Website/<folder>`   
    

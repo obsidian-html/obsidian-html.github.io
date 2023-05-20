@@ -87,7 +87,7 @@ obsidian_folder_path_str: '<REQUIRED_INPUT>'
 ```
    
    
-If you want to only compile markdown to html ([Configuration Options#Compile Md](../Configurations/Configuration%20Options.md#compile-md)), and not use an obsidian vault as input, you can change value to anything other than `<REQUIRED_INPUT>`.   
+If you want to only compile markdown to html ([Configuration Options](../Configurations/Configuration%20Options.md#compile-md)), and not use an obsidian vault as input, you can change value to anything other than `<REQUIRED_INPUT>`.   
    
 ### obsidian_entrypoint_path_str   
 ``` yaml
@@ -99,7 +99,7 @@ obsidian_entrypoint_path_str: '<REQUIRED_INPUT>'
 ```
    
    
-If you want to only compile markdown to html ([Configuration Options#Compile Md](../Configurations/Configuration%20Options.md#compile-md)), and not use an obsidian vault as input, you can change value to anything other than `<REQUIRED_INPUT>`.   
+If you want to only compile markdown to html ([Configuration Options](../Configurations/Configuration%20Options.md#compile-md)), and not use an obsidian vault as input, you can change value to anything other than `<REQUIRED_INPUT>`.   
    
 ### md_folder_path_str   
 ``` yaml
@@ -291,7 +291,7 @@ toggles:
 ```
    
    
-When in doubt, look at the default config yaml: [Configuration Options#Get all the default settings](../Configurations/Configuration%20Options.md#get-all-the-default-settings).   
+When in doubt, look at the default config yaml: [Configuration Options](../Configurations/Configuration%20Options.md#get-all-the-default-settings).   
    
 ### Compile Md   
 ``` yaml
@@ -304,7 +304,7 @@ If this setting is turned off, the steps of converting obsidian notes to markdow
    
 > This method is not tested often, nor tested well, expect issues when you use this option. If you do, please let us know: [Report Issues & Request features](../General%20Information/Report%20Issues%20%26%20Request%20features.md)   
    
-Note that even though the obsidian paths are not used, they are still required inputs, so fill them in with a tempdir or another kind of placeholder. See also [Configuration Options#Paths](../Configurations/Configuration%20Options.md#paths).   
+Note that even though the obsidian paths are not used, they are still required inputs, so fill them in with a tempdir or another kind of placeholder. See also [Configuration Options](../Configurations/Configuration%20Options.md#paths).   
    
 ### Compile Html   
 ``` yaml

@@ -8,7 +8,6 @@ tags:
    
 There are currently two ways to edit the html code used to build your website:   
    
-   
 - Add extra css/js files to the header of a standard template.   
 - Pass in your own html template.   
    

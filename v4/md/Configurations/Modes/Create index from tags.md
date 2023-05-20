@@ -18,7 +18,7 @@ To enable this setting, [Copy vault to temp dir](../../Configurations/Modes/Copy
 ## Example   
 You can view an index that is created in this way under [/index_from_tags](/index_from_tags).    
    
-> Fun fact: we co-published this version of the website next to the main website using the [Configuration Options#Html Url Prefix](../../Configurations/Configuration%20Options.md#html-url-prefix) setting!   
+> Fun fact: we co-published this version of the website next to the main website using the [Configuration Options](../../Configurations/Configuration%20Options.md#html-url-prefix) setting!   
    
 ## Minimal configuration   
 Don't be intimidated by the configuration settings for this feature, in it's minimal form, this would be enough to enable it:   

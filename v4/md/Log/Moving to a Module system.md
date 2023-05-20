@@ -11,7 +11,6 @@ The users of this package really helped in making the html output very similar t
    
 This will hopefully change with the new module system. This system aims to do a couple things:   
    
-   
 - Make a common interface through which users can (more easily) extend/change the functionality of ObsidianHtml.   
 - Make the code easier to follow. Each module has a defined input and output. After each module, the change in the in-/output files can be inspected. This should making debugging/developing/troubleshooting substantially easier   
 	- This is combined with an integrated logger, that keeps track of which module read, writes, and updates which module file.   

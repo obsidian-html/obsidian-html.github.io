@@ -9,9 +9,9 @@ You could use the [included_folders](../../Configurations/Configuration%20Option
    
 The best way to go about exporting just one subfolder, and everything under it is as follows:   
    
-   
 - Make sure that all the notes and resources used/linked to in that folder are located somewhere under that folder.   
 - Add a folder named `.obsdian` in the root of the folder that you want to use as your "vault"    
+   
 >[!info]-   
 >Obsidian desktop/mobile does not look into subdirectories for `.obsidian`, so this should not have any affect on your usage of Obsidian.      
 >    

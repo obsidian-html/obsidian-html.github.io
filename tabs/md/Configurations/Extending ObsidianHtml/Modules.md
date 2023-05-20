@@ -1,7 +1,6 @@
 ---
 {}
 ---
-# Modules   
    
 > This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    
@@ -22,7 +21,7 @@ You can find all the modules, and the code to manage them, in this folder:
    
 The builtin folder contains a number of modules that are currently used:   
    
-- [https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin](https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin)   
+- [https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules](https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules)/builtin   
    
 # High level design   
    

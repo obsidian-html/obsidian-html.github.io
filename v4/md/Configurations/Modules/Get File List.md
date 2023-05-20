@@ -9,7 +9,6 @@ This module is responsible for getting a first list of files from the [Input fol
    
 It uses two globs to control which files are collected:   
    
-   
 - `include_glob`   
 - `exclude_glob`   
    
@@ -67,6 +66,5 @@ This will be calculated with the input folder as root.
    
 ## Further filtering   
 These modules are executed by default (at some point) after this module, and allow for further filtering of the notes:   
-   
    
 -

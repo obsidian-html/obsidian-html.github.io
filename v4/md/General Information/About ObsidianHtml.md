@@ -41,7 +41,6 @@ By default only notes that are found by following links recursively starting wit
 - This application is extensively tested on Linux, regularly tested by users on OSX, and basically never tested on (but intended to be compatible with) Windows.   
 - The website output is developed and fully tested on Firefox, and occasionally on Chrome, but supported for all modern browsers.   
    
-   
 - Make sure that the `python` command points to `python3`, and not a python2 version.   
    
 One thing to take note of is that ObsidianHtml will write a folder to your html output named obs.html, if you have a directory in the root of your vault with the same name (however unlikely that is...) there might be issues with the html output.   

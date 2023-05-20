@@ -127,7 +127,6 @@ exclude_files: ['not_created.html', 'index.html']
    
 This setting allows you to only include notes that have a certain key in the frontmatter yaml.   
    
-   
 - This is a list of lists. Each element in the main list is a selector. The first value in the selector list is the function name.    
 - At the moment only the [yaml](#yaml) function is implemented for this setting.   
 - If any of the given functions return true, then the item is selected.   
@@ -143,7 +142,6 @@ match_keys: [['yaml','tags',['news/']]]
    
 #### exclude_keys   
 > This value accepts lists of [Selector functions](#selector-functions)   
-   
    
 - Same as [Match keys](#match-keys), but will exclude notes   
 - If a note matches on both match_key and exclude_key, the note will not be included.   
@@ -177,7 +175,6 @@ match_keys: [['yaml','tags',['news/']]]
 #### iso_formatted   
 Whether the string that is selected is iso formatted. This information is used to parse the date into a dateobject, in order to get to the correct RSS date string.   
    
-   
 - If true, the format_string setting will be ignored.    
    
 #### format_string   
@@ -199,7 +196,6 @@ publish_date:
    
 # Selector functions   
 Some configuration items can be set using a selector.    
-   
    
 - A selector is always a list where the first item is the name of the selector function.    
 - The rest of the values are argument to the selector function and are thus different for each selector function.   
@@ -245,7 +241,6 @@ This selector allows us to match items on the presence of either a key, or a lis
    
    
 Some pointers:   
-   
    
 - If used to select notes (boolean), any returned value will result in a selection *(or deselection, in case of exclude configurations).*    
 - If used to select a value, like in the selector for a title, then that title will become that returned value.   

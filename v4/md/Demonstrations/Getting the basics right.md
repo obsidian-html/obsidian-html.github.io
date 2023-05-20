@@ -29,7 +29,6 @@ Horizontal divider
    
 This is a   
    
-   
 ---   
    
 Horizontal divider   

@@ -247,11 +247,9 @@ query without quotes
 Note that the current implementation filters out common words (limited to English) such as "a" and "for", so the list in the html output will often be a lot shorter than in Obsidian.   
    
    
-   
 --------   
    
 Here I link to the test notes so that they are included in the vault.   
-   
    
 - [babayaga in title only](../Resources/test_pages/embedded_search/babayaga%20in%20title%20only.md)   
 - [bbyg_in_text](../Resources/test_pages/embedded_search/bbyg_in_text.md)   

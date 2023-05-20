@@ -4,7 +4,6 @@ tags:
 - type/test_page
 - date/2022-06-07
 ---
-# Implementing Dataview   
    
 > This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    

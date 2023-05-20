@@ -13,7 +13,7 @@ var CONFIG_CLOSE_LEFT_PANE_IF_EMPTY = 0;
 var RELATIVE_PATHS = 0;
 var documentation_mode = 1;
 var tab_mode = !no_tab_mode;
-var gzip_hash = '281558396947147050564479290366448408701'                       // used to check whether the localStorage data is stale
+var gzip_hash = '17730247062332066113332205743760041166'                       // used to check whether the localStorage data is stale
 
 // global cache
 var fn_cache_ls_available = null;
@@ -321,9 +321,9 @@ function SetContainer(container) {
     SetHeaders(container);
 
     // Load mermaid code
-    if (mermaid_enabled){
-        mermaid.init()
-    }
+    // if (mermaid_enabled){
+    //     mermaid.init()
+    // }
 
     // callout divs are created with class 'active' to have them folded open by default
     // when js is enabled (in this case) this class is removed so the callouts are folded closed until clicked on
@@ -362,6 +362,8 @@ function SetContainer(container) {
     if (graph_instructions.length == 1) {
         graph_instructions[0].id = graph_instructions[0].id.replace('{level}', container.level)
     }
+
+    style_checklist(container);
 
     if (window.ObsHtmlGraph){
         window.ObsHtmlGraph.arm_page(container)
@@ -568,4 +570,25 @@ function toggle_callout(el){
     cl_toggle(el, 'inactive')
 }
 
+function style_checklist(element){
+    let li_items = element.querySelectorAll("li");
+    for (let i=0; i<li_items.length;i++){
+        let li = li_items[i];
 
+        // apply on subitems, otherwise these may be overwritten
+        let sub_li_items = li.querySelectorAll("li");
+        if (sub_li_items.length > 0){
+            style_checklist(li);
+        }
+
+        // style list
+        if (li.innerHTML.slice(0, 3) == "[ ]"){
+            li.innerHTML = li.innerHTML.replace("[ ]", '<div class="unchecked">⬜</div>');
+            li.classList.add("checklist-item");
+        }
+        else if (li.innerHTML.slice(0, 3) == "[x]"){
+            li.innerHTML = li.innerHTML.replace("[x]", '<div class="checked">✔</div>');
+            li.classList.add("checklist-item");
+        }
+    }
+}

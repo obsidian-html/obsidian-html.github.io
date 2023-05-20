@@ -34,6 +34,7 @@ These features implement standard Obsidian behavior in the html output.
 | [Graph view](../../Configurations/Features/Graph%20view.md) | Add graph view at the bottom of the note | Enabled |   
 | [Mathjax support](../../Demonstrations/Implementing%20Latex.md) | Convert mathjax code to formulas | Enabled |   
 | [Mermaid diagrams](../../Demonstrations/Implementing%20Mermaid%20diagrams%20in%20HTML%20output.md) | Convert mermaid code to diagrams | Enabled |   
+| [Smiles](../../Configurations/Features/Smiles.md) | Show molecule diagrams | **Disabled** |   
 | [Styling](../../Configurations/Styling/Styling.md) | Enable user to switch between light and dark mode / Choose a different layout. | Enabled |   
 | [Side panes](../../Configurations/Features/Side%20panes.md) | *Only for Documentation layout*. Configure side panes and their content. | Enabled |   
 | [Table of Contents](../../Configurations/Styling/Styling.md#table-of-contents) | Add TOC to side-pane instead of in note / add TOC to notes when missing | Enabled |   

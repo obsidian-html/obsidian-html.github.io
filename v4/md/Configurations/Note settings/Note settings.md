@@ -20,7 +20,7 @@ obs.html.tags:
    
    
 ### no_tags_footer   
-This setting will make it so that no tags footer is placed at the bottom of the note. See also [Tags Page#Tags list in note](../../Configurations/Features/Tags%20Page.md#tags-list-in-note)   
+This setting will make it so that no tags footer is placed at the bottom of the note. See also [Tags Page](../../Configurations/Features/Tags%20Page.md#tags-list-in-note)   
    
 ``` yaml
 obs.html.tags:

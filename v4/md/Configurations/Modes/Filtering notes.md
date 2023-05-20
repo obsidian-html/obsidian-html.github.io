@@ -9,7 +9,6 @@
 If you don't want to export your entire vault, then there are options to set inclusion and or exclusion.   
 This is controlled by these settings:   
    
-   
 - `included_folders`   
 - `exclude_glob`   
    
@@ -26,6 +25,7 @@ You can also combine both settings. This will start with finding all the files i
 - No slash in the beginning is neccessary   
 - No glob patterns supported   
 - Should be a list, so:   
+   
 ``` yaml
 included_folders: my_folder # wrong!
 included_folders:
@@ -39,6 +39,7 @@ included_folders:
 - Starting a line with a slash will make the line match a specific folder   
 - Not starting a line with a slash will exclude every folder whose name matches the line   
 - Should be a list, so:   
+   
 ``` yaml
 exclude_glob: stuff # wrong!
 exclude_glob:

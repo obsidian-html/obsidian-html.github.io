@@ -13,7 +13,8 @@
                 <title>ObsidianHtml/Documentation</title>
 
                 <!-- Includes -->
-                <script src="/obs.html/static/obsidian_core.js"></script>
+                
+<script src="/obs.html/static/obsidian_core.js"></script>
 <script src="/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/obs.html/static/master.css" />
 <script src="/obs.html/static/mermaid.9.0.1.min.js"></script>
@@ -42,8 +43,6 @@
 <script src="/obs.html/static/pako.js"></script>
 <script src="/obs.html/static/search.js"></script>
 <script src="/obs.html/static/dirtree.js"></script>
-
-
 
 
                 <!-- Onload tweaks -->
@@ -363,7 +362,7 @@
 		<li><a class="" href="/demonstrations/implementing-mermaid-diagrams-in-html-output.html"  >Mermaid Diagrams</a></li>
 		<li><a class="" href="/demonstrations/implementing-note-inclusions.html"  >Inclusions</a></li>
 		<li><a class="" href="/demonstrations/making-code-blocks-look-pretty.html"  >Code blocks</a></li>
-		<li><a class="" href="/demonstrations/making-lists-work-the-same.html"  >Links</a></li>
+		<li><a class="" href="/demonstrations/making-lists-work-the-same.html"  >Lists</a></li>
 		<li><a class="" href="/demonstrations/parsing-images-videos-and-audio.html"  >Parsing Images, videos, and audio</a></li>
 		<li><a class="" href="/demonstrations/removing-obisidian-comments.html"  >Removing obisidian comments</a></li>
 		<li><a class="" href="/demonstrations/sites-using-obsidianhtml.html"  >Sites using ObsidianHtml</a></li>
@@ -433,30 +432,8 @@
                         <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">instructions</span> / <a href="/instructions/quickstart.html" >quickstart</a>
                     </div>
                 </div>
-<div class="content"><h1 id="quickstart">Quickstart</h1>
-<div class="toc">
-<ul>
-<li><a href="#quickstart" class="anchor-link">Quickstart</a><ul>
-<li><a href="#installation" class="anchor-link">Installation</a></li>
-<li><a href="#run" class="anchor-link">Run</a><ul>
-<li><a href="#short-instructions" class="anchor-link">Short instructions</a></li>
-</ul>
-</li>
-<li><a href="#configuration" class="anchor-link">Configuration</a></li>
-<li><a href="#convert-vault" class="anchor-link" class="anchor-link">Convert vault</a></li>
-<li><a href="#test-website" class="anchor-link">Test website</a></li>
-<li><a href="#deployment-configuration" class="anchor-link">Deployment configuration</a></li>
-</ul>
-</li>
-<li><a href="#deployment-instructions" class="anchor-link">Deployment instructions</a><ul>
-<li><a href="#deploying-to-a-subfolder" class="anchor-link">Deploying to a subfolder</a></li>
-<li><a href="#viewing-your-website-without-a-webserver" class="anchor-link">Viewing your website without a webserver</a></li>
-</ul>
-</li>
-<li><a href="#next-steps" class="anchor-link">Next steps</a></li>
-</ul>
-</div>
-<blockquote>
+<embeddedtitle>Quickstart</embeddedtitle>
+<div class="content"><blockquote>
 <p>This is the documentation for <a href="/changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
 </blockquote>
 <p>This page is a very short summary of installation, usage, and configuration options.   </p>
@@ -597,7 +574,6 @@
 
 <p>Then open <a href="http://localhost:8000" class="external-link" class="external-link">http://localhost:8000</a> to view the html site that was created.   </p>
 <h2 id="deployment-configuration">Deployment configuration</h2>
-<h1 id="deployment-instructions">Deployment instructions</h1>
 <blockquote>
 <p>This is the documentation for <a href="/changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
 </blockquote>
@@ -632,6 +608,24 @@
 <p>Note that this will break the graph view and the search function, so these should be disabled.    </p>
 <p>For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: <a href="/configurations/modes/relative_path_html.html">Relative_path_html</a></p>
 <h1 id="next-steps">Next steps</h1>
+<div class="toc">
+<ul>
+<li><a href="#installation" class="anchor-link">Installation</a></li>
+<li><a href="#run" class="anchor-link">Run</a><ul>
+<li><a href="#short-instructions" class="anchor-link">Short instructions</a></li>
+</ul>
+</li>
+<li><a href="#configuration" class="anchor-link">Configuration</a></li>
+<li><a href="#convert-vault" class="anchor-link" class="anchor-link">Convert vault</a></li>
+<li><a href="#test-website" class="anchor-link">Test website</a></li>
+<li><a href="#deployment-configuration" class="anchor-link">Deployment configuration</a><ul>
+<li><a href="#deploying-to-a-subfolder" class="anchor-link">Deploying to a subfolder</a></li>
+<li><a href="#viewing-your-website-without-a-webserver" class="anchor-link">Viewing your website without a webserver</a></li>
+</ul>
+</li>
+<li><a href="#next-steps" class="anchor-link">Next steps</a></li>
+</ul>
+</div>
 <ul>
 <li>Read the full notes on <a href="/instructions/installation.html">Installation</a> and <a href="/instructions/usage.html">Usage</a> if you want to know more about these steps.   </li>
 <li>If the conversion works, but you want to change the behavior, check out <a href="/configurations/features/features.html">Features</a>, <a href="/configurations/modes/modes.html">Modes</a>, and finally <a href="/configurations/configuration-options.html">Configuration Options</a></li>
@@ -654,17 +648,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A131615101504785100010014262829234370273{level}" class="graph_div"></div>
-
-    <div class="graph-instructions" id="D131615101504785100010014262829234370273{level}">
-        Left-click: follow link, Right-click: select node, Scroll: zoom
-    </div>
+    <div id="A251954074885907006789005681556147104978{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B131615101504785100010014262829234370273{level}" level="{level}" note_temp_id="131615101504785100010014262829234370273" onclick="window.ObsHtmlGraph.run(this, '131615101504785100010014262829234370273', 'quickstart');">
+        <button class="graph_button graph_show_button" id="B251954074885907006789005681556147104978{level}" level="{level}" note_temp_id="251954074885907006789005681556147104978" onclick="window.ObsHtmlGraph.run(this, '251954074885907006789005681556147104978', 'quickstart');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C131615101504785100010014262829234370273{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C251954074885907006789005681556147104978{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

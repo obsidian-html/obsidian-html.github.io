@@ -1,15 +1,12 @@
 ---
-graph_name: Links
+graph_name: Lists
 tags:
 - feature/parsing_markdown
 - date/2022-02-04
 ---
-# Links   
    
 > This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    
-   
-# Lists   
 No newline is needed in between paragraphs and lists. This is standard in Obsidian. The fix is implemented by adding in the newline for the generated markdown.   
    
 ``` md

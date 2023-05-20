@@ -14,7 +14,7 @@ Aliasing also works, `[[Simple Obsidian-type Link|Same link as before]]`:
 [Same link as before](../Demonstrations/Test%20pages/Simple%20Obsidian-type%20Link.md)   
    
 Linking to specific chapters `[[Long long page#Chapter of interest]]`   
-[Long long page#Chapter of interest](../Demonstrations/Test%20pages/Long%20long%20page.md#chapter-of-interest)   
+[Long long page](../Demonstrations/Test%20pages/Long%20long%20page.md#chapter-of-interest)   
    
 Linking to another header on the same page: `[[#Proper markdown links]]`   
 [Proper markdown links](#proper-markdown-links)   

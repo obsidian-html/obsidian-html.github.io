@@ -15,7 +15,7 @@ toggles:
 ```
    
    
-In favor of the new layout setting. Read more here: [Styling#Layouts](../../Configurations/Styling/Styling.md#layouts).   
+In favor of the new layout setting. Read more here: [Styling](../../Configurations/Styling/Styling.md#layouts).   
    
 In short, use:   
 ``` yaml

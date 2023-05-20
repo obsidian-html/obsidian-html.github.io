@@ -36,20 +36,20 @@ html_template_path_str: ''
 # =====================================================================
 #verbosity: "debug"
 
-module_config:
-  # filter_on_metadata:
-  #   include_on:
-  #     value: [[{tagged: "type/moc"},{tagged: "test"}],]
+# module_config:
+#   # filter_on_metadata:
+#   #   include_on:
+#   #     value: [[{tagged: "type/moc"},{tagged: "test"}],]
 
-  prepare_output_folders:
-    clean_existing: 
-      description: Files that exist in the output folders are deleted.
-      value: False
-    fail_on_existing: 
-      description: 
-        - Exit with error if output folders are not empty.
-        - Does nothing if clean_existing = True!
-      value: False
+#   prepare_output_folders:
+#     clean_existing: 
+#       description: Files that exist in the output folders are deleted.
+#       value: False
+#     fail_on_existing: 
+#       description: 
+#         - Exit with error if output folders are not empty.
+#         - Does nothing if clean_existing = True!
+#       value: False
 
 
 

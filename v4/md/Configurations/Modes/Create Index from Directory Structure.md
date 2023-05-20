@@ -62,7 +62,7 @@ toggles:
 ```
    
    
-The defaults for these settings can be found via [Configuration Options#Get all the default settings](../../Configurations/Configuration%20Options.md#get-all-the-default-settings). At the time of writing these are:   
+The defaults for these settings can be found via [Configuration Options](../../Configurations/Configuration%20Options.md#get-all-the-default-settings). At the time of writing these are:   
    
 ```yaml
 toggles:

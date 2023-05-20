@@ -1,14 +1,12 @@
 ---
 {}
 ---
-# Include notes   
    
 > This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    
 The normal obsidian code inclusion syntax of `![[note]]` works as intended.   
    
 
-# Demonstrate inclusion   
    
 The only difference is that the code is pasted inline, so it is not visible that the text is included. This paragraph comes from a different note, for example.
    

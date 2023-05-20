@@ -48,7 +48,7 @@ toggles:
 ```
    
    
-See also [Styling#Table of Contents](../../Configurations/Styling/Styling.md#table-of-contents)   
+See also [Styling](../../Configurations/Styling/Styling.md#table-of-contents)   
    
    
 ### dir_tree   

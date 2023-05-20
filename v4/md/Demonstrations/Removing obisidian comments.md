@@ -46,6 +46,5 @@ Text
    
 Text %% inline comment %% text   
    
-   
 - This extension removes these comments.   
 - `%%` in codelines/-blocks are ignored.

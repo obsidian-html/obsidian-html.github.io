@@ -35,7 +35,6 @@ obsidianhtml run -f /home/user/git/obsidian-html.github.io/__src/vault/ObsidianH
    
 This will then do the following:   
    
-   
 - Load in the default config file. These already have sensible defaults, but some will be overwritten in the steps below to work for `obsidianhtml run`.   
 - Figure out your vault folder. It does this by starting with the folder that your entrypoint node is in and looking for the folder `.obsidian`, which is present in every vault. If it can't find this folder, it goes one folder up and tries again.   
 - Set the config settings for the markdown and html output folders. These will be created as a temporary folder. These folders will not be removed by obsidianhtml at the end, but should be cleaned up by your OS after a restart or when it thinks it is time to clean up temporary folders.   
@@ -49,7 +48,7 @@ The process will keep running to keep the webserver alive. Press enter to exit t
    
 ## Further configuration   
 ### Get a working config for deploying to a subfolder   
-Read more on this subject: [Deployment instructions#Deploying to a subfolder](../Instructions/Snippets/Deployment%20instructions.md#deploying-to-a-subfolder).   
+Read more on this subject: [Deployment instructions](../Instructions/Snippets/Deployment%20instructions.md#deploying-to-a-subfolder).   
    
 Add the `--subfolder test` setting to get a working config for publishing to e.g. [http://mywebsite.com/test](http://mywebsite.com/test)    
    

@@ -7,7 +7,6 @@ tags:
 - type/instruction
 - date/2022-02-21
 ---
-# Quickstart   
    
 > This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    
@@ -133,7 +132,6 @@ Then open [http://localhost:8000](http://localhost:8000) to view the html site t
    
 ## Deployment configuration   
 
-# Deployment instructions   
    
 > This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    

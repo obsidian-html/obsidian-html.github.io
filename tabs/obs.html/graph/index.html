@@ -13,7 +13,8 @@
                 <title>ObsidianHtml/Tabs-Mode</title>
 
                 <!-- Includes -->
-                <script src="/tabs/obs.html/static/obsidian_core.js"></script>
+                
+<script src="/tabs/obs.html/static/obsidian_core.js"></script>
 <script src="/tabs/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/tabs/obs.html/static/master.css" />
 <script src="/tabs/obs.html/static/mermaid.9.0.1.min.js"></script>
@@ -42,8 +43,6 @@
 <script src="/tabs/obs.html/static/pako.js"></script>
 <script src="/tabs/obs.html/static/search.js"></script>
 <script src="/tabs/obs.html/static/dirtree.js"></script>
-
-
 
 
                 <!-- Onload tweaks -->
@@ -223,9 +222,7 @@
                     </button>
                 </div>
                     <div id="Agraph_full_page" class="graph_div_full"></div>
-                    <div class="graph-instructions fadein" id="Dgraph_full_page">
-                        Left-click: follow link, Right-click: select node, Scroll: zoom
-                    </div>
+
             </div>
                         
             
@@ -254,7 +251,16 @@
                     console.log('hi openlink')
                     return window.ObsHtmlGraph.graph_open_link_normal(args)()
                 }
-
+                window.ObsHtmlGraph.default_actions['left_click'] = function (args){
+                    console.log('hi leftclick')
+                    let g = window.ObsHtmlGraph.graphs[args.uid];
+                    return g.actions['select_node'](args);
+                }
+                window.ObsHtmlGraph.default_actions['right_click'] = function (args){
+                    console.log('hi rightclick')
+                    let g = window.ObsHtmlGraph.graphs[args.uid];
+                    return g.actions['open_link'](args);
+                }
 
                 // Get node id from the page where we clicked on the icon for the fullpage graph
                 const urlParams = new URLSearchParams(window.location.search);

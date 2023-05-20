@@ -13,7 +13,8 @@
                 <title>ObsidianHtml/Tabs-Mode</title>
 
                 <!-- Includes -->
-                <script src="/tabs/obs.html/static/obsidian_core.js"></script>
+                
+<script src="/tabs/obs.html/static/obsidian_core.js"></script>
 <script src="/tabs/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/tabs/obs.html/static/master.css" />
 <script src="/tabs/obs.html/static/mermaid.9.0.1.min.js"></script>
@@ -42,8 +43,6 @@
 <script src="/tabs/obs.html/static/pako.js"></script>
 <script src="/tabs/obs.html/static/search.js"></script>
 <script src="/tabs/obs.html/static/dirtree.js"></script>
-
-
 
 
                 <!-- Onload tweaks -->
@@ -324,61 +323,8 @@
                         <a href="/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/tabs/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/tabs/Configurations/Features/RSS Feed.html" >RSS Feed</a>
                     </div>
                 </div>
-<div class="content"><h1 id="rss-feed">RSS Feed</h1>
-<div class="toc">
-<ul>
-<li><a href="#rss-feed" class="anchor-link">RSS Feed</a><ul>
-<li><a href="#introduction" class="anchor-link">Introduction</a></li>
-<li><a href="#configuration" class="anchor-link">Configuration</a><ul>
-<li><a href="#introduction_1" class="anchor-link">Introduction</a></li>
-</ul>
-</li>
-<li><a href="#top-level-configuration" class="anchor-link">Top level configuration</a><ul>
-<li><a href="#enabled" class="anchor-link">Enabled</a></li>
-<li><a href="#host-root" class="anchor-link">Host Root</a></li>
-</ul>
-</li>
-<li><a href="#styling-configuration" class="anchor-link">Styling configuration</a><ul>
-<li><a href="#show_icon" class="anchor-link">show_icon</a></li>
-</ul>
-</li>
-<li><a href="#channel-configuration" class="anchor-link">Channel configuration</a></li>
-<li><a href="#items-configuration" class="anchor-link">Items configuration</a><ul>
-<li><a href="#selector" class="anchor-link">Selector</a><ul>
-<li><a href="#match-keys" class="anchor-link" class="anchor-link" class="anchor-link">Match keys</a></li>
-<li><a href="#exclude_keys" class="anchor-link">exclude_keys</a></li>
-<li><a href="#include_subfolders" class="anchor-link" class="anchor-link" class="anchor-link">include_subfolders</a></li>
-<li><a href="#exclude_subfolders" class="anchor-link" class="anchor-link">exclude_subfolders</a></li>
-<li><a href="#exclude_files" class="anchor-link">exclude_files</a></li>
-</ul>
-</li>
-<li><a href="#description-title" class="anchor-link">Description/Title</a><ul>
-<li><a href="#selectors" class="anchor-link">selectors</a></li>
-</ul>
-</li>
-<li><a href="#publish_date" class="anchor-link">Publish_date</a><ul>
-<li><a href="#selectors_1" class="anchor-link">Selectors</a></li>
-<li><a href="#iso_formatted" class="anchor-link">iso_formatted</a></li>
-<li><a href="#format_string" class="anchor-link">format_string</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a><ul>
-<li><a href="#yaml" class="anchor-link" class="anchor-link">yaml</a><ul>
-<li><a href="#tree-navigation" class="anchor-link">Tree navigation</a></li>
-<li><a href="#yaml_strip" class="anchor-link">yaml_strip</a></li>
-</ul>
-</li>
-<li><a href="#first-paragraphs" class="anchor-link">first-paragraphs</a></li>
-<li><a href="#first-header" class="anchor-link">first-header</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<blockquote>
+<embeddedtitle>RSS Feed</embeddedtitle>
+<div class="content"><blockquote>
 <p>This is the documentation for <a href="/tabs/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
 <p>New in <a href="/tabs/Changelog/v1.0.0.html">v1.0.0</a>   </p>
 </blockquote>
@@ -574,6 +520,56 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 </div>
 
 <h1 id="selector-functions">Selector functions</h1>
+<div class="toc">
+<ul>
+<li><a href="#introduction" class="anchor-link">Introduction</a></li>
+<li><a href="#configuration" class="anchor-link">Configuration</a><ul>
+<li><a href="#introduction_1" class="anchor-link">Introduction</a></li>
+</ul>
+</li>
+<li><a href="#top-level-configuration" class="anchor-link">Top level configuration</a><ul>
+<li><a href="#enabled" class="anchor-link">Enabled</a></li>
+<li><a href="#host-root" class="anchor-link">Host Root</a></li>
+</ul>
+</li>
+<li><a href="#styling-configuration" class="anchor-link">Styling configuration</a><ul>
+<li><a href="#show_icon" class="anchor-link">show_icon</a></li>
+</ul>
+</li>
+<li><a href="#channel-configuration" class="anchor-link">Channel configuration</a></li>
+<li><a href="#items-configuration" class="anchor-link">Items configuration</a><ul>
+<li><a href="#selector" class="anchor-link">Selector</a><ul>
+<li><a href="#match-keys" class="anchor-link" class="anchor-link" class="anchor-link">Match keys</a></li>
+<li><a href="#exclude_keys" class="anchor-link">exclude_keys</a></li>
+<li><a href="#include_subfolders" class="anchor-link" class="anchor-link" class="anchor-link">include_subfolders</a></li>
+<li><a href="#exclude_subfolders" class="anchor-link" class="anchor-link">exclude_subfolders</a></li>
+<li><a href="#exclude_files" class="anchor-link">exclude_files</a></li>
+</ul>
+</li>
+<li><a href="#description-title" class="anchor-link">Description/Title</a><ul>
+<li><a href="#selectors" class="anchor-link">selectors</a></li>
+</ul>
+</li>
+<li><a href="#publish_date" class="anchor-link">Publish_date</a><ul>
+<li><a href="#selectors_1" class="anchor-link">Selectors</a></li>
+<li><a href="#iso_formatted" class="anchor-link">iso_formatted</a></li>
+<li><a href="#format_string" class="anchor-link">format_string</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#selector-functions" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link" class="anchor-link">Selector functions</a><ul>
+<li><a href="#yaml" class="anchor-link" class="anchor-link">yaml</a><ul>
+<li><a href="#tree-navigation" class="anchor-link">Tree navigation</a></li>
+<li><a href="#yaml_strip" class="anchor-link">yaml_strip</a></li>
+</ul>
+</li>
+<li><a href="#first-paragraphs" class="anchor-link">first-paragraphs</a></li>
+<li><a href="#first-header" class="anchor-link">first-header</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <p>Some configuration items can be set using a selector.    </p>
 <ul>
 <li>A selector is always a list where the first item is the name of the selector function.    </li>
@@ -721,17 +717,13 @@ You might want to enable the RSS feed, but not show the RSS icon in the topright
 
 </div>
 <div class="graph requires_js ">
-    <div id="A153835337705915724254455777252538888603{level}" class="graph_div"></div>
-
-    <div class="graph-instructions" id="D153835337705915724254455777252538888603{level}">
-        Left-click: follow link, Right-click: select node, Scroll: zoom
-    </div>
+    <div id="A224950642966751606630335447689817790738{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B153835337705915724254455777252538888603{level}" level="{level}" note_temp_id="153835337705915724254455777252538888603" onclick="window.ObsHtmlGraph.run(this, '153835337705915724254455777252538888603', 'rss feed');">
+        <button class="graph_button graph_show_button" id="B224950642966751606630335447689817790738{level}" level="{level}" note_temp_id="224950642966751606630335447689817790738" onclick="window.ObsHtmlGraph.run(this, '224950642966751606630335447689817790738', 'rss feed');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C153835337705915724254455777252538888603{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C224950642966751606630335447689817790738{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

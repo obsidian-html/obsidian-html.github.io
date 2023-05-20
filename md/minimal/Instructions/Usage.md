@@ -6,7 +6,6 @@ tags:
 - type/instruction
 - date/2022-02-12
 ---
-# Usage   
    
 > This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    
@@ -131,7 +130,6 @@ Can't get this to work? Please let us know via [Report Issues & Request features
    
 ## Deployment configuration   
 
-# Deployment instructions   
    
 > This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
    

@@ -12,4 +12,4 @@ Process all is a [mode](../../Configurations/Modes/Modes.md), which will tell Ob
    
 This has become more useful because of the new [Graph view](../../Configurations/Features/Graph%20view.md) and [Tags Page](../../Configurations/Features/Tags%20Page.md) features. These can make those notes reachable now.    
    
-See [Configuration Options#Process all](../../Configurations/Configuration%20Options.md#process-all) for how to enable this setting.
+See [Configuration Options](../../Configurations/Configuration%20Options.md#process-all) for how to enable this setting.

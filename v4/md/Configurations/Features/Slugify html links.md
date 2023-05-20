@@ -16,7 +16,7 @@ By default this setting is off. Setting this to true will make better readable l
 - Enabling this feature might cause different notes to **end up with the same file name**, see also [Possibility for clobbering](#possibility-for-clobbering).   
 - Enabling this feature will have an impact on the folder names of the [Create Index from Directory Structure](../../Configurations/Modes/Create%20Index%20from%20Directory%20Structure.md) feature, i.e. they will be slugified too. This does not happen for the notes themself.   
 - Since enabling this feature will change the links of the pages and paths of the html output files, you might have to reconfigure some settings   
-	- The [Configuration Options#Navbar_links](../../Configurations/Configuration%20Options.md#navbar_links) setting will automatically convert the links set there to their slugified forms, so these will not have to be reconfigured.   
+	- The [Configuration Options](../../Configurations/Configuration%20Options.md#navbar_links) setting will automatically convert the links set there to their slugified forms, so these will not have to be reconfigured.   
    
 # Enable   
 Add this to your config yaml:   
