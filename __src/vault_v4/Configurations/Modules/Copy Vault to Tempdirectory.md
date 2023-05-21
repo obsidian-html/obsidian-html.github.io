@@ -6,6 +6,3 @@ Copying your vault to a temporary directory prior to execution is useful to ensu
 
 If you have a very large vault, it might make sense to disable this module. It is recommended to use version control on your vault, such as git, or to make a backup prior to running `obsidianhtml convert`, to be able to restore your vault if anything were to go wrong.
 
-## Notes
-This module always needs to be configured as [[Persistence|persistent]] to ensure the temporary directory object does not go out of scope prematurely.
-
