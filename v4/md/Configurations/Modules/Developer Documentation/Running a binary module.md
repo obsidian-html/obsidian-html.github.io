@@ -45,7 +45,7 @@ module_config:
    
 Note that your module is itself responsible for getting this config. It will get the path to the [Module data folder](../../../Configurations/Modules/Concepts/Module%20data%20folder.md) and a unique run id (more on that later).    
    
-> If you use the [rust module library](https://github.com/dwrolvink/obshtml-rust-module-lib) this fetching of options will be done for you as you instantiate the `ObsidianModule` struct.   
+> If you use the [rust module library](https://github.com/dwrolvink/obshtml-rust/) this fetching of options will be done for you as you instantiate the `ObsidianModule` struct.   
    
 # Invocation   
 ## Unique id   
