@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="using the website">
+                <meta name="node_id" content="running a binary module">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="/v4/favicon.ico" />
 
@@ -57,9 +57,9 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        const CURRENT_NODE = 'using the website';
+                        const CURRENT_NODE = 'running a binary module';
                         const HTML_URL_PREFIX = '/v4';
-                        const PAGE_DEPTH = 1;
+                        const PAGE_DEPTH = 3;
                 </script>
         </head>
 
@@ -188,7 +188,7 @@
             }
         </script>
                                     <div class="graph_header_div requires_js">
-            <a id="graph_link" class="system-link" href="/v4/obs.html/graph/index.html?node=using the website" title="Open fullpage Graph">
+            <a id="graph_link" class="system-link" href="/v4/obs.html/graph/index.html?node=running a binary module" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "/v4/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
@@ -243,8 +243,8 @@
 		<li><div class="file-icon"></div><a class="" href="/v4/changelog/v4.0.0.html"  >v4.0.0</a></li>
 	</ul>
 </div>
-<button id="folder-3" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>configurations</button>
-<div id="folder-container-3" class="dir-container requires_js " path="/v4/configurations">
+<button id="folder-3" class="dir-button active" onclick="toggle_dir(this.id)"><div class="file-icon"></div>configurations</button>
+<div id="folder-container-3" class="dir-container requires_js active" path="/v4/configurations">
 	<button id="folder-4" class="dir-button folder_note  " href="/v4/configurations/deprecated-configurations/deprecated-configurations.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>deprecated-configurations</button>
 	<div id="folder-container-4" class="dir-container requires_js " path="/v4/configurations/deprecated-configurations">
 		<ul class="dir-list">
@@ -282,8 +282,8 @@
 			<li><div class="file-icon"></div><a class="" href="/v4/configurations/modes/relative_path_html.html"  >Relative_path_html</a></li>
 		</ul>
 	</div>
-	<button id="folder-7" class="dir-button folder_note  " href="/v4/configurations/modules/modules.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>modules</button>
-	<div id="folder-container-7" class="dir-container requires_js " path="/v4/configurations/modules">
+	<button id="folder-7" class="dir-button folder_note active " href="/v4/configurations/modules/modules.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>modules</button>
+	<div id="folder-container-7" class="dir-container requires_js active" path="/v4/configurations/modules">
 		<button id="folder-8" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>concepts</button>
 		<div id="folder-container-8" class="dir-container requires_js " path="/v4/configurations/modules/concepts">
 			<ul class="dir-list">
@@ -295,12 +295,12 @@
 				<li><div class="file-icon"></div><a class="" href="/v4/configurations/modules/concepts/stashing.html"  >Stashing</a></li>
 			</ul>
 		</div>
-		<button id="folder-9" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>developer-documentation</button>
-		<div id="folder-container-9" class="dir-container requires_js " path="/v4/configurations/modules/developer-documentation">
+		<button id="folder-9" class="dir-button active" onclick="toggle_dir(this.id)"><div class="file-icon"></div>developer-documentation</button>
+		<div id="folder-container-9" class="dir-container requires_js active" path="/v4/configurations/modules/developer-documentation">
 			<ul class="dir-list">
 				<li><div class="file-icon"></div><a class="" href="/v4/configurations/modules/developer-documentation/creating-a-custom-module.html"  >Creating a custom Module</a></li>
 				<li><div class="file-icon"></div><a class="" href="/v4/configurations/modules/developer-documentation/module-design.html"  >Module Design</a></li>
-				<li><div class="file-icon"></div><a class="" href="/v4/configurations/modules/developer-documentation/running-a-binary-module.html"  >Running a binary module</a></li>
+				<li><div class="file-icon"></div><a class="active current_page_dirtree" href="/v4/configurations/modules/developer-documentation/running-a-binary-module.html"  >Running a binary module</a></li>
 			</ul>
 		</div>
 		<ul class="dir-list">
@@ -372,8 +372,8 @@
 		<li><div class="file-icon"></div><a class="" href="/v4/developer-documentation/contributing-to-obsidianhtml.html"  >Contributing to Obsidianhtml</a></li>
 	</ul>
 </div>
-<button id="folder-16" class="dir-button active" onclick="toggle_dir(this.id)"><div class="file-icon"></div>general-information</button>
-<div id="folder-container-16" class="dir-container requires_js active" path="/v4/general-information">
+<button id="folder-16" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>general-information</button>
+<div id="folder-container-16" class="dir-container requires_js " path="/v4/general-information">
 	<button id="folder-17" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>concepts</button>
 	<div id="folder-container-17" class="dir-container requires_js " path="/v4/general-information/concepts">
 		<ul class="dir-list">
@@ -385,7 +385,7 @@
 		<li><div class="file-icon"></div><a class="" href="/v4/general-information/creating-a-static-html-website-from-markdown-files.html"  >Creating a static html website from markdown files</a></li>
 		<li><div class="file-icon"></div><a class="" href="/v4/general-information/parsing-obsidian-notes-to-proper-markdown.html"  >Parsing Obsidian notes to proper markdown</a></li>
 		<li><div class="file-icon"></div><a class="" href="/v4/general-information/report-issues-request-features.html"  >Report Issues & Request features</a></li>
-		<li><div class="file-icon"></div><a class="active current_page_dirtree" href="/v4/general-information/using-the-website.html"  >Using the website</a></li>
+		<li><div class="file-icon"></div><a class="" href="/v4/general-information/using-the-website.html"  >Using the website</a></li>
 	</ul>
 </div>
 <button id="folder-18" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>instructions</button>
@@ -434,61 +434,179 @@
                 <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
                     <div style="flex:1;display: none;"></div>
                     <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
-                        <a href="/v4/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">general-information</span> / <a href="/v4/general-information/using-the-website.html" >using-the-website</a>
+                        <a href="/v4/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">configurations</span> / <a href="/v4/configurations/modules/modules.html" style="color: var(--normal-text-color);">modules</a> / <span style="color: #666;">developer-documentation</span> / <a href="/v4/configurations/modules/developer-documentation/running-a-binary-module.html" >running-a-binary-module</a>
                     </div>
                 </div>
-<div class="content"><h1 id="using-the-website">Using the website</h1>
+<div class="content"><h1 id="introduction">Introduction</h1>
 <div class="toc">
 <ul>
-<li><a href="#using-the-website" class="anchor-link">Using the website</a><ul>
-<li><a href="#finding-notes" class="anchor-link">Finding notes</a></li>
-<li><a href="#header-links" class="anchor-link">Header links</a></li>
-<li><a href="#graph-view" class="anchor-link">Graph view</a></li>
-<li><a href="#tabbing-system" class="anchor-link">Tabbing system</a></li>
+<li><a href="#introduction" class="anchor-link">Introduction</a></li>
+<li><a href="#configuration" class="anchor-link">Configuration</a><ul>
+<li><a href="#configure-your-module" class="anchor-link">Configure your module</a></li>
 </ul>
 </li>
+<li><a href="#invocation" class="anchor-link">Invocation</a><ul>
+<li><a href="#unique-id" class="anchor-link">Unique id</a></li>
+<li><a href="#accept" class="anchor-link">Accept</a></li>
+</ul>
+</li>
+<li><a href="#run" class="anchor-link">Run</a></li>
 </ul>
 </div>
-<p>The following features have been built in to the <a href="/v4/configurations/styling/styling.html#layouts">various html templates</a>.    </p>
-<h2 id="finding-notes">Finding notes</h2>
-<p>Use the <a href="/v4/configurations/features/graph-view.html">Graph view</a>, <a href="/v4/configurations/features/backlinks.html">Backlinks</a>, or <a href="/v4/configurations/features/tags-page.html">Tags Page</a> to find other notes, or just follow the links on the note that you're on.   </p>
-<p>If your notes are very neatly organised in a folder structure, then the <a href="/v4/configurations/modes/create-index-from-directory-structure.html">Create Index from Directory Structure</a> feature might also be something for you.   </p>
-<h2 id="header-links">Header links</h2>
-<p>Hover over any header to see a chain link icon. Clicking on this will send you to the page and scroll to the header location.   </p>
-<h2 id="graph-view">Graph view</h2>
-<p>Read more <a href="/v4/configurations/features/graph-view.html">Graph View</a>.   </p>
-<h2 id="tabbing-system">Tabbing system</h2>
-<p>The default layout is <code>documentation</code>, which this site is built with. But for some people who are more into smart note taking, the <a href="/v4/configurations/styling/tabs-layout.html">Tabs Layout</a> might be a better fit.</p></div>
+<p>If you want to write your module in another language, then you can use the binary module interface.   </p>
+<p>This page explains how this interface works.   </p>
+<h1 id="configuration">Configuration</h1>
+<h2 id="configure-your-module">Configure your module</h2>
+<p>Binary modules make use of the <code>BinaryModule</code> module class to act as a shim between ObsidianHtml and your binary.   </p>
+<p>Here is an example of a binary being configured as a module:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_list</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">preparation</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># other modules excluded for brevity</span>
+<span class="w">    </span><span class="c1"># (...)</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">get_file_list</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Basic file listing based on include_folder/exclude_glob combination</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Further filtering can be done in further modules</span>
+
+<span class="w">    </span><span class="c1"># binary modules can only run AFTER load_paths!</span>
+<span class="w">    </span><span class="c1"># (otherwise the paths.json file is not yet present)</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rust_example_module</span><span class="w">   </span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Does nothing, just tests the Binary module</span>
+<span class="w">      </span><span class="nt">binary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/user/git/rust/obshtml-example/target/release/obshtml-example</span>
+<span class="w">      </span><span class="c1">#persistent: True # optional parameter</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Note that for the binary we use config key <code>binary</code>, and not <code>file</code> as for external python modules.   </p>
+<p>To pass in <code>options</code> to your binary, use <code>module_config</code> like normal:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">rust_example_module</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;rust_example_module&quot;</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Note that your module is itself responsible for getting this config. It will get the path to the <a href="/v4/configurations/modules/concepts/module-data-folder.html">Module data folder</a> and a unique run id (more on that later).    </p>
+<blockquote>
+<p>If you use the <a href="https://github.com/dwrolvink/obshtml-rust-module-lib" class="external-link">rust module library</a> this fetching of options will be done for you as you instantiate the <code>ObsidianModule</code> struct.   </p>
+</blockquote>
+<h1 id="invocation">Invocation</h1>
+<h2 id="unique-id">Unique id</h2>
+<p>First off, note that the module can not distinguish between multiple invocations of the same binary by just the module data folder path. This is why it also gets a unique id when called, when loading the contents of <code>modfolder/instances/{{unique_id}}.json</code>, information such as persistence and module name (here: "rust_example_module") will be found.   </p>
+<p>Take this example:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">rust_example_module</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;serious</span><span class="nv"> </span><span class="s">stuff&quot;</span>
+<span class="w">  </span><span class="nt">hello</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hello</span><span class="nv"> </span><span class="s">there&quot;</span>
+</code></pre></div>
+
+
+</div>
+
+<p>and    </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_list</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">preparation</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># other modules excluded for brevity</span>
+<span class="w">    </span><span class="c1"># (...)</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rust_example_module</span><span class="w">   </span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Does nothing, just tests the Binary module</span>
+<span class="w">      </span><span class="nt">binary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/user/git/rust/obshtml-example/target/release/obshtml-example</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span><span class="w">   </span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Does nothing, just tests the Binary module</span>
+<span class="w">      </span><span class="nt">binary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/user/git/rust/obshtml-example/target/release/obshtml-example</span>
+</code></pre></div>
+
+
+</div>
+
+<p>If the module prints <code>{module_name} - {option["b"]}</code>, then this will print out, in sequence:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>[    Debug    ]   rust_example_module - serious stuff
+[    Debug    ]   hello - hello there
+</code></pre></div>
+
+
+</div>
+
+<h2 id="accept">Accept</h2>
+<p>Before a module is run, it must "accept". This can be based on settings in the config.yml file, or the presence of other modfiles.   </p>
+<p>The invocation for accept is:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>$BINARY_PATH accept $MODULE_DATA_FOLDER $UNIQUE_INSTANCE_ID
+</code></pre></div>
+
+
+</div>
+
+<p>E.g.:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>[ DEBUG ] * running: /home/user/git/rust/obshtml-example/target/release/obshtml-example accept /home/user/git/obsidian-html/output/mod 2023-05-26T23:26:26.259320_BinaryModule_rust_example_module
+</code></pre></div>
+
+
+</div>
+
+<p>The accept module <strong>must</strong> return, via stdout, valid JSON in this form:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>{
+  &quot;result&quot;: true
+}
+</code></pre></div>
+
+
+</div>
+
+<p>Extra values are allowed but currently ignored. Whitespace is irrelevant.   </p>
+<blockquote>
+<p>As the json is read from stdout, you need to print debug info only to stderr. If you want to notify failure of your binary, use an exit code other than 0.   </p>
+</blockquote>
+<h1 id="run">Run</h1>
+<p>Run is invoked identically to accept. Output is not used at the moment, but it is parsed, and will create an error if invalid json is outputted to stdout. (Run uses the same method as accept to run the binary).   </p>
+<p>In the future, the output of the run method may be used to communicate between ObsidianHtml and the binary, but probably the instance file will be used to communicate (undecided).</p></div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
 <ul>
-	<li><a class="backlink" href="/v4/index.html">index</a></li>
+	<li><a class="backlink" href="/v4/configurations/modules/developer-documentation/creating-a-custom-module.html">creating a custom module</a></li>
 </ul>
 </div>
 
 <div class="tags">
-<h2>Tags</h2>
-<ul>
-	<li><a class="backlink" href="/v4/obs.html/tags/feature/html_output/index.html">feature/html_output</a></li>
-	<li><a class="backlink" href="/v4/obs.html/tags/type/styling/index.html">type/styling</a></li>
-	<li><a class="backlink" href="/v4/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
-</ul>
+
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A285862840173671635508386302303098726955{level}" class="graph_div"></div>
+    <div id="A304964853977585908799876179025309938878{level}" class="graph_div"></div>
 
-    <div class="graph-instructions" id="D285862840173671635508386302303098726955{level}">
+    <div class="graph-instructions" id="D304964853977585908799876179025309938878{level}">
         Left-click: follow link, Right-click: select node, Scroll: zoom
     </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B285862840173671635508386302303098726955{level}" level="{level}" note_temp_id="285862840173671635508386302303098726955" onclick="window.ObsHtmlGraph.run(this, '285862840173671635508386302303098726955', 'using the website');">
+        <button class="graph_button graph_show_button" id="B304964853977585908799876179025309938878{level}" level="{level}" note_temp_id="304964853977585908799876179025309938878" onclick="window.ObsHtmlGraph.run(this, '304964853977585908799876179025309938878', 'running a binary module');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C285862840173671635508386302303098726955{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C304964853977585908799876179025309938878{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

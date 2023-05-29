@@ -9,6 +9,9 @@ You should know that the [Module Design](../../../Configurations/Modules/Develop
    
 The module we will be creating will be an [external module](../../../Configurations/Modules/Concepts/Built-in%20versus%20External%20modules.md), as opposed to a built-in one. The differences are mostly on the point of the python module imports and the way the module is loaded, other than that built-in modules and external modules are built in the same way.   
    
+>[!info] Using a language other than Python   
+>If you want to write a module using a different programming language, you can use the built-in BinaryModule to call your compiled binary. In that case you don't have to write any Python yourself. Read more here: [Running a binary module](../../../Configurations/Modules/Developer%20Documentation/Running%20a%20binary%20module.md).   
+   
 # Create a basic module   
 Let's call our new module    
    

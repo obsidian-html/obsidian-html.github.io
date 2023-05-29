@@ -1,8 +1,3 @@
----
-bla: bla
----
-
-
 # Introduction
 If you want to write your module in another language, then you can use the binary module interface.
 
