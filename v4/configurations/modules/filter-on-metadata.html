@@ -464,8 +464,12 @@
 
 <div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">filter_on_metadata</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">include_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[]]</span><span class="w"> </span><span class="c1"># include every note</span>
-<span class="w">    </span><span class="nt">exclude_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[]]</span><span class="w"> </span><span class="c1"># exclude no note</span>
+<span class="w">    </span><span class="nt">include_on</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">What metadata to include notes on. Empty list means True by default.</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[]]</span>
+<span class="w">    </span><span class="nt">exclude_on</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">What metadata to exclude on. Empty list means False by default</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[]]</span>
 </code></pre></div>
 
 
@@ -489,7 +493,8 @@
 
 <div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">filter_on_metadata</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">include_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;publish&#39;</span><span class="p p-Indicator">},{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;blog&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">include_on</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;publish&#39;</span><span class="p p-Indicator">},{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;blog&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
 </code></pre></div>
 
 
@@ -500,7 +505,8 @@
 
 <div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">filter_on_metadata</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">include_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;publish&#39;</span><span class="p p-Indicator">}],[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;blog&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">include_on</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;publish&#39;</span><span class="p p-Indicator">}],[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;blog&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
 </code></pre></div>
 
 
@@ -511,7 +517,8 @@
 
 <div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">filter_on_metadata</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">exclude_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;private&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">exclude_on</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;private&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
 </code></pre></div>
 
 
@@ -522,8 +529,10 @@
 
 <div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">filter_on_metadata</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">include_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;blog&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
-<span class="w">    </span><span class="nt">exclude_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;private&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">include_on</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;blog&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">exclude_on</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;private&#39;</span><span class="p p-Indicator">}]]</span><span class="w"> </span>
 </code></pre></div>
 
 
@@ -542,17 +551,17 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A257607959035299606861869408605145559550{level}" class="graph_div"></div>
+    <div id="A275082883374374203100431978773822162689{level}" class="graph_div"></div>
 
-    <div class="graph-instructions" id="D257607959035299606861869408605145559550{level}">
+    <div class="graph-instructions" id="D275082883374374203100431978773822162689{level}">
         Left-click: follow link, Right-click: select node, Scroll: zoom
     </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B257607959035299606861869408605145559550{level}" level="{level}" note_temp_id="257607959035299606861869408605145559550" onclick="window.ObsHtmlGraph.run(this, '257607959035299606861869408605145559550', 'filter on metadata');">
+        <button class="graph_button graph_show_button" id="B275082883374374203100431978773822162689{level}" level="{level}" note_temp_id="275082883374374203100431978773822162689" onclick="window.ObsHtmlGraph.run(this, '275082883374374203100431978773822162689', 'filter on metadata');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C257607959035299606861869408605145559550{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C275082883374374203100431978773822162689{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

@@ -19,8 +19,12 @@ The files `index/files.json` and `index/markdown_files.json` are then updated so
 ``` yaml
 module_config:
   filter_on_metadata:
-    include_on: [[]] # include every note
-    exclude_on: [[]] # exclude no note
+    include_on: 
+      description: What metadata to include notes on. Empty list means True by default.
+      value: [[]]
+    exclude_on: 
+      description: What metadata to exclude on. Empty list means False by default
+      value: [[]]
 ```
    
    
@@ -42,7 +46,8 @@ Let's say you want to only include notes that contain both the `publish` and the
 ``` yaml
 module_config:
   filter_on_metadata:
-    include_on: [[{'tagged': 'publish'},{'tagged': 'blog'}]] 
+    include_on:
+      value: [[{'tagged': 'publish'},{'tagged': 'blog'}]] 
 ```
    
    
@@ -51,7 +56,8 @@ If you'd like to publish any note that has tag `publish` OR tag `blog`, you'd co
 ``` yaml
 module_config:
   filter_on_metadata:
-    include_on: [[{'tagged': 'publish'}],[{'tagged': 'blog'}]] 
+    include_on:
+      value: [[{'tagged': 'publish'}],[{'tagged': 'blog'}]] 
 ```
    
    
@@ -60,7 +66,8 @@ If you'd like to publish any note, except the ones that contain the `private` ta
 ``` yaml
 module_config:
   filter_on_metadata:
-    exclude_on: [[{'tagged': 'private'}]] 
+    exclude_on: 
+      value: [[{'tagged': 'private'}]] 
 ```
    
    
@@ -69,6 +76,8 @@ And finally, any note tagged with the tag `blog`, unless it is also tagged with 
 ``` yaml
 module_config:
   filter_on_metadata:
-    include_on: [[{'tagged': 'blog'}]] 
-    exclude_on: [[{'tagged': 'private'}]] 
+    include_on:
+      value: [[{'tagged': 'blog'}]] 
+    exclude_on:
+      value: [[{'tagged': 'private'}]] 
 ```
