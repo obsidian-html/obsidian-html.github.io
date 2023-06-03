@@ -61,7 +61,7 @@ module_list:
     - name: parse_metadata_rs   # binary modules can only run AFTER load_paths!
       description:
         - Gets the metadata of each markdown file, and stores it under index/metadata.json
-      binary: /home/dorus/git/rust/obshtml-rust/modules/parse_metadata/target/release/obshtml-module-parse-metadata
+      binary:  /home/dorus/git/rust/obshtml-rust/modules/parse_metadata/target/release/obshtml_module_parse_metadata
 
     # - name: parse_metadata
     #   description:
