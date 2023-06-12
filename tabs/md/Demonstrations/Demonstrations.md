@@ -19,4 +19,4 @@ tags:
 - [Implementing Latex](../Demonstrations/Implementing%20Latex.md)   
 - [Implementing Dataview](../Demonstrations/Implementing%20Dataview.md)   
 - [Implementing inline tags](../Demonstrations/Implementing%20inline%20tags.md)   
-- [Removing obisidian comments](../Demonstrations/Removing%20obisidian%20comments.md)
+- [Removing obsidian comments](../Demonstrations/Removing%20obsidian%20comments.md)

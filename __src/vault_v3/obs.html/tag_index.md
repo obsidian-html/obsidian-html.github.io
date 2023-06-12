@@ -10,7 +10,7 @@
 - [[parsing obsidian notes to proper markdown|Parsing Obsidian notes to proper markdown]]
 - [[making lists work the same|Links]]
 - [[getting the basics right|Basics]]
-- [[removing obisidian comments|Removing obisidian comments]]
+- [[removing obsidian comments|Removing obsidian comments]]
 - [[implementing note inclusions|Inclusions]]
 - [[parsing images, videos, and audio|Parsing Images, videos, and audio]]
 - [[implementing footnotes|Implementing Footnotes]]

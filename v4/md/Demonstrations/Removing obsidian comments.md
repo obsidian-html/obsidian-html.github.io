@@ -3,7 +3,7 @@ tags:
 - feature/parsing_markdown
 - date/2022-07-31
 ---
-# Removing obisidian comments   
+# Removing obsidian comments   
    
 > New in [v3.1.0](/not_created.md)   
    
@@ -20,7 +20,7 @@ toggles:
    
 ## Behavior   
 ```
-Obisidian has a comment system: everything between %% is a comment and will not be shown in view mode
+Obsidian has a comment system: everything between %% is a comment and will not be shown in view mode
 
 Text
 %%

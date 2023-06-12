@@ -3,6 +3,7 @@ tags:
 - feature/parsing_markdown
 - date/2022-07-31
 ---
+> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/v4
 
 > New in [[v3.1.0]]
 
@@ -18,7 +19,7 @@ toggles:
 
 ## Behavior
 ```
-Obisidian has a comment system: everything between %% is a comment and will not be shown in view mode
+Obsidian has a comment system: everything between %% is a comment and will not be shown in view mode
 
 Text
 %%

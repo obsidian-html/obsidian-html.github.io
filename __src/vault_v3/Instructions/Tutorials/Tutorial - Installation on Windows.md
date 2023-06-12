@@ -110,7 +110,7 @@ The main mode of obsidianhtml is `convert`. This command will look for a `config
 You can create your own config file easily using [[Obsidianhtml Run]]. But for now, you will see that a config.yml already exists in our current folder, so let's use that
 
 ```
-obisidanhtml convert
+obsidianhtml convert
 ```
 
 This should give the following output:
