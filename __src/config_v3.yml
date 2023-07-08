@@ -158,7 +158,7 @@ toggles:
   # if true all the notes will be processed
   process_all: False
 
-  img_alt_text_use_figure: True
+  #img_alt_text_use_figure: True
 
   slugify_html_links: True
 
