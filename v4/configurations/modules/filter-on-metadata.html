@@ -442,7 +442,12 @@
 <ul>
 <li><a href="#filter-on-metadata" class="anchor-link">Filter on Metadata</a><ul>
 <li><a href="#configuration" class="anchor-link">Configuration</a><ul>
-<li><a href="#examples" class="anchor-link">Examples</a></li>
+<li><a href="#available-elements" class="anchor-link">Available elements</a></li>
+<li><a href="#structure" class="anchor-link">Structure</a></li>
+</ul>
+</li>
+<li><a href="#examples" class="anchor-link">Examples</a><ul>
+<li><a href="#get-all-notes-with-certain-category" class="anchor-link">Get all notes with certain category</a></li>
 </ul>
 </li>
 </ul>
@@ -478,16 +483,27 @@
 <p>Note the double list. The inner lists will each be tested, rendering a True or False per inner list. If any of the inner lists give True, then the entire statement will be True. Another way to say this is that the inner lists are <code>OR</code>ed together.   </p>
 <p>The inner lists are lists of elements. For an inner list to be rendered as True, every element needs to be rendered as True. Thus, these inner lists function as <code>AND</code> statements.   </p>
 <p>Elements are simple dicts that tell the module what to look for in the metadata. If present, it will be rendered as True.   </p>
+<h3 id="available-elements">Available elements</h3>
 <p>The elements available at time of writing are:   </p>
 <div class="lang-yaml">
 
-<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;tag_name&#39;</span><span class="p p-Indicator">}</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># true if: tag with tag_name exists</span>
+<span class="p p-Indicator">{</span><span class="s">&#39;tagged&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;tag_name&#39;</span><span class="p p-Indicator">}</span>
+
+<span class="c1"># true if: metadata key &#39;key&#39; exists</span>
+<span class="p p-Indicator">{</span><span class="s">&#39;present&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;key&#39;</span><span class="p p-Indicator">}</span>
+
+<span class="c1"># true if: metadata key &#39;key&#39; exists and its value is true</span>
+<span class="p p-Indicator">{</span><span class="s">&#39;flag&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;key&#39;</span><span class="p p-Indicator">}</span>
+
+<span class="c1"># true if: metadata key &#39;key&#39; exists and its value equals &#39;value&#39;</span>
+<span class="p p-Indicator">{</span><span class="s">&#39;equals&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;key&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;value&#39;</span><span class="p p-Indicator">]}</span>
 </code></pre></div>
 
 
 </div>
 
-<h3 id="examples">Examples</h3>
+<h3 id="structure">Structure</h3>
 <p>Let's say you want to only include notes that contain both the <code>publish</code> and the <code>blog</code> tags, you'd configure this as follows:   </p>
 <div class="lang-yaml">
 
@@ -536,6 +552,42 @@
 </code></pre></div>
 
 
+</div>
+
+<h2 id="examples">Examples</h2>
+<h3 id="get-all-notes-with-certain-category">Get all notes with certain category</h3>
+<p>Let's say you have a category system, that does not use tags, like so:   </p>
+<div class="lang-md">
+
+<div class="codehilite"><pre><span></span><code>---
+category: blog
+--- 
+</code></pre></div>
+
+
+</div>
+
+<div class="lang-md">
+
+<div class="codehilite"><pre><span></span><code>---
+category: diary
+--- 
+</code></pre></div>
+
+
+</div>
+
+<p>etc.   </p>
+<p>You can then publish only the notes that have <code>category: blog</code> by configuring:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filter_on_metadata</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">include_on</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[{</span><span class="s">&#39;equals&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;category&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;blog&#39;</span><span class="p p-Indicator">]}]]</span><span class="w"> </span>
+</code></pre></div>
+
+
 </div></div>
 <div class="note-footer">
 <div class="backlinks">
@@ -551,17 +603,17 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A275082883374374203100431978773822162689{level}" class="graph_div"></div>
+    <div id="A207757696263297306720150119284221676341{level}" class="graph_div"></div>
 
-    <div class="graph-instructions" id="D275082883374374203100431978773822162689{level}">
+    <div class="graph-instructions" id="D207757696263297306720150119284221676341{level}">
         Left-click: follow link, Right-click: select node, Scroll: zoom
     </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B275082883374374203100431978773822162689{level}" level="{level}" note_temp_id="275082883374374203100431978773822162689" onclick="window.ObsHtmlGraph.run(this, '275082883374374203100431978773822162689', 'filter on metadata');">
+        <button class="graph_button graph_show_button" id="B207757696263297306720150119284221676341{level}" level="{level}" note_temp_id="207757696263297306720150119284221676341" onclick="window.ObsHtmlGraph.run(this, '207757696263297306720150119284221676341', 'filter on metadata');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C275082883374374203100431978773822162689{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C207757696263297306720150119284221676341{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

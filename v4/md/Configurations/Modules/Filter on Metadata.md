@@ -34,13 +34,25 @@ The inner lists are lists of elements. For an inner list to be rendered as True,
    
 Elements are simple dicts that tell the module what to look for in the metadata. If present, it will be rendered as True.   
    
+### Available elements   
 The elements available at time of writing are:   
+   
 ``` yaml
+# true if: tag with tag_name exists
 {'tagged': 'tag_name'}
+
+# true if: metadata key 'key' exists
+{'present': 'key'}
+
+# true if: metadata key 'key' exists and its value is true
+{'flag': 'key'}
+
+# true if: metadata key 'key' exists and its value equals 'value'
+{'equals': ['key', 'value']}
 ```
    
    
-### Examples   
+### Structure   
 Let's say you want to only include notes that contain both the `publish` and the `blog` tags, you'd configure this as follows:   
    
 ``` yaml
@@ -80,4 +92,34 @@ module_config:
       value: [[{'tagged': 'blog'}]] 
     exclude_on:
       value: [[{'tagged': 'private'}]] 
+```
+   
+   
+## Examples   
+### Get all notes with certain category   
+Let's say you have a category system, that does not use tags, like so:   
+   
+``` md
+---
+category: blog
+--- 
+```
+   
+   
+``` md
+---
+category: diary
+--- 
+```
+   
+   
+etc.   
+   
+You can then publish only the notes that have `category: blog` by configuring:   
+   
+``` yaml
+module_config:
+  filter_on_metadata:
+    include_on:
+      value: [[{'equals': ['category', 'blog']}]] 
 ```
