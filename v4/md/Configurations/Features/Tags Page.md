@@ -1,9 +1,10 @@
 ---
 tags:
-- feature/parsing_markdown
 - date/2022-02-04
+- feature/parsing_markdown
 ---
 # Tags Page   
+   
    
 ## Preserve inline tags   
 Inline tags are preserved by default, but this will create polluted markdown output. You can disable this feature by setting:   
@@ -40,11 +41,9 @@ If you use slashes in your tags, these will be split into different pages (like 
 E.g. adding the following frontyaml at the top of this note:   
    
 ``` yaml
----
 tags:
 - feature/parsing_markdown
 - date/2022-02-04
----
 ```
    
    

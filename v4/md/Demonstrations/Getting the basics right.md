@@ -1,9 +1,10 @@
 ---
 graph_name: Basics
 tags:
-- feature/parsing_markdown
 - date/2022-02-04
+- feature/parsing_markdown
 ---
+   
    
 # Basics   
 ```
@@ -21,7 +22,6 @@ a new line, just like in Obsidian!
 ```
 This is a
 
----
 
 Horizontal divider
 ```
@@ -29,7 +29,6 @@ Horizontal divider
    
 This is a   
    
----   
    
 Horizontal divider   
    
@@ -51,4 +50,4 @@ Use two equal signs to ==highlight text==.
 Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
 ```
    
-Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
+Any word wrapped with two tildes (like ~~this~~) will appear crossed out.   

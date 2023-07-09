@@ -1,10 +1,11 @@
 ---
 graph_name: Automate website deployment
 tags:
-- type/automation
 - date/2022-02-04
+- type/automation
 ---
 # Automate website deployment   
+   
    
 If you have a website hosted based on an obsidian project like I do, it can be useful to create some scripting to automate pushing to your webserver.   
    

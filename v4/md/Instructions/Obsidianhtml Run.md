@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Obsidianhtml Run   
    
@@ -70,4 +70,4 @@ obsidianhtml help
 ```
    
    
-For more information on the run command.
+For more information on the run command.   

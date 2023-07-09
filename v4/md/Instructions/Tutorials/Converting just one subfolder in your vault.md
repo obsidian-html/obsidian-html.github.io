@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Converting just one subfolder in your vault   
    
@@ -20,4 +20,6 @@ The best way to go about exporting just one subfolder, and everything under it i
 - Create a note that serves as an entrypoint (homepage) in your folder   
 - Point to that note in [Obsidianhtml Run](../../Instructions/Obsidianhtml%20Run.md) or better yet, configure `obsidian_entrypoint_path_str` with the path to that note in your config.yml, and use that to run `obsidianhtml convert -i path/to/your/config.yml`   
    
-Note that [process_all](../../Configurations/Configuration%20Options.md#process-all) will apply only to the one subfolder (and all its contents) in which you placed the `.obsidian` folder.
+Note that [process_all](../../Configurations/Configuration%20Options.md#process-all) will apply only to the one subfolder (and all its contents) in which you placed the `.obsidian` folder.   
+   
+   

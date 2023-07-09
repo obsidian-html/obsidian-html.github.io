@@ -1,9 +1,10 @@
 ---
 graph_name: Auto push site using Git on Windows
 tags:
-- type/automation
 - date/2022-02-04
+- type/automation
 ---
+   
    
 # Auto push site using Git on Windows   
 > I did not feel like rewriting this script. This is just here as a reference. Be sure to update all the hardcode values for something that makes sense for your environment.   
@@ -66,3 +67,5 @@ Function Publish-ObsidianExample {
 }
 
 ```
+   
+   

@@ -1,10 +1,11 @@
 ---
 tags:
 - type/configuration
-- type/styling
 - date/2022-04-17
+- type/styling
 ---
 # Edit HTML, CSS, JS   
+   
    
 There are currently two ways to edit the html code used to build your website:   
    
@@ -46,3 +47,4 @@ Use that same output path as the value for html_template_path_str to use it in y
 # Note that this file must contain at least "{content}" somewhere in the page.
 html_template_path_str: ''
 ```
+   

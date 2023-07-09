@@ -1,9 +1,10 @@
 ---
 graph_name: Auto push site using SSH on Linux
 tags:
-- type/automation
 - date/2022-02-04
+- type/automation
 ---
+   
    
 # Auto push site to a local webserver on Linux   
 This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using th [Git method](../Automation/AutomationLinuxGit.md) or something along those lines.   
@@ -38,4 +39,4 @@ scp -r "$output_folder/html/*" "$web_folder/"
 ```
    
    
-[Other ways of pushing websites](../Automation/Automate%20website%20deployment.md)
+[Other ways of pushing websites](../Automation/Automate%20website%20deployment.md)   

@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Bootstrapping Python on Windows   
    

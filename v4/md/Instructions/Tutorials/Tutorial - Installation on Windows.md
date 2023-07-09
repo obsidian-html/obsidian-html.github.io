@@ -1,7 +1,8 @@
 ---
-{}
+tags: []
 ---
 # Tutorial - Installation on Windows   
+   
    
 Working with Python on Windows can sometimes be a headache.   
    
@@ -167,4 +168,5 @@ python ./serve.py
    
 Then open [http://localhost:8000/](http://localhost:8000/) in your web browser. This should show you a website.   
    
-The website is pretty bare bones at the moment, but it serves as a good proof of concept.
+The website is pretty bare bones at the moment, but it serves as a good proof of concept.   
+   

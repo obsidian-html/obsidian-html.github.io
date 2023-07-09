@@ -1,9 +1,10 @@
 ---
 graph_name: Auto push site using Git on Linux
 tags:
-- type/automation
 - date/2022-02-04
+- type/automation
 ---
+   
    
 # Auto push site using Git on Linux   
    
@@ -51,3 +52,5 @@ git add . --all
 git commit -m "autopush"
 git push
 ```
+   
+   

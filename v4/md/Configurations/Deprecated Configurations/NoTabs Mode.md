@@ -5,6 +5,7 @@ tags:
 ---
 # NoTabs Mode   
    
+   
 > New in version [v1.2.0](/not_created.md)   
 > **Removed in version [v2.0.0](/not_created.md)**   
    

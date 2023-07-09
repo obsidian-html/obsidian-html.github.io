@@ -1,9 +1,10 @@
 ---
 graph_name: Links
 tags:
-- feature/parsing_markdown
 - date/2022-02-04
+- feature/parsing_markdown
 ---
+   
    
 # Links   
 ## Obsidian type links   
@@ -47,3 +48,4 @@ If you want to link to files that are not markdown, use proper markdown links:
 [[textfile.txt]] --> [textfile.txt](textfile.txt.md)
 [textfile.txt](textfile.txt) --> [textfile.txt](textfile.txt)
 ```
+   

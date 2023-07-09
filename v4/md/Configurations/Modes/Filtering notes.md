@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Filtering notes   
    
@@ -168,3 +168,5 @@ Leads to
     c_note.md
   index.md
 ```
+   
+   

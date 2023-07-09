@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Input folder   
    

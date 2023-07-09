@@ -5,6 +5,7 @@ tags:
 ---
 # Export vault files to html output   
    
+   
 > New in [v3.2.0](/not_created.md)   
    
 ## Configuration   
@@ -43,3 +44,5 @@ file_exports:
   - src: Resources/Includes/christmas_snowflakes.js
     dst: obs.html/static/christmas_snowflakes.js
 ```
+   
+   

@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Contributing to Obsidianhtml   
    
@@ -27,4 +27,4 @@ This is done by running [ruff](https://beta.ruff.rs/docs/). Though you can also 
    
 > As I run ruff pretty often, you are less likely to find a bunch of issues that have nothing to do with your changes, as I try to keep the output free of issues by refactors and/or adding ignore statement to the `pyproject.toml`.   
    
-See for more info on how you can install this and how you should run it: [https://github.com/obsidian-html/obsidian-html/blob/master/docs/developer_docs.md](https://github.com/obsidian-html/obsidian-html/blob/master/docs/developer_docs.md)
+See for more info on how you can install this and how you should run it: [https://github.com/obsidian-html/obsidian-html/blob/master/docs/developer_docs.md](https://github.com/obsidian-html/obsidian-html/blob/master/docs/developer_docs.md)   

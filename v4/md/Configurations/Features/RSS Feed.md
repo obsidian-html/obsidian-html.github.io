@@ -5,6 +5,7 @@ tags:
 ---
 # RSS Feed   
    
+   
 > New in [v1.0.0](/not_created.md)   
    
 ## Introduction   
@@ -76,7 +77,6 @@ You might also want to look into [Match keys](#match-keys) and [include_subfolde
 Also make sure that the notes that you include have a publish date set in the frontmatter yaml. E.g.:   
    
 ``` yaml
----
 # Will be matched first
 rss:
   publish_date: 2022-03-04
@@ -253,10 +253,8 @@ It's possible to select a key several levels down by using `:` as a delimiter.
    
 Let's say you have this frontmatter:   
 ``` yaml
----
 rss:
   title: 'My custom title for this note'
----
 ```
    
    
@@ -302,3 +300,4 @@ If no paragraphs are present then an empty string is returned, if less paragraph
 # Get the first H1 header, and return the inner html
 selector: ['first-header', 1]
 ```
+   

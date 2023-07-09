@@ -1,5 +1,6 @@
 ---
-{}
+tags:
+- babayaga
 ---
 # Embedded search   
    

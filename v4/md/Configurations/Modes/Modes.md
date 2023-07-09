@@ -5,6 +5,7 @@ tags:
 ---
 # Modes   
    
+   
 A *mode* is a term used for certain [configuration settings](../../Configurations/Configuration%20Options.md) that alter the note selection and/or the contents of the homepage.   
    
 ## Entrypoint mode   
@@ -35,4 +36,6 @@ This setting will allow you to compile the website in a way that can be browsed 
    
 This can be useful if you want a basic website for personal use, and don't want to remember to turn on the http server every time.   
    
-Read more [Relative_path_html](../../Configurations/Modes/Relative_path_html.md).
+Read more [Relative_path_html](../../Configurations/Modes/Relative_path_html.md).   
+   
+   

@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Copy Vault to Tempdirectory   
    
@@ -9,4 +9,5 @@ This module will copy the configured Obsidian vault to a temporary directory and
    
 Copying your vault to a temporary directory prior to execution is useful to ensure no changes are made in your vault, either by bugs in the code, or by modules that need to write in the vault directory to make certain features possible.   
    
-If you have a very large vault, it might make sense to disable this module. It is recommended to use version control on your vault, such as git, or to make a backup prior to running `obsidianhtml convert`, to be able to restore your vault if anything were to go wrong.
+If you have a very large vault, it might make sense to disable this module. It is recommended to use version control on your vault, such as git, or to make a backup prior to running `obsidianhtml convert`, to be able to restore your vault if anything were to go wrong.   
+   

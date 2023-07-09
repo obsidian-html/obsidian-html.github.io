@@ -1,8 +1,8 @@
 ---
 tags:
-- feature/html_output
-- type/configuration
 - date/2022-04-26
+- type/configuration
+- feature/html_output
 ---
 # Implementing Call-outs   
    
@@ -156,4 +156,4 @@ Continue the block with a `>`, like so:
 > This is a quote block   
    
 > [!cite]-    
-> This is a cite block
+> This is a cite block   

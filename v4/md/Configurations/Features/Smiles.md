@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Smiles   
    
@@ -23,3 +23,5 @@ toggles:
       width: 100%       # XXX%, XXXpx, XXX 
       height: 200px     # XXX%, XXXpx, XXX
 ```
+   
+   

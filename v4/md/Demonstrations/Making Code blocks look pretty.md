@@ -1,10 +1,11 @@
 ---
 graph_name: Code blocks
 tags:
+- date/2022-02-04
 - feature/html_output
 - type/styling
-- date/2022-02-04
 ---
+   
    
 # Code blocks   
 This is built into python-markdown, and enabled by default.   
@@ -83,7 +84,6 @@ Function Add-Link {
    
 ## YAML   
 ``` yaml
----
 # This is a basic workflow to help you get started with Actions
 
 name: CI
@@ -150,3 +150,4 @@ jobs:
         sudo echo "" > /etc/nginx/sites-available/default
     fi    
 ```
+   

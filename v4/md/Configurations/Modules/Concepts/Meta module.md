@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Meta module   
    
@@ -16,4 +16,4 @@ As meta modules are not triggered by other meta modules, the [Resource Logger](.
    
 For this single reason, it is best not to have meta modules alter modfiles or provide modfiles that are integral to other modules.   
    
-Writing log or debug output to the module data folder is of course allowed and even encouraged.
+Writing log or debug output to the module data folder is of course allowed and even encouraged.   

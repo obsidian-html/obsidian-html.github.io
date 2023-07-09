@@ -1,12 +1,13 @@
 ---
 graph_name: Graph View
 tags:
-- date/2022-02-05
+- feature/graph_view
 - type/configuration
 - feature/html_output
-- feature/graph_view
+- date/2022-02-05
 ---
 # Graph View   
+   
    
 Click on the button at the bottom of a note to view the graph for the current note. Click on the graph icon in the menu to go to a full page graph view.   
    
@@ -55,12 +56,10 @@ Read more: [Writing a custom graph view template](../../Configurations/Styling/W
    
 E.g:   
 ``` yaml
----
 graph_name: Links
 tags: 
 - type/parsing_markdown
 - date/2022-02-04
----
 ```
    
    
@@ -76,3 +75,5 @@ toggles:
     graph:
       show_inclusions_in_graph: False
 ```
+   
+   

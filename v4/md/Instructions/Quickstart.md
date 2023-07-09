@@ -1,9 +1,10 @@
 ---
 tags:
-- type/instruction
 - date/2022-02-21
+- type/instruction
 ---
 # Quickstart   
+   
    
 This page is a very short summary of installation, usage, and configuration options.   
    
@@ -129,6 +130,7 @@ Then open [http://localhost:8000](http://localhost:8000) to view the html site t
 
 # Deployment instructions   
    
+   
 By default the configuration allows for running the website as  [http://localhost:8000](http://localhost:8000),  [https://mywebsite.com/,](https://mywebsite.com/,) [https://my-account.github.io/,](https://my-account.github.io/,) etc.   
    
 All those urls have in common that they are in the root of the domain. An example where this is not the case is:  [https://mywebsite.com/subfolder/.](https://mywebsite.com/subfolder/.)   
@@ -159,4 +161,4 @@ For this to work we need to make sure that all the links in a page are relative 
 # Next steps   
    
 - Read the full notes on [Installation](../Instructions/Installation.md) and [Usage](../Instructions/Usage.md) if you want to know more about these steps.   
-- If the conversion works, but you want to change the behavior, check out [Features](../Configurations/Features/Features.md), [Modes](../Configurations/Modes/Modes.md), and finally [Configuration Options](../Configurations/Configuration%20Options.md)
+- If the conversion works, but you want to change the behavior, check out [Features](../Configurations/Features/Features.md), [Modes](../Configurations/Modes/Modes.md), and finally [Configuration Options](../Configurations/Configuration%20Options.md)   

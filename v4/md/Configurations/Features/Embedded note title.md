@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Embedded note title   
    

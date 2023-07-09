@@ -1,9 +1,10 @@
 ---
 tags:
-- type/styling
 - date/2022-04-17
+- type/styling
 ---
 # Tabs Layout   
+   
    
 When the [styling layout setting](../../Configurations/Styling/Styling.md#layouts) is set to `tabs`, the html output uses a tab system, where each internal link opens a new note on the right of the parent note.    
    
@@ -24,4 +25,4 @@ Of course, the scrollbar and arrow keys are also available as methods of navigat
 When you click on a new link in an earlier tab, all the open tabs after it will be closed.   
    
 ### Notice the url   
-There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh.
+There is a `?path=` part in the link that allows you to open the same set of tabs after a refresh. 

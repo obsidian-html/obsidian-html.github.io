@@ -1,9 +1,10 @@
 ---
 graph_name: Inclusions
 tags:
-- feature/parsing_markdown
 - date/2022-02-04
+- feature/parsing_markdown
 ---
+   
    
 # Note inclusions   
 Note inclusion in Obsidian allows you to include a note into another note, or just a part of a note in another note.    
@@ -33,7 +34,10 @@ This will be included below by writing
 
 # Test Inclusion   
    
-> Content
+   
+> Content   
+   
+
    
 ==---end inclusion---==   
    
@@ -108,4 +112,5 @@ Pip is a package manager, installed along with Python, that we use to install Ob
    
 ==---end inclusion---==   
    
-%%
+%%   
+   

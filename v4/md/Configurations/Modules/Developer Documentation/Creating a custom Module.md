@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
    
 # Introduction   
@@ -317,4 +317,5 @@ For other topics, look into:
    
 And just peruse the built-in modules for what is done there:   
    
-- [https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin](https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin)
+- [https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin](https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin)   
+   

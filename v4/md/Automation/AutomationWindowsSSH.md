@@ -1,9 +1,10 @@
 ---
 graph_name: Auto push site using Git on Windows
 tags:
-- type/automation
 - date/2022-02-04
+- type/automation
 ---
+   
    
 # Auto push site to a local webserver on Windows   
 This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the [Git method](../Automation/AutomationWindows.md) or something along those lines.   
@@ -43,4 +44,4 @@ Function Publish-Obsidian {
 ```
    
    
-[Other ways of pushing websites](../Automation/Automate%20website%20deployment.md)
+[Other ways of pushing websites](../Automation/Automate%20website%20deployment.md)   

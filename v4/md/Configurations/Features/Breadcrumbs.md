@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Breadcrumbs   
    
@@ -16,3 +16,4 @@ toggles:
     breadcrumbs:
       enabled: True
 ```
+   

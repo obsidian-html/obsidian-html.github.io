@@ -1,10 +1,11 @@
 ---
 tags:
-- type/test_page
-- date/2022-07-30
 - inline-tag
+- date/2022-07-30
+- type/test_page
 ---
 # Implementing inline tags   
+   
    
 > New in [v3.1.0](/not_created.md)   
    
@@ -15,3 +16,6 @@ toggles:
   # Will preserve inline tags. This will give polluted markdown output
   preserve_inline_tags: True
 ```
+   
+   
+   

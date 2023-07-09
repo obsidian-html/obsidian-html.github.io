@@ -4,6 +4,7 @@ tags:
 - date/2022-05-05
 ---
    
+   
 # Implementing Latex   
 At the moment only the math based latex is enabled. (It's hard to find what Obsidian supports other than the math based latex.)   
    
@@ -71,4 +72,4 @@ $$
 $$   
 $$
 \text{block 2}
-$$
+$$   

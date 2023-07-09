@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Inspect default config   
    
@@ -16,4 +16,5 @@ obsidianhtml export default-config
    
 > Tip: run `obsidianhtml export default-config -o config.yml` to get a config file with all possible inputs.    
    
-Note that the inputs that need to be filled in always are marked with `'<REQUIRED_INPUT>'`.
+Note that the inputs that need to be filled in always are marked with `'<REQUIRED_INPUT>'`.   
+   

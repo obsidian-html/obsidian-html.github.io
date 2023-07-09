@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Markdown post processing   
    
@@ -49,4 +49,9 @@ As requested and discussed in [https://github.com/obsidian-html/obsidian-html/is
    
 You will also find a standalone script in that issue to do the same thing, but without needing to invoke obsidianhtml.   
    
-This module is only applied to `*.md` files.
+This module is only applied to `*.md` files.   
+   
+   
+   
+   
+   

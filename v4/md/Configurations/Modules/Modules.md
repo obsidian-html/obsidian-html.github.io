@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Modules   
    
@@ -14,4 +14,5 @@
 ## Module Developer Documentation   
    
 - [Module Design](../../Configurations/Modules/Developer%20Documentation/Module%20Design.md)   
-- [Creating a custom Module](../../Configurations/Modules/Developer%20Documentation/Creating%20a%20custom%20Module.md)
+- [Creating a custom Module](../../Configurations/Modules/Developer%20Documentation/Creating%20a%20custom%20Module.md)   
+   

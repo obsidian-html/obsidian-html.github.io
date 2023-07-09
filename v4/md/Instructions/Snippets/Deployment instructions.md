@@ -1,9 +1,10 @@
 ---
 tags:
-- type/template
 - date/2022-09-04
+- type/template
 ---
 # Deployment instructions   
+   
    
 By default the configuration allows for running the website as  [http://localhost:8000](http://localhost:8000),  [https://mywebsite.com/,](https://mywebsite.com/,) [https://my-account.github.io/,](https://my-account.github.io/,) etc.   
    

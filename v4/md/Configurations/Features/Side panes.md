@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Side panes   
    
@@ -128,4 +128,5 @@ You can add more selectors to this list, or set it to `strip_sub_divs: []` to fo
 ## Known limits   
    
 - It is not supported to set the same content selector twice (so for example dir_tree in both the left and the right pane).   
-  - Not sure why anybody would want to, but now you know you shouldn't even try.
+  - Not sure why anybody would want to, but now you know you shouldn't even try.   
+   

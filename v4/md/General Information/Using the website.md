@@ -1,10 +1,11 @@
 ---
 tags:
+- date/2022-02-04
 - feature/html_output
 - type/styling
-- date/2022-02-04
 ---
 # Using the website   
+   
    
 The following features have been built in to the [various html templates](../Configurations/Styling/Styling.md#layouts).    
    
@@ -20,4 +21,6 @@ Hover over any header to see a chain link icon. Clicking on this will send you t
 Read more [Graph View](../Configurations/Features/Graph%20view.md).   
    
 ## Tabbing system   
-The default layout is `documentation`, which this site is built with. But for some people who are more into smart note taking, the [Tabs Layout](../Configurations/Styling/Tabs%20Layout.md) might be a better fit.
+The default layout is `documentation`, which this site is built with. But for some people who are more into smart note taking, the [Tabs Layout](../Configurations/Styling/Tabs%20Layout.md) might be a better fit.   
+   
+   

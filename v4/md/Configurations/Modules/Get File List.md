@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Get File List   
    
@@ -67,4 +67,4 @@ This will be calculated with the input folder as root.
 ## Further filtering   
 These modules are executed by default (at some point) after this module, and allow for further filtering of the notes:   
    
--
+- 

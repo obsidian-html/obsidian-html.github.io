@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Persistence   
    
@@ -18,3 +18,4 @@ module_list:
       description: Prepare and export templates used to create html output.
       persistent: True
 ```
+   

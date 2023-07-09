@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Module data folder   
    
@@ -8,3 +8,5 @@ The module data folder contains all of the [module files](../../../Configuration
 ``` yaml
 module_data_folder: 'output/mod'
 ```
+   
+   

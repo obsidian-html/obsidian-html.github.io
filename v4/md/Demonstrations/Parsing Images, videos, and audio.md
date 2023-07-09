@@ -1,8 +1,9 @@
 ---
 tags:
-- feature/parsing_markdown
 - date/2022-02-04
+- feature/parsing_markdown
 ---
+   
    
 # Images   
 ## Obsidian type image links    
@@ -68,4 +69,4 @@ At the moment of writing mp4 and webm's are supported. If you want to use a diff
 # Pdfs   
 `![[RossettiGoblinMarket.pdf]]`   
    
-<embed src="../Resources/pdfs/RossettiGoblinMarket.pdf" width="90%" height="700px">
+<embed src="../Resources/pdfs/RossettiGoblinMarket.pdf" width="90%" height="700px">   

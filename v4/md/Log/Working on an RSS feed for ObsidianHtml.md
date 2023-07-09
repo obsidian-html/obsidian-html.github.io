@@ -1,7 +1,7 @@
 ---
 tags:
-- type/news
 - date/2022-02-15
+- type/news
 ---
 # Working on an RSS feed for ObsidianHtml   
    

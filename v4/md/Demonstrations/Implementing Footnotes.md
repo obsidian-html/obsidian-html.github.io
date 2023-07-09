@@ -1,9 +1,10 @@
 ---
 tags:
-- feature/parsing_markdown
 - date/2022-08-26
+- feature/parsing_markdown
 ---
 # Implementing Footnotes   
+   
    
 Footnotes are baked in to python-markdown, only that extension lacks inline footnotes.   
 These have been added in [v3.2.0](/not_created.md).   
@@ -49,4 +50,7 @@ You can also use inline footnotes. ^[notice that the carat goes outside of the b
 ```
    
    
-You can also use inline footnotes. ^[notice that the carat goes outside of the brackets on this one.]
+You can also use inline footnotes. ^[notice that the carat goes outside of the brackets on this one.]   
+   
+   
+   

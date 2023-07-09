@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Module Design   
    
@@ -339,4 +339,6 @@ class MyCustomModule(ObsidianHtmlModule):
 The object returned by `self.modfile()` will do checking upon accessing the modfiles. If a modfile is read but not listed under `self.requires`, then this will lead to an error, and similarly for writing a file.   
    
 >[!attention]   
-> Any modules that are added in PR's that read/write modfiles with other means than `self.modfile().*.write()` and `self.modfile().read()` will be rejected.
+> Any modules that are added in PR's that read/write modfiles with other means than `self.modfile().*.write()` and `self.modfile().read()` will be rejected.   
+   
+   

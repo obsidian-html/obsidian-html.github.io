@@ -4,9 +4,10 @@ obs.html.tags:
 - no_tag_footer
 - dont_add_embedded_title
 tags:
-- type/moc
 - test
+- type/moc
 ---
+   
    
 # ObsidianHtml   
 > [!example]- Code   
@@ -48,4 +49,4 @@ tags:
 ## Tips and tricks   
    
 - [Performance Tuning](./Configurations/Tweaking/Performance%20Tuning.md)   
-- [Automate website deployment](./Automation/Automate%20website%20deployment.md)
+- [Automate website deployment](./Automation/Automate%20website%20deployment.md)    

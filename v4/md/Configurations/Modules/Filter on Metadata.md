@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Filter on Metadata   
    
@@ -123,3 +123,8 @@ module_config:
     include_on:
       value: [[{'equals': ['category', 'blog']}]] 
 ```
+   
+   
+   
+   
+   

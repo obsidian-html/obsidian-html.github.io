@@ -5,6 +5,7 @@ tags:
 ---
 # Copy vault to temp dir   
    
+   
 We try to not have bugs, but sometimes we just can't help ourselves. I think everyone would agree that the only thing that we should guarantee is that we don't touch your vault files. To help assure that, ObsidianHtml will make a copy of your entire vault to a temporary directory and work from out of that folder.    
    
 This is the default behavior,  but an optional setting, and if you have severe file storage problems, or an enormous vault that takes very long to copy, then you can turn this setting off. Though we advise you to make a backup yourself the first couple of times that you use ObsidianHtml, or when you update ObsidianHtml to a new version.    
@@ -51,4 +52,5 @@ copy_vault_to_tempdir_follow_copy: True
 ```
    
    
-Note that this defaults to False and is not affected by the [global verbosity setting](../../Configurations/Configuration%20Options.md#verbose_printout).
+Note that this defaults to False and is not affected by the [global verbosity setting](../../Configurations/Configuration%20Options.md#verbose_printout).   
+   

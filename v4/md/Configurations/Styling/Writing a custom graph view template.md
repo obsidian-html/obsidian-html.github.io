@@ -1,10 +1,11 @@
 ---
 tags:
+- date/2022-04-24
 - type/instruction
 - type/styling
-- date/2022-04-24
 ---
 # Writing a custom graph view template   
+   
    
 > This functionality has been added in version [v2.1.0](/not_created.md) and rewritten in [v3.0.0](/not_created.md).   
 > It is still in beta, so let us know if you are having issues with it or want added functionality: [Report Issues & Request features](../../General%20Information/Report%20Issues%20%26%20Request%20features.md).   
@@ -272,4 +273,4 @@ This should be enough of a basis to understand the full [2d](https://github.com/
 - advanced styling of the selected node using html5 canvas code   
 - opening links   
    
-Make sure to also check out the force-graph docs, which contains many examples. Below is some more in depth information on the functions and globals being used. If you have any questions, be sure to drop by and make an issue [Report Issues & Request features](../../General%20Information/Report%20Issues%20%26%20Request%20features.md), even if it is just for a question on how to configure things!
+Make sure to also check out the force-graph docs, which contains many examples. Below is some more in depth information on the functions and globals being used. If you have any questions, be sure to drop by and make an issue [Report Issues & Request features](../../General%20Information/Report%20Issues%20%26%20Request%20features.md), even if it is just for a question on how to configure things!   

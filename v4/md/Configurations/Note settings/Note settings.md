@@ -1,5 +1,5 @@
 ---
-{}
+tags: []
 ---
 # Note settings   
    
@@ -54,3 +54,5 @@ See [ graph_name](../../Configurations/Features/Graph%20view.md#overwrite-the-na
 ``` yaml
 graph_name: New name
 ```
+   
+   

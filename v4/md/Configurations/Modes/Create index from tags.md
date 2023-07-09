@@ -1,9 +1,10 @@
 ---
 tags:
-- feature/dynamic_index
 - date/2022-02-13
+- feature/dynamic_index
 ---
 # Create index from tags   
+   
    
 If you want to build an index note on the fly, based on selected tags, you can use this feature.   
    
@@ -30,3 +31,5 @@ toggles
       enabled: True
       tags: [my_tag, my_other_tag]
 ```
+   
+   
