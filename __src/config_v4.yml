@@ -7,18 +7,18 @@ obsidian_entrypoint_path_str: '/home/dorus/git/obsidian-html.github.io/__src/vau
 # Input and output path of markdown files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-md_folder_path_str:  '/home/dorus/git/obsidian-html.github.io/v4/md'
+md_folder_path_str:  '/home/dorus/git/obsidian-html.github.io/md'
 
 # Markdown entrypoint path
 # This has to be md_folder_path_str + '/index.md' when toggles/compile_md == True
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-md_entrypoint_path_str: '/home/dorus/git/obsidian-html.github.io/v4/md/index.md'
+md_entrypoint_path_str: '/home/dorus/git/obsidian-html.github.io/md/index.md'
 
 # Output path of HTML files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-html_output_folder_path_str: '/home/dorus/git/obsidian-html.github.io/v4/'
+html_output_folder_path_str: '/home/dorus/git/obsidian-html.github.io/'
 
 # Will be inputted into the Html template as page title
 # Not used anywhere else atm.
@@ -26,7 +26,7 @@ site_name: 'ObsidianHtml/Documentation'
 
 # Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/
 # use '/html_prefix' (prepend slash, no slash at the end)
-html_url_prefix: '/v4'
+html_url_prefix: ''
 
 # Provide the fullpath to a template file to use instead of standard template. 
 # Note that this file must contain at least "{content}" somewhere in the page.
@@ -91,7 +91,7 @@ module_config:
   prepare_output_folders:
     clean_existing: 
       description: Files that exist in the output folders are deleted.
-      value: True
+      value: False
     fail_on_existing: 
       description: 
         - Exit with error if output folders are not empty.
@@ -222,6 +222,7 @@ toggles:
   warn_on_skipped_image: False
 
   # This will skip emptying output folders, if you want to implement this yourself
+  # DEPRECATED, see module_config/prepare_output_folders/clean_existing
   no_clean: True
 
   # Whether the markdown interpreter assumes relative path when no / at the beginning of a link
