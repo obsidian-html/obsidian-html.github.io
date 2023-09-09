@@ -13,7 +13,7 @@
 ## feature/parsing_markdown   
    
 - [Parsing Obsidian notes to proper markdown](./General%20Information/Parsing%20Obsidian%20notes%20to%20proper%20markdown.md)   
-- [Removing obisidian comments](./Demonstrations/Removing%20obisidian%20comments.md)   
+- [Removing obsidian comments](./Demonstrations/Removing%20obsidian%20comments.md)   
 - [Parsing Images, videos, and audio](./Demonstrations/Parsing%20Images%2C%20videos%2C%20and%20audio.md)   
 - [Lists](./Demonstrations/Making%20lists%20work%20the%20same.md)   
 - [Links](./Demonstrations/Implementing%20links%20%26%20link%20awareness.md)   

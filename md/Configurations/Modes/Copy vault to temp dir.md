@@ -12,7 +12,7 @@ This is the default behavior,  but an optional setting, and if you have severe f
 
 > This setting should be enabled for the option [Create index from tags](../../Configurations/Modes/Create%20index%20from%20tags.md) to work. Because it needs to write a file to the obsidian vault location, and thus we can not guarantee that we don't alter your vault if this setting is turned off. 
 
-The temporary dir will be removed once ObisidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please [report it as an issue](../../General%20Information/Report%20Issues%20%26%20Request%20features.md).
+The temporary dir will be removed once ObsidianHtml is done running. This should even happen if the program hit an error. If this does not happen reliably, please [report it as an issue](../../General%20Information/Report%20Issues%20%26%20Request%20features.md).
 
 See config options: [Configuration Options](../../Configurations/Configuration%20Options.md#copy-vault-to-tempdir)
 
