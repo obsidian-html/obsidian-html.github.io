@@ -1,12 +1,28 @@
 
 
 /*  ----------------------------------------- GLOBAL ------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400');
+@import url('https://fonts.googleapis.com/css?family=Poppins:200');
+
+@font-face {
+    font-family: 'SourceCodePro-Regular';
+    src: url('/obs.html/static/SourceCodePro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: monospace;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('/obs.html/static/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     text-rendering: optimizeLegibility;
     --accent-color: 65, 76, 253;
     --loading-bg-color: 22, 22, 22;
-    --left-pane-active-width: max-content;
+    --left-pane-active-width: 20rem;
     --right-pane-active-width: 16rem;
     --normal-text-color: 51, 51, 51;
     --bg-color: #f2f3f5a6;
@@ -40,6 +56,7 @@ body {
 }
 
 .header {
+    font-family: 'Poppins', sans-serif;
     padding-bottom: 1rem;
 }
 .header.minimal-header {
@@ -51,19 +68,7 @@ body {
     cursor: pointer;
 }
 
-@font-face {
-    font-family: 'SourceCodePro-Regular';
-    src: url('/obs.html/static/SourceCodePro-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: monospace;
-}
 
-@font-face {
-    font-family: 'Roboto-Regular';
-    src: url('/obs.html/static/Roboto-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 
 /* ----------------------------------------      Core      ---------------------------------------- */
@@ -169,6 +174,11 @@ blockquote p {
     display: block;
 }
 
+.active .left_pane_content {
+    width: calc(var(--left-pane-active-width) - 4rem);
+    position: fixed;
+}
+
 
 
 
@@ -233,9 +243,12 @@ blockquote p {
 .left_pane ul,
 .right_pane ul {
     list-style: none;
+    font-size: 11pt;
+}
+
+.right_pane ul {
     padding-left: 1.5rem;
     margin-top: 0.3rem;
-    font-size: 11pt;
 }
 
 .left_pane li,
@@ -337,7 +350,6 @@ tr:last-child td {
 }
 
 th {
-    text-transform: capitalize;
     border: 0px;
     padding: 0.3rem;
     padding-left: 1rem;
@@ -363,6 +375,12 @@ h3+table {
 
 h4+table {
     margin-top: 0rem;
+}
+
+td img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -432,7 +450,8 @@ a.navbar-link:hover {
 .icon-tray {
     height: 1.6rem;
     margin-top: -0.1rem;
-    display: flex
+    display: flex;
+    margin-left: 1rem;
 }
 
 
@@ -481,11 +500,20 @@ a.navbar-link:hover {
 
 
 /* --------------------------------------- Fixes -------------------------------------------------- */
+#navbar {
+    margin-left: 2rem;
+}
+#homelink {
+    margin-left: 1.5rem;
+    margin-right: 1.7rem;
+    font-size: 12pt;
+}
 
 .container #homelink {
     background-color: unset;
     padding: unset;
     margin: unset;
+
 }
 
 .icon-tray div {
@@ -512,7 +540,7 @@ a.navbar-link:hover {
 .right_pane_content .toc-header {
     margin-left: 1.5rem;
 }
-.right_pane_content .dirtree {
+.right_pane_content #dirtree {
     margin-left: 1.5rem;
 }
 .left_pane_content .toc-contents {
@@ -539,7 +567,6 @@ a.navbar-link:hover {
 
 h3 {
     font-size: 13pt;
-    font-weight: 500;
     border-bottom: 1px dashed var(--bg-accent3);
     padding: 2px;
     margin-bottom: 0.5rem;
@@ -565,6 +592,10 @@ h3+p {
 @media (max-width: 602px) {
     .header {
         padding-bottom: 0.3rem;
+    }
+    #navbar {
+        margin-left: unset;
+        margin: auto;
     }
     .navbar {
         padding-top: 1rem;
@@ -626,6 +657,7 @@ h4,
 h5,
 embeddedtitle {
     scroll-margin-top: 8rem;
+    font-weight: 400;
 }
 
 .header {
@@ -645,7 +677,6 @@ embeddedtitle {
     margin-top: 0px;
     margin-bottom: 16px;
     color: inherit;
-    font-weight: 600;
     padding-bottom: 0.2rem;
 }
 
@@ -655,8 +686,7 @@ h1:not(:first-of-type) {
 
 h2 {
     font-size: 14pt;
-    border-bottom: 1px dotted #777070;
-    font-weight: 600;
+    border-bottom: 1px dotted #7770706e;
     padding-bottom: 0.2rem;
     margin-top: 2rem;
 }
@@ -673,9 +703,11 @@ h2+p {
 .anchor {
     visibility: hidden;
     float: left;
-    padding-right: 4px;
-    margin-left: -20px;
+    margin-left: -24px;
     line-height: 1;
+    position: relative;
+    left: 0.3rem;
+    top: 0.3rem;
 }
 
 .anchor svg {
@@ -724,6 +756,8 @@ li {
 
 .dir-container.active {
     display: block;
+    border-left: 1px solid var(--bg-accent3);
+    margin-left: 0.4rem;
     margin-bottom: 1rem;
 }
 
@@ -736,16 +770,20 @@ li {
     margin-bottom: 0.3rem;
     font-family: 'Roboto-Regular';
     color: var(--dir-tree-color);
-    font-weight: bold;
     text-align: left;
+    line-height: 1.5rem;
 }
+
+.octicon {
+    margin-right: 0.5rem;
+    fill: var(--bg-accent2);
+  }
 
 .dir-button:first-child {
     margin-top: 0.4rem;
 }
 
 .dir-list {
-    margin-top: 0.2rem;
     padding-left: 0.2rem;
     margin-bottom: 0.2rem;
 }
@@ -753,6 +791,7 @@ li {
 .dir-list li {
     list-style-type: none;
     font-size: 11pt;
+    line-height: 1.5rem;
 }
 
 .dir-list li a:visited,
@@ -770,25 +809,81 @@ li {
 .dir-list li a.active:link,
 .dir-list li a.active:hover {
     color: rgba(var(--code-hightlight-color), 1.0);
-    font-weight: bold;
 }
-.dir-button.folder_note.active {
+.dir-button.folder_note.current {
     color: rgba(var(--code-hightlight-color), 1.0);
-    font-weight: bold;
 }
-ul.dir-list {
-    margin-left: 0px;
-    padding-left: 0px;
+
+.dir-container ul.dir-list {
+    margin-top: 2rem;
+    margin-top: 0rem;
 }
 
 
 .fn_pf {
-    display: inline list-item;
-    list-style: disclosure-closed;
-    margin-left: -0.8rem;
-    color: var(--marker-color);
+    display: inline;
+    margin-left: -1.2rem;
+    color: whitesmoke;
+    margin-right: 1rem;
+    font-size: 10pt;
+    position: relative;
+    top: 0.1rem;
+}
+.folder_note.active .fn_pf {
+    font-size: 8pt;
+    left: 0.05rem;
+    top: 0.2rem;
+  }
+
+
+.file-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 0.5rem;
 }
 
+.dir-list li .file-icon {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' focusable='false' role='img' class='octicon octicon-file' viewBox='0 0 16 16' width='16' height='16' style='display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;'%3E%3Cpath d='M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z'%3E%3C/path%3E%3C/svg%3E ");
+    filter: invert(99.8%) brightness(20%);
+    margin-top: 0.25rem;
+}
+
+.dir-list li .non-md-file.file-icon {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='2 0 13 16' width='13' height='16'%3E%3Cpath d='M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z'%3E%3C/path%3E%3Cpath style='fill: rgb(216, 216, 216);' d='M 8.316 6.794 L 8.297 13.123'%3E%3C/path%3E%3Cpath d='M 8.816 6.796 L 8.797 13.125 L 7.797 13.122 L 7.816 6.792 Z' style='fill: none;'%3E%3C/path%3E%3Cpath d='M 9.169 6.747 L 9.15 12.054 L 8.15 12.051 L 8.169 6.743 L 9.169 6.747 Z' style=''%3E%3C/path%3E%3Cpath style='fill: none;' d='M 5.606 10.97 L 8.334 13.42 L 10.803 10.933'%3E%3C/path%3E%3Cpath d='M 5.272 11.342 L 8 13.792 L 8.354 14.11 L 8.689 13.772 L 11.158 11.285 L 10.448 10.581 L 8.314 12.73 L 5.94 10.598 Z' style='fill: none;'%3E%3C/path%3E%3Cpath d='M 5.638 10.462 L 8.366 12.912 L 8.72 13.23 L 9.055 12.892 L 11.524 10.405 L 10.814 9.701 L 8.68 11.85 L 6.306 9.718 L 5.638 10.462' style='paint-order: stroke; fill: rgb(2, 2, 0);'%3E%3C/path%3E%3C/svg%3E ");
+    filter: invert(20%) sepia(93%) saturate(252%) brightness(2) hue-rotate(220deg) opacity(80%);
+}
+
+
+.dir-button .file-icon {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' focusable='false' role='img' class='octicon octicon-file-directory-fill' viewBox='0 0 16 16' width='16' height='16' fill='currentColor' style='display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;'%3E%3Cpath d='M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z'%3E%3C/path%3E%3C/svg%3E ");
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 0.5rem;
+    filter: invert(99.8%) brightness(30%);
+    margin-bottom: -0.2rem;
+}
+
+.dir-button.active .file-icon {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' focusable='false' role='img' class='octicon octicon-file-directory-open-fill' viewBox='0 0 16 16' width='16' height='16' fill='currentColor' style='display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;'%3E%3Cpath d='M.513 1.513A1.75 1.75 0 0 1 1.75 1h3.5c.55 0 1.07.26 1.4.7l.9 1.2a.25.25 0 0 0 .2.1H13a1 1 0 0 1 1 1v.5H2.75a.75.75 0 0 0 0 1.5h11.978a1 1 0 0 1 .994 1.117L15 13.25A1.75 1.75 0 0 1 13.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75c0-.464.184-.91.513-1.237Z'%3E%3C/path%3E%3C/svg%3E ");
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 0.5rem;
+    filter: invert(99.8%) brightness(30%);
+    margin-bottom: -0.2rem;
+}
+
+
+
+.dir-list li a {
+    display: block;
+}
+
+.dir-list li {
+    display: flex;
+}
 
 a.inline-tag:visited,
 a.inline-tag:link,
@@ -947,9 +1042,6 @@ a.inline-tag:hover {
 .tag-list li a.active:hover {
     font-weight: bold;
 }
-.dir-button.folder_note.active {
-    font-weight: bold;
-}
 ul.tag-list {
     margin-left: 0px;
     padding-left: 0px;
@@ -980,6 +1072,58 @@ audio {
     margin-left: 4px;
 }
 
+.smiles_canvas {
+    background-color: rgb(5, 11, 21);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.download-button {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--bg-accent);
+    padding: 0.5rem;
+    text-align: center;
+    max-width: 40rem;
+    border-radius: 0.4rem;
+}
+
+.download-button svg {
+    width: 1rem;
+    margin-bottom: -0.4rem;
+    margin-right: 0.2rem;
+}
+a.download-button:hover,
+a.download-button:link,
+a.download-button:visited {
+    text-decoration: none;
+}
+
+.checklist-item {
+    list-style: none;
+}
+
+.checklist-item .checked {
+    display: inline-block;
+    background-color: var(--color-accent2);
+    color: var(--callout-color);
+    padding-left: 0.25rem;
+    padding-right: 0.15rem;
+    border-radius: 0.2rem;
+    line-height: 1.0rem;
+    font-size: 0.7rem;
+    margin-right: 0.6rem;
+}
+
+.checklist-item .unchecked {
+    display: inline-block;
+    margin-right: 0.6rem;
+}
+
+li ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 
 /*  ----------------------------------------- /GLOBAL ------------------------------------------------ */
 
@@ -1071,6 +1215,29 @@ text {
 .graph_header_div_svg {
     width: 1.3rem;
 }
+
+.graph-instructions {
+    width: 100%;
+    text-align: right;
+    color: var(--bg-accent2);
+    position: relative;
+    top: -1.4rem;
+    font-family: monospace;
+    font-size: small;
+    right: 1rem;
+    opacity: 0;
+    text-shadow: #090909 2px 1px 2px;
+}
+
+.fadein {
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 /*  ----------------------------------------- /GRAPHS ------------------------------------------------ */
 
 
@@ -1640,6 +1807,7 @@ span.linenos.special {
         height: 0rem;
         margin-top: 1rem;
         max-width: 70rem;
+        max-height: calc(100vh - 10rem);
     }
     #search-results {
         height: calc(100% - 1rem);
@@ -1763,6 +1931,21 @@ span.linenos.special {
         transform: rotate(0deg);
     }  
 
+    .prompt-instruction {
+        padding-right: 0.3rem;
+        margin-left: -0.7rem;
+    }
+    #search-controls .prompt-instruction button {
+        background-color: rgba(0,0,0,0);
+        border: 1px solid var(--bg-accent3);
+        font-weight: normal;
+        padding: 0.2rem;
+        margin: 0px;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 0.2rem;
+        color: var(--normal-text-color);
+    }
 
     @media (max-width: 602px) {
         #search-slab {
@@ -2060,6 +2243,9 @@ span.tag {
         margin-bottom: 0rem;
         margin-top: 1.5rem
     }
+    .container {
+        height: 100vh;
+    }
 }
 
 @media (max-width: 450px) {
@@ -2184,8 +2370,6 @@ span.tag {
 .theme-obs-dark #homelink:visited,
 .theme-obs-dark #homelink:link,
 .theme-obs-dark #homelink:hover {
-    margin-left: 2rem;
-    margin-right: 0.5rem;
     background-color: unset;
     color: var(--homelink-color);
     width: 14rem;
@@ -2349,6 +2533,17 @@ blockquote {
 .theme-obs-dark .match-row.keyword .match  {
     border: 0px;
 }
+
+.theme-obs-dark .checklist-item .unchecked {
+    opacity: 0.5;
+}
+
+.theme-obs-light .checklist-item .checked {
+    background-color: #828282;
+    color: white;
+}
+
+
 
 /*  ----------------------------------------- /THEME ------------------------------------------------ */
 

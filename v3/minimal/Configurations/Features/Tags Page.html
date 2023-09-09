@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <span style="color: #666;">Configurations</span> / <a href="/v3/minimal/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/v3/minimal/Configurations/Features/Tags Page.html" >Tags Page</a>
+                    </div>
+                </div>
+<embeddedtitle>Tags Page</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/v3/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<h2 id="preserve-inline-tags">Preserve inline tags</h2>
+<p>Inline tags are preserved by default, but this will create polluted markdown output. You can disable this feature by setting:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Will preserve inline tags. This will give polluted markdown output</span>
+<span class="w">    </span><span class="nt">preserve_inline_tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+
+
+</div>
+
+<p>The inline tags will be added to the tags_list regardless.   </p>
+<h2 id="tags-page">Tags page</h2>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tags_page</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">styling</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">show_icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">show_in_note_footer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</code></pre></div>
+
+
+</div>
+
+<p>This is the default setting, and will create an html page at under <code>&lt;sitename&gt;/obs.html/tags</code>, see for example: <a href="/obs.html/tags">/obs.html/tags</a>.   </p>
+<h3 id="tags-list-in-note">Tags list in note</h3>
+<p>The <code>show_in_note_footer</code> setting above determines whether the tags will be listed at the bottom of each note as well. Note that you have to create the tags_page for this function to work, at the tags will be links pointing to their respective tag pages.   </p>
+<p>To disable the tags footer for certain notes, check out <a href="/v3/minimal/Configurations/Note%20settings/Note%20settings.html#no_tags_footer">Note settings#no_tags_footer</a>   </p>
+<h2 id="note-on-slashes">Note on slashes</h2>
+<p>If you use slashes in your tags, these will be split into different pages (like a tree view). <br />
+E.g. adding the following frontyaml at the top of this note:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">tags</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">feature/parsing_markdown</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date/2022-02-04</span>
+<span class="nn">---</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Will result in a page <a href="/obs.html/tags/feature/">/obs.html/tags/feature/</a> which will contain (among others) a link to  <code>parsing_markdown</code>, which will link to this note.</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Modes/Create Index from Directory Structure.html">create index from directory structure</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Note settings/Note settings.html">note settings</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Modes/Process All.html">process all</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.2.0.html">v3.2.0</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Features/Features.html">features</a></li>
+	<li><a class="backlink" href="/v3/minimal/General Information/Using the website.html">using the website</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/feature/parsing_markdown/index.html">feature/parsing_markdown</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-02-04/index.html">date/2022-02-04</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

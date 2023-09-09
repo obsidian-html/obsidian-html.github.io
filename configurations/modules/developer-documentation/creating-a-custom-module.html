@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="creating a custom module">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/Documentation</title>
+
+                <!-- Includes -->
+                <script src="/obs.html/static/obsidian_core.js"></script>
+<script src="/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/obs.html/static/master.css" />
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+            'securityLevel': 'loose',
+            'theme': 'dark',
+            'themeVariables': {
+                    'darkMode': true,
+            }
+    });
+</script>
+<script>
+  MathJax = {
+    loader: {
+      load: [
+        '[tex]/action',
+        'output/chtml',
+        '[tex]/centernot'
+      ]
+    },
+    tex: {
+      inlineMath: [ ["\\(","\\)"] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: {'[+]': ['centernot']}
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script src="/obs.html/static/flexsearch.bundle.js"></script>
+<script src="/obs.html/static/pako.js"></script>
+<script src="/obs.html/static/search.js"></script>
+<script src="/obs.html/static/dirtree.js"></script>
+
+
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'creating a custom module';
+                        const HTML_URL_PREFIX = '';
+                        const PAGE_DEPTH = 3;
+                </script>
+        </head>
+
+<body class="theme-obs-light">
+        <div id="antiflash" style="display: none;"></div>
+        <script>
+                document.getElementById('antiflash').style.display = 'block';
+        </script>
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction mobile">
+                            <button onclick="toggle_id('search-master-div');"><b>Close</b> Search </button>
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle_id('search-master-div');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            toggle_id('search-master-div');
+            return false;
+        } 
+    }, true);
+
+    function click_list_link(element){
+        element.parentElement.getElementsByTagName('a')[0].click()
+    }
+</script>
+
+        <div id="page_holder" class="flex_col">
+                <div id="header" class="header">
+    <div id="header_flex" class="flex_row">
+            <a href="/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Documentation</a>
+            <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
+                    ≡
+            </div>
+            <div id="navbar" class="navbar requires_js">
+                    <a class="navbar-link" href="/index.html" title="Home">Home</a>
+<a class="navbar-link" href="/general-information/about-obsidianhtml.html" title="About">About</a>
+<a class="navbar-link" href="/instructions/quickstart.html" title="Quickstart">Quickstart</a>
+<a class="navbar-link" href="/configurations/features/features.html" title="Features">Features</a>
+<a class="navbar-link" href="/configurations/configuration-options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/configurations/styling/styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/configurations/modes/modes.html" title="Modes">Modes</a>
+<a class="navbar-link" href="/news.html" title="News">News</a>
+                    <div class="icon-tray">
+                            <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+    T
+</div>
+<script>
+    function toggle_theme_popup(el){
+        // make theme button show that it's active by adding the .active class
+        toggle(el);
+
+        // show the theme selector
+        toggle_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
+        }
+    }
+</script>
+                                    <div onclick="openSearch()" class="theme-button requires_js">
+            <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+        </div>
+        <script>
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
+                }
+            }
+        </script>
+                                    <div class="graph_header_div requires_js">
+            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=creating a custom module" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
+            </a>
+        </div>
+                                    <div >
+            <a id="dirtree_link" class="system-link" href="/dirtree.html" title="View directory tree">
+                    <img src = "/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                            <div>
+    <a href="/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                                    <div>
+            <a id="rss_link" class="system-link" href="/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                    </div>
+                    <div style="display: flex; flex-direction:column">
+                        <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
+                        <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
+                    </div>
+            </div>
+    </div>
+    <div class="popup" id="theme-popup">
+    <label for="cars">Theme </label>
+
+    <select name="theme" id="theme" onchange="set_theme(this.value)">
+      <option value="obs-light" selected="selected">obsidian-light</option>
+      <option value="obs-dark">obsidian-dark</option>
+    </select> 
+</div>
+</div>
+                <div class="flex_row">
+                        <div id="left_pane" class="left_pane active">
+    <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+    <div id="left_pane_content" class="left_pane_content">
+            <div id="dirtree"><button id="folder-1" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>automation</button>
+<div id="folder-container-1" class="dir-container requires_js " path="/automation">
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/automation/automate-website-deployment.html"  >Automate website deployment</a></li>
+		<li><div class="file-icon"></div><a class="" href="/automation/automationlinuxgit.html"  >Auto push site using Git on Linux</a></li>
+		<li><div class="file-icon"></div><a class="" href="/automation/automationlinuxssh.html"  >Auto push site using SSH on Linux</a></li>
+		<li><div class="file-icon"></div><a class="" href="/automation/automationwindows.html"  >Auto push site using Git on Windows</a></li>
+		<li><div class="file-icon"></div><a class="" href="/automation/automationwindowsssh.html"  >Auto push site using Git on Windows</a></li>
+	</ul>
+</div>
+<button id="folder-2" class="dir-button folder_note  " href="/changelog/changelog.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>changelog</button>
+<div id="folder-container-2" class="dir-container requires_js " path="/changelog">
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/changelog/v4.0.0.html"  >v4.0.0</a></li>
+	</ul>
+</div>
+<button id="folder-3" class="dir-button active" onclick="toggle_dir(this.id)"><div class="file-icon"></div>configurations</button>
+<div id="folder-container-3" class="dir-container requires_js active" path="/configurations">
+	<button id="folder-4" class="dir-button folder_note  " href="/configurations/deprecated-configurations/deprecated-configurations.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>deprecated-configurations</button>
+	<div id="folder-container-4" class="dir-container requires_js " path="/configurations/deprecated-configurations">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/configurations/deprecated-configurations/exclude_subfolders.html"  >exclude_subfolders</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/deprecated-configurations/notabs-mode.html"  >NoTabs Mode</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/deprecated-configurations/obsidian_folder_path_str.html"  >obsidian_folder_path_str</a></li>
+		</ul>
+	</div>
+	<button id="folder-5" class="dir-button folder_note  " href="/configurations/features/features.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>features</button>
+	<div id="folder-container-5" class="dir-container requires_js " path="/configurations/features">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/backlinks.html"  >Backlinks</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/breadcrumbs.html"  >Breadcrumbs</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/embedded-note-title.html"  >Embedded note title</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/folder-notes.html"  >Folder Notes</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/graph-view.html"  >Graph View</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/include-notes.html"  >Include notes</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/markdown-post-processing.html"  >Markdown post processing</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/rss-feed.html"  >RSS Feed</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/side-panes.html"  >Side panes</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/slugify-html-links.html"  >Slugify html links</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/smiles.html"  >Smiles</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/tags-page.html"  >Tags Page</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/website-navigation-menu.html"  >Website navigation menu</a></li>
+		</ul>
+	</div>
+	<button id="folder-6" class="dir-button folder_note  " href="/configurations/modes/modes.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>modes</button>
+	<div id="folder-container-6" class="dir-container requires_js " path="/configurations/modes">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/copy-vault-to-temp-dir.html"  >Copy vault to temp dir</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/create-index-from-directory-structure.html"  >Create Index from Directory Structure</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/create-index-from-tags.html"  >Create index from tags</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/filtering-notes.html"  >Filtering notes</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/process-all.html"  >Process All</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/relative_path_html.html"  >Relative_path_html</a></li>
+		</ul>
+	</div>
+	<button id="folder-7" class="dir-button folder_note active " href="/configurations/modules/modules.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>modules</button>
+	<div id="folder-container-7" class="dir-container requires_js active" path="/configurations/modules">
+		<button id="folder-8" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>concepts</button>
+		<div id="folder-container-8" class="dir-container requires_js " path="/configurations/modules/concepts">
+			<ul class="dir-list">
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/built-in-versus-external-modules.html"  >Built-in versus External modules</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/meta-module.html"  >Meta module</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/module-data-folder.html"  >Module data folder</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/module-file.html"  >Module file</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/persistence.html"  >Persistence</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/stashing.html"  >Stashing</a></li>
+			</ul>
+		</div>
+		<button id="folder-9" class="dir-button active" onclick="toggle_dir(this.id)"><div class="file-icon"></div>developer-documentation</button>
+		<div id="folder-container-9" class="dir-container requires_js active" path="/configurations/modules/developer-documentation">
+			<ul class="dir-list">
+				<li><div class="file-icon"></div><a class="active current_page_dirtree" href="/configurations/modules/developer-documentation/creating-a-custom-module.html"  >Creating a custom Module</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/developer-documentation/module-design.html"  >Module Design</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/developer-documentation/running-a-binary-module.html"  >Running a binary module</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/copy-vault-to-tempdirectory.html"  >Copy Vault to Tempdirectory</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/filter-on-metadata.html"  >Filter on Metadata</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/get-file-list.html"  >Get File List</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/parse-metadata.html"  >Parse Metadata</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/resource-logger.html"  >Resource Logger</a></li>
+		</ul>
+	</div>
+	<button id="folder-10" class="dir-button folder_note  " href="/configurations/note-settings/note-settings.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>note-settings</button>
+	<div id="folder-container-10" class="dir-container requires_js " path="/configurations/note-settings">
+		<ul class="dir-list">
+		</ul>
+	</div>
+	<button id="folder-11" class="dir-button folder_note  " href="/configurations/styling/styling.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>styling</button>
+	<div id="folder-container-11" class="dir-container requires_js " path="/configurations/styling">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/configurations/styling/edit-html-css-js.html"  >Edit HTML, CSS, JS</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/styling/tabs-layout.html"  >Tabs Layout</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/styling/writing-a-custom-graph-view-template.html"  >Writing a custom graph view template</a></li>
+		</ul>
+	</div>
+	<button id="folder-12" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>tweaking</button>
+	<div id="folder-container-12" class="dir-container requires_js " path="/configurations/tweaking">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/configurations/tweaking/export-vault-files-to-html-output.html"  >Export vault files to html output</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/tweaking/performance-tuning.html"  >Performance Tuning</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/configurations/configuration-options.html"  >Configuration Options</a></li>
+	</ul>
+</div>
+<button id="folder-13" class="dir-button folder_note  " href="/demonstrations/demonstrations.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>demonstrations</button>
+<div id="folder-container-13" class="dir-container requires_js " path="/demonstrations">
+	<button id="folder-14" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>test-pages</button>
+	<div id="folder-container-14" class="dir-container requires_js " path="/demonstrations/test-pages">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/long-long-page.html"  >Long long page</a></li>
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/proper-markdown.html"  >proper markdown</a></li>
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/simple-obsidian-type-link.html"  >Simple Obsidian-type Link</a></li>
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/test-inclusion.html"  >Test Inclusion</a></li>
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/test-inclusion-2.html"  >Test inclusion 2</a></li>
+			<li><div class="file-icon non-md-file"></div><a class="" href="/demonstrations/test-pages/textfile.txt"  class="external-link">textfile.txt</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/embedded-search.html"  >Embedded search</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/getting-the-basics-right.html"  >Basics</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-call-outs.html"  >Implementing Call-outs</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-dataview.html"  >Implementing Dataview</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-footnotes.html"  >Implementing Footnotes</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-inline-tags.html"  >Implementing inline tags</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-latex.html"  >Implementing Latex</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-links-link-awareness.html"  >Links</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-mermaid-diagrams-in-html-output.html"  >Mermaid Diagrams</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-note-inclusions.html"  >Inclusions</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/making-code-blocks-look-pretty.html"  >Code blocks</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/making-lists-work-the-same.html"  >Making lists work the same</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/parsing-images-videos-and-audio.html"  >Parsing Images, videos, and audio</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/removing-obisidian-comments.html"  >Removing obisidian comments</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/sites-using-obsidianhtml.html"  >Sites using ObsidianHtml</a></li>
+	</ul>
+</div>
+<button id="folder-15" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>developer-documentation</button>
+<div id="folder-container-15" class="dir-container requires_js " path="/developer-documentation">
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/developer-documentation/contributing-to-obsidianhtml.html"  >Contributing to Obsidianhtml</a></li>
+	</ul>
+</div>
+<button id="folder-16" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>general-information</button>
+<div id="folder-container-16" class="dir-container requires_js " path="/general-information">
+	<button id="folder-17" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>concepts</button>
+	<div id="folder-container-17" class="dir-container requires_js " path="/general-information/concepts">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/general-information/concepts/entrypoint.html"  >Entrypoint</a></li>
+			<li><div class="file-icon"></div><a class="" href="/general-information/concepts/input-folder.html"  >Input folder</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/general-information/about-obsidianhtml.html"  >About ObsidianHtml</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/common-issues-limitations.html"  >Common issues & Limitations</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/creating-a-static-html-website-from-markdown-files.html"  >Creating a static html website from markdown files</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/parsing-obsidian-notes-to-proper-markdown.html"  >Parsing Obsidian notes to proper markdown</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/report-issues-request-features.html"  >Report Issues & Request features</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/using-the-website.html"  >Using the website</a></li>
+	</ul>
+</div>
+<button id="folder-18" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>instructions</button>
+<div id="folder-container-18" class="dir-container requires_js " path="/instructions">
+	<button id="folder-19" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>tutorials</button>
+	<div id="folder-container-19" class="dir-container requires_js " path="/instructions/tutorials">
+		<button id="folder-20" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>specifics</button>
+		<div id="folder-container-20" class="dir-container requires_js " path="/instructions/tutorials/specifics">
+			<ul class="dir-list">
+				<li><div class="file-icon"></div><a class="" href="/instructions/tutorials/specifics/bootstrapping-python-on-windows.html"  >Bootstrapping Python on Windows</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/instructions/tutorials/converting-just-one-subfolder-in-your-vault.html"  >Converting just one subfolder in your vault</a></li>
+			<li><div class="file-icon"></div><a class="" href="/instructions/tutorials/tutorial-installation-on-windows.html"  >Tutorial - Installation on Windows</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/instructions/inspect-default-config.html"  >Inspect default config</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/install-a-different-version.html"  >Install a different version</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/installation.html"  >Installation</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/obsidianhtml-run.html"  >Obsidianhtml Run</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/quickstart.html"  >Quickstart</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/run-custom-code.html"  >Run custom code</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/usage.html"  >Usage</a></li>
+	</ul>
+</div>
+<button id="folder-21" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>log</button>
+<div id="folder-container-21" class="dir-container requires_js " path="/log">
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/log/moving-to-a-module-system.html"  >Moving to a Module system</a></li>
+		<li><div class="file-icon"></div><a class="" href="/log/published-obsidianhtml-version-0.0.9.html"  >Published ObsidianHtml version 0.0.9!</a></li>
+		<li><div class="file-icon"></div><a class="" href="/log/published-obsidianhtml-version-1.0.0.html"  >Published ObsidianHtml version 1.0.0!</a></li>
+		<li><div class="file-icon"></div><a class="" href="/log/working-on-an-rss-feed-for-obsidianhtml.html"  >Working on an RSS feed for ObsidianHtml</a></li>
+	</ul>
+</div>
+<ul class="dir-list">
+	<li><div class="file-icon"></div><a class="" href="/index.html"  >Home</a></li>
+	<li><div class="file-icon"></div><a class="" href="/news.html"  >News</a></li>
+</ul>
+</div>
+    </div>
+</div>
+                        <div class="container">
+                                
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Configurations</span> / <a href="/configurations/modules/modules.html" style="color: var(--normal-text-color);">Modules</a> / <span style="color: #666;">Developer Documentation</span> / <a href="/configurations/modules/developer-documentation/creating-a-custom-module.html" >Creating a custom Module</a>
+                    </div>
+                </div>
+<div class="content"><h1 id="introduction">Introduction</h1>
+<div class="toc">
+<ul>
+<li><a href="#introduction" class="anchor-link">Introduction</a></li>
+<li><a href="#create-a-basic-module" class="anchor-link">Create a basic module</a></li>
+<li><a href="#load-your-module" class="anchor-link">Load your module</a></li>
+<li><a href="#pass-in-configuration" class="anchor-link">Pass in configuration</a></li>
+<li><a href="#write-module-output" class="anchor-link">Write module output</a></li>
+<li><a href="#conclusion" class="anchor-link">Conclusion</a></li>
+</ul>
+</div>
+<p>This page will go through the creation of a module that will print hello world, and go through most of the basic motions of modules in the process, such as loading the module, providing configuration to your module, and writing and reading <a href="/configurations/modules/concepts/module-file.html">module files</a>.</p>
+<p>You should know that the <a href="/configurations/modules/developer-documentation/module-design.html">Module Design</a> page exists, consult that page if you want to know more details on a subject discussed here.</p>
+<p>The module we will be creating will be an <a href="/configurations/modules/concepts/built-in-versus-external-modules.html">external module</a>, as opposed to a built-in one. The differences are mostly on the point of the python module imports and the way the module is loaded, other than that built-in modules and external modules are built in the same way.</p>
+<div class="callout callout-info active" rasa="1">
+<div class="callout-title ">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+</div>
+<div class="callout-title-name">Using a language other than Python
+</div>
+</div>
+<div class="callout-content">
+<p>If you want to write a module using a different programming language, you can use the built-in BinaryModule to call your compiled binary. In that case you don't have to write any Python yourself. Read more here: <a href="/configurations/modules/developer-documentation/running-a-binary-module.html">Running a binary module</a>.</p>
+</div>
+</div>
+<h1 id="create-a-basic-module">Create a basic module</h1>
+<p>Let's call our new module </p>
+<p>Let's start with an empty module class and call the module class <strong>CustomModule</strong>. This is the bare minimum that we need to run a module and have it be accepted by ObsidianHtml:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">obsidianhtml.core.FileObject</span> <span class="kn">import</span> <span class="n">FileObject</span>
+<span class="kn">from</span> <span class="nn">obsidianhtml.modules.base_classes</span> <span class="kn">import</span> <span class="n">ObsidianHtmlModule</span>
+
+
+<span class="k">class</span> <span class="nc">CustomModule</span><span class="p">(</span><span class="n">ObsidianHtmlModule</span><span class="p">):</span>
+    <span class="c1"># (1) Required properties</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">([])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">provides</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">([])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">alters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">([])</span>
+
+    <span class="c1"># (2) Required methods</span>
+    <span class="k">def</span> <span class="nf">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_data_folder</span><span class="p">):</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">integrate_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">integrate_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="c1"># (3) Main method</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="k">pass</span>
+</code></pre></div>
+
+
+</div>
+
+<p>We will now first concern ourselves with getting the module up and running, for more information on the boilerplate code, see:</p>
+<ul>
+<li>(1) <a href="/configurations/modules/developer-documentation/module-design.html#required-properties">Module Design</a> </li>
+<li>(2) <a href="/configurations/modules/developer-documentation/module-design.html#required-methods">Module Design</a></li>
+</ul>
+<p>You can also look at the code of the parent class here, which might be elucidating:</p>
+<ul>
+<li><a href="https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/modules/base_classes/obsidianhtml_module.py" class="external-link">https://github.com/obsidian-html/obsidian-html/blob/master/obsidianhtml/modules/base_classes/obsidianhtml_module.py</a></li>
+</ul>
+<p>Create a new file in your favorite code editor, I will create the file here: <code>/home/user/custom_module.py</code>, and use this path in the rest of the walkthrough.</p>
+<p>Copy paste the code block above into the new file.</p>
+<p>Then, in your file,  change the <code>run</code> method to this and save the file:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+<p>This will make it very clear to us that our module has run. It also exits the program right after, so that we don't have to worry about all the code that is executed after it.</p>
+<h1 id="load-your-module">Load your module</h1>
+<p>Create a new config.yml and fill it with this config (change the path to work for your setup):</p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_list</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">preparation</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom_module</span>
+<span class="w">      </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/user/custom_module.py</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">just learning how to make modules</span>
+</code></pre></div>
+
+
+</div>
+
+<p>What this will do is overwrite the entire default module_list, so that only our own module is executed.</p>
+<p>If you run ObsidianHtml now, with this config, e.g. through <code>python -m obsidianhtml -i ~/test_config.yml</code>, then you should get this error:</p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code><span class="n">AttributeError</span><span class="o">:</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="s1">&#39;custom_module&#39;</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="s1">&#39;export_module_class&#39;</span>
+</code></pre></div>
+
+
+</div>
+
+<p>This is because we have told ObsidianHtml in which file the module class is located, but not what the class is called. </p>
+<p>We can fix this in one of two ways.</p>
+<p>The first option is to add the function that the error talks about, and have it return our class:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">export_module_class</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">CustomModule</span>
+</code></pre></div>
+
+
+</div>
+
+<p>The other is to define the module class name in the config yaml.</p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_list</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">preparation</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom_module</span>
+<span class="w">      </span><span class="nt">module_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomModule</span>
+<span class="w">      </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/user/custom_module.py</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">just learning how to make modules</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Both should fix the error and render:</p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>hello world
+</code></pre></div>
+
+
+</div>
+
+<p>Success!</p>
+<h1 id="pass-in-configuration">Pass in configuration</h1>
+<p>Maybe other users want to say hello to just their mom, not the entire world. Let's add a configuration setting so that everyone can say hello to whomever they like.</p>
+<p>Add the following to your config.yaml:</p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">custom_module</span><span class="p">:</span><span class="w">    </span><span class="c1"># should be the same as the value for &quot;name&quot; under module_list</span>
+<span class="w">    </span><span class="nt">hello_target</span><span class="p">:</span><span class="w">   </span><span class="c1"># name of the config key</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;mom&#39;</span><span class="w">  </span>
+</code></pre></div>
+
+
+</div>
+
+<p>And run again.</p>
+<p>You should get this result (last line):</p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code><span class="n">Exception</span><span class="o">:</span><span class="w"> </span><span class="n">Module</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="s2">&quot;hello_target&quot;</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">unknown</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">custom_module</span><span class="w"> </span><span class="o">(</span><span class="n">CustomModule</span><span class="o">)</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Oh no! (j/k, I do this on purpose). </p>
+<p>We still need to configure something in the module class.
+Edit your class to include the <code>define_mod_config_defaults</code> method, so you get something like the code below:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">CustomModule</span><span class="p">(</span><span class="n">ObsidianHtmlModule</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">define_mod_config_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mod_config</span><span class="p">[</span><span class="s2">&quot;hello_target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span>           <span class="c1"># default value</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Who/what to say hello to.&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="c1"># ... rest of class excluded for brevity!</span>
+</code></pre></div>
+
+
+</div>
+
+<p>And, what we forgot to do before, is to use the value. We can read mod_config values using the built-in <code>self.value_of()</code> method.</p>
+<p>Edit the run method to look like this:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">CustomModule</span><span class="p">(</span><span class="n">ObsidianHtmlModule</span><span class="p">):</span>
+    <span class="c1"># ... rest of class excluded for brevity!</span>
+   <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hello </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value_of</span><span class="p">(</span><span class="s2">&quot;hello_target&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Now we finally get:</p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>hello mom
+</code></pre></div>
+
+
+</div>
+
+<h1 id="write-module-output">Write module output</h1>
+<p>We can write to the <a href="/configurations/modules/concepts/module-data-folder.html">Module data folder</a> using <code>self.modfile("file_name.txt", value).write()</code>.</p>
+<p>Read more on reading and writing modfiles here:</p>
+<ul>
+<li><a href="/configurations/modules/developer-documentation/module-design.html#reading-and-writing-modfiles">Module Design</a></li>
+</ul>
+<p>Change the <code>run</code> method to the following:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># write modfile</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modfile</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;hello </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value_of</span><span class="p">(</span><span class="s2">&quot;hello_target&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+
+        <span class="c1"># print module data folder path</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;module data folder: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">module_data_folder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># list contents of the module data folder</span>
+        <span class="kn">import</span> <span class="nn">os</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">module_data_folder</span><span class="p">))</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+<p>When we run the program again, we get the following error:</p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code><span class="n">Exception</span><span class="o">:</span><span class="w"> </span><span class="n">ModuleMisConfiguration</span><span class="o">:</span><span class="w"> </span><span class="n">Module</span><span class="w"> </span><span class="n">custom_module</span><span class="w"> </span><span class="n">writes</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">hello</span><span class="o">.</span><span class="na">txt</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">reported</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">self</span><span class="o">.</span><span class="na">provides</span><span class="o">.</span>
+</code></pre></div>
+
+
+</div>
+
+<p>As we know the module data folder in the module, we could just write directly to this folder, and bypass the <code>self.modfile()</code> way of writing files. Though as you can already tell, there are a number of integrations hooked into the modfile object, to ensure that we follow module conventions. </p>
+<p>One of those conventions is that we declare which files we expect to exist when we run the module (<code>requires</code>), and which files we provide by running the module (<code>provides</code>).</p>
+<p>Change the <code>provides()</code> method to the following:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code>    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">provides</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+
+</div>
+
+<p>When we now run the program again, we get this output:</p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code><span class="k">module</span> <span class="n">data</span> <span class="n">folder:</span> <span class="n">output</span><span class="o">/mod</span>
+[<span class="s">&#39;hello.txt&#39;</span>, <span class="s">&#39;guid.txt&#39;</span>, <span class="s">&#39;user_config.yml&#39;</span>, <span class="s">&#39;arguments.yml&#39;</span>, <span class="s">&#39;config.yml&#39;</span>]
+</code></pre></div>
+
+
+</div>
+
+<p>You can inspect the contents of this folder and the hello.txt file for yourself.</p>
+<p>You can see there are also some other files created.</p>
+<p><code>arguments.yml</code> contains all the arguments passed into the program on the commandline, in our case:</p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code><span class="n">command</span><span class="o">:</span><span class="w"> </span><span class="n">convert</span>
+<span class="n">config_path</span><span class="o">:</span><span class="w"> </span><span class="sr">/home/user/</span><span class="n">test_config</span><span class="o">.</span><span class="na">yml</span>
+</code></pre></div>
+
+
+</div>
+
+<p><code>user_config.yml</code> just holds the same contents as our passed in test_config.yml. <code>config.yml</code> holds the default config merged with the user config, derriving the final config that should be used by the program.</p>
+<p><code>guid.txt</code> is used to identify one run from the other. Currently this is only used to clean up certain log files (not created with the current configuration). We can ignore that for now, but know it exists if you ever need this information for your own module.</p>
+<p>To read the arguments in our module, change the <code>run</code> method to the following:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># read arguments.yml modfile</span>
+        <span class="n">arguments</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">modfile</span><span class="p">(</span><span class="s2">&quot;arguments.yml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Also update the <code>requires()</code> method:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code>    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="s2">&quot;arguments.yml&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+
+</div>
+
+<p>When we run the program, we get the following:</p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>&lt;obsidianhtml.modules.lib.hash_wrap object at 0x7f23b09a9120&gt;
+</code></pre></div>
+
+
+</div>
+
+<p>Not what you might expect. Both the <code>.from_json()</code> and <code>.from_yaml()</code> methods will wrap any dict in a hash_wrap object. This is done so that we can pass in the dict to cached functions without getting the "unhashable" error caused by dicts not being hashable. The hash_wrap object is hashable, even though it's just an object containing a dict. </p>
+<p>In most important ways the hash_wrap object behaves the same as a dict, but not the <code>.__repr__()</code> function, to make it clear that we are not dealing with an actual dict. This is valuable information when doing more exotic actions with dicts.</p>
+<p>To get the actual dict, just call <code>.unwrap()</code>:</p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># read arguments.yml modfile</span>
+        <span class="n">arguments</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">modfile</span><span class="p">(</span><span class="s2">&quot;arguments.yml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">arguments</span><span class="o">.</span><span class="n">unwrap</span><span class="p">())</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+<blockquote>
+<p>You could also write 
+<code>arguments = yaml.safe_load(self.modfile("arguments.yml").read().text())</code>, though that might be a bit verbose.</p>
+</blockquote>
+<p>Now we get:</p>
+<div class="lang-json">
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="err">&#39;comma</span><span class="kc">n</span><span class="err">d&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;co</span><span class="kc">n</span><span class="err">ver</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;co</span><span class="kc">nf</span><span class="err">ig_pa</span><span class="kc">t</span><span class="err">h&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;/home/user/</span><span class="kc">test</span><span class="err">_co</span><span class="kc">nf</span><span class="err">ig.yml&#39;</span><span class="p">}</span>
+</code></pre></div>
+
+
+</div>
+
+<h1 id="conclusion">Conclusion</h1>
+<p>That's it for this tutorial for now. You can do the most basic reading/writing and configuring. </p>
+<p>The goal is to to not make basic module function any more complex than this (unless you want to do very complicated things...)</p>
+<p>For other topics, look into:</p>
+<ul>
+<li><a href="/configurations/modules/concepts/stashing.html">Stashing</a></li>
+<li><a href="/configurations/modules/concepts/persistence.html">Persistence</a></li>
+</ul>
+<p>And just peruse the built-in modules for what is done there:</p>
+<ul>
+<li><a href="https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin" class="external-link">https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules/builtin</a></li>
+</ul></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/configurations/modules/modules.html">modules</a></li>
+	<li><a class="backlink" href="/configurations/modules/concepts/built-in-versus-external-modules.html">built-in versus external modules</a></li>
+</ul>
+</div>
+
+<div class="tags">
+
+</div>
+
+</div>
+<div class="graph requires_js ">
+    <div id="A293193629219392781231998143756475576574{level}" class="graph_div"></div>
+
+    <div class="graph-instructions" id="D293193629219392781231998143756475576574{level}">
+        Left-click: follow link, Right-click: select node, Scroll: zoom
+    </div>
+    
+    <div class="graph-button-row" style="display:flex;">
+        <button class="graph_button graph_show_button" id="B293193629219392781231998143756475576574{level}" level="{level}" note_temp_id="293193629219392781231998143756475576574" onclick="window.ObsHtmlGraph.run(this, '293193629219392781231998143756475576574', 'creating a custom module');">
+            Show Graph
+        </button>
+        <button class="graph_button graph_type_button" id="C293193629219392781231998143756475576574{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+            2D
+        </button>
+    </div>
+</div>
+
+<script type="module">
+    if (window.ObsHtmlGraph == undefined){
+        import('/obs.html/static/graph.js').then((Module) => {
+            window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
+        })
+    }
+</script>
+
+
+
+
+                                <!-- end content -->
+                        </div>
+                        <div class="container_filler">
+                        </div>
+                        <div id="right_pane" class="right_pane active">
+    <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+    <div id="right_pane_content" class="right_pane_content">
+            
+    </div>
+</div>
+                </div>
+        </div>
+
+        <script>
+                function handle_toggle_side_bar(e){
+                        let header;
+                        let pane; 
+                        let target = e.target
+
+                        // switch out the navbar button click for a header click
+                        if (target.id == 'left_pane_toggle_nav'){
+                                target = document.getElementById('left_pane_fold_header')
+                        }
+                        else if (target.id == 'right_pane_toggle_nav'){
+                                target = document.getElementById('right_pane_fold_header')
+                        }
+
+                        // get header and pane
+                        if (target.classList.contains('fold_header')) {
+                                header = target;
+                                pane = target.parentElement;
+                        }
+                        else {
+                                pane = target;
+                                header = target.getElementsByClassName('fold_header')[0];
+                        }
+                        toggle_side_bar(pane, header, true)
+                        e.stopPropagation();
+                }
+                function handle_toggle_side_bar_button(e){
+                        document.getElementById('menu_toggle_button').click()
+                        handle_toggle_side_bar(e);
+                }
+
+                function toggle_side_bar(pane, header, save) {
+                        let active = (pane.classList.contains('active'))
+                        if (active){
+                                disable_side_bar(pane, header, save);
+                        }
+                        else {
+                                enable_side_bar(pane, header, save);
+                        }
+                }
+                function enable_side_bar(pane, header, save){
+                        pane.classList.add('active');
+                        pane.removeEventListener('click', handle_toggle_side_bar);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, true) }
+                }
+                function disable_side_bar(pane, header, save){
+                        pane.classList.remove('active');
+                        pane.addEventListener('click', handle_toggle_side_bar);
+                        header.removeEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, false) }
+                }
+                function set_correct_header_symbol(header){
+                        let pane = header.parentElement;
+                        let symbol = [['>', '<'],['<', '>']]
+                        symbol = symbol[Number(header.classList.contains('right_pane_fold_header'))][Number(pane.classList.contains('active'))];
+                        console.log(symbol);
+                        header.innerHTML = symbol
+                        return header;
+                }
+                function panel_folding_get_panel_name(header){
+                        return ['left', 'right'][Number(header.classList.contains('right_pane_fold_header'))]
+                }
+                function save_panel_folding_state(header, active){
+                        ls_set('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
+                }
+                function load_panel_folding_state(panel_name){
+                        val = ls_get('pane_folding_state_'+panel_name)
+                        if (!val){ return {'exists': false, 'value': null}}
+                        return {'exists': true, 'value': Boolean(Number(val))}
+                }
+                function set_pane_folding_start(left_header, right_header){
+                        // small screen = closed
+                        let right_pane_enabled = true;
+                        let left_pane_enabled = true;
+                        let w = window.visualViewport.width
+                        if (w < 1000){
+                                left_pane_enabled = false
+                        }
+                        if (w < 800){
+                                right_pane_enabled = false
+                        }
+
+                        // get saved values if present
+                        let rval = load_panel_folding_state('right')
+                        if (rval['exists']){
+                                right_pane_enabled = rval['value']
+                        }
+                        let lval = load_panel_folding_state('left')
+                        if (lval['exists']){
+                                left_pane_enabled = lval['value']
+                        }
+
+                        // default = enabled, so we only need to disable
+                        if (!left_pane_enabled){
+                                disable_side_bar(document.getElementById('left_pane'), document.getElementById('left_pane_fold_header'))
+                        }
+                        if (!right_pane_enabled){
+                                disable_side_bar(document.getElementById('right_pane'), document.getElementById('right_pane_fold_header'))
+                        }
+                }
+
+                function init_pane_folding(header){
+                        set_correct_header_symbol(header);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                }
+                
+                
+                set_pane_folding_start()
+                init_pane_folding(document.getElementById('left_pane_fold_header'));
+                init_pane_folding(document.getElementById('right_pane_fold_header'));
+
+                document.getElementById('left_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+                document.getElementById('right_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+        </script>
+
+        <script src="/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+        
+
+
+
+
+</body>
+</html>

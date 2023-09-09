@@ -13,11 +13,19 @@
                 <title>ObsidianHtml/Documentation</title>
 
                 <!-- Includes -->
-                
-<script src="/obs.html/static/obsidian_core.js"></script>
+                <script src="/obs.html/static/obsidian_core.js"></script>
 <script src="/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/obs.html/static/master.css" />
-<script src="/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+            'securityLevel': 'loose',
+            'theme': 'dark',
+            'themeVariables': {
+                    'darkMode': true,
+            }
+    });
+</script>
 <script>
   MathJax = {
     loader: {
@@ -43,6 +51,8 @@
 <script src="/obs.html/static/pako.js"></script>
 <script src="/obs.html/static/search.js"></script>
 <script src="/obs.html/static/dirtree.js"></script>
+
+
 <link rel="stylesheet" href="/obs.html/static/taglist.css" />
 
                 <!-- Onload tweaks -->
@@ -70,8 +80,8 @@
                         <div id="search-results"></div>
                     </div>
                     <div id="search-instructions">
-                        <div class="prompt-instruction">
-                                <b>esc</b> to dismiss
+                        <div class="prompt-instruction mobile">
+                            <button onclick="toggle_id('search-master-div');"><b>Close</b> Search </button>
                         </div>
                     </div>
             </div>
@@ -208,7 +218,6 @@
     <label for="cars">Theme </label>
 
     <select name="theme" id="theme" onchange="set_theme(this.value)">
-      <option value="light">light</option>
       <option value="obs-light" selected="selected">obsidian-light</option>
       <option value="obs-dark">obsidian-dark</option>
     </select> 
@@ -217,7 +226,8 @@
                 <div class="flex_row">
                         
                         <div class="container">
-                                <h1 id="notes">Notes</h1>
+                                <h1 id="date-2022-02-21">date/2022-02-21</h1>
+<h2 id="notes">Notes</h2>
 <ul>
 <li><a href="/instructions/quickstart.html">Quickstart</a></li>
 </ul>

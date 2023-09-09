@@ -13,11 +13,19 @@
                 <title>ObsidianHtml/Documentation</title>
 
                 <!-- Includes -->
-                
-<script src="/obs.html/static/obsidian_core.js"></script>
+                <script src="/obs.html/static/obsidian_core.js"></script>
 <script src="/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/obs.html/static/master.css" />
-<script src="/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+            'securityLevel': 'loose',
+            'theme': 'dark',
+            'themeVariables': {
+                    'darkMode': true,
+            }
+    });
+</script>
 <script>
   MathJax = {
     loader: {
@@ -45,6 +53,8 @@
 <script src="/obs.html/static/dirtree.js"></script>
 
 
+
+
                 <!-- Onload tweaks -->
                 <script>
                         const CURRENT_NODE = 'tutorial - installation on windows';
@@ -70,8 +80,8 @@
                         <div id="search-results"></div>
                     </div>
                     <div id="search-instructions">
-                        <div class="prompt-instruction">
-                                <b>esc</b> to dismiss
+                        <div class="prompt-instruction mobile">
+                            <button onclick="toggle_id('search-master-div');"><b>Close</b> Search </button>
                         </div>
                     </div>
             </div>
@@ -208,7 +218,6 @@
     <label for="cars">Theme </label>
 
     <select name="theme" id="theme" onchange="set_theme(this.value)">
-      <option value="light">light</option>
       <option value="obs-light" selected="selected">obsidian-light</option>
       <option value="obs-dark">obsidian-dark</option>
     </select> 
@@ -218,208 +227,206 @@
                         <div id="left_pane" class="left_pane active">
     <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
     <div id="left_pane_content" class="left_pane_content">
-            <div class="dirtree"><button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">automation</button>
+            <div id="dirtree"><button id="folder-1" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>automation</button>
 <div id="folder-container-1" class="dir-container requires_js " path="/automation">
 	<ul class="dir-list">
-		<li><a class="" href="/automation/automate-website-deployment.html"  >Automate website deployment</a></li>
-		<li><a class="" href="/automation/automationlinuxgit.html"  >Auto push site using Git on Linux</a></li>
-		<li><a class="" href="/automation/automationlinuxssh.html"  >Auto push site using SSH on Linux</a></li>
-		<li><a class="" href="/automation/automationwindows.html"  >Auto push site using Git on Windows</a></li>
-		<li><a class="" href="/automation/automationwindowsssh.html"  >Auto push site using Git on Windows</a></li>
+		<li><div class="file-icon"></div><a class="" href="/automation/automate-website-deployment.html"  >Automate website deployment</a></li>
+		<li><div class="file-icon"></div><a class="" href="/automation/automationlinuxgit.html"  >Auto push site using Git on Linux</a></li>
+		<li><div class="file-icon"></div><a class="" href="/automation/automationlinuxssh.html"  >Auto push site using SSH on Linux</a></li>
+		<li><div class="file-icon"></div><a class="" href="/automation/automationwindows.html"  >Auto push site using Git on Windows</a></li>
+		<li><div class="file-icon"></div><a class="" href="/automation/automationwindowsssh.html"  >Auto push site using Git on Windows</a></li>
 	</ul>
 </div>
-<button id="folder-2" class="dir-button" onclick="toggle_dir(this.id)">buglog</button>
-<div id="folder-container-2" class="dir-container requires_js " path="/buglog">
+<button id="folder-2" class="dir-button folder_note  " href="/changelog/changelog.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>changelog</button>
+<div id="folder-container-2" class="dir-container requires_js " path="/changelog">
 	<ul class="dir-list">
-		<li><a class="" href="/buglog/file-links-in-dirtree-note-do-not-work.html"  >File links in dirtree note do not work</a></li>
-		<li><a class="" href="/buglog/links-in-included-notes-do-not-work-or-show-up-as-external.html"  >Links in included notes do not work or show up as external</a></li>
-		<li><a class="" href="/buglog/spaces-in-front-of-headers-allowed-by-obsidian-but-not-by-obsidianhtml.html"  >Spaces in front of headers allowed by Obsidian but not by ObsidianHtml</a></li>
+		<li><div class="file-icon"></div><a class="" href="/changelog/v4.0.0.html"  >v4.0.0</a></li>
 	</ul>
 </div>
-<button id="folder-3" class="dir-button folder_note " href="/changelog/changelog.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>changelog</button>
-<div id="folder-container-3" class="dir-container requires_js " path="/changelog">
-	<ul class="dir-list">
-		<li><a class="" href="/changelog/v1.0.0.html"  >v1.0.0</a></li>
-		<li><a class="" href="/changelog/v1.0.1.html"  >v1.0.1</a></li>
-		<li><a class="" href="/changelog/v1.0.2.html"  >v1.0.2</a></li>
-		<li><a class="" href="/changelog/v1.1.0.html"  >v1.1.0</a></li>
-		<li><a class="" href="/changelog/v1.2.0.html"  >v1.2.0</a></li>
-		<li><a class="" href="/changelog/v1.2.1.html"  >v1.2.1</a></li>
-		<li><a class="" href="/changelog/v1.2.2.html"  >v1.2.2</a></li>
-		<li><a class="" href="/changelog/v2.0.0.html"  >v2.0.0</a></li>
-		<li><a class="" href="/changelog/v2.0.1.html"  >v2.0.1</a></li>
-		<li><a class="" href="/changelog/v2.0.2.html"  >v2.0.2</a></li>
-		<li><a class="" href="/changelog/v2.1.0.html"  >v2.1.0</a></li>
-		<li><a class="" href="/changelog/v2.1.1.html"  >v2.1.1</a></li>
-		<li><a class="" href="/changelog/v2.2.0.html"  >v2.2.0</a></li>
-		<li><a class="" href="/changelog/v2.3.0.html"  >v2.3.0</a></li>
-		<li><a class="" href="/changelog/v2.3.1.html"  >v2.3.1</a></li>
-		<li><a class="" href="/changelog/v3.0.0.html"  >v3.0.0</a></li>
-		<li><a class="" href="/changelog/v3.0.1.html"  >v3.0.1</a></li>
-		<li><a class="" href="/changelog/v3.0.2.html"  >v3.0.2</a></li>
-		<li><a class="" href="/changelog/v3.0.3.html"  >v3.0.3</a></li>
-		<li><a class="" href="/changelog/v3.1.0.html"  >v3.1.0</a></li>
-		<li><a class="" href="/changelog/v3.2.0.html"  >v3.2.0</a></li>
-		<li><a class="" href="/changelog/v3.2.1.html"  >v3.2.1</a></li>
-		<li><a class="" href="/changelog/v3.2.2.html"  >v3.2.2</a></li>
-		<li><a class="" href="/changelog/v3.2.3.html"  >v3.2.3</a></li>
-		<li><a class="" href="/changelog/v3.3.0.html"  >v3.3.0</a></li>
-		<li><a class="" href="/changelog/v3.4.0.html"  >v3.4.0</a></li>
-		<li><a class="" href="/changelog/v3.4.1.html"  >v3.4.1</a></li>
-		<li><a class="" href="/changelog/v3.5.0.html"  >v3.5.0</a></li>
-	</ul>
-</div>
-<button id="folder-4" class="dir-button" onclick="toggle_dir(this.id)">configurations</button>
-<div id="folder-container-4" class="dir-container requires_js " path="/configurations">
-	<button id="folder-5" class="dir-button folder_note " href="/configurations/deprecated-configurations/deprecated-configurations.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>deprecated-configurations</button>
-	<div id="folder-container-5" class="dir-container requires_js " path="/configurations/deprecated-configurations">
+<button id="folder-3" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>configurations</button>
+<div id="folder-container-3" class="dir-container requires_js " path="/configurations">
+	<button id="folder-4" class="dir-button folder_note  " href="/configurations/deprecated-configurations/deprecated-configurations.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>deprecated-configurations</button>
+	<div id="folder-container-4" class="dir-container requires_js " path="/configurations/deprecated-configurations">
 		<ul class="dir-list">
-			<li><a class="" href="/configurations/deprecated-configurations/exclude_subfolders.html"  >exclude_subfolders</a></li>
-			<li><a class="" href="/configurations/deprecated-configurations/notabs-mode.html"  >NoTabs Mode</a></li>
-			<li><a class="" href="/configurations/deprecated-configurations/obsidian_folder_path_str.html"  >obsidian_folder_path_str</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/deprecated-configurations/exclude_subfolders.html"  >exclude_subfolders</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/deprecated-configurations/notabs-mode.html"  >NoTabs Mode</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/deprecated-configurations/obsidian_folder_path_str.html"  >obsidian_folder_path_str</a></li>
 		</ul>
 	</div>
-	<button id="folder-6" class="dir-button" onclick="toggle_dir(this.id)">extending-obsidianhtml</button>
-	<div id="folder-container-6" class="dir-container requires_js " path="/configurations/extending-obsidianhtml">
+	<button id="folder-5" class="dir-button folder_note  " href="/configurations/features/features.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>features</button>
+	<div id="folder-container-5" class="dir-container requires_js " path="/configurations/features">
 		<ul class="dir-list">
-			<li><a class="" href="/configurations/extending-obsidianhtml/modules.html"  >Modules</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/backlinks.html"  >Backlinks</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/breadcrumbs.html"  >Breadcrumbs</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/embedded-note-title.html"  >Embedded note title</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/folder-notes.html"  >Folder Notes</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/graph-view.html"  >Graph View</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/include-notes.html"  >Include notes</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/markdown-post-processing.html"  >Markdown post processing</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/rss-feed.html"  >RSS Feed</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/side-panes.html"  >Side panes</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/slugify-html-links.html"  >Slugify html links</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/smiles.html"  >Smiles</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/tags-page.html"  >Tags Page</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/features/website-navigation-menu.html"  >Website navigation menu</a></li>
 		</ul>
 	</div>
-	<button id="folder-7" class="dir-button folder_note " href="/configurations/features/features.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>features</button>
-	<div id="folder-container-7" class="dir-container requires_js " path="/configurations/features">
+	<button id="folder-6" class="dir-button folder_note  " href="/configurations/modes/modes.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>modes</button>
+	<div id="folder-container-6" class="dir-container requires_js " path="/configurations/modes">
 		<ul class="dir-list">
-			<li><a class="" href="/configurations/features/backlinks.html"  >Backlinks</a></li>
-			<li><a class="" href="/configurations/features/breadcrumbs.html"  >Breadcrumbs</a></li>
-			<li><a class="" href="/configurations/features/embedded-note-title.html"  >Embedded note title</a></li>
-			<li><a class="" href="/configurations/features/folder-notes.html"  >Folder Notes</a></li>
-			<li><a class="" href="/configurations/features/graph-view.html"  >Graph View</a></li>
-			<li><a class="" href="/configurations/features/include-notes.html"  >Include notes</a></li>
-			<li><a class="" href="/configurations/features/markdown-post-processing.html"  >Markdown post processing</a></li>
-			<li><a class="" href="/configurations/features/rss-feed.html"  >RSS Feed</a></li>
-			<li><a class="" href="/configurations/features/side-panes.html"  >Side panes</a></li>
-			<li><a class="" href="/configurations/features/slugify-html-links.html"  >Slugify html links</a></li>
-			<li><a class="" href="/configurations/features/tags-page.html"  >Tags Page</a></li>
-			<li><a class="" href="/configurations/features/website-navigation-menu.html"  >Website navigation menu</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/copy-vault-to-temp-dir.html"  >Copy vault to temp dir</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/create-index-from-directory-structure.html"  >Create Index from Directory Structure</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/create-index-from-tags.html"  >Create index from tags</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/filtering-notes.html"  >Filtering notes</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/process-all.html"  >Process All</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modes/relative_path_html.html"  >Relative_path_html</a></li>
 		</ul>
 	</div>
-	<button id="folder-8" class="dir-button folder_note " href="/configurations/modes/modes.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>modes</button>
-	<div id="folder-container-8" class="dir-container requires_js " path="/configurations/modes">
-		<ul class="dir-list">
-			<li><a class="" href="/configurations/modes/copy-vault-to-temp-dir.html"  >Copy vault to temp dir</a></li>
-			<li><a class="" href="/configurations/modes/create-index-from-directory-structure.html"  >Create Index from Directory Structure</a></li>
-			<li><a class="" href="/configurations/modes/create-index-from-tags.html"  >Create index from tags</a></li>
-			<li><a class="" href="/configurations/modes/filtering-notes.html"  >Filtering notes</a></li>
-			<li><a class="" href="/configurations/modes/process-all.html"  >Process All</a></li>
-			<li><a class="" href="/configurations/modes/relative_path_html.html"  >Relative_path_html</a></li>
-		</ul>
-	</div>
-	<button id="folder-9" class="dir-button folder_note " href="/configurations/note-settings/note-settings.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>note-settings</button>
-	<div id="folder-container-9" class="dir-container requires_js " path="/configurations/note-settings">
-		<ul class="dir-list">
-		</ul>
-	</div>
-	<button id="folder-10" class="dir-button folder_note " href="/configurations/styling/styling.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>styling</button>
-	<div id="folder-container-10" class="dir-container requires_js " path="/configurations/styling">
-		<ul class="dir-list">
-			<li><a class="" href="/configurations/styling/edit-html-css-js.html"  >Edit HTML, CSS, JS</a></li>
-			<li><a class="" href="/configurations/styling/tabs-layout.html"  >Tabs Layout</a></li>
-			<li><a class="" href="/configurations/styling/writing-a-custom-graph-view-template.html"  >Writing a custom graph view template</a></li>
-		</ul>
-	</div>
-	<button id="folder-11" class="dir-button" onclick="toggle_dir(this.id)">tweaking</button>
-	<div id="folder-container-11" class="dir-container requires_js " path="/configurations/tweaking">
-		<ul class="dir-list">
-			<li><a class="" href="/configurations/tweaking/export-vault-files-to-html-output.html"  >Export vault files to html output</a></li>
-			<li><a class="" href="/configurations/tweaking/performance-tuning.html"  >Performance Tuning</a></li>
-		</ul>
-	</div>
-	<ul class="dir-list">
-		<li><a class="" href="/configurations/configuration-options.html"  >Configuration Options</a></li>
-	</ul>
-</div>
-<button id="folder-12" class="dir-button folder_note " href="/demonstrations/demonstrations.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>demonstrations</button>
-<div id="folder-container-12" class="dir-container requires_js " path="/demonstrations">
-	<button id="folder-13" class="dir-button" onclick="toggle_dir(this.id)">test-pages</button>
-	<div id="folder-container-13" class="dir-container requires_js " path="/demonstrations/test-pages">
-		<ul class="dir-list">
-			<li><a class="" href="/demonstrations/test-pages/long-long-page.html"  >Long long page</a></li>
-			<li><a class="" href="/demonstrations/test-pages/proper-markdown.html"  >proper markdown</a></li>
-			<li><a class="" href="/demonstrations/test-pages/simple-obsidian-type-link.html"  >Simple Obsidian-type Link</a></li>
-			<li><a class="" href="/demonstrations/test-pages/test-inclusion.html"  >Test Inclusion</a></li>
-			<li><a class="" href="/demonstrations/test-pages/test-inclusion-2.html"  >Test inclusion 2</a></li>
-			<li><a class="" href="/demonstrations/test-pages/textfile.txt"  class="external-link">textfile</a></li>
-		</ul>
-	</div>
-	<ul class="dir-list">
-		<li><a class="" href="/demonstrations/embedded-search.html"  >Embedded search</a></li>
-		<li><a class="" href="/demonstrations/getting-the-basics-right.html"  >Basics</a></li>
-		<li><a class="" href="/demonstrations/implementing-call-outs.html"  >Implementing Call-outs</a></li>
-		<li><a class="" href="/demonstrations/implementing-dataview.html"  >Implementing Dataview</a></li>
-		<li><a class="" href="/demonstrations/implementing-footnotes.html"  >Implementing Footnotes</a></li>
-		<li><a class="" href="/demonstrations/implementing-inline-tags.html"  >Implementing inline tags</a></li>
-		<li><a class="" href="/demonstrations/implementing-latex.html"  >Implementing Latex</a></li>
-		<li><a class="" href="/demonstrations/implementing-links-link-awareness.html"  >Links</a></li>
-		<li><a class="" href="/demonstrations/implementing-mermaid-diagrams-in-html-output.html"  >Mermaid Diagrams</a></li>
-		<li><a class="" href="/demonstrations/implementing-note-inclusions.html"  >Inclusions</a></li>
-		<li><a class="" href="/demonstrations/making-code-blocks-look-pretty.html"  >Code blocks</a></li>
-		<li><a class="" href="/demonstrations/making-lists-work-the-same.html"  >Lists</a></li>
-		<li><a class="" href="/demonstrations/parsing-images-videos-and-audio.html"  >Parsing Images, videos, and audio</a></li>
-		<li><a class="" href="/demonstrations/removing-obisidian-comments.html"  >Removing obisidian comments</a></li>
-		<li><a class="" href="/demonstrations/sites-using-obsidianhtml.html"  >Sites using ObsidianHtml</a></li>
-	</ul>
-</div>
-<button id="folder-14" class="dir-button" onclick="toggle_dir(this.id)">developer-documentation</button>
-<div id="folder-container-14" class="dir-container requires_js " path="/developer-documentation">
-	<ul class="dir-list">
-		<li><a class="" href="/developer-documentation/contributing-to-obsidianhtml.html"  >Contributing to Obsidianhtml</a></li>
-	</ul>
-</div>
-<button id="folder-15" class="dir-button" onclick="toggle_dir(this.id)">general-information</button>
-<div id="folder-container-15" class="dir-container requires_js " path="/general-information">
-	<ul class="dir-list">
-		<li><a class="" href="/general-information/about-obsidianhtml.html"  >About ObsidianHtml</a></li>
-		<li><a class="" href="/general-information/creating-a-static-html-website-from-markdown-files.html"  >Creating a static html website from markdown files</a></li>
-		<li><a class="" href="/general-information/parsing-obsidian-notes-to-proper-markdown.html"  >Parsing Obsidian notes to proper markdown</a></li>
-		<li><a class="" href="/general-information/report-issues-request-features.html"  >Report Issues & Request features</a></li>
-		<li><a class="" href="/general-information/using-the-website.html"  >Using the website</a></li>
-	</ul>
-</div>
-<button id="folder-16" class="dir-button" onclick="toggle_dir(this.id)">instructions</button>
-<div id="folder-container-16" class="dir-container requires_js active" path="/instructions">
-	<button id="folder-17" class="dir-button" onclick="toggle_dir(this.id)">tutorials</button>
-	<div id="folder-container-17" class="dir-container requires_js active" path="/instructions/tutorials">
-		<button id="folder-18" class="dir-button" onclick="toggle_dir(this.id)">specifics</button>
-		<div id="folder-container-18" class="dir-container requires_js " path="/instructions/tutorials/specifics">
+	<button id="folder-7" class="dir-button folder_note  " href="/configurations/modules/modules.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>modules</button>
+	<div id="folder-container-7" class="dir-container requires_js " path="/configurations/modules">
+		<button id="folder-8" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>concepts</button>
+		<div id="folder-container-8" class="dir-container requires_js " path="/configurations/modules/concepts">
 			<ul class="dir-list">
-				<li><a class="" href="/instructions/tutorials/specifics/bootstrapping-python-on-windows.html"  >Bootstrapping Python on Windows</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/built-in-versus-external-modules.html"  >Built-in versus External modules</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/meta-module.html"  >Meta module</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/module-data-folder.html"  >Module data folder</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/module-file.html"  >Module file</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/persistence.html"  >Persistence</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/concepts/stashing.html"  >Stashing</a></li>
+			</ul>
+		</div>
+		<button id="folder-9" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>developer-documentation</button>
+		<div id="folder-container-9" class="dir-container requires_js " path="/configurations/modules/developer-documentation">
+			<ul class="dir-list">
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/developer-documentation/creating-a-custom-module.html"  >Creating a custom Module</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/developer-documentation/module-design.html"  >Module Design</a></li>
+				<li><div class="file-icon"></div><a class="" href="/configurations/modules/developer-documentation/running-a-binary-module.html"  >Running a binary module</a></li>
 			</ul>
 		</div>
 		<ul class="dir-list">
-			<li><a class="" href="/instructions/tutorials/converting-just-one-subfolder-in-your-vault.html"  >Converting just one subfolder in your vault</a></li>
-			<li><a class="active" href="/instructions/tutorials/tutorial-installation-on-windows.html"  >Tutorial - Installation on Windows</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/copy-vault-to-tempdirectory.html"  >Copy Vault to Tempdirectory</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/filter-on-metadata.html"  >Filter on Metadata</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/get-file-list.html"  >Get File List</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/parse-metadata.html"  >Parse Metadata</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/modules/resource-logger.html"  >Resource Logger</a></li>
+		</ul>
+	</div>
+	<button id="folder-10" class="dir-button folder_note  " href="/configurations/note-settings/note-settings.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>note-settings</button>
+	<div id="folder-container-10" class="dir-container requires_js " path="/configurations/note-settings">
+		<ul class="dir-list">
+		</ul>
+	</div>
+	<button id="folder-11" class="dir-button folder_note  " href="/configurations/styling/styling.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>styling</button>
+	<div id="folder-container-11" class="dir-container requires_js " path="/configurations/styling">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/configurations/styling/edit-html-css-js.html"  >Edit HTML, CSS, JS</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/styling/tabs-layout.html"  >Tabs Layout</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/styling/writing-a-custom-graph-view-template.html"  >Writing a custom graph view template</a></li>
+		</ul>
+	</div>
+	<button id="folder-12" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>tweaking</button>
+	<div id="folder-container-12" class="dir-container requires_js " path="/configurations/tweaking">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/configurations/tweaking/export-vault-files-to-html-output.html"  >Export vault files to html output</a></li>
+			<li><div class="file-icon"></div><a class="" href="/configurations/tweaking/performance-tuning.html"  >Performance Tuning</a></li>
 		</ul>
 	</div>
 	<ul class="dir-list">
-		<li><a class="" href="/instructions/install-a-different-version.html"  >Install a different version</a></li>
-		<li><a class="" href="/instructions/installation.html"  >Installation</a></li>
-		<li><a class="" href="/instructions/obsidianhtml-run.html"  >Obsidianhtml Run</a></li>
-		<li><a class="" href="/instructions/quickstart.html"  >Quickstart</a></li>
-		<li><a class="" href="/instructions/run-custom-code.html"  >Run custom code</a></li>
-		<li><a class="" href="/instructions/usage.html"  >Usage</a></li>
+		<li><div class="file-icon"></div><a class="" href="/configurations/configuration-options.html"  >Configuration Options</a></li>
 	</ul>
 </div>
-<button id="folder-19" class="dir-button" onclick="toggle_dir(this.id)">log</button>
-<div id="folder-container-19" class="dir-container requires_js " path="/log">
+<button id="folder-13" class="dir-button folder_note  " href="/demonstrations/demonstrations.html" onclick="open_folder_note(this)"><div class="file-icon"></div><div class="fn_pf">*</div>demonstrations</button>
+<div id="folder-container-13" class="dir-container requires_js " path="/demonstrations">
+	<button id="folder-14" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>test-pages</button>
+	<div id="folder-container-14" class="dir-container requires_js " path="/demonstrations/test-pages">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/long-long-page.html"  >Long long page</a></li>
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/proper-markdown.html"  >proper markdown</a></li>
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/simple-obsidian-type-link.html"  >Simple Obsidian-type Link</a></li>
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/test-inclusion.html"  >Test Inclusion</a></li>
+			<li><div class="file-icon"></div><a class="" href="/demonstrations/test-pages/test-inclusion-2.html"  >Test inclusion 2</a></li>
+			<li><div class="file-icon non-md-file"></div><a class="" href="/demonstrations/test-pages/textfile.txt"  class="external-link">textfile.txt</a></li>
+		</ul>
+	</div>
 	<ul class="dir-list">
-		<li><a class="" href="/log/moving-to-a-module-system.html"  >Moving to a Module system</a></li>
-		<li><a class="" href="/log/published-obsidianhtml-version-0.0.9-.html"  >Published ObsidianHtml version 0.0.9!</a></li>
-		<li><a class="" href="/log/published-obsidianhtml-version-1.0.0-.html"  >Published ObsidianHtml version 1.0.0!</a></li>
-		<li><a class="" href="/log/working-on-an-rss-feed-for-obsidianhtml.html"  >Working on an RSS feed for ObsidianHtml</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/embedded-search.html"  >Embedded search</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/getting-the-basics-right.html"  >Basics</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-call-outs.html"  >Implementing Call-outs</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-dataview.html"  >Implementing Dataview</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-footnotes.html"  >Implementing Footnotes</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-inline-tags.html"  >Implementing inline tags</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-latex.html"  >Implementing Latex</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-links-link-awareness.html"  >Links</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-mermaid-diagrams-in-html-output.html"  >Mermaid Diagrams</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/implementing-note-inclusions.html"  >Inclusions</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/making-code-blocks-look-pretty.html"  >Code blocks</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/making-lists-work-the-same.html"  >Making lists work the same</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/parsing-images-videos-and-audio.html"  >Parsing Images, videos, and audio</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/removing-obisidian-comments.html"  >Removing obisidian comments</a></li>
+		<li><div class="file-icon"></div><a class="" href="/demonstrations/sites-using-obsidianhtml.html"  >Sites using ObsidianHtml</a></li>
+	</ul>
+</div>
+<button id="folder-15" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>developer-documentation</button>
+<div id="folder-container-15" class="dir-container requires_js " path="/developer-documentation">
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/developer-documentation/contributing-to-obsidianhtml.html"  >Contributing to Obsidianhtml</a></li>
+	</ul>
+</div>
+<button id="folder-16" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>general-information</button>
+<div id="folder-container-16" class="dir-container requires_js " path="/general-information">
+	<button id="folder-17" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>concepts</button>
+	<div id="folder-container-17" class="dir-container requires_js " path="/general-information/concepts">
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/general-information/concepts/entrypoint.html"  >Entrypoint</a></li>
+			<li><div class="file-icon"></div><a class="" href="/general-information/concepts/input-folder.html"  >Input folder</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/general-information/about-obsidianhtml.html"  >About ObsidianHtml</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/common-issues-limitations.html"  >Common issues & Limitations</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/creating-a-static-html-website-from-markdown-files.html"  >Creating a static html website from markdown files</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/parsing-obsidian-notes-to-proper-markdown.html"  >Parsing Obsidian notes to proper markdown</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/report-issues-request-features.html"  >Report Issues & Request features</a></li>
+		<li><div class="file-icon"></div><a class="" href="/general-information/using-the-website.html"  >Using the website</a></li>
+	</ul>
+</div>
+<button id="folder-18" class="dir-button active" onclick="toggle_dir(this.id)"><div class="file-icon"></div>instructions</button>
+<div id="folder-container-18" class="dir-container requires_js active" path="/instructions">
+	<button id="folder-19" class="dir-button active" onclick="toggle_dir(this.id)"><div class="file-icon"></div>tutorials</button>
+	<div id="folder-container-19" class="dir-container requires_js active" path="/instructions/tutorials">
+		<button id="folder-20" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>specifics</button>
+		<div id="folder-container-20" class="dir-container requires_js " path="/instructions/tutorials/specifics">
+			<ul class="dir-list">
+				<li><div class="file-icon"></div><a class="" href="/instructions/tutorials/specifics/bootstrapping-python-on-windows.html"  >Bootstrapping Python on Windows</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><div class="file-icon"></div><a class="" href="/instructions/tutorials/converting-just-one-subfolder-in-your-vault.html"  >Converting just one subfolder in your vault</a></li>
+			<li><div class="file-icon"></div><a class="active current_page_dirtree" href="/instructions/tutorials/tutorial-installation-on-windows.html"  >Tutorial - Installation on Windows</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/instructions/inspect-default-config.html"  >Inspect default config</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/install-a-different-version.html"  >Install a different version</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/installation.html"  >Installation</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/obsidianhtml-run.html"  >Obsidianhtml Run</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/quickstart.html"  >Quickstart</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/run-custom-code.html"  >Run custom code</a></li>
+		<li><div class="file-icon"></div><a class="" href="/instructions/usage.html"  >Usage</a></li>
+	</ul>
+</div>
+<button id="folder-21" class="dir-button " onclick="toggle_dir(this.id)"><div class="file-icon"></div>log</button>
+<div id="folder-container-21" class="dir-container requires_js " path="/log">
+	<ul class="dir-list">
+		<li><div class="file-icon"></div><a class="" href="/log/moving-to-a-module-system.html"  >Moving to a Module system</a></li>
+		<li><div class="file-icon"></div><a class="" href="/log/published-obsidianhtml-version-0.0.9.html"  >Published ObsidianHtml version 0.0.9!</a></li>
+		<li><div class="file-icon"></div><a class="" href="/log/published-obsidianhtml-version-1.0.0.html"  >Published ObsidianHtml version 1.0.0!</a></li>
+		<li><div class="file-icon"></div><a class="" href="/log/working-on-an-rss-feed-for-obsidianhtml.html"  >Working on an RSS feed for ObsidianHtml</a></li>
 	</ul>
 </div>
 <ul class="dir-list">
-	<li><a class="" href="/index.html"  >Home</a></li>
-	<li><a class="" href="/news.html"  >News</a></li>
+	<li><div class="file-icon"></div><a class="" href="/index.html"  >Home</a></li>
+	<li><div class="file-icon"></div><a class="" href="/news.html"  >News</a></li>
 </ul>
 </div>
     </div>
@@ -429,12 +436,13 @@
                 <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
                     <div style="flex:1;display: none;"></div>
                     <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
-                        <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">instructions</span> / <span style="color: #666;">tutorials</span> / <a href="/instructions/tutorials/tutorial-installation-on-windows.html" >tutorial-installation-on-windows</a>
+                        <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">Instructions</span> / <span style="color: #666;">Tutorials</span> / <a href="/instructions/tutorials/tutorial-installation-on-windows.html" >Tutorial - Installation on Windows</a>
                     </div>
                 </div>
-<embeddedtitle>Tutorial - Installation on Windows</embeddedtitle>
-<div class="content"><div class="toc">
+<div class="content"><h1 id="tutorial-installation-on-windows">Tutorial - Installation on Windows</h1>
+<div class="toc">
 <ul>
+<li><a href="#tutorial-installation-on-windows" class="anchor-link">Tutorial - Installation on Windows</a><ul>
 <li><a href="#installing-and-or-upgrading-python" class="anchor-link">Installing and or upgrading python</a></li>
 <li><a href="#create-a-virtual-environment" class="anchor-link">Create a virtual environment</a><ul>
 <li><a href="#prerequisites" class="anchor-link">Prerequisites</a></li>
@@ -453,15 +461,14 @@
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
-<blockquote>
-<p>This is the documentation for <a href="/changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
-</blockquote>
-<p>Working with Python on Windows can sometimes be a headache.   </p>
-<p>This page goes through all the steps to install obsidianhtml on a Windows machine. We will use a virtual environment for this so that you don't pollute your environment.   </p>
-<p>You can skip this step. You don't need to create a virtualenvironment for obsidianhtml to work on Windows if you have functional Python/Pip installations on the right versions. But if you are having issues with Python, or are following <a href="/instructions/tutorials/specifics/bootstrapping-python-on-windows.html">Bootstrapping Python on Windows</a>, then using a venv is a plus.   </p>
+<p>Working with Python on Windows can sometimes be a headache.</p>
+<p>This page goes through all the steps to install obsidianhtml on a Windows machine. We will use a virtual environment for this so that you don't pollute your environment.</p>
+<p>You can skip this step. You don't need to create a virtualenvironment for obsidianhtml to work on Windows if you have functional Python/Pip installations on the right versions. But if you are having issues with Python, or are following <a href="/instructions/tutorials/specifics/bootstrapping-python-on-windows.html">Bootstrapping Python on Windows</a>, then using a venv is a plus.</p>
 <h2 id="installing-and-or-upgrading-python">Installing and or upgrading python</h2>
-<p>To install python go to <a href="https://www.python.org/downloads/" class="external-link">https://www.python.org/downloads/</a> and click on the big yellow download button. A default installation will do.   </p>
+<p>To install python go to <a href="https://www.python.org/downloads/" class="external-link">https://www.python.org/downloads/</a> and click on the big yellow download button. A default installation will do.</p>
 <div class="callout callout-note active" rasa="1">
 <div class="callout-title ">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
@@ -473,11 +480,11 @@
 <p>If you are on a system where you are not allowed to install python, follow these instructions: <a href="/instructions/tutorials/specifics/bootstrapping-python-on-windows.html">Bootstrapping Python on Windows</a></p>
 </div>
 </div>
-<p>If you already have python installed, run <code>python --version</code> and check that your version is at least 3.9. If not, you will need to upgrade. Follow standard instructions on upgrating python for Windows. (Google)   </p>
+<p>If you already have python installed, run <code>python --version</code> and check that your version is at least 3.9. If not, you will need to upgrade. Follow standard instructions on upgrating python for Windows. (Google)</p>
 <h2 id="create-a-virtual-environment">Create a virtual environment</h2>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>To enter a virtual env, we need to install the virtualenv package using pip. If you have both installed already, you can skip to the next section.   </p>
-<p>Open powershell and run the following commands:   </p>
+<p>To enter a virtual env, we need to install the virtualenv package using pip. If you have both installed already, you can skip to the next section.</p>
+<p>Open powershell and run the following commands:</p>
 <div class="lang-powershell">
 
 <div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">ensurepip</span>
@@ -488,8 +495,8 @@
 </div>
 
 <h3 id="create-virtualenv">Create virtualenv</h3>
-<p>Next we can create a virtualenv. This will appear as a regular folder in the folder where you run the following commands. So move to a location where you don't mind a folder being created.    </p>
-<p>Later in this tutorial we will download the example vault, so it might be good to move to a location where you keep your git projects, so they are close together.   </p>
+<p>Next we can create a virtualenv. This will appear as a regular folder in the folder where you run the following commands. So move to a location where you don't mind a folder being created. </p>
+<p>Later in this tutorial we will download the example vault, so it might be good to move to a location where you keep your git projects, so they are close together.</p>
 <div class="lang-powershell">
 
 <div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">obsenv</span>
@@ -498,10 +505,10 @@
 
 </div>
 
-<p>Wait patiently for the above command to finish. <br />
-When done, you will notice a new folder called <code>obsenv</code>.   </p>
+<p>Wait patiently for the above command to finish.
+When done, you will notice a new folder called <code>obsenv</code>.</p>
 <h2 id="enter-virtual-env">Enter virtual env</h2>
-<p>To enter the virtual env, we need to execute a script that is located in the virtual env folder, like so:   </p>
+<p>To enter the virtual env, we need to execute a script that is located in the virtual env folder, like so:</p>
 <div class="lang-powershell">
 
 <div class="codehilite"><pre><span></span><code><span class="p">.\</span><span class="n">obsenv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span><span class="p">.</span><span class="n">ps1</span>
@@ -510,10 +517,10 @@ When done, you will notice a new folder called <code>obsenv</code>.   </p>
 
 </div>
 
-<p>This will add the prefix <code>(obsenv)</code> to your prompt, letting you know that you are in the virtual env.   </p>
-<p>From this moment forward, any python/pip command will work as if you have it installed globally, but will actually use the version from the venv.    </p>
-<p>Any pip install commands will only affect your virtualenv. Once you exit the venv and delete the obsenv folder, it will be like you never installed anything at all. This is the major benefit of using venvs.   </p>
-<p>Run the following command to double check that you are using a python version of 3.9 or higher:   </p>
+<p>This will add the prefix <code>(obsenv)</code> to your prompt, letting you know that you are in the virtual env.</p>
+<p>From this moment forward, any python/pip command will work as if you have it installed globally, but will actually use the version from the venv. </p>
+<p>Any pip install commands will only affect your virtualenv. Once you exit the venv and delete the obsenv folder, it will be like you never installed anything at all. This is the major benefit of using venvs.</p>
+<p>Run the following command to double check that you are using a python version of 3.9 or higher:</p>
 <div class="lang-powershell">
 
 <div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="p">-</span><span class="n">-version</span>
@@ -523,7 +530,7 @@ When done, you will notice a new folder called <code>obsenv</code>.   </p>
 </div>
 
 <h2 id="exit-virtualenv">Exit virtualenv</h2>
-<p>When we ran the <code>activate.ps1</code> script, it loaded a command into our session called <code>deactivate</code>, when we run this, we will exit our virtualenv again:   </p>
+<p>When we ran the <code>activate.ps1</code> script, it loaded a command into our session called <code>deactivate</code>, when we run this, we will exit our virtualenv again:</p>
 <div class="lang-powershell">
 
 <div class="codehilite"><pre><span></span><code><span class="n">deactivate</span>
@@ -532,9 +539,9 @@ When done, you will notice a new folder called <code>obsenv</code>.   </p>
 
 </div>
 
-<p>Don't do this now though, as we have more work to do.   </p>
+<p>Don't do this now though, as we have more work to do.</p>
 <h2 id="install-obsidianhtml">Install Obsidianhtml</h2>
-<p>On WIndows we need to use a special command to install pythonnet, as the version that we need is still in a pre-release state.   </p>
+<p>On WIndows we need to use a special command to install pythonnet, as the version that we need is still in a pre-release state.</p>
 <div class="lang-powershell">
 
 <div class="codehilite"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-pre</span> <span class="n">pythonnet</span> 
@@ -543,7 +550,7 @@ When done, you will notice a new folder called <code>obsenv</code>.   </p>
 
 </div>
 
-<p>Then we can install obsidianhtml itself:   </p>
+<p>Then we can install obsidianhtml itself:</p>
 <div class="lang-powershell">
 
 <div class="codehilite"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">obsidianhtml</span>
@@ -555,12 +562,12 @@ When done, you will notice a new folder called <code>obsenv</code>.   </p>
 </div>
 
 <blockquote>
-<p>See <a href="/instructions/install-a-different-version.html">Install a different version</a> for more options, such as installing the pre-released version of obsidianhtml.   </p>
+<p>See <a href="/instructions/install-a-different-version.html">Install a different version</a> for more options, such as installing the pre-released version of obsidianhtml.</p>
 </blockquote>
 <h2 id="use-obsidianhtml">Use obsidianhtml</h2>
 <h3 id="clone-example-vault">Clone example vault</h3>
-<p>If you have your own vault, you can start testing with that, but for the sake of this tutorial, I will use an example vault so that you can follow along.   </p>
-<p>Go to a folder using <code>cd</code> where you want to create a new folder, and then use git to clone the example vault repo.   </p>
+<p>If you have your own vault, you can start testing with that, but for the sake of this tutorial, I will use an example vault so that you can follow along.</p>
+<p>Go to a folder using <code>cd</code> where you want to create a new folder, and then use git to clone the example vault repo.</p>
 <div class="callout callout-note active" rasa="1">
 <div class="callout-title ">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
@@ -580,7 +587,7 @@ When done, you will notice a new folder called <code>obsenv</code>.   </p>
 
 </div>
 
-<p>Then move into the cloned folder:   </p>
+<p>Then move into the cloned folder:</p>
 <div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code>cd example_vault
@@ -590,12 +597,12 @@ When done, you will notice a new folder called <code>obsenv</code>.   </p>
 </div>
 
 <h2 id="convert">Convert</h2>
-<p>The main mode of obsidianhtml is <code>convert</code>. This command will look for a <code>config.yml</code> file in the current folder. It will then use the settings in that file to convert your file to html.   </p>
+<p>The main mode of obsidianhtml is <code>convert</code>. This command will look for a <code>config.yml</code> file in the current folder. It will then use the settings in that file to convert your file to html.</p>
 <blockquote>
-<p>Alternatively you can pass the path to a config file using <code>-i path/to/config.yml</code>.  <br />
-See for more information: <a href="/instructions/usage.html">Usage</a>.    </p>
+<p>Alternatively you can pass the path to a config file using <code>-i path/to/config.yml</code>. 
+See for more information: <a href="/instructions/usage.html">Usage</a>. </p>
 </blockquote>
-<p>You can create your own config file easily using <a href="/instructions/obsidianhtml-run.html">Obsidianhtml Run</a>. But for now, you will see that a config.yml already exists in our current folder, so let's use that   </p>
+<p>You can create your own config file easily using <a href="/instructions/obsidianhtml-run.html">Obsidianhtml Run</a>. But for now, you will see that a config.yml already exists in our current folder, so let's use that</p>
 <div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code>obisidanhtml convert
@@ -604,7 +611,7 @@ See for more information: <a href="/instructions/usage.html">Usage</a>.    </p>
 
 </div>
 
-<p>This should give the following output:   </p>
+<p>This should give the following output:</p>
 <div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code>(obsenv) PS ~\test_obs\example_vault&gt; obsidianhtml convert
@@ -631,9 +638,9 @@ You can find your output at:
 
 </div>
 
-<p>The most important information for now is that it uses config.yml located at <code>C:/Users/User/Documents/test_obs/example_vault/config.yml</code> (first line) and that it outputted our html at <code>C:\Users\User\Documents\test_obs\example_vault\output\html</code> (last line).   </p>
+<p>The most important information for now is that it uses config.yml located at <code>C:/Users/User/Documents/test_obs/example_vault/config.yml</code> (first line) and that it outputted our html at <code>C:\Users\User\Documents\test_obs\example_vault\output\html</code> (last line).</p>
 <h3 id="preview-site">Preview site</h3>
-<p>This compiled html should be served by a webserver. If you are going to publish a website on the world wide web, I highly recommend not to use the method below, but for testing on your own environment this will do nicely.   </p>
+<p>This compiled html should be served by a webserver. If you are going to publish a website on the world wide web, I highly recommend not to use the method below, but for testing on your own environment this will do nicely.</p>
 <div class="callout callout-note active" rasa="1">
 <div class="callout-title ">
 <div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
@@ -645,7 +652,7 @@ You can find your output at:
 <p>Using a service like <a href="https://pages.github.com/" class="external-link">https://pages.github.com/</a> is a nice free way to quickly get a static website up and running.</p>
 </div>
 </div>
-<p>I've prepared a script that will start a local webserver at port 8000, using the folder <code>output/html</code> as the webroot. Run it like so:   </p>
+<p>I've prepared a script that will start a local webserver at port 8000, using the folder <code>output/html</code> as the webroot. Run it like so:</p>
 <div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code>python ./serve.py
@@ -654,7 +661,7 @@ You can find your output at:
 
 </div>
 
-<p>Then open <a href="http://localhost:8000/" class="external-link">http://localhost:8000/</a> in your web browser. This should show you a website.   </p>
+<p>Then open <a href="http://localhost:8000/" class="external-link">http://localhost:8000/</a> in your web browser. This should show you a website.</p>
 <p>The website is pretty bare bones at the moment, but it serves as a good proof of concept.</p></div>
 <div class="note-footer">
 <div class="backlinks">
@@ -671,13 +678,17 @@ You can find your output at:
 
 </div>
 <div class="graph requires_js ">
-    <div id="A98335324580154678540470558553434010499{level}" class="graph_div"></div>
+    <div id="A247534836893393057983083616739780582863{level}" class="graph_div"></div>
+
+    <div class="graph-instructions" id="D247534836893393057983083616739780582863{level}">
+        Left-click: follow link, Right-click: select node, Scroll: zoom
+    </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B98335324580154678540470558553434010499{level}" level="{level}" note_temp_id="98335324580154678540470558553434010499" onclick="window.ObsHtmlGraph.run(this, '98335324580154678540470558553434010499', 'tutorial - installation on windows');">
+        <button class="graph_button graph_show_button" id="B247534836893393057983083616739780582863{level}" level="{level}" note_temp_id="247534836893393057983083616739780582863" onclick="window.ObsHtmlGraph.run(this, '247534836893393057983083616739780582863', 'tutorial - installation on windows');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C98335324580154678540470558553434010499{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C247534836893393057983083616739780582863{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

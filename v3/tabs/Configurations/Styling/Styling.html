@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="styling">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/v3/tabs/favicon.ico" />
+
+                <!-- Set title -->
+                <title>ObsidianHtml/Tabs-Mode</title>
+
+                <!-- Includes -->
+                
+<script src="/v3/tabs/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/tabs/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/tabs/obs.html/static/master.css" />
+<script src="/v3/tabs/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script>
+  MathJax = {
+    loader: {
+      load: [
+        '[tex]/action',
+        'output/chtml',
+        '[tex]/centernot'
+      ]
+    },
+    tex: {
+      inlineMath: [ ["\\(","\\)"] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: {'[+]': ['centernot']}
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script src="/v3/tabs/obs.html/static/flexsearch.bundle.js"></script>
+<script src="/v3/tabs/obs.html/static/pako.js"></script>
+<script src="/v3/tabs/obs.html/static/search.js"></script>
+<script src="/v3/tabs/obs.html/static/dirtree.js"></script>
+
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'styling';
+                        const PAGE_DEPTH = 2;
+                </script>
+        </head>
+
+<body class="theme-obs-light">
+        <div id="antiflash" style="display: none;"></div>
+        <script>
+                document.getElementById('antiflash').style.display = 'block';
+        </script>
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction">
+                                <b>esc</b> to dismiss
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle_id('search-master-div');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            toggle_id('search-master-div');
+            return false;
+        } 
+    }, true);
+
+    function click_list_link(element){
+        element.parentElement.getElementsByTagName('a')[0].click()
+    }
+</script>
+        <div id="page_holder" class="flex_col">
+                <div id="header" class="header" style="position:fixed">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/v3/tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Tabs-Mode</a>
+                                <div class="navbar-button" onclick="toggle_menu()">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar">
+                                        <a class="navbar-link" href="/v3/tabs/index.html" title="Home">Home</a>
+<a class="navbar-link" href="/v3/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
+<a class="navbar-link" href="/v3/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
+<a class="navbar-link" href="/v3/tabs/Configurations/Features/Features.html" title="Features">Features</a>
+<a class="navbar-link" href="/v3/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/v3/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/v3/tabs/Configurations/Modes/Modes.html" title="Modes">Modes</a>
+<a class="navbar-link" href="/v3/tabs/News.html" title="News">News</a>
+                                        <div class="icon-tray">
+                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+    T
+</div>
+<script>
+    function toggle_theme_popup(el){
+        // make theme button show that it's active by adding the .active class
+        toggle(el);
+
+        // show the theme selector
+        toggle_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
+        }
+    }
+</script>
+                                                        <div onclick="openSearch()" class="theme-button requires_js">
+            <img src = "/v3/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+        </div>
+        <script>
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
+                }
+            }
+        </script>
+                                                        <div class="graph_header_div requires_js">
+            <a id="graph_link" class="system-link" href="/v3/tabs/obs.html/graph/index.html?node=styling" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/v3/tabs/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
+            </a>
+        </div>
+                                                        <div >
+            <a id="dirtree_link" class="system-link" href="/v3/tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/v3/tabs/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                <div>
+    <a href="/v3/tabs/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/v3/tabs/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                                                        <div>
+            <a id="rss_link" class="system-link" href="/v3/tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/v3/tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="popup" id="theme-popup">
+    <label for="cars">Theme </label>
+
+    <select name="theme" id="theme" onchange="set_theme(this.value)">
+      <option value="light">light</option>
+      <option value="obs-light" selected="selected">obsidian-light</option>
+      <option value="obs-dark">obsidian-dark</option>
+    </select> 
+</div>
+                </div>
+                <div id="header2" class="header">
+                        <div id="header_flex2" class="flex_row">
+                                <a href="/v3/tabs/index.html" id="homelink" title="Clear screen and go to homepage">ObsidianHtml/Tabs-Mode</a>
+                                <div class="navbar-button" onclick="toggle_menu()">
+                                        ≡
+                                </div>
+                                <div id="navbar2" class="navbar">
+                                        <a class="navbar-link" href="/v3/tabs/index.html" title="Home">Home</a>
+<a class="navbar-link" href="/v3/tabs/General Information/About ObsidianHtml.html" title="About">About</a>
+<a class="navbar-link" href="/v3/tabs/Instructions/Quickstart.html" title="Quickstart">Quickstart</a>
+<a class="navbar-link" href="/v3/tabs/Configurations/Features/Features.html" title="Features">Features</a>
+<a class="navbar-link" href="/v3/tabs/Configurations/Configuration Options.html" title="Configurations">Configurations</a>
+<a class="navbar-link" href="/v3/tabs/Configurations/Styling/Styling.html" title="Styling">Styling</a>
+<a class="navbar-link" href="/v3/tabs/Configurations/Modes/Modes.html" title="Modes">Modes</a>
+<a class="navbar-link" href="/v3/tabs/News.html" title="News">News</a>
+                                        <div class="icon-tray">
+                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+    T
+</div>
+<script>
+    function toggle_theme_popup(el){
+        // make theme button show that it's active by adding the .active class
+        toggle(el);
+
+        // show the theme selector
+        toggle_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
+        }
+    }
+</script>
+                                                        <div onclick="openSearch()" class="theme-button requires_js">
+            <img src = "/v3/tabs/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+        </div>
+        <script>
+            function openSearch(){
+                // toggle search popup and continue with extra code if it is enabled this time
+                if (toggle_id('search-master-div')){
+                    // get input field and temporarily disable it
+                    let ss = document.getElementById('search_string');
+                    ss.value = 'Seach data initializing...';
+                    ss.readOnly = true; 
+
+                    // load search data if not yet done so
+                    setTimeout(function(){
+                        LoadSearchData()
+
+                        // clear input and put focus on it so that we can start typing immediately
+                        ss.value = '';
+                        ss.readOnly = false; 
+                        ss.focus()
+                        ss.select()
+                    }, 100);
+                }
+            }
+        </script>
+                                                        <div class="graph_header_div requires_js">
+            <a id="graph_link" class="system-link" href="/v3/tabs/obs.html/graph/index.html?node=styling" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/v3/tabs/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
+            </a>
+        </div>
+                                                        <div >
+            <a id="dirtree_link" class="system-link" href="/v3/tabs/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/v3/tabs/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                <div>
+    <a href="/v3/tabs/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/v3/tabs/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                                                        <div>
+            <a id="rss_link" class="system-link" href="/v3/tabs/obs.html/rss/feed.xml" title="RSS Feed link">
+                    <img src = "/v3/tabs/obs.html/static/rss.svg" alt="RSS Feed link"/>
+            </a>
+        </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="popup" id="theme-popup">
+    <label for="cars">Theme </label>
+
+    <select name="theme" id="theme" onchange="set_theme(this.value)">
+      <option value="light">light</option>
+      <option value="obs-light" selected="selected">obsidian-light</option>
+      <option value="obs-dark">obsidian-dark</option>
+    </select> 
+</div>
+                </div>
+                <div class="flex_row" id="container_row">
+                        <div class="container-wrapper ">
+                                <div class="container">
+                                
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/tabs/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">tabs</span> / <span style="color: #666;">Configurations</span> / <a href="/v3/tabs/Configurations/Styling/Styling.html" >Styling</a>
+                    </div>
+                </div>
+<embeddedtitle>Styling</embeddedtitle>
+<div class="content"><div class="toc">
+<ul>
+<li><a href="#layouts" class="anchor-link">Layouts</a><ul>
+<li><a href="#documentation" class="anchor-link">Documentation</a></li>
+<li><a href="#tabs" class="anchor-link">Tabs</a></li>
+<li><a href="#minimal" class="anchor-link">Minimal</a></li>
+<li><a href="#which-to-choose" class="anchor-link">Which to choose?</a></li>
+</ul>
+</li>
+<li><a href="#accent-color" class="anchor-link">Accent color</a></li>
+<li><a href="#table-of-contents" class="anchor-link">Table of Contents</a></li>
+<li><a href="#max-note-width" class="anchor-link">Max note width</a></li>
+</ul>
+</div>
+<blockquote>
+<p>This is the documentation for <a href="/v3/tabs/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+<p>This page discusses the built-in styling options. If you want to use custom code, go to <a href="/v3/tabs/Configurations/Styling/Edit%20HTML%2C%20CSS%2C%20JS.html">Edit HTML, CSS, JS</a>.   </p>
+</blockquote>
+<h2 id="layouts">Layouts</h2>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span><span class="w"> </span><span class="c1"># documentation, tabs, minimal</span>
+</code></pre></div>
+
+
+</div>
+
+<p>For the layout you can choose between <code>documentation</code>,  <code>minimal</code>, and <code>tabs</code>     </p>
+<p>The layout will influence the structure of the pages that are generated. There is a short description below for each layout.    </p>
+<p>To get an actual impression, check out this same site with the different layouts:   </p>
+<ul>
+<li><a href="https://obsidian-html.github.io/tabs" class="external-link">tabs</a>   </li>
+<li><a href="https://obsidian-html.github.io/minimal/index.html" class="external-link">minimal</a>   </li>
+<li><a href="https://obsidian-html.github.io/" class="external-link">documentation</a> (the default)   </li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<p>The documentation layout is used for this site. This layout is suited for people who like to establish a well thought out folder structure, and for − as the name says − documentation vaults such as this one. It is the only layout that supports <a href="/v3/tabs/Configurations/Features/Side%20panes.html">Side panes</a>.   </p>
+<h3 id="tabs">Tabs</h3>
+<p>The tabs layout is for people who use the smart note taking / zettelkasten methods, where dense linkage is prefered over giving a strict structure from the get-go. It allows to have multiple notes open at one time, and to scroll back and forth, following a thread of related notes. Tabs has some added navigation options to mediate in the infinite scrolling of notes. Read more on that <a href="/v3/tabs/Configurations/Styling/Tabs%20Layout.html">here</a>.   </p>
+<h3 id="minimal">Minimal</h3>
+<blockquote>
+<p>New in <a href="/v3/tabs/Changelog/v2.3.0.html">v2.3.0</a>   </p>
+</blockquote>
+<p>The minimal template has been added to cut away any "frivolous" features that aren't strictly necessary to view/navigate your site. It removes the menu, graph view, and search.   </p>
+<p>Read more here about optimizing your website for low-bandwidth clients: <a href="/v3/tabs/Configurations/Tweaking/Performance%20Tuning.html">Performance Tuning</a>.   </p>
+<h3 id="which-to-choose">Which to choose?</h3>
+<p>Documentation is set to the default, as I use it for this website, and thus it will be better tested and more stable. (Not to say that the other modes are unstable, though).    </p>
+<p>Personally I like to start off with a very loose structure, and thus use tabs mode. When my vault gets to a certain size, I apply a folder structure, and at that point it could be interesting to move over to the documentation layout.    </p>
+<p>If your expected users have low bandwidth, or if your are a web 1.0 purist, then the minimal template might be for you.   </p>
+<p>In the end there is just the personal preference, so try them out and see which you like best.   </p>
+<h2 id="accent-color">Accent color</h2>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">accent_color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#414cfd&#39;</span>
+</code></pre></div>
+
+
+</div>
+
+<p>This is used to give some color here and there. It is one color that is reused here and there by giving it some extra transparency, making it a bit lighter.   </p>
+<p>Try to use a very bold, slightly dark color, so that the lighter color used in the quotes and scrollbars is still decently visible.   </p>
+<p>For anything more involved you currently have to <a href="/v3/tabs/Configurations/Styling/Edit%20HTML%2C%20CSS%2C%20JS.html">edit the css by hand</a>.   </p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">add_toc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">    </span><span class="c1"># add &quot;[TOC]&quot; (Table of Contents) when missing</span>
+<span class="w">      </span><span class="nt">toc_pane</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">   </span><span class="c1"># removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)</span>
+<span class="w">      </span><span class="nt">flip_panes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span><span class="w"> </span><span class="c1"># switch right and left pane around. (does nothing unless in documentation layout.)</span>
+</code></pre></div>
+
+
+</div>
+
+<p>You can add <code>[TOC]</code> to your note to add in a table of contents (toc) in that location.    </p>
+<p>If you want a toc for every note, you can skip this in Obsidian (which doesn't support this at the time of writing, at least not out of the box), and just set <code>add_toc</code> to True. This will add <code>[TOC]</code> to the top of every note just before compiling the html.    </p>
+<p>This looks a bit weird though, as there is no header, just a list at the top of the note. It is best to also enable <code>toc_pane</code> if you are in the documentation or no_tabs layout. This will add the toc in a separate box on the right of the note.    </p>
+<p>In the documentation layout there are two "panes", one for the content view, and one for the table of contents. By default the toc is on the right and the content view on the left. If you want to flip this over you should set <code>flip_panes: True</code> (which is what I did for this website).   </p>
+<h2 id="max-note-width">Max note width</h2>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">styling</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">max_note_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">52rem</span><span class="w"> </span><span class="c1"># not supported for layout: tabs</span>
+</code></pre></div>
+
+
+</div>
+
+<p>This determines the max width of the content div.    </p>
+<p>This is not supported for the tabs layout as there the width of the notes is more or less tied to the well-being of the tab automation.   </p>
+<p>This can be set to any valid CSS width value, such as <code>100%</code>, or <code>450px</code>. If you want the note to be as wide as possible then 100% will be a good value to configure. Personally I find content divs that are a bit less wide easier to read, and the current configured width ties together nicely with the documentation layout.</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/tabs/Instructions/Usage.html">usage</a></li>
+	<li><a class="backlink" href="/v3/tabs/Configurations/Features/Side panes.html">side panes</a></li>
+	<li><a class="backlink" href="/v3/tabs/Configurations/Styling/Tabs Layout.html">tabs layout</a></li>
+	<li><a class="backlink" href="/v3/tabs/Configurations/Tweaking/Performance Tuning.html">performance tuning</a></li>
+	<li><a class="backlink" href="/v3/tabs/Configurations/Deprecated Configurations/NoTabs Mode.html">notabs mode</a></li>
+	<li><a class="backlink" href="/v3/tabs/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/v3/tabs/Configurations/Features/Features.html">features</a></li>
+	<li><a class="backlink" href="/v3/tabs/Changelog/v2.0.0.html">v2.0.0</a></li>
+	<li><a class="backlink" href="/v3/tabs/General Information/Using the website.html">using the website</a></li>
+	<li><a class="backlink" href="/v3/tabs/index.html">index</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/tabs/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/v3/tabs/obs.html/tags/date/2022-04-17/index.html">date/2022-04-17</a></li>
+</ul>
+</div>
+
+</div>
+<div class="graph requires_js ">
+    <div id="A143777627262090443039278708399737209957{level}" class="graph_div"></div>
+    
+    <div class="graph-button-row" style="display:flex;">
+        <button class="graph_button graph_show_button" id="B143777627262090443039278708399737209957{level}" level="{level}" note_temp_id="143777627262090443039278708399737209957" onclick="window.ObsHtmlGraph.run(this, '143777627262090443039278708399737209957', 'styling');">
+            Show Graph
+        </button>
+        <button class="graph_button graph_type_button" id="C143777627262090443039278708399737209957{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+            2D
+        </button>
+    </div>
+</div>
+
+<script type="module">
+    if (window.ObsHtmlGraph == undefined){
+        import('/v3/tabs/obs.html/static/graph.js').then((Module) => {
+            window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
+        })
+    }
+</script>
+
+
+
+
+                                <!-- end content -->
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <script src="/v3/tabs/obs.html/static/obsidian_tabs_footer.js" type="text/javascript"></script>
+
+        
+
+</body>
+</html>

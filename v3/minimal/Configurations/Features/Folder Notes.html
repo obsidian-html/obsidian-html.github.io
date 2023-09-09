@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <span style="color: #666;">Configurations</span> / <a href="/v3/minimal/Configurations/Features/Features.html" style="color: var(--normal-text-color);">Features</a> / <a href="/v3/minimal/Configurations/Features/Folder Notes.html" >Folder Notes</a>
+                    </div>
+                </div>
+<embeddedtitle>Folder Notes</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/v3/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<p>If you like to organize your notes into a lot of separate folders,  then folder notes might be something for you.   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">folder_notes</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;outside</span><span class="nv"> </span><span class="s">folder&#39;</span><span class="w">   </span><span class="c1"># &#39;inside folder&#39; , &#39;outside folder&#39; </span>
+<span class="w">      </span><span class="nt">naming</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;folder</span><span class="nv"> </span><span class="s">name&#39;</span><span class="w">           </span><span class="c1"># &#39;folder name&#39;, &#39;index&#39;, &#39;aurkibidea&#39;, &#39;etc&#39;</span>
+</code></pre></div>
+
+
+</div>
+
+<h2 id="example">Example</h2>
+<p>On this site, the folders <code>Changelog</code>, <code>Styling</code>, and <code>Demonstrations</code> have an associated folder note. This results in the little triangle on the left. When clicking the folder, instead of opening the folder in the navigation, the associated note is opened.   </p>
+<h2 id="important-notices">Important notices</h2>
+<div class="callout callout-attention active" rasa="1">
+<div class="callout-title ">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+</div>
+<div class="callout-title-name">Make sure folder notes are included in output <br />
+</div>
+</div>
+<div class="callout-content"></div>
+</div>
+<p>Folder notes are not included by default unless <a href="/v3/minimal/Configurations/Modes/Process%20All.html">Process All</a> is enabled.    </p>
+<blockquote>
+<p>When this setting is disabled, as is default, make sure that there is a link-chain from your entrypoint to each folder note that you want to end up in your html output.   </p>
+<p>So for example: <br />
+  index.md --&gt; mocs.md --&gt; folder1/index.md, folder2/index.md, etc   </p>
+</blockquote>
+<h2 id="inside-outside">Inside/outside</h2>
+<p>You can set your files like this:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>│   Changelog
+│   ├── Changelog.md
+│   └── v1.0.0.md
+</code></pre></div>
+
+
+</div>
+
+<p>In that case you should set <code>placement: 'inside folder'</code>   </p>
+<p>Conversely, for this setup:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>│   Changelog
+│   └── v1.0.0.md
+│   Changelog.md
+</code></pre></div>
+
+
+</div>
+
+<p>You should set <code>placement: 'outside folder'</code>   </p>
+<h3 id="naming">Naming</h3>
+<p>You can either set <code>naming</code> to <code>'folder note'</code>, or anything else. When the value is literally <code>'folder note'</code>, the name of the corresponding folder is used, otherwise ObsidianHtml will search for a file called <code>{naming}.html</code>.   </p>
+<p>In the first example of the previous section, the folder note had the same name as the folder,  if you want to use index for every note,  like so:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>│   Changelog
+│   ├── index.md
+│   └── v1.0.0.md
+</code></pre></div>
+
+
+</div>
+
+<p>You should set:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">folder_notes</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;inside</span><span class="nv"> </span><span class="s">folder&#39;</span><span class="w">  </span>
+<span class="w">      </span><span class="nt">naming</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;index&#39;</span><span class="w">           </span>
+</code></pre></div>
+
+
+</div>
+
+<div class="callout callout-info active" rasa="1">
+<div class="callout-title ">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+</div>
+<div class="callout-title-name">Info
+</div>
+</div>
+<div class="callout-content">
+<p>The homepage will always be placed at <code>{html_output_folder}/index.html</code>; even when you set <code>naming: index</code>,  the homepage will be <strong>not</strong> treated as a folder note</p>
+</div>
+</div>
+<h2 id="breadcrumbs">Breadcrumbs</h2>
+<p>If you are using folder notes, you might also be interested in <a href="/v3/minimal/Configurations/Features/Breadcrumbs.html">Breadcrumbs</a>.</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.4.0.html">v3.4.0</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Features/Breadcrumbs.html">breadcrumbs</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Features/Features.html">features</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/type/template/index.html">type/template</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-08-28/index.html">date/2022-08-28</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

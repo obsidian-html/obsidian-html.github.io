@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <a href="/v3/minimal/Changelog/Changelog.html" style="color: var(--normal-text-color);">Changelog</a> / <a href="/v3/minimal/Changelog/v2.2.0.html" >v2.2.0</a>
+                    </div>
+                </div>
+<div class="content"><h1 id="v2-2-0">v2.2.0</h1>
+<blockquote>
+<p>Feature version of <a href="/v3/minimal/Changelog/v2.0.0.html">v2.0.0</a>   </p>
+</blockquote>
+<h2 id="search">Search</h2>
+<blockquote>
+<p>New in this version   </p>
+</blockquote>
+<p>Search has been added. Click on the looking glass icon in the icon tray to open search.   </p>
+<p>The search will be expanded upon in the next versions, but for now the search works well enough to be enabled by default.   </p>
+<p>To disable the search, add this to your config.yml:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+
+
+</div>
+
+<h2 id="mathjax">Mathjax</h2>
+<blockquote>
+<p>New in this version   </p>
+</blockquote>
+<p>A subset of Latex has been added that can render mathematical equations in a pretty way. Read more here: <a href="/v3/minimal/Demonstrations/Implementing%20Latex.html">Implementing Latex</a>   </p>
+<h2 id="bugfixes">Bugfixes</h2>
+<ul>
+<li>The <code>max_note_width</code> setting did not do anything because callouts.css included a width setting that it shouldn't have, this has been corrected.   </li>
+<li>Regex bug for image links fixed   <ul>
+<li>For code like <code>![](link) some text (with parentheses on the same line)</code>, the regex would match everything until the last <code>)</code>. This was wrong obviously, so this was fixed.</li>
+</ul>
+</li>
+</ul></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Changelog/Changelog.html">changelog</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-05-07/index.html">date/2022-05-07</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

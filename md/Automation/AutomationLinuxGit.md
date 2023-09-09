@@ -1,15 +1,13 @@
 ---
 graph_name: Auto push site using Git on Linux
 tags:
-- type/automation
 - date/2022-02-04
+- type/automation
 ---
-   
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
-   
-   
-# Auto push site using Git on Linux   
-   
+
+
+# Auto push site using Git on Linux
+
 ``` bash
 # Config
 git_output="/home/user/git/obsidian-html.github.io"
@@ -54,3 +52,5 @@ git add . --all
 git commit -m "autopush"
 git push
 ```
+
+

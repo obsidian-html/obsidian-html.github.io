@@ -13,11 +13,19 @@
                 <title>ObsidianHtml/Documentation</title>
 
                 <!-- Includes -->
-                
-<script src="/obs.html/static/obsidian_core.js"></script>
+                <script src="/obs.html/static/obsidian_core.js"></script>
 <script src="/obs.html/static/encoding.js"></script>
 <link rel="stylesheet" href="/obs.html/static/master.css" />
-<script src="/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+            'securityLevel': 'loose',
+            'theme': 'dark',
+            'themeVariables': {
+                    'darkMode': true,
+            }
+    });
+</script>
 <script>
   MathJax = {
     loader: {
@@ -43,6 +51,8 @@
 <script src="/obs.html/static/pako.js"></script>
 <script src="/obs.html/static/search.js"></script>
 <script src="/obs.html/static/dirtree.js"></script>
+
+
 
 
                 <!-- Onload tweaks -->
@@ -71,8 +81,8 @@
                         <div id="search-results"></div>
                     </div>
                     <div id="search-instructions">
-                        <div class="prompt-instruction">
-                                <b>esc</b> to dismiss
+                        <div class="prompt-instruction mobile">
+                            <button onclick="toggle_id('search-master-div');"><b>Close</b> Search </button>
                         </div>
                     </div>
             </div>
@@ -205,7 +215,6 @@
     <label for="cars">Theme </label>
 
     <select name="theme" id="theme" onchange="set_theme(this.value)">
-      <option value="light">light</option>
       <option value="obs-light" selected="selected">obsidian-light</option>
       <option value="obs-dark">obsidian-dark</option>
     </select> 
@@ -222,7 +231,9 @@
                     </button>
                 </div>
                     <div id="Agraph_full_page" class="graph_div_full"></div>
-
+                    <div class="graph-instructions fadein" id="Dgraph_full_page">
+                        Left-click: follow link, Right-click: select node, Scroll: zoom
+                    </div>
             </div>
                         
             
@@ -251,16 +262,7 @@
                     console.log('hi openlink')
                     return window.ObsHtmlGraph.graph_open_link_normal(args)()
                 }
-                window.ObsHtmlGraph.default_actions['left_click'] = function (args){
-                    console.log('hi leftclick')
-                    let g = window.ObsHtmlGraph.graphs[args.uid];
-                    return g.actions['select_node'](args);
-                }
-                window.ObsHtmlGraph.default_actions['right_click'] = function (args){
-                    console.log('hi rightclick')
-                    let g = window.ObsHtmlGraph.graphs[args.uid];
-                    return g.actions['open_link'](args);
-                }
+
 
                 // Get node id from the page where we clicked on the icon for the fullpage graph
                 const urlParams = new URLSearchParams(window.location.search);

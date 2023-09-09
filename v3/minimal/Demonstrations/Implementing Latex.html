@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <a href="/v3/minimal/Demonstrations/Demonstrations.html" style="color: var(--normal-text-color);">Demonstrations</a> / <a href="/v3/minimal/Demonstrations/Implementing Latex.html" >Implementing Latex</a>
+                    </div>
+                </div>
+<embeddedtitle>Implementing Latex</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/v3/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<h1 id="implementing-latex">Implementing Latex</h1>
+<p>At the moment only the math based latex is enabled. (It's hard to find what Obsidian supports other than the math based latex.)   </p>
+<h2 id="inline-latex-single">Inline Latex (single $)</h2>
+<div class="lang-latex">
+
+<div class="codehilite"><pre><span></span><code>A nice equation for testing is <span class="s">$</span><span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^{</span><span class="m">2</span><span class="nv">\pi</span><span class="nb">} d</span><span class="nv">\theta</span><span class="nb"> x</span><span class="o">+</span><span class="nb">e^{</span><span class="o">-</span><span class="nb">i</span><span class="nv">\theta</span><span class="nb">}</span><span class="s">$</span>
+
+I can also use symbols like <span class="s">$</span><span class="nv">\pi</span><span class="s">$</span> inside of a line.
+</code></pre></div>
+
+
+</div>
+
+<p>A nice equation for testing is <span class="arithmatex">\(\int_0^{2\pi} d\theta x+e^{-i\theta}\)</span>   </p>
+<p>I can also use symbols like <span class="arithmatex">\(\pi\)</span> inside of a line.   </p>
+<h2 id="centered-block-latex-double">Centered block latex (double $)</h2>
+<div class="lang-latex">
+
+<div class="codehilite"><pre><span></span><code><span class="sb">$$</span>
+<span class="nv">\begin</span>
+<span class="nb">{vmatrix}a &amp; b </span><span class="nv">\\</span><span class="nb"> c &amp; d</span>
+<span class="nv">\end</span>
+<span class="nb">{vmatrix}</span><span class="o">=</span><span class="nb">ad</span><span class="o">-</span><span class="nb">bc</span>
+<span class="s">$$</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="arithmatex">\[
+\begin
+{vmatrix}a &amp; b \\ c &amp; d
+\end
+{vmatrix}=ad-bc
+\]</div>
+<h2 id="centernot">Centernot</h2>
+<div class="lang-latex">
+
+<div class="codehilite"><pre><span></span><code><span class="sb">$$</span>
+<span class="nv">\begin</span><span class="nb">{array}{c}</span>
+<span class="nb">  A </span><span class="nv">\not\longrightarrow</span><span class="nb"> B</span><span class="nv">\\</span>
+<span class="nb">  A </span><span class="nv">\centernot\longrightarrow</span><span class="nb"> B</span>
+<span class="nv">\end</span><span class="nb">{array}</span>
+<span class="s">$$</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="arithmatex">\[
+\begin{array}{c}
+  A \not\longrightarrow B\\
+  A \centernot\longrightarrow B
+\end{array}
+\]</div>
+<h2 id="double-centered-block">Double centered block</h2>
+<div class="lang-latex">
+
+<div class="codehilite"><pre><span></span><code><span class="sb">$$</span>
+<span class="nv">\text</span><span class="nb">{block </span><span class="m">1</span><span class="nb">}</span>
+<span class="s">$$</span>
+<span class="sb">$$</span>
+<span class="nv">\text</span><span class="nb">{block </span><span class="m">2</span><span class="nb">}</span>
+<span class="s">$$</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="arithmatex">\[
+\text{block 1}
+$$   
+$$
+\text{block 2}
+\]</div></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.2.0.html">v3.2.0</a></li>
+	<li><a class="backlink" href="/v3/minimal/Demonstrations/Demonstrations.html">demonstrations</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Features/Features.html">features</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v2.2.0.html">v2.2.0</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/type/test_page/index.html">type/test_page</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-05-05/index.html">date/2022-05-05</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

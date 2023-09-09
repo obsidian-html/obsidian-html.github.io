@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <span style="color: #666;">Configurations</span> / <a href="/v3/minimal/Configurations/Features/Features.html" >Features</a>
+                    </div>
+                </div>
+<embeddedtitle>Features</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/v3/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<h2 id="high-level">High level</h2>
+<ul>
+<li><a href="/v3/minimal/General%20Information/Parsing%20Obsidian%20notes%20to%20proper%20markdown.html">Parsing Obsidian notes to proper markdown</a>   </li>
+<li><a href="/v3/minimal/General%20Information/Creating%20a%20static%20html%20website%20from%20markdown%20files.html">Creating a static html website from markdown files</a>   </li>
+</ul>
+<h2 id="note-selection-features">Note selection features</h2>
+<ul>
+<li><a href="/v3/minimal/Configurations/Modes/Process%20All.html">Process All</a>   </li>
+<li><a href="/v3/minimal/Configurations/Modes/Filtering%20notes.html">Filtering notes</a> (inclusion / exclusion of files and or folders)   </li>
+<li><a href="/v3/minimal/Configurations/Modes/Create%20index%20from%20tags.html">Create index from tags</a>   </li>
+<li><a href="/v3/minimal/Instructions/Tutorials/Converting%20just%20one%20subfolder%20in%20your%20vault.html">Converting just one subfolder in your vault</a>   </li>
+</ul>
+<h2 id="basics">Basics</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Short description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Include%20notes.html">Include notes</a></td>
+<td>The ability to use the <code>![[note]]</code> syntax to include a note.</td>
+<td>Not toggleable.</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Configuration%20Options.html#simple-feature-toggles">Erase comments</a></td>
+<td>Remove anything in between <code>%%</code></td>
+<td>Enabled</td>
+</tr>
+</tbody>
+</table>
+<h2 id="html-features">HTML features</h2>
+<h3 id="add-ons">Add-ons</h3>
+<p>These features implement standard Obsidian behavior in the html output.   </p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Short description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Backlinks.html">Backlinks</a></td>
+<td>Adds the backlinks to the note at the bottom of the note.</td>
+<td>Enabed</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Demonstrations/Implementing%20Call-outs.html">Call-outs</a></td>
+<td>Enable call-outs</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Graph%20view.html">Graph view</a></td>
+<td>Add graph view at the bottom of the note</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Demonstrations/Implementing%20Latex.html">Mathjax support</a></td>
+<td>Convert mathjax code to formulas</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Demonstrations/Implementing%20Mermaid%20diagrams%20in%20HTML%20output.html">Mermaid diagrams</a></td>
+<td>Convert mermaid code to diagrams</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Styling/Styling.html">Styling</a></td>
+<td>Enable user to switch between light and dark mode / Choose a different layout.</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Side%20panes.html">Side panes</a></td>
+<td><em>Only for Documentation layout</em>. Configure side panes and their content.</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Styling/Styling.html#table-of-contents">Table of Contents</a></td>
+<td>Add TOC to side-pane instead of in note / add TOC to notes when missing</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Tags%20Page.html">Tags Page</a></td>
+<td>Add a list of tags under each note. Nb: the default preserve_inline_tags setting will create polluted md output!</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Slugify%20html%20links.html">Slugify html links</a></td>
+<td>Have better readable/shareable links by slugifying the html paths</td>
+<td><strong>Disabled</strong></td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Configuration%20Options.html#img_alt_text_use_figure">Add Figcaptions</a></td>
+<td>Create a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption" class="external-link"><code>&lt;figcaption&gt;</code></a> for the image when an alt text is set.</td>
+<td>Enabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extras">Extras</h3>
+<p>These features add functionality from popular obsidian plugins, or extra functionality that make sense for websites (such as an RSS feed).   </p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Short description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Embedded%20note%20title.html">Embedded note title</a></td>
+<td>Have h1 headers be added to your notes so you have more levels to work with</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Folder%20Notes.html">Folder Notes</a></td>
+<td>Open a note when you click on a directory</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/RSS%20Feed.html">RSS Feed</a></td>
+<td>Output an rss feed.</td>
+<td><strong>Disabled</strong></td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Modes/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a></td>
+<td>Create a homepage based on your directory structure</td>
+<td>Enabled, but points to <code>obs.html/dir_index.html</code> instead of <code>index.html</code> by default.</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Website%20navigation%20menu.html">Website navigation menu</a></td>
+<td>Add shortcuts at the top of the page.</td>
+<td>Enabled, but empty list</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Breadcrumbs.html">Breadcrumbs</a></td>
+<td>Add the path to the note at the top of the note</td>
+<td>Disabled, but enabled on this website</td>
+</tr>
+<tr>
+<td><a href="/v3/minimal/Demonstrations/Embedded%20search.html">Embedded search</a></td>
+<td>Parse embedded search blocks (within query fenced code blocks)</td>
+<td><strong>Disabled</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="safety">Safety</h2>
+<ul>
+<li><a href="/v3/minimal/Configurations/Modes/Copy%20vault%20to%20temp%20dir.html">Copy vault to temp dir</a>   </li>
+</ul>
+<h2 id="post-processing">Post processing</h2>
+<p>Transformations to the generated markdown output. This step is done at the very end which means that these post processing transformations have no effect on the html output (if you do the entire conversion step in one go, that is)! Read more here: <a href="/v3/minimal/Configurations/Features/Markdown%20post%20processing.html">Markdown post processing</a>   </p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Short description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/v3/minimal/Configurations/Features/Markdown%20post%20processing.html#md_markdown_callouts">md_markdown_callouts</a></td>
+<td>Convert callouts from obsidian syntax to py block syntax</td>
+<td>Disabled</td>
+</tr>
+</tbody>
+</table>
+<h2 id="extensability">Extensability</h2>
+<ul>
+<li><a href="/v3/minimal/Configurations/Configuration%20Options.html#html-custom-inclusions">Custom stylesheet/javascript inclusions</a>   </li>
+<li><a href="/v3/minimal/Configurations/Configuration%20Options.html#html-template-path-str">Use custom HTML template</a>   </li>
+<li><a href="/v3/minimal/Configurations/Tweaking/Export%20vault%20files%20to%20html%20output.html">Export vault files to html output</a>   </li>
+<li><a href="/v3/minimal/Configurations/Styling/Writing%20a%20custom%20graph%20view%20template.html">Writing a custom graph view template</a>   </li>
+</ul>
+<h2 id="other">Other</h2>
+<p>See <a href="/v3/minimal/Configurations/Configuration%20Options.html">Configuration Options</a> for a detailed look at all the configuration options available.</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Configuration Options.html">configuration options</a></li>
+	<li><a class="backlink" href="/v3/minimal/General Information/Creating a static html website from markdown files.html">creating a static html website from markdown files</a></li>
+	<li><a class="backlink" href="/v3/minimal/Instructions/Usage.html">usage</a></li>
+	<li><a class="backlink" href="/v3/minimal/Instructions/Quickstart.html">quickstart</a></li>
+	<li><a class="backlink" href="/v3/minimal/General Information/About ObsidianHtml.html">about obsidianhtml</a></li>
+	<li><a class="backlink" href="/v3/minimal/index.html">index</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/type/configuration/index.html">type/configuration</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

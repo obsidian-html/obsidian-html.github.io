@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <a href="/v3/minimal/Changelog/Changelog.html" style="color: var(--normal-text-color);">Changelog</a> / <a href="/v3/minimal/Changelog/v3.4.0.html" >v3.4.0</a>
+                    </div>
+                </div>
+<embeddedtitle>v3.4.0</embeddedtitle>
+<div class="content"><blockquote>
+<p>Feature version of <a href="/v3/minimal/Changelog/v3.0.0.html">v3.0.0</a>.    </p>
+</blockquote>
+<h1 id="added">Added</h1>
+<ul>
+<li><code>included_folders</code> now allows a user to select the folders from the vault to include, the rest is "excluded". See also <a href="https://github.com/obsidian-html/obsidian-html/issues/451" class="external-link">#451</a>.   </li>
+<li><code>exclude_subfolders</code>  now also supports glob patterns. This affects both the copying step to the temporary folder, and the file tree generator (for when copying to temp dir is turned off).   </li>
+<li>Image titles can now be added alongside scaling, use for example:   </li>
+</ul>
+<div class="lang-md">
+
+<div class="codehilite"><pre><span></span><code>  ![<span class="nt">cat|100</span>](<span class="na">200w.gif</span>)
+  ![[200w.gif|cat|100]]
+</code></pre></div>
+
+
+</div>
+
+<ul>
+<li>
+<p>Inclusions are now shown in the graph view with dotted edges. See also <a href="https://github.com/obsidian-html/obsidian-html/issues/425" class="external-link">#425</a>.   </p>
+<ul>
+<li>Can be turned off with: <br />
+<code>yaml   
+  graph:   
+    show_inclusions_in_graph: False</code>   </li>
+</ul>
+</li>
+<li>
+<p><a href="/v3/minimal/Configurations/Note%20settings/Note%20settings.html">Note settings</a> expanded, have a browse there.   </p>
+</li>
+<li>Added <code>homepage_label</code> to <a href="/v3/minimal/Configurations/Modes/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a> to overwrite the <code>index</code> list item to e.g. <code>My homepage</code>.   </li>
+<li>All localStorage calls are now wrapped to fail gracefully to allow a visitor to disable javascript if the compiled website is properly configured. See <a href="https://github.com/obsidian-html/obsidian-html/issues/352" class="external-link">#352</a>.   </li>
+<li>Folders with an associated <a href="/v3/minimal/Configurations/Features/Folder%20Notes.html">folder note</a> can now also be closed in the dirtree pane created by <a href="/v3/minimal/Configurations/Modes/Create%20Index%20from%20Directory%20Structure.html">Create Index from Directory Structure</a>. See <a href="https://github.com/obsidian-html/obsidian-html/issues/469" class="external-link">#469</a>.   </li>
+</ul>
+<h1 id="features">Features</h1>
+<ul>
+<li><a href="/v3/minimal/Configurations/Features/Side%20panes.html">Side panes</a> feature was added. For this, the <a href="/v3/minimal/Configurations/Modes/Create%20index%20from%20tags.html">Create index from tags</a> feature was modernized to be able to properly provide content for either side pane.   </li>
+</ul>
+<h1 id="bugfixes">Bugfixes</h1>
+<ul>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/532" class="external-link">Obsidian links not parsed correctly when parentheses are present without a space</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/536" class="external-link">Empty embed links cause a crash</a>.    <ul>
+<li>Changed this so it just creates an empty img tag.   </li>
+</ul>
+</li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/474" class="external-link">ImportError: cannot import name 'UnescapeTreeprocessor' from 'markdown.treeprocessors'</a>.    <ul>
+<li>Added minimum requirement for markdown in setup.cfg.   </li>
+</ul>
+</li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/512" class="external-link">Inline tags and code blocks not working in footnotes</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/515" class="external-link">Imagescaling regression</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/511" class="external-link">Table column borders are missing every other column</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/521" class="external-link">General latex parsing bug</a>   <ul>
+<li>Latex was not properly treated as a code block, resulting in a whole family of potential bugs where obsidianhtml would edit the latex code block before it could be parsed by python-markdown/latex.js   </li>
+</ul>
+</li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/488" class="external-link">Single-line callouts don't work</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/496" class="external-link">Scrollbar missing in contents pane</a>   </li>
+<li>Fixed: <a href="https://github.com/obsidian-html/obsidian-html/issues/465" class="external-link">Bug where includable files were not copied to html output</a>   </li>
+</ul>
+<h1 id="changes">Changes</h1>
+<ul>
+<li>Alterations in <a href="/v3/minimal/Configurations/Modes/Create%20index%20from%20tags.html">Create index from tags</a>   </li>
+<li>Alterations in <a href="/v3/minimal/Configurations/Features/Embedded%20note%20title.html">Embedded note title</a> to accomodate changes in Obsidian   </li>
+<li>Enabling glob support required that values in <code>exclude_subfolders</code>  now should start with a slash when excluding a specific folder. Excluding any folder with the given name, the starting slash should be dropped.</li>
+</ul></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Features/Side panes.html">side panes</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Modes/Filtering notes.html">filtering notes</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Features/Embedded note title.html">embedded note title</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Deprecated Configurations/exclude_subfolders.html">exclude_subfolders</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.4.1.html">v3.4.1</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/Changelog.html">changelog</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-10-12/index.html">date/2022-10-12</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

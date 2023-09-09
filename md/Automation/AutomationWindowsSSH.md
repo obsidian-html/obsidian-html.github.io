@@ -1,18 +1,16 @@
 ---
 graph_name: Auto push site using Git on Windows
 tags:
-- type/automation
 - date/2022-02-04
+- type/automation
 ---
-   
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
-   
-   
-# Auto push site to a local webserver on Windows   
-This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the [Git method](../Automation/AutomationWindows.md) or something along those lines.   
-   
-> I did not feel like rewriting this script. This is just here as a reference. Be sure to update all the hardcode values for something that makes sense for your environment.   
-   
+
+
+# Auto push site to a local webserver on Windows
+This is a nice method if your webserver is reachable over SSH from your workstation. Otherwise, I advise using the [Git method](../Automation/AutomationWindows.md) or something along those lines.
+
+> I did not feel like rewriting this script. This is just here as a reference. Be sure to update all the hardcode values for something that makes sense for your environment.
+
 ``` powershell
 Function Publish-Obsidian {
 
@@ -44,6 +42,6 @@ Function Publish-Obsidian {
 	cd $origin
 }
 ```
-   
-   
+
+
 [Other ways of pushing websites](../Automation/Automate%20website%20deployment.md)

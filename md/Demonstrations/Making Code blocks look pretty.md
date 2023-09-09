@@ -1,19 +1,17 @@
 ---
 graph_name: Code blocks
 tags:
+- date/2022-02-04
 - feature/html_output
 - type/styling
-- date/2022-02-04
 ---
-   
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
-   
-   
-# Code blocks   
-This is built into python-markdown, and enabled by default.   
-Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created.   
-   
-## Python   
+
+
+# Code blocks
+This is built into python-markdown, and enabled by default.
+Any codeblock or codeline is excempt from modification because they get cut out of the markdown code in the beginning, and then reinserted right before the html is created.
+
+## Python
 ``` python
 import sys 					# commandline arguments
 import shutil 				# used to remove a non-empty directory, copy files
@@ -33,8 +31,8 @@ entrypoint = sys.argv[2] 	# The note that will be used as the index.h
 if root_folder[-1] == '\\':
  root_folder = root_folder[:-1]
 ```
-   
-   
+
+
 ``` python
 # -- CLIENT SETUP --------------------------------------------------------------------
 # ====================================================================================
@@ -58,10 +56,10 @@ async def on_message(message):
     if message.author == client.user:
         return
 ```
-   
-   
-   
-## Powershell   
+
+
+
+## Powershell
 ```powershell
 Function Add-Link {
     param(
@@ -82,11 +80,10 @@ Function Add-Link {
     plink -batch -i $PrivateKeyPath user@web002 -m "$($env:TEMP)\_addlink.sh"
 }
 ```
-   
-   
-## YAML   
+
+
+## YAML
 ``` yaml
----
 # This is a basic workflow to help you get started with Actions
 
 name: CI
@@ -125,9 +122,9 @@ jobs:
           touch /home/github/testttttt
           pwd
 ```
-   
-   
-## Bash   
+
+
+## Bash
 ``` bash
     # Set rights
     # ---------------------------
@@ -153,3 +150,4 @@ jobs:
         sudo echo "" > /etc/nginx/sites-available/default
     fi    
 ```
+

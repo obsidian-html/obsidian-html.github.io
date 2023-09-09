@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <a href="/v3/minimal/Changelog/Changelog.html" style="color: var(--normal-text-color);">Changelog</a> / <a href="/v3/minimal/Changelog/v3.0.0.html" >v3.0.0</a>
+                    </div>
+                </div>
+<div class="content"><h1 id="v3-0-0">v3.0.0</h1>
+<h2 id="breaking-changes">Breaking changes</h2>
+<ul>
+<li>The no_tabs layout has been removed because this layout is functionally the same as the documentation layout now that we have introduced the folding panels.   </li>
+<li>The custom grapher system has been rewritten to make use of javascript modules. Any custom grapher code will have to be rewritten as well. See <a href="/v3/minimal/Configurations/Styling/Writing%20a%20custom%20graph%20view%20template.html">Writing a custom graph view template</a> for more information.   </li>
+</ul>
+<h2 id="new-features">New features</h2>
+<h3 id="duplicate-filenames-now-supported">Duplicate filenames now supported</h3>
+<p>Files are now addressed based on full path, instead of filename. This arised from new insights on how Obsidian filepath parsing works. Starting with this version it is thus possible to have, for example, a notes.md file in every folder.    </p>
+<p>This does require that you turn on <a href="/v3/minimal/Configurations/Configuration%20Options.html#allow-duplicate-filenames-in-root">Configuration Options#Allow Duplicate Filenames in Root</a>.   </p>
+<h3 id="graph-toggling">Graph toggling</h3>
+<p>The user can now choose which grapher they want to use. The choice is persisted in localStorage. The custom grapher system has been rewritten to make use of javascript modules. Any custom grapher code will have to be rewritten.   </p>
+<h2 id="full-collapsible-directory-tree-in-side-pane">Full collapsible directory tree in side pane</h2>
+<p>The dir tree in the left pane now shows the entire directory. It is now compiled in the python step, instead of via javascript, and the current page is highlighted + the necessary folders are opened on load to make the current page visible.   </p>
+<h2 id="collapsible-side-panes-in-documentation-view">Collapsible side panes in documentation view</h2>
+<p>The whole of the left and right panes are collapsible to make more space for reading. The panes are folded open/closed based on screen width <em>until</em> a user toggles a pane, from that moment on the choice is persisted in localStorage and this choice is then used going forward.   </p>
+<h2 id="refactors-tweaks">Refactors / tweaks</h2>
+<h3 id="modularizing-of-javascript-code">Modularizing of javascript code</h3>
+<p>This is mostly to tidy up the code and keep us from polluting the global scope. Aside from that not yet really interesting in itself. This process is half completed. Code on the "sidelines" that are easy to modularize have been modularized, the rest still needs to be done.   </p>
+<h3 id="browsable-without-javascript-enabled">Browsable without javascript enabled</h3>
+<p>At heart what the compiled website is, is a wiki, and for this we don't need any javascript. Some people want to have javascript disabled for security reasons, and the sites compiled by obsidianhtml should accommodate that when feasible. These changes are aimed at opening toggleable divs by default and then closing them with javascript, making sure that content is viewabe when javascript is disabled.   </p>
+<h3 id="dataview-integration-alpha">Dataview integration (alpha)</h3>
+<p>Starting with this version you can enable dataview integration. When enabled it will look in your vault for a folder called <code>obs.html/export</code> , which should contain html exports. These exports can be generated by installing and running the <a href="https://github.com/obsidian-html/obs.html" class="external-link">obs.html</a> Obsidian plugin.   </p>
+<p>This feature is in early alpha. Look here for development notes/status or if you want to chime in: <a href="https://github.com/obsidian-html/obsidian-html/issues/271" class="external-link">https://github.com/obsidian-html/obsidian-html/issues/271</a>   </p>
+<h2 id="bugfixes">Bugfixes</h2>
+<h3 id="css-layers-causing-chrome-to-hang">Css Layers causing Chrome to hang</h3>
+<p>Yes you read that right. CSS layers are removed for this reason.   </p>
+<h3 id="toc-showing-up-in-notes-without-an-h1"><code>"[TOC]"</code> showing up in notes without an <code>#h1</code></h3>
+<p>Minor bug, fixed now</p></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.5.0.html">v3.5.0</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.2.0.html">v3.2.0</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.3.0.html">v3.3.0</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.4.0.html">v3.4.0</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.1.0.html">v3.1.0</a></li>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Styling/Writing a custom graph view template.html">writing a custom graph view template</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.0.3.html">v3.0.3</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.0.2.html">v3.0.2</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v3.0.1.html">v3.0.1</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/Changelog.html">changelog</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-05-28/index.html">date/2022-05-28</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <a href="/v3/minimal/Changelog/Changelog.html" style="color: var(--normal-text-color);">Changelog</a> / <a href="/v3/minimal/Changelog/v2.1.0.html" >v2.1.0</a>
+                    </div>
+                </div>
+<div class="content"><h1 id="v2-1-0">v2.1.0</h1>
+<blockquote>
+<p>Feature version of <a href="/v3/minimal/Changelog/v2.0.0.html">v2.0.0</a>   </p>
+</blockquote>
+<h2 id="graph-view">Graph view</h2>
+<ul>
+<li>There is now a full-page graph view   </li>
+<li>It is now possible to <a href="/v3/minimal/Configurations/Styling/Writing%20a%20custom%20graph%20view%20template.html">write a custom graph view template</a>.   </li>
+<li>The default graph is now the 3d built-in template, based on <a href="https://github.com/vasturiano/force-graph" class="external-link">force-graph</a> instead of d3.js   </li>
+<li>For the 2d template:   <ul>
+<li>Auto zooming on current note and connected notes   </li>
+</ul>
+</li>
+<li>In the note graph view right clicking now allows to select another note to more easily see its connections. In the full-page graph view the left/right click actions are reversed.   </li>
+</ul>
+<h2 id="call-outs">Call-outs</h2>
+<blockquote>
+<p>Added in this version   </p>
+</blockquote>
+<ul>
+<li>Achieved feature parity with Obsidian (as far as I can tell), but there might be some bugs/styling tweaks to be done in following patch versions.   </li>
+<li>Read more: <a href="/v3/minimal/Demonstrations/Implementing%20Call-outs.html">Implementing Call-outs</a>   </li>
+</ul>
+<h2 id="lifecycling">Lifecycling</h2>
+<ul>
+<li>distutils copy_tree was deprecated, this was replaced with shutil copytree, but this gave issues on macOs so that was then replaced by a custom function based on shutil's copytree.   </li>
+</ul>
+<h2 id="bugfixes">Bugfixes</h2>
+<ul>
+<li>When backlinks are turned off, a key not found error occurred at the AddCrosslinks() step.   </li>
+</ul>
+<h2 id="tweaks">Tweaks</h2>
+<ul>
+<li>TOC/Content panes were added in <a href="/v3/minimal/Changelog/v2.0.0.html">v2.0.0</a> there were some small implementation/styling tweaks done. Inline TOC is now a bit better styled, for example.</li>
+</ul></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Configurations/Styling/Writing a custom graph view template.html">writing a custom graph view template</a></li>
+	<li><a class="backlink" href="/v3/minimal/Demonstrations/Implementing Call-outs.html">implementing call-outs</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/v2.1.1.html">v2.1.1</a></li>
+	<li><a class="backlink" href="/v3/minimal/Changelog/Changelog.html">changelog</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-04-24/index.html">date/2022-04-24</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

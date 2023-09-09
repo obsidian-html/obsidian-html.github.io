@@ -3,15 +3,14 @@ tags:
 - type/instruction
 - date/2022-02-12
 ---
-   
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
-   
-These steps describe how to install the requirements and use obsidianhtml from the code, instead of installing it as a package.    
-   
-This way you can quickly test changes and/or customize the code to your liking.   
-   
-For the normal installation process, follow [Installation](../Instructions/Installation.md). If you are asked to install the latest working version, follow [Install a different version](../Instructions/Install%20a%20different%20version.md).   
-   
+# Run custom code
+
+These steps describe how to install the requirements and use obsidianhtml from the code, instead of installing it as a package. 
+
+This way you can quickly test changes and/or customize the code to your liking.
+
+For the normal installation process, follow [Installation](../Instructions/Installation.md). If you are asked to install the latest working version, follow [Install a different version](../Instructions/Install%20a%20different%20version.md).
+
 ``` bash
 # Get the code
 # Note that the master branch is work in progress! Code might be broken. 

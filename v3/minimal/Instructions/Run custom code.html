@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <span style="color: #666;">Instructions</span> / <a href="/v3/minimal/Instructions/Run custom code.html" >Run custom code</a>
+                    </div>
+                </div>
+<embeddedtitle>Run custom code</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/v3/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<p>These steps describe how to install the requirements and use obsidianhtml from the code, instead of installing it as a package.    </p>
+<p>This way you can quickly test changes and/or customize the code to your liking.   </p>
+<p>For the normal installation process, follow <a href="/v3/minimal/Instructions/Installation.html">Installation</a>. If you are asked to install the latest working version, follow <a href="/v3/minimal/Instructions/Install%20a%20different%20version.html">Install a different version</a>.   </p>
+<div class="lang-bash">
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Get the code</span>
+<span class="c1"># Note that the master branch is work in progress! Code might be broken. </span>
+<span class="c1"># Move into a release branch if you want fully tested code instead.</span>
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:obsidian-html/obsidian-html.git
+
+<span class="c1"># Move into folder</span>
+<span class="nb">cd</span><span class="w"> </span>obsidian-html
+
+<span class="c1"># Install all the dependencies of the package, and the package itself.</span>
+<span class="c1"># You only need to do this once.</span>
+pip<span class="w"> </span>install<span class="w"> </span>.
+
+<span class="c1"># Run ObsidianHtml from code (so not via the package)</span>
+python<span class="w"> </span>-m<span class="w"> </span>obsidianhtml<span class="w"> </span>-i<span class="w"> </span>/path/to/config.yml
+</code></pre></div>
+
+
+</div></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Instructions/Install a different version.html">install a different version</a></li>
+	<li><a class="backlink" href="/v3/minimal/Instructions/Installation.html">installation</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-02-12/index.html">date/2022-02-12</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

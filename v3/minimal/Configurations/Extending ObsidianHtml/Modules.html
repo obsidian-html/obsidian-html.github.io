@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 2;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <span style="color: #666;">Configurations</span> / <span style="color: #666;">Extending ObsidianHtml</span> / <a href="/v3/minimal/Configurations/Extending ObsidianHtml/Modules.html" >Modules</a>
+                    </div>
+                </div>
+<embeddedtitle>Modules</embeddedtitle>
+<div class="content"><blockquote>
+<p>This is the documentation for <a href="/v3/minimal/Changelog/v3.5.0.html">v3.5.0</a> and lower, for documentation for <strong>v4.0.0</strong> and higher, see <a href="https://obsidian-html.github.io/v4" class="external-link">https://obsidian-html.github.io/v4</a>   </p>
+</blockquote>
+<div class="callout callout-warning active" rasa="1">
+<div class="callout-title ">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+</div>
+<div class="callout-title-name">Warning
+</div>
+</div>
+<div class="callout-content">
+<p>The module system currently is still in <strong>alpha</strong>. Any part of the system might still change until further notice, so keep that in mind before diving into the module system.</p>
+</div>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>Modules are the proposed way <a href="/v3/minimal/Log/Moving%20to%20a%20Module%20system.html">to keep the complexity of ever increasing amounts of features in check</a>. It is my intent to rewrite every chunk of functionality as a module, which will have a clearly defined function, interface, input and output, and thus will be able to be swapped out by a different module that provides the same output but that produces it in a different way.   </p>
+<p>Built-in modules will also be required to include testing functions.   </p>
+<h2 id="examples">Examples</h2>
+<p>The module system is currently already in use (in the master branch code) for internal functions of ObsidianHtml.   </p>
+<p>You can find all the modules, and the code to manage them, in this folder:   </p>
+<ul>
+<li><a href="https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules</a>   </li>
+</ul>
+<p>The builtin folder contains a number of modules that are currently used:   </p>
+<ul>
+<li><a href="https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules" class="external-link" class="external-link">https://github.com/obsidian-html/obsidian-html/tree/master/obsidianhtml/modules</a>/builtin   </li>
+</ul>
+<h1 id="high-level-design">High level design</h1>
+<h2 id="inputs-and-outputs">Inputs and outputs</h2>
+<p>All the inputs and outputs will be in the form of files. The default format should be pretty printed json, to be able to interoperate with different languages.   </p>
+<p>One of the first modules to be written will take the given path to the user config, merge it with the default config, and write the merged config as a pretty printed json to either <code>md_output_folder/obs.html/module_data/config.json</code>  or <code>html_output_folder/obs.html/module_data/config.json</code>, depending on whether compile_html is true.   </p>
+<h3 id="the-module_data-folder">The module_data folder</h3>
+<p>At the beginning, one folder is chosen that will contain all the in- and output files.    </p>
+<p><strong>All</strong> the in- and outputs will be written to that one folder. Subfolders are allowed, so one can choose to write to <code>html_output_folder/obs.html/module_data/md/...</code>  and <code>html_output_folder/obs.html/module_data/html/...</code> to discern similar outputs at different phases of the compilation.   </p>
+<h2 id="module-interface">Module interface</h2>
+<h3 id="run-and-accept">Run() and Accept()</h3>
+<p>Very generally speaking, the module (denoted as <code>module</code>) provides the <code>module.run()</code> method, which does all the work. This method will read from the <code>module_data_folder</code>, write to it, and alter the temp_vault/md/html output.    </p>
+<p>The <code>module.run()</code> method is normally called by <code>controller.run_module()</code>.    </p>
+<p>Before the <code>module.run()</code> method is executed, another method, <code>module.accept()</code>, is executed first. If this returns <code>False</code>, further execution is stopped. Thus, via the accept method, you can tell ObsidianHtml whether the module should be run or not, based on user config, module data files, etc.   </p>
+<p>Note that a <code>None</code> return value will also count as a "go ahead", this is to make it very explicitly that the module needs to return False to enact the module skipping behavior.   </p>
+<div class="callout callout-important active" rasa="1">
+<div class="callout-title ">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"></path></svg>
+</div>
+<div class="callout-title-name">Important
+</div>
+</div>
+<div class="callout-content">
+<p>The <code>module.integrate_load()</code> function (see below) is  always run, as this might provide necessary information to the module.accept() function.</p>
+<p><strong>No post-modules are  run</strong> if <code>module.accept()</code> returns <code>False</code>! The module is skipped as if it was never called.</p>
+</div>
+</div>
+<h3 id="integration-functions">Integration functions</h3>
+<p>The module system is here to replace an older system, wherein all the necessary information is passed around in an object, aptly named PicknickBasket, or <code>pb</code> for short.   </p>
+<p>As modules should disentangle data flow, this object is being phased out. To make it possible to write modules while other parts of the code are still using the <code>pb</code> object, you can use the <code>module.integrate_load()</code> method to read in data from the pb object prior to running your <code>module.run()</code> method, and <code>module.integrate_save()</code> to write any changes back into the <code>pb</code> object.   </p>
+<div class="callout callout-important active" rasa="1">
+<div class="callout-title ">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"></path></svg>
+</div>
+<div class="callout-title-name">Important
+</div>
+</div>
+<div class="callout-content">
+<p>Any data provided by a module should be written away as a file in the <code>module_data_folder</code>. Using data provided by other modules should also be done in this way! Once all the code is moved to a module structure, the <code>pb</code> object should be able to be removed. If you rely on this object existing when writing new modules, you are creating new dependencies on the <code>pb</code> object, which defeats the whole purpose.</p>
+</div>
+</div>
+<p>When you write custom modules, you very likely don't need to integrate with the old (<code>pb</code>) system. So you can ignore these functions, as long as you implement them (to satisfy the requirements):   </p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MyCustomModule</span><span class="p">(</span><span class="n">ObsidianHtmlModule</span><span class="p">):</span>
+    <span class="c1"># &lt;provides, requires, alters blocks&gt; ...</span>
+    <span class="c1"># &lt;run methods&gt; ...</span>
+    <span class="k">def</span> <span class="nf">integrate_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">integrate_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pb</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div>
+
+
+</div>
+
+<p>The requirement here is pretty clear, you will get an error if you don't implement these.   </p>
+<blockquote>
+<p>Once the <code>pb</code> object is fully phased out, ObsidianHtml will start throwing deprecation warnings when these methods are defined, to prompt their timely removal, prior to full removal of the <code>pb</code> object (which would at that point break any code still trying to access the pb object).   </p>
+</blockquote>
+<h2 id="module-config">Module config</h2>
+<p>We currently have config that is used by every part of the code. While we will keep global toggles, such as <code>verbosity</code>, it is also very nice to have a structured way to configure one separate module at a time.   </p>
+<p>To add configuration to your module, define the <code>module.define_mod_config_defaults()</code> method. <br />
+See the example below.   </p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code>    <span class="k">def</span> <span class="nf">define_mod_config_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mod_config</span><span class="p">[</span><span class="s2">&quot;fail_on_existing&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Exit with error if output folders are not empty.&quot;</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mod_config</span><span class="p">[</span><span class="s2">&quot;clean_existing&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Files that exist in the output folders are deleted.&quot;</span>
+        <span class="p">}</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Users can then pass in configuration via the config.yml via the <code>module_config</code> dict:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">prepare_output_folders</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">fail_on_existing</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exit with error if output folders are not empty.</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">clean_existing</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Files that exist in the output folders are deleted.</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="callout callout-note active" rasa="1">
+<div class="callout-title ">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
+</div>
+<div class="callout-title-name">Note
+</div>
+</div>
+<div class="callout-content">
+<p>Currently, only the <code>value</code> value is copied from the config.yml into the <code>module.mod_config</code> object. <code>description</code> is mostly for documentation purposes. If you require more keys to be copied over, please <a href="/v3/minimal/General%20Information/Report%20Issues%20%26%20Request%20features.html">contact us</a> to get it added.</p>
+</div>
+</div>
+<p>The key <code>prepare_output_folders</code> should match with the value for <code>name</code> as used in the module_list dict:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">module_list</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">preparation</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prepare_output_folders</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ensures the output folders are created</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Optionally removes previous output if it exists in the target directories</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="callout callout-usage active" rasa="1">
+<div class="callout-title ">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5L19 9l-4-4L3.5 16.5 2 22z"></path></svg>
+</div>
+<div class="callout-title-name">Usage
+</div>
+</div>
+<div class="callout-content">
+<p>You can use <code>self.value_of("key")</code> to get the value of a module_configuration instead the considerably more annoying-to-type: <code>self.mod_config["key"]["value"]</code>.</p>
+</div>
+</div>
+<h2 id="instantiating-of-the-module">Instantiating of the module</h2>
+<p>The module will be instantiated by ObsidianHtml with the following input:   </p>
+<ul>
+<li>The parameter <code>module_data_folder</code> will be passed in, which is the absolute path in the form of a posix string pointing to the folder that was chosen to hold all the in- and outputs for the various modules.   </li>
+<li><code>module_name</code> will be passed in. This is the name that you give in the <code>modules</code> list (see below), and can be considered a dog-tag, or alias. Not be confused with <code>ObsidianHtmlModule.module_class_name</code>, which will also be set, and which is the module class's name as defined in the python code (alias for <code>self.__class__.__name__</code>).   </li>
+<li><code>persistent</code> (bool) will be passed in, denoting on whether the module object will be stored for later retrieval, or be a one-use instance.   </li>
+</ul>
+<p>All other input should be read from the module data folder.   </p>
+<h3 id="overwriting-the-abstract-base-class-s-__init__-method">Overwriting the abstract base class's <code>__init__</code> method</h3>
+<p>You shouldn't, really. Though perhaps there is some very special reason that you need to alter the init method.    </p>
+<p>When overwriting this method, be sure to follow the same input scheme, and to call the ABC's init function:   </p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># my custom code</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">my_custom_attr</span> <span class="o">=</span> <span class="s1">&#39;placeholder&#39;</span>
+
+    <span class="c1"># invoke parent&#39;s init method </span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+<h1 id="module-structure">Module structure</h1>
+<h2 id="general">General</h2>
+<p>A module is any class that extends the <code>obsidianhtml.modules.ObsidianHtmlModule</code> abstract base class, e.g.:   </p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">obsidianhtml.modules</span> <span class="kn">import</span> <span class="n">ObsidianHtmlModule</span>
+<span class="k">class</span> <span class="nc">MyModule</span><span class="p">(</span><span class="n">ObsidianHtmlModule</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Note that there are a couple of required methods that should be added to your class, for it to be accepted, see the section below.   </p>
+<h2 id="required-methods">Required methods</h2>
+<h2 id="run">run()</h2>
+<p>The module is expected to implement at the very least the <code>run()</code> method. This method is supposed to execute the main module code.   </p>
+<p>The method is supposed to return nothing. If it does, this is considered a failure. Currently this will just be logged and the program will continue. The provided resources will be marked as failed, thus blocking any modules reliant on it downstream.   </p>
+<h2 id="accept-module_data_folder">accept(module_data_folder)</h2>
+<p>Should return <code>False</code> if <code>module.run()</code> should not be executed, for any reason. Any other return value is taken as a go-ahead for running <code>module.run()</code>.   </p>
+<h2 id="required-properties">Required properties</h2>
+<p>Properties that are required are always implemented as <code>@property</code> annotated methods.   </p>
+<h3 id="requires">requires()</h3>
+<p>Should return a tuple of relative paths (posix strings) of the files that are expected to exist before the module is executed.   </p>
+<p>Empty tuples are returned when no input is required.   </p>
+<h3 id="provides">provides()</h3>
+<p>Should return a tuple of relative paths (posix strings) of the files that are expected to exist before the module is executed.   </p>
+<p>Empty tuples are returned when no output is written.   </p>
+<h3 id="alters">alters()</h3>
+<p>Should return a tuple of strings that denote what resources are altered by the module. Valid values are listed as:   </p>
+<ul>
+<li><code>"md_output_notes"</code>   <ul>
+<li>The module writes in the markdown output folder, altering the content of the notes.   </li>
+<li>If the module writes in the md folder, but does not touch the notes themselves, then use <code>"md_misc"</code>   </li>
+</ul>
+</li>
+<li><code>"html_output_notes"</code>   <ul>
+<li>The module writes in the html output folder, altering the content of the notes.   </li>
+<li>If the module writes in the html folder, but does not touch the notes themselves, then use <code>"html_misc"</code>   </li>
+</ul>
+</li>
+<li><code>"vault_notes"</code>   <ul>
+<li>The module writes in the Obsidian vault.   </li>
+<li>Modules with this setting are disallowed unless <code>copy_vault_to_tempdir: True</code>   <ul>
+<li>This disallow can be overwritten by adding <code>toggles/unsafe: True</code> to the config.yaml   </li>
+</ul>
+</li>
+<li>If the module writes in the vault, but does not touch the notes themselves, then use <code>"vault_misc"</code>   </li>
+</ul>
+</li>
+</ul>
+<p>Note that you don't need to specify whether the module writes in the module data folder, as this is apparent from the <code>ObsidianHtmlModule.provides</code> value.   </p>
+<h2 id="the-requires-provides-alters-attributes">The requires, provides, alters attributes</h2>
+<p>Optionally, the module can list the inputs it expects in the <code>ObsidianHtmlModule.requires</code> tuple object, and list the outputs it provides in the <code>ObsidianHtmlModule.provides</code> tuple object.   </p>
+<p>If a module alters an existing file, you can list the file in both the <code>ObsidianHtmlModule.requires</code> and the <code>ObsidianHtmlModule.provides</code>. In fact, whenever a module is called that has an output with the same name as an existing output, the action will be logged as an <code>alter</code> action. E.g.:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code><span class="n">ModuleA</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="o">[</span><span class="n">config</span><span class="p">.</span><span class="n">json</span><span class="o">]</span>
+<span class="n">ModuleB</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">json</span><span class="err">;</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="o">[</span><span class="n">tags</span><span class="p">.</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">nodes</span><span class="p">.</span><span class="n">json</span><span class="o">]</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">altered</span><span class="w"> </span><span class="o">[</span><span class="n">config</span><span class="p">.</span><span class="n">json</span><span class="o">]</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Such a log will surely prove invaluable for following all the cross-interactions between modules and their input/outputs.   </p>
+<h1 id="persistence">Persistence</h1>
+<h2 id="run-the-same-module-multiple-times">Run the same module multiple times</h2>
+<p>For every item in the <code>module</code> list, a new object will be created, even when the same module is listed multiple times. So the object of the first run is not the same as the object of the second run. This means that you cannot persist state within the object between runs (unless persistence is explicitly set).   </p>
+<p>To reuse a module object it has to have <code>persistent: True</code> on the first call, and on the second call. <br />
+Take this example:   </p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">obsidianhtml.modules</span> <span class="kn">import</span> <span class="n">ObsidianHtmlModule</span>
+<span class="k">class</span> <span class="nc">MyModule</span><span class="p">(</span><span class="n">ObsidianHtmlModule</span><span class="p">):</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">provides</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hi_there</span> <span class="o">=</span> <span class="s2">&quot;hi from the second run&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi from the first run&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">run2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hi_there</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">export_module</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">MyModule</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+<p>With    </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">modules</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/module/file.py&#39;</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module</span>
+<span class="w">    </span><span class="nt">persistent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/module/file.py&#39;</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module</span>
+<span class="w">    </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run2</span>
+<span class="w">    </span><span class="nt">persistent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Should give:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code>hi from the first run
+hi from the second run
+</code></pre></div>
+
+
+</div>
+
+<p>If you don't set <code>persistent: True</code> on the first invocation, the module will not be stored, and thus not retrievable in the second run. If you don't set it at the second run, the module system will create a new module object, as that is the default behavior.   </p>
+<h1 id="metamodules">Metamodules</h1>
+<p>These modules apply to the running of other modules. They do not apply to themselves or other metamodules.   </p>
+<p>They can be either run before running a module, think of a checker module; or after a module, for example a logger. For metamodules that should be run before every module, use <code>ObsidianHtmlPreModule</code>, and use <code>ObsidianHtmlPostModule</code> for the other case.   </p>
+<p>Metamodules currently work similar to normal modules, except for:   </p>
+<ul>
+<li><code>ObsidianHtmlPostModule</code> will get the following extra inputs to their run method:   <ul>
+<li><code>module</code>: the module object that was just run   </li>
+<li><code>result</code>: the value that was returned by the module object's run method   </li>
+</ul>
+</li>
+</ul>
+<p>To be implemented:   </p>
+<div class="lang-general">
+
+<div class="codehilite"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="n n-Quoted">`ObsidianHtmlPreModule`</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">following</span><span class="w"> </span><span class="n">extra</span><span class="w"> </span><span class="n">inputs</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">method</span><span class="o">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n n-Quoted">`module`</span><span class="o">:</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">run</span>
+</code></pre></div>
+
+
+</div>
+
+<h1 id="writing-modules-requirements">Writing modules &amp; requirements</h1>
+<h2 id="accessing-config-values">Accessing config values</h2>
+<p>You can use <code>self.gc()</code> "get config" method to load a key from the config yaml:   </p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MyCustomModule</span><span class="p">(</span><span class="n">ObsidianHtmlModule</span><span class="p">):</span>
+    <span class="c1"># &lt;provides, requires, alters blocks&gt; ...</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gc</span><span class="p">(</span><span class="s2">&quot;toggles/compile_md&quot;</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;do stuff&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+<p>Notice here the slashes, which are used to navigate the config tree elements, e.g.:   </p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">compile_md</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+
+
+</div>
+
+<h2 id="reading-and-writing-modfiles">Reading and writing modfiles</h2>
+<p>Any file written into the <code>module_data_folder</code> is called a <code>modfile</code>. To read such a file from within your own module, see the following examples:   </p>
+<div class="lang-python">
+
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MyCustomModule</span><span class="p">(</span><span class="n">ObsidianHtmlModule</span><span class="p">):</span>
+
+    <span class="c1"># &lt;provides, requires, alters blocks&gt; ...</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># write simple file to module_data_folder/test.md</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modfile</span><span class="p">(</span><span class="s2">&quot;test.md&quot;</span><span class="p">,</span> <span class="s2">&quot;hi there&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+
+        <span class="c1"># convert to json</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modfile</span><span class="p">(</span><span class="s2">&quot;test.json&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;this is&#39;</span><span class="p">,</span> <span class="s1">&#39;a list&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">run2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># retrieve contents with .text()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">modfile</span><span class="p">(</span><span class="s2">&quot;test.md&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
+
+        <span class="c1"># convert contents and retrieve them with .from_json() and .from_yaml()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">modfile</span><span class="p">(</span><span class="s2">&quot;test.json&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">from_json</span><span class="p">()</span>
+</code></pre></div>
+
+
+</div>
+
+<p>The object returned by <code>self.modfile()</code> will do checking upon accessing the modfiles. If a modfile is read but not listed under <code>self.requires</code>, then this will lead to an error, and similarly for writing a file.   </p>
+<div class="callout callout-attention active" rasa="1">
+<div class="callout-title ">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+</div>
+<div class="callout-title-name">Attention
+</div>
+</div>
+<div class="callout-content">
+<p>Any modules that are added in PR's that read/write modfiles with other means than <code>self.modfile().*.write()</code> and <code>self.modfile().read()</code> will be rejected.</p>
+</div>
+</div></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Log/Moving to a Module system.html">moving to a module system</a></li>
+</ul>
+</div>
+
+<div class="tags">
+
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="About ObsidianHtml">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/v3/minimal/favicon.ico" />
+        <!-- Set title -->
+        <title>ObsidianHtml/Documentation (Minimal)</title>
+
+        <script>
+            var DO_NOT_OVERWRITE_LINK_BEHAVIOR = true;
+            const PAGE_DEPTH = 1;
+        </script>
+
+        <!-- Includes -->
+        
+<script src="/v3/minimal/obs.html/static/obsidian_core.js"></script>
+<script src="/v3/minimal/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/v3/minimal/obs.html/static/master.css" />
+<script src="/v3/minimal/obs.html/static/dirtree.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            
+                <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                    <div style="flex:1;display: none;"></div>
+                    <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                        <a href="/v3/minimal/" style="color: rgb(var(--normal-text-color));">Home</a> / <span style="color: #666;">minimal</span> / <a href="/v3/minimal/Changelog/Changelog.html" style="color: var(--normal-text-color);">Changelog</a> / <a href="/v3/minimal/Changelog/v3.2.2.html" >v3.2.2</a>
+                    </div>
+                </div>
+<embeddedtitle>v3.2.2</embeddedtitle>
+<div class="content"><blockquote>
+<p>Patch version of <a href="/v3/minimal/Changelog/v3.2.0.html">v3.2.0</a>.    </p>
+</blockquote>
+<h2 id="changes">Changes</h2>
+<ul>
+<li>Made <code>force_filename_to_lowercase</code> default to true, as markdown links in a vault had the same issue as when converting markdown directly, while working as intended in Obsidian itself.    </li>
+</ul>
+<h2 id="bugfixes">Bugfixes</h2>
+<ul>
+<li>The change in <a href="/v3/minimal/Changelog/v3.2.1.html">v3.2.1</a> to fix links with parentheses not being parsed correctly created the bug that when having () around a link, like (<a href="/v3/minimal/Changelog/v3.2.1.html">v3.2.1</a>), would cause the trailing <code>)</code> to be included in the link. This has been fixed.   </li>
+<li>Anchor links like <code>[go to chapter](#chapter)</code> would cause a breaking bug because of using <code>link[0]</code> instead of <code>link.startswith()</code>. (Former will give an out of bounds error when string is empty). This was also a piece of code that didn't need to be run for anchor links, this has been corrected as well.</li>
+</ul></div>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/Changelog/Changelog.html">changelog</a></li>
+</ul>
+</div>
+
+<div class="tags">
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/type/changelog/index.html">type/changelog</a></li>
+	<li><a class="backlink" href="/v3/minimal/obs.html/tags/date/2022-09-11/index.html">date/2022-09-11</a></li>
+</ul>
+</div>
+
+</div>
+
+        </div>
+        
+             
+        
+   
+    </body>
+</html>
