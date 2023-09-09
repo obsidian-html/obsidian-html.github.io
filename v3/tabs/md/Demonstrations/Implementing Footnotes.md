@@ -4,7 +4,8 @@ tags:
 - date/2022-08-26
 ---
    
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
 Footnotes are baked in to python-markdown, only that extension lacks inline footnotes.   
 These have been added in [v3.2.0](../Changelog/v3.2.0.md).   

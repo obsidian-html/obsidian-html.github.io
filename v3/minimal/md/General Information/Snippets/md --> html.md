@@ -2,7 +2,8 @@
 {}
 ---
    
-> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
 A conversion in which we take a markdown wiki as input, instead of it being the result of a vault being converted to markdown ([note --> html](../../General%20Information/Snippets/note%20--%3E%20html.md)).   
    

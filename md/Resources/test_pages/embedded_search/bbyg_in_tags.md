@@ -1,8 +1,8 @@
 ---
 tags:
-- bla/babayaga
-- babayaga
 - randomothertag
+- babayaga
+- bla/babayaga
 ---
 # bbyg_in_tags
 

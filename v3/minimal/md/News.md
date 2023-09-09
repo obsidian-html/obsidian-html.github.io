@@ -4,7 +4,8 @@ tags:
 - date/2022-02-15
 ---
    
-> This is the documentation for [v3.5.0](./Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](./Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
 The articles linked on this page are included in our [RSS Feed](./Configurations/Features/RSS%20Feed.md), and are meant to highlight specific events regarding ObsidianHtml.    
    

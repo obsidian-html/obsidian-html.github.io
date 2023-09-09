@@ -6,7 +6,8 @@ tags:
 - feature/html_output
 - feature/graph_view
 ---
-> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/v4
+>[!important]
+> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/
 
 
 Click on the button at the bottom of a note to view the graph for the current note. Click on the graph icon in the menu to go to a full page graph view.

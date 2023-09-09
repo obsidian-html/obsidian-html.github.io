@@ -1,7 +1,7 @@
 ---
 tags:
-- type/template
 - date/2022-09-04
+- type/template
 ---
 # Deployment instructions
 

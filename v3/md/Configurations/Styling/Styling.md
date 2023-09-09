@@ -4,7 +4,8 @@ tags:
 - date/2022-04-17
 ---
    
-> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
    
 > This page discusses the built-in styling options. If you want to use custom code, go to [Edit HTML, CSS, JS](../../Configurations/Styling/Edit%20HTML%2C%20CSS%2C%20JS.md).   

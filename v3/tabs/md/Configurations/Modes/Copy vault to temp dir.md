@@ -4,7 +4,8 @@ tags:
 - date/2022-02-13
 ---
    
-> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
    
 We try to not have bugs, but sometimes we just can't help ourselves. I think everyone would agree that the only thing that we should guarantee is that we don't touch your vault files. To help assure that, ObsidianHtml will make a copy of your entire vault to a temporary directory and work from out of that folder.    

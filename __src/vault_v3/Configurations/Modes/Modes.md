@@ -3,7 +3,8 @@ tags:
 - type/configuration
 - date/2022-02-14
 ---
-> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/v4
+>[!important]
+> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/
 
 
 A *mode* is a term used for certain [[Configuration Options|configuration settings]] that alter the note selection and/or the contents of the homepage.

@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-02-06
 - type/configuration
+- date/2022-02-06
 ---
 # Process All
 

@@ -4,7 +4,8 @@ tags:
 - date/2022-05-06
 ---
    
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
 When you make a feature request or a bug report, often you'll be asked to check if the latest changes made to the code solve your issues.  These changes won't be in a release yet, so you'll have to install them in a slightly different way.   
    

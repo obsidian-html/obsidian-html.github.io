@@ -4,7 +4,8 @@ tags:
 - type/styling
 - date/2022-02-04
 ---
-> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/v4
+>[!important]
+> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/
 
 The following features have been built in to the [[Styling#Layouts|various html templates]]. 
 

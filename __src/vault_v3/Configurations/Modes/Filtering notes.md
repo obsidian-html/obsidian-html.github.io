@@ -1,4 +1,5 @@
-> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/v4
+>[!important]
+> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/
 
 > This instruction is valid from version [[v3.4.0]] onwards. 
 

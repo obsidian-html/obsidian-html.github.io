@@ -4,7 +4,8 @@ tags:
 - date/2022-04-17
 ---
    
-> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
    
 When the [styling layout setting](../../Configurations/Styling/Styling.md#layouts) is set to `tabs`, the html output uses a tab system, where each internal link opens a new note on the right of the parent note.    

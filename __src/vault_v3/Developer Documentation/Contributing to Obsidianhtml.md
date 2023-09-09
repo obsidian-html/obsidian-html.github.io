@@ -1,4 +1,5 @@
-> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/v4
+>[!important]
+> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/
 
 This is as easy as creating a pull request (PR) in github. Google or ask in [Discussions](https://github.com/obsidian-html/obsidian-html/discussions) on how best to do this if you are not sure.
 

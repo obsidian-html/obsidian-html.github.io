@@ -4,7 +4,8 @@ tags:
 - date/2022-05-05
 ---
    
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
 # Implementing Latex   
 At the moment only the math based latex is enabled. (It's hard to find what Obsidian supports other than the math based latex.)   

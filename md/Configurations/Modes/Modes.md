@@ -1,7 +1,7 @@
 ---
 tags:
-- date/2022-02-14
 - type/configuration
+- date/2022-02-14
 ---
 # Modes
 

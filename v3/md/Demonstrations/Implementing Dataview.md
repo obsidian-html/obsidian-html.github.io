@@ -5,7 +5,8 @@ tags:
 - date/2022-06-07
 ---
    
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
 > This feature is still in alpha, [join us on github](https://github.com/obsidian-html/obsidian-html/issues/271) if you want to know more.    
    

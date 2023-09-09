@@ -4,7 +4,8 @@ tags:
 - date/2022-02-21
 ---
    
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
 This page is a very short summary of installation, usage, and configuration options.   
    
@@ -129,7 +130,8 @@ Then open [http://localhost:8000](http://localhost:8000) to view the html site t
 ## Deployment configuration   
 
    
-> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
 By default the configuration allows for running the website as  [http://localhost:8000](http://localhost:8000),  [https://mywebsite.com/,](https://mywebsite.com/,) [https://my-account.github.io/,](https://my-account.github.io/,) etc.   
    

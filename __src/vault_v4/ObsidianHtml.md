@@ -21,7 +21,7 @@ tags:
 > - [[Usage]]
 
 >[!important]
-> This is the documentation for [[v4.0.0]] and higher, for documentation on **v3.5.0** and lower, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/v3)
+> This is the documentation for [[v4.0.0]] and higher, for documentation on **v3.5.0** and lower, see [https://obsidian-html.github.io/v3](https://obsidian-html.github.io/v3)
 >
 > Note also that this documentation is a direct clone of the docs for version 3, and currently still being updated for version 4, so some information might still not be correct for version 4.
 

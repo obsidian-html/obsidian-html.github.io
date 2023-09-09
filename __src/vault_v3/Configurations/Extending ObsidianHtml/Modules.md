@@ -1,4 +1,5 @@
-> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/v4
+>[!important]
+> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/
 
 >[!warning]
 >The module system currently is still in **alpha**. Any part of the system might still change until further notice, so keep that in mind before diving into the module system.

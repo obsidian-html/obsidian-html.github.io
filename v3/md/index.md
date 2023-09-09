@@ -8,7 +8,8 @@ tags:
 - test
 ---
    
-> This is the documentation for [v3.5.0](./Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](./Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
 # ObsidianHtml   
 > [!example]- Code   
@@ -22,6 +23,9 @@ tags:
 > - [Installation](./Instructions/Installation.md)   
 > - [Usage](./Instructions/Usage.md)   
    
+>[!important]   
+> I no longer have time to support this package. Maybe in the future I will get around to it again, but as it stands I am the only developer on this project and I won't be working on it, so development is currently halted.   
+   
 ## General information   
    
 - [About ObsidianHtml](./General%20Information/About%20ObsidianHtml.md)   
@@ -34,9 +38,9 @@ tags:
 Try this site with different [layouts](./Configurations/Styling/Styling.md#layouts):   
 > use ctrl+click when in tabs mode!   
    
-- [minimal](/minimal/index.html)   
-- [tabs](/tabs/index.html)   
-- [documentation](/index.html) (default).   
+- [minimal](minimal/index.html)   
+- [tabs](tabs/index.html)   
+- [documentation](/v3/index.html) (default).   
    
 ## Usage & Capabilities   
    

@@ -5,7 +5,8 @@ tags:
 - date/2022-04-24
 ---
    
-> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/v4](https://obsidian-html.github.io/v4)   
+>[!important]   
+> This is the documentation for [v3.5.0](../../Changelog/v3.5.0.md) and lower, for documentation for **v4.0.0** and higher, see [https://obsidian-html.github.io/](https://obsidian-html.github.io/)   
    
    
 > This functionality has been added in version [v2.1.0](../../Changelog/v2.1.0.md) and rewritten in [v3.0.0](../../Changelog/v3.0.0.md).   
