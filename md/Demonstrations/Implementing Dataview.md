@@ -1,8 +1,8 @@
 ---
 my-title: Inline phrases
 tags:
-- date/2022-06-07
 - type/test_page
+- date/2022-06-07
 ---
 # Implementing Dataview
 

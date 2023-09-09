@@ -1,7 +1,7 @@
 ---
 tags:
-- feature/parsing_markdown
 - date/2022-07-31
+- feature/parsing_markdown
 ---
 # Removing obsidian comments
 

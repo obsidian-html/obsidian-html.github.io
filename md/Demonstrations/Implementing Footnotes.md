@@ -1,7 +1,7 @@
 ---
 tags:
-- feature/parsing_markdown
 - date/2022-08-26
+- feature/parsing_markdown
 ---
 # Implementing Footnotes
 

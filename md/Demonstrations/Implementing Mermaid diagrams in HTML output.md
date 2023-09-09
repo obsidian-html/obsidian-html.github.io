@@ -1,9 +1,9 @@
 ---
 graph_name: Mermaid Diagrams
 tags:
+- feature/diagrams
 - feature/html_output
 - date/2022-02-04
-- feature/diagrams
 ---
 # Mermaid Diagrams
 
