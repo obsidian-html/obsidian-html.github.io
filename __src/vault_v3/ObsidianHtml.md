@@ -7,7 +7,9 @@ tags:
 - type/moc
 - test
 ---
-> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/v4
+
+
+> This is the documentation for [[v3.5.0]] and lower, for documentation for **v4.0.0** and higher, see https://obsidian-html.github.io/
 
 # ObsidianHtml
 > [!example]- Code
@@ -20,6 +22,9 @@ tags:
 > - **[[Quickstart]]**
 > - [[Installation]]
 > - [[Usage]]
+
+>[!important]
+> I no longer have time to support this package. Maybe in the future I will get around to it again, but as it stands I am the only developer on this project and I won't be working on it, so development is currently halted.
 
 ## General information
 - [[About ObsidianHtml]]

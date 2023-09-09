@@ -7,18 +7,18 @@ obsidian_entrypoint_path_str: '../obsidian-html.github.io/__src/vault_v3/Obsidia
 # Input and output path of markdown files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-md_folder_path_str:  '../obsidian-html.github.io/tabs/md/'
+md_folder_path_str:  '../obsidian-html.github.io/v3/tabs/md/'
 
 # Markdown entrypoint path
 # This has to be md_folder_path_str + '/index.md' when toggles/compile_md == True
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-md_entrypoint_path_str: '../obsidian-html.github.io/tabs/md/index.md'
+md_entrypoint_path_str: '../obsidian-html.github.io/v3/tabs/md/index.md'
 
 # Output path of HTML files
 # This can be an absolute or a relative path (relative to the working directory when calling obsidianhtml)
 # Use full path or relative path, but don't use ~/
-html_output_folder_path_str: '../obsidian-html.github.io/tabs/'
+html_output_folder_path_str: '../obsidian-html.github.io/v3/tabs/'
 
 # Will be inputted into the Html template as page title
 # Not used anywhere else atm.
@@ -26,7 +26,7 @@ site_name: 'ObsidianHtml/Tabs-Mode'
 
 # Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/
 # use '/html_prefix' (prepend slash, no slash at the end)
-html_url_prefix: '/tabs'
+html_url_prefix: '/v3/tabs'
 
 # Provide the fullpath to a template file to use instead of standard template. 
 # Note that this file must contain at least "{content}" somewhere in the page.
@@ -92,7 +92,7 @@ toggles:
   warn_on_skipped_image: True
 
   # This will skip emptying output folders, if you want to implement this yourself
-  no_clean: True
+  no_clean: False
 
   # Whether the markdown interpreter assumes relative path when no / at the beginning of a link
   relative_path_md: True
