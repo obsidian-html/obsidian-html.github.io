@@ -32,12 +32,16 @@ This will be included below by writing
 
 ==---begin inclusion---==
 
+<div class="inclusion" markdown="1">
+
 # Test Inclusion
 
 
 > Content
 
 
+
+</div>
 
 ==---end inclusion---==
 
@@ -58,12 +62,16 @@ This can be done by writing
 
 ==---begin inclusion---==
 
+<div class="inclusion" markdown="1">
+
 ## Second chapter
 Content second chapter
 
 ### An h3
 This is still a child of `Second chapter`
 
+
+</div>
 
 ==---end inclusion---==
 
@@ -78,6 +86,8 @@ This is still a child of `Second chapter`
 
 
 ==---begin inclusion---==
+
+<div class="inclusion" markdown="1">
 
 ### video_format_suffixes
 > Added in [v1.1.0](/not_created.md)
@@ -95,6 +105,8 @@ This is a configurable setting because we might've missed certain suffixes of fi
 Note that if you add it yourself here, the passed in mime-type might be missing. This might or might not be an issue depending on your browser/OS.
 
 
+</div>
+
 ==---end inclusion---==
 
 
@@ -108,7 +120,11 @@ Note that if you add it yourself here, the passed in mime-type might be missing.
 
 ==---begin inclusion---==
 
+<div class="inclusion" markdown="1">
+
 Pip is a package manager, installed along with Python, that we use to install ObsidianHtml and all its dependencies. Often you need to update pip after installing Python to have it work. 
+
+</div>
 
 ==---end inclusion---==
 

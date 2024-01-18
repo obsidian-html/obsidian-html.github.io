@@ -2,8 +2,8 @@
 rss:
   description: An index page of all releases of ObsidianHtml since v4.0.0
 tags:
-- type/moc
 - date/2023-05-09
+- type/moc
 ---
 # Changelog
 

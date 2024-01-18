@@ -234,6 +234,9 @@ toggles:
 
   # Will preserve inline tags. This will give polluted markdown output
   preserve_inline_tags: True
+
+  # Will wrap inclusions with <div class="inclusion">{content}</div>
+  wrap_inclusions: True
   
   features:
     styling: 

@@ -1,7 +1,7 @@
 ---
 tags:
-- type/instruction
 - date/2022-02-21
+- type/instruction
 ---
 # Quickstart
 
@@ -54,6 +54,8 @@ Read more: [Obsidianhtml Run](../Instructions/Obsidianhtml%20Run.md)
 When this works, or you want more configuration settings out of the box, you can skip this section and continue with the next section.
 
 
+<div class="inclusion" markdown="1">
+
 ### Short instructions
 Run
 ``` bash
@@ -66,6 +68,8 @@ Then follow the instructions in the terminal. If all is well it will spit out so
 
 When done return to the terminal and press enter to exit obsidianhtml and stop the webserver.
 
+
+</div>
 
 
 If you are happy with the result, you can take the path to your generated config yaml in the steps below as a starting point. Follow the instructions at [Convert vault](#convert-vault) to just convert your vault to html (and or markdown) and forgo running the integrated webserver.
@@ -128,6 +132,8 @@ Then open [http://localhost:8000](http://localhost:8000) to view the html site t
 
 ## Deployment configuration
 
+<div class="inclusion" markdown="1">
+
 # Deployment instructions
 
 
@@ -156,6 +162,8 @@ If you don't want to deploy a website on the world wide web, nor want to start a
 Note that this will break the graph view and the search function, so these should be disabled. 
 
 For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: [Relative_path_html](../Configurations/Modes/Relative_path_html.md)
+
+</div>
 
 
 # Next steps

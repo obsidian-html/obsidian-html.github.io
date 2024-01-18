@@ -1,8 +1,8 @@
 ---
 graph_name: Auto push site using Git on Windows
 tags:
-- date/2022-02-04
 - type/automation
+- date/2022-02-04
 ---
 
 

@@ -446,13 +446,16 @@
 <li><a href="#demonstrate-inclusion" class="anchor-link">Demonstrate inclusion</a><ul>
 <li><a href="#include-specific-header" class="anchor-link">Include specific header</a></li>
 <li><a href="#show-hide-inclusion-in-the-graph-view" class="anchor-link">Show/hide inclusion in the graph view</a></li>
+<li><a href="#wrap-inclusions-with-div" class="anchor-link">Wrap inclusions with div</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <p>The normal obsidian code inclusion syntax of <code>![[note]]</code> works as intended.</p>
+<div class="inclusion">
 <h1 id="demonstrate-inclusion">Demonstrate inclusion</h1>
 <p>The only difference is that the code is pasted inline, so it is not visible that the text is included. This paragraph comes from a different note, for example.</p>
+</div>
 <h2 id="include-specific-header">Include specific header</h2>
 <p>If you want to only include the text under a header called 'header', then you can use <code>![[note#header]]</code>.</p>
 <p>If you need specificity in selecting a subheader, you can type <code>![[note#header#subheader]]</code> instead of <code>![[note#subheader]]</code> when needed.</p>
@@ -464,6 +467,21 @@
 <span class="w">  </span><span class="nt">features</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">graph</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">show_inclusions_in_graph</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+
+
+</div>
+
+<h2 id="wrap-inclusions-with-div">Wrap inclusions with div</h2>
+<p>If you want to style your inclusions differently then you can opt-in to have your inclusions wrapped with a div. </p>
+<p>This div gets the class <code>inclusion</code>, so if you add <code>.inclusion { background-color:red }</code> in your <a href="/configurations/styling/edit-html-css-js.html">custom css</a> you should see the inclusions have a red background.</p>
+<p>Currently, this is still in a test phase. Once it is better tested this option will be turned on by default.</p>
+<p>To turn on this feature ensure that you are on at least version 4.0.1 and add the following to your config.yml:</p>
+<div class="lang-yaml">
+
+<div class="codehilite"><pre><span></span><code><span class="nt">toggles</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Will wrap inclusions with &lt;div class=&quot;inclusion&quot;&gt;{content}&lt;/div&gt;</span>
+<span class="w">  </span><span class="nt">wrap_inclusions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
 </code></pre></div>
 
 
@@ -483,17 +501,17 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A191765295566118221226379349715539578677{level}" class="graph_div"></div>
+    <div id="A247824420011530520937370270920614652528{level}" class="graph_div"></div>
 
-    <div class="graph-instructions" id="D191765295566118221226379349715539578677{level}">
+    <div class="graph-instructions" id="D247824420011530520937370270920614652528{level}">
         Left-click: follow link, Right-click: select node, Scroll: zoom
     </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B191765295566118221226379349715539578677{level}" level="{level}" note_temp_id="191765295566118221226379349715539578677" onclick="window.ObsHtmlGraph.run(this, '191765295566118221226379349715539578677', 'include notes');">
+        <button class="graph_button graph_show_button" id="B247824420011530520937370270920614652528{level}" level="{level}" note_temp_id="247824420011530520937370270920614652528" onclick="window.ObsHtmlGraph.run(this, '247824420011530520937370270920614652528', 'include notes');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C191765295566118221226379349715539578677{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C247824420011530520937370270920614652528{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>

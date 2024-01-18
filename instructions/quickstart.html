@@ -512,6 +512,7 @@
 <p>To hit the ground running you can use <code>obsidianhtml run</code>. This way you only have to provide the path to a note that will serve as your homepage. (Parts of) the rest of your vault will be included by following the links on your entrypoint note. The vault is then converted to html and the website is hosted on <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a></p>
 <p>Read more: <a href="/instructions/obsidianhtml-run.html">Obsidianhtml Run</a></p>
 <p>When this works, or you want more configuration settings out of the box, you can skip this section and continue with the next section.</p>
+<div class="inclusion">
 <h3 id="short-instructions">Short instructions</h3>
 <p>Run</p>
 <div class="lang-bash">
@@ -521,9 +522,9 @@
 
 
 </div>
-
 <p>Then follow the instructions in the terminal. If all is well it will spit out some information and then tell you to open <a href="http://localhost:8888" class="external-link" class="external-link">http://localhost:8888</a> in your browser. Do so and admire your new website.</p>
 <p>When done return to the terminal and press enter to exit obsidianhtml and stop the webserver.</p>
+</div>
 <p>If you are happy with the result, you can take the path to your generated config yaml in the steps below as a starting point. Follow the instructions at <a href="#convert-vault" class="anchor-link" class="anchor-link">Convert vault</a> to just convert your vault to html (and or markdown) and forgo running the integrated webserver.</p>
 <h2 id="configuration">Configuration</h2>
 <p>Pick a folder where you don't mind a folder being created. Then create a file in this folder named <code>config.yaml</code>, and fill it with this content (and fill in the values):</p>
@@ -600,6 +601,7 @@
 
 <p>Then open <a href="http://localhost:8000" class="external-link" class="external-link">http://localhost:8000</a> to view the html site that was created.</p>
 <h2 id="deployment-configuration">Deployment configuration</h2>
+<div class="inclusion">
 <h1 id="deployment-instructions">Deployment instructions</h1>
 <p>By default the configuration allows for running the website as  <a href="http://localhost:8000" class="external-link" class="external-link">http://localhost:8000</a>,  <a href="https://mywebsite.com/," class="external-link">https://mywebsite.com/,</a> <a href="https://my-account.github.io/," class="external-link">https://my-account.github.io/,</a> etc.</p>
 <p>All those urls have in common that they are in the root of the domain. An example where this is not the case is:  <a href="https://mywebsite.com/subfolder/." class="external-link">https://mywebsite.com/subfolder/.</a></p>
@@ -614,7 +616,6 @@
 
 
 </div>
-
 <p>This will add <code>/subfolder</code> to every link in the html output.</p>
 <div class="callout callout-note active" rasa="1">
 <div class="callout-title ">
@@ -631,6 +632,7 @@
 <p>If you don't want to deploy a website on the world wide web, nor want to start a local webserver everytime someone wants to view your website, you can configure Obsidianhtml such that you can just open the index.html in your browser directly from your filesystem.</p>
 <p>Note that this will break the graph view and the search function, so these should be disabled. </p>
 <p>For this to work we need to make sure that all the links in a page are relative to that page, this can be done by configuring this setting: <a href="/configurations/modes/relative_path_html.html">Relative_path_html</a></p>
+</div>
 <h1 id="next-steps">Next steps</h1>
 <ul>
 <li>Read the full notes on <a href="/instructions/installation.html">Installation</a> and <a href="/instructions/usage.html">Usage</a> if you want to know more about these steps.</li>
@@ -647,24 +649,24 @@
 <div class="tags">
 <h2>Tags</h2>
 <ul>
-	<li><a class="backlink" href="/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
 	<li><a class="backlink" href="/obs.html/tags/date/2022-02-21/index.html">date/2022-02-21</a></li>
+	<li><a class="backlink" href="/obs.html/tags/type/instruction/index.html">type/instruction</a></li>
 </ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A202314537951798638464161721848325569056{level}" class="graph_div"></div>
+    <div id="A154328462620732663441867617690659083584{level}" class="graph_div"></div>
 
-    <div class="graph-instructions" id="D202314537951798638464161721848325569056{level}">
+    <div class="graph-instructions" id="D154328462620732663441867617690659083584{level}">
         Left-click: follow link, Right-click: select node, Scroll: zoom
     </div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B202314537951798638464161721848325569056{level}" level="{level}" note_temp_id="202314537951798638464161721848325569056" onclick="window.ObsHtmlGraph.run(this, '202314537951798638464161721848325569056', 'quickstart');">
+        <button class="graph_button graph_show_button" id="B154328462620732663441867617690659083584{level}" level="{level}" note_temp_id="154328462620732663441867617690659083584" onclick="window.ObsHtmlGraph.run(this, '154328462620732663441867617690659083584', 'quickstart');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C202314537951798638464161721848325569056{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C154328462620732663441867617690659083584{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
